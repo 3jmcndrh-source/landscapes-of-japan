@@ -289,9 +289,7 @@ const PREFECTURES = [
       { id: "DSC07150_hlpfgz", loc: "姫路城" },
       { id: "DSC07139_h55edw", loc: "姫路城" },
       { id: "DSC07127_wo4ifg", loc: "姫路城" },
-      { id: "DSC07127_qjc7zc", loc: "姫路城" },
       { id: "DSC07121_fxsgn9", loc: "姫路城" },
-      { id: "DSC07121_qtweqe", loc: "姫路城" },
     ]
   },
 ];
@@ -723,16 +721,23 @@ export default function Page() {
   const [lang, setLang] = useState("ja");
   const [lightbox, setLightbox] = useState(null);
 
+  /* Responsive image sizes (default to desktop for SSR, update on client) */
+  const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
+  useEffect(() => {
+    if (window.innerWidth <= 768) setImgSizes({ thumbW: 600, lbW: 1200 });
+  }, []);
+  const { thumbW, lbW } = imgSizes;
+
   /* Flat list of all photos for lightbox navigation */
   const allPhotos = useMemo(() => {
     const list = [];
     PREFECTURES.forEach(pf => {
       pf.photos.forEach(photo => {
-        list.push({ url: getUrl(photo, 2400), pref: pf.pref, loc: photo.loc || "" });
+        list.push({ url: getUrl(photo, lbW), pref: pf.pref, loc: photo.loc || "" });
       });
     });
     return list;
-  }, []);
+  }, [lbW]);
 
   const openLightbox = useCallback((url) => {
     const idx = allPhotos.findIndex(p => p.url === url);
@@ -787,6 +792,15 @@ export default function Page() {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [lightbox, lbPrev, lbNext]);
+
+  /* Preload adjacent lightbox images */
+  useEffect(() => {
+    if (lightbox === null || !allPhotos.length) return;
+    const prev = (lightbox <= 0 ? allPhotos.length - 1 : lightbox - 1);
+    const next = (lightbox >= allPhotos.length - 1 ? 0 : lightbox + 1);
+    [prev, next].forEach(i => { const img = new Image(); img.src = allPhotos[i].url; });
+  }, [lightbox, allPhotos]);
+
   useEffect(() => {
     const el = cRef.current;
     if (!el) return;
@@ -813,10 +827,10 @@ export default function Page() {
               <button key={c} className={"top-lang-btn" + (lang === c ? " active" : "")} onClick={() => setLang(c)}>{v.name}</button>
             ))}
           </div>
-          <div className="top-nav">
-            <button className="top-nav-link" onClick={scrollToMap}>{t.nav.map}</button>
-            <button className="top-nav-link" onClick={scrollToContact}>{t.contact.title}</button>
-          </div>
+        </div>
+        <div className={"top-nav" + (scrollY > 80 ? " scrolled" : "")}>
+          <button className="top-nav-link" onClick={scrollToMap}>{t.nav.map}</button>
+          <button className="top-nav-link" onClick={scrollToContact}>{t.contact.title}</button>
         </div>
         <div className="cin-hero">
           <div className={"cin-hero-bg" + (loaded ? " loaded" : "")} />
@@ -840,10 +854,12 @@ export default function Page() {
                 <div className="cin-pref">{getPrefName(pf.pref, lang)}</div>
                 <div className="cin-hscroll">
                   {pf.photos.map((photo, idx) => (
-                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => openLightbox(getUrl(photo, 2400))} onContextMenu={e => e.preventDefault()}>
-                      <img src={getUrl(photo, 1200)} alt="" loading="lazy" draggable="false" />
-                      {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
-                      <div className="cin-watermark">Landscapes of Japan</div>
+                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => openLightbox(getUrl(photo, lbW))} onContextMenu={e => e.preventDefault()}>
+                      <div className="cin-hcard-img-wrap">
+                        <img src={getUrl(photo, thumbW)} alt="" loading="lazy" draggable="false" />
+                        {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
+                        <div className="cin-watermark">Landscapes of Japan</div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -881,9 +897,6 @@ export default function Page() {
 
         <footer className="cin-footer">© 2026 Landscapes of Japan<br/>{t.footer2}</footer>
       </div>
-      <button className={"back-map" + (pastMap ? " show" : "")} onClick={scrollToMap}>
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>{t.backMap}
-      </button>
       {lightbox !== null && (() => {
         const cur = allPhotos[lightbox];
         let touchStartX = 0;
