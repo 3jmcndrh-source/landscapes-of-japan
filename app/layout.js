@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, Noto_Sans_JP, Noto_Sans, Yuji_Boku } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${yujiBoku.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
