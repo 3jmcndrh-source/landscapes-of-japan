@@ -320,6 +320,8 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   const [geoData, setGeoData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const svgRef = useRef(null);
+  const gRef = useRef(null);
   const t = TR[lang];
 
   useEffect(() => {
@@ -360,6 +362,18 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
     loadMap();
     return () => { cancelled = true; };
   }, []);
+
+  /* Pinch-zoom and pan for the map */
+  useEffect(() => {
+    if (!svgRef.current || !gRef.current) return;
+    const svg = d3.select(svgRef.current);
+    const g = d3.select(gRef.current);
+    const zoom = d3.zoom()
+      .scaleExtent([1, 5])
+      .on("zoom", (e) => { g.attr("transform", e.transform); });
+    svg.call(zoom);
+    return () => svg.on(".zoom", null);
+  }, [loading]);
 
   /* Helper: compute centroid of a polygon ring */
   const ringCentroid = (ring) => {
@@ -465,7 +479,8 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           <span style={{ fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 14, color: "rgba(220,190,100,.5)", letterSpacing: ".05em" }}>{t.mapH}</span>
         </div>
       </div>
-      <svg viewBox={"0 0 " + MW + " " + MH} style={{ width: "100%", height: "auto", display: "block" }} onClick={handleSvgClick}>
+      <svg ref={svgRef} viewBox={"0 0 " + MW + " " + MH} style={{ width: "100%", height: "auto", display: "block", touchAction: "none" }} onClick={handleSvgClick}>
+        <g ref={gRef}>
         <defs>
           <filter id="glow"><feGaussianBlur stdDeviation="4" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
         </defs>
@@ -566,6 +581,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
               );
             })}
           </g>
+        </g>
         </g>
       </svg>
     </div>
