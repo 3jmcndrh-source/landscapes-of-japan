@@ -14,7 +14,7 @@ html,body{background:#0a0a0a;color:#e8e4df}
 .top-lang-btn:hover{color:rgba(232,228,223,.7);background:rgba(255,255,255,.06)}
 .top-lang-btn.active{color:#e8e4df;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12)}
 .top-nav{position:fixed;top:72px;right:16px;z-index:101;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding:0;pointer-events:auto}
-.top-nav-link{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(232,228,223,.75);cursor:pointer;font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:15px;font-weight:500;letter-spacing:1.5px;transition:all .3s;padding:10px 24px;white-space:nowrap;border-radius:20px;text-align:center;min-width:180px}
+.top-nav-link{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(232,228,223,.75);cursor:pointer;font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:15px;font-weight:500;letter-spacing:1.5px;transition:all .3s;padding:6px 16px;white-space:nowrap;border-radius:20px;text-align:center;min-width:160px}
 .top-nav-link:first-child{background:rgba(220,190,100,.15);border-color:rgba(220,190,100,.4);color:rgba(220,190,100,.9)}
 .top-nav-link:first-child:hover{background:rgba(220,190,100,.25);border-color:rgba(220,190,100,.6);color:rgba(220,190,100,1)}
 .top-nav-link:hover{color:#e8e4df;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
