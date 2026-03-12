@@ -229,6 +229,7 @@ const getPrefName = (jpName, lang) => {
 
 /* ── Location name translations ── */
 const LOC_I18N = {
+  "清水寺周辺":{ja:"清水寺周辺",en:"Around Kiyomizu-dera",zh:"清水寺周边",ko:"기요미즈데라 주변","zh-tw":"清水寺周邊",es:"Alrededores de Kiyomizu-dera",fr:"Autour de Kiyomizu-dera",de:"Umgebung von Kiyomizu-dera",pt:"Arredores de Kiyomizu-dera",it:"Dintorni di Kiyomizu-dera",ru:"Окрестности Киёмидзу-дэра",ar:"محيط كيوميزو",hi:"कियोमिज़ु-देरा के आसपास",th:"บริเวณรอบคิโยมิสึ",vi:"Quanh chùa Kiyomizu",id:"Sekitar Kiyomizu-dera",tr:"Kiyomizu-dera Çevresi",nl:"Omgeving Kiyomizu-dera",pl:"Okolice Kiyomizu-dera",sv:"Kring Kiyomizu-dera"},
   "清水寺":{ja:"清水寺",en:"Kiyomizu-dera",zh:"清水寺",ko:"기요미즈데라","zh-tw":"清水寺",es:"Kiyomizu-dera",fr:"Kiyomizu-dera",de:"Kiyomizu-dera",pt:"Kiyomizu-dera",it:"Kiyomizu-dera",ru:"Киёмидзу-дэра",ar:"معبد كيوميزو",hi:"कियोमिज़ु-देरा",th:"คิโยมิสึเดระ",vi:"Chùa Kiyomizu",id:"Kiyomizu-dera",tr:"Kiyomizu-dera",nl:"Kiyomizu-dera",pl:"Kiyomizu-dera",sv:"Kiyomizu-dera"},
   "清水寺 三重塔":{ja:"清水寺 三重塔",en:"Kiyomizu-dera Pagoda",zh:"清水寺 三重塔",ko:"기요미즈데라 삼중탑","zh-tw":"清水寺 三重塔",es:"Pagoda de Kiyomizu-dera",fr:"Pagode de Kiyomizu-dera",de:"Kiyomizu-dera Pagode",pt:"Pagode de Kiyomizu-dera",it:"Pagoda di Kiyomizu-dera",ru:"Пагода Киёмидзу-дэра",ar:"معبد كيوميزو",hi:"कियोमिज़ु-देरा पैगोडा",th:"เจดีย์คิโยมิสึ",vi:"Chùa Kiyomizu-dera",id:"Pagoda Kiyomizu-dera",tr:"Kiyomizu-dera Pagodası",nl:"Kiyomizu-dera Pagode",pl:"Pagoda Kiyomizu-dera",sv:"Kiyomizu-dera Pagod"},
   "清水寺 本堂":{ja:"清水寺 本堂",en:"Kiyomizu-dera Main Hall",zh:"清水寺 本堂",ko:"기요미즈데라 본당","zh-tw":"清水寺 本堂",es:"Salón principal de Kiyomizu-dera",fr:"Pavillon principal de Kiyomizu-dera",de:"Kiyomizu-dera Haupthalle",pt:"Salão principal de Kiyomizu-dera",it:"Sala principale di Kiyomizu-dera",ru:"Главный зал Киёмидзу-дэра",ar:"القاعة الرئيسية لكيوميزو",hi:"कियोमिज़ु-देरा मुख्य हॉल",th:"ห้องโถงหลักคิโยมิสึ",vi:"Chánh điện Kiyomizu-dera",id:"Aula utama Kiyomizu-dera",tr:"Kiyomizu-dera Ana Salon",nl:"Kiyomizu-dera Hoofdhal",pl:"Główna sala Kiyomizu-dera",sv:"Kiyomizu-dera Huvudhall"},
@@ -238,6 +239,7 @@ const LOC_I18N = {
   "東寺 五重塔":{ja:"東寺 五重塔",en:"To-ji Five-Story Pagoda",zh:"东寺 五重塔",ko:"도지 오중탑","zh-tw":"東寺 五重塔",es:"Pagoda de cinco pisos de To-ji",fr:"Pagode à cinq étages de To-ji",de:"To-ji Fünfstöckige Pagode",pt:"Pagode de cinco andares de To-ji",it:"Pagoda a cinque piani di To-ji",ru:"Пятиярусная пагода То-дзи",ar:"باغودا توجي",hi:"तो-जी पंचमंजिला पैगोडा",th:"เจดีย์ห้าชั้นโทจิ",vi:"Tháp năm tầng To-ji",id:"Pagoda lima lantai To-ji",tr:"To-ji Beş Katlı Pagoda",nl:"To-ji Vijfverdiepingen Pagode",pl:"Pięciopiętrowa pagoda To-ji",sv:"To-ji Femvånings Pagod"},
   "東寺":{ja:"東寺",en:"To-ji Temple",zh:"东寺",ko:"도지","zh-tw":"東寺",es:"Templo To-ji",fr:"Temple To-ji",de:"To-ji Tempel",pt:"Templo To-ji",it:"Tempio To-ji",ru:"Храм То-дзи",ar:"معبد توجي",hi:"तो-जी मंदिर",th:"วัดโทจิ",vi:"Chùa To-ji",id:"Kuil To-ji",tr:"To-ji Tapınağı",nl:"To-ji Tempel",pl:"Świątynia To-ji",sv:"To-ji Tempel"},
   "平等院鳳凰堂":{ja:"平等院鳳凰堂",en:"Byodo-in Phoenix Hall",zh:"平等院凤凰堂",ko:"뵤도인 봉황당","zh-tw":"平等院鳳凰堂",es:"Salón del Fénix de Byodo-in",fr:"Pavillon du Phénix de Byodo-in",de:"Byodo-in Phönixhalle",pt:"Salão da Fênix de Byodo-in",it:"Sala della Fenice di Byodo-in",ru:"Зал Феникса Бёдо-ин",ar:"قاعة الفينيق بيودو-إن",hi:"ब्योडो-इन फ़ीनिक्स हॉल",th:"ฟีนิกซ์ฮอลล์เบียวโดอิน",vi:"Phượng Hoàng Đường Byodo-in",id:"Aula Phoenix Byodo-in",tr:"Byodo-in Anka Kuşu Salonu",nl:"Byodo-in Fenixhal",pl:"Sala Feniksa Byodo-in",sv:"Byodo-in Fenixhallen"},
+  "東福寺":{ja:"東福寺",en:"Tofuku-ji",zh:"东福寺",ko:"도후쿠지","zh-tw":"東福寺",es:"Tofuku-ji",fr:"Tofuku-ji",de:"Tofuku-ji",pt:"Tofuku-ji",it:"Tofuku-ji",ru:"Тофуку-дзи",ar:"معبد توفوكوجي",hi:"तोफ़ुकु-जी",th:"โทฟุกุจิ",vi:"Chùa Tofuku-ji",id:"Tofuku-ji",tr:"Tofuku-ji",nl:"Tofuku-ji",pl:"Tofuku-ji",sv:"Tofuku-ji"},
   "東福寺 通天橋":{ja:"東福寺 通天橋",en:"Tofuku-ji Tsutenkyo Bridge",zh:"东福寺 通天桥",ko:"도후쿠지 쓰텐교","zh-tw":"東福寺 通天橋",es:"Puente Tsutenkyo de Tofuku-ji",fr:"Pont Tsutenkyo de Tofuku-ji",de:"Tofuku-ji Tsutenkyo-Brücke",pt:"Ponte Tsutenkyo de Tofuku-ji",it:"Ponte Tsutenkyo di Tofuku-ji",ru:"Мост Цутэнкё Тофуку-дзи",ar:"جسر تسوتينكيو",hi:"तोफ़ुकु-जी सुतेन्क्यो पुल",th:"สะพานซูเทนเคียวโทฟุกุจิ",vi:"Cầu Tsutenkyo Tofuku-ji",id:"Jembatan Tsutenkyo Tofuku-ji",tr:"Tofuku-ji Tsutenkyo Köprüsü",nl:"Tofuku-ji Tsutenkyo Brug",pl:"Most Tsutenkyo Tofuku-ji",sv:"Tofuku-ji Tsutenkyo-bron"},
   "紅葉":{ja:"紅葉",en:"Autumn Foliage",zh:"红叶",ko:"단풍","zh-tw":"紅葉",es:"Follaje otoñal",fr:"Feuillage d'automne",de:"Herbstlaub",pt:"Folhagem outonal",it:"Fogliame autunnale",ru:"Осенняя листва",ar:"أوراق الخريف",hi:"शरद पर्णसमूह",th:"ใบไม้เปลี่ยนสี",vi:"Lá thu",id:"Dedaunan musim gugur",tr:"Sonbahar yaprakları",nl:"Herfstkleuren",pl:"Jesienne liście",sv:"Höstlöv"},
   "紅葉ライトアップ":{ja:"紅葉ライトアップ",en:"Autumn Illumination",zh:"红叶灯光秀",ko:"단풍 라이트업","zh-tw":"紅葉點燈",es:"Iluminación otoñal",fr:"Illumination automnale",de:"Herbstbeleuchtung",pt:"Iluminação outonal",it:"Illuminazione autunnale",ru:"Осенняя подсветка",ar:"إضاءة الخريف",hi:"शरद रोशनी",th:"ไฟประดับใบไม้แดง",vi:"Ánh sáng mùa thu",id:"Iluminasi musim gugur",tr:"Sonbahar aydınlatması",nl:"Herfstverlichting",pl:"Jesienna iluminacja",sv:"Höstbelysning"},
@@ -254,15 +256,15 @@ const PREFECTURES = [
     lat: 35.01, lng: 135.77,
     photos: [
       /* 清水寺エリア */
-      { id: "DSC07601_cocitq", loc: "清水寺" },
-      { id: "DSC07592_anjr5r", loc: "八坂の塔" },
-      { id: "DSC07563_icizbb", loc: "清水寺 三重塔" },
-      { id: "DSC07337_kaejdo", loc: "清水寺 三重塔" },
+      { id: "DSC07601_cocitq", loc: "清水寺周辺" },
+      { id: "DSC07592_anjr5r", loc: "清水寺" },
+      { id: "DSC07563_icizbb", loc: "清水寺" },
+      { id: "DSC07337_kaejdo", loc: "清水寺" },
       { id: "DSC07394_hhq8bw", loc: "清水寺" },
-      { id: "DSC07393_xtp40k", loc: "清水寺 三重塔" },
-      { id: "DSC07386_vrsz1g", loc: "清水寺 三重塔" },
-      { id: "DSC07337_rjoogf", loc: "清水寺 本堂" },
-      { id: "DSC07355_zyqovr", loc: "清水寺 紅葉ライトアップ" },
+      { id: "DSC07393_xtp40k", loc: "清水寺" },
+      { id: "DSC07386_vrsz1g", loc: "清水寺" },
+      { id: "DSC07337_rjoogf", loc: "清水寺" },
+      { id: "DSC07355_zyqovr", loc: "清水寺" },
       /* 金閣寺 */
       { id: "DSC07313_akiagf", loc: "金閣寺" },
       { id: "DSC07290_sz6x7s", loc: "金閣寺" },
@@ -273,13 +275,13 @@ const PREFECTURES = [
       { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂" },
       { id: "DSC07495_qorawr", loc: "平等院鳳凰堂" },
       /* 紅葉 */
-      { id: "DSC07546_gaplky", loc: "東福寺 通天橋" },
-      { id: "DSC07425_zsvfno", loc: "紅葉" },
-      { id: "DSC07417_dqlfwd", loc: "紅葉" },
-      { id: "DSC07408_qarh4p", loc: "紅葉ライトアップ" },
-      { id: "DSC07451_s1rhpd", loc: "紅葉" },
-      { id: "DSC07241_kxqtal", loc: "寺院建築" },
-      { id: "DSC07173_ogwql9", loc: "紅葉" },
+      { id: "DSC07546_gaplky", loc: "清水寺" },
+      { id: "DSC07425_zsvfno", loc: "東福寺" },
+      { id: "DSC07417_dqlfwd", loc: "東福寺" },
+      { id: "DSC07408_qarh4p", loc: "東福寺" },
+      { id: "DSC07451_s1rhpd", loc: "東福寺" },
+      { id: "DSC07241_kxqtal", loc: "東福寺" },
+      { id: "DSC07173_ogwql9", loc: "東福寺" },
     ]
   },
   {
