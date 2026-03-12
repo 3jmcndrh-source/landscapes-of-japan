@@ -236,6 +236,7 @@ const LOC_I18N = {
   "清水寺 紅葉ライトアップ":{ja:"清水寺 紅葉ライトアップ",en:"Kiyomizu-dera Autumn Illumination",zh:"清水寺 红叶灯光秀",ko:"기요미즈데라 단풍 라이트업","zh-tw":"清水寺 紅葉點燈",es:"Iluminación otoñal de Kiyomizu-dera",fr:"Illumination automnale de Kiyomizu-dera",de:"Kiyomizu-dera Herbstbeleuchtung",pt:"Iluminação outonal de Kiyomizu-dera",it:"Illuminazione autunnale di Kiyomizu-dera",ru:"Осенняя подсветка Киёмидзу-дэра",ar:"إضاءة خريف كيوميزو",hi:"कियोमिज़ु-देरा शरद रोशनी",th:"ไฟประดับใบไม้แดงคิโยมิสึ",vi:"Ánh sáng mùa thu Kiyomizu-dera",id:"Iluminasi musim gugur Kiyomizu-dera",tr:"Kiyomizu-dera Sonbahar Aydınlatması",nl:"Kiyomizu-dera Herfstverlichting",pl:"Jesienna iluminacja Kiyomizu-dera",sv:"Kiyomizu-dera Höstbelysning"},
   "八坂の塔":{ja:"八坂の塔",en:"Yasaka Pagoda",zh:"八坂塔",ko:"야사카 탑","zh-tw":"八坂塔",es:"Pagoda Yasaka",fr:"Pagode Yasaka",de:"Yasaka-Pagode",pt:"Pagode Yasaka",it:"Pagoda Yasaka",ru:"Пагода Ясака",ar:"باغودا ياساكا",hi:"यासाका पैगोडा",th:"เจดีย์ยาซากะ",vi:"Tháp Yasaka",id:"Pagoda Yasaka",tr:"Yasaka Pagodası",nl:"Yasaka Pagode",pl:"Pagoda Yasaka",sv:"Yasaka Pagod"},
   "金閣寺":{ja:"金閣寺",en:"Kinkaku-ji",zh:"金阁寺",ko:"킨카쿠지","zh-tw":"金閣寺",es:"Kinkaku-ji",fr:"Kinkaku-ji",de:"Kinkaku-ji",pt:"Kinkaku-ji",it:"Kinkaku-ji",ru:"Кинкаку-дзи",ar:"كينكاكو-جي",hi:"किंकाकु-जी",th:"คินคาคุจิ",vi:"Kinkaku-ji",id:"Kinkaku-ji",tr:"Kinkaku-ji",nl:"Kinkaku-ji",pl:"Kinkaku-ji",sv:"Kinkaku-ji"},
+  "法隆寺":{ja:"法隆寺",en:"Horyu-ji",zh:"法隆寺",ko:"호류지","zh-tw":"法隆寺",es:"Horyu-ji",fr:"Horyu-ji",de:"Horyu-ji",pt:"Horyu-ji",it:"Horyu-ji",ru:"Хорю-дзи",ar:"هوريوجي",hi:"होर्यू-जी",th:"โฮริวจิ",vi:"Chùa Horyu-ji",id:"Horyu-ji",tr:"Horyu-ji",nl:"Horyu-ji",pl:"Horyu-ji",sv:"Horyu-ji"},
   "法隆寺 夢殿":{ja:"法隆寺 夢殿",en:"Horyu-ji Yumedono",zh:"法隆寺 梦殿",ko:"호류지 유메도노","zh-tw":"法隆寺 夢殿",es:"Yumedono de Horyu-ji",fr:"Yumedono de Horyu-ji",de:"Horyu-ji Yumedono",pt:"Yumedono de Horyu-ji",it:"Yumedono di Horyu-ji",ru:"Юмэдоно Хорю-дзи",ar:"يوميدونو هوريوجي",hi:"होर्यू-जी युमेदोनो",th:"ยูเมโดโนะ โฮริวจิ",vi:"Yumedono Horyu-ji",id:"Yumedono Horyu-ji",tr:"Horyu-ji Yumedono",nl:"Horyu-ji Yumedono",pl:"Yumedono Horyu-ji",sv:"Horyu-ji Yumedono"},
   "東寺 五重塔":{ja:"東寺 五重塔",en:"To-ji Five-Story Pagoda",zh:"东寺 五重塔",ko:"도지 오중탑","zh-tw":"東寺 五重塔",es:"Pagoda de cinco pisos de To-ji",fr:"Pagode à cinq étages de To-ji",de:"To-ji Fünfstöckige Pagode",pt:"Pagode de cinco andares de To-ji",it:"Pagoda a cinque piani di To-ji",ru:"Пятиярусная пагода То-дзи",ar:"باغودا توجي",hi:"तो-जी पंचमंजिला पैगोडा",th:"เจดีย์ห้าชั้นโทจิ",vi:"Tháp năm tầng To-ji",id:"Pagoda lima lantai To-ji",tr:"To-ji Beş Katlı Pagoda",nl:"To-ji Vijfverdiepingen Pagode",pl:"Pięciopiętrowa pagoda To-ji",sv:"To-ji Femvånings Pagod"},
   "東寺":{ja:"東寺",en:"To-ji Temple",zh:"东寺",ko:"도지","zh-tw":"東寺",es:"Templo To-ji",fr:"Temple To-ji",de:"To-ji Tempel",pt:"Templo To-ji",it:"Tempio To-ji",ru:"Храм То-дзи",ar:"معبد توجي",hi:"तो-जी मंदिर",th:"วัดโทจิ",vi:"Chùa To-ji",id:"Kuil To-ji",tr:"To-ji Tapınağı",nl:"To-ji Tempel",pl:"Świątynia To-ji",sv:"To-ji Tempel"},
@@ -271,7 +272,7 @@ const PREFECTURES = [
       { id: "DSC07290_sz6x7s", loc: "金閣寺" },
       /* 東寺 */
       { id: "DSC07266_ii8otn", loc: "法隆寺 夢殿" },
-      { id: "DSC07249_ijee7w", loc: "東寺" },
+      { id: "DSC07249_ijee7w", loc: "法隆寺" },
       /* 平等院（宇治） */
       { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂" },
       { id: "DSC07495_qorawr", loc: "平等院鳳凰堂" },
