@@ -282,7 +282,7 @@ const PREFECTURES = [
       { id: "DSC07417_dqlfwd", loc: "東福寺" },
       { id: "DSC07408_qarh4p", loc: "東福寺" },
       { id: "DSC07451_s1rhpd", loc: "東福寺" },
-      { id: "DSC07241_kxqtal", loc: "東福寺" },
+      { id: "DSC07241_kxqtal", loc: "法隆寺" },
       { id: "DSC07173_ogwql9", loc: "東福寺" },
     ]
   },
