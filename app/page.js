@@ -275,7 +275,7 @@ const PREFECTURES = [
       { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂" },
       { id: "DSC07495_qorawr", loc: "平等院鳳凰堂" },
       /* 紅葉 */
-      { id: "DSC07546_gaplky", loc: "清水寺" },
+      { id: "DSC07546_gaplky", loc: "東福寺" },
       { id: "DSC07425_zsvfno", loc: "東福寺" },
       { id: "DSC07417_dqlfwd", loc: "東福寺" },
       { id: "DSC07408_qarh4p", loc: "東福寺" },
