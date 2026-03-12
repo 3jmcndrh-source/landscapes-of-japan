@@ -283,13 +283,13 @@ const PREFECTURES = [
       { id: "DSC07408_qarh4p", loc: "東福寺" },
       { id: "DSC07451_s1rhpd", loc: "東福寺" },
       { id: "DSC07241_kxqtal", loc: "法隆寺" },
-      { id: "DSC07173_ogwql9", loc: "東福寺" },
     ]
   },
   {
     pref: "兵庫県",
     lat: 34.84, lng: 134.69,
     photos: [
+      { id: "DSC07173_ogwql9", loc: "姫路城" },
       { id: "DSC07150_hlpfgz", loc: "姫路城" },
       { id: "DSC07139_h55edw", loc: "姫路城" },
       { id: "DSC07127_wo4ifg", loc: "姫路城" },
