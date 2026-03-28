@@ -275,6 +275,12 @@ const PREFECTURES = [
       { id: "DSC07337_rjoogf", loc: "清水寺", year: 2025 },
       { id: "DSC07313_akiagf", loc: "金閣寺", year: 2025 },
       { id: "DSC07290_sz6x7s", loc: "金閣寺", year: 2025 },
+    ]
+  },
+  {
+    pref: "奈良県",
+    lat: 34.69, lng: 135.83,
+    photos: [
       { id: "DSC07266_ii8otn", loc: "法隆寺 夢殿", year: 2025 },
       { id: "DSC07249_ijee7w", loc: "法隆寺", year: 2025 },
       { id: "DSC07241_kxqtal", loc: "法隆寺", year: 2025 },
