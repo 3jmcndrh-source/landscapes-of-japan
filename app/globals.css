@@ -55,7 +55,12 @@ html,body{background:#0a0a0a;color:#e8e4df}
 .cin-hcard:hover img{transform:scale(1.03);filter:brightness(1) saturate(1)}
 .cin-watermark{position:absolute;bottom:10px;right:14px;font-family:'Noto Sans',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.4);pointer-events:none;user-select:none;z-index:2}
 .cin-scroll-indicator{font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:13px;color:rgba(220,190,100,.45);text-align:center;margin-top:12px;letter-spacing:.15em}
-.cin-map-responsive{max-width:900px;margin:0 auto;padding:20px 0}
+.cin-map-responsive{max-width:900px;margin:0 auto;padding:20px 0;position:relative}
+.map-zoom-controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px}
+.map-zoom-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(232,228,223,.06);border:1px solid rgba(232,228,223,.15);color:rgba(232,228,223,.55);font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:12px;letter-spacing:.05em;padding:8px 16px;border-radius:20px;cursor:pointer;transition:all .25s}
+.map-zoom-btn:hover{color:rgba(232,228,223,.8);background:rgba(232,228,223,.10);border-color:rgba(232,228,223,.25)}
+.map-zoom-btn-active{color:rgba(220,190,100,.9);background:rgba(220,190,100,.12);border-color:rgba(220,190,100,.4)}
+.map-zoom-btn-active:hover{color:rgba(220,190,100,1);background:rgba(220,190,100,.2);border-color:rgba(220,190,100,.6)}
 .cin-map-wrap{max-width:1200px;margin:0 auto 60px;padding:0 24px}
 .cin-map-box{background:rgba(232,228,223,.05);border:1px solid rgba(232,228,223,.12);border-radius:8px;padding:32px 24px}
 .cin-footer{text-align:center;padding:40px 24px 80px;font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:13px;color:rgba(232,228,223,.35);line-height:1.8}
