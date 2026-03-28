@@ -257,112 +257,112 @@ const PREFECTURES = [
     pref: "京都府",
     lat: 35.01, lng: 135.77,
     photos: [
-      { id: "DSC07601_cocitq", loc: "清水寺周辺" },
-      { id: "DSC07592_anjr5r", loc: "清水寺" },
-      { id: "DSC07563_icizbb", loc: "清水寺" },
-      { id: "DSC07546_gaplky", loc: "清水寺" },
-      { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂" },
-      { id: "DSC07495_qorawr", loc: "平等院鳳凰堂" },
-      { id: "DSC07451_s1rhpd", loc: "東福寺" },
-      { id: "DSC07425_zsvfno", loc: "東福寺" },
-      { id: "DSC07417_dqlfwd", loc: "東福寺" },
-      { id: "DSC07408_qarh4p", loc: "東福寺" },
-      { id: "DSC07394_hhq8bw", loc: "清水寺" },
-      { id: "DSC07393_xtp40k", loc: "清水寺" },
-      { id: "DSC07386_vrsz1g", loc: "清水寺" },
-      { id: "DSC07355_zyqovr", loc: "清水寺" },
-      { id: "DSC07337_kaejdo", loc: "清水寺" },
-      { id: "DSC07337_rjoogf", loc: "清水寺" },
-      { id: "DSC07313_akiagf", loc: "金閣寺" },
-      { id: "DSC07290_sz6x7s", loc: "金閣寺" },
-      { id: "DSC07266_ii8otn", loc: "法隆寺 夢殿" },
-      { id: "DSC07249_ijee7w", loc: "法隆寺" },
-      { id: "DSC07241_kxqtal", loc: "法隆寺" },
+      { id: "DSC07601_cocitq", loc: "清水寺周辺", year: 2025 },
+      { id: "DSC07592_anjr5r", loc: "清水寺", year: 2025 },
+      { id: "DSC07563_icizbb", loc: "清水寺", year: 2025 },
+      { id: "DSC07546_gaplky", loc: "清水寺", year: 2025 },
+      { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂", year: 2025 },
+      { id: "DSC07495_qorawr", loc: "平等院鳳凰堂", year: 2025 },
+      { id: "DSC07451_s1rhpd", loc: "東福寺", year: 2025 },
+      { id: "DSC07425_zsvfno", loc: "東福寺", year: 2025 },
+      { id: "DSC07417_dqlfwd", loc: "東福寺", year: 2025 },
+      { id: "DSC07408_qarh4p", loc: "東福寺", year: 2025 },
+      { id: "DSC07394_hhq8bw", loc: "清水寺", year: 2025 },
+      { id: "DSC07393_xtp40k", loc: "清水寺", year: 2025 },
+      { id: "DSC07386_vrsz1g", loc: "清水寺", year: 2025 },
+      { id: "DSC07355_zyqovr", loc: "清水寺", year: 2025 },
+      { id: "DSC07337_kaejdo", loc: "清水寺", year: 2025 },
+      { id: "DSC07337_rjoogf", loc: "清水寺", year: 2025 },
+      { id: "DSC07313_akiagf", loc: "金閣寺", year: 2025 },
+      { id: "DSC07290_sz6x7s", loc: "金閣寺", year: 2025 },
+      { id: "DSC07266_ii8otn", loc: "法隆寺 夢殿", year: 2025 },
+      { id: "DSC07249_ijee7w", loc: "法隆寺", year: 2025 },
+      { id: "DSC07241_kxqtal", loc: "法隆寺", year: 2025 },
     ]
   },
   {
     pref: "兵庫県",
     lat: 34.84, lng: 134.69,
     photos: [
-      { id: "DSC07173_ogwql9", loc: "姫路城" },
-      { id: "DSC07150_hlpfgz", loc: "姫路城" },
-      { id: "DSC07139_h55edw", loc: "姫路城" },
-      { id: "DSC07127_wo4ifg", loc: "姫路城" },
-      { id: "DSC07121_fxsgn9", loc: "姫路城" },
+      { id: "DSC07173_ogwql9", loc: "姫路城", year: 2025 },
+      { id: "DSC07150_hlpfgz", loc: "姫路城", year: 2025 },
+      { id: "DSC07139_h55edw", loc: "姫路城", year: 2025 },
+      { id: "DSC07127_wo4ifg", loc: "姫路城", year: 2025 },
+      { id: "DSC07121_fxsgn9", loc: "姫路城", year: 2025 },
     ]
   },
   {
     pref: "愛知県",
     lat: 35.18, lng: 136.91,
     photos: [
-      { id: "d9zzmvbrhcra5yiz7wf2", loc: "東山動物園" },
-      { id: "esnwda2bmizzfkzz8wio", loc: "東山動物園" },
-      { id: "d7kuuzdma3caurtxqnl2", loc: "東山動物園" },
-      { id: "bmnvk4yvrdr0tbuy1mpu", loc: "東山動物園" },
-      { id: "tdt6v72szvtnkkljprzo", loc: "東山動物園" },
-      { id: "rpx3qhx4cetajlsvhbdf", loc: "東山動物園" },
-      { id: "aggz4yfjjq5jb6ksmjas", loc: "東山動物園" },
-      { id: "nvppjkkhgoidh24ilcri", loc: "東山動物園" },
-      { id: "j8dccwqcudkzcjclwjdl", loc: "東山動物園" },
-      { id: "gzzzjgl7zbppkkv5fafp", loc: "東山動物園" },
-      { id: "oalpuwnwov6mqkdoxuxj", loc: "東山動物園" },
-      { id: "ihvclom5aynceacv1b9c", loc: "東山動物園" },
-      { id: "fmkvychabpy0nkfsy7ct", loc: "東山動物園" },
-      { id: "iruajiykij2sfoqdxxgm", loc: "東山動物園" },
-      { id: "yfbqyipnasg0ccxfn9c8", loc: "東山動物園" },
-      { id: "smx4ztgstf905vdrbmvc", loc: "東山動物園" },
-      { id: "q1mzddbwimo7vypffpak", loc: "東山動物園" },
-      { id: "uwefhpwm7e85ewi68tgp", loc: "東山動物園" },
-      { id: "cemg184iixgrlutqlkkr", loc: "東山動物園" },
-      { id: "cfnt5wcgast0i0c9ha5h", loc: "東山動物園" },
-      { id: "ciehvlktddmfmao1zhj4", loc: "東山動物園" },
-      { id: "gswfddvq2q8c0t8saclg", loc: "東山動物園" },
-      { id: "ezesf5vrqpli8znbvjpi", loc: "東山動物園" },
-      { id: "wdlkpcyvsr5g4sklgd4w", loc: "東山動物園" },
+      { id: "d9zzmvbrhcra5yiz7wf2", loc: "東山動物園", year: 2026 },
+      { id: "esnwda2bmizzfkzz8wio", loc: "東山動物園", year: 2026 },
+      { id: "d7kuuzdma3caurtxqnl2", loc: "東山動物園", year: 2026 },
+      { id: "bmnvk4yvrdr0tbuy1mpu", loc: "東山動物園", year: 2026 },
+      { id: "tdt6v72szvtnkkljprzo", loc: "東山動物園", year: 2026 },
+      { id: "rpx3qhx4cetajlsvhbdf", loc: "東山動物園", year: 2026 },
+      { id: "aggz4yfjjq5jb6ksmjas", loc: "東山動物園", year: 2026 },
+      { id: "nvppjkkhgoidh24ilcri", loc: "東山動物園", year: 2026 },
+      { id: "j8dccwqcudkzcjclwjdl", loc: "東山動物園", year: 2026 },
+      { id: "gzzzjgl7zbppkkv5fafp", loc: "東山動物園", year: 2026 },
+      { id: "oalpuwnwov6mqkdoxuxj", loc: "東山動物園", year: 2026 },
+      { id: "ihvclom5aynceacv1b9c", loc: "東山動物園", year: 2026 },
+      { id: "fmkvychabpy0nkfsy7ct", loc: "東山動物園", year: 2026 },
+      { id: "iruajiykij2sfoqdxxgm", loc: "東山動物園", year: 2026 },
+      { id: "yfbqyipnasg0ccxfn9c8", loc: "東山動物園", year: 2026 },
+      { id: "smx4ztgstf905vdrbmvc", loc: "東山動物園", year: 2026 },
+      { id: "q1mzddbwimo7vypffpak", loc: "東山動物園", year: 2026 },
+      { id: "uwefhpwm7e85ewi68tgp", loc: "東山動物園", year: 2026 },
+      { id: "cemg184iixgrlutqlkkr", loc: "東山動物園", year: 2026 },
+      { id: "cfnt5wcgast0i0c9ha5h", loc: "東山動物園", year: 2026 },
+      { id: "ciehvlktddmfmao1zhj4", loc: "東山動物園", year: 2026 },
+      { id: "gswfddvq2q8c0t8saclg", loc: "東山動物園", year: 2026 },
+      { id: "ezesf5vrqpli8znbvjpi", loc: "東山動物園", year: 2026 },
+      { id: "wdlkpcyvsr5g4sklgd4w", loc: "東山動物園", year: 2026 },
     ]
   },
   {
     pref: "三重県",
     lat: 34.73, lng: 136.51,
     photos: [
-      { id: "ngy6lud2tgbztbyf4jke", loc: "梅林公園" },
-      { id: "urycxqz4g4k3vra6gzzw", loc: "梅林公園" },
-      { id: "bb924wbc5x1ny5c8hxob", loc: "横山展望台" },
-      { id: "ajf05ybnec7njy9ubaqi", loc: "横山展望台" },
-      { id: "jdobpyucdfhouqrswhec", loc: "横山展望台" },
-      { id: "rc4ukzba1zlsefhsfbz3", loc: "朝熊山展望台" },
-      { id: "dhwplqr8k5e49mis89hz", loc: "おはらい町・おかげ横丁" },
-      { id: "n0prvjjho2nf5ucrsoil", loc: "おはらい町・おかげ横丁" },
-      { id: "queyyiuttwaei8kiznbc", loc: "おはらい町・おかげ横丁" },
-      { id: "zq5o5jklm6eehcprk5w4", loc: "おはらい町・おかげ横丁" },
-      { id: "vxpu71gd5qnd3g1ey91f", loc: "おはらい町・おかげ横丁" },
-      { id: "emfqpctrgkvremxuzxvj", loc: "おはらい町・おかげ横丁" },
-      { id: "gzs6fz39kbyjlywoppuf", loc: "伊勢神宮" },
-      { id: "w2h5cjtnpeekmtld3dmy", loc: "伊勢神宮" },
-      { id: "wbdpz61p1xxcdumsr4ua", loc: "伊勢神宮" },
-      { id: "r244rjurupipzhamaiuv", loc: "伊勢神宮" },
-      { id: "lt1vn7wimwlslgwgv6qk", loc: "伊勢神宮" },
-      { id: "lpspgxkqt5vekjyztt5g", loc: "伊勢神宮" },
-      { id: "oa1yiaxflqbq3afxsggp", loc: "伊勢神宮" },
-      { id: "pby91yxkkrxjdaflielh", loc: "夫婦岩" },
-      { id: "elpprz829ghgpuvgh9c1", loc: "鳥羽水族館" },
-      { id: "dbexqjaj5yoy7tugr6nv", loc: "鳥羽水族館" },
-      { id: "nze6lvbizsyc2rdoeksi", loc: "鳥羽水族館" },
-      { id: "v0pbwtscokak0sfnz9lc", loc: "鳥羽水族館" },
-      { id: "gvswuk8pqczrhib2fo0d", loc: "鳥羽水族館" },
-      { id: "lrn9jljffnnkiifl02jv", loc: "鳥羽水族館" },
-      { id: "oxltiu41uiekga5zrdlc", loc: "鳥羽水族館" },
-      { id: "hby2zcizym4q02kyplrs", loc: "鳥羽水族館" },
-      { id: "zrtfurwejoxf4zdqoxe9", loc: "鳥羽水族館" },
-      { id: "aiaqkp1bnrxmckphpowu", loc: "鳥羽水族館" },
-      { id: "uvegilhugmzsppzt1i3n", loc: "鳥羽水族館" },
-      { id: "pkfhxqbarnxusn6jdpdy", loc: "鳥羽水族館" },
-      { id: "jjkfqca5ztizzngwxvy0", loc: "鳥羽水族館" },
-      { id: "rfzr79edmgjca6opnljt", loc: "鳥羽水族館" },
-      { id: "ndtofmydaitspbsburef", loc: "鳥羽水族館" },
-      { id: "ysiak3am7dmste2sldb4", loc: "鳥羽水族館" },
-      { id: "xbhrwavgo6wbsuu5jl9k", loc: "鳥羽水族館" },
-      { id: "uouqy7tcwrewlt34ai6z", loc: "鳥羽水族館" },
+      { id: "ngy6lud2tgbztbyf4jke", loc: "梅林公園", year: 2026 },
+      { id: "urycxqz4g4k3vra6gzzw", loc: "梅林公園", year: 2026 },
+      { id: "bb924wbc5x1ny5c8hxob", loc: "横山展望台", year: 2026 },
+      { id: "ajf05ybnec7njy9ubaqi", loc: "横山展望台", year: 2026 },
+      { id: "jdobpyucdfhouqrswhec", loc: "横山展望台", year: 2026 },
+      { id: "rc4ukzba1zlsefhsfbz3", loc: "朝熊山展望台", year: 2026 },
+      { id: "dhwplqr8k5e49mis89hz", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "n0prvjjho2nf5ucrsoil", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "queyyiuttwaei8kiznbc", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "zq5o5jklm6eehcprk5w4", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "vxpu71gd5qnd3g1ey91f", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "emfqpctrgkvremxuzxvj", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "gzs6fz39kbyjlywoppuf", loc: "伊勢神宮", year: 2026 },
+      { id: "w2h5cjtnpeekmtld3dmy", loc: "伊勢神宮", year: 2026 },
+      { id: "wbdpz61p1xxcdumsr4ua", loc: "伊勢神宮", year: 2026 },
+      { id: "r244rjurupipzhamaiuv", loc: "伊勢神宮", year: 2026 },
+      { id: "lt1vn7wimwlslgwgv6qk", loc: "伊勢神宮", year: 2026 },
+      { id: "lpspgxkqt5vekjyztt5g", loc: "伊勢神宮", year: 2026 },
+      { id: "oa1yiaxflqbq3afxsggp", loc: "伊勢神宮", year: 2026 },
+      { id: "pby91yxkkrxjdaflielh", loc: "夫婦岩", year: 2026 },
+      { id: "elpprz829ghgpuvgh9c1", loc: "鳥羽水族館", year: 2026 },
+      { id: "dbexqjaj5yoy7tugr6nv", loc: "鳥羽水族館", year: 2026 },
+      { id: "nze6lvbizsyc2rdoeksi", loc: "鳥羽水族館", year: 2026 },
+      { id: "v0pbwtscokak0sfnz9lc", loc: "鳥羽水族館", year: 2026 },
+      { id: "gvswuk8pqczrhib2fo0d", loc: "鳥羽水族館", year: 2026 },
+      { id: "lrn9jljffnnkiifl02jv", loc: "鳥羽水族館", year: 2026 },
+      { id: "oxltiu41uiekga5zrdlc", loc: "鳥羽水族館", year: 2026 },
+      { id: "hby2zcizym4q02kyplrs", loc: "鳥羽水族館", year: 2026 },
+      { id: "zrtfurwejoxf4zdqoxe9", loc: "鳥羽水族館", year: 2026 },
+      { id: "aiaqkp1bnrxmckphpowu", loc: "鳥羽水族館", year: 2026 },
+      { id: "uvegilhugmzsppzt1i3n", loc: "鳥羽水族館", year: 2026 },
+      { id: "pkfhxqbarnxusn6jdpdy", loc: "鳥羽水族館", year: 2026 },
+      { id: "jjkfqca5ztizzngwxvy0", loc: "鳥羽水族館", year: 2026 },
+      { id: "rfzr79edmgjca6opnljt", loc: "鳥羽水族館", year: 2026 },
+      { id: "ndtofmydaitspbsburef", loc: "鳥羽水族館", year: 2026 },
+      { id: "ysiak3am7dmste2sldb4", loc: "鳥羽水族館", year: 2026 },
+      { id: "xbhrwavgo6wbsuu5jl9k", loc: "鳥羽水族館", year: 2026 },
+      { id: "uouqy7tcwrewlt34ai6z", loc: "鳥羽水族館", year: 2026 },
     ]
   },
 ];
@@ -436,17 +436,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
     return () => { cancelled = true; };
   }, []);
 
-  /* Pinch-zoom and pan for the map */
-  useEffect(() => {
-    if (!svgRef.current || !gRef.current) return;
-    const svg = d3.select(svgRef.current);
-    const g = d3.select(gRef.current);
-    const zoom = d3.zoom()
-      .scaleExtent([1, 5])
-      .on("zoom", (e) => { g.attr("transform", e.transform); });
-    svg.call(zoom);
-    return () => svg.on(".zoom", null);
-  }, [loading]);
+  /* Map zoom/pan disabled — prevents scroll hijack on both PC and mobile */
 
   /* Helper: compute centroid of a polygon ring */
   const ringCentroid = (ring) => {
@@ -552,7 +542,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           <span style={{ fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 14, color: "rgba(220,190,100,.5)", letterSpacing: ".05em" }}>{t.mapH}</span>
         </div>
       </div>
-      <svg ref={svgRef} viewBox={"0 0 " + MW + " " + MH} style={{ width: "100%", height: "auto", display: "block", touchAction: "none" }} onClick={handleSvgClick}>
+      <svg ref={svgRef} viewBox={"0 0 " + MW + " " + MH} style={{ width: "100%", height: "auto", display: "block", touchAction: "pan-y" }} onClick={handleSvgClick}>
         <g ref={gRef}>
         <defs>
           <filter id="glow"><feGaussianBlur stdDeviation="4" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
@@ -822,7 +812,7 @@ export default function Page() {
     const list = [];
     PREFECTURES.forEach(pf => {
       pf.photos.forEach(photo => {
-        list.push({ url: getUrl(photo, lbW), pref: pf.pref, loc: photo.loc || "" });
+        list.push({ url: getUrl(photo, lbW), pref: pf.pref, loc: photo.loc || "", year: photo.year || null });
       });
     });
     return list;
@@ -947,6 +937,7 @@ export default function Page() {
                       <div className="cin-hcard-img-wrap">
                         <img src={getUrl(photo, thumbW)} alt="" loading="lazy" draggable="false" />
                         {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
+                        {photo.year && <div className="cin-hcard-year">{photo.year}</div>}
                         <div className="cin-watermark">Landscapes of Japan</div>
                       </div>
                     </div>
@@ -1001,6 +992,7 @@ export default function Page() {
             <div className="cin-lb-info">
               <div className="cin-lb-pref">{getPrefName(cur.pref, lang)}</div>
               {cur.loc && <div className="cin-lb-loc">{getLocName(cur.loc, lang)}</div>}
+              {cur.year && <div className="cin-lb-year">{cur.year}</div>}
             </div>
             <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>

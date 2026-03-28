@@ -81,8 +81,10 @@ html,body{background:#0a0a0a;color:#e8e4df}
 .cin-lb-info{position:fixed;top:20px;left:20px;z-index:301;pointer-events:none;user-select:none}
 .cin-lb-pref{font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:22px;color:rgba(255,255,255,.7);letter-spacing:.08em;font-weight:500}
 .cin-lb-loc{font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:15px;color:rgba(255,255,255,.4);margin-top:6px;letter-spacing:.05em}
+.cin-lb-year{font-family:'Noto Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.3);margin-top:4px;letter-spacing:.05em}
 .cin-hcard-loc{position:absolute;bottom:10px;left:14px;font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.05em;pointer-events:none;user-select:none;z-index:2;display:flex;align-items:center;gap:4px}
 .cin-hcard-loc svg{width:11px;height:11px;fill:none;stroke:rgba(255,255,255,.4);stroke-width:2}
+.cin-hcard-year{position:absolute;top:10px;right:14px;font-family:'Noto Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.05em;pointer-events:none;user-select:none;z-index:2}
 .cin-lb-arrow{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;z-index:301}
 .cin-lb-arrow:hover{background:rgba(255,255,255,.15);color:#fff}
 .cin-lb-arrow.left{left:16px}
