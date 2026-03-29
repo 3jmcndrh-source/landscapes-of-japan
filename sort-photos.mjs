@@ -34,8 +34,19 @@ cloudinary.config({
 // page.js からPREFECTURESを抽出
 const content = readFileSync(PAGE_JS, "utf-8");
 const prefStart = content.indexOf("const PREFECTURES = [");
-const prefEnd = content.indexOf("];\n", prefStart + 100);
-const prefBlock = content.slice(prefStart, prefEnd + 2);
+// PREFECTURESの閉じ ]; を正確に見つける（ブラケットの深さを追跡）
+let depth = 0, prefEnd = -1;
+for (let i = prefStart + "const PREFECTURES = [".length; i < content.length; i++) {
+  if (content[i] === "[") depth++;
+  else if (content[i] === "]") {
+    if (depth === 0) { prefEnd = i + 1; break; }
+    depth--;
+  }
+}
+if (prefEnd < 0) { console.error("PREFECTURESの終端が見つかりません"); process.exit(1); }
+// ]; の ; も含める
+if (content[prefEnd] === ";") prefEnd++;
+const prefBlock = content.slice(prefStart, prefEnd);
 
 // 全写真IDを抽出
 const idRegex = /id:\s*"([^"]+)"/g;
@@ -98,12 +109,12 @@ while ((pm = prefRegex.exec(prefBlock)) !== null) {
   const lng = parseFloat(pm[3]);
   const photosBlock = pm[4];
 
-  // 各写真エントリを抽出
-  const photoRegex = /\{\s*id:\s*"([^"]+)",\s*loc:\s*"([^"]+)"\s*\}/g;
+  // 各写真エントリを抽出（year付きにも対応）
+  const photoRegex = /\{\s*id:\s*"([^"]+)",\s*loc:\s*"([^"]+)"(?:,\s*year:\s*(\d+))?\s*\}/g;
   const photos = [];
   let pp;
   while ((pp = photoRegex.exec(photosBlock)) !== null) {
-    photos.push({ id: pp[1], loc: pp[2] });
+    photos.push({ id: pp[1], loc: pp[2], year: pp[3] ? parseInt(pp[3]) : null });
   }
 
   // 日付降順（新しい順）にソート
@@ -125,7 +136,10 @@ while ((pm = prefRegex.exec(prefBlock)) !== null) {
 // page.js を更新
 const photosStr = prefectures.map(pf => {
   const entries = pf.photos
-    .map(p => `      { id: "${p.id}", loc: "${p.loc}" },`)
+    .map(p => {
+      const yr = p.year || (dateMap.get(p.id) ? dateMap.get(p.id).getFullYear() : null);
+      return yr ? `      { id: "${p.id}", loc: "${p.loc}", year: ${yr} },` : `      { id: "${p.id}", loc: "${p.loc}" },`;
+    })
     .join("\n");
   return `  {
     pref: "${pf.pref}",
@@ -138,7 +152,7 @@ ${entries}
 
 const newPrefBlock = `const PREFECTURES = [\n${photosStr}\n];`;
 
-const updatedContent = content.slice(0, prefStart) + newPrefBlock + content.slice(prefEnd + 2);
+const updatedContent = content.slice(0, prefStart) + newPrefBlock + content.slice(prefEnd);
 writeFileSync(PAGE_JS, updatedContent, "utf-8");
 
 console.log("\npage.js を更新しました（日付降順にソート済み）");

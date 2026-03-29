@@ -371,6 +371,101 @@ const PREFECTURES = [
       { id: "uouqy7tcwrewlt34ai6z", loc: "鳥羽水族館", year: 2026 },
     ]
   },
+  {
+    pref: "北海道",
+    lat: 43.06, lng: 141.35,
+    photos: [
+      { id: "rj0whx4syklikykwjq6z", loc: "さっぽろ雪まつり", year: 2026 },
+      { id: "cgazaabjctzmga9yojla", loc: "さっぽろ雪まつり", year: 2026 },
+      { id: "rqjb5xgid4vochyrrpie", loc: "さっぽろ雪まつり", year: 2026 },
+      { id: "usvnljzznwmqu93sftg1", loc: "さっぽろ雪まつり", year: 2026 },
+    ]
+  },
+  {
+    pref: "高知県",
+    lat: 33.56, lng: 133.53,
+    photos: [
+      { id: "zxpnph1zw30vn5ce3hws", loc: "桂浜", year: 2025 },
+      { id: "p0z0vmdnqz4ptqiwgtwl", loc: "桂浜", year: 2025 },
+      { id: "x7zziur8nq5gx2vksgzr", loc: "桂浜", year: 2025 },
+      { id: "w43utexm5kjyu54hducu", loc: "高知城", year: 2025 },
+      { id: "pkszsvhktqyiwlyfurkd", loc: "高知城", year: 2025 },
+      { id: "pk5nouibsptedo8wds3h", loc: "高知城", year: 2025 },
+      { id: "z5dppj2tdaf1ovyjq3id", loc: "高知城", year: 2025 },
+      { id: "yhenlvvvz5kucqldydfm", loc: "高知城", year: 2025 },
+      { id: "ekyaldwcry9gqiy9tgre", loc: "高知城", year: 2025 },
+      { id: "cpucwtmknaneef6uw8en", loc: "名越屋沈下橋", year: 2025 },
+      { id: "opof4iv0ksb7hyyxwd0g", loc: "にこ淵", year: 2025 },
+    ]
+  },
+  {
+    pref: "愛媛県",
+    lat: 33.84, lng: 132.77,
+    photos: [
+      { id: "milp580j3b6uspkm7l8z", loc: "道後温泉", year: 2025 },
+      { id: "t4witz3if3ox7tl0vips", loc: "道後温泉", year: 2025 },
+      { id: "kbsiyecqjwzzyzurmddz", loc: "道後温泉", year: 2025 },
+      { id: "jizpq9o0ag6bt1nmynv4", loc: "道後温泉", year: 2025 },
+      { id: "pebdpfzj17kk1ssl62dc", loc: "松山城", year: 2025 },
+      { id: "ghweftqojjonv5zb6elq", loc: "松山城", year: 2025 },
+      { id: "alukivsd5rv3gvo7c6sh", loc: "松山城", year: 2025 },
+      { id: "wibx41ebmy2hxovs8wv1", loc: "松山城", year: 2025 },
+      { id: "e55oicb01uyyhukixdss", loc: "来島海峡大橋", year: 2025 },
+      { id: "b3uqemt85nz8gcxz4mrs", loc: "亀老山展望台", year: 2025 },
+    ]
+  },
+  {
+    pref: "徳島県",
+    lat: 34.07, lng: 134.56,
+    photos: [
+      { id: "psuhikljduldvl7jmox7", loc: "大鳴門橋", year: 2025 },
+      { id: "iy3ljfosdadc2xabf8ly", loc: "鳴門海峡", year: 2025 },
+    ]
+  },
+  {
+    pref: "沖縄県",
+    lat: 26.34, lng: 127.77,
+    photos: [
+      { id: "jvxvv4qs8b5sot8hcaka", loc: "宮古島", year: 2025 },
+      { id: "axgmmojhbauycrqe0ihk", loc: "宮古島", year: 2025 },
+      { id: "sgzeqvsvqk2whkqjlbbi", loc: "宮古島", year: 2025 },
+      { id: "oes9giyouydgsdqq0f4t", loc: "宮古島", year: 2025 },
+      { id: "afjaenvla1eya7kiv5zh", loc: "宮古島", year: 2025 },
+      { id: "ovui6gb8bdpvlc2gd9gl", loc: "宮古島", year: 2025 },
+      { id: "mztgcepivlstffevagwz", loc: "宮古島", year: 2025 },
+      { id: "uotk9tgqbswqr1ennalv", loc: "宮古島", year: 2025 },
+      { id: "yj9bzxco6ntjdxqfxvwe", loc: "宮古島", year: 2025 },
+      { id: "bti9ugmg2jr2874wglyy", loc: "宮古島", year: 2025 },
+      { id: "hx1ucufb7xc2hbcvpfsb", loc: "宮古島", year: 2025 },
+      { id: "k1eg8vwxkgjugoffr8mf", loc: "宮古島", year: 2025 },
+      { id: "t3gq5xm4udnrgmnwyibs", loc: "宮古島", year: 2025 },
+      { id: "hu3psnou05kneq6nvna1", loc: "宮古島", year: 2025 },
+      { id: "oxgq7nub2ad0mixlkgdj", loc: "宮古島", year: 2025 },
+      { id: "iyxrkq7ojni4adbkd2id", loc: "宮古島", year: 2025 },
+      { id: "jg5yb3rx5vvn2c9v0jlv", loc: "宮古島", year: 2025 },
+      { id: "ksrpgxpsgmiffx3krp8n", loc: "宮古島", year: 2025 },
+      { id: "e3kwo6gyrnbspcplkmnc", loc: "宮古島", year: 2025 },
+      { id: "sd95do3wwohnsnevmfod", loc: "宮古島", year: 2025 },
+      { id: "ccggglphvsgibbj9bdmn", loc: "宮古島", year: 2025 },
+      { id: "iutfwnyuojdgmm3zvghl", loc: "宮古島", year: 2025 },
+      { id: "akk660cretzdipzyhoz1", loc: "宮古島", year: 2025 },
+      { id: "gcmokjrl4gjekujs3sws", loc: "宮古島", year: 2025 },
+      { id: "pprmxtxaj53r93mkk7f3", loc: "宮古島", year: 2025 },
+      { id: "lcfe4zz4xvxjzruda1yo", loc: "宮古島", year: 2025 },
+      { id: "hfyo4tn30ahh2xz3asnn", loc: "宮古島", year: 2025 },
+      { id: "l1ihzzfw2lkah7rim3hk", loc: "宮古島", year: 2025 },
+      { id: "jwirovp2d1kqfae6gqti", loc: "宮古島", year: 2025 },
+      { id: "vnduczpwqmgjkhll1l0z", loc: "宮古島", year: 2025 },
+      { id: "zo1fxoj920zvxfgavwuo", loc: "宮古島", year: 2025 },
+      { id: "asrmh4euv3ntt5saqm0o", loc: "宮古島", year: 2025 },
+      { id: "ccthpmmrxzfv9fgctuws", loc: "宮古島", year: 2025 },
+      { id: "noogzrhpbx4h8uk6wet5", loc: "宮古島", year: 2025 },
+      { id: "iw0ue8i6asslgwkredsv", loc: "宮古島", year: 2025 },
+      { id: "wt6ow9shewohl0dm0lnj", loc: "宮古島", year: 2025 },
+      { id: "kgk6jnvbfx3wvqgjia9m", loc: "宮古島", year: 2025 },
+      { id: "eb6mwk1ahcoubidkfh36", loc: "宮古島", year: 2025 },
+    ]
+  },
 ];
 
 /* Helper to get URL */
