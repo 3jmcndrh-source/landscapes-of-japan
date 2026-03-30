@@ -579,6 +579,29 @@ const PREFECTURES = [
       { id: "pwrg5vqnmt1uxmh07jhb", loc: "鴨川シーワールド", year: 2024 },
     ]
   },
+  {
+    pref: "石川県",
+    lat: 36.59, lng: 136.63,
+    photos: [
+      { id: "tholpq2n9n3es1zbunl2", loc: "金沢", year: 2024 },
+      { id: "fvmfopoju9j1afeyfmfq", loc: "金沢", year: 2024 },
+      { id: "njkhpu1dsjnaqdpuibsl", loc: "金沢", year: 2024 },
+      { id: "a7mrvz28s8bhljtvxerd", loc: "金沢", year: 2024 },
+      { id: "iqzmqcxvlmzmpxb3e8nl", loc: "金沢", year: 2024 },
+      { id: "vravjelowaeamknkqkte", loc: "金沢", year: 2024 },
+      { id: "zip572vkpw2oinqbodt9", loc: "金沢", year: 2024 },
+    ]
+  },
+  {
+    pref: "岐阜県",
+    lat: 35.39, lng: 136.72,
+    photos: [
+      { id: "qvsgt1aw6o4iwewvhmdc", loc: "白川郷", year: 2024 },
+      { id: "ake8ymyn7d0qnybyzihw", loc: "白川郷", year: 2024 },
+      { id: "y4l6gy5xwtz8d3fvvjb0", loc: "白川郷", year: 2024 },
+      { id: "vnvzv0ztfpwvvrvl5lfn", loc: "白川郷", year: 2024 },
+    ]
+  },
 ];
 
 /* Helper to get URL */
