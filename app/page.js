@@ -1300,7 +1300,6 @@ export default function Page() {
         <div style={{ width: "100%", height: 1, background: "rgba(232,228,223,.08)", maxWidth: 200, margin: "0 auto 60px" }} />
         <div className="contact-section" ref={contactRef}>
           <h2 className="contact-title">{t.contact.title}</h2>
-          <p style={{ textAlign: "center", fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 13, color: "rgba(232,228,223,.4)", marginBottom: 32, lineHeight: 1.8 }}>{t.ft}</p>
           <div className="contact-form">
             <div className="contact-field">
               <label className="contact-label">{t.contact.name}</label>
