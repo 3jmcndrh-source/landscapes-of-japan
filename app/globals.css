@@ -29,8 +29,7 @@ html,body{background:#0a0a0a;color:#e8e4df}
 .back-map svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
 
 .cin-hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.cin-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&q=80') center/cover;filter:brightness(.35);transform:scale(1.1);opacity:0;transition:opacity 1.2s ease-out,transform 8s ease-out}
-.cin-hero-bg.loaded{transform:scale(1);opacity:1}
+.cin-hero-bg{position:absolute;inset:0;background:#0a0a0a}
 .cin-hero-content{position:relative;z-index:2;text-align:center}
 .cin-hero-title{font-family:'Yuji Boku',serif;font-size:clamp(36px,7vw,88px);font-weight:400;letter-spacing:.12em;opacity:0;transform:translateY(40px);animation:fu 1.5s ease .5s forwards;line-height:1.3}
 .cin-hero-sub{font-family:'Noto Sans JP','Noto Sans',sans-serif;font-size:clamp(14px,2.5vw,20px);font-weight:300;letter-spacing:.2em;color:rgba(232,228,223,.55);margin-top:20px;opacity:0;transform:translateY(20px);animation:fu 1.5s ease .9s forwards}

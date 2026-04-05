@@ -1262,10 +1262,8 @@ export default function Page() {
         </div>
         <div className="cin-hero">
           <div className={"cin-hero-bg" + (loaded ? " loaded" : "")} />
-          <Fireworks />
           <div className="cin-hero-content" style={{ zIndex: 2 }}>
             <h1 className="cin-hero-title">{t.hero.t}</h1>
-            <p className="cin-hero-sub">{t.hero.s}</p>
             <p className="cin-hero-desc">{t.hero.d}</p>
           </div>
           <div className="cin-scroll-hint"><div className="cin-scroll-line" /></div>
