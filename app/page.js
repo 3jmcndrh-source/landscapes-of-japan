@@ -1313,8 +1313,10 @@ export default function Page() {
       {lightbox !== null && (() => {
         const cur = allPhotos[lightbox];
         let touchStartX = 0;
-        const onTouchStart = (e) => { touchStartX = e.touches[0].clientX; };
+        let touchCount = 0;
+        const onTouchStart = (e) => { touchCount = e.touches.length; touchStartX = e.touches[0].clientX; };
         const onTouchEnd = (e) => {
+          if (touchCount > 1) return;
           const diff = e.changedTouches[0].clientX - touchStartX;
           if (diff > 60) lbPrev();
           else if (diff < -60) lbNext();
