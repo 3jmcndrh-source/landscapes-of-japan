@@ -1197,6 +1197,12 @@ export default function Page() {
 
   useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
 
+  /* Reset all horizontal scrolls to left (newest photo) on mount */
+  useEffect(() => {
+    const scrollers = document.querySelectorAll(".cin-hscroll");
+    scrollers.forEach(el => { el.scrollLeft = 0; });
+  }, []);
+
   /* Keyboard navigation for lightbox */
   useEffect(() => {
     if (lightbox === null) return;
