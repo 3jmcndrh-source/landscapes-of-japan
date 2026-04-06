@@ -231,7 +231,7 @@ const getPrefName = (jpName, lang) => {
 const LOC_I18N = {
   "清水寺周辺":{ja:"清水寺周辺",en:"Around Kiyomizu-dera",zh:"清水寺周边",ko:"기요미즈데라 주변","zh-tw":"清水寺周邊",es:"Alrededores de Kiyomizu-dera",fr:"Autour de Kiyomizu-dera",de:"Umgebung von Kiyomizu-dera",pt:"Arredores de Kiyomizu-dera",it:"Dintorni di Kiyomizu-dera",ru:"Окрестности Киёмидзу-дэра",ar:"محيط كيوميزو",hi:"कियोमिज़ु-देरा के आसपास",th:"บริเวณรอบคิโยมิสึ",vi:"Quanh chùa Kiyomizu",id:"Sekitar Kiyomizu-dera",tr:"Kiyomizu-dera Çevresi",nl:"Omgeving Kiyomizu-dera",pl:"Okolice Kiyomizu-dera",sv:"Kring Kiyomizu-dera"},
   "清水寺":{ja:"清水寺",en:"Kiyomizu-dera",zh:"清水寺",ko:"기요미즈데라","zh-tw":"清水寺",es:"Kiyomizu-dera",fr:"Kiyomizu-dera",de:"Kiyomizu-dera",pt:"Kiyomizu-dera",it:"Kiyomizu-dera",ru:"Киёмидзу-дэра",ar:"معبد كيوميزو",hi:"कियोमिज़ु-देरा",th:"คิโยมิสึเดระ",vi:"Chùa Kiyomizu",id:"Kiyomizu-dera",tr:"Kiyomizu-dera",nl:"Kiyomizu-dera",pl:"Kiyomizu-dera",sv:"Kiyomizu-dera"},
-  "清水寺 三重塔":{ja:"清水寺 三重塔",en:"Kiyomizu-dera Pagoda",zh:"清水寺 三重塔",ko:"기요미즈데라 삼중탑","zh-tw":"清水寺 三重塔",es:"Pagoda de Kiyomizu-dera",fr:"Pagode de Kiyomizu-dera",de:"Kiyomizu-dera Pagode",pt:"Pagode de Kiyomizu-dera",it:"Pagoda di Kiyomizu-dera",ru:"Пагода Киёмидзу-дэра",ar:"معبد كيوميزو",hi:"कियोमिज़ु-देरा पैगोडा",th:"เจดีย์คิโยมิสึ",vi:"Chùa Kiyomizu-dera",id:"Pagoda Kiyomizu-dera",tr:"Kiyomizu-dera Pagodası",nl:"Kiyomizu-dera Pagode",pl:"Pagoda Kiyomizu-dera",sv:"Kiyomizu-dera Pagod"},
+  "清水寺 三重塔":{ja:"清水寺 三重塔",en:"Kiyomizu-dera Pagoda",zh:"清水寺 三重塔",ko:"기요미즈데라 삼중탑","zh-tw":"清水寺 三重塔",es:"Pagoda de Kiyomizu-dera",fr:"Pagode de Kiyomizu-dera",de:"Kiyomizu-dera Pagode",pt:"Pagode de Kiyomizu-dera",it:"Pagoda di Kiyomizu-dera",ru:"Пагода Киёмидзу-дэра",ar:"باغودا كيوميزو-ديرا",hi:"कियोमिज़ु-देरा पैगोडा",th:"เจดีย์คิโยมิสึ",vi:"Chùa Kiyomizu-dera",id:"Pagoda Kiyomizu-dera",tr:"Kiyomizu-dera Pagodası",nl:"Kiyomizu-dera Pagode",pl:"Pagoda Kiyomizu-dera",sv:"Kiyomizu-dera Pagod"},
   "清水寺 本堂":{ja:"清水寺 本堂",en:"Kiyomizu-dera Main Hall",zh:"清水寺 本堂",ko:"기요미즈데라 본당","zh-tw":"清水寺 本堂",es:"Salón principal de Kiyomizu-dera",fr:"Pavillon principal de Kiyomizu-dera",de:"Kiyomizu-dera Haupthalle",pt:"Salão principal de Kiyomizu-dera",it:"Sala principale di Kiyomizu-dera",ru:"Главный зал Киёмидзу-дэра",ar:"القاعة الرئيسية لكيوميزو",hi:"कियोमिज़ु-देरा मुख्य हॉल",th:"ห้องโถงหลักคิโยมิสึ",vi:"Chánh điện Kiyomizu-dera",id:"Aula utama Kiyomizu-dera",tr:"Kiyomizu-dera Ana Salon",nl:"Kiyomizu-dera Hoofdhal",pl:"Główna sala Kiyomizu-dera",sv:"Kiyomizu-dera Huvudhall"},
   "清水寺 紅葉ライトアップ":{ja:"清水寺 紅葉ライトアップ",en:"Kiyomizu-dera Autumn Illumination",zh:"清水寺 红叶灯光秀",ko:"기요미즈데라 단풍 라이트업","zh-tw":"清水寺 紅葉點燈",es:"Iluminación otoñal de Kiyomizu-dera",fr:"Illumination automnale de Kiyomizu-dera",de:"Kiyomizu-dera Herbstbeleuchtung",pt:"Iluminação outonal de Kiyomizu-dera",it:"Illuminazione autunnale di Kiyomizu-dera",ru:"Осенняя подсветка Киёмидзу-дэра",ar:"إضاءة خريف كيوميزو",hi:"कियोमिज़ु-देरा शरद रोशनी",th:"ไฟประดับใบไม้แดงคิโยมิสึ",vi:"Ánh sáng mùa thu Kiyomizu-dera",id:"Iluminasi musim gugur Kiyomizu-dera",tr:"Kiyomizu-dera Sonbahar Aydınlatması",nl:"Kiyomizu-dera Herfstverlichting",pl:"Jesienna iluminacja Kiyomizu-dera",sv:"Kiyomizu-dera Höstbelysning"},
   "八坂の塔":{ja:"八坂の塔",en:"Yasaka Pagoda",zh:"八坂塔",ko:"야사카 탑","zh-tw":"八坂塔",es:"Pagoda Yasaka",fr:"Pagode Yasaka",de:"Yasaka-Pagode",pt:"Pagode Yasaka",it:"Pagoda Yasaka",ru:"Пагода Ясака",ar:"باغودا ياساكا",hi:"यासाका पैगोडा",th:"เจดีย์ยาซากะ",vi:"Tháp Yasaka",id:"Pagoda Yasaka",tr:"Yasaka Pagodası",nl:"Yasaka Pagode",pl:"Pagoda Yasaka",sv:"Yasaka Pagod"},
@@ -247,6 +247,52 @@ const LOC_I18N = {
   "紅葉ライトアップ":{ja:"紅葉ライトアップ",en:"Autumn Illumination",zh:"红叶灯光秀",ko:"단풍 라이트업","zh-tw":"紅葉點燈",es:"Iluminación otoñal",fr:"Illumination automnale",de:"Herbstbeleuchtung",pt:"Iluminação outonal",it:"Illuminazione autunnale",ru:"Осенняя подсветка",ar:"إضاءة الخريف",hi:"शरद रोशनी",th:"ไฟประดับใบไม้แดง",vi:"Ánh sáng mùa thu",id:"Iluminasi musim gugur",tr:"Sonbahar aydınlatması",nl:"Herfstverlichting",pl:"Jesienna iluminacja",sv:"Höstbelysning"},
   "寺院建築":{ja:"寺院建築",en:"Temple Architecture",zh:"寺院建筑",ko:"사찰 건축","zh-tw":"寺院建築",es:"Arquitectura del templo",fr:"Architecture du temple",de:"Tempelarchitektur",pt:"Arquitetura do templo",it:"Architettura del tempio",ru:"Архитектура храма",ar:"عمارة المعبد",hi:"मंदिर स्थापत्य",th:"สถาปัตยกรรมวัด",vi:"Kiến trúc chùa",id:"Arsitektur kuil",tr:"Tapınak mimarisi",nl:"Tempelarchitectuur",pl:"Architektura świątyni",sv:"Tempelarkitektur"},
   "姫路城":{ja:"姫路城",en:"Himeji Castle",zh:"姬路城",ko:"히메지성","zh-tw":"姬路城",es:"Castillo de Himeji",fr:"Château de Himeji",de:"Burg Himeji",pt:"Castelo de Himeji",it:"Castello di Himeji",ru:"Замок Химэдзи",ar:"قلعة هيميجي",hi:"हिमेजी कैसल",th:"ปราสาทฮิเมจิ",vi:"Lâu đài Himeji",id:"Kastil Himeji",tr:"Himeji Kalesi",nl:"Kasteel Himeji",pl:"Zamek Himeji",sv:"Himeji slott"},
+  "おはらい町・おかげ横丁":{ja:"おはらい町・おかげ横丁",en:"Oharai-machi & Okage-yokocho",zh:"御祓町・托福横丁",ko:"오하라이마치・오카게요코초","zh-tw":"御祓町・托福橫丁",es:"Oharai-machi y Okage-yokocho",fr:"Oharai-machi et Okage-yokocho",de:"Oharai-machi & Okage-yokocho",pt:"Oharai-machi e Okage-yokocho",it:"Oharai-machi e Okage-yokocho",ru:"Охараи-мати и Окагэ-ёкотё",ar:"أوهاراي ماتشي وأوكاغيه يوكوتشو",hi:"ओहाराई-माची और ओकागे-योकोचो",th:"โอฮาไรมาจิและโอคาเงะโยโกโช",vi:"Oharai-machi & Okage-yokocho",id:"Oharai-machi & Okage-yokocho",tr:"Oharai-machi ve Okage-yokocho",nl:"Oharai-machi & Okage-yokocho",pl:"Oharai-machi i Okage-yokocho",sv:"Oharai-machi & Okage-yokocho"},
+  "さっぽろ雪まつり":{ja:"さっぽろ雪まつり",en:"Sapporo Snow Festival",zh:"札幌冰雪节",ko:"삿포로 눈축제","zh-tw":"札幌雪祭",es:"Festival de Nieve de Sapporo",fr:"Festival de la Neige de Sapporo",de:"Sapporo Schneefestival",pt:"Festival de Neve de Sapporo",it:"Festival della Neve di Sapporo",ru:"Снежный фестиваль в Саппоро",ar:"مهرجان سابورو للثلج",hi:"साप्पोरो बर्फ़ महोत्सव",th:"เทศกาลหิมะซัปโปโร",vi:"Lễ hội Tuyết Sapporo",id:"Festival Salju Sapporo",tr:"Sapporo Kar Festivali",nl:"Sapporo Sneeuwfestival",pl:"Festiwal Śniegu w Sapporo",sv:"Sapporo Snöfestival"},
+  "にこ淵":{ja:"にこ淵",en:"Niko-buchi",zh:"仁淀蓝潭",ko:"니코부치","zh-tw":"仁淀藍潭",es:"Niko-buchi",fr:"Niko-buchi",de:"Niko-buchi",pt:"Niko-buchi",it:"Niko-buchi",ru:"Нико-бути",ar:"نيكو بوتشي",hi:"निको-बुची",th:"นิโกะบุจิ",vi:"Niko-buchi",id:"Niko-buchi",tr:"Niko-buchi",nl:"Niko-buchi",pl:"Niko-buchi",sv:"Niko-buchi"},
+  "三段滝公園":{ja:"三段滝公園",en:"Sandan Falls Park",zh:"三段瀑布公园",ko:"산단타키 공원","zh-tw":"三段瀑布公園",es:"Parque de las Cascadas Sandan",fr:"Parc des Cascades Sandan",de:"Sandan-Wasserfall-Park",pt:"Parque das Cascatas Sandan",it:"Parco delle Cascate Sandan",ru:"Парк водопада Сандан",ar:"حديقة شلالات ساندان",hi:"सान्दान जलप्रपात पार्क",th:"สวนน้ำตกซันดัน",vi:"Công viên thác Sandan",id:"Taman Air Terjun Sandan",tr:"Sandan Şelalesi Parkı",nl:"Sandan Watervallenpark",pl:"Park Wodospadu Sandan",sv:"Sandan Vattenfall Park"},
+  "亀老山展望台":{ja:"亀老山展望台",en:"Mt. Kiro Observatory",zh:"龟老山展望台",ko:"기로산 전망대","zh-tw":"龜老山展望台",es:"Observatorio del Monte Kiro",fr:"Observatoire du Mont Kiro",de:"Aussichtspunkt Kiro-san",pt:"Observatório do Monte Kiro",it:"Osservatorio del Monte Kiro",ru:"Обсерватория горы Киро",ar:"مرصد جبل كيرو",hi:"किरो पर्वत वेधशाला",th:"จุดชมวิวภูเขาคิโระ",vi:"Đài quan sát Kiro-san",id:"Observatorium Gunung Kiro",tr:"Kiro Dağı Gözlem Yeri",nl:"Kiro-berg Observatorium",pl:"Obserwatorium Kiro-san",sv:"Kiro-san Utsiktsplats"},
+  "伊勢神宮":{ja:"伊勢神宮",en:"Ise Grand Shrine",zh:"伊势神宫",ko:"이세 신궁","zh-tw":"伊勢神宮",es:"Gran Santuario de Ise",fr:"Grand Sanctuaire d'Ise",de:"Ise-Großschrein",pt:"Grande Santuário de Ise",it:"Grande Santuario di Ise",ru:"Великое святилище Исэ",ar:"ضريح إيسه الكبير",hi:"इसे महामंदिर",th:"ศาลเจ้าอิเสะ",vi:"Đền lớn Ise",id:"Kuil Agung Ise",tr:"Ise Büyük Tapınağı",nl:"Ise Grootschrijn",pl:"Wielka Świątynia Ise",sv:"Ise Storhelgedom"},
+  "別府":{ja:"別府",en:"Beppu",zh:"别府",ko:"벳푸","zh-tw":"別府",es:"Beppu",fr:"Beppu",de:"Beppu",pt:"Beppu",it:"Beppu",ru:"Бэппу",ar:"بيبو",hi:"बेप्पू",th:"เบปปุ",vi:"Beppu",id:"Beppu",tr:"Beppu",nl:"Beppu",pl:"Beppu",sv:"Beppu"},
+  "北竜町":{ja:"北竜町",en:"Hokuryu Sunflower Fields",zh:"北龙町向日葵花田",ko:"호쿠류 해바라기 밭","zh-tw":"北龍町向日葵花田",es:"Campos de Girasoles de Hokuryu",fr:"Champs de Tournesols de Hokuryu",de:"Hokuryu Sonnenblumenfelder",pt:"Campos de Girassóis de Hokuryu",it:"Campi di Girasoli di Hokuryu",ru:"Подсолнуховые поля Хокурю",ar:"حقول عباد الشمس هوكوريو",hi:"होकुर्यू सूरजमुखी के खेत",th:"ทุ่งทานตะวันโฮคุริว",vi:"Cánh đồng hoa hướng dương Hokuryu",id:"Ladang Bunga Matahari Hokuryu",tr:"Hokuryu Ayçiçeği Tarlaları",nl:"Hokuryu Zonnebloemvelden",pl:"Pola słoneczników Hokuryu",sv:"Hokuryu Solfält"},
+  "名越屋沈下橋":{ja:"名越屋沈下橋",en:"Nagoya Chinkabashi Bridge",zh:"名越屋沉下桥",ko:"나고야 침하교","zh-tw":"名越屋沉下橋",es:"Puente Sumergible Nagoya",fr:"Pont Submersible Nagoya",de:"Nagoya Chinkabashi-Brücke",pt:"Ponte Submersível Nagoya",it:"Ponte Sommergibile Nagoya",ru:"Мост Нагоя-Тинкабаси",ar:"جسر ناغويا تشينكاباشي",hi:"नागोया चिंकाबाशी पुल",th:"สะพานนาโกยะชินคาบาชิ",vi:"Cầu chìm Nagoya",id:"Jembatan Nagoya Chinkabashi",tr:"Nagoya Chinkabashi Köprüsü",nl:"Nagoya Chinkabashi Brug",pl:"Most Nagoya Chinkabashi",sv:"Nagoya Chinkabashi-bron"},
+  "品川":{ja:"品川",en:"Shinagawa",zh:"品川",ko:"시나가와","zh-tw":"品川",es:"Shinagawa",fr:"Shinagawa",de:"Shinagawa",pt:"Shinagawa",it:"Shinagawa",ru:"Синагава",ar:"شيناغاوا",hi:"शिनागावा",th:"ชินากาวะ",vi:"Shinagawa",id:"Shinagawa",tr:"Shinagawa",nl:"Shinagawa",pl:"Shinagawa",sv:"Shinagawa"},
+  "大鳴門橋":{ja:"大鳴門橋",en:"Onaruto Bridge",zh:"大鸣门大桥",ko:"오나루토 대교","zh-tw":"大鳴門大橋",es:"Puente Onaruto",fr:"Pont d'Onaruto",de:"Onaruto-Brücke",pt:"Ponte Onaruto",it:"Ponte Onaruto",ru:"Мост Онаруто",ar:"جسر أوناروتو",hi:"ओनारुतो पुल",th:"สะพานโอนารุโตะ",vi:"Cầu Onaruto",id:"Jembatan Onaruto",tr:"Onaruto Köprüsü",nl:"Onaruto-brug",pl:"Most Onaruto",sv:"Onaruto-bron"},
+  "夫婦岩":{ja:"夫婦岩",en:"Meoto-iwa Wedded Rocks",zh:"夫妇岩",ko:"메오토이와","zh-tw":"夫婦岩",es:"Rocas Meoto-iwa",fr:"Rochers Mariés Meoto-iwa",de:"Meoto-iwa Vermählte Felsen",pt:"Rochas Meoto-iwa",it:"Rocce Sposate Meoto-iwa",ru:"Мэото-ива Скалы-супруги",ar:"صخرتا ميوتو إيوا",hi:"मेओतो-इवा विवाहित चट्टानें",th:"เมโอโตะอิวะ",vi:"Đá Meoto-iwa",id:"Batu Meoto-iwa",tr:"Meoto-iwa Evli Kayalar",nl:"Meoto-iwa Gehuwde Rotsen",pl:"Skały Meoto-iwa",sv:"Meoto-iwa Vigselklipporna"},
+  "室蘭":{ja:"室蘭",en:"Muroran",zh:"室兰",ko:"무로란","zh-tw":"室蘭",es:"Muroran",fr:"Muroran",de:"Muroran",pt:"Muroran",it:"Muroran",ru:"Муроран",ar:"موروران",hi:"मुरोरान",th:"มุโรรัน",vi:"Muroran",id:"Muroran",tr:"Muroran",nl:"Muroran",pl:"Muroran",sv:"Muroran"},
+  "宮古島":{ja:"宮古島",en:"Miyako-jima",zh:"宫古岛",ko:"미야코지마","zh-tw":"宮古島",es:"Isla Miyako",fr:"Île Miyako",de:"Miyako-jima",pt:"Ilha Miyako",it:"Isola Miyako",ru:"Мияко-дзима",ar:"جزيرة مياكو",hi:"मियाको-जीमा",th:"เกาะมิยาโกะ",vi:"Đảo Miyako",id:"Pulau Miyako",tr:"Miyako Adası",nl:"Miyako-eiland",pl:"Wyspa Miyako",sv:"Miyako-jima"},
+  "富良野":{ja:"富良野",en:"Furano",zh:"富良野",ko:"후라노","zh-tw":"富良野",es:"Furano",fr:"Furano",de:"Furano",pt:"Furano",it:"Furano",ru:"Фурано",ar:"فورانو",hi:"फ़ुरानो",th:"ฟุราโนะ",vi:"Furano",id:"Furano",tr:"Furano",nl:"Furano",pl:"Furano",sv:"Furano"},
+  "小樽":{ja:"小樽",en:"Otaru",zh:"小樽",ko:"오타루","zh-tw":"小樽",es:"Otaru",fr:"Otaru",de:"Otaru",pt:"Otaru",it:"Otaru",ru:"Отару",ar:"أوتارو",hi:"ओतारु",th:"โอตารุ",vi:"Otaru",id:"Otaru",tr:"Otaru",nl:"Otaru",pl:"Otaru",sv:"Otaru"},
+  "摩周湖":{ja:"摩周湖",en:"Lake Mashu",zh:"摩周湖",ko:"마슈호","zh-tw":"摩周湖",es:"Lago Mashu",fr:"Lac Mashu",de:"Mashu-See",pt:"Lago Mashu",it:"Lago Mashu",ru:"Озеро Масю",ar:"بحيرة ماشو",hi:"माशू झील",th:"ทะเลสาบมาชู",vi:"Hồ Mashu",id:"Danau Mashu",tr:"Mashu Gölü",nl:"Mashumeer",pl:"Jezioro Mashu",sv:"Mashusjön"},
+  "旭山動物園":{ja:"旭山動物園",en:"Asahiyama Zoo",zh:"旭山动物园",ko:"아사히야마 동물원","zh-tw":"旭山動物園",es:"Zoológico Asahiyama",fr:"Zoo d'Asahiyama",de:"Asahiyama Zoo",pt:"Zoológico Asahiyama",it:"Zoo di Asahiyama",ru:"Зоопарк Асахияма",ar:"حديقة حيوانات أساهيياما",hi:"आसाहियामा चिड़ियाघर",th:"สวนสัตว์อาซาฮิยามะ",vi:"Vườn thú Asahiyama",id:"Kebun Binatang Asahiyama",tr:"Asahiyama Hayvanat Bahçesi",nl:"Asahiyama Dierentuin",pl:"Zoo Asahiyama",sv:"Asahiyama Djurpark"},
+  "朝熊山展望台":{ja:"朝熊山展望台",en:"Asakuma-yama Observatory",zh:"朝熊山展望台",ko:"아사쿠마야마 전망대","zh-tw":"朝熊山展望台",es:"Observatorio de Asakuma-yama",fr:"Observatoire d'Asakuma-yama",de:"Aussichtspunkt Asakuma-yama",pt:"Observatório de Asakuma-yama",it:"Osservatorio di Asakuma-yama",ru:"Обсерватория Асакума-яма",ar:"مرصد أساكوما ياما",hi:"आसाकुमा-यामा वेधशाला",th:"จุดชมวิวอาซาคุมะยามะ",vi:"Đài quan sát Asakuma-yama",id:"Observatorium Asakuma-yama",tr:"Asakuma-yama Gözlem Yeri",nl:"Asakuma-yama Observatorium",pl:"Obserwatorium Asakuma-yama",sv:"Asakuma-yama Utsiktsplats"},
+  "札幌":{ja:"札幌",en:"Sapporo",zh:"札幌",ko:"삿포로","zh-tw":"札幌",es:"Sapporo",fr:"Sapporo",de:"Sapporo",pt:"Sapporo",it:"Sapporo",ru:"Саппоро",ar:"سابورو",hi:"साप्पोरो",th:"ซัปโปโร",vi:"Sapporo",id:"Sapporo",tr:"Sapporo",nl:"Sapporo",pl:"Sapporo",sv:"Sapporo"},
+  "来島海峡大橋":{ja:"来島海峡大橋",en:"Kurushima-Kaikyo Bridge",zh:"来岛海峡大桥",ko:"구루시마 해협 대교","zh-tw":"來島海峽大橋",es:"Puente Kurushima-Kaikyo",fr:"Pont de Kurushima-Kaikyo",de:"Kurushima-Kaikyo-Brücke",pt:"Ponte Kurushima-Kaikyo",it:"Ponte Kurushima-Kaikyo",ru:"Мост Курусима-Кайкё",ar:"جسر كوروشيما كايكيو",hi:"कुरुशिमा-कैक्यो पुल",th:"สะพานคุรุชิมะไคเคียว",vi:"Cầu Kurushima-Kaikyo",id:"Jembatan Kurushima-Kaikyo",tr:"Kurushima-Kaikyo Köprüsü",nl:"Kurushima-Kaikyo-brug",pl:"Most Kurushima-Kaikyo",sv:"Kurushima-Kaikyo-bron"},
+  "東京":{ja:"東京",en:"Tokyo",zh:"东京",ko:"도쿄","zh-tw":"東京",es:"Tokio",fr:"Tokyo",de:"Tokio",pt:"Tóquio",it:"Tokyo",ru:"Токио",ar:"طوكيو",hi:"टोक्यो",th:"โตเกียว",vi:"Tokyo",id:"Tokyo",tr:"Tokyo",nl:"Tokio",pl:"Tokio",sv:"Tokyo"},
+  "東山動物園":{ja:"東山動物園",en:"Higashiyama Zoo",zh:"东山动物园",ko:"히가시야마 동물원","zh-tw":"東山動物園",es:"Zoológico Higashiyama",fr:"Zoo de Higashiyama",de:"Higashiyama Zoo",pt:"Zoológico Higashiyama",it:"Zoo di Higashiyama",ru:"Зоопарк Хигасияма",ar:"حديقة حيوانات هيغاشيياما",hi:"हिगाशियामा चिड़ियाघर",th:"สวนสัตว์ฮิกาชิยามะ",vi:"Vườn thú Higashiyama",id:"Kebun Binatang Higashiyama",tr:"Higashiyama Hayvanat Bahçesi",nl:"Higashiyama Dierentuin",pl:"Zoo Higashiyama",sv:"Higashiyama Djurpark"},
+  "松山城":{ja:"松山城",en:"Matsuyama Castle",zh:"松山城",ko:"마쓰야마성","zh-tw":"松山城",es:"Castillo de Matsuyama",fr:"Château de Matsuyama",de:"Burg Matsuyama",pt:"Castelo de Matsuyama",it:"Castello di Matsuyama",ru:"Замок Мацуяма",ar:"قلعة ماتسوياما",hi:"मात्सुयामा कैसल",th:"ปราสาทมัตสึยามะ",vi:"Lâu đài Matsuyama",id:"Kastil Matsuyama",tr:"Matsuyama Kalesi",nl:"Kasteel Matsuyama",pl:"Zamek Matsuyama",sv:"Matsuyama slott"},
+  "桂浜":{ja:"桂浜",en:"Katsurahama Beach",zh:"桂浜海滩",ko:"가쓰라하마 해변","zh-tw":"桂濱海灘",es:"Playa Katsurahama",fr:"Plage de Katsurahama",de:"Katsurahama-Strand",pt:"Praia de Katsurahama",it:"Spiaggia di Katsurahama",ru:"Пляж Кацурахама",ar:"شاطئ كاتسوراهاما",hi:"कात्सुराहामा समुद्र तट",th:"หาดคัตสึราฮามะ",vi:"Bãi biển Katsurahama",id:"Pantai Katsurahama",tr:"Katsurahama Plajı",nl:"Katsurahama Strand",pl:"Plaża Katsurahama",sv:"Katsurahama Strand"},
+  "梅林公園":{ja:"梅林公園",en:"Plum Grove Park",zh:"梅林公园",ko:"매림공원","zh-tw":"梅林公園",es:"Parque del Bosque de Ciruelos",fr:"Parc des Pruniers",de:"Pflaumenblüten-Park",pt:"Parque das Ameixeiras",it:"Parco dei Pruni",ru:"Парк сливовых деревьев",ar:"حديقة أشجار البرقوق",hi:"बेर बाग़ पार्क",th:"สวนบ๊วย",vi:"Công viên vườn mận",id:"Taman Kebun Plum",tr:"Erik Bahçesi Parkı",nl:"Pruimenboomgaardpark",pl:"Park Śliwkowy",sv:"Plommonlundsparken"},
+  "横山展望台":{ja:"横山展望台",en:"Yokoyama Observatory",zh:"横山展望台",ko:"요코야마 전망대","zh-tw":"橫山展望台",es:"Observatorio Yokoyama",fr:"Observatoire de Yokoyama",de:"Aussichtspunkt Yokoyama",pt:"Observatório Yokoyama",it:"Osservatorio Yokoyama",ru:"Обсерватория Ёкояма",ar:"مرصد يوكوياما",hi:"योकोयामा वेधशाला",th:"จุดชมวิวโยโกยามะ",vi:"Đài quan sát Yokoyama",id:"Observatorium Yokoyama",tr:"Yokoyama Gözlem Yeri",nl:"Yokoyama Observatorium",pl:"Obserwatorium Yokoyama",sv:"Yokoyama Utsiktsplats"},
+  "横浜":{ja:"横浜",en:"Yokohama",zh:"横滨",ko:"요코하마","zh-tw":"橫濱",es:"Yokohama",fr:"Yokohama",de:"Yokohama",pt:"Yokohama",it:"Yokohama",ru:"Иокогама",ar:"يوكوهاما",hi:"योकोहामा",th:"โยโกฮามะ",vi:"Yokohama",id:"Yokohama",tr:"Yokohama",nl:"Yokohama",pl:"Jokohama",sv:"Yokohama"},
+  "沖縄":{ja:"沖縄",en:"Okinawa",zh:"冲绳",ko:"오키나와","zh-tw":"沖繩",es:"Okinawa",fr:"Okinawa",de:"Okinawa",pt:"Okinawa",it:"Okinawa",ru:"Окинава",ar:"أوكيناوا",hi:"ओकिनावा",th:"โอกินาวะ",vi:"Okinawa",id:"Okinawa",tr:"Okinawa",nl:"Okinawa",pl:"Okinawa",sv:"Okinawa"},
+  "洞爺湖":{ja:"洞爺湖",en:"Lake Toya",zh:"洞爷湖",ko:"도야호","zh-tw":"洞爺湖",es:"Lago Toya",fr:"Lac Toya",de:"Toya-See",pt:"Lago Toya",it:"Lago Toya",ru:"Озеро Тоя",ar:"بحيرة تويا",hi:"तोया झील",th:"ทะเลสาบโทยะ",vi:"Hồ Toya",id:"Danau Toya",tr:"Toya Gölü",nl:"Toyameer",pl:"Jezioro Toya",sv:"Toyasjön"},
+  "湯布院":{ja:"湯布院",en:"Yufuin",zh:"汤布院",ko:"유후인","zh-tw":"湯布院",es:"Yufuin",fr:"Yufuin",de:"Yufuin",pt:"Yufuin",it:"Yufuin",ru:"Юфуин",ar:"يوفوين",hi:"युफ़ुइन",th:"ยูฟุอิน",vi:"Yufuin",id:"Yufuin",tr:"Yufuin",nl:"Yufuin",pl:"Yufuin",sv:"Yufuin"},
+  "父母ヶ浜":{ja:"父母ヶ浜",en:"Chichibugahama Beach",zh:"父母滨",ko:"지치부가하마 해변","zh-tw":"父母濱",es:"Playa Chichibugahama",fr:"Plage de Chichibugahama",de:"Chichibugahama-Strand",pt:"Praia de Chichibugahama",it:"Spiaggia di Chichibugahama",ru:"Пляж Титибугахама",ar:"شاطئ تشيتشيبوغاهاما",hi:"चिचिबुगाहामा समुद्र तट",th:"หาดชิชิบุกาฮามะ",vi:"Bãi biển Chichibugahama",id:"Pantai Chichibugahama",tr:"Chichibugahama Plajı",nl:"Chichibugahama Strand",pl:"Plaża Chichibugahama",sv:"Chichibugahama Strand"},
+  "登別":{ja:"登別",en:"Noboribetsu",zh:"登别",ko:"노보리베쓰","zh-tw":"登別",es:"Noboribetsu",fr:"Noboribetsu",de:"Noboribetsu",pt:"Noboribetsu",it:"Noboribetsu",ru:"Ноборибэцу",ar:"نوبوريبيتسو",hi:"नोबोरिबेत्सू",th:"โนโบริเบ็ตสึ",vi:"Noboribetsu",id:"Noboribetsu",tr:"Noboribetsu",nl:"Noboribetsu",pl:"Noboribetsu",sv:"Noboribetsu"},
+  "白川郷":{ja:"白川郷",en:"Shirakawa-go",zh:"白川乡",ko:"시라카와고","zh-tw":"白川鄉",es:"Shirakawa-go",fr:"Shirakawa-go",de:"Shirakawa-go",pt:"Shirakawa-go",it:"Shirakawa-go",ru:"Сиракава-го",ar:"شيراكاوا-غو",hi:"शिराकावा-गो",th:"ชิราคาวาโกะ",vi:"Shirakawa-go",id:"Shirakawa-go",tr:"Shirakawa-go",nl:"Shirakawa-go",pl:"Shirakawa-go",sv:"Shirakawa-go"},
+  "知床":{ja:"知床",en:"Shiretoko",zh:"知床",ko:"시레토코","zh-tw":"知床",es:"Shiretoko",fr:"Shiretoko",de:"Shiretoko",pt:"Shiretoko",it:"Shiretoko",ru:"Сирэтоко",ar:"شيريتوكو",hi:"शिरेतोको",th:"ชิเระโตโกะ",vi:"Shiretoko",id:"Shiretoko",tr:"Shiretoko",nl:"Shiretoko",pl:"Shiretoko",sv:"Shiretoko"},
+  "福岡":{ja:"福岡",en:"Fukuoka",zh:"福冈",ko:"후쿠오카","zh-tw":"福岡",es:"Fukuoka",fr:"Fukuoka",de:"Fukuoka",pt:"Fukuoka",it:"Fukuoka",ru:"Фукуока",ar:"فوكوكا",hi:"फ़ुकुओका",th:"ฟุกุโอกะ",vi:"Fukuoka",id:"Fukuoka",tr:"Fukuoka",nl:"Fukuoka",pl:"Fukuoka",sv:"Fukuoka"},
+  "美唄":{zh:"美唄",ko:"비바이","zh-tw":"美唄",es:"Bibai",fr:"Bibai",de:"Bibai",pt:"Bibai",it:"Bibai",ru:"Бибай",ar:"بيباي",hi:"बिबाई",th:"บิไบ",vi:"Bibai",id:"Bibai",tr:"Bibai",nl:"Bibai",pl:"Bibai",sv:"Bibai"},
+  "美幌峠":{ja:"美幌峠",en:"Bihoro Pass",zh:"美幌峠",ko:"비호로 고개","zh-tw":"美幌峠",es:"Paso Bihoro",fr:"Col de Bihoro",de:"Bihoro-Pass",pt:"Passagem Bihoro",it:"Passo Bihoro",ru:"Перевал Бихоро",ar:"ممر بيهورو",hi:"बिहोरो दर्रा",th:"ช่องเขาบิโฮโระ",vi:"Đèo Bihoro",id:"Celah Bihoro",tr:"Bihoro Geçidi",nl:"Bihoro Pas",pl:"Przełęcz Bihoro",sv:"Bihoro Passet"},
+  "道後温泉":{ja:"道後温泉",en:"Dogo Onsen",zh:"道后温泉",ko:"도고 온천","zh-tw":"道後溫泉",es:"Termas de Dogo",fr:"Thermes de Dogo",de:"Dogo Onsen",pt:"Termas de Dogo",it:"Terme di Dogo",ru:"Онсэн Дого",ar:"ينابيع دوغو الحارة",hi:"दोगो ओनसेन",th:"ด็อกโกะออนเซ็น",vi:"Suối nước nóng Dogo",id:"Pemandian Air Panas Dogo",tr:"Dogo Kaplıcası",nl:"Dogo Onsen",pl:"Dogo Onsen",sv:"Dogo Onsen"},
+  "金沢":{ja:"金沢",en:"Kanazawa",zh:"金泽",ko:"가나자와","zh-tw":"金澤",es:"Kanazawa",fr:"Kanazawa",de:"Kanazawa",pt:"Kanazawa",it:"Kanazawa",ru:"Канадзава",ar:"كانازاوا",hi:"कानाज़ावा",th:"คานาซาวะ",vi:"Kanazawa",id:"Kanazawa",tr:"Kanazawa",nl:"Kanazawa",pl:"Kanazawa",sv:"Kanazawa"},
+  "鎌倉":{ja:"鎌倉",en:"Kamakura",zh:"镰仓",ko:"가마쿠라","zh-tw":"鎌倉",es:"Kamakura",fr:"Kamakura",de:"Kamakura",pt:"Kamakura",it:"Kamakura",ru:"Камакура",ar:"كاماكورا",hi:"कामाकुरा",th:"คามาคุระ",vi:"Kamakura",id:"Kamakura",tr:"Kamakura",nl:"Kamakura",pl:"Kamakura",sv:"Kamakura"},
+  "阿寒":{ja:"阿寒",en:"Akan",zh:"阿寒",ko:"아칸","zh-tw":"阿寒",es:"Akan",fr:"Akan",de:"Akan",pt:"Akan",it:"Akan",ru:"Акан",ar:"أكان",hi:"अकान",th:"อะคัง",vi:"Akan",id:"Akan",tr:"Akan",nl:"Akan",pl:"Akan",sv:"Akan"},
+  "高知城":{ja:"高知城",en:"Kochi Castle",zh:"高知城",ko:"고치성","zh-tw":"高知城",es:"Castillo de Kochi",fr:"Château de Kochi",de:"Burg Kochi",pt:"Castelo de Kochi",it:"Castello di Kochi",ru:"Замок Коти",ar:"قلعة كوتشي",hi:"कोची कैसल",th:"ปราสาทโคจิ",vi:"Lâu đài Kochi",id:"Kastil Kochi",tr:"Kochi Kalesi",nl:"Kasteel Kochi",pl:"Zamek Kochi",sv:"Kochi slott"},
+  "鳥羽水族館":{ja:"鳥羽水族館",en:"Toba Aquarium",zh:"鸟羽水族馆",ko:"도바 수족관","zh-tw":"鳥羽水族館",es:"Acuario de Toba",fr:"Aquarium de Toba",de:"Toba Aquarium",pt:"Aquário de Toba",it:"Acquario di Toba",ru:"Аквариум Тоба",ar:"حوض أسماك توبا",hi:"तोबा एक्वेरियम",th:"พิพิธภัณฑ์สัตว์น้ำโทบะ",vi:"Thủy cung Toba",id:"Akuarium Toba",tr:"Toba Akvaryumu",nl:"Toba Aquarium",pl:"Akwarium Toba",sv:"Toba Akvarium"},
+  "鳴門海峡":{ja:"鳴門海峡",en:"Naruto Whirlpools",zh:"鸣门海峡",ko:"나루토 해협","zh-tw":"鳴門海峽",es:"Remolinos de Naruto",fr:"Tourbillons de Naruto",de:"Naruto-Strudel",pt:"Redemoinhos de Naruto",it:"Vortici di Naruto",ru:"Водовороты Наруто",ar:"دوامات ناروتو",hi:"नारुतो भँवर",th:"น้ำวนนารุโตะ",vi:"Xoáy nước Naruto",id:"Pusaran Naruto",tr:"Naruto Girdapları",nl:"Naruto Draaikolken",pl:"Wiry Naruto",sv:"Naruto Virvlar"},
+  "鴨川シーワールド":{ja:"鴨川シーワールド",en:"Kamogawa Sea World",zh:"鸭川海洋世界",ko:"가모가와 시월드","zh-tw":"鴨川海洋世界",es:"Kamogawa Sea World",fr:"Kamogawa Sea World",de:"Kamogawa Sea World",pt:"Kamogawa Sea World",it:"Kamogawa Sea World",ru:"Камогава Си Ворлд",ar:"عالم بحار كاموغاوا",hi:"कामोगावा सी वर्ल्ड",th:"คาโมกาวะซีเวิลด์",vi:"Kamogawa Sea World",id:"Kamogawa Sea World",tr:"Kamogawa Sea World",nl:"Kamogawa Sea World",pl:"Kamogawa Sea World",sv:"Kamogawa Sea World"},
 };
 const getLocName = (jpName, lang) => {
   const m = LOC_I18N[jpName];
@@ -1087,151 +1133,6 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   );
 }
 
-/* ── Fireworks Component ── */
-function Fireworks() {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.parentElement.getBoundingClientRect();
-    const W = Math.floor(rect.width * dpr);
-    const H = Math.floor(rect.height * dpr);
-    canvas.width = W;
-    canvas.height = H;
-    canvas.style.width = rect.width + "px";
-    canvas.style.height = rect.height + "px";
-    ctx.scale(dpr, dpr);
-    const drawW = rect.width;
-    const drawH = rect.height;
-
-    const particles = [];
-    const rockets = [];
-    let frame = 0;
-
-    const COLORS = [
-      [255, 200, 100],
-      [100, 200, 255],
-      [255, 120, 160],
-      [120, 255, 180],
-      [200, 150, 255],
-    ];
-
-    function addRocket(x, targetY, delay, color, size, isMain) {
-      rockets.push({ x, y: drawH, targetY, vy: -4.5 - Math.random() * 1.5, delay, color, size, isMain, trail: [] });
-    }
-
-    function explode(x, y, color, count, power) {
-      for (let i = 0; i < count; i++) {
-        const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.3;
-        const speed = power * (0.4 + Math.random() * 0.4);
-        const cr = Math.min(255, Math.max(0, color[0] + Math.floor((Math.random() - 0.5) * 40)));
-        const cg = Math.min(255, Math.max(0, color[1] + Math.floor((Math.random() - 0.5) * 40)));
-        const cb = Math.min(255, Math.max(0, color[2] + Math.floor((Math.random() - 0.5) * 40)));
-        particles.push({
-          x, y,
-          vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed,
-          life: 1,
-          decay: 0.004 + Math.random() * 0.004,
-          r: cr, g: cg, b: cb,
-          size: 1.5 + Math.random() * 1.5,
-          gravity: 0.012 + Math.random() * 0.006,
-          trail: [],
-        });
-      }
-    }
-
-    function scheduleShow() {
-      addRocket(drawW * 0.5, drawH * 0.18, 60, [255, 140, 170], 300, true);
-      const starY = drawH * 0.72;
-      for (let i = 0; i < 5; i++) {
-        const sx = drawW * (0.2 + i * 0.15) + (Math.random() - 0.5) * 30;
-        addRocket(sx, starY - Math.random() * 40, 350 + i * 50 + Math.floor(Math.random() * 20), COLORS[i], 100, false);
-      }
-    }
-
-    let pauseTimer = 0;
-    scheduleShow();
-
-    function loop() {
-      ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(0,0,0,0.04)";
-      ctx.fillRect(0, 0, drawW, drawH);
-      ctx.globalCompositeOperation = "lighter";
-      frame++;
-
-      for (let i = rockets.length - 1; i >= 0; i--) {
-        const r = rockets[i];
-        if (r.delay > 0) { r.delay--; continue; }
-        r.y += r.vy;
-        r.trail.push({ x: r.x, y: r.y });
-        if (r.trail.length > 14) r.trail.shift();
-        for (let j = 0; j < r.trail.length; j++) {
-          const a = (j / r.trail.length) * 0.4;
-          ctx.fillStyle = "rgba(" + r.color[0] + "," + r.color[1] + "," + r.color[2] + "," + a + ")";
-          ctx.beginPath(); ctx.arc(r.trail[j].x, r.trail[j].y, 1.5, 0, Math.PI * 2); ctx.fill();
-        }
-        if (r.y <= r.targetY) {
-          if (r.isMain) {
-            explode(r.x, r.y, [255, 140, 180], 200, 4.5);
-            explode(r.x, r.y, [255, 180, 210], 80, 2.5);
-            explode(r.x, r.y, [255, 220, 235], 40, 1.2);
-          } else {
-            explode(r.x, r.y, r.color, r.size, 3);
-          }
-          rockets.splice(i, 1);
-        }
-      }
-
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.trail.push({ x: p.x, y: p.y, life: p.life });
-        if (p.trail.length > 8) p.trail.shift();
-        p.vx *= 0.992; p.vy += p.gravity; p.vy *= 0.992;
-        p.x += p.vx; p.y += p.vy; p.life -= p.decay;
-        if (p.life <= 0) { particles.splice(i, 1); continue; }
-        for (let j = 0; j < p.trail.length; j++) {
-          const t = p.trail[j];
-          const a = t.life * (j / p.trail.length) * 0.3;
-          ctx.fillStyle = "rgba(" + p.r + "," + p.g + "," + p.b + "," + a + ")";
-          ctx.beginPath(); ctx.arc(t.x, t.y, p.size * 0.5, 0, Math.PI * 2); ctx.fill();
-        }
-        const al = p.life * 0.8;
-        ctx.fillStyle = "rgba(" + p.r + "," + p.g + "," + p.b + "," + al + ")";
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "rgba(" + p.r + "," + p.g + "," + p.b + "," + (al * 0.3) + ")";
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.size * p.life * 3, 0, Math.PI * 2); ctx.fill();
-      }
-
-      if (rockets.length === 0 && particles.length === 0) {
-        pauseTimer++;
-        if (pauseTimer > 60) { pauseTimer = 0; frame = 0; scheduleShow(); }
-      }
-
-      requestAnimationFrame(loop);
-    }
-
-    const raf = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "absolute",
-        inset: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 1,
-        pointerEvents: "none",
-      }}
-    />
-  );
-}
 export default function Page() {
   const [lang, setLang] = useState("ja");
   const [lightbox, setLightbox] = useState(null);
@@ -1353,7 +1254,6 @@ export default function Page() {
             <h1 className="cin-hero-title">{t.hero.t}</h1>
             <p className="cin-hero-desc">{t.hero.d}</p>
           </div>
-          <div className="cin-scroll-hint"><div className="cin-scroll-line" /></div>
         </div>
         <section className="cin-section">
           <div className="cin-map-wrap" ref={mapRef}>
