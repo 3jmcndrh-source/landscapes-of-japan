@@ -1140,7 +1140,7 @@ export default function Page() {
   /* Responsive image sizes (default to desktop for SSR, update on client) */
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
-    if (window.innerWidth <= 768) setImgSizes({ thumbW: 600, lbW: 1200 });
+    if (window.innerWidth <= 768) setImgSizes({ thumbW: 600, lbW: 800 });
   }, []);
   const { thumbW, lbW } = imgSizes;
 
@@ -1215,12 +1215,12 @@ export default function Page() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [lightbox, lbPrev, lbNext]);
 
-  /* Preload adjacent lightbox images */
+  /* Preload adjacent lightbox images (±2 for faster swipe) */
   useEffect(() => {
     if (lightbox === null || !allPhotos.length) return;
-    const prev = (lightbox <= 0 ? allPhotos.length - 1 : lightbox - 1);
-    const next = (lightbox >= allPhotos.length - 1 ? 0 : lightbox + 1);
-    [prev, next].forEach(i => { const img = new Image(); img.src = allPhotos[i].url; });
+    const len = allPhotos.length;
+    const indices = [-2, -1, 1, 2].map(d => ((lightbox + d) % len + len) % len);
+    indices.forEach(i => { const img = new Image(); img.src = allPhotos[i].url; });
   }, [lightbox, allPhotos]);
 
   useEffect(() => {
