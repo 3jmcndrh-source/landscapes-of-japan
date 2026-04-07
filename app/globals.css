@@ -28,7 +28,7 @@ html,body{background:#0a0a0a;color:#e8e4df}
 .back-map:hover{color:#e8e4df;background:rgba(30,30,30,.9);border-color:rgba(255,255,255,.25)}
 .back-map svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
 
-.cin-hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cin-hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:visible}
 .cin-hero-bg{position:absolute;inset:0;background:#0a0a0a}
 .cin-hero-content{position:relative;z-index:2;text-align:center}
 .cin-hero-title{font-family:'Yuji Boku',serif;font-size:clamp(36px,7vw,88px);font-weight:400;letter-spacing:.12em;opacity:0;transform:translateY(40px);animation:fu 1.5s ease .5s forwards;line-height:1.3}

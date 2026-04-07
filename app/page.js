@@ -1242,7 +1242,7 @@ export default function Page() {
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
       {/* CSS moved to globals.css */}
 
-      <div ref={cRef} style={{ height: "100vh", overflowY: "auto", overflowX: "hidden", scrollBehavior: "smooth" }}>
+      <div ref={cRef} style={{ height: "100vh", overflowY: "auto", overflowX: "hidden", scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}>
         <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
           <div className="top-langs">
             {Object.entries(TR).map(([c, v]) => (
