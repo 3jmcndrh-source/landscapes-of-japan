@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://landscapes-of-japan.vercel.app/sitemap.xml

@@ -31,14 +31,31 @@ const yujiBoku = Yuji_Boku({
   display: "swap",
 });
 
+const SITE_URL = "https://landscapes-of-japan.vercel.app";
+const OG_IMAGE = "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/DSC07601_cocitq.jpg";
+
 export const metadata = {
-  title: "Landscapes of Japan — 日本の風景",
-  description: "A cinematic photography portfolio showcasing the landscapes of Japan. 日本の風景写真ポートフォリオ。",
+  metadataBase: new URL(SITE_URL),
+  title: "Landscapes of Japan — 日本の風景写真ポートフォリオ",
+  description: "北海道から沖縄まで、日本全国の風景写真を掲載。京都、鎌倉、知床、宮古島など18都道府県、380枚以上の写真を20言語対応で公開中。A cinematic photography portfolio showcasing landscapes across Japan.",
+  keywords: ["日本", "風景写真", "ポートフォリオ", "Japan", "landscape photography", "portfolio", "京都", "北海道", "沖縄", "鎌倉", "知床", "宮古島", "travel", "nature", "Japanese landscapes"],
+  alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Landscapes of Japan",
-    description: "Cinematic photography portfolio of Japanese landscapes",
+    title: "Landscapes of Japan — 日本の風景",
+    description: "北海道から沖縄まで、日本全国の風景写真380枚以上を掲載。Cinematic photography portfolio of Japanese landscapes.",
     type: "website",
+    url: SITE_URL,
+    siteName: "Landscapes of Japan",
+    locale: "ja_JP",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Landscapes of Japan — 日本の風景" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Landscapes of Japan — 日本の風景",
+    description: "北海道から沖縄まで、日本全国の風景写真380枚以上を掲載。",
+    images: [OG_IMAGE],
+  },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 export default function RootLayout({ children }) {

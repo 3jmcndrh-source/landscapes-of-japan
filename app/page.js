@@ -1240,7 +1240,20 @@ export default function Page() {
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
-      {/* CSS moved to globals.css */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "WebSite", name: "Landscapes of Japan", url: "https://landscapes-of-japan.vercel.app", description: "日本全国の風景写真ポートフォリオ。北海道から沖縄まで380枚以上の写真を20言語対応で公開。", inLanguage: "ja" },
+          { "@type": "ImageGallery", name: "Landscapes of Japan — 日本の風景", url: "https://landscapes-of-japan.vercel.app", description: "Cinematic photography portfolio showcasing landscapes across 18 prefectures of Japan",
+            about: { "@type": "Country", name: "Japan" },
+            image: PREFECTURES.flatMap(pf => pf.photos.slice(0, 3).map(p => ({
+              "@type": "Photograph", name: p.loc + " - " + pf.pref, contentLocation: { "@type": "Place", name: p.loc, address: { "@type": "PostalAddress", addressRegion: pf.pref, addressCountry: "JP" } },
+              image: "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/" + encodeURIComponent(p.id) + ".jpg",
+              dateCreated: p.year ? String(p.year) : undefined
+            })))
+          }
+        ]
+      }) }} />
 
       <div ref={cRef} style={{ height: "100vh", overflowY: "auto", overflowX: "hidden", scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}>
         <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
@@ -1275,7 +1288,7 @@ export default function Page() {
                   {pf.photos.map((photo, idx) => (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => openLightbox(getUrl(photo, lbW))} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
-                        <img src={getUrl(photo, thumbW)} alt="" loading="lazy" draggable="false" />
+                        <img src={getUrl(photo, thumbW)} alt={photo.loc + " - " + pf.pref + " | Landscapes of Japan"} loading="lazy" draggable="false" />
                         {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
                         {photo.year && <div className="cin-hcard-year">{photo.year}</div>}
                         <div className="cin-watermark">Landscapes of Japan</div>
@@ -1339,7 +1352,7 @@ export default function Page() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
             <div className="cin-lb-inner" onClick={() => setLightbox(null)}>
-              <img src={cur.url} alt="" draggable="false" />
+              <img src={cur.url} alt={cur.loc + " - " + cur.pref + " | Landscapes of Japan"} draggable="false" />
               <div className="cin-lb-wm">Landscapes of Japan</div>
             </div>
             <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>
