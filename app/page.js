@@ -313,7 +313,7 @@ const PREFECTURES = [
       { id: "DSC07425_zsvfno", loc: "東福寺", year: 2025 },
       { id: "DSC07417_dqlfwd", loc: "東福寺", year: 2025 },
       { id: "DSC07408_qarh4p", loc: "東福寺", year: 2025 },
-      { id: "DSC07394_hhq8bw", loc: "清水寺", year: 2025 },
+      { id: "DSC07394_hhq8bw", loc: "東福寺", year: 2025 },
       { id: "DSC07393_xtp40k", loc: "清水寺", year: 2025 },
       { id: "DSC07386_vrsz1g", loc: "清水寺", year: 2025 },
       { id: "DSC07355_zyqovr", loc: "清水寺", year: 2025 },
