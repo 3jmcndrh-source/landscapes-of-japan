@@ -283,7 +283,7 @@ const LOC_I18N = {
   "白川郷":{ja:"白川郷",en:"Shirakawa-go",zh:"白川乡",ko:"시라카와고","zh-tw":"白川鄉",es:"Shirakawa-go",fr:"Shirakawa-go",de:"Shirakawa-go",pt:"Shirakawa-go",it:"Shirakawa-go",ru:"Сиракава-го",ar:"شيراكاوا-غو",hi:"शिराकावा-गो",th:"ชิราคาวาโกะ",vi:"Shirakawa-go",id:"Shirakawa-go",tr:"Shirakawa-go",nl:"Shirakawa-go",pl:"Shirakawa-go",sv:"Shirakawa-go"},
   "知床":{ja:"知床",en:"Shiretoko",zh:"知床",ko:"시레토코","zh-tw":"知床",es:"Shiretoko",fr:"Shiretoko",de:"Shiretoko",pt:"Shiretoko",it:"Shiretoko",ru:"Сирэтоко",ar:"شيريتوكو",hi:"शिरेतोको",th:"ชิเระโตโกะ",vi:"Shiretoko",id:"Shiretoko",tr:"Shiretoko",nl:"Shiretoko",pl:"Shiretoko",sv:"Shiretoko"},
   "福岡":{ja:"福岡",en:"Fukuoka",zh:"福冈",ko:"후쿠오카","zh-tw":"福岡",es:"Fukuoka",fr:"Fukuoka",de:"Fukuoka",pt:"Fukuoka",it:"Fukuoka",ru:"Фукуока",ar:"فوكوكا",hi:"फ़ुकुओका",th:"ฟุกุโอกะ",vi:"Fukuoka",id:"Fukuoka",tr:"Fukuoka",nl:"Fukuoka",pl:"Fukuoka",sv:"Fukuoka"},
-  "美唄":{zh:"美唄",ko:"비바이","zh-tw":"美唄",es:"Bibai",fr:"Bibai",de:"Bibai",pt:"Bibai",it:"Bibai",ru:"Бибай",ar:"بيباي",hi:"बिबाई",th:"บิไบ",vi:"Bibai",id:"Bibai",tr:"Bibai",nl:"Bibai",pl:"Bibai",sv:"Bibai"},
+  "美唄":{ja:"美唄",en:"Bibai",zh:"美唄",ko:"비바이","zh-tw":"美唄",es:"Bibai",fr:"Bibai",de:"Bibai",pt:"Bibai",it:"Bibai",ru:"Бибай",ar:"بيباي",hi:"बिबाई",th:"บิไบ",vi:"Bibai",id:"Bibai",tr:"Bibai",nl:"Bibai",pl:"Bibai",sv:"Bibai"},
   "美幌峠":{ja:"美幌峠",en:"Bihoro Pass",zh:"美幌峠",ko:"비호로 고개","zh-tw":"美幌峠",es:"Paso Bihoro",fr:"Col de Bihoro",de:"Bihoro-Pass",pt:"Passagem Bihoro",it:"Passo Bihoro",ru:"Перевал Бихоро",ar:"ممر بيهورو",hi:"बिहोरो दर्रा",th:"ช่องเขาบิโฮโระ",vi:"Đèo Bihoro",id:"Celah Bihoro",tr:"Bihoro Geçidi",nl:"Bihoro Pas",pl:"Przełęcz Bihoro",sv:"Bihoro Passet"},
   "道後温泉":{ja:"道後温泉",en:"Dogo Onsen",zh:"道后温泉",ko:"도고 온천","zh-tw":"道後溫泉",es:"Termas de Dogo",fr:"Thermes de Dogo",de:"Dogo Onsen",pt:"Termas de Dogo",it:"Terme di Dogo",ru:"Онсэн Дого",ar:"ينابيع دوغو الحارة",hi:"दोगो ओनसेन",th:"ด็อกโกะออนเซ็น",vi:"Suối nước nóng Dogo",id:"Pemandian Air Panas Dogo",tr:"Dogo Kaplıcası",nl:"Dogo Onsen",pl:"Dogo Onsen",sv:"Dogo Onsen"},
   "金沢":{ja:"金沢",en:"Kanazawa",zh:"金泽",ko:"가나자와","zh-tw":"金澤",es:"Kanazawa",fr:"Kanazawa",de:"Kanazawa",pt:"Kanazawa",it:"Kanazawa",ru:"Канадзава",ar:"كانازاوا",hi:"कानाज़ावा",th:"คานาซาวะ",vi:"Kanazawa",id:"Kanazawa",tr:"Kanazawa",nl:"Kanazawa",pl:"Kanazawa",sv:"Kanazawa"},
@@ -299,124 +299,6 @@ const getLocName = (jpName, lang) => {
   return m ? (m[lang] || m.en || jpName) : jpName;
 };
 const PREFECTURES = [
-  {
-    pref: "京都府",
-    lat: 35.01, lng: 135.77,
-    photos: [
-      { id: "DSC07601_cocitq", loc: "清水寺周辺", year: 2025 },
-      { id: "DSC07592_anjr5r", loc: "清水寺", year: 2025 },
-      { id: "DSC07563_icizbb", loc: "清水寺", year: 2025 },
-      { id: "DSC07546_gaplky", loc: "清水寺", year: 2025 },
-      { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂", year: 2025 },
-      { id: "DSC07495_qorawr", loc: "平等院鳳凰堂", year: 2025 },
-      { id: "DSC07451_s1rhpd", loc: "東福寺", year: 2025 },
-      { id: "DSC07425_zsvfno", loc: "東福寺", year: 2025 },
-      { id: "DSC07417_dqlfwd", loc: "東福寺", year: 2025 },
-      { id: "DSC07408_qarh4p", loc: "東福寺", year: 2025 },
-      { id: "DSC07394_hhq8bw", loc: "東福寺", year: 2025 },
-      { id: "DSC07393_xtp40k", loc: "清水寺", year: 2025 },
-      { id: "DSC07386_vrsz1g", loc: "清水寺", year: 2025 },
-      { id: "DSC07355_zyqovr", loc: "清水寺", year: 2025 },
-      { id: "DSC07337_kaejdo", loc: "清水寺", year: 2025 },
-      { id: "DSC07337_rjoogf", loc: "清水寺", year: 2025 },
-      { id: "DSC07313_akiagf", loc: "金閣寺", year: 2025 },
-      { id: "DSC07290_sz6x7s", loc: "金閣寺", year: 2025 },
-    ]
-  },
-  {
-    pref: "奈良県",
-    lat: 34.69, lng: 135.83,
-    photos: [
-      { id: "DSC07266_ii8otn", loc: "法隆寺 夢殿", year: 2025 },
-      { id: "DSC07249_ijee7w", loc: "法隆寺", year: 2025 },
-      { id: "DSC07241_kxqtal", loc: "法隆寺", year: 2025 },
-    ]
-  },
-  {
-    pref: "兵庫県",
-    lat: 34.84, lng: 134.69,
-    photos: [
-      { id: "DSC07173_ogwql9", loc: "姫路城", year: 2025 },
-      { id: "DSC07150_hlpfgz", loc: "姫路城", year: 2025 },
-      { id: "DSC07139_h55edw", loc: "姫路城", year: 2025 },
-      { id: "DSC07127_wo4ifg", loc: "姫路城", year: 2025 },
-      { id: "DSC07121_fxsgn9", loc: "姫路城", year: 2025 },
-    ]
-  },
-  {
-    pref: "愛知県",
-    lat: 35.18, lng: 136.91,
-    photos: [
-      { id: "d9zzmvbrhcra5yiz7wf2", loc: "東山動物園", year: 2026 },
-      { id: "esnwda2bmizzfkzz8wio", loc: "東山動物園", year: 2026 },
-      { id: "d7kuuzdma3caurtxqnl2", loc: "東山動物園", year: 2026 },
-      { id: "bmnvk4yvrdr0tbuy1mpu", loc: "東山動物園", year: 2026 },
-      { id: "tdt6v72szvtnkkljprzo", loc: "東山動物園", year: 2026 },
-      { id: "rpx3qhx4cetajlsvhbdf", loc: "東山動物園", year: 2026 },
-      { id: "aggz4yfjjq5jb6ksmjas", loc: "東山動物園", year: 2026 },
-      { id: "nvppjkkhgoidh24ilcri", loc: "東山動物園", year: 2026 },
-      { id: "j8dccwqcudkzcjclwjdl", loc: "東山動物園", year: 2026 },
-      { id: "gzzzjgl7zbppkkv5fafp", loc: "東山動物園", year: 2026 },
-      { id: "oalpuwnwov6mqkdoxuxj", loc: "東山動物園", year: 2026 },
-      { id: "ihvclom5aynceacv1b9c", loc: "東山動物園", year: 2026 },
-      { id: "fmkvychabpy0nkfsy7ct", loc: "東山動物園", year: 2026 },
-      { id: "iruajiykij2sfoqdxxgm", loc: "東山動物園", year: 2026 },
-      { id: "yfbqyipnasg0ccxfn9c8", loc: "東山動物園", year: 2026 },
-      { id: "smx4ztgstf905vdrbmvc", loc: "東山動物園", year: 2026 },
-      { id: "q1mzddbwimo7vypffpak", loc: "東山動物園", year: 2026 },
-      { id: "uwefhpwm7e85ewi68tgp", loc: "東山動物園", year: 2026 },
-      { id: "cemg184iixgrlutqlkkr", loc: "東山動物園", year: 2026 },
-      { id: "cfnt5wcgast0i0c9ha5h", loc: "東山動物園", year: 2026 },
-      { id: "ciehvlktddmfmao1zhj4", loc: "東山動物園", year: 2026 },
-      { id: "gswfddvq2q8c0t8saclg", loc: "東山動物園", year: 2026 },
-      { id: "ezesf5vrqpli8znbvjpi", loc: "東山動物園", year: 2026 },
-      { id: "wdlkpcyvsr5g4sklgd4w", loc: "東山動物園", year: 2026 },
-    ]
-  },
-  {
-    pref: "三重県",
-    lat: 34.73, lng: 136.51,
-    photos: [
-      { id: "ngy6lud2tgbztbyf4jke", loc: "梅林公園", year: 2026 },
-      { id: "urycxqz4g4k3vra6gzzw", loc: "梅林公園", year: 2026 },
-      { id: "bb924wbc5x1ny5c8hxob", loc: "横山展望台", year: 2026 },
-      { id: "ajf05ybnec7njy9ubaqi", loc: "横山展望台", year: 2026 },
-      { id: "jdobpyucdfhouqrswhec", loc: "横山展望台", year: 2026 },
-      { id: "rc4ukzba1zlsefhsfbz3", loc: "朝熊山展望台", year: 2026 },
-      { id: "dhwplqr8k5e49mis89hz", loc: "おはらい町・おかげ横丁", year: 2026 },
-      { id: "n0prvjjho2nf5ucrsoil", loc: "おはらい町・おかげ横丁", year: 2026 },
-      { id: "queyyiuttwaei8kiznbc", loc: "おはらい町・おかげ横丁", year: 2026 },
-      { id: "zq5o5jklm6eehcprk5w4", loc: "おはらい町・おかげ横丁", year: 2026 },
-      { id: "vxpu71gd5qnd3g1ey91f", loc: "おはらい町・おかげ横丁", year: 2026 },
-      { id: "emfqpctrgkvremxuzxvj", loc: "おはらい町・おかげ横丁", year: 2026 },
-      { id: "gzs6fz39kbyjlywoppuf", loc: "伊勢神宮", year: 2026 },
-      { id: "w2h5cjtnpeekmtld3dmy", loc: "伊勢神宮", year: 2026 },
-      { id: "wbdpz61p1xxcdumsr4ua", loc: "伊勢神宮", year: 2026 },
-      { id: "r244rjurupipzhamaiuv", loc: "伊勢神宮", year: 2026 },
-      { id: "lt1vn7wimwlslgwgv6qk", loc: "伊勢神宮", year: 2026 },
-      { id: "lpspgxkqt5vekjyztt5g", loc: "伊勢神宮", year: 2026 },
-      { id: "oa1yiaxflqbq3afxsggp", loc: "伊勢神宮", year: 2026 },
-      { id: "pby91yxkkrxjdaflielh", loc: "夫婦岩", year: 2026 },
-      { id: "elpprz829ghgpuvgh9c1", loc: "鳥羽水族館", year: 2026 },
-      { id: "dbexqjaj5yoy7tugr6nv", loc: "鳥羽水族館", year: 2026 },
-      { id: "nze6lvbizsyc2rdoeksi", loc: "鳥羽水族館", year: 2026 },
-      { id: "v0pbwtscokak0sfnz9lc", loc: "鳥羽水族館", year: 2026 },
-      { id: "gvswuk8pqczrhib2fo0d", loc: "鳥羽水族館", year: 2026 },
-      { id: "lrn9jljffnnkiifl02jv", loc: "鳥羽水族館", year: 2026 },
-      { id: "oxltiu41uiekga5zrdlc", loc: "鳥羽水族館", year: 2026 },
-      { id: "hby2zcizym4q02kyplrs", loc: "鳥羽水族館", year: 2026 },
-      { id: "zrtfurwejoxf4zdqoxe9", loc: "鳥羽水族館", year: 2026 },
-      { id: "aiaqkp1bnrxmckphpowu", loc: "鳥羽水族館", year: 2026 },
-      { id: "uvegilhugmzsppzt1i3n", loc: "鳥羽水族館", year: 2026 },
-      { id: "pkfhxqbarnxusn6jdpdy", loc: "鳥羽水族館", year: 2026 },
-      { id: "jjkfqca5ztizzngwxvy0", loc: "鳥羽水族館", year: 2026 },
-      { id: "rfzr79edmgjca6opnljt", loc: "鳥羽水族館", year: 2026 },
-      { id: "ndtofmydaitspbsburef", loc: "鳥羽水族館", year: 2026 },
-      { id: "ysiak3am7dmste2sldb4", loc: "鳥羽水族館", year: 2026 },
-      { id: "xbhrwavgo6wbsuu5jl9k", loc: "鳥羽水族館", year: 2026 },
-      { id: "uouqy7tcwrewlt34ai6z", loc: "鳥羽水族館", year: 2026 },
-    ]
-  },
   {
     pref: "北海道",
     lat: 43.06, lng: 141.35,
@@ -542,20 +424,243 @@ const PREFECTURES = [
     ]
   },
   {
-    pref: "高知県",
-    lat: 33.56, lng: 133.53,
+    pref: "千葉県",
+    lat: 35.61, lng: 140.12,
     photos: [
-      { id: "opof4iv0ksb7hyyxwd0g", loc: "にこ淵", year: 2025 },
-      { id: "cpucwtmknaneef6uw8en", loc: "名越屋沈下橋", year: 2025 },
-      { id: "ekyaldwcry9gqiy9tgre", loc: "高知城", year: 2025 },
-      { id: "yhenlvvvz5kucqldydfm", loc: "高知城", year: 2025 },
-      { id: "z5dppj2tdaf1ovyjq3id", loc: "高知城", year: 2025 },
-      { id: "pk5nouibsptedo8wds3h", loc: "高知城", year: 2025 },
-      { id: "pkszsvhktqyiwlyfurkd", loc: "高知城", year: 2025 },
-      { id: "w43utexm5kjyu54hducu", loc: "高知城", year: 2025 },
-      { id: "x7zziur8nq5gx2vksgzr", loc: "桂浜", year: 2025 },
-      { id: "p0z0vmdnqz4ptqiwgtwl", loc: "桂浜", year: 2025 },
-      { id: "zxpnph1zw30vn5ce3hws", loc: "桂浜", year: 2025 },
+      { id: "pwrg5vqnmt1uxmh07jhb", loc: "鴨川シーワールド", year: 2024 },
+    ]
+  },
+  {
+    pref: "東京都",
+    lat: 35.68, lng: 139.69,
+    photos: [
+      { id: "hhuf0fqsgs4qdztehnzb", loc: "東京", year: 2024 },
+      { id: "my7re28ckggxseludvlj", loc: "東京", year: 2024 },
+      { id: "bemqqcwb710hhvrp5k1d", loc: "品川", year: 2024 },
+      { id: "fzrsmhfr718rzcwptvws", loc: "品川", year: 2024 },
+      { id: "zvioi0jy5xl3y85lw2sa", loc: "品川", year: 2024 },
+      { id: "n9wv3krjeebsash5zvxv", loc: "東京", year: 2024 },
+      { id: "irwultgwnqvfpj3ufrhq", loc: "東京", year: 2024 },
+      { id: "voty0hrw6k95t7cq2nmp", loc: "東京", year: 2024 },
+      { id: "fdatlwqk3m6b2auwxcra", loc: "東京", year: 2024 },
+      { id: "wpnpqjmfgrpx0pkqq4wf", loc: "東京", year: 2024 },
+      { id: "lokxylhdsiai3w8cjy6e", loc: "東京", year: 2024 },
+      { id: "veheffiav3eqsnlyidg7", loc: "東京", year: 2024 },
+      { id: "al0m8swfnbyrbkc9ebeo", loc: "東京", year: 2024 },
+      { id: "n0e8xeyvaabkthqbjgoh", loc: "東京", year: 2024 },
+    ]
+  },
+  {
+    pref: "神奈川県",
+    lat: 35.45, lng: 139.64,
+    photos: [
+      { id: "roeiwcd2bexzyq5eswsn", loc: "横浜", year: 2025 },
+      { id: "dyejili3mrrizyvpwcvb", loc: "横浜", year: 2025 },
+      { id: "aa9zrjl0dcnlulqjilee", loc: "横浜", year: 2025 },
+      { id: "j3g8s2rcorimyusaf83i", loc: "横浜", year: 2025 },
+      { id: "nvlttty0qgchzstxo6fb", loc: "横浜", year: 2025 },
+      { id: "xghhx4hetbdgvw69ou9g", loc: "横浜", year: 2025 },
+      { id: "prfajod3kbdxntzhooxt", loc: "横浜", year: 2025 },
+      { id: "payoa5eewjukgzk7vrjk", loc: "横浜", year: 2025 },
+      { id: "gj8s9sm7ixl9iz7aczew", loc: "横浜", year: 2025 },
+      { id: "nzuvubaffkzjzeukta7f", loc: "鎌倉", year: 2025 },
+      { id: "qaua9k8kdnrfl8pyomvg", loc: "鎌倉", year: 2025 },
+      { id: "davjaitkmbgfzbuqqshb", loc: "鎌倉", year: 2025 },
+      { id: "efujkjo4rcztbxdtulou", loc: "鎌倉", year: 2025 },
+      { id: "p0yizyrijhwadznyouh1", loc: "鎌倉", year: 2025 },
+      { id: "pegmqelz8hwemg8lmuem", loc: "鎌倉", year: 2025 },
+      { id: "rksndawdacv4inhsoztc", loc: "鎌倉", year: 2025 },
+      { id: "vi22klqfhpaxmua4uxio", loc: "鎌倉", year: 2025 },
+      { id: "x7ceq5ilu9gumx7nnabs", loc: "鎌倉", year: 2025 },
+      { id: "ztglq3cxaliezsq0048u", loc: "鎌倉", year: 2025 },
+      { id: "wqnb6brxqwpwj7usjjcr", loc: "鎌倉", year: 2025 },
+      { id: "ett0yifnekzzulxng4kf", loc: "鎌倉", year: 2025 },
+      { id: "eajc1cik7jd8ykslva95", loc: "鎌倉", year: 2025 },
+      { id: "jmf7rkrauxpwodnbuknb", loc: "鎌倉", year: 2025 },
+      { id: "lrp0vksrbfnh2pwwgmmm", loc: "鎌倉", year: 2025 },
+      { id: "tgoia6bco7damtvz2uox", loc: "鎌倉", year: 2025 },
+      { id: "zyusbwjt7ijoithy2oe2", loc: "鎌倉", year: 2025 },
+      { id: "cqtxfygczdtbulyypp2s", loc: "鎌倉", year: 2025 },
+      { id: "fopphn6icofqso4t6ljm", loc: "鎌倉", year: 2025 },
+      { id: "izaxlfrectinom3ni2kx", loc: "鎌倉", year: 2025 },
+      { id: "lngonbizwjt65wb6cmud", loc: "鎌倉", year: 2025 },
+      { id: "qad2jinoi3p0fdci2khl", loc: "鎌倉", year: 2025 },
+      { id: "ew9qbkavirvi9dyk2y6c", loc: "鎌倉", year: 2025 },
+      { id: "o0p2yvggitth4szsjodn", loc: "鎌倉", year: 2025 },
+      { id: "hay0vuznehokdqiozajo", loc: "鎌倉", year: 2025 },
+      { id: "ud4u7d9annvid0z34noc", loc: "鎌倉", year: 2025 },
+      { id: "u3eexuf03etogvhckvu3", loc: "鎌倉", year: 2025 },
+      { id: "qfv83n8hk5nwpp3onndu", loc: "鎌倉", year: 2025 },
+      { id: "pdrekc0jdl2binzgjmqd", loc: "鎌倉", year: 2025 },
+      { id: "anj9lwufynk4fthbn7ur", loc: "鎌倉", year: 2025 },
+      { id: "ryqqaaawd3vhobvd4tnw", loc: "鎌倉", year: 2025 },
+      { id: "kxezxlirlowgipdjeyv6", loc: "鎌倉", year: 2025 },
+      { id: "huvbk5yghxxi9i7naju1", loc: "鎌倉", year: 2025 },
+      { id: "kautbc4pnvlcfg9a1rdi", loc: "鎌倉", year: 2025 },
+      { id: "y2wc5fgze6u1fuwxem26", loc: "鎌倉", year: 2025 },
+      { id: "gy0zet9wn9wuu6araazo", loc: "鎌倉", year: 2025 },
+      { id: "x6o5feqxgyw1d85jl8kl", loc: "鎌倉", year: 2025 },
+      { id: "mnhvtt3jhn2aq4xwezkt", loc: "鎌倉", year: 2025 },
+      { id: "cmf5zpinkqrdzmxyq7ol", loc: "鎌倉", year: 2025 },
+      { id: "yw3azffdkstu48ih5tpt", loc: "鎌倉", year: 2025 },
+      { id: "eih6ffrbddltvx3bjzgp", loc: "鎌倉", year: 2025 },
+    ]
+  },
+  {
+    pref: "石川県",
+    lat: 36.59, lng: 136.63,
+    photos: [
+      { id: "tholpq2n9n3es1zbunl2", loc: "金沢", year: 2024 },
+      { id: "fvmfopoju9j1afeyfmfq", loc: "金沢", year: 2024 },
+      { id: "njkhpu1dsjnaqdpuibsl", loc: "金沢", year: 2024 },
+      { id: "a7mrvz28s8bhljtvxerd", loc: "金沢", year: 2024 },
+      { id: "iqzmqcxvlmzmpxb3e8nl", loc: "金沢", year: 2024 },
+      { id: "vravjelowaeamknkqkte", loc: "金沢", year: 2024 },
+      { id: "zip572vkpw2oinqbodt9", loc: "金沢", year: 2024 },
+    ]
+  },
+  {
+    pref: "岐阜県",
+    lat: 35.39, lng: 136.72,
+    photos: [
+      { id: "qvsgt1aw6o4iwewvhmdc", loc: "白川郷", year: 2024 },
+      { id: "ake8ymyn7d0qnybyzihw", loc: "白川郷", year: 2024 },
+      { id: "y4l6gy5xwtz8d3fvvjb0", loc: "白川郷", year: 2024 },
+      { id: "vnvzv0ztfpwvvrvl5lfn", loc: "白川郷", year: 2024 },
+    ]
+  },
+  {
+    pref: "愛知県",
+    lat: 35.18, lng: 136.91,
+    photos: [
+      { id: "d9zzmvbrhcra5yiz7wf2", loc: "東山動物園", year: 2026 },
+      { id: "esnwda2bmizzfkzz8wio", loc: "東山動物園", year: 2026 },
+      { id: "d7kuuzdma3caurtxqnl2", loc: "東山動物園", year: 2026 },
+      { id: "bmnvk4yvrdr0tbuy1mpu", loc: "東山動物園", year: 2026 },
+      { id: "tdt6v72szvtnkkljprzo", loc: "東山動物園", year: 2026 },
+      { id: "rpx3qhx4cetajlsvhbdf", loc: "東山動物園", year: 2026 },
+      { id: "aggz4yfjjq5jb6ksmjas", loc: "東山動物園", year: 2026 },
+      { id: "nvppjkkhgoidh24ilcri", loc: "東山動物園", year: 2026 },
+      { id: "j8dccwqcudkzcjclwjdl", loc: "東山動物園", year: 2026 },
+      { id: "gzzzjgl7zbppkkv5fafp", loc: "東山動物園", year: 2026 },
+      { id: "oalpuwnwov6mqkdoxuxj", loc: "東山動物園", year: 2026 },
+      { id: "ihvclom5aynceacv1b9c", loc: "東山動物園", year: 2026 },
+      { id: "fmkvychabpy0nkfsy7ct", loc: "東山動物園", year: 2026 },
+      { id: "iruajiykij2sfoqdxxgm", loc: "東山動物園", year: 2026 },
+      { id: "yfbqyipnasg0ccxfn9c8", loc: "東山動物園", year: 2026 },
+      { id: "smx4ztgstf905vdrbmvc", loc: "東山動物園", year: 2026 },
+      { id: "q1mzddbwimo7vypffpak", loc: "東山動物園", year: 2026 },
+      { id: "uwefhpwm7e85ewi68tgp", loc: "東山動物園", year: 2026 },
+      { id: "cemg184iixgrlutqlkkr", loc: "東山動物園", year: 2026 },
+      { id: "cfnt5wcgast0i0c9ha5h", loc: "東山動物園", year: 2026 },
+      { id: "ciehvlktddmfmao1zhj4", loc: "東山動物園", year: 2026 },
+      { id: "gswfddvq2q8c0t8saclg", loc: "東山動物園", year: 2026 },
+      { id: "ezesf5vrqpli8znbvjpi", loc: "東山動物園", year: 2026 },
+      { id: "wdlkpcyvsr5g4sklgd4w", loc: "東山動物園", year: 2026 },
+    ]
+  },
+  {
+    pref: "三重県",
+    lat: 34.73, lng: 136.51,
+    photos: [
+      { id: "ngy6lud2tgbztbyf4jke", loc: "梅林公園", year: 2026 },
+      { id: "urycxqz4g4k3vra6gzzw", loc: "梅林公園", year: 2026 },
+      { id: "bb924wbc5x1ny5c8hxob", loc: "横山展望台", year: 2026 },
+      { id: "ajf05ybnec7njy9ubaqi", loc: "横山展望台", year: 2026 },
+      { id: "jdobpyucdfhouqrswhec", loc: "横山展望台", year: 2026 },
+      { id: "rc4ukzba1zlsefhsfbz3", loc: "朝熊山展望台", year: 2026 },
+      { id: "dhwplqr8k5e49mis89hz", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "n0prvjjho2nf5ucrsoil", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "queyyiuttwaei8kiznbc", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "zq5o5jklm6eehcprk5w4", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "vxpu71gd5qnd3g1ey91f", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "emfqpctrgkvremxuzxvj", loc: "おはらい町・おかげ横丁", year: 2026 },
+      { id: "gzs6fz39kbyjlywoppuf", loc: "伊勢神宮", year: 2026 },
+      { id: "w2h5cjtnpeekmtld3dmy", loc: "伊勢神宮", year: 2026 },
+      { id: "wbdpz61p1xxcdumsr4ua", loc: "伊勢神宮", year: 2026 },
+      { id: "r244rjurupipzhamaiuv", loc: "伊勢神宮", year: 2026 },
+      { id: "lt1vn7wimwlslgwgv6qk", loc: "伊勢神宮", year: 2026 },
+      { id: "lpspgxkqt5vekjyztt5g", loc: "伊勢神宮", year: 2026 },
+      { id: "oa1yiaxflqbq3afxsggp", loc: "伊勢神宮", year: 2026 },
+      { id: "pby91yxkkrxjdaflielh", loc: "夫婦岩", year: 2026 },
+      { id: "elpprz829ghgpuvgh9c1", loc: "鳥羽水族館", year: 2026 },
+      { id: "dbexqjaj5yoy7tugr6nv", loc: "鳥羽水族館", year: 2026 },
+      { id: "nze6lvbizsyc2rdoeksi", loc: "鳥羽水族館", year: 2026 },
+      { id: "v0pbwtscokak0sfnz9lc", loc: "鳥羽水族館", year: 2026 },
+      { id: "gvswuk8pqczrhib2fo0d", loc: "鳥羽水族館", year: 2026 },
+      { id: "lrn9jljffnnkiifl02jv", loc: "鳥羽水族館", year: 2026 },
+      { id: "oxltiu41uiekga5zrdlc", loc: "鳥羽水族館", year: 2026 },
+      { id: "hby2zcizym4q02kyplrs", loc: "鳥羽水族館", year: 2026 },
+      { id: "zrtfurwejoxf4zdqoxe9", loc: "鳥羽水族館", year: 2026 },
+      { id: "aiaqkp1bnrxmckphpowu", loc: "鳥羽水族館", year: 2026 },
+      { id: "uvegilhugmzsppzt1i3n", loc: "鳥羽水族館", year: 2026 },
+      { id: "pkfhxqbarnxusn6jdpdy", loc: "鳥羽水族館", year: 2026 },
+      { id: "jjkfqca5ztizzngwxvy0", loc: "鳥羽水族館", year: 2026 },
+      { id: "rfzr79edmgjca6opnljt", loc: "鳥羽水族館", year: 2026 },
+      { id: "ndtofmydaitspbsburef", loc: "鳥羽水族館", year: 2026 },
+      { id: "ysiak3am7dmste2sldb4", loc: "鳥羽水族館", year: 2026 },
+      { id: "xbhrwavgo6wbsuu5jl9k", loc: "鳥羽水族館", year: 2026 },
+      { id: "uouqy7tcwrewlt34ai6z", loc: "鳥羽水族館", year: 2026 },
+    ]
+  },
+  {
+    pref: "京都府",
+    lat: 35.01, lng: 135.77,
+    photos: [
+      { id: "DSC07601_cocitq", loc: "清水寺周辺", year: 2025 },
+      { id: "DSC07592_anjr5r", loc: "清水寺", year: 2025 },
+      { id: "DSC07563_icizbb", loc: "清水寺", year: 2025 },
+      { id: "DSC07546_gaplky", loc: "清水寺", year: 2025 },
+      { id: "DSC07504_yxpbtk", loc: "平等院鳳凰堂", year: 2025 },
+      { id: "DSC07495_qorawr", loc: "平等院鳳凰堂", year: 2025 },
+      { id: "DSC07451_s1rhpd", loc: "東福寺", year: 2025 },
+      { id: "DSC07425_zsvfno", loc: "東福寺", year: 2025 },
+      { id: "DSC07417_dqlfwd", loc: "東福寺", year: 2025 },
+      { id: "DSC07408_qarh4p", loc: "東福寺", year: 2025 },
+      { id: "DSC07394_hhq8bw", loc: "東福寺", year: 2025 },
+      { id: "DSC07393_xtp40k", loc: "清水寺", year: 2025 },
+      { id: "DSC07386_vrsz1g", loc: "清水寺", year: 2025 },
+      { id: "DSC07355_zyqovr", loc: "清水寺", year: 2025 },
+      { id: "DSC07337_kaejdo", loc: "清水寺", year: 2025 },
+      { id: "DSC07337_rjoogf", loc: "清水寺", year: 2025 },
+      { id: "DSC07313_akiagf", loc: "金閣寺", year: 2025 },
+      { id: "DSC07290_sz6x7s", loc: "金閣寺", year: 2025 },
+    ]
+  },
+  {
+    pref: "兵庫県",
+    lat: 34.84, lng: 134.69,
+    photos: [
+      { id: "DSC07173_ogwql9", loc: "姫路城", year: 2025 },
+      { id: "DSC07150_hlpfgz", loc: "姫路城", year: 2025 },
+      { id: "DSC07139_h55edw", loc: "姫路城", year: 2025 },
+      { id: "DSC07127_wo4ifg", loc: "姫路城", year: 2025 },
+      { id: "DSC07121_fxsgn9", loc: "姫路城", year: 2025 },
+    ]
+  },
+  {
+    pref: "奈良県",
+    lat: 34.69, lng: 135.83,
+    photos: [
+      { id: "DSC07266_ii8otn", loc: "法隆寺 夢殿", year: 2025 },
+      { id: "DSC07249_ijee7w", loc: "法隆寺", year: 2025 },
+      { id: "DSC07241_kxqtal", loc: "法隆寺", year: 2025 },
+    ]
+  },
+  {
+    pref: "徳島県",
+    lat: 34.07, lng: 134.56,
+    photos: [
+      { id: "iy3ljfosdadc2xabf8ly", loc: "鳴門海峡", year: 2025 },
+      { id: "psuhikljduldvl7jmox7", loc: "大鳴門橋", year: 2025 },
+    ]
+  },
+  {
+    pref: "香川県",
+    lat: 34.34, lng: 134.04,
+    photos: [
+      { id: "qsn9a5qfmcav4ufkwehz", loc: "父母ヶ浜", year: 2025 },
+      { id: "jpctlgps9n9yz7z2pefr", loc: "父母ヶ浜", year: 2025 },
     ]
   },
   {
@@ -575,11 +680,42 @@ const PREFECTURES = [
     ]
   },
   {
-    pref: "徳島県",
-    lat: 34.07, lng: 134.56,
+    pref: "高知県",
+    lat: 33.56, lng: 133.53,
     photos: [
-      { id: "iy3ljfosdadc2xabf8ly", loc: "鳴門海峡", year: 2025 },
-      { id: "psuhikljduldvl7jmox7", loc: "大鳴門橋", year: 2025 },
+      { id: "opof4iv0ksb7hyyxwd0g", loc: "にこ淵", year: 2025 },
+      { id: "cpucwtmknaneef6uw8en", loc: "名越屋沈下橋", year: 2025 },
+      { id: "ekyaldwcry9gqiy9tgre", loc: "高知城", year: 2025 },
+      { id: "yhenlvvvz5kucqldydfm", loc: "高知城", year: 2025 },
+      { id: "z5dppj2tdaf1ovyjq3id", loc: "高知城", year: 2025 },
+      { id: "pk5nouibsptedo8wds3h", loc: "高知城", year: 2025 },
+      { id: "pkszsvhktqyiwlyfurkd", loc: "高知城", year: 2025 },
+      { id: "w43utexm5kjyu54hducu", loc: "高知城", year: 2025 },
+      { id: "x7zziur8nq5gx2vksgzr", loc: "桂浜", year: 2025 },
+      { id: "p0z0vmdnqz4ptqiwgtwl", loc: "桂浜", year: 2025 },
+      { id: "zxpnph1zw30vn5ce3hws", loc: "桂浜", year: 2025 },
+    ]
+  },
+  {
+    pref: "福岡県",
+    lat: 33.61, lng: 130.42,
+    photos: [
+      { id: "cherzayx1vksmmu12kfg", loc: "福岡", year: 2025 },
+      { id: "zuytsm5uieakyzlj8mqa", loc: "福岡", year: 2025 },
+    ]
+  },
+  {
+    pref: "大分県",
+    lat: 33.24, lng: 131.61,
+    photos: [
+      { id: "szm5n4mwwmmh3fksqukz", loc: "別府", year: 2025 },
+      { id: "yuufchifryqi13eyyoor", loc: "別府", year: 2025 },
+      { id: "qxfxsuorglm0r8fzfgcr", loc: "別府", year: 2025 },
+      { id: "znmygcxoyxe7uihta2a3", loc: "別府", year: 2025 },
+      { id: "nhcofuhnbijxmqf7heop", loc: "別府", year: 2025 },
+      { id: "bwtpdo3ycszgiokdrkqz", loc: "別府", year: 2025 },
+      { id: "nejr6pdgmudgjynjhpzl", loc: "別府", year: 2025 },
+      { id: "gcjxpyk0fxof7we3ytqo", loc: "湯布院", year: 2025 },
     ]
   },
   {
@@ -667,142 +803,6 @@ const PREFECTURES = [
       { id: "h9setuefm4wxfu6udlrh", loc: "沖縄", year: 2025 },
       { id: "c4mljbvi3zl6e9nxwlrz", loc: "沖縄", year: 2025 },
       { id: "vdmsartx9qcs9w3f0snu", loc: "沖縄", year: 2025 },
-    ]
-  },
-  {
-    pref: "香川県",
-    lat: 34.34, lng: 134.04,
-    photos: [
-      { id: "qsn9a5qfmcav4ufkwehz", loc: "父母ヶ浜", year: 2025 },
-      { id: "jpctlgps9n9yz7z2pefr", loc: "父母ヶ浜", year: 2025 },
-    ]
-  },
-  {
-    pref: "神奈川県",
-    lat: 35.45, lng: 139.64,
-    photos: [
-      { id: "roeiwcd2bexzyq5eswsn", loc: "横浜", year: 2025 },
-      { id: "dyejili3mrrizyvpwcvb", loc: "横浜", year: 2025 },
-      { id: "aa9zrjl0dcnlulqjilee", loc: "横浜", year: 2025 },
-      { id: "j3g8s2rcorimyusaf83i", loc: "横浜", year: 2025 },
-      { id: "nvlttty0qgchzstxo6fb", loc: "横浜", year: 2025 },
-      { id: "xghhx4hetbdgvw69ou9g", loc: "横浜", year: 2025 },
-      { id: "prfajod3kbdxntzhooxt", loc: "横浜", year: 2025 },
-      { id: "payoa5eewjukgzk7vrjk", loc: "横浜", year: 2025 },
-      { id: "gj8s9sm7ixl9iz7aczew", loc: "横浜", year: 2025 },
-      { id: "nzuvubaffkzjzeukta7f", loc: "鎌倉", year: 2025 },
-      { id: "qaua9k8kdnrfl8pyomvg", loc: "鎌倉", year: 2025 },
-      { id: "davjaitkmbgfzbuqqshb", loc: "鎌倉", year: 2025 },
-      { id: "efujkjo4rcztbxdtulou", loc: "鎌倉", year: 2025 },
-      { id: "p0yizyrijhwadznyouh1", loc: "鎌倉", year: 2025 },
-      { id: "pegmqelz8hwemg8lmuem", loc: "鎌倉", year: 2025 },
-      { id: "rksndawdacv4inhsoztc", loc: "鎌倉", year: 2025 },
-      { id: "vi22klqfhpaxmua4uxio", loc: "鎌倉", year: 2025 },
-      { id: "x7ceq5ilu9gumx7nnabs", loc: "鎌倉", year: 2025 },
-      { id: "ztglq3cxaliezsq0048u", loc: "鎌倉", year: 2025 },
-      { id: "wqnb6brxqwpwj7usjjcr", loc: "鎌倉", year: 2025 },
-      { id: "ett0yifnekzzulxng4kf", loc: "鎌倉", year: 2025 },
-      { id: "eajc1cik7jd8ykslva95", loc: "鎌倉", year: 2025 },
-      { id: "jmf7rkrauxpwodnbuknb", loc: "鎌倉", year: 2025 },
-      { id: "lrp0vksrbfnh2pwwgmmm", loc: "鎌倉", year: 2025 },
-      { id: "tgoia6bco7damtvz2uox", loc: "鎌倉", year: 2025 },
-      { id: "zyusbwjt7ijoithy2oe2", loc: "鎌倉", year: 2025 },
-      { id: "cqtxfygczdtbulyypp2s", loc: "鎌倉", year: 2025 },
-      { id: "fopphn6icofqso4t6ljm", loc: "鎌倉", year: 2025 },
-      { id: "izaxlfrectinom3ni2kx", loc: "鎌倉", year: 2025 },
-      { id: "lngonbizwjt65wb6cmud", loc: "鎌倉", year: 2025 },
-      { id: "qad2jinoi3p0fdci2khl", loc: "鎌倉", year: 2025 },
-      { id: "ew9qbkavirvi9dyk2y6c", loc: "鎌倉", year: 2025 },
-      { id: "o0p2yvggitth4szsjodn", loc: "鎌倉", year: 2025 },
-      { id: "hay0vuznehokdqiozajo", loc: "鎌倉", year: 2025 },
-      { id: "ud4u7d9annvid0z34noc", loc: "鎌倉", year: 2025 },
-      { id: "u3eexuf03etogvhckvu3", loc: "鎌倉", year: 2025 },
-      { id: "qfv83n8hk5nwpp3onndu", loc: "鎌倉", year: 2025 },
-      { id: "pdrekc0jdl2binzgjmqd", loc: "鎌倉", year: 2025 },
-      { id: "anj9lwufynk4fthbn7ur", loc: "鎌倉", year: 2025 },
-      { id: "ryqqaaawd3vhobvd4tnw", loc: "鎌倉", year: 2025 },
-      { id: "kxezxlirlowgipdjeyv6", loc: "鎌倉", year: 2025 },
-      { id: "huvbk5yghxxi9i7naju1", loc: "鎌倉", year: 2025 },
-      { id: "kautbc4pnvlcfg9a1rdi", loc: "鎌倉", year: 2025 },
-      { id: "y2wc5fgze6u1fuwxem26", loc: "鎌倉", year: 2025 },
-      { id: "gy0zet9wn9wuu6araazo", loc: "鎌倉", year: 2025 },
-      { id: "x6o5feqxgyw1d85jl8kl", loc: "鎌倉", year: 2025 },
-      { id: "mnhvtt3jhn2aq4xwezkt", loc: "鎌倉", year: 2025 },
-      { id: "cmf5zpinkqrdzmxyq7ol", loc: "鎌倉", year: 2025 },
-      { id: "yw3azffdkstu48ih5tpt", loc: "鎌倉", year: 2025 },
-      { id: "eih6ffrbddltvx3bjzgp", loc: "鎌倉", year: 2025 },
-    ]
-  },
-  {
-    pref: "大分県",
-    lat: 33.24, lng: 131.61,
-    photos: [
-      { id: "szm5n4mwwmmh3fksqukz", loc: "別府", year: 2025 },
-      { id: "yuufchifryqi13eyyoor", loc: "別府", year: 2025 },
-      { id: "qxfxsuorglm0r8fzfgcr", loc: "別府", year: 2025 },
-      { id: "znmygcxoyxe7uihta2a3", loc: "別府", year: 2025 },
-      { id: "nhcofuhnbijxmqf7heop", loc: "別府", year: 2025 },
-      { id: "bwtpdo3ycszgiokdrkqz", loc: "別府", year: 2025 },
-      { id: "nejr6pdgmudgjynjhpzl", loc: "別府", year: 2025 },
-      { id: "gcjxpyk0fxof7we3ytqo", loc: "湯布院", year: 2025 },
-    ]
-  },
-  {
-    pref: "福岡県",
-    lat: 33.61, lng: 130.42,
-    photos: [
-      { id: "cherzayx1vksmmu12kfg", loc: "福岡", year: 2025 },
-      { id: "zuytsm5uieakyzlj8mqa", loc: "福岡", year: 2025 },
-    ]
-  },
-  {
-    pref: "東京都",
-    lat: 35.68, lng: 139.69,
-    photos: [
-      { id: "hhuf0fqsgs4qdztehnzb", loc: "東京", year: 2024 },
-      { id: "my7re28ckggxseludvlj", loc: "東京", year: 2024 },
-      { id: "bemqqcwb710hhvrp5k1d", loc: "品川", year: 2024 },
-      { id: "fzrsmhfr718rzcwptvws", loc: "品川", year: 2024 },
-      { id: "zvioi0jy5xl3y85lw2sa", loc: "品川", year: 2024 },
-      { id: "n9wv3krjeebsash5zvxv", loc: "東京", year: 2024 },
-      { id: "irwultgwnqvfpj3ufrhq", loc: "東京", year: 2024 },
-      { id: "voty0hrw6k95t7cq2nmp", loc: "東京", year: 2024 },
-      { id: "fdatlwqk3m6b2auwxcra", loc: "東京", year: 2024 },
-      { id: "wpnpqjmfgrpx0pkqq4wf", loc: "東京", year: 2024 },
-      { id: "lokxylhdsiai3w8cjy6e", loc: "東京", year: 2024 },
-      { id: "veheffiav3eqsnlyidg7", loc: "東京", year: 2024 },
-      { id: "al0m8swfnbyrbkc9ebeo", loc: "東京", year: 2024 },
-      { id: "n0e8xeyvaabkthqbjgoh", loc: "東京", year: 2024 },
-    ]
-  },
-  {
-    pref: "千葉県",
-    lat: 35.61, lng: 140.12,
-    photos: [
-      { id: "pwrg5vqnmt1uxmh07jhb", loc: "鴨川シーワールド", year: 2024 },
-    ]
-  },
-  {
-    pref: "石川県",
-    lat: 36.59, lng: 136.63,
-    photos: [
-      { id: "tholpq2n9n3es1zbunl2", loc: "金沢", year: 2024 },
-      { id: "fvmfopoju9j1afeyfmfq", loc: "金沢", year: 2024 },
-      { id: "njkhpu1dsjnaqdpuibsl", loc: "金沢", year: 2024 },
-      { id: "a7mrvz28s8bhljtvxerd", loc: "金沢", year: 2024 },
-      { id: "iqzmqcxvlmzmpxb3e8nl", loc: "金沢", year: 2024 },
-      { id: "vravjelowaeamknkqkte", loc: "金沢", year: 2024 },
-      { id: "zip572vkpw2oinqbodt9", loc: "金沢", year: 2024 },
-    ]
-  },
-  {
-    pref: "岐阜県",
-    lat: 35.39, lng: 136.72,
-    photos: [
-      { id: "qvsgt1aw6o4iwewvhmdc", loc: "白川郷", year: 2024 },
-      { id: "ake8ymyn7d0qnybyzihw", loc: "白川郷", year: 2024 },
-      { id: "y4l6gy5xwtz8d3fvvjb0", loc: "白川郷", year: 2024 },
-      { id: "vnvzv0ztfpwvvrvl5lfn", loc: "白川郷", year: 2024 },
     ]
   },
 ];
@@ -1014,22 +1014,67 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
         </div>
       </div>
       <svg ref={svgRef} viewBox={"0 0 " + MW + " " + MH} style={{ width: "100%", height: "auto", display: "block" }} onClick={handleSvgClick}>
-        <g ref={gRef}>
         <defs>
-          <filter id="glow"><feGaussianBlur stdDeviation="4" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+          <radialGradient id="goldGrad" cx="50%" cy="50%" r="65%">
+            <stop offset="0%" stopColor="rgba(240,205,130,0.58)" />
+            <stop offset="55%" stopColor="rgba(220,190,100,0.38)" />
+            <stop offset="100%" stopColor="rgba(150,120,60,0.18)" />
+          </radialGradient>
+          <radialGradient id="goldGradHover" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stopColor="rgba(255,225,160,0.78)" />
+            <stop offset="60%" stopColor="rgba(232,200,120,0.55)" />
+            <stop offset="100%" stopColor="rgba(180,150,80,0.25)" />
+          </radialGradient>
+          <linearGradient id="pathNeutral" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="rgba(232,228,223,0.22)" />
+            <stop offset="100%" stopColor="rgba(232,228,223,0.10)" />
+          </linearGradient>
+          <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b" />
+            <feMerge>
+              <feMergeNode in="b" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="goldGlowStrong" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b" />
+            <feColorMatrix in="b" type="matrix" values="1 0 0 0 0.15  0 1 0 0 0.08  0 0 1 0 0.02  0 0 0 1 0" result="c" />
+            <feMerge>
+              <feMergeNode in="c" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="tipBlur" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
+          </filter>
+          <linearGradient id="okiFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="rgba(220,190,100,0)" />
+            <stop offset="20%" stopColor="rgba(220,190,100,0.28)" />
+            <stop offset="80%" stopColor="rgba(220,190,100,0.22)" />
+            <stop offset="100%" stopColor="rgba(220,190,100,0)" />
+          </linearGradient>
         </defs>
+        <g ref={gRef}>
         {paths.map(p => {
           if (!p.d) return null;
           const isHL = p.hasPhotos;
           const isHovered = activeHov === p.name;
           const isActive = hlId && prefMap[p.name] && prefMap[p.name].id === hlId;
+          const fill = isHL
+            ? (isHovered || isActive ? "url(#goldGradHover)" : "url(#goldGrad)")
+            : (isHovered ? "rgba(232,228,223,0.30)" : "url(#pathNeutral)");
+          const stroke = isHL
+            ? (isHovered || isActive ? "rgba(255,225,160,0.9)" : "rgba(220,190,100,0.55)")
+            : (isHovered ? "rgba(232,228,223,0.55)" : "rgba(232,228,223,0.32)");
+          const filter = isHL ? (isHovered || isActive ? "url(#goldGlowStrong)" : "url(#goldGlow)") : undefined;
           return (
             <path key={p.id} d={p.d}
-              fill={isHovered && isHL ? "rgba(220,190,100,.55)" : isHovered && !isHL ? "rgba(232,228,223,0.28)" : isActive ? "rgba(220,190,100,.45)" : isHL ? "rgba(220,190,100,.32)" : "rgba(232,228,223,0.18)"}
-              stroke={isHL ? "rgba(220,190,100,.65)" : isHovered ? "rgba(232,228,223,0.50)" : "rgba(232,228,223,0.40)"}
-              strokeWidth={isHL ? "1.4" : "0.9"}
+              fill={fill}
+              stroke={stroke}
+              strokeWidth={isHL ? (isHovered || isActive ? 1.6 : 1.2) : 0.85}
               strokeLinejoin="round"
-              style={{ cursor: isHL ? "pointer" : "default", transition: "fill .3s, stroke .3s" }}
+              filter={filter}
+              style={{ cursor: isHL ? "pointer" : "default", transition: "fill .6s cubic-bezier(.2,.8,.2,1), stroke .5s, stroke-width .4s, filter .4s, opacity .4s", transformOrigin: "center", transformBox: "fill-box" }}
               onClick={(e) => { e.stopPropagation(); if (isHL) { handlePrefInteraction(p.name); } else if (isMobile) { setTapped(p.name); setHov(p.name); } }}
               onMouseEnter={() => !isMobile && p.name && setHov(p.name)}
               onMouseLeave={() => !isMobile && setHov(null)}
@@ -1060,54 +1105,63 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           }
 
           if (hasPhoto) {
-            const tipW = 155, tipH = 60;
+            const tipW = 168, tipH = 66;
             const flipX = pos.x + tipW > MW - 20;
-            const tx = flipX ? pos.x - tipW - 8 : pos.x + 8;
+            const tx = flipX ? pos.x - tipW - 10 : pos.x + 10;
             const ty = Math.max(5, Math.min(MH - tipH - 5, pos.y - tipH / 2));
+            const clipId = "hovClip_" + activeHov;
             return (
               <g style={{ pointerEvents: "none" }}>
-                <rect x={tx} y={ty} width={tipW} height={tipH} rx={4} fill="rgba(20,18,16,.94)" stroke="rgba(220,190,100,.30)" strokeWidth=".5" />
-                <clipPath id="hovClip"><rect x={tx + 5} y={ty + 6} width={42} height={28} rx={2} /></clipPath>
-                <image href={pin.thumb} x={tx + 5} y={ty + 6} width={42} height={28} clipPath="url(#hovClip)" preserveAspectRatio="xMidYMid slice" />
-                <text x={tx + 54} y={ty + 22} fill="#e8e4df" fontSize="11" fontFamily="'Noto Sans JP','Noto Sans',sans-serif">{getPrefName(activeHov, lang)}</text>
-                <text x={tx + 54} y={ty + 40} fill="rgba(220,190,100,.5)" fontSize="8" fontFamily="'Noto Sans JP','Noto Sans',sans-serif">{t.tapHint}</text>
+                <rect x={tx} y={ty} width={tipW} height={tipH} rx={10} fill="rgba(14,12,10,.82)" stroke="rgba(220,190,100,.38)" strokeWidth=".6" />
+                <rect x={tx} y={ty} width={tipW} height={tipH} rx={10} fill="none" stroke="rgba(255,235,200,.15)" strokeWidth="1" filter="url(#tipBlur)" />
+                <clipPath id={clipId}><rect x={tx + 7} y={ty + 8} width={46} height={32} rx={6} /></clipPath>
+                <image href={pin.thumb} x={tx + 7} y={ty + 8} width={46} height={32} clipPath={"url(#" + clipId + ")"} preserveAspectRatio="xMidYMid slice" />
+                <text x={tx + 62} y={ty + 24} fill="#f2ece2" fontSize="11.5" fontFamily="var(--font-zen-kaku), 'Noto Sans JP', sans-serif" fontWeight="500" letterSpacing=".04em">{getPrefName(activeHov, lang)}</text>
+                <text x={tx + 62} y={ty + 44} fill="rgba(220,190,100,.72)" fontSize="8.5" fontFamily="var(--font-zen-kaku), 'Noto Sans JP', sans-serif" letterSpacing=".08em">{t.tapHint}</text>
               </g>
             );
           } else {
             /* Name-only tooltip for prefectures without photos */
-            const tipW = 110, tipH = 30;
+            const tipW = 118, tipH = 32;
             const flipX = pos.x + tipW > MW - 20;
-            const tx = flipX ? pos.x - tipW - 8 : pos.x + 8;
+            const tx = flipX ? pos.x - tipW - 10 : pos.x + 10;
             const ty = Math.max(5, Math.min(MH - tipH - 5, pos.y - tipH / 2));
             return (
               <g style={{ pointerEvents: "none" }}>
-                <rect x={tx} y={ty} width={tipW} height={tipH} rx={3} fill="rgba(20,18,16,.88)" stroke="rgba(232,228,223,.15)" strokeWidth=".5" />
-                <text x={tx + tipW / 2} y={ty + 19} fill="rgba(232,228,223,.6)" fontSize="10" fontFamily="'Noto Sans JP','Noto Sans',sans-serif" textAnchor="middle">{getPrefName(activeHov, lang)}</text>
+                <rect x={tx} y={ty} width={tipW} height={tipH} rx={8} fill="rgba(14,12,10,.76)" stroke="rgba(232,228,223,.18)" strokeWidth=".6" />
+                <text x={tx + tipW / 2} y={ty + 20} fill="rgba(232,228,223,.7)" fontSize="10" fontFamily="var(--font-zen-kaku), 'Noto Sans JP', sans-serif" textAnchor="middle" letterSpacing=".06em">{getPrefName(activeHov, lang)}</text>
               </g>
             );
           }
         })()}
-        {/* ── Okinawa Inset ── */}
+        {/* ── Okinawa Inset (soft gradient divider) ── */}
         <g>
           <defs>
             <clipPath id="okiClip"><rect x={0} y={0} width={OKI_BOX.w} height={OKI_BOX.h} /></clipPath>
           </defs>
-          <rect x={OKI_BOX.x} y={OKI_BOX.y} width={OKI_BOX.w} height={OKI_BOX.h} rx={4}
-            fill="rgba(15,15,15,.6)" stroke="rgba(232,228,223,.15)" strokeWidth=".8" strokeDasharray="4 3" />
-          <text x={OKI_BOX.x + OKI_BOX.w / 2} y={OKI_BOX.y + 14} fill="rgba(232,228,223,.35)" fontSize="9"
-            fontFamily="'Noto Sans JP','Noto Sans',sans-serif" textAnchor="middle" letterSpacing=".1em">{t.oki}</text>
+          <line x1={OKI_BOX.x} y1={OKI_BOX.y + 6} x2={OKI_BOX.x + OKI_BOX.w} y2={OKI_BOX.y + 6}
+            stroke="url(#okiFade)" strokeWidth=".8" />
+          <text x={OKI_BOX.x + OKI_BOX.w / 2} y={OKI_BOX.y + 16} fill="rgba(232,228,223,.42)" fontSize="9"
+            fontFamily="var(--font-playfair), 'Playfair Display', serif" fontStyle="italic" textAnchor="middle" letterSpacing=".18em">{t.oki}</text>
           <g transform={"translate(" + OKI_BOX.x + "," + OKI_BOX.y + ")"} clipPath="url(#okiClip)">
             {okiPaths.map(p => {
               if (!p.d) return null;
               const isHL = p.hasPhotos;
               const isHovered = activeHov === p.name;
+              const fill = isHL
+                ? (isHovered ? "url(#goldGradHover)" : "url(#goldGrad)")
+                : (isHovered ? "rgba(232,228,223,0.30)" : "url(#pathNeutral)");
+              const stroke = isHL
+                ? (isHovered ? "rgba(255,225,160,0.9)" : "rgba(220,190,100,0.55)")
+                : (isHovered ? "rgba(232,228,223,0.55)" : "rgba(232,228,223,0.32)");
               return (
                 <path key={"oki" + p.id} d={p.d}
-                  fill={isHovered && isHL ? "rgba(220,190,100,.55)" : isHovered && !isHL ? "rgba(232,228,223,0.28)" : isHL ? "rgba(220,190,100,.32)" : "rgba(232,228,223,0.18)"}
-                  stroke={isHL ? "rgba(220,190,100,.65)" : isHovered ? "rgba(232,228,223,0.50)" : "rgba(232,228,223,0.40)"}
-                  strokeWidth={isHL ? "1.2" : "0.8"}
+                  fill={fill}
+                  stroke={stroke}
+                  strokeWidth={isHL ? (isHovered ? 1.4 : 1.0) : 0.75}
                   strokeLinejoin="round"
-                  style={{ cursor: isHL ? "pointer" : "default", transition: "fill .3s" }}
+                  filter={isHL ? (isHovered ? "url(#goldGlowStrong)" : "url(#goldGlow)") : undefined}
+                  style={{ cursor: isHL ? "pointer" : "default", transition: "fill .6s cubic-bezier(.2,.8,.2,1), stroke .5s, filter .4s" }}
                   onClick={(e) => { e.stopPropagation(); if (isHL) { handlePrefInteraction(p.name); } else if (isMobile) { setTapped(p.name); setHov(p.name); } }}
                   onMouseEnter={() => !isMobile && p.name && setHov(p.name)}
                   onMouseLeave={() => !isMobile && setHov(null)}
@@ -1154,6 +1208,11 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
 export default function Page() {
   const [lang, setLang] = useState("ja");
   const [lightbox, setLightbox] = useState(null);
+  const [lbClosing, setLbClosing] = useState(false);
+  const closeLightbox = useCallback(() => {
+    setLbClosing(true);
+    setTimeout(() => { closeLightbox(); setLbClosing(false); }, 340);
+  }, []);
 
   /* Responsive image sizes (default to desktop for SSR, update on client) */
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
@@ -1221,13 +1280,30 @@ export default function Page() {
     scrollers.forEach(el => { el.scrollLeft = 0; });
   }, []);
 
+  /* Scroll-linked fade-in for sections (IntersectionObserver) */
+  useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
+    const root = cRef.current || null;
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      }
+    }, { root, threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    const targets = document.querySelectorAll(".reveal");
+    targets.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, [lang]);
+
   /* Keyboard navigation for lightbox */
   useEffect(() => {
     if (lightbox === null) return;
     const handleKey = (e) => {
       if (e.key === "ArrowLeft") lbPrev();
       else if (e.key === "ArrowRight") lbNext();
-      else if (e.key === "Escape") setLightbox(null);
+      else if (e.key === "Escape") closeLightbox();
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
@@ -1293,15 +1369,20 @@ export default function Page() {
           </div>
         </div>
         <section className="cin-section">
-          <div className="cin-map-wrap" ref={mapRef}>
+          <div className="cin-map-wrap reveal" ref={mapRef}>
             <div className="cin-map-box">
               <JapanMap lang={lang} photos={MAP_PINS} onPinClick={handlePin} hlId={hlPhoto} />
             </div>
           </div>
           <div className="cin-gallery">
             {PREFECTURES.map((pf, pi) => (
-              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className={"cin-pref-group" + (hlPhoto === "p" + pi ? " flash" : "")}>
-                <div className="cin-pref">{getPrefName(pf.pref, lang)}</div>
+              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className={"cin-pref-group reveal" + (hlPhoto === "p" + pi ? " flash" : "")}>
+                <div className="cin-pref">
+                  <span>{getPrefName(pf.pref, lang)}</span>
+                  {lang !== "en" && getPrefName(pf.pref, "en") !== getPrefName(pf.pref, lang) && (
+                    <span className="cin-pref-jp">{getPrefName(pf.pref, "en")}</span>
+                  )}
+                </div>
                 <div className="cin-hscroll">
                   {pf.photos.map((photo, idx) => (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => openLightbox(getUrl(photo, lbW))} onContextMenu={e => e.preventDefault()}>
@@ -1322,7 +1403,7 @@ export default function Page() {
 
         {/* Contact Form */}
         <div style={{ width: "100%", height: 1, background: "rgba(232,228,223,.08)", maxWidth: 200, margin: "0 auto 60px" }} />
-        <div className="contact-section" ref={contactRef}>
+        <div className="contact-section reveal" ref={contactRef}>
           <h2 className="contact-title">{t.contact.title}</h2>
           <div className="contact-form">
             <div className="contact-field">
@@ -1349,6 +1430,7 @@ export default function Page() {
       </div>
       {lightbox !== null && (() => {
         const cur = allPhotos[lightbox];
+        if (!cur) return null;
         let touchStartX = 0;
         let touchCount = 0;
         const onTouchStart = (e) => { touchCount = e.touches.length; touchStartX = e.touches[0].clientX; };
@@ -1359,8 +1441,8 @@ export default function Page() {
           else if (diff < -60) lbNext();
         };
         return (
-          <div className="cin-lb" onContextMenu={e => e.preventDefault()} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-            <button className="cin-lb-close" onClick={() => setLightbox(null)}>×</button>
+          <div className={"cin-lb" + (lbClosing ? " closing" : "")} onContextMenu={e => e.preventDefault()} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+            <button className="cin-lb-close" onClick={() => closeLightbox()}>×</button>
             <div className="cin-lb-info">
               <div className="cin-lb-pref">{getPrefName(cur.pref, lang)}</div>
               {cur.loc && <div className="cin-lb-loc">{getLocName(cur.loc, lang)}</div>}
@@ -1369,7 +1451,7 @@ export default function Page() {
             <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
-            <div className="cin-lb-inner" onClick={() => setLightbox(null)}>
+            <div className="cin-lb-inner" onClick={() => closeLightbox()}>
               <img src={cur.url} alt={cur.loc + " - " + cur.pref + " | Landscapes of Japan"} draggable="false" />
               <div className="cin-lb-wm">Landscapes of Japan</div>
             </div>

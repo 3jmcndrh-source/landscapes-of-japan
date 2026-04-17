@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Noto_Sans_JP, Noto_Sans, Yuji_Boku } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans_JP, Noto_Sans, Zen_Kaku_Gothic_New, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -24,10 +24,18 @@ const notoSans = Noto_Sans({
   display: "swap",
 });
 
-const yujiBoku = Yuji_Boku({
+const zenKaku = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-yuji-boku",
+  weight: ["300", "500", "700", "900"],
+  variable: "--font-zen-kaku",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -61,7 +69,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${yujiBoku.variable}`}>
+      <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
         {children}
         <Analytics />
       </body>
