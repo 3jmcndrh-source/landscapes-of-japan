@@ -1211,7 +1211,7 @@ export default function Page() {
   const [lbClosing, setLbClosing] = useState(false);
   const closeLightbox = useCallback(() => {
     setLbClosing(true);
-    setTimeout(() => { closeLightbox(); setLbClosing(false); }, 340);
+    setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
   }, []);
 
   /* Responsive image sizes (default to desktop for SSR, update on client) */
