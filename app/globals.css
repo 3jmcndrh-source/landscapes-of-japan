@@ -99,6 +99,12 @@ html,body{background:#0a0a0a;color:#e8e4df}
 .cin-hcard:hover .cin-hcard-year{color:rgba(255,235,200,.82)}
 
 /* ===== Map ===== */
+.map-zoom-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.map-zoom-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;line-height:1;background:rgba(232,228,223,.05);border:1px solid rgba(232,228,223,.14);color:rgba(232,228,223,.6);font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;padding:9px 18px;border-radius:999px;cursor:pointer;transition:all .35s cubic-bezier(.2,.8,.2,1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.map-zoom-btn svg{display:block;flex-shrink:0}
+.map-zoom-btn:hover{color:rgba(232,228,223,.9);background:rgba(232,228,223,.10);border-color:rgba(232,228,223,.28)}
+.map-zoom-btn-active{color:rgba(232,212,148,.95);background:rgba(220,190,100,.12);border-color:rgba(220,190,100,.4)}
+.map-zoom-btn-active:hover{color:rgba(245,225,170,1);background:rgba(220,190,100,.22);border-color:rgba(220,190,100,.6)}
 .cin-map-responsive{max-width:900px;margin:0 auto;padding:20px 0;position:relative}
 .cin-map-wrap{max-width:1200px;margin:0 auto 60px;padding:0 24px}
 .cin-map-box{position:relative;background:linear-gradient(180deg,rgba(14,12,10,.6),rgba(8,7,6,.4));border:1px solid rgba(232,228,223,.08);border-radius:14px;padding:36px 28px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden}

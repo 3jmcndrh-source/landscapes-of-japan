@@ -303,10 +303,67 @@ const PREFECTURES = [
     pref: "北海道",
     lat: 43.06, lng: 141.35,
     photos: [
+      { id: "softyjlanqcbgshlzo9w", loc: "札幌", year: 2026 },
+      { id: "ubtkpbv0t0vqp6mmgww7", loc: "札幌", year: 2026 },
+      { id: "jwati7zcdj7ctipmonwa", loc: "札幌", year: 2026 },
+      { id: "yfkhhrtc4lzhtdsn0yk7", loc: "札幌", year: 2026 },
+      { id: "bhkmoyskvqwypxp3gcuj", loc: "札幌", year: 2026 },
+      { id: "y0vh9qsl6exl3cwjvp4n", loc: "札幌", year: 2026 },
+      { id: "bx39jxhwcpjicx4mbif4", loc: "札幌", year: 2026 },
+      { id: "ymfqvkrt8gpxhqlceo9w", loc: "札幌", year: 2026 },
+      { id: "pttbtrtbyyqtrnxbugur", loc: "札幌", year: 2026 },
+      { id: "fxe4nsjpar0tkocgjftf", loc: "札幌", year: 2026 },
+      { id: "jgmcsj3io9kle9pvo5dx", loc: "札幌", year: 2026 },
+      { id: "kwwsvawt7qpth5g0luhs", loc: "札幌", year: 2026 },
+      { id: "twwgiayzit8kqxfmghtx", loc: "札幌", year: 2026 },
+      { id: "sxmtareqehuc5nlr2wvf", loc: "札幌", year: 2026 },
+      { id: "mjwdtvn6eaxh2wkpmvgs", loc: "札幌", year: 2026 },
+      { id: "pixyahpx1kgkivfdefny", loc: "札幌", year: 2026 },
+      { id: "pa02u0isj9xximnvp7bu", loc: "札幌", year: 2026 },
+      { id: "rkmlqi18ra5o0dcutace", loc: "札幌", year: 2026 },
       { id: "usvnljzznwmqu93sftg1", loc: "さっぽろ雪まつり", year: 2026 },
       { id: "rqjb5xgid4vochyrrpie", loc: "さっぽろ雪まつり", year: 2026 },
       { id: "cgazaabjctzmga9yojla", loc: "さっぽろ雪まつり", year: 2026 },
       { id: "rj0whx4syklikykwjq6z", loc: "さっぽろ雪まつり", year: 2026 },
+      { id: "gueqzi2t9iacfrcz9fxh", loc: "旭山動物園", year: 2025 },
+      { id: "dayk8svfgi7qvyogccli", loc: "旭山動物園", year: 2025 },
+      { id: "nynaw9ykoregt6zml4ob", loc: "旭山動物園", year: 2025 },
+      { id: "o2mawg9skfvhayynvnio", loc: "旭山動物園", year: 2025 },
+      { id: "tdn43okylfpfvipei9ct", loc: "旭山動物園", year: 2025 },
+      { id: "vebkeapnmubqy4fkka6n", loc: "旭山動物園", year: 2025 },
+      { id: "jlnmop3no0c6apanqg0j", loc: "美幌峠", year: 2025 },
+      { id: "dulixcwj07zpcjlhdmtv", loc: "美幌峠", year: 2025 },
+      { id: "w09z0y5dytwnhbqaa26n", loc: "美幌峠", year: 2025 },
+      { id: "dciohyawhu4uwppull42", loc: "美幌峠", year: 2025 },
+      { id: "dauymniifixeho9ewvaj", loc: "美幌峠", year: 2025 },
+      { id: "bwg4daxogde6yg99ahfc", loc: "美幌峠", year: 2025 },
+      { id: "bnbmrqj3s9ig3ap8yulh", loc: "美幌峠", year: 2025 },
+      { id: "isy0pekq31wadfzoukdb", loc: "美幌峠", year: 2025 },
+      { id: "bfkqyvkq33cnx9k98dx9", loc: "美幌峠", year: 2025 },
+      { id: "v6n5rruvjocwtqif5cej", loc: "美幌峠", year: 2025 },
+      { id: "ykop4xhde4uibnd3zotl", loc: "美幌峠", year: 2025 },
+      { id: "cofy806dc83kq5kr9voy", loc: "知床", year: 2025 },
+      { id: "rsg8i9kvy6dgk7zrbf03", loc: "知床", year: 2025 },
+      { id: "ygixf3zg86txffk3rfdc", loc: "知床", year: 2025 },
+      { id: "sgqomcwsuq18xc1oyr3g", loc: "知床", year: 2025 },
+      { id: "ucywl4kzi2dyfnvvcqxs", loc: "知床", year: 2025 },
+      { id: "ig54fdyrmd5i1nm0kkjw", loc: "知床", year: 2025 },
+      { id: "ievzbaoy5zffokh9iye4", loc: "知床", year: 2025 },
+      { id: "x8dzdtol6icmixl5elrc", loc: "知床", year: 2025 },
+      { id: "y9gpq3cbjzxtbyope84v", loc: "知床", year: 2025 },
+      { id: "icv9vzvxw5cfb7zw1j4f", loc: "知床", year: 2025 },
+      { id: "l5u87lvqtypftfcjmbwj", loc: "知床", year: 2025 },
+      { id: "ecrvsnz2nf3tdotj3p79", loc: "知床", year: 2025 },
+      { id: "w5stev0e8hgyhlmfkgyi", loc: "知床", year: 2025 },
+      { id: "hovzpx74azpzuflnsmpm", loc: "知床", year: 2025 },
+      { id: "s2c5awvwr66iowp35h2c", loc: "知床", year: 2025 },
+      { id: "fpolpty5arwxbpeq6gfo", loc: "知床", year: 2025 },
+      { id: "ucoyzrjnu4jcaowchnyf", loc: "知床", year: 2025 },
+      { id: "nvzuynx7xanlkdmtithn", loc: "知床", year: 2025 },
+      { id: "avbnpuch4zqf2uggedeu", loc: "知床", year: 2025 },
+      { id: "acalqxeajcchzvdrzkos", loc: "知床", year: 2025 },
+      { id: "bxegtf9vgggrnwfqazvb", loc: "知床", year: 2025 },
+      { id: "oqkdlmmlgir1yqqfyov7", loc: "知床", year: 2025 },
       { id: "ohoqrtxg97rup7g05ups", loc: "知床", year: 2025 },
       { id: "pu85sedyzf9nvt53rd4n", loc: "知床", year: 2025 },
       { id: "grehvbvz4bwun6atuibb", loc: "知床", year: 2025 },
@@ -350,77 +407,20 @@ const PREFECTURES = [
       { id: "wqg1jgss7ruytfu6hxad", loc: "小樽", year: 2025 },
       { id: "heugkwts7mna2tb7okh0", loc: "小樽", year: 2025 },
       { id: "yvecem5fnp26jy6ipjau", loc: "小樽", year: 2025 },
-      { id: "oqkdlmmlgir1yqqfyov7", loc: "知床", year: 2025 },
-      { id: "bxegtf9vgggrnwfqazvb", loc: "知床", year: 2025 },
-      { id: "acalqxeajcchzvdrzkos", loc: "知床", year: 2025 },
-      { id: "avbnpuch4zqf2uggedeu", loc: "知床", year: 2025 },
-      { id: "nvzuynx7xanlkdmtithn", loc: "知床", year: 2025 },
-      { id: "ucoyzrjnu4jcaowchnyf", loc: "知床", year: 2025 },
-      { id: "fpolpty5arwxbpeq6gfo", loc: "知床", year: 2025 },
-      { id: "s2c5awvwr66iowp35h2c", loc: "知床", year: 2025 },
-      { id: "hovzpx74azpzuflnsmpm", loc: "知床", year: 2025 },
-      { id: "w5stev0e8hgyhlmfkgyi", loc: "知床", year: 2025 },
-      { id: "ecrvsnz2nf3tdotj3p79", loc: "知床", year: 2025 },
-      { id: "l5u87lvqtypftfcjmbwj", loc: "知床", year: 2025 },
-      { id: "icv9vzvxw5cfb7zw1j4f", loc: "知床", year: 2025 },
-      { id: "y9gpq3cbjzxtbyope84v", loc: "知床", year: 2025 },
-      { id: "x8dzdtol6icmixl5elrc", loc: "知床", year: 2025 },
-      { id: "ievzbaoy5zffokh9iye4", loc: "知床", year: 2025 },
-      { id: "ig54fdyrmd5i1nm0kkjw", loc: "知床", year: 2025 },
-      { id: "ucywl4kzi2dyfnvvcqxs", loc: "知床", year: 2025 },
-      { id: "sgqomcwsuq18xc1oyr3g", loc: "知床", year: 2025 },
-      { id: "ygixf3zg86txffk3rfdc", loc: "知床", year: 2025 },
-      { id: "rsg8i9kvy6dgk7zrbf03", loc: "知床", year: 2025 },
-      { id: "cofy806dc83kq5kr9voy", loc: "知床", year: 2025 },
-      { id: "ykop4xhde4uibnd3zotl", loc: "美幌峠", year: 2025 },
-      { id: "v6n5rruvjocwtqif5cej", loc: "美幌峠", year: 2025 },
-      { id: "bfkqyvkq33cnx9k98dx9", loc: "美幌峠", year: 2025 },
-      { id: "isy0pekq31wadfzoukdb", loc: "美幌峠", year: 2025 },
-      { id: "bnbmrqj3s9ig3ap8yulh", loc: "美幌峠", year: 2025 },
-      { id: "bwg4daxogde6yg99ahfc", loc: "美幌峠", year: 2025 },
-      { id: "dauymniifixeho9ewvaj", loc: "美幌峠", year: 2025 },
-      { id: "dciohyawhu4uwppull42", loc: "美幌峠", year: 2025 },
-      { id: "w09z0y5dytwnhbqaa26n", loc: "美幌峠", year: 2025 },
-      { id: "dulixcwj07zpcjlhdmtv", loc: "美幌峠", year: 2025 },
-      { id: "jlnmop3no0c6apanqg0j", loc: "美幌峠", year: 2025 },
-      { id: "vebkeapnmubqy4fkka6n", loc: "旭山動物園", year: 2025 },
-      { id: "tdn43okylfpfvipei9ct", loc: "旭山動物園", year: 2025 },
-      { id: "o2mawg9skfvhayynvnio", loc: "旭山動物園", year: 2025 },
-      { id: "nynaw9ykoregt6zml4ob", loc: "旭山動物園", year: 2025 },
-      { id: "dayk8svfgi7qvyogccli", loc: "旭山動物園", year: 2025 },
-      { id: "gueqzi2t9iacfrcz9fxh", loc: "旭山動物園", year: 2025 },
       { id: "mftjoje8rvy6l9hd1uk4", loc: "札幌", year: 2025 },
-      { id: "pdatjgjwzr26f9bgdxmg", loc: "美唄", year: 2025 },
       { id: "zxgxiqctoaz0zhmqgqx2", loc: "美唄", year: 2025 },
+      { id: "pdatjgjwzr26f9bgdxmg", loc: "美唄", year: 2025 },
       { id: "zkq3u4coguskgyylylwc", loc: "札幌", year: 2025 },
       { id: "mfyb6epqbtpimoklolix", loc: "札幌", year: 2025 },
-      { id: "qgcwoptede3vztwdxngv", loc: "登別", year: 2025 },
-      { id: "ofe2ifgjpvsguty4udfh", loc: "登別", year: 2025 },
-      { id: "lxw7vgube4hgznoacxvp", loc: "洞爺湖", year: 2025 },
-      { id: "k8gyiyw1hosgg5ksnyqg", loc: "洞爺湖", year: 2025 },
-      { id: "zsstczmlufechxukd0at", loc: "洞爺湖", year: 2025 },
       { id: "ta1vbaimv7ybmnjsnvcu", loc: "室蘭", year: 2025 },
+      { id: "zsstczmlufechxukd0at", loc: "洞爺湖", year: 2025 },
       { id: "zvcgkttawzj1drdzqhix", loc: "洞爺湖", year: 2025 },
-      { id: "jlgnjbrolezvatmiu38c", loc: "北竜町", year: 2024 },
+      { id: "k8gyiyw1hosgg5ksnyqg", loc: "洞爺湖", year: 2025 },
+      { id: "lxw7vgube4hgznoacxvp", loc: "洞爺湖", year: 2025 },
+      { id: "ofe2ifgjpvsguty4udfh", loc: "登別", year: 2025 },
+      { id: "qgcwoptede3vztwdxngv", loc: "登別", year: 2025 },
       { id: "rnlyiorswvgfwgyvu6uj", loc: "北竜町", year: 2024 },
-      { id: "rkmlqi18ra5o0dcutace", loc: "札幌", year: 2026 },
-      { id: "pa02u0isj9xximnvp7bu", loc: "札幌", year: 2026 },
-      { id: "pixyahpx1kgkivfdefny", loc: "札幌", year: 2026 },
-      { id: "mjwdtvn6eaxh2wkpmvgs", loc: "札幌", year: 2026 },
-      { id: "sxmtareqehuc5nlr2wvf", loc: "札幌", year: 2026 },
-      { id: "twwgiayzit8kqxfmghtx", loc: "札幌", year: 2026 },
-      { id: "kwwsvawt7qpth5g0luhs", loc: "札幌", year: 2026 },
-      { id: "jgmcsj3io9kle9pvo5dx", loc: "札幌", year: 2026 },
-      { id: "fxe4nsjpar0tkocgjftf", loc: "札幌", year: 2026 },
-      { id: "pttbtrtbyyqtrnxbugur", loc: "札幌", year: 2026 },
-      { id: "ymfqvkrt8gpxhqlceo9w", loc: "札幌", year: 2026 },
-      { id: "bx39jxhwcpjicx4mbif4", loc: "札幌", year: 2026 },
-      { id: "y0vh9qsl6exl3cwjvp4n", loc: "札幌", year: 2026 },
-      { id: "bhkmoyskvqwypxp3gcuj", loc: "札幌", year: 2026 },
-      { id: "yfkhhrtc4lzhtdsn0yk7", loc: "札幌", year: 2026 },
-      { id: "jwati7zcdj7ctipmonwa", loc: "札幌", year: 2026 },
-      { id: "ubtkpbv0t0vqp6mmgww7", loc: "札幌", year: 2026 },
-      { id: "softyjlanqcbgshlzo9w", loc: "札幌", year: 2026 },
+      { id: "jlgnjbrolezvatmiu38c", loc: "北竜町", year: 2024 },
     ]
   },
   {
@@ -1441,21 +1441,27 @@ export default function Page() {
           else if (diff < -60) lbNext();
         };
         return (
-          <div className={"cin-lb" + (lbClosing ? " closing" : "")} onContextMenu={e => e.preventDefault()} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-            <button className="cin-lb-close" onClick={() => closeLightbox()}>×</button>
+          <div
+            className={"cin-lb" + (lbClosing ? " closing" : "")}
+            onContextMenu={e => e.preventDefault()}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            onClick={(e) => { if (e.target === e.currentTarget) closeLightbox(); }}
+          >
+            <button className="cin-lb-close" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} aria-label="Close">×</button>
             <div className="cin-lb-info">
               <div className="cin-lb-pref">{getPrefName(cur.pref, lang)}</div>
               {cur.loc && <div className="cin-lb-loc">{getLocName(cur.loc, lang)}</div>}
               {cur.year && <div className="cin-lb-year">{cur.year}</div>}
             </div>
-            <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>
+            <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }} aria-label="Previous">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
-            <div className="cin-lb-inner" onClick={() => closeLightbox()}>
+            <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}>
               <img src={cur.url} alt={cur.loc + " - " + cur.pref + " | Landscapes of Japan"} draggable="false" />
               <div className="cin-lb-wm">Landscapes of Japan</div>
             </div>
-            <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>
+            <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }} aria-label="Next">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
             </button>
           </div>
