@@ -1432,13 +1432,19 @@ export default function Page() {
         const cur = allPhotos[lightbox];
         if (!cur) return null;
         let touchStartX = 0;
+        let touchStartY = 0;
         let touchCount = 0;
-        const onTouchStart = (e) => { touchCount = e.touches.length; touchStartX = e.touches[0].clientX; };
+        const onTouchStart = (e) => { touchCount = e.touches.length; touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; };
         const onTouchEnd = (e) => {
           if (touchCount > 1) return;
-          const diff = e.changedTouches[0].clientX - touchStartX;
-          if (diff > 60) lbPrev();
-          else if (diff < -60) lbNext();
+          const diffX = e.changedTouches[0].clientX - touchStartX;
+          const diffY = e.changedTouches[0].clientY - touchStartY;
+          if (diffX > 60 && Math.abs(diffX) > Math.abs(diffY)) { lbPrev(); return; }
+          if (diffX < -60 && Math.abs(diffX) > Math.abs(diffY)) { lbNext(); return; }
+          // Small movement = tap. Close unless tapped on a control button.
+          const target = e.target;
+          if (target && target.closest && (target.closest(".cin-lb-close") || target.closest(".cin-lb-arrow"))) return;
+          if (Math.abs(diffX) < 20 && Math.abs(diffY) < 20) closeLightbox();
         };
         return (
           <div

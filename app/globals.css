@@ -168,6 +168,7 @@ html,body{background:#0a0a0a;color:#e8e4df}
   .cin-map-responsive{max-width:100%;padding:10px 0}
   .back-map{bottom:16px;right:16px;padding:10px 20px;font-size:12px}
   .cin-lb-arrow{width:40px;height:40px}
+  .cin-lb-close{width:48px;height:48px;font-size:28px;top:14px;right:14px;background:rgba(20,18,16,.75);border-color:rgba(255,255,255,.2)}
   .cin-lb{padding:16px}
   .cin-lb-info{top:16px;left:16px}
   .cin-lb-pref{font-size:20px}
