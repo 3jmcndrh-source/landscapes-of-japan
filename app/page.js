@@ -1441,11 +1441,10 @@ export default function Page() {
           const diffY = e.changedTouches[0].clientY - touchStartY;
           if (diffX > 60 && Math.abs(diffX) > Math.abs(diffY)) { lbPrev(); return; }
           if (diffX < -60 && Math.abs(diffX) > Math.abs(diffY)) { lbNext(); return; }
-          // Small movement = tap. Close unless tapped on a control button.
-          const target = e.target;
-          if (target && target.closest && (target.closest(".cin-lb-close") || target.closest(".cin-lb-arrow"))) return;
+          // Small movement = tap → close (controls stopPropagate their own touchend so won't reach here).
           if (Math.abs(diffX) < 20 && Math.abs(diffY) < 20) closeLightbox();
         };
+        const stopTouch = (fn) => (e) => { e.stopPropagation(); e.preventDefault(); fn(); };
         return (
           <div
             className={"cin-lb" + (lbClosing ? " closing" : "")}
@@ -1454,20 +1453,35 @@ export default function Page() {
             onTouchEnd={onTouchEnd}
             onClick={(e) => { if (e.target === e.currentTarget) closeLightbox(); }}
           >
-            <button className="cin-lb-close" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} aria-label="Close">×</button>
+            <button
+              className="cin-lb-close"
+              onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+              onTouchEnd={stopTouch(closeLightbox)}
+              aria-label="Close"
+            >×</button>
             <div className="cin-lb-info">
               <div className="cin-lb-pref">{getPrefName(cur.pref, lang)}</div>
               {cur.loc && <div className="cin-lb-loc">{getLocName(cur.loc, lang)}</div>}
               {cur.year && <div className="cin-lb-year">{cur.year}</div>}
             </div>
-            <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }} aria-label="Previous">
+            <button
+              className="cin-lb-arrow left"
+              onClick={(e) => { e.stopPropagation(); lbPrev(); }}
+              onTouchEnd={stopTouch(lbPrev)}
+              aria-label="Previous"
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
             <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}>
               <img src={cur.url} alt={cur.loc + " - " + cur.pref + " | Landscapes of Japan"} draggable="false" />
               <div className="cin-lb-wm">Landscapes of Japan</div>
             </div>
-            <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }} aria-label="Next">
+            <button
+              className="cin-lb-arrow right"
+              onClick={(e) => { e.stopPropagation(); lbNext(); }}
+              onTouchEnd={stopTouch(lbNext)}
+              aria-label="Next"
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
             </button>
           </div>
