@@ -1372,10 +1372,20 @@ export default function Page() {
     });
     navigatingRef.current = true;
     setTimeout(() => { navigatingRef.current = false; }, 1200);
-    const wantedY = el.getBoundingClientRect().top + window.scrollY - 80;
-    const maxY = document.documentElement.scrollHeight - window.innerHeight;
-    const targetY = Math.min(wantedY, maxY);
-    window.scrollTo({ top: targetY, behavior: "smooth" });
+    const computeTarget = () => {
+      const wantedY = el.getBoundingClientRect().top + window.scrollY - 80;
+      const maxY = document.documentElement.scrollHeight - window.innerHeight;
+      return Math.min(Math.max(wantedY, 0), maxY);
+    };
+    window.scrollTo({ top: computeTarget(), behavior: "smooth" });
+    /* Lazy-loaded images may shift layout mid-scroll, so re-snap to the
+       correct Y a few times until the position settles. */
+    [400, 900, 1500].forEach(delay => setTimeout(() => {
+      const target = computeTarget();
+      if (Math.abs(window.scrollY - target) > 20) {
+        window.scrollTo({ top: target, behavior: "auto" });
+      }
+    }, delay));
     setHlPhoto(id);
     setTimeout(() => setHlPhoto(null), 2500);
   }, []);
