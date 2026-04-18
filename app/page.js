@@ -1366,8 +1366,7 @@ export default function Page() {
   const handlePin = useCallback(id => {
     const el = photoRefs.current[id];
     const targetPref = el?.querySelector('.cin-pref span')?.textContent;
-    setDebugMsg(`handlePin id=${id} targetPref=${targetPref} mapDebug=${typeof window !== "undefined" ? window.__debugMap : ""}`);
-    if (!el) return;
+    if (!el) { setDebugMsg(`handlePin id=${id} NO_EL`); return; }
     document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => {
       if (!r.classList.contains('is-visible')) {
         r.style.transition = 'none';
@@ -1378,7 +1377,13 @@ export default function Page() {
     });
     navigatingRef.current = true;
     setTimeout(() => { navigatingRef.current = false; }, 1200);
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const targetY = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+    setDebugMsg(`id=${id} pref=${targetPref} targetY=${Math.round(targetY)} curY=${Math.round(window.scrollY)}`);
+    setTimeout(() => {
+      const finalPref = document.elementFromPoint(window.innerWidth/2, 100)?.closest('.cin-pref-group')?.querySelector('.cin-pref span')?.textContent;
+      setDebugMsg(`DONE id=${id} pref=${targetPref} → finalY=${Math.round(window.scrollY)} expectedY=${Math.round(targetY)} atTop=${finalPref}`);
+    }, 1500);
     setHlPhoto(id);
     setTimeout(() => setHlPhoto(null), 2500);
   }, []);
