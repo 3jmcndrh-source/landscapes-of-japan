@@ -984,10 +984,12 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   }
 
   const handlePrefInteraction = (prefName) => {
+    if (typeof window !== "undefined") window.__debugMap = `tap pref=${prefName} prevTapped=${tapped} mapId=${prefMap[prefName]?.id}`;
     if (!prefMap[prefName]) return;
     if (isMobile) {
       if (tapped === prefName) {
         /* Second tap — navigate */
+        if (typeof window !== "undefined") window.__debugMap = `NAV id=${prefMap[prefName].id} pref=${prefName}`;
         onPinClick(prefMap[prefName].id);
         setTapped(null);
       } else {
@@ -1262,6 +1264,7 @@ export default function Page() {
   const contactRef = useRef(null);
   const photoRefs = useRef({});
   const navigatingRef = useRef(false);
+  const [debugMsg, setDebugMsg] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formMsg, setFormMsg] = useState("");
@@ -1362,6 +1365,8 @@ export default function Page() {
   const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
   const handlePin = useCallback(id => {
     const el = photoRefs.current[id];
+    const targetPref = el?.querySelector('.cin-pref span')?.textContent;
+    setDebugMsg(`handlePin id=${id} targetPref=${targetPref} mapDebug=${typeof window !== "undefined" ? window.__debugMap : ""}`);
     if (!el) return;
     document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => {
       if (!r.classList.contains('is-visible')) {
@@ -1380,6 +1385,11 @@ export default function Page() {
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
+      {debugMsg && (
+        <div style={{ position: "fixed", top: 4, left: 4, right: 4, zIndex: 99999, background: "rgba(220,40,40,.92)", color: "#fff", padding: "6px 8px", fontSize: 11, borderRadius: 4, fontFamily: "monospace", wordBreak: "break-all" }}>
+          {debugMsg}
+        </div>
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@graph": [
