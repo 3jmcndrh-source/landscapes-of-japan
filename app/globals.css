@@ -1,5 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{background:#0a0a0a;color:#e8e4df}
+html,body{background:#0a0a0a;color:#e8e4df;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
 
 /* ===== Top bar & language switcher ===== */

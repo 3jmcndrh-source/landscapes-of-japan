@@ -1284,7 +1284,6 @@ export default function Page() {
   /* Scroll-linked fade-in for sections (IntersectionObserver) */
   useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
-    const root = cRef.current || null;
     const io = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
@@ -1292,7 +1291,7 @@ export default function Page() {
           io.unobserve(entry.target);
         }
       }
-    }, { root, threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { root: null, threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     const targets = document.querySelectorAll(".reveal");
     targets.forEach(el => io.observe(el));
     return () => io.disconnect();
@@ -1319,14 +1318,12 @@ export default function Page() {
   }, [lightbox, allPhotos]);
 
   useEffect(() => {
-    const el = cRef.current;
-    if (!el) return;
     const fn = () => {
-      setScrollY(el.scrollTop);
+      setScrollY(window.scrollY);
       if (mapRef.current) setPastMap(mapRef.current.getBoundingClientRect().bottom < 0);
     };
-    el.addEventListener("scroll", fn, { passive: true });
-    return () => el.removeEventListener("scroll", fn);
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
   }, []);
 
   const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
@@ -1366,7 +1363,7 @@ export default function Page() {
         ]
       }) }} />
 
-      <div ref={cRef} style={{ height: "100dvh", overflowY: "auto", overflowX: "hidden", scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}>
+      <div ref={cRef}>
         <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
           <div className="top-langs">
             {Object.entries(TR).map(([c, v]) => (
