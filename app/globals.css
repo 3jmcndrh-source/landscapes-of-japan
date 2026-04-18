@@ -76,6 +76,7 @@ html{scroll-behavior:smooth}
 .cin-pref::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(220,190,100,.35),rgba(232,228,223,.06) 40%,transparent);margin-left:4px}
 .cin-pref-jp{font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:.62em;font-weight:300;letter-spacing:.3em;color:rgba(232,228,223,.5)}
 .cin-pref-group{scroll-margin-top:80px}
+.cin-gallery::after{content:"";display:block;height:60vh}
 
 /* ===== Gallery cards ===== */
 .cin-hscroll{display:flex;align-items:center;gap:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 2px 16px;scrollbar-width:auto;scrollbar-color:rgba(232,228,223,.35) rgba(232,228,223,.06)}
