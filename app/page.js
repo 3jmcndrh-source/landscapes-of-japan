@@ -1144,6 +1144,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           <text x={OKI_BOX.x + OKI_BOX.w / 2} y={OKI_BOX.y + 16} fill="rgba(232,228,223,.42)" fontSize="9"
             fontFamily="var(--font-playfair), 'Playfair Display', serif" fontStyle="italic" textAnchor="middle" letterSpacing=".18em">{t.oki}</text>
           <g transform={"translate(" + OKI_BOX.x + "," + OKI_BOX.y + ")"} clipPath="url(#okiClip)">
+            <rect x={0} y={0} width={OKI_BOX.w} height={OKI_BOX.h} fill="transparent" pointerEvents="all" />
             {okiPaths.map(p => {
               if (!p.d) return null;
               const isHL = p.hasPhotos;
