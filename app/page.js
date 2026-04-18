@@ -1364,7 +1364,8 @@ export default function Page() {
   const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
   const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
   const handlePin = useCallback(id => {
-    const el = photoRefs.current[id];
+    const m = String(id).match(/^p(\d+)$/);
+    const el = m ? document.getElementById("pref-" + m[1]) : null;
     const targetPref = el?.querySelector('.cin-pref span')?.textContent;
     if (!el) { setDebugMsg(`handlePin id=${id} NO_EL`); return; }
     document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => {
@@ -1437,7 +1438,7 @@ export default function Page() {
           </div>
           <div className="cin-gallery">
             {PREFECTURES.map((pf, pi) => (
-              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className="cin-pref-group reveal">
+              <div key={pf.pref} id={"pref-" + pi} className="cin-pref-group reveal">
                 <div className="cin-pref">
                   <span>{getPrefName(pf.pref, lang)}</span>
                   {lang !== "en" && getPrefName(pf.pref, "en") !== getPrefName(pf.pref, lang) && (
