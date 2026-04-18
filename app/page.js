@@ -901,7 +901,9 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           }
         } catch (e) { /* try next */ }
       }
-      if (!cancelled) { setGeoData(JP_GEO); setLoading(false); }
+      /* External GeoJSON sources both failed — keep map hidden rather than show the
+         English-named JP_GEO fallback which would mismatch prefMap keys and let
+         taps land on the wrong prefecture. */
     }
     loadMap();
     return () => { cancelled = true; };
