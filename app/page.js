@@ -984,16 +984,12 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   }
 
   const handlePrefInteraction = (prefName) => {
-    if (typeof window !== "undefined") window.__debugMap = `tap pref=${prefName} prevTapped=${tapped} mapId=${prefMap[prefName]?.id}`;
     if (!prefMap[prefName]) return;
     if (isMobile) {
       if (tapped === prefName) {
-        /* Second tap — navigate */
-        if (typeof window !== "undefined") window.__debugMap = `NAV id=${prefMap[prefName].id} pref=${prefName}`;
         onPinClick(prefMap[prefName].id);
         setTapped(null);
       } else {
-        /* First tap — show name */
         setTapped(prefName);
         setHov(prefName);
       }
@@ -1264,7 +1260,6 @@ export default function Page() {
   const contactRef = useRef(null);
   const photoRefs = useRef({});
   const navigatingRef = useRef(false);
-  const [debugMsg, setDebugMsg] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formMsg, setFormMsg] = useState("");
@@ -1366,8 +1361,7 @@ export default function Page() {
   const handlePin = useCallback(id => {
     const m = String(id).match(/^p(\d+)$/);
     const el = m ? document.getElementById("pref-" + m[1]) : null;
-    const targetPref = el?.querySelector('.cin-pref span')?.textContent;
-    if (!el) { setDebugMsg(`handlePin id=${id} NO_EL`); return; }
+    if (!el) return;
     document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => {
       if (!r.classList.contains('is-visible')) {
         r.style.transition = 'none';
@@ -1378,24 +1372,16 @@ export default function Page() {
     });
     navigatingRef.current = true;
     setTimeout(() => { navigatingRef.current = false; }, 1200);
-    const targetY = el.getBoundingClientRect().top + window.scrollY - 80;
+    const wantedY = el.getBoundingClientRect().top + window.scrollY - 80;
+    const maxY = document.documentElement.scrollHeight - window.innerHeight;
+    const targetY = Math.min(wantedY, maxY);
     window.scrollTo({ top: targetY, behavior: "smooth" });
-    setDebugMsg(`id=${id} pref=${targetPref} targetY=${Math.round(targetY)} curY=${Math.round(window.scrollY)}`);
-    setTimeout(() => {
-      const finalPref = document.elementFromPoint(window.innerWidth/2, 100)?.closest('.cin-pref-group')?.querySelector('.cin-pref span')?.textContent;
-      setDebugMsg(`DONE id=${id} pref=${targetPref} → finalY=${Math.round(window.scrollY)} expectedY=${Math.round(targetY)} atTop=${finalPref}`);
-    }, 1500);
     setHlPhoto(id);
     setTimeout(() => setHlPhoto(null), 2500);
   }, []);
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
-      {debugMsg && (
-        <div style={{ position: "fixed", top: 4, left: 4, right: 4, zIndex: 99999, background: "rgba(220,40,40,.92)", color: "#fff", padding: "6px 8px", fontSize: 11, borderRadius: 4, fontFamily: "monospace", wordBreak: "break-all" }}>
-          {debugMsg}
-        </div>
-      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@graph": [
