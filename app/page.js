@@ -1252,6 +1252,7 @@ export default function Page() {
   const mapRef = useRef(null);
   const contactRef = useRef(null);
   const photoRefs = useRef({});
+  const navigatingRef = useRef(false);
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formMsg, setFormMsg] = useState("");
@@ -1341,6 +1342,8 @@ export default function Page() {
         r.style.transition = '';
       }
     });
+    navigatingRef.current = true;
+    setTimeout(() => { navigatingRef.current = false; }, 1200);
     el.scrollIntoView({ behavior: "smooth", block: "start" });
     setHlPhoto(id);
     setTimeout(() => setHlPhoto(null), 2500);
@@ -1399,7 +1402,7 @@ export default function Page() {
                 </div>
                 <div className="cin-hscroll">
                   {pf.photos.map((photo, idx) => (
-                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => openLightbox(getUrl(photo, lbW))} onContextMenu={e => e.preventDefault()}>
+                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
                         <img src={getUrl(photo, thumbW)} alt={photo.loc + " - " + pf.pref + " | Landscapes of Japan"} loading="lazy" draggable="false" />
                         {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
