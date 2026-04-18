@@ -1330,7 +1330,7 @@ export default function Page() {
 
   const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
   const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
-  const handlePin = useCallback(id => { const el = photoRefs.current[id]; if (el) { el.scrollIntoView({ behavior: "smooth", block: "center" }); setHlPhoto(id); setTimeout(() => setHlPhoto(null), 2500); } }, []);
+  const handlePin = useCallback(id => { const el = photoRefs.current[id]; if (el) { document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => r.classList.add('is-visible')); el.scrollIntoView({ behavior: "smooth", block: "start" }); setHlPhoto(id); setTimeout(() => setHlPhoto(null), 2500); } }, []);
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
@@ -1349,7 +1349,7 @@ export default function Page() {
         ]
       }) }} />
 
-      <div ref={cRef} style={{ height: "100vh", overflowY: "auto", overflowX: "hidden", scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}>
+      <div ref={cRef} style={{ height: "100dvh", overflowY: "auto", overflowX: "hidden", scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}>
         <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
           <div className="top-langs">
             {Object.entries(TR).map(([c, v]) => (
@@ -1376,7 +1376,7 @@ export default function Page() {
           </div>
           <div className="cin-gallery">
             {PREFECTURES.map((pf, pi) => (
-              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className={"cin-pref-group reveal" + (hlPhoto === "p" + pi ? " flash" : "")}>
+              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className="cin-pref-group reveal" data-flash={hlPhoto === "p" + pi ? "1" : undefined}>
                 <div className="cin-pref">
                   <span>{getPrefName(pf.pref, lang)}</span>
                   {lang !== "en" && getPrefName(pf.pref, "en") !== getPrefName(pf.pref, lang) && (
