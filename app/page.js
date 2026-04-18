@@ -1330,7 +1330,21 @@ export default function Page() {
 
   const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
   const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
-  const handlePin = useCallback(id => { const el = photoRefs.current[id]; if (el) { document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => r.classList.add('is-visible')); el.scrollIntoView({ behavior: "smooth", block: "start" }); setHlPhoto(id); setTimeout(() => setHlPhoto(null), 2500); } }, []);
+  const handlePin = useCallback(id => {
+    const el = photoRefs.current[id];
+    if (!el) return;
+    document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => {
+      if (!r.classList.contains('is-visible')) {
+        r.style.transition = 'none';
+        r.classList.add('is-visible');
+        void r.offsetHeight;
+        r.style.transition = '';
+      }
+    });
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setHlPhoto(id);
+    setTimeout(() => setHlPhoto(null), 2500);
+  }, []);
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
@@ -1376,7 +1390,7 @@ export default function Page() {
           </div>
           <div className="cin-gallery">
             {PREFECTURES.map((pf, pi) => (
-              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className="cin-pref-group reveal" data-flash={hlPhoto === "p" + pi ? "1" : undefined}>
+              <div key={pf.pref} ref={el => { photoRefs.current["p" + pi] = el; }} className="cin-pref-group reveal">
                 <div className="cin-pref">
                   <span>{getPrefName(pf.pref, lang)}</span>
                   {lang !== "en" && getPrefName(pf.pref, "en") !== getPrefName(pf.pref, lang) && (
