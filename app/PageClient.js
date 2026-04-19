@@ -1453,7 +1453,7 @@ export default function PageClient({ initialLang = "ja" }) {
                   {pf.photos.map((photo, idx) => (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
-                        <img src={getUrl(photo, thumbW)} alt={photo.loc + " - " + pf.pref + " | Landscapes of Japan"} loading="lazy" draggable="false" />
+                        <img src={getUrl(photo, thumbW)} alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + getPrefName(pf.pref, lang) + " | Landscapes of Japan"} loading="lazy" draggable="false" />
                         {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
                         {photo.year && <div className="cin-hcard-year">{photo.year}</div>}
                         <div className="cin-watermark">Landscapes of Japan</div>
@@ -1539,7 +1539,7 @@ export default function PageClient({ initialLang = "ja" }) {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
             <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}>
-              <img src={cur.url} alt={cur.loc + " - " + cur.pref + " | Landscapes of Japan"} draggable="false" />
+              <img src={cur.url} alt={(cur.loc ? getLocName(cur.loc, lang) + " - " : "") + getPrefName(cur.pref, lang) + " | Landscapes of Japan"} draggable="false" />
               <div className="cin-lb-wm">Landscapes of Japan</div>
             </div>
             <button
