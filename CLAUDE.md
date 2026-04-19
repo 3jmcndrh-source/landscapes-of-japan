@@ -180,21 +180,42 @@ Verification helpers:
 - `preview_screenshot` for layout
 - `preview_resize({preset:"mobile"})` for 375×812 mobile check
 
-## Recent Redesign Summary (2026-04-17 → 18)
+## Recent Redesign Summary (2026-04-17 → 19)
 
-Commits `cc7d0e3` through `b21e3c0`:
+Commits `cc7d0e3` through `8268415`:
 
 1. **ISO prefecture ordering** (北海道→沖縄)
 2. **New typography:** dropped Yuji Boku, added Playfair Display italic + Zen Kaku Gothic New
-3. **Hero:** "Landscapes of Japan" single line, blur→focus animation
-4. **Map:** radial gradient fills, Gaussian-blur glow filters, softer Okinawa inset, rounded glassmorphic tooltips
+3. **Hero:** "Landscapes of Japan" single line, blur→focus animation. Hero subtitle text colour now `#f2ece2` (matches title).
+4. **Map:** radial gradient fills, Gaussian-blur glow filters, softer Okinawa inset, rounded glassmorphic tooltips. Mobile tooltip is now tappable (handlePrefInteraction) and offset 36px from the prefecture path.
 5. **Scroll-linked fade-in** for all `.reveal` sections via IntersectionObserver
 6. **Card hover:** lift + scale + gold glow spring
-7. **Lightbox:** backdrop-filter blur, `lbIn`/`lbOut` animations, enlarged close button on mobile, direct-tap close in `onTouchEnd` to sidestep iOS click issues
+7. **Lightbox:** backdrop-filter blur, `lbIn`/`lbOut` animations, enlarged close button on mobile, direct-tap close in `onTouchEnd` to sidestep iOS click issues. Body scroll locked while lightbox is open (position:fixed + scroll restore).
 8. **Language bar:** flat text + underline-reveal
 9. **Contact form:** pill-shaped gold send button
 10. **Removed subtitle "日本の風景"** from hero
-11. **Fix mobile lightbox infinite recursion** (the inner `setLightbox(null)` call had been replaced with `closeLightbox()` itself — caused no-op close)
+11. **Fix mobile lightbox infinite recursion**
+12. **Document scroll** instead of internal `cRef` overflow:auto wrapper (iOS scrollIntoView reliability)
+13. **Map double-tap navigation rewritten** — uses `id="pref-{i}"` lookup instead of callback-ref map (R19 callback-ref reordering bug); manual `window.scrollTo` with re-correction at 400/900/1500ms (lazy-loaded images shifting layout); center-fallback when scroll target exceeds maxScroll
+14. **Okinawa inset rect** with `pointerEvents:all` + onClick(handlePrefInteraction "沖縄県") — tap anywhere in inset box navigates
+15. **JP_GEO fallback removed** (English names mismatched prefMap during cold-load)
+16. **Nav button "撮影地マップ" → "撮影地"** across all 20 languages (both `nav.map` and `mapL`)
+17. **Hero watermark added** — Mt Fuji + pagoda images, grayscale via Cloudinary `e_grayscale` URL (no CSS filter to avoid compositor seams), opacity .32, swaps landscape/portrait by viewport
+18. **Top-bar transparent over hero**, decoration only on `.scrolled`. Removed backdrop-filter from `.top-nav-link`. `.top-langs` scrollbar fully hidden (was leaving phantom thin line on Edge).
+19. **Horizontal-line bug ROOT CAUSE 2026-04-19:** `.cin-section::before` had `top:-10%` which placed its 9487px-section's top edge at screen y≈131px — the radial-gradient's bounding-box edge rendered as a full-width hairline. Fixed by `top:0`. (Lost ~8 deploy cycles to compositor-seam theories before finally bisecting via `display:none`.)
+20. **Mobile gallery scroll** — dropped scroll-snap, dropped touch-action:pan-x, dropped body overflow-x:hidden, restored `-webkit-overflow-scrolling:touch`. Native iOS horizontal swipe responsiveness restored.
+
+## Pending: SEO Phase 1–4 (NOT STARTED)
+
+User has approved a multi-language SEO overhaul. See `~/.claude/projects/C--Users-3jmcn-Downloads-files/memory/project_seo_phase.md` for the full plan with locked decisions.
+
+**Summary of phases:**
+- Phase 1: Move `app/page.js` → `app/[lang]/page.js` with dynamic routes for all 20 langs; `generateMetadata` per language; `app/sitemap.js` with hreflang alternates; `middleware.js` for `Accept-Language` based redirect from `/` to `/{lang}/`.
+- Phase 2: image `alt` attributes localized via `getLocName(loc, lang)` and `getPrefName(pref, lang)`.
+- Phase 3: Add `BreadcrumbList`, `Person` (name="Landscapes of Japan"), `WebPage`, and `TouristDestination` (per loc) JSON-LD schemas.
+- Phase 4: `app/[lang]/opengraph-image.js` using `next/og` `ImageResponse` for per-language OG images.
+
+**Locked decisions:** Photographer name = "Landscapes of Japan"; default-lang redirect = automatic via Accept-Language; old `/` URL = 301 redirect.
 
 ## Conventions
 
