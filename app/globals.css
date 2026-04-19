@@ -41,10 +41,7 @@ html{scroll-behavior:smooth}
 
 /* ===== Hero ===== */
 .cin-hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.cin-hero-bg{position:absolute;inset:0;background:
-  radial-gradient(ellipse 80% 60% at 50% 40%,rgba(220,190,100,.06),transparent 70%),
-  radial-gradient(ellipse 60% 40% at 50% 100%,rgba(32,34,42,.5),transparent 70%),
-  #070706}
+.cin-hero-bg{position:absolute;inset:0;background:#070706}
 /* TEMP DEBUG: hero watermark hidden to isolate line source */
 .cin-hero-bg::after{display:none}
 .cin-hero-content{position:relative;z-index:2;text-align:center}
