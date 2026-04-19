@@ -1214,8 +1214,8 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   );
 }
 
-export default function Page() {
-  const [lang, setLang] = useState("ja");
+export default function PageClient({ initialLang = "ja" }) {
+  const [lang, setLang] = useState(initialLang);
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
   const closeLightbox = useCallback(() => {
