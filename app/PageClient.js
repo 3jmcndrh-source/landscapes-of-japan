@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import * as d3 from "d3";
+import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
 
 /* ── Embedded Japan GeoJSON — real lat/lng, D3 projects accurately ── */
 /* Format: GeoJSON [longitude, latitude] per spec */
@@ -1400,20 +1401,89 @@ export default function PageClient({ initialLang = "ja" }) {
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "WebSite", name: "Landscapes of Japan", url: "https://landscapes-of-japan.vercel.app", description: "日本全国の風景写真ポートフォリオ。北海道から沖縄まで380枚以上の写真を20言語対応で公開。", inLanguage: "ja" },
-          { "@type": "ImageGallery", name: "Landscapes of Japan — 日本の風景", url: "https://landscapes-of-japan.vercel.app", description: "Cinematic photography portfolio showcasing landscapes across 18 prefectures of Japan",
-            about: { "@type": "Country", name: "Japan" },
-            image: PREFECTURES.flatMap(pf => pf.photos.slice(0, 3).map(p => ({
-              "@type": "Photograph", name: p.loc + " - " + pf.pref, contentLocation: { "@type": "Place", name: p.loc, address: { "@type": "PostalAddress", addressRegion: pf.pref, addressCountry: "JP" } },
-              image: "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/" + encodeURIComponent(p.id) + ".jpg",
-              dateCreated: p.year ? String(p.year) : undefined
-            })))
-          }
-        ]
-      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify((() => {
+        const meta = SEO_META[lang] || SEO_META.en;
+        const pageUrl = `${SITE_URL}/${lang}`;
+        const personId = `${SITE_URL}/#person`;
+        const websiteId = `${SITE_URL}/#website`;
+        const locSet = new Map();
+        PREFECTURES.forEach(pf => pf.photos.forEach(p => {
+          if (p.loc && !locSet.has(p.loc)) locSet.set(p.loc, pf.pref);
+        }));
+        return {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": personId,
+              name: "Landscapes of Japan",
+              url: SITE_URL,
+              image: OG_IMAGE,
+              description: meta.description,
+              jobTitle: "Landscape Photographer",
+            },
+            {
+              "@type": "WebSite",
+              "@id": websiteId,
+              name: "Landscapes of Japan",
+              url: SITE_URL,
+              description: meta.description,
+              inLanguage: HREFLANG[lang] || lang,
+              publisher: { "@id": personId },
+            },
+            {
+              "@type": "WebPage",
+              "@id": `${pageUrl}#webpage`,
+              url: pageUrl,
+              name: meta.title,
+              description: meta.description,
+              inLanguage: HREFLANG[lang] || lang,
+              isPartOf: { "@id": websiteId },
+              author: { "@id": personId },
+              primaryImageOfPage: { "@type": "ImageObject", url: OG_IMAGE },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: meta.title, item: pageUrl },
+              ],
+            },
+            {
+              "@type": "ImageGallery",
+              "@id": `${pageUrl}#gallery`,
+              name: meta.title,
+              url: pageUrl,
+              description: meta.description,
+              inLanguage: HREFLANG[lang] || lang,
+              author: { "@id": personId },
+              about: { "@type": "Country", name: "Japan" },
+              image: PREFECTURES.flatMap(pf => pf.photos.slice(0, 3).map(p => ({
+                "@type": "Photograph",
+                name: (p.loc ? getLocName(p.loc, lang) + " - " : "") + getPrefName(pf.pref, lang),
+                contentLocation: {
+                  "@type": "Place",
+                  name: p.loc ? getLocName(p.loc, lang) : getPrefName(pf.pref, lang),
+                  address: { "@type": "PostalAddress", addressRegion: getPrefName(pf.pref, lang), addressCountry: "JP" },
+                },
+                image: "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/" + encodeURIComponent(p.id) + ".jpg",
+                dateCreated: p.year ? String(p.year) : undefined,
+                author: { "@id": personId },
+              }))),
+            },
+            ...Array.from(locSet.entries()).map(([loc, pref]) => ({
+              "@type": "TouristDestination",
+              name: getLocName(loc, lang),
+              containedInPlace: {
+                "@type": "AdministrativeArea",
+                name: getPrefName(pref, lang),
+                address: { "@type": "PostalAddress", addressRegion: getPrefName(pref, lang), addressCountry: "JP" },
+              },
+              touristType: "Landscape Photography",
+              inLanguage: HREFLANG[lang] || lang,
+            })),
+          ],
+        };
+      })()) }} />
 
       <div ref={cRef}>
         <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
