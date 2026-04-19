@@ -48,7 +48,7 @@ html{scroll-behavior:smooth}
   radial-gradient(ellipse 80% 60% at 50% 40%,rgba(220,190,100,.06),transparent 70%),
   radial-gradient(ellipse 60% 40% at 50% 100%,rgba(32,34,42,.5),transparent 70%),
   #070706}
-.cin-hero-bg::after{content:"";position:absolute;inset:0;background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,f_auto,q_auto/hero_landscape.jpg");background-size:cover;background-position:center;filter:grayscale(1);opacity:.18;pointer-events:none}
+.cin-hero-bg::after{content:"";position:absolute;inset:0;background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,f_auto,q_auto/hero_landscape.jpg");background-size:cover;background-position:center;filter:grayscale(1);opacity:.32;pointer-events:none}
 @media (max-width:768px){
   .cin-hero-bg::after{background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/w_1080,f_auto,q_auto/hero_portrait.jpg")}
 }
