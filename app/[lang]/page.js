@@ -14,23 +14,23 @@ export async function generateMetadata({ params }) {
 
   const languages = {};
   for (const l of LANGS) {
-    languages[HREFLANG[l]] = `${SITE_URL}/${l}/`;
+    languages[HREFLANG[l]] = `${SITE_URL}/${l}`;
   }
-  languages["x-default"] = `${SITE_URL}/en/`;
+  languages["x-default"] = `${SITE_URL}/en`;
 
   return {
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
     alternates: {
-      canonical: `${SITE_URL}/${lang}/`,
+      canonical: `${SITE_URL}/${lang}`,
       languages,
     },
     openGraph: {
       title: meta.title,
       description: meta.description,
       type: "website",
-      url: `${SITE_URL}/${lang}/`,
+      url: `${SITE_URL}/${lang}`,
       siteName: "Landscapes of Japan",
       locale: meta.ogLocale,
       images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: meta.title }],

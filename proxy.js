@@ -30,7 +30,7 @@ export function proxy(request) {
 
   const lang = detectLang(request.headers.get("accept-language"));
   const url = request.nextUrl.clone();
-  url.pathname = pathname === "/" ? `/${lang}/` : `/${lang}${pathname}`;
+  url.pathname = pathname === "/" ? `/${lang}` : `/${lang}${pathname}`;
   return NextResponse.redirect(url, 301);
 }
 
