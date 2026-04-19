@@ -4,12 +4,9 @@ html{scroll-behavior:smooth}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
 
 /* ===== Top bar & language switcher ===== */
-.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(8,8,10,.72),rgba(8,8,10,.35));
-  backdrop-filter:blur(26px) saturate(1.4);-webkit-backdrop-filter:blur(26px) saturate(1.4);
-  box-shadow:0 6px 30px -20px rgba(0,0,0,.6)}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0;pointer-events:none;background:transparent;transition:background .4s ease,backdrop-filter .4s ease,box-shadow .4s ease}
 .top-bar>*{pointer-events:auto}
-.top-bar.scrolled{background:linear-gradient(180deg,rgba(8,8,10,.86),rgba(8,8,10,.5))}
+.top-bar.scrolled{background:linear-gradient(180deg,rgba(8,8,10,.86),rgba(8,8,10,.5));backdrop-filter:blur(26px) saturate(1.4);-webkit-backdrop-filter:blur(26px) saturate(1.4);box-shadow:0 6px 30px -20px rgba(0,0,0,.6)}
 .top-langs{display:flex;align-items:center;gap:4px;overflow-x:auto;padding:12px 16px;padding-right:280px;flex:1;scrollbar-width:none}
 .top-langs::-webkit-scrollbar{display:none}
 
