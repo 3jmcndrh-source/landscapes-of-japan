@@ -45,10 +45,8 @@ html{scroll-behavior:smooth}
   radial-gradient(ellipse 80% 60% at 50% 40%,rgba(220,190,100,.06),transparent 70%),
   radial-gradient(ellipse 60% 40% at 50% 100%,rgba(32,34,42,.5),transparent 70%),
   #070706}
-.cin-hero-bg::after{content:"";position:absolute;inset:-1px;background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/e_grayscale,w_1920,f_auto,q_auto/hero_landscape.jpg");background-size:cover;background-position:center;opacity:.32;pointer-events:none;transform:translateZ(0);will-change:transform}
-@media (max-width:768px){
-  .cin-hero-bg::after{background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/e_grayscale,w_1080,f_auto,q_auto/hero_portrait.jpg")}
-}
+/* TEMP DEBUG: hero watermark hidden to isolate line source */
+.cin-hero-bg::after{display:none}
 .cin-hero-content{position:relative;z-index:2;text-align:center}
 .cin-hero-title{font-family:var(--font-playfair),'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(42px,8.5vw,104px);color:#f2ece2;letter-spacing:.06em;line-height:1.05;opacity:0;filter:blur(8px);transform:translateY(14px);animation:heroTitleIn 1.4s cubic-bezier(.2,.8,.2,1) .35s forwards}
 .cin-hero-title-jp{display:block;margin-top:14px;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-style:normal;font-weight:300;font-size:clamp(18px,3vw,28px);letter-spacing:.55em;color:rgba(232,228,223,.68);opacity:0;transform:translateY(10px);animation:heroSubIn 1.4s cubic-bezier(.2,.8,.2,1) .9s forwards}
