@@ -42,9 +42,9 @@ html{scroll-behavior:smooth}
 /* ===== Hero ===== */
 .cin-hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .cin-hero-bg{position:absolute;inset:0;background:#070706}
-/* DEBUG: hide top-bar and top-nav to test if line comes from there */
-.top-bar{display:none !important}
-.top-nav{display:none !important}
+/* DEBUG: hide everything in hero/header to check if line is browser/OS chrome */
+.top-bar,.top-nav,.cin-hero{display:none !important}
+body{background:#0a0a0a !important;min-height:100vh}
 /* TEMP DEBUG: hero watermark hidden to isolate line source */
 .cin-hero-bg::after{display:none}
 .cin-hero-content{position:relative;z-index:2;text-align:center}
