@@ -218,6 +218,21 @@ Commits `cc7d0e3` through `8268415`:
 19. **Horizontal-line bug ROOT CAUSE 2026-04-19:** `.cin-section::before` had `top:-10%` which placed its 9487px-section's top edge at screen y≈131px — the radial-gradient's bounding-box edge rendered as a full-width hairline. Fixed by `top:0`. (Lost ~8 deploy cycles to compositor-seam theories before finally bisecting via `display:none`.)
 20. **Mobile gallery scroll** — dropped scroll-snap, dropped touch-action:pan-x, dropped body overflow-x:hidden, restored `-webkit-overflow-scrolling:touch`. Native iOS horizontal swipe responsiveness restored.
 
+## SEO Phase 5 — Per-loc expansion (COMPLETE 2026-04-19)
+
+1,460 URLs deployed. Commit `cd6cae8`.
+
+- `app/[lang]/[pref]/page.js` + `[loc]/page.js`: prefecture + location landing pages (18 prefs + 54 locs × 20 langs = 1,440 new)
+- `app/slugs.js`: JP↔slug maps (e.g. `清水寺` ↔ `kiyomizu-dera`, `父母ヶ浜` ↔ `chichibugahama`)
+- `app/data.js`: extracted PREFECTURES/TR/helpers from PageClient for server-side reuse
+- `app/PrefClient.js` / `app/LocClient.js`: client components with lightbox, language switcher anchors
+- `app/content/`: descriptions.js merges prefectures.js + locations.js (5 base langs) with extras/*.js (15 additional langs). Graceful fallback to English when a lang entry is missing.
+- `app/sitemap.js`: 1,460 URLs (20 root + 360 pref + 1,080 loc) with 21-lang hreflang alternates each
+- `app/sitemap-images.xml/route.js`: 72 URLs × 522 image entries with localized titles
+- `app/PageClient.js`: language buttons are now `<a href="/{lang}">` (URL nav) — proper analytics + SEO. D3 named imports (`select/zoom/zoomIdentity/geoMercator/geoPath`) for better tree-shaking
+
+Watermark opacity bumped from .4 to .75 with text-shadow (2026-04-19).
+
 ## SEO Phase 1–4 (COMPLETE 2026-04-19)
 
 All four phases implemented and deployed. Commits `59cdd32`, `3e32d8e`, `dd67123`, `81d1a39`, `1b59790`.
