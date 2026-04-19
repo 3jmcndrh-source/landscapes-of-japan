@@ -474,7 +474,6 @@ export const PREFECTURES = [
       { id: "DSC07386_vrsz1g", loc: "清水寺", year: 2025 },
       { id: "DSC07355_zyqovr", loc: "清水寺", year: 2025 },
       { id: "DSC07337_kaejdo", loc: "清水寺", year: 2025 },
-      { id: "DSC07337_rjoogf", loc: "清水寺", year: 2025 },
       { id: "DSC07313_akiagf", loc: "金閣寺", year: 2025 },
       { id: "DSC07290_sz6x7s", loc: "金閣寺", year: 2025 },
     ]
