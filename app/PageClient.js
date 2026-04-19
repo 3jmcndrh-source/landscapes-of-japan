@@ -174,15 +174,15 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
     if (!svgRef.current || !gRef.current) return;
     const svg = select(svgRef.current);
     const g = select(gRef.current);
-    const zoom = zoom()
+    const zoomBehavior = zoom()
       .scaleExtent([1, 5])
       .on("zoom", (e) => {
         g.attr("transform", e.transform);
         setZoomScale(e.transform.k);
       });
-    zoomRef.current = zoom;
+    zoomRef.current = zoomBehavior;
     if (isMobile && zoomEnabled) {
-      svg.call(zoom);
+      svg.call(zoomBehavior);
       svg.style("touch-action", "none");
     } else {
       svg.on(".zoom", null);
@@ -190,7 +190,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
       /* Reset zoom when disabling */
       if (gRef.current) {
         g.attr("transform", zoomIdentity);
-        svg.call(zoom.transform, zoomIdentity);
+        svg.call(zoomBehavior.transform, zoomIdentity);
         setZoomScale(1);
       }
     }
