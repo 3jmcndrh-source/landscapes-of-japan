@@ -670,9 +670,9 @@ export const MAP_PINS = PREFECTURES.map((pf, i) => ({
   thumb: getUrl(pf.photos[0], 300),
 }));
 
-const MW = 560, MH = 720;
+export const MW = 560, MH = 720;
 
-const GEOJSON_URLS = [
+export const GEOJSON_URLS = [
   "https://raw.githubusercontent.com/dataofjapan/land/master/japan.geojson",
   "https://raw.githubusercontent.com/smartnews-smri/japan-topography/main/data/municipality/geojson/s0010/N03-21_210101_simplified.geojson",
 ];

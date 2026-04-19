@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { select, zoom, zoomIdentity, geoMercator, geoPath } from "d3";
+import * as d3 from "d3";
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
-import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName } from "./data.js";
+import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
 
 /* ── Embedded Japan GeoJSON — real lat/lng, D3 projects accurately ── */
 /* Format: GeoJSON [longitude, latitude] per spec */
@@ -172,9 +172,9 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   /* D3 zoom for mobile pinch-to-zoom */
   useEffect(() => {
     if (!svgRef.current || !gRef.current) return;
-    const svg = select(svgRef.current);
-    const g = select(gRef.current);
-    const zoomBehavior = zoom()
+    const svg = d3.select(svgRef.current);
+    const g = d3.select(gRef.current);
+    const zoomBehavior = d3.zoom()
       .scaleExtent([1, 5])
       .on("zoom", (e) => {
         g.attr("transform", e.transform);
@@ -189,8 +189,8 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
       svg.style("touch-action", "pan-y");
       /* Reset zoom when disabling */
       if (gRef.current) {
-        g.attr("transform", zoomIdentity);
-        svg.call(zoomBehavior.transform, zoomIdentity);
+        g.attr("transform", d3.zoomIdentity);
+        svg.call(zoomBehavior.transform, d3.zoomIdentity);
         setZoomScale(1);
       }
     }
@@ -246,12 +246,12 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
     if (!geoData) return { paths: [], okiPaths: [], project: () => ({ x: 0, y: 0 }), okiProject: () => ({ x: 0, y: 0 }) };
 
     /* Main projection */
-    const projection = geoMercator().center([137, 37.5]).scale(1800).translate([MW / 2, MH / 2]);
-    const pathGen = geoPath().projection(projection);
+    const projection = d3.geoMercator().center([137, 37.5]).scale(1800).translate([MW / 2, MH / 2]);
+    const pathGen = d3.geoPath().projection(projection);
 
     /* Okinawa inset projection */
-    const okiProj = geoMercator().center([127.5, 26.5]).scale(3800).translate([OKI_BOX.w / 2, OKI_BOX.h / 2 + 8]);
-    const okiPathGen = geoPath().projection(okiProj);
+    const okiProj = d3.geoMercator().center([127.5, 26.5]).scale(3800).translate([OKI_BOX.w / 2, OKI_BOX.h / 2 + 8]);
+    const okiPathGen = d3.geoPath().projection(okiProj);
 
     const ps = [];
     const ops = [];
@@ -520,8 +520,8 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
               className="map-zoom-btn"
               onClick={() => {
                 if (svgRef.current && zoomRef.current) {
-                  const svg = select(svgRef.current);
-                  svg.transition().duration(300).call(zoomRef.current.transform, zoomIdentity);
+                  const svg = d3.select(svgRef.current);
+                  svg.transition().duration(300).call(zoomRef.current.transform, d3.zoomIdentity);
                 }
               }}
               aria-label={t.mapZoomReset}
