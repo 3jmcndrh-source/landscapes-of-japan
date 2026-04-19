@@ -3,6 +3,16 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import * as d3 from "d3";
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
+import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+
+const VIEW_ALL = {
+  ja: "全ての写真を見る", en: "View all photos", zh: "查看所有照片", "zh-tw": "查看所有照片",
+  ko: "모든 사진 보기", es: "Ver todas las fotos", fr: "Voir toutes les photos",
+  de: "Alle Fotos ansehen", pt: "Ver todas as fotos", it: "Vedi tutte le foto",
+  ru: "Все фотографии", ar: "عرض جميع الصور", hi: "सभी तस्वीरें देखें",
+  th: "ดูภาพทั้งหมด", vi: "Xem tất cả ảnh", id: "Lihat semua foto",
+  tr: "Tüm fotoğrafları gör", nl: "Bekijk alle foto's", pl: "Zobacz wszystkie zdjęcia", sv: "Visa alla foton",
+};
 
 /* ── Embedded Japan GeoJSON — real lat/lng, D3 projects accurately ── */
 /* Format: GeoJSON [longitude, latitude] per spec */
@@ -831,29 +841,56 @@ export default function PageClient({ initialLang = "ja" }) {
             </div>
           </div>
           <div className="cin-gallery">
-            {PREFECTURES.map((pf, pi) => (
+            {PREFECTURES.map((pf, pi) => {
+              const prefSlug = PREF_SLUGS[pf.pref];
+              const viewAllLabel = VIEW_ALL[lang] || VIEW_ALL.en;
+              return (
               <div key={pf.pref} id={"pref-" + pi} className="cin-pref-group reveal">
                 <div className="cin-pref">
-                  <span>{getPrefName(pf.pref, lang)}</span>
+                  {prefSlug ? (
+                    <a href={`/${lang}/${prefSlug}`} className="cin-pref-link"><span>{getPrefName(pf.pref, lang)}</span></a>
+                  ) : (
+                    <span>{getPrefName(pf.pref, lang)}</span>
+                  )}
                   {lang !== "en" && getPrefName(pf.pref, "en") !== getPrefName(pf.pref, lang) && (
                     <span className="cin-pref-jp">{getPrefName(pf.pref, "en")}</span>
                   )}
+                  {prefSlug && (
+                    <a href={`/${lang}/${prefSlug}`} className="cin-pref-viewall">{viewAllLabel} →</a>
+                  )}
                 </div>
                 <div className="cin-hscroll">
-                  {pf.photos.map((photo, idx) => (
+                  {pf.photos.map((photo, idx) => {
+                    const locSlug = photo.loc ? LOC_SLUGS[photo.loc] : null;
+                    return (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
                         <img src={getUrl(photo, thumbW)} alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + getPrefName(pf.pref, lang) + " | Landscapes of Japan"} loading="lazy" draggable="false" />
-                        {photo.loc && <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>}
+                        {photo.loc && (
+                          locSlug && prefSlug ? (
+                            <a
+                              href={`/${lang}/${prefSlug}/${locSlug}`}
+                              className="cin-hcard-loc cin-hcard-loc-link"
+                              onClick={e => e.stopPropagation()}
+                            >
+                              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>
+                              {getLocName(photo.loc, lang)}
+                            </a>
+                          ) : (
+                            <div className="cin-hcard-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>{getLocName(photo.loc, lang)}</div>
+                          )
+                        )}
                         {photo.year && <div className="cin-hcard-year">{photo.year}</div>}
                         <div className="cin-watermark">Landscapes of Japan</div>
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 {pf.photos.length > 1 && <div className="cin-scroll-indicator">{t.scroll}</div>}
               </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
