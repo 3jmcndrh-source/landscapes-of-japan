@@ -18,12 +18,18 @@ Preview launch config: `C:\Users\3jmcn\Downloads\files\.claude\launch.json` (use
 
 ```
 app/
-  page.js          # Single-page app (~1470 lines): PREFECTURES, TR, PREF_I18N, LOC_I18N, JapanMap, Page
-  layout.js        # Fonts (Cormorant, Noto Sans JP, Noto Sans, Zen Kaku Gothic New, Playfair Display), metadata, OGP
-  globals.css      # All styles (dark theme, glassmorphism, gold accents, reveal animations)
+  [lang]/
+    layout.js             # Root layout: html/body/fonts, dynamic <html lang dir>, RTL for ar
+    page.js               # Server component: generateStaticParams (20 langs), generateMetadata
+    opengraph-image.js    # Edge runtime: dynamic per-lang OG image via next/og + Satori
+  PageClient.js           # Client component (~1558 lines): old page.js, now takes initialLang prop
+  i18n-meta.js            # LANGS, HREFLANG (BCP 47), SEO_META per lang, SITE_URL, OG_IMAGE, RTL_LANGS
+  sitemap.js              # 20 URL entries + hreflang alternates (replaces public/sitemap.xml)
+  globals.css             # All styles (dark theme, glassmorphism, gold accents, reveal animations)
   favicon.ico
+proxy.js              # Root-level: Next.js 16 renamed middleware. Accept-Language → /{lang}/ 301
 public/
-  robots.txt, sitemap.xml, manifest.json
+  robots.txt, manifest.json
   googlefa73401209ca14ac.html  # Google Search Console verification
 .env               # CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET (gitignored)
 upload.mjs         # node upload.mjs <paths...> --pref 京都府 --loc 清水寺
@@ -37,7 +43,14 @@ vercel.json        # Security headers (CSP, X-Frame-Options)
 
 ## Architecture
 
-Everything lives in `app/page.js` as a single client component (`"use client"`). No routing.
+20 language-prefixed routes via `app/[lang]/` dynamic segment. Flow:
+
+1. `proxy.js` (Next.js 16 renamed middleware) catches `/` → Accept-Language match → 301 to `/{lang}`.
+2. `app/[lang]/layout.js` is the root layout — sets `<html lang dir>` per language (RTL for `ar`, `zh-Hans`/`zh-Hant` for Chinese).
+3. `app/[lang]/page.js` is a server component: exports `generateStaticParams` (all 20 langs), `generateMetadata` (localized title/desc/keywords, canonical, 20-lang hreflang alternates + x-default), renders `<PageClient initialLang={lang}/>`.
+4. `app/PageClient.js` contains the actual app — the old single-client component, unchanged structurally except it accepts `initialLang` prop and imports SEO_META/HREFLANG/SITE_URL/OG_IMAGE from `i18n-meta.js` for the JSON-LD graph.
+
+No trailing slashes on any URL (Vercel normalizes `/ja/` → `/ja`; canonical/alternates/sitemap/proxy-target all match).
 
 ### Key data structures (top of page.js)
 - **TR** — translation strings (UI), 20 languages including "zh-tw" quoted key
@@ -205,17 +218,17 @@ Commits `cc7d0e3` through `8268415`:
 19. **Horizontal-line bug ROOT CAUSE 2026-04-19:** `.cin-section::before` had `top:-10%` which placed its 9487px-section's top edge at screen y≈131px — the radial-gradient's bounding-box edge rendered as a full-width hairline. Fixed by `top:0`. (Lost ~8 deploy cycles to compositor-seam theories before finally bisecting via `display:none`.)
 20. **Mobile gallery scroll** — dropped scroll-snap, dropped touch-action:pan-x, dropped body overflow-x:hidden, restored `-webkit-overflow-scrolling:touch`. Native iOS horizontal swipe responsiveness restored.
 
-## Pending: SEO Phase 1–4 (NOT STARTED)
+## SEO Phase 1–4 (COMPLETE 2026-04-19)
 
-User has approved a multi-language SEO overhaul. See `~/.claude/projects/C--Users-3jmcn-Downloads-files/memory/project_seo_phase.md` for the full plan with locked decisions.
+All four phases implemented and deployed. Commits `59cdd32`, `3e32d8e`, `dd67123`, `81d1a39`, `1b59790`.
 
-**Summary of phases:**
-- Phase 1: Move `app/page.js` → `app/[lang]/page.js` with dynamic routes for all 20 langs; `generateMetadata` per language; `app/sitemap.js` with hreflang alternates; `middleware.js` for `Accept-Language` based redirect from `/` to `/{lang}/`.
-- Phase 2: image `alt` attributes localized via `getLocName(loc, lang)` and `getPrefName(pref, lang)`.
-- Phase 3: Add `BreadcrumbList`, `Person` (name="Landscapes of Japan"), `WebPage`, and `TouristDestination` (per loc) JSON-LD schemas.
-- Phase 4: `app/[lang]/opengraph-image.js` using `next/og` `ImageResponse` for per-language OG images.
+21. **Phase 1 — routing/metadata/sitemap/proxy:** moved to `app/[lang]/`, added generateStaticParams + generateMetadata with hreflang + sitemap.js with 20-URL hreflang alternates + proxy.js (Accept-Language 301).
+22. **Phase 1 fix — trailing slash:** Vercel strips `/ja/` → `/ja` with 308. Stripped trailing slashes from canonical/alternates/sitemap/proxy target to match served URL.
+23. **Phase 2 — localized alt:** gallery + lightbox `img alt` now uses `getLocName(loc, lang) + " - " + getPrefName(pf.pref, lang)`.
+24. **Phase 3 — JSON-LD @graph:** 59 entries per page — Person (brand name), WebSite, WebPage (inLanguage=BCP 47), BreadcrumbList, localized ImageGallery with Photograph children, 54 TouristDestination (one per loc).
+25. **Phase 4 — dynamic OG image:** `app/[lang]/opengraph-image.js` with edge runtime + Satori. Fonts loaded per script via Google Fonts CSS API (Noto Sans JP/SC/TC/KR/Devanagari/Thai, Noto Sans for Latin/Cyrillic/Vietnamese). Arabic falls back to English text (Satori can't render Arabic shaping — `lookupType:5 substFormat:3` unsupported).
 
-**Locked decisions:** Photographer name = "Landscapes of Japan"; default-lang redirect = automatic via Accept-Language; old `/` URL = 301 redirect.
+**Gotcha for future OG image work:** do NOT use `generateImageMetadata` for a single image per route — it adds `/undefined` to the URL. Just use static `export const alt`. Also remove explicit `openGraph.images` / `twitter.images` from generateMetadata, else they override the dynamic one.
 
 ## Conventions
 
