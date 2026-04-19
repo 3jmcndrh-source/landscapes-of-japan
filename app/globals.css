@@ -20,7 +20,7 @@ html{scroll-behavior:smooth}
 
 /* ===== Top nav ===== */
 .top-nav{position:fixed;top:72px;right:16px;z-index:101;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding:0;pointer-events:auto}
-.top-nav-link{position:relative;background:rgba(14,12,10,.45);border:1px solid rgba(255,255,255,.12);color:rgba(232,228,223,.78);cursor:pointer;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:14px;font-weight:500;letter-spacing:.14em;transition:all .4s cubic-bezier(.2,.8,.2,1);padding:8px 22px;white-space:nowrap;border-radius:999px;text-align:center;min-width:168px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden}
+.top-nav-link{position:relative;background:rgba(14,12,10,.55);border:1px solid rgba(255,255,255,.12);color:rgba(232,228,223,.78);cursor:pointer;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:14px;font-weight:500;letter-spacing:.14em;transition:all .4s cubic-bezier(.2,.8,.2,1);padding:8px 22px;white-space:nowrap;border-radius:999px;text-align:center;min-width:168px;overflow:hidden}
 .top-nav-link::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(220,190,100,.28),transparent 70%);opacity:0;transition:opacity .5s}
 .top-nav-link:first-child{background:rgba(220,190,100,.12);border-color:rgba(220,190,100,.35);color:rgba(232,212,148,.95)}
 .top-nav-link:first-child:hover{background:rgba(220,190,100,.22);border-color:rgba(220,190,100,.6);color:rgba(245,225,170,1)}
@@ -45,7 +45,7 @@ html{scroll-behavior:smooth}
   radial-gradient(ellipse 80% 60% at 50% 40%,rgba(220,190,100,.06),transparent 70%),
   radial-gradient(ellipse 60% 40% at 50% 100%,rgba(32,34,42,.5),transparent 70%),
   #070706}
-.cin-hero-bg::after{content:"";position:absolute;inset:0;background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,f_auto,q_auto/hero_landscape.jpg");background-size:cover;background-position:center;filter:grayscale(1) blur(4px);opacity:.32;pointer-events:none}
+.cin-hero-bg::after{content:"";position:absolute;inset:0;background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,f_auto,q_auto/hero_landscape.jpg");background-size:cover;background-position:center;filter:grayscale(1);opacity:.32;pointer-events:none}
 @media (max-width:768px){
   .cin-hero-bg::after{background-image:url("https://res.cloudinary.com/dr53c12fo/image/upload/w_1080,f_auto,q_auto/hero_portrait.jpg")}
 }
