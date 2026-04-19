@@ -1375,9 +1375,15 @@ export default function Page() {
     navigatingRef.current = true;
     setTimeout(() => { navigatingRef.current = false; }, 1200);
     const computeTarget = () => {
-      const wantedY = el.getBoundingClientRect().top + window.scrollY - 80;
+      const rect = el.getBoundingClientRect();
+      const absTop = rect.top + window.scrollY;
+      const wantedY = absTop - 80;
       const maxY = document.documentElement.scrollHeight - window.innerHeight;
-      return Math.min(Math.max(wantedY, 0), maxY);
+      if (wantedY > maxY) {
+        const centered = absTop - Math.max(0, (window.innerHeight - rect.height) / 2);
+        return Math.min(Math.max(centered, 0), maxY);
+      }
+      return Math.max(wantedY, 0);
     };
     window.scrollTo({ top: computeTarget(), behavior: "smooth" });
     /* Lazy-loaded images may shift layout mid-scroll, so re-snap to the
