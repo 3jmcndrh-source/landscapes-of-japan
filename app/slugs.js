@@ -58,6 +58,14 @@ export const LOC_SLUGS = {
   "高遠城址公園": "takato-castle-park",
   "駒つなぎの桜": "komatsunagi-cherry",
   "長野県天空の楽園": "achi-stargazing",
+  "弘法山古墳": "kobo-yama-tumulus",
+  "安養寺": "matsumoto-anyo-ji",
+  "松本市新村": "niimura-matsumoto",
+  "城山公園(松本市)": "joyama-park-matsumoto",
+  "中町通り(松本市)": "nakamachi-street-matsumoto",
+  "高島公園(諏訪市)": "takashima-park-suwa",
+  "諏訪湖": "lake-suwa",
+  "立石公園": "tateishi-park",
   /* Gifu */
   "白川郷": "shirakawa-go",
   /* Aichi */
