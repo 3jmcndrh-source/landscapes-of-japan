@@ -5,6 +5,8 @@ export const PREF_SLUGS = {
   "東京都": "tokyo",
   "神奈川県": "kanagawa",
   "石川県": "ishikawa",
+  "山梨県": "yamanashi",
+  "長野県": "nagano",
   "岐阜県": "gifu",
   "愛知県": "aichi",
   "三重県": "mie",
@@ -48,6 +50,14 @@ export const LOC_SLUGS = {
   "鎌倉": "kamakura",
   /* Ishikawa */
   "金沢": "kanazawa",
+  /* Yamanashi */
+  "新倉山浅間公園": "arakurayama-sengen-park",
+  "河口湖": "lake-kawaguchi",
+  /* Nagano */
+  "松本城": "matsumoto-castle",
+  "高遠城址公園": "takato-castle-park",
+  "駒つなぎの桜": "komatsunagi-cherry",
+  "長野県天空の楽園": "achi-stargazing",
   /* Gifu */
   "白川郷": "shirakawa-go",
   /* Aichi */

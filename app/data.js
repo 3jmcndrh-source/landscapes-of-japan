@@ -145,6 +145,12 @@ export const LOC_I18N = {
   "鳥羽水族館":{ja:"鳥羽水族館",en:"Toba Aquarium",zh:"鸟羽水族馆",ko:"도바 수족관","zh-tw":"鳥羽水族館",es:"Acuario de Toba",fr:"Aquarium de Toba",de:"Toba Aquarium",pt:"Aquário de Toba",it:"Acquario di Toba",ru:"Аквариум Тоба",ar:"حوض أسماك توبا",hi:"तोबा एक्वेरियम",th:"พิพิธภัณฑ์สัตว์น้ำโทบะ",vi:"Thủy cung Toba",id:"Akuarium Toba",tr:"Toba Akvaryumu",nl:"Toba Aquarium",pl:"Akwarium Toba",sv:"Toba Akvarium"},
   "鳴門海峡":{ja:"鳴門海峡",en:"Naruto Whirlpools",zh:"鸣门海峡",ko:"나루토 해협","zh-tw":"鳴門海峽",es:"Remolinos de Naruto",fr:"Tourbillons de Naruto",de:"Naruto-Strudel",pt:"Redemoinhos de Naruto",it:"Vortici di Naruto",ru:"Водовороты Наруто",ar:"دوامات ناروتو",hi:"नारुतो भँवर",th:"น้ำวนนารุโตะ",vi:"Xoáy nước Naruto",id:"Pusaran Naruto",tr:"Naruto Girdapları",nl:"Naruto Draaikolken",pl:"Wiry Naruto",sv:"Naruto Virvlar"},
   "鴨川シーワールド":{ja:"鴨川シーワールド",en:"Kamogawa Sea World",zh:"鸭川海洋世界",ko:"가모가와 시월드","zh-tw":"鴨川海洋世界",es:"Kamogawa Sea World",fr:"Kamogawa Sea World",de:"Kamogawa Sea World",pt:"Kamogawa Sea World",it:"Kamogawa Sea World",ru:"Камогава Си Ворлд",ar:"عالم بحار كاموغاوا",hi:"कामोगावा सी वर्ल्ड",th:"คาโมกาวะซีเวิลด์",vi:"Kamogawa Sea World",id:"Kamogawa Sea World",tr:"Kamogawa Sea World",nl:"Kamogawa Sea World",pl:"Kamogawa Sea World",sv:"Kamogawa Sea World"},
+  "新倉山浅間公園":{ja:"新倉山浅間公園",en:"Arakurayama Sengen Park",zh:"新仓山浅间公园",ko:"아라쿠라야마 센겐 공원","zh-tw":"新倉山淺間公園",es:"Parque Arakurayama Sengen",fr:"Parc Arakurayama Sengen",de:"Arakurayama Sengen Park",pt:"Parque Arakurayama Sengen",it:"Parco Arakurayama Sengen",ru:"Парк Аракураяма Сэнгэн",ar:"حديقة أراكورايامة سينغن",hi:"अराकुरायामा सेंगेन पार्क",th:"สวนอาราคุระยามะ เซ็งเก็น",vi:"Công viên Arakurayama Sengen",id:"Taman Arakurayama Sengen",tr:"Arakurayama Sengen Parkı",nl:"Arakurayama Sengen Park",pl:"Park Arakurayama Sengen",sv:"Arakurayama Sengen-parken"},
+  "河口湖":{ja:"河口湖",en:"Lake Kawaguchi",zh:"河口湖",ko:"가와구치호","zh-tw":"河口湖",es:"Lago Kawaguchi",fr:"Lac Kawaguchi",de:"Kawaguchi-See",pt:"Lago Kawaguchi",it:"Lago Kawaguchi",ru:"Озеро Кавагути",ar:"بحيرة كاواغوتشي",hi:"कावागुची झील",th:"ทะเลสาบคาวากุจิ",vi:"Hồ Kawaguchi",id:"Danau Kawaguchi",tr:"Kawaguchi Gölü",nl:"Kawaguchimeer",pl:"Jezioro Kawaguchi",sv:"Kawaguchisjön"},
+  "松本城":{ja:"松本城",en:"Matsumoto Castle",zh:"松本城",ko:"마쓰모토성","zh-tw":"松本城",es:"Castillo de Matsumoto",fr:"Château de Matsumoto",de:"Burg Matsumoto",pt:"Castelo de Matsumoto",it:"Castello di Matsumoto",ru:"Замок Мацумото",ar:"قلعة ماتسوموتو",hi:"मात्सुमोतो कैसल",th:"ปราสาทมัตสึโมโตะ",vi:"Lâu đài Matsumoto",id:"Kastil Matsumoto",tr:"Matsumoto Kalesi",nl:"Kasteel Matsumoto",pl:"Zamek Matsumoto",sv:"Matsumoto slott"},
+  "高遠城址公園":{ja:"高遠城址公園",en:"Takato Castle Park",zh:"高远城址公园",ko:"다카토 성지 공원","zh-tw":"高遠城址公園",es:"Parque del Castillo Takato",fr:"Parc du Château de Takato",de:"Burgpark Takato",pt:"Parque do Castelo Takato",it:"Parco del Castello Takato",ru:"Парк замка Такато",ar:"حديقة قلعة تاكاتو",hi:"ताकातो कैसल पार्क",th:"สวนปราสาททาคาโตะ",vi:"Công viên thành Takato",id:"Taman Kastil Takato",tr:"Takato Kalesi Parkı",nl:"Takato Kasteelpark",pl:"Park Zamkowy Takato",sv:"Takato slottspark"},
+  "駒つなぎの桜":{ja:"駒つなぎの桜",en:"Komatsunagi Cherry Tree",zh:"驹系樱花树",ko:"고마쓰나기 벚나무","zh-tw":"駒繫櫻花樹",es:"Cerezo de Komatsunagi",fr:"Cerisier de Komatsunagi",de:"Kirschbaum von Komatsunagi",pt:"Cerejeira de Komatsunagi",it:"Ciliegio di Komatsunagi",ru:"Сакура Комацунаги",ar:"شجرة كرز كوماتسوناغي",hi:"कोमात्सुनागी चेरी का पेड़",th:"ต้นซากุระโคมัตสึนางิ",vi:"Cây anh đào Komatsunagi",id:"Pohon Sakura Komatsunagi",tr:"Komatsunagi Kiraz Ağacı",nl:"Komatsunagi Kersenboom",pl:"Wiśnia Komatsunagi",sv:"Komatsunagi körsbärsträd"},
+  "長野県天空の楽園":{ja:"長野県天空の楽園",en:"Achi Tenku no Rakuen Stargazing",zh:"长野天空乐园",ko:"나가노 천공의 낙원","zh-tw":"長野天空樂園",es:"Tenku no Rakuen de Achi (estrellas)",fr:"Tenku no Rakuen d'Achi (ciel étoilé)",de:"Achi Tenku no Rakuen Sternenhimmel",pt:"Tenku no Rakuen de Achi (estrelas)",it:"Tenku no Rakuen di Achi (cielo stellato)",ru:"Тэнкю-но-Ракуэн Ати",ar:"تنكو نو راكوين أتشي",hi:"आची तेन्कू नो राकूएन तारादर्शन",th:"เทนคุโนะระคุเอ็น อาจิ ชมดาว",vi:"Tenku no Rakuen Achi (ngắm sao)",id:"Tenku no Rakuen Achi (Bintang)",tr:"Achi Tenku no Rakuen Yıldız Gözlem",nl:"Tenku no Rakuen Achi (sterrenhemel)",pl:"Tenku no Rakuen w Achi (gwiazdy)",sv:"Tenku no Rakuen i Achi (stjärnskådning)"},
 };
 export const getLocName = (jpName, lang) => {
   const m = LOC_I18N[jpName];
@@ -369,6 +375,44 @@ export const PREFECTURES = [
       { id: "iqzmqcxvlmzmpxb3e8nl", loc: "金沢", year: 2024 },
       { id: "vravjelowaeamknkqkte", loc: "金沢", year: 2024 },
       { id: "zip572vkpw2oinqbodt9", loc: "金沢", year: 2024 },
+    ]
+  },
+  {
+    pref: "山梨県",
+    lat: 35.66, lng: 138.57,
+    photos: [
+      { id: "wcrs6gq9eutte8fwrzpp", loc: "新倉山浅間公園", year: 2026 },
+      { id: "sdjdpuhu1xmjqlyfu0ji", loc: "新倉山浅間公園", year: 2026 },
+      { id: "flwkbyaadyjsauwndgll", loc: "新倉山浅間公園", year: 2026 },
+      { id: "ubnattnp6rlf4wtv61mi", loc: "新倉山浅間公園", year: 2026 },
+      { id: "lzabjelxserdjz9wmzig", loc: "新倉山浅間公園", year: 2026 },
+      { id: "xatffycdhlinbpis36og", loc: "新倉山浅間公園", year: 2026 },
+      { id: "mbubw3dtejisp0ng7ttz", loc: "新倉山浅間公園", year: 2026 },
+      { id: "li8plarxiosywpp2qwq1", loc: "新倉山浅間公園", year: 2026 },
+      { id: "bsesdqubicdiilhcynyh", loc: "河口湖", year: 2026 },
+      { id: "jybdbusckxwnbjpxdz0f", loc: "河口湖", year: 2026 },
+      { id: "cqbfdh0j6ogl1zgsvk7s", loc: "河口湖", year: 2026 },
+      { id: "ygqe7593bqgt1ehxfxqa", loc: "河口湖", year: 2026 },
+      { id: "ccwsm7nphfmfas43dep3", loc: "河口湖", year: 2026 },
+    ]
+  },
+  {
+    pref: "長野県",
+    lat: 36.23, lng: 138.18,
+    photos: [
+      { id: "u5izvsliyoqm6rr0xnzh", loc: "松本城", year: 2026 },
+      { id: "c0d1bsl50csyyr2xtugg", loc: "松本城", year: 2026 },
+      { id: "m2gdhydxlmqu3itlta9v", loc: "松本城", year: 2026 },
+      { id: "wlcxf7dkoe8mkogxapjk", loc: "松本城", year: 2026 },
+      { id: "noxbyner9j5rk4c0iknk", loc: "松本城", year: 2026 },
+      { id: "jfvqos5wbosqddnnrgxo", loc: "高遠城址公園", year: 2026 },
+      { id: "clam0hkd2te1a5psxwev", loc: "高遠城址公園", year: 2026 },
+      { id: "j8jrsyxwu2aagr2rnlh4", loc: "高遠城址公園", year: 2026 },
+      { id: "uct8pqjakk2twm5vsdvg", loc: "高遠城址公園", year: 2026 },
+      { id: "m64dm2z2krxj40vfjnrd", loc: "高遠城址公園", year: 2026 },
+      { id: "uvxr5yeva9pc5abjv0uk", loc: "高遠城址公園", year: 2026 },
+      { id: "bykxlizpdzufezqttzca", loc: "駒つなぎの桜", year: 2026 },
+      { id: "bxt5gtw3rnuqxrx46ppl", loc: "長野県天空の楽園", year: 2026 },
     ]
   },
   {

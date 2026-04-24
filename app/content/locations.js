@@ -749,4 +749,86 @@ export const LOCATION_CONTENT = {
         a: d("店員・客への許可が基本。食事中の人や調理場のクローズアップは一声かけてから。外観と町並みは自由。","Ask staff/customers first. Close-ups of diners or kitchen work should be after asking. Exteriors and streetscapes are free to shoot.","需向店主/客人打招呼。特写用餐者或厨房前请求许可。外观街景可自由拍摄。","需向店主/客人打招呼。特寫用餐者或廚房前請求許可。外觀街景可自由拍攝。","직원·손님에게 허락이 기본. 식사 중인 사람이나 조리장 클로즈업은 말을 건네고. 외관과 거리는 자유.") },
     ],
   },
+
+  /* ── 山梨県 ── */
+  "新倉山浅間公園": {
+    desc: d(
+      "新倉山浅間公園は富士吉田市の山腹にある桜の名所。398段の階段を上った先の展望デッキから、忠霊塔（五重塔）・桜・富士山を一枚に収める三段構図は世界中の写真家を魅了する日本を象徴する眺望。4月中旬の桜と冬の冠雪富士のコントラストは別格。",
+      "Arakurayama Sengen Park, on a hillside in Fujiyoshida, is a celebrated cherry-blossom spot. After climbing 398 steps to the viewing deck, the Chureito Pagoda, cherry blossoms, and Mt. Fuji align in a single iconic three-tier frame that draws photographers worldwide. The contrast between the mid-April blooms and snow-capped Fuji is unmatched.",
+      "新仓山浅间公园位于富士吉田市山腰，是樱花名所。登398级台阶后的观景台可将忠灵塔（五重塔）、樱花与富士山三段同框，是吸引全球摄影师的日本象征性景观。4月中旬樱花与雪富士的对比尤为震撼。",
+      "新倉山淺間公園位於富士吉田市山腰，是櫻花名所。登398級台階後的觀景台可將忠靈塔（五重塔）、櫻花與富士山三段同框，是吸引全球攝影師的日本象徵性景觀。4月中旬櫻花與雪富士的對比尤為震撼。",
+      "아라쿠라야마 센겐 공원은 후지요시다시 산 중턱의 벚꽃 명소. 398계단을 오르면 추레이토(5층탑)·벚꽃·후지산이 한 프레임에 담기는 3단 구도가 세계 사진가들을 매료시키는 일본의 상징적 풍경. 4월 중순 벚꽃과 설관 후지의 대비는 압권."
+    ),
+    faqs: [
+      { q: d("展望デッキへの行き方は？","How do I reach the viewing deck?","观景台怎么去？","觀景台怎麼去？","전망 데크 가는 법은?"),
+        a: d("富士急行線「下吉田駅」から徒歩約10分。神社境内から398段の階段を上る（迂回坂道もあり）。早朝5〜6時着が空いていて朝焼け富士に間に合う。","From «Shimo-Yoshida» on the Fujikyu Line, about 10 min on foot. From the shrine grounds, climb the 398 steps (a gentler slope path is also available). Arrive at 5-6 AM to beat the crowds and catch the sunrise on Fuji.","富士急行线「下吉田站」步行约10分钟。从神社境内登398级台阶（也有缓坡可绕行）。清晨5-6点抵达可避开人潮并赶上朝阳富士。","富士急行線「下吉田站」步行約10分鐘。從神社境內登398級台階（也有緩坡可繞行）。清晨5-6點抵達可避開人潮並趕上朝陽富士。","후지큐 행 「시모요시다역」에서 도보 약 10분. 신사 경내에서 398계단을 올라갑니다(완만한 우회로도 있음). 이른 아침 5-6시 도착이 한산하고 아침놀 후지를 볼 수 있습니다.") },
+    ],
+  },
+  "河口湖": {
+    desc: d(
+      "河口湖は富士五湖のひとつで、富士山の北麓に広がる湖。湖面に映る「逆さ富士」の代表的な撮影地として知られ、春の桜（産屋ヶ崎・八木崎公園）、夏の花火、秋の紅葉回廊、冬の冠雪富士と四季を通じて表情豊か。湖畔は宿泊・温泉・カフェも充実。",
+      "Lake Kawaguchi is one of the Fuji Five Lakes, set at the northern foot of Mt. Fuji. It is the most famous spot for the «inverted Fuji» mirror reflection, with cherry blossoms at Ubuyagasaki and Yagisaki Park in spring, fireworks in summer, an autumn maple corridor, and snow-capped Fuji in winter. The shore offers ample lodging, hot springs, and cafés.",
+      "河口湖是富士五湖之一，位于富士山北麓。以湖面倒映的「逆富士」闻名于世，春有产屋崎与八木崎公园樱花、夏有花火大会、秋有红叶回廊、冬有雪冠富士，四季皆美。湖畔住宿、温泉、咖啡馆齐全。",
+      "河口湖是富士五湖之一，位於富士山北麓。以湖面倒映的「逆富士」聞名於世，春有產屋崎與八木崎公園櫻花、夏有花火大會、秋有紅葉迴廊、冬有雪冠富士，四季皆美。湖畔住宿、溫泉、咖啡館齊全。",
+      "가와구치호는 후지 5호의 하나로 후지산 북쪽 기슭에 펼쳐진 호수. 호수면에 비친 「역 후지」 촬영지로 가장 유명하며, 봄에는 우부야가사키·야기사키 공원의 벚꽃, 여름에는 불꽃놀이, 가을에는 단풍 회랑, 겨울에는 설관 후지로 사계절 모두 아름답습니다. 호반은 숙박·온천·카페가 충실."
+    ),
+    faqs: [
+      { q: d("逆さ富士を撮るベストポイントは？","Best spot for the inverted Fuji reflection?","拍逆富士最佳点？","拍逆富士最佳點？","역 후지 촬영 최고 포인트는?"),
+        a: d("湖北の大石公園・産屋ヶ崎が定番。風がない朝6〜8時の鏡面状態を狙う。冬は空気が澄み透明度が最高。","Oishi Park and Ubuyagasaki on the northern shore are classics. Aim for windless mornings 6-8 AM when the lake mirrors. Winter offers the clearest air and best transparency.","湖北大石公园、产屋崎为经典。无风的清晨6-8点湖面呈镜面。冬季空气通透度最佳。","湖北大石公園、產屋崎為經典。無風的清晨6-8點湖面呈鏡面。冬季空氣通透度最佳。","호수 북쪽 오이시 공원과 우부야가사키가 정석. 바람 없는 오전 6-8시 거울처럼 잔잔한 호수면을 노리세요. 겨울이 공기가 맑아 투명도가 가장 좋습니다.") },
+    ],
+  },
+
+  /* ── 長野県 ── */
+  "松本城": {
+    desc: d(
+      "松本城は長野県松本市にある国宝・現存12天守の一つ。漆黒の壁から「烏城」とも呼ばれる五重六階の天守は、戦国期の威容を今に伝える。背後にそびえる北アルプスの白い稜線、内堀の水鏡、桜・新緑・紅葉・雪と四季それぞれの表情が美しい。",
+      "Matsumoto Castle in Nagano City is a National Treasure and one of Japan's 12 surviving original keeps. Its jet-black walls have earned the nickname «Crow Castle.» The five-tier, six-story keep evokes Sengoku-era grandeur. The white ridges of the Northern Alps behind it, mirror-still inner moat, and cherry blossoms / fresh greens / autumn leaves / snow give it four-season beauty.",
+      "松本城位于长野县松本市，国宝、现存12天守之一。漆黑墙壁让其也被称为「乌城」。五重六阶天守再现战国时代雄姿。背靠北阿尔卑斯雪岭，内护城河水镜与樱花、新绿、红叶、雪景四季各异。",
+      "松本城位於長野縣松本市，國寶、現存12天守之一。漆黑牆壁讓其也被稱為「烏城」。五重六階天守再現戰國時代雄姿。背靠北阿爾卑斯雪嶺，內護城河水鏡與櫻花、新綠、紅葉、雪景四季各異。",
+      "마쓰모토성은 나가노현 마쓰모토시의 국보·현존 12천수 중 하나. 칠흑의 벽에서 「까마귀성」이라고도 불립니다. 5중 6층 천수는 센고쿠 시대의 위용을 전합니다. 뒤쪽으로 우뚝 솟은 북알프스의 흰 능선, 내해자의 거울 같은 수면, 벚꽃·신록·단풍·눈 등 사계절 모두 아름답습니다."
+    ),
+    faqs: [
+      { q: d("天守と桜・北アルプスを一枚に撮るには？","How to frame the keep with cherry blossoms and the Alps?","如何同框天守、樱花与北阿尔卑斯？","如何同框天守、櫻花與北阿爾卑斯？","천수와 벚꽃·북알프스를 한 프레임에?"),
+        a: d("内堀北西側の埋橋（うずみばし）周辺がベスト。望遠で天守と稜線を圧縮し、桜（4月中旬）を前ボケに。早朝は逆光が柔らかい。","Around Uzumi Bridge on the northwest side of the inner moat is best. Use a telephoto to compress the keep and Alps ridges, with mid-April cherry blossoms as foreground bokeh. Early morning offers softer backlight.","内护城河西北埋桥周边最佳。用长焦压缩天守与雪岭，4月中旬樱花作前景虚化。清晨逆光柔和。","內護城河西北埋橋周邊最佳。用長焦壓縮天守與雪嶺，4月中旬櫻花作前景虛化。清晨逆光柔和。","내해자 북서쪽 우즈미바시 주변이 최고. 망원으로 천수와 알프스 능선을 압축하고 4월 중순 벚꽃을 전경 보케로. 이른 아침의 부드러운 역광이 좋습니다.") },
+    ],
+  },
+  "高遠城址公園": {
+    desc: d(
+      "高遠城址公園は伊那市高遠町、武田氏ゆかりの古城跡。固有種「タカトオコヒガンザクラ」約1500本が4月上〜中旬に淡紅色に染まり、「天下第一の桜」と称される。日本さくら名所100選・三大桜の名所の一つ。夜のライトアップ「さくら祭り」は幻想的で、中央アルプスを背景にした絶景が広がる。",
+      "Takato Castle Park in Ina City sits on the ruins of a castle once held by the Takeda clan. About 1,500 endemic «Takato Kohigan» cherry trees bloom soft pink in early-to-mid April, earning the title «No.1 cherry blossoms under heaven.» It is one of Japan's three great cherry sites and listed in the 100 Best Sakura Spots. Evening illumination during the «Sakura Festival» is dreamlike, with the Central Alps as backdrop.",
+      "高远城址公园位于伊那市高远町，武田氏旧城遗迹。约1500棵特有「高远小彼岸樱」于4月上中旬染成淡粉色，被誉为「天下第一樱」。日本樱花名所100选、三大樱花胜地之一。夜间「樱花祭」灯光秀梦幻，中央阿尔卑斯为背景的绝景令人沉醉。",
+      "高遠城址公園位於伊那市高遠町，武田氏舊城遺跡。約1500棵特有「高遠小彼岸櫻」於4月上中旬染成淡粉色，被譽為「天下第一櫻」。日本櫻花名所100選、三大櫻花勝地之一。夜間「櫻花祭」燈光秀夢幻，中央阿爾卑斯為背景的絕景令人沉醉。",
+      "다카토 성지 공원은 이나시 다카토마치의 다케다씨 옛 성터. 고유종 「다카토 고히간자쿠라」 약 1500그루가 4월 상-중순 연분홍빛으로 물들어 「천하제일 벚꽃」이라 불립니다. 일본 벚꽃 명소 100선·3대 벚꽃 명소 중 하나. 밤의 「벚꽃 축제」 조명은 환상적이며, 중앙알프스를 배경으로 한 절경이 펼쳐집니다."
+    ),
+    faqs: [
+      { q: d("高遠の桜のベスト撮影時間は？","Best time of day to shoot Takato cherry blossoms?","高远樱花最佳拍摄时段？","高遠櫻花最佳拍攝時段？","다카토 벚꽃 최고 촬영 시간대는?"),
+        a: d("早朝6時前の青い光と人がいない時間帯が王道。午後はライトアップ前の夕方〜青の時間帯が華やかで、夜は提灯の暖色光と桜の対比が美しい。","Before 6 AM offers crowdless blue light. Afternoon transitions through the blue hour into illumination, when warm lantern light meets pink blossoms beautifully.","清晨6点前蓝调光与无人时段为佳。午后黄昏至蓝色时刻华丽，夜间灯笼暖光与樱花对比迷人。","清晨6點前藍調光與無人時段為佳。午後黃昏至藍色時刻華麗，夜間燈籠暖光與櫻花對比迷人。","이른 아침 6시 전의 푸른빛과 인적 없는 시간대가 정석. 오후는 점등 전 황혼-블루아워가 화려하고 밤은 등불의 따뜻한 빛과 벚꽃의 대비가 아름답습니다.") },
+    ],
+  },
+  "駒つなぎの桜": {
+    desc: d(
+      "駒つなぎの桜は阿智村智里の山あいにそびえる樹齢400年超のエドヒガンザクラ。源義経が奥州下向の際に馬を繋いだとの伝説からこの名がついた。山田の畔にぽつんと立つ姿は古武士のような風格。4月中下旬の満開時、棚田の水面に映る逆さ桜と星空のコラボは長野県を代表する一本桜の絶景。",
+      "The Komatsunagi Cherry Tree is a 400+ year-old Edohigan in the mountain hamlet of Chisato in Achi Village. Legend says Minamoto no Yoshitsune tied his horse to it on his journey to Oshu, giving the tree its name («Horse-Tying Cherry»). It stands alone by terraced rice fields with the dignity of an old warrior. At full bloom in mid-to-late April, its reflection in flooded paddies under the stars is one of Nagano's iconic single-tree views.",
+      "驹系樱花是阿智村智里深山中树龄超过400年的江户彼岸樱。相传源义经赴奥州时曾在此系马，故得此名。孤立于山田畔，气概如老武士。4月中下旬盛花期，倒映在棚田水面的逆樱与星空同框是长野代表性的一本樱绝景。",
+      "駒繫櫻花是阿智村智里深山中樹齡超過400年的江戶彼岸櫻。相傳源義經赴奧州時曾在此繫馬，故得此名。孤立於山田畔，氣概如老武士。4月中下旬盛花期，倒映在棚田水面的逆櫻與星空同框是長野代表性的一本櫻絕景。",
+      "고마쓰나기 벚꽃은 아치 마을 치사토의 산속에 우뚝 선 수령 400년이 넘는 에도히간자쿠라. 미나모토노 요시쓰네가 오슈로 향할 때 말을 매어 두었다는 전설에서 이름이 붙었습니다. 산 논두렁에 홀로 서 있는 모습은 노무사 같은 풍격. 4월 중-하순 만개 시 다랑논에 비친 역 벚꽃과 별하늘이 어우러지는 풍경은 나가노를 대표하는 한 그루 벚꽃 절경입니다."
+    ),
+    faqs: [
+      { q: d("水鏡撮影に必要な条件は？","What's needed for the paddy reflection shot?","拍水镜倒影需要什么条件？","拍水鏡倒影需要什麼條件？","수면 반영 촬영에 필요한 조건은?"),
+        a: d("4月中下旬の田植え時期で水が張られ、無風の早朝〜薄明が必須。三脚と広角〜標準レンズ、星と桜なら高感度耐性のあるボディが推奨。","Mid-to-late April when paddies are flooded for planting, on a windless dawn or early twilight. Bring a tripod and wide-to-standard lens; for stars+blossoms a high-ISO-tolerant body is recommended.","4月中下旬插秧水满期，无风的清晨或薄明必备。三脚架与广角到标准镜头，拍星空与樱花建议高感性能好的机身。","4月中下旬插秧水滿期，無風的清晨或薄明必備。三腳架與廣角到標準鏡頭，拍星空與櫻花建議高感性能好的機身。","4월 중-하순 모내기 시기에 물이 차고, 바람 없는 새벽이나 박명이 필수. 삼각대와 광각-표준 렌즈, 별과 벚꽃을 함께라면 고감도 내성이 좋은 바디가 좋습니다.") },
+    ],
+  },
+  "長野県天空の楽園": {
+    desc: d(
+      "長野県阿智村は環境省が「日本一の星空」に認定した日本屈指のスターウォッチングスポット。スタービレッジ阿智「天空の楽園 ナイトツアー」では、ゴンドラで標高1400m富士見台高原に登り、街灯のない山頂で満点の星空に包まれる。新月期の天の川と冬の星座が圧巻。",
+      "Achi Village in Nagano is certified by Japan's Ministry of the Environment as the «No.1 starry sky in Japan,» one of the country's premier stargazing destinations. The Star Village Achi «Tenku no Rakuen Night Tour» takes visitors by gondola up to Fujimidai Highlands at 1,400 m, where lights vanish and the entire sky fills with stars. The Milky Way during new moon and the winter constellations are jaw-dropping.",
+      "长野县阿智村被环境省认证为「日本第一星空」，是全国顶级观星地。星之村阿智「天空乐园夜游」乘缆车登海拔1400米富士见台高原，山顶无光害，群星满天。新月期银河与冬季星座尤为震撼。",
+      "長野縣阿智村被環境省認證為「日本第一星空」，是全國頂級觀星地。星之村阿智「天空樂園夜遊」乘纜車登海拔1400米富士見台高原，山頂無光害，群星滿天。新月期銀河與冬季星座尤為震撼。",
+      "나가노현 아치 마을은 환경성이 「일본 제일의 별하늘」로 인정한 일본 굴지의 별 관측지. 스타빌리지 아치 「천공의 낙원 나이트 투어」는 곤돌라로 해발 1400m 후지미다이 고원까지 올라가 가로등 없는 산정에서 만점 별하늘에 둘러싸입니다. 신월기 은하수와 겨울 별자리가 압권."
+    ),
+    faqs: [
+      { q: d("星空撮影の最適時期は？","Best time of year for stargazing?","观星最佳时期？","觀星最佳時期？","별 관측 최적기는?"),
+        a: d("新月の前後・空気が澄む冬（11月〜2月）が銀河は弱まるが星の鋭さは最高。夏は天の川が中心。ナイトツアーは予約必須。","Around new moon. Winter (Nov-Feb) gives the sharpest stars (the Milky Way is fainter). Summer is best for the Milky Way's core. The night tour requires advance booking.","新月前后、空气清澈的冬季（11-2月）银河淡但星象最锐利；夏季银河中心最美。夜游须提前预约。","新月前後、空氣清澈的冬季（11-2月）銀河淡但星象最銳利；夏季銀河中心最美。夜遊須提前預約。","신월 전후. 공기가 맑은 겨울(11-2월)은 은하수는 약하지만 별이 가장 또렷합니다. 여름은 은하수 중심부가 절경. 나이트 투어는 사전 예약 필수.") },
+    ],
+  },
 };

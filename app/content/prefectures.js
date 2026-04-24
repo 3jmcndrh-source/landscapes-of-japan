@@ -115,6 +115,38 @@ export const PREFECTURE_CONTENT = {
     ],
   },
 
+  "山梨県": {
+    desc: d(
+      "山梨県は富士山の北麓に広がる内陸県。富士五湖（河口湖・山中湖・西湖・本栖湖・精進湖）、新倉山浅間公園の五重塔と桜と富士山の三段構図、武田神社、昇仙峡、ぶどう畑とワイナリーなど、富士山ビューと果樹郷の二面性を持ちます。本ギャラリーには新倉山浅間公園の桜と富士、河口湖の湖畔風景の13枚を収録。",
+      "Yamanashi sits at the northern foot of Mt. Fuji. The Fuji Five Lakes (Kawaguchi, Yamanaka, Sai, Motosu, Shoji), the iconic three-tier composition of Arakurayama Sengen Park's pagoda + cherry blossoms + Mt. Fuji, Takeda Shrine, Shosenkyo Gorge, and the vineyards of Koshu give the prefecture its dual identity as Mt. Fuji's best vantage point and a fruit-and-wine country. This gallery features 13 photos from Arakurayama Sengen Park and Lake Kawaguchi.",
+      "山梨县位于富士山北麓的内陆县。富士五湖（河口湖、山中湖、西湖、本栖湖、精进湖）、新仓山浅间公园的五重塔与樱花与富士山的三段构图、武田神社、升仙峡、葡萄园与酒庄等，兼具富士观景与果乡风情。本图库收录新仓山浅间公园的樱与富士、河口湖湖畔风景共13张。",
+      "山梨縣位於富士山北麓的內陸縣。富士五湖（河口湖、山中湖、西湖、本栖湖、精進湖）、新倉山淺間公園的五重塔與櫻花與富士山的三段構圖、武田神社、昇仙峽、葡萄園與酒莊等，兼具富士觀景與果鄉風情。本圖庫收錄新倉山淺間公園的櫻與富士、河口湖湖畔風景共13張。",
+      "야마나시현은 후지산 북쪽 기슭에 펼쳐진 내륙현. 후지 5호(가와구치호·야마나카호·사이호·모토스호·쇼지호), 아라쿠라야마 센겐 공원의 5층탑과 벚꽃과 후지산이 한 프레임에 들어오는 3단 구도, 다케다 신사, 쇼센쿄, 포도밭과 와이너리 등 후지산 조망과 과일·와인의 고장이라는 두 가지 매력. 아라쿠라야마 센겐 공원의 벚꽃과 후지, 가와구치호 호반 풍경 13장을 수록."
+    ),
+    faqs: [
+      {
+        q: d("富士山と桜が一緒に撮れるベストポイントは？", "Best spot to photograph Mt. Fuji with cherry blossoms?", "富士山与樱花同框最佳拍摄点？", "富士山與櫻花同框最佳拍攝點？", "후지산과 벚꽃을 함께 담는 최고 포인트는?"),
+        a: d("新倉山浅間公園の忠霊塔展望デッキが世界的に有名。階段398段を上ると五重塔・桜・富士山が一枚に収まる絶景。4月上旬〜中旬がピーク、夜明け直後の朝焼けが理想。", "Arakurayama Sengen Park's Chureito Pagoda viewing deck is world-famous. After climbing 398 steps, the pagoda, cherry blossoms, and Mt. Fuji align in a single frame. Peak bloom is early-to-mid April, with sunrise giving the most magical light.", "新仓山浅间公园忠灵塔观景台世界闻名。登398级台阶后，五重塔、樱花与富士山一框入镜。4月上中旬为盛花期，黎明朝霞最理想。", "新倉山淺間公園忠靈塔觀景台世界聞名。登398級台階後，五重塔、櫻花與富士山一框入鏡。4月上中旬為盛花期，黎明朝霞最理想。", "아라쿠라야마 센겐 공원의 추레이토 전망 데크가 세계적으로 유명. 계단 398개를 오르면 5층탑·벚꽃·후지산이 한 프레임에 담깁니다. 4월 상-중순이 절정이며 일출 직후의 새벽노을이 가장 환상적입니다."),
+      },
+    ],
+  },
+
+  "長野県": {
+    desc: d(
+      "長野県は日本アルプスと高原文化の中心地。国宝・松本城（現存12天守の一つで黒い壁が特徴）、桜の三大名所・高遠城址公園、上高地、地獄谷野猿公苑、戸隠神社、軽井沢、阿智村の「日本一の星空」など、山岳・歴史・天文と多彩な魅力。本ギャラリーには松本城・高遠城址・駒つなぎの桜・天空の楽園を13枚収録。",
+      "Nagano is the heart of the Japanese Alps and highland culture. Matsumoto Castle (a National Treasure and one of 12 originals, distinguished by its black walls), Takato Castle Park (one of Japan's three great cherry blossom sites), Kamikochi, the Jigokudani snow monkeys, Togakushi Shrine, Karuizawa, and Achi Village's «No.1 starry sky in Japan» offer mountains, history, and astronomy in one prefecture. This gallery features 13 photos from Matsumoto Castle, Takato Castle Park, the Komatsunagi Cherry Tree, and Tenku no Rakuen.",
+      "长野县是日本阿尔卑斯与高原文化的中心。国宝松本城（现存12天守之一，黑壁独具特色）、樱花三大名所之一高远城址公园、上高地、地狱谷野猴公苑、户隐神社、轻井泽、阿智村「日本第一星空」等，山岳·历史·天文兼备。本图库收录松本城、高远城址、驹系樱花、天空乐园共13张。",
+      "長野縣是日本阿爾卑斯與高原文化的中心。國寶松本城（現存12天守之一，黑壁獨具特色）、櫻花三大名所之一高遠城址公園、上高地、地獄谷野猴公苑、戶隱神社、輕井澤、阿智村「日本第一星空」等，山岳·歷史·天文兼備。本圖庫收錄松本城、高遠城址、駒繫櫻花、天空樂園共13張。",
+      "나가노현은 일본 알프스와 고원 문화의 중심. 국보 마쓰모토성(현존 12천수의 하나로 검은 벽이 특징), 벚꽃 3대 명소 다카토 성지 공원, 가미코치, 지고쿠다니 야생원숭이 공원, 도가쿠시 신사, 가루이자와, 아치 마을의 「일본 제일의 별하늘」 등 산악·역사·천문이 어우러진 지역. 마쓰모토성·다카토 성지·고마쓰나기 벚꽃·천공의 낙원 13장을 수록."
+    ),
+    faqs: [
+      {
+        q: d("高遠城址公園の桜の見頃は？", "When are the cherry blossoms at Takato Castle Park?", "高远城址公园的樱花花期？", "高遠城址公園的櫻花花期？", "다카토 성지 공원의 벚꽃 절정은?"),
+        a: d("4月上旬〜中旬が見頃。「タカトオコヒガンザクラ」約1500本が薄紅色に染まり、「天下第一の桜」と称される。夜のライトアップも幻想的。混雑回避は早朝が狙い目。", "Early to mid-April. About 1,500 «Takato Kohigan» cherry trees bloom in soft pink, earning the title «No.1 cherry blossoms under heaven.» Evening illumination is dreamlike, and early morning best avoids the crowds.", "4月上中旬为盛花期。约1500棵高远小彼岸樱染成淡粉色，被誉为「天下第一樱」。夜间灯光秀梦幻，避开人潮请选清晨。", "4月上中旬為盛花期。約1500棵高遠小彼岸櫻染成淡粉色，被譽為「天下第一櫻」。夜間燈光秀夢幻，避開人潮請選清晨。", "4월 상-중순이 절정. 약 1500그루의 다카토 고히간 벚꽃이 연분홍빛으로 물들어 「천하제일 벚꽃」이라 불립니다. 야간 조명도 환상적이며 혼잡을 피하려면 이른 아침이 좋습니다."),
+      },
+    ],
+  },
+
   "岐阜県": {
     desc: d(
       "岐阜県は日本アルプスと清流に恵まれた内陸県。世界遺産・白川郷の合掌造り集落、飛騨高山の古い町並み、長良川の鵜飼い、下呂温泉など、日本の原風景が色濃く残るエリア。雪化粧した白川郷の景観を中心に4枚を収録。",

@@ -19,6 +19,8 @@ export default {
     "福岡県": `Fukuoka là trung tâm đô thị lớn nhất Kyushu: văn hóa yatai của Hakata, đền Dazaifu Tenmangu, tháp Fukuoka trên vịnh, các bãi biển bán đảo Itoshima và đảo Nokonoshima. Thành phố nơi trung tâm và biển gần nhau. 2 ảnh.`,
     "大分県": `Oita là vương quốc onsen của Kyushu. Beppu tự hào có lượng nước nhiệt lớn nhất Nhật Bản; «Địa ngục Beppu» (Hồ Máu, Biển, v.v.) mang đến phong cảnh siêu thực. Yufuin là thị trấn onsen cao nguyên được trang điểm bởi núi Yufu. Sự cùng tồn tại của hơi nước và núi là đề tài hiếm. 8 ảnh.`,
     "沖縄県": `Okinawa là tỉnh cực nam của Nhật Bản — 47 hòn đảo nhiệt đới có người ở. Di tích lâu đài Shurijo (đang tái thiết sau vụ cháy 2019), mũi Zanpa, Manzamo trên đảo chính; cùng với biển ngọc lục bảo của Miyakojima, bãi cát trắng, cầu Irabu và Yonaha Maehama định nghĩa lại Nhật Bản. 81 ảnh.`,
+    "山梨県": `Yamanashi nằm ở chân phía bắc núi Phú Sĩ. Năm hồ Phú Sĩ, bố cục ba tầng của Công viên Arakurayama Sengen (chùa + hoa anh đào + Phú Sĩ), đền Takeda và vườn nho Koshu xác định danh tính kép: điểm ngắm Phú Sĩ tuyệt nhất và vùng đất trái cây và rượu vang. 13 ảnh.`,
+    "長野県": `Nagano là trái tim của dãy Alps Nhật Bản. Lâu đài Matsumoto (Quốc bảo), Công viên thành Takato (một trong ba điểm ngắm hoa anh đào tuyệt nhất Nhật Bản), Kamikochi, khỉ tuyết Jigokudani, Karuizawa và «bầu trời sao đẹp nhất Nhật Bản» của làng Achi kết hợp núi non, lịch sử và thiên văn. 13 ảnh.`,
   },
   locations: {
     "知床": `Bán đảo Shiretoko, Di sản Thiên nhiên Thế giới, vươn ra biển Okhotsk. Rừng nguyên sinh với gấu nâu và cú cá, băng trôi mùa đông và thác Kamuiwakka mùa hè vẫn nguyên vẹn. Vách đá dựng đứng chỉ có thể nhìn từ thuyền du lịch.`,
@@ -75,5 +77,11 @@ export default {
     "法隆寺 夢殿": `Yumedono (Điện Giấc Mơ) trong khu đông Horyu-ji là sảnh bát giác được xây dựng năm 739 trên địa điểm Cung điện Ikaruga của Hoàng tử Shotoku. Chứa tượng Guze Kannon ẩn (thời Asuka), chỉ có thể nhìn thấy trong các cuộc mở cửa giới hạn vào mùa xuân và mùa thu. Đường viền bát giác cân đối là báu vật kiến trúc.`,
     "大鳴門橋": `Cầu Onaruto, cầu treo dài 1.629m (mở năm 1985), bắc qua eo biển Naruto. Đường đi «Uzu-no-Michi» bên dưới có sàn kính cho thấy các xoáy nước 45m bên dưới. Đường cong thanh lịch của cầu với eo biển tạo nên cảnh ngoạn mục.`,
     "福岡": `Fukuoka, thành phố lớn nhất Kyushu. Khu giải trí Hakata, Tenjin và Nakasu; văn hóa yatai (Hakata ramen và udon); vịnh Hakata với Tháp Fukuoka; hoa anh đào ở Công viên Ohori; và bãi biển bán đảo Itoshima: thành phố hiện đại và thiên nhiên sống cạnh nhau.`,
+    "新倉山浅間公園": `Công viên Arakurayama Sengen ở Fujiyoshida mang đến một trong những cảnh quan biểu tượng nhất của Nhật Bản: 398 bậc dẫn lên đài quan sát nơi chùa Chureito, hoa anh đào và núi Phú Sĩ thẳng hàng trong một khung hình. Đỉnh nở giữa tháng Tư.`,
+    "河口湖": `Hồ Kawaguchi, một trong Năm hồ Phú Sĩ, là nơi nổi tiếng nhất cho «Phú Sĩ ngược» phản chiếu trên mặt nước. Hoa anh đào mùa xuân, pháo hoa mùa hè, hành lang phong mùa thu và Phú Sĩ tuyết mùa đông: vẻ đẹp bốn mùa trọn vẹn.`,
+    "松本城": `Lâu đài Matsumoto là Quốc bảo và một trong 12 lâu đài nguyên bản của Nhật Bản. Tường đen tuyền khiến nó được gọi là «Lâu đài Quạ». Đỉnh trắng của Alps Bắc phía sau và hào nội phản chiếu mang lại vẻ đẹp bốn mùa.`,
+    "高遠城址公園": `Công viên thành Takato ở Ina là nơi của khoảng 1.500 cây hoa anh đào bản địa «Takato Kohigan» nở hồng nhạt đầu-giữa tháng Tư, giành danh hiệu «hoa anh đào số một dưới bầu trời». Đèn đêm trong «Lễ hội Sakura» với Alps Trung làm phông nền như giấc mơ.`,
+    "駒つなぎの桜": `Cây hoa anh đào Edohigan hơn 400 tuổi ở làng Achi. Truyền thuyết kể rằng Minamoto no Yoshitsune đã buộc ngựa ở đây. Cô đơn bên ruộng bậc thang, nở rộ giữa-cuối tháng Tư, bóng phản chiếu dưới sao là cây hoa anh đào đơn độc biểu tượng của Nagano.`,
+    "長野県天空の楽園": `Làng Achi ở Nagano được Bộ Môi trường chứng nhận là «bầu trời sao đẹp nhất Nhật Bản». Tour đêm «Tenku no Rakuen» đi gondola lên cao nguyên Fujimidai cao 1.400 m, nơi bầu trời không ô nhiễm ánh sáng đầy sao.`,
   },
 };

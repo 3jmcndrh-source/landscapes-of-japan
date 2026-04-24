@@ -19,6 +19,8 @@ export default {
     "福岡県": `Fukuoka är Kyushus största urbana centrum: Hakatas yatai-kultur, Dazaifu Tenmangu-helgedomen, Fukuoka Tower över viken, Itoshima-halvöns stränder och ön Nokonoshima. En stad där centrum och hav lever nära varandra. 2 bilder.`,
     "大分県": `Oita är Kyushus onsen-rike. Beppu skryter med Japans största termalvattenflöde; «Beppus helveten» (Blodpool, Hav osv.) erbjuder surrealistiska landskap. Yufuin är en högländer onsen-by prydd av Yufu-berget. Samexistensen av ånga och berg är ett sällsynt motiv. 8 bilder.`,
     "沖縄県": `Okinawa är Japans sydligaste prefektur — 47 bebodda subtropiska öar. Shurijo slotts ruiner (byggs om efter branden 2019), Zanpa udde, Manzamo på huvudön; plus Miyakojimas smaragdhav, vita sandstränder, Irabu-bron och Yonaha Maehama omdefinierar Japan. 81 bilder.`,
+    "山梨県": `Yamanashi ligger vid Fujis norra fot. Fujis fem sjöar, trenivåkompositionen i Arakurayama Sengen-parken (pagod + körsbärsblommor + Fuji), Takeda-helgedomen och Koshus vingårdar definierar dess dubbla identitet: bästa Fuji-utsikten och frukt- och vinland. 13 foton.`,
+    "長野県": `Nagano är hjärtat av de japanska Alperna. Matsumoto slott (Nationalskatt), Takato slottspark (en av Japans tre bästa körsbärsplatser), Kamikochi, snöaporna i Jigokudani, Karuizawa och Achi-byns «Japans stjärnrikaste himmel» förenar berg, historia och astronomi. 13 foton.`,
   },
   locations: {
     "知床": `Shiretoko-halvön, Världsnaturarv, sträcker sig ut i Ochotska havet. Urskogar med brunbjörnar och fiskätande ugglor, vinterdrivande is och sommarens Kamuiwakka-vattenfall förblir orörda. De branta klippkusterna syns endast från turistbåtar.`,
@@ -75,5 +77,11 @@ export default {
     "法隆寺 夢殿": `Yumedono (Drömmarnas sal) i Horyu-jis östra område är en oktogonal sal byggd 739 på platsen för Prins Shotokus Ikaruga-palats. Hyser den dolda Guze Kannon-statyn (Asuka-perioden), synlig endast under begränsade vår- och höstöppningar. Den balanserade oktogonala silhuetten är en arkitekturskatt.`,
     "大鳴門橋": `Onaruto-bron, en hängbro på 1 629 m (öppnad 1985), korsar Naruto-sundet. Gångvägen «Uzu-no-Michi» under har glasgolv som visar virvlar 45 m nedanför. Broens graciösa kurvor med sundet skapar en spektakulär utsikt.`,
     "福岡": `Fukuoka, Kyushus största stad. Nöjesdistrikten Hakata, Tenjin och Nakasu; yatai-kultur (Hakata ramen och udon); Hakata-viken med Fukuoka Tower; körsbärsblommor i Ohori-parken; och Itoshima-halvöns stränder: modern stad och natur sida vid sida.`,
+    "新倉山浅間公園": `Arakurayama Sengen-parken i Fujiyoshida erbjuder en av Japans mest ikoniska vyer: 398 trappsteg leder upp till en utsiktsplattform där Chureito-pagoden, körsbärsblommorna och berget Fuji linjerar i en enda bildruta. Full blom i mitten av april.`,
+    "河口湖": `Kawaguchisjön, en av Fujis fem sjöar, är den mest kända platsen för den «omvända Fujin» som speglas i vattnet. Körsbärsblommor på våren, fyrverkerier på sommaren, lönnkorridor på hösten och snötäckt Fuji på vintern: full säsongsskönhet.`,
+    "松本城": `Matsumoto slott är Nationalskatt och en av Japans 12 ursprungliga borgar. Dess kolsvarta murar gav det smeknamnet «Kråkborg». De vita kammarna av Norra Alperna i bakgrunden och den spegelblanka inre vallgraven ger det skönhet i alla fyra årstider.`,
+    "高遠城址公園": `Takato slottspark i Ina huserar cirka 1.500 endemiska «Takato Kohigan»-körsbärsträd som blommar svagt rosa i början-mitten av april och vinner titeln «bästa körsbärsblom under himlen». Kvällsbelysningen vid «Sakura Matsuri» med Centrala Alperna i bakgrunden är drömlik.`,
+    "駒つなぎの桜": `Edohigan-körsbärsträd över 400 år gammalt i byn Achi. Enligt legenden band Minamoto no Yoshitsune sin häst här. Ensamt vid terrasserade risfält, i full blom i mitten-slutet av april, dess spegling under stjärnorna är ett ikoniskt enskilt träd i Nagano.`,
+    "長野県天空の楽園": `Byn Achi i Nagano är certifierad av Miljöministeriet som «Japans stjärnrikaste himmel». Nattturen «Tenku no Rakuen» åker gondol upp till Fujimidai-höglandet på 1.400 m, där en himmel utan ljusföroreningar fylls av stjärnor.`,
   },
 };
