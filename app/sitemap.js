@@ -52,6 +52,24 @@ export default function sitemap() {
           alternates: { languages: locLangs },
         });
       }
+
+      // 写真個別ページ
+      const locPhotos = pf.photos.filter((p) => p.loc === locJp);
+      for (const photo of locPhotos) {
+        const photoLangs = {};
+        for (const l of LANGS) photoLangs[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photo.id}`;
+        photoLangs["x-default"] = `${SITE_URL}/en/${prefSlug}/${locSlug}/${photo.id}`;
+
+        for (const lang of LANGS) {
+          entries.push({
+            url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}/${photo.id}`,
+            lastModified: now,
+            changeFrequency: "yearly",
+            priority: 0.4,
+            alternates: { languages: photoLangs },
+          });
+        }
+      }
     }
   }
 
