@@ -422,6 +422,7 @@ export const PREFECTURES = [
       { id: "bykxlizpdzufezqttzca", loc: "駒つなぎの桜", year: 2026 },
       { id: "bxt5gtw3rnuqxrx46ppl", loc: "長野県天空の楽園", year: 2026 },
       { id: "ewpcre6qnksncnu1ymem", loc: "弘法山古墳", year: 2026 },
+      { id: "sosd9vi7tiwq8ezyvsaa", loc: "弘法山古墳", year: 2026 },
       { id: "otxag9j26cytaettnnhu", loc: "弘法山古墳", year: 2026 },
       { id: "wrfx6anvys7zbrfrjhmy", loc: "弘法山古墳", year: 2026 },
       { id: "olhsgzum3ivcgytg4ur2", loc: "弘法山古墳", year: 2026 },
