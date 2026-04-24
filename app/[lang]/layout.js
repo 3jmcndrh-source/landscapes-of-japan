@@ -52,6 +52,10 @@ export default async function LangLayout({ children, params }) {
   const htmlLang = lang === "zh-tw" ? "zh-Hant" : lang === "zh" ? "zh-Hans" : lang;
   return (
     <html lang={htmlLang} dir={dir}>
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
         {children}
         <Analytics />
