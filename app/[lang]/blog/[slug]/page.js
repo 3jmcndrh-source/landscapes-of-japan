@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { POSTS, POST_SLUGS, getPost, getPostTitle, getPostExcerpt, getPostBody } from "../../../content/blog/posts.js";
+import { getHowTo } from "../../../howTo.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../../slugs.js";
 import { TR } from "../../../data.js";
@@ -90,10 +91,30 @@ export default async function BlogPost({ params }) {
     ],
   };
 
+  const ht = getHowTo(slug);
+  const howToSchema = ht ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: lang === "ja" ? ht.nameJa : ht.nameEn,
+    inLanguage: HREFLANG[lang] || lang,
+    totalTime: ht.totalTime,
+    supply: (lang === "ja" ? ht.supplyJa : ht.supplyEn).map((s) => ({ "@type": "HowToSupply", name: s })),
+    step: ht.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: lang === "ja" ? s.nameJa : s.nameEn,
+      text: lang === "ja" ? s.textJa : s.textEn,
+    })),
+    ...(post.hero && { image: cldUrl(post.hero, 1200) }),
+  } : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {howToSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      )}
       <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
         <div className="top-bar scrolled">
           <div className="top-langs">

@@ -4,6 +4,7 @@ import { PREFECTURES, getPrefName, getLocName } from "../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../slugs.js";
 import { getLocDesc, getLocFaqs } from "../../../content/descriptions.js";
+import { getEvents } from "../../../events.js";
 
 export const dynamicParams = false;
 
@@ -107,6 +108,23 @@ export default async function Page({ params }) {
           { "@type": "ListItem", position: 3, name: getLocName(locJp, lang), item: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}` },
         ],
       },
+      // Event schema (祭り・ライトアップ・シーズン) — 該当する場所のみ
+      ...getEvents(locJp).map((ev) => ({
+        "@type": "Event",
+        name: lang === "ja" ? ev.nameJa : ev.nameEn,
+        description: lang === "ja" ? ev.descJa : ev.descEn,
+        startDate: ev.startDate,
+        endDate: ev.endDate,
+        eventStatus: `https://schema.org/${ev.eventStatus}`,
+        eventAttendanceMode: `https://schema.org/${ev.eventAttendanceMode}`,
+        location: {
+          "@type": "Place",
+          name: ev.placeName,
+          address: { "@type": "PostalAddress", addressRegion: getPrefName(prefJp, "en"), addressCountry: "JP" },
+        },
+        image: photos.slice(0, 4).map((p) => `https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/${encodeURIComponent(p.id)}.jpg`),
+        organizer: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
+      })),
     ].filter(Boolean),
   };
 
