@@ -196,16 +196,30 @@ export const COLLECTIONS = {
 
 export const COLLECTION_SLUGS = Object.keys(COLLECTIONS);
 
-// Get all photos matching a collection's locs
+// Get all photos matching a collection.
+// Strategy: photo個別tag(PHOTO_TAGS)があればそれでフィルタ(精密)。
+// なければ collection.locs での loc-level fallback(暫定、tag付け前のloc用)。
+import { PHOTO_TAGS, COLLECTION_TAGS } from "./photo-tags.js";
+
 export function getCollectionPhotos(slug, PREFECTURES) {
   const c = COLLECTIONS[slug];
   if (!c) return [];
-  const set = new Set(c.locs);
+  const collectionTags = COLLECTION_TAGS[slug] || [];
+  const locSet = new Set(c.locs);
   const result = [];
   for (const pf of PREFECTURES) {
     for (const photo of pf.photos) {
-      if (photo.loc && set.has(photo.loc)) {
-        result.push({ ...photo, pref: pf.pref });
+      const tags = PHOTO_TAGS[photo.id];
+      if (tags) {
+        // タグ付け済写真:タグでフィルタ(loc は無視、より精密)
+        if (tags.some((t) => collectionTags.includes(t))) {
+          result.push({ ...photo, pref: pf.pref });
+        }
+      } else {
+        // 未タグ付け写真:loc 単位で fallback
+        if (photo.loc && locSet.has(photo.loc)) {
+          result.push({ ...photo, pref: pf.pref });
+        }
       }
     }
   }
