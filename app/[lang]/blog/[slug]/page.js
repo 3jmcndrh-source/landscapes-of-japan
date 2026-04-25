@@ -26,6 +26,10 @@ export async function generateMetadata({ params }) {
 
   const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/blog/${slug}`);
 
+  // article tags from related locs
+  const articleTags = post.locs.slice(0, 8);
+  const sectionLabel = lang === "ja" ? "撮影ガイド" : lang === "ko" ? "사진 가이드" : lang === "zh" ? "摄影指南" : lang === "zh-tw" ? "攝影指南" : "Photography Guide";
+
   return {
     title: fullTitle, description,
     alternates: { canonical: `${SITE_URL}/${lang}/blog/${slug}`, languages },
@@ -33,10 +37,25 @@ export async function generateMetadata({ params }) {
       title: fullTitle, description, type: "article",
       url: `${SITE_URL}/${lang}/blog/${slug}`, siteName: "Landscapes of Japan",
       publishedTime: post.date,
-      authors: ["Landscapes of Japan"],
+      modifiedTime: post.date,
+      authors: [SITE_URL],
+      section: sectionLabel,
+      tags: articleTags,
       images: [{ url: ogImage, width: 1200, height: 800, alt: title }],
+      locale: HREFLANG[lang]?.replace("-", "_") || "en_US",
     },
-    twitter: { card: "summary_large_image", title: fullTitle, description, images: [ogImage] },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle, description,
+      images: [ogImage],
+      site: "@LandscapesOfJapan",
+      creator: "@LandscapesOfJapan",
+    },
+    other: {
+      "article:published_time": post.date,
+      "article:modified_time": post.date,
+      "article:section": sectionLabel,
+    },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };
 }
