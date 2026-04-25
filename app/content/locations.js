@@ -633,6 +633,38 @@ export const LOCATION_CONTENT = {
       "道後溫泉是日本最古老溫泉之一，已有3000年歷史。1894年建造的木造三層「道後溫泉本館」為國家重要文化財，是《千與千尋》湯屋原型之一。夜間燈飾夢幻。",
       "도고 온천은 3000년 역사를 가진 일본 최고(最古)급 온천. 1894년 건축된 목조 3층 '도고 온천 본관'은 중요문화재이며 '센과 치히로의 행방불명' 목욕탕 모델 중 하나. 야간 조명은 환상적입니다."
     ),
+    definition: lh(
+      "道後温泉(どうごおんせん)は愛媛県松山市にある約3,000年の歴史を持つ日本最古級の温泉で、『日本書紀』『万葉集』にも登場する古来の名湯。中心となる「道後温泉本館」は1894年に建築された木造三層の重要文化財で、夏目漱石の小説『坊っちゃん』の舞台、宮崎駿『千と千尋の神隠し』の油屋のモデルの一つともされます。アルカリ性単純温泉(肌に優しい)、本館・椿の湯・飛鳥乃湯泉の3公衆浴場と道後温泉駅周辺の温泉旅館街が作る情緒は、四国の温泉文化の象徴です。",
+      "Dogo Onsen, in Matsuyama City, Ehime Prefecture, is one of Japan's oldest hot springs with about 3,000 years of history — appearing in the «Nihon Shoki» and «Manyoshu.» Its centerpiece, Dogo Onsen Honkan, is a wooden three-story Important Cultural Property built in 1894, the setting of Soseki's novel «Botchan» and considered one of the inspirations for the bathhouse in Hayao Miyazaki's «Spirited Away.» With alkaline simple spring water (gentle on skin) and three public bathhouses — Honkan, Tsubaki-no-Yu, and Asuka-no-Yu Spring — plus the surrounding ryokan-lined district, it embodies the hot-spring culture of Shikoku."
+    ),
+    highlights: {
+      ja: [
+        "道後温泉本館 — 1894年築、重要文化財、唐破風と千鳥破風が織りなす木造三層、夜のライトアップは幻想的",
+        "椿の湯・飛鳥乃湯泉 — 別棟の公衆浴場、本館より空いていて入浴しやすい、撮影は外観のみ",
+        "道後温泉駅 — 1895年開業の坊っちゃん列車の終着駅、レトロな駅舎と路面電車",
+        "湯神社・伊佐爾波神社 — 道後温泉を見守る古社、伊佐爾波神社の朱塗り本殿は1667年築の重要文化財",
+        "湯築城跡公園 — 道後温泉裏手の中世山城跡、桜の名所、本館を含む街並みを俯瞰",
+      ],
+      en: [
+        "Dogo Onsen Honkan — built 1894, an Important Cultural Property; a wooden three-story building blending karahafu and chidori-hafu gables, with magical evening illumination",
+        "Tsubaki-no-Yu and Asuka-no-Yu Spring — annex public baths; less crowded than the Honkan, easier to bathe in. Photography permitted only of exteriors",
+        "Dogo Onsen Station — 1895 terminus of the Botchan Train, with a retro station house and tramway",
+        "Yu Shrine and Isaniwa Shrine — old shrines watching over Dogo Onsen; Isaniwa's vermilion main hall (1667) is an Important Cultural Property",
+        "Yuzuki Castle Ruins Park — the medieval mountain castle behind the onsen; cherry blossom site offering an overhead view including the Honkan",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "道後温泉とは?", a: "愛媛県松山市の3,000年の歴史を持つ日本最古級の温泉。重要文化財の道後温泉本館(1894年築)は『坊っちゃん』の舞台、『千と千尋の神隠し』の油屋のモデルの一つで、四国の温泉文化の象徴です。" },
+        { q: "本館は現在入れる?", a: "2019年から大規模保存修理中で、2024年12月に全館完全再開予定。工事中も一部階で入浴・見学可。撮影は外観・夜景共におすすめ、特に夕方〜夜の木造三層のライトアップが圧巻です。" },
+        { q: "撮影のベストタイムとマナーは?", a: "外観は早朝(人少ない)と夕方〜夜のライトアップが二大ベスト。建物裏手の路地越し構図がおすすめ。館内は入浴客のプライバシー配慮で撮影禁止区域あり、要注意。" },
+      ],
+      en: [
+        { q: "What is Dogo Onsen?", a: "One of Japan's oldest hot springs (about 3,000 years) in Matsuyama City, Ehime. Dogo Onsen Honkan (built 1894) is an Important Cultural Property, the setting of Soseki's «Botchan» and one of the inspirations for the bathhouse in «Spirited Away» — the very symbol of Shikoku hot-spring culture." },
+        { q: "Can I bathe at the Honkan now?", a: "Under major restoration since 2019, with full reopening expected December 2024. Some floors remain open for bathing and viewing during works. The exterior is photogenic both day and night, especially the wooden three-tier illumination in the evening." },
+        { q: "Best photography times and etiquette?", a: "Exteriors at dawn (few visitors) and evening/night illumination are the two best windows. Try alley-framed compositions behind the building. Some interior areas are off-limits to respect bathers' privacy — check signage carefully." },
+      ],
+    },
     faqs: [
       { q: d("本館は現在入れる？","Can I bathe at the Honkan now?","本馆现在可以入浴吗？","本館現在可以入浴嗎？","본관은 지금 입욕 가능한가요?"),
         a: d("2019年から大規模保存修理中。2024年末〜2025年に全館完全再開予定。工事中でも一部階は入浴・見学可。","Under major restoration since 2019. Full reopening expected 2024/2025. Part of the building remains open for bathing and viewing during works.","自2019年起大规模保存修缮。2024年末-2025年预计全面重开。工期中仍有部分楼层可入浴参观。","自2019年起大規模保存修繕。2024年末-2025年預計全面重開。工期中仍有部分樓層可入浴參觀。","2019년부터 대규모 보존 수리 중. 2024년 말~2025년 전관 재개 예정. 공사 중에도 일부 층은 입욕·견학 가능.") },
@@ -646,6 +678,38 @@ export const LOCATION_CONTENT = {
       "松山城位於海拔132米的勝山山頂，現存12天守之一（1627年）。黑白對比分明的連立式天守，賞櫻百選名所。可乘纜車或吊椅登頂，天守閣俯瞰瀨戶內海必拍。",
       "마쓰야마성은 해발 132m 가쓰야마 산 정상의 현존 12천수 중 하나(1627년). 검정·흰색 대비가 아름다운 연립식 천수로 벚꽃 명소 100선. 로프웨이 또는 리프트로 오르며, 천수각에서 바라보는 세토내해 전망은 필촬영."
     ),
+    definition: lh(
+      "松山城(まつやまじょう)は愛媛県松山市の標高132m・勝山(かつやま)山頂に建つ平山城で、現存12天守の一つ。慶長7年(1602年)から築城を開始し、寛永4年(1627年)に完成、寛永12年(1635年)から松平氏15代が居城とした伊予国の拠点。連立式天守(本壇に大天守・小天守・南隅櫓・北隅櫓を渡櫓で連結する独特の構造)で、安政元年(1854年)に再建された大天守をはじめ21の建造物が国の重要文化財。「日本の100名城」「桜名所100選」「日本100名山」(背景の石鎚山系)に選定された四国を代表する名城です。",
+      "Matsuyama Castle is a flatland-mountain castle atop the 132 m Mt. Katsuyama in Matsuyama City, Ehime Prefecture, and one of Japan's 12 surviving original tenshu. Construction began in 1602 and was completed in 1627; from 1635 it served 15 generations of the Matsudaira clan as the seat of the Iyo domain. Its rare connected keep — combining a great keep, lesser keep, southern corner turret, and northern corner turret via passage turrets around a central platform — and 21 structures including the great keep (rebuilt 1854) are designated Important Cultural Properties. Selected for «Japan's Top 100 Castles,» «Top 100 Cherry Blossom Sites,» and (with the Ishizuchi range as backdrop) «Top 100 Mountains,» it stands as Shikoku's representative castle."
+    ),
+    highlights: {
+      ja: [
+        "大天守・連立式天守 — 1854年再建の大天守、本壇に小天守・南隅櫓・北隅櫓を配する全国でも稀な連結構造",
+        "ロープウェイ・リフト乗り場 — 街中から城山頂まで3分、屋根のないリフトは絶景を全身で感じる",
+        "桜の名所 — 1854年再建の天守と500本のソメイヨシノ、4月上旬の本丸広場は日本100名城屈指の桜風景",
+        "瀬戸内海の眺望 — 天守閣展望台から松山平野・瀬戸内海・石鎚山(西日本最高峰、1,982m)まで一望",
+        "石垣群 — 慶長期の高石垣、戸無門、太鼓門、隠門続櫓など21の重要文化財、石垣ファン必見",
+      ],
+      en: [
+        "Great Keep and Connected Keep — the 1854 great keep, with lesser keep, southern and northern corner turrets connected around a central platform, a rare structure nationwide",
+        "Ropeway and Chairlift — three minutes from town to summit; the open chairlift offers an immersive panoramic ride",
+        "Cherry blossom site — the rebuilt 1854 keep paired with 500 Yoshino cherry trees; the Honmaru plaza in early April rivals any in the Top 100 Castles",
+        "Seto Inland Sea view — the keep's observation deck commands the Matsuyama Plain, the Inland Sea, and the Ishizuchi range (West Japan's tallest at 1,982 m)",
+        "Stone walls — Keicho-period high stonework, plus the Tonashimon, Taikomon, and other 21 Important Cultural Property structures — a paradise for fortification fans",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "松山城とは?", a: "愛媛県松山市の標高132m勝山山頂に建つ平山城で、現存12天守の一つ。1627年完成、1854年再建の大天守、連立式天守の独特構造、21の重要文化財建造物を擁する四国を代表する名城です。" },
+        { q: "ロープウェイとリフトどっち?", a: "天候が良ければ屋根のないリフトの方が景色を全身で感じられるのでおすすめ。所要約3分、共通券でどちらにも乗れます。雨天や強風時はロープウェイが安全です。" },
+        { q: "撮影ベストシーズンは?", a: "桜の4月上旬(本丸広場500本のソメイヨシノ)、紅葉の11月下旬、雪の松山城は年に数回のレア構図、夜間ライトアップ(年間通年)は通年絶景。早朝6時開門時が人少なく光柔らか。" },
+      ],
+      en: [
+        { q: "What is Matsuyama Castle?", a: "A flatland-mountain castle in Matsuyama City, Ehime, built atop the 132 m Mt. Katsuyama and one of Japan's 12 surviving original keeps. Completed in 1627 with the keep rebuilt in 1854, its connected keep structure, 21 Important Cultural Property buildings, and Shikoku-leading status make it remarkable." },
+        { q: "Ropeway or chairlift?", a: "If weather permits, the open chairlift offers a more immersive ride for the panorama (about 3 minutes). A combined ticket covers both. The ropeway is safer in rain or strong wind." },
+        { q: "When is the best season to photograph it?", a: "Cherry blossoms in early April (500 Yoshino cherries on the Honmaru plaza), autumn colors in late November, rare winter snow shots, and year-round night illumination. Arrive at the 6 AM opening for thin crowds and softest light." },
+      ],
+    },
     faqs: [
       { q: d("ロープウェイとリフトどっち？","Ropeway or chairlift?","缆车还是吊椅？","纜車還是吊椅？","로프웨이와 리프트 중 추천은?"),
         a: d("天候が良ければ屋根のないリフトの方が景色を全身で感じられる。所要5分。共通券でどちらにも乗れる。","If weather permits, the open chairlift offers better panoramic immersion (5 min). A combined ticket covers both.","天气好时选吊椅更能感受风景（5分钟）。共通票可乘两者。","天氣好時選吊椅更能感受風景（5分鐘）。共通票可乘兩者。","날씨가 좋으면 지붕 없는 리프트가 풍경을 온몸으로 느낄 수 있어 추천. 약 5분. 공통권으로 둘 다 이용 가능.") },
@@ -687,6 +751,38 @@ export const LOCATION_CONTENT = {
       "仁淀淵是仁淀川水系枝川川上游的神秘水潭。陽光灑下時水面呈翡翠至鈷藍「仁淀藍」。當地視為水神棲息地，禁止戲水與飲食。",
       "니코부치는 니요도강 수계 에다가와강 상류의 신비한 못. 햇빛이 수면에 비치면 비취~코발트블루의 '니요도 블루'가 나타납니다. 현지에서는 물의 신이 사는 신성한 장소로 여겨지며 수영·음식은 금지."
     ),
+    definition: lh(
+      "にこ淵(にこぶち)は高知県吾川郡いの町、仁淀川水系の支流・枝川川(えだがわがわ)上流にある神秘の淵で、日本最後の清流と称される仁淀川の透明度を最も鮮明に体現する場所。太陽光が水面に差し込む条件が揃うと、翡翠色からコバルトブルーへと変わる「仁淀ブルー(におどブルー)」と呼ばれる神秘の色彩を見せます。地元では古来から水神が棲む神聖な場所として崇められ、水着や入水・飲食・キャンプは全面禁止。アクセスは駐車場から急な階段(約10分)を下る必要があり、滑らない靴が必須です。",
+      "Nikobuchi is a sacred pool on the upper Edagawa River — a tributary of the Niyodo River system — in Ino Town, Agawa District, Kochi Prefecture. It most vividly embodies the transparency of the Niyodo, often called Japan's last truly clear river. When sunlight strikes the water under the right conditions, it transforms from jade green to cobalt blue — a phenomenon known as «Niyodo Blue.» Locally revered as the dwelling of a water deity, the pool prohibits swimming, eating, and camping. Access requires descending steep stairs (about 10 minutes) from the parking lot — non-slip footwear is essential."
+    ),
+    highlights: {
+      ja: [
+        "仁淀ブルーの水面 — 晴天正午前後に最も濃い青、PLフィルターで反射を抑えるとさらに深い色合いに",
+        "急な階段(約10分) — 駐車場から淵まで100段以上の急階段、滑りやすいので注意",
+        "周辺の自然 — 仁淀川源流の清流、苔むした岩、原生林、雨上がりは霧と苔が幻想的",
+        "撮影ルール — 三脚は混雑時要配慮、水中撮影は不可、ドローン禁止、地元のルールを尊重",
+        "アクセス難易度 — 高知市から車で1時間、最寄駅は土佐久礼駅、レンタカー推奨",
+      ],
+      en: [
+        "Niyodo Blue waters — deepest blue around midday on clear days; a polarizing filter further intensifies the color by cutting reflections",
+        "Steep stairs (about 10 minutes) — over 100 slippery stone steps from the parking lot; non-slip footwear is essential",
+        "Surrounding nature — the headwaters of the Niyodo, mossy boulders, primeval forest; mist and moss after rain are otherworldly",
+        "Photography rules — be considerate with tripods when busy, no underwater photography, drones prohibited; respect local protocols",
+        "Access difficulty — about 1 hour by car from Kochi City; nearest station is Tosa Kure, with a rental car strongly recommended",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "にこ淵とは?", a: "高知県いの町、仁淀川水系・枝川川上流の神秘の淵。日本最後の清流と称される仁淀川の透明度を最も鮮明に体現する「仁淀ブルー」の聖地で、地元では水神が棲む神聖な場所として崇められています。" },
+        { q: "青色がよく出る時期は?", a: "晴天の正午前後(10〜14時)、特に夏〜初秋。雨の翌日は水量多く濁るので晴天続きが理想。PLフィルター必携、水面反射を抑制すると色が深まります。" },
+        { q: "アクセスと注意点は?", a: "高知市から車で1時間、駐車場から急階段約10分の徒歩。滑りやすいので非滑り靴必須。水着・入水・飲食・キャンプ・ドローンは全面禁止、地元の聖地として静かに撮影してください。" },
+      ],
+      en: [
+        { q: "What is Nikobuchi?", a: "A sacred pool on the upper Edagawa River (a tributary of the Niyodo River system) in Ino Town, Kochi Prefecture. It is the most vivid spot to witness «Niyodo Blue,» the phenomenon born of Japan's last clear river, and locally revered as a water deity's dwelling." },
+        { q: "When is the blue strongest?", a: "Clear midday (10:00–14:00), especially summer to early autumn. After rain the water is high and turbid — dry weather is ideal. Carry a polarizing filter; suppressing surface reflections deepens the blue." },
+        { q: "Access and precautions?", a: "About 1 hour by car from Kochi City; from the parking lot, descend ~10 minutes of steep stairs. Non-slip footwear required. Swimming, eating, camping, and drones are strictly forbidden — photograph quietly out of respect for this sacred site." },
+      ],
+    },
     faqs: [
       { q: d("青色がよく出る時期は？","When is the blue strongest?","什么时候蓝色最明显？","什麼時候藍色最明顯？","푸른빛이 가장 뚜렷한 시기는?"),
         a: d("晴天の正午前後（10〜14時）、特に夏〜初秋。雨の翌日は水量多く濁るので晴天続きが理想。PLフィルター必携。","Clear midday (10 AM–2 PM), especially summer to early autumn. After rain, turbidity reduces the effect — dry weather ideal. Bring a PL filter.","晴天正午前后（10-14点），尤其夏至初秋。雨后浑浊，连晴最佳。必备PL镜。","晴天正午前後（10-14點），尤其夏至初秋。雨後渾濁，連晴最佳。必備PL鏡。","맑은 날 정오 전후(10-14시), 특히 여름~초가을. 비 온 다음날은 탁해지니 연속 맑은 날이 이상적. PL 필터 필수.") },
@@ -700,6 +796,38 @@ export const LOCATION_CONTENT = {
       "桂濱是面向太平洋的賞月名所，古來詩歌詠。五色小石、黑潮浪濤、坂本龍馬像（1928年立，高5.3米）印象深刻。周邊為桂濱公園，有水族館與龍馬紀念館。",
       "가쓰라하마는 태평양에 면한 달의 명소로 예로부터 시가에 읊어진 아름다운 해안. 오색 조약돌, 구로시오 조류의 거친 파도, 사카모토 료마 동상(1928년 건립, 높이 5.3m)이 인상적. 일대는 가쓰라하마 공원으로 수족관과 료마 기념관도 있습니다."
     ),
+    definition: lh(
+      "桂浜(かつらはま)は高知県高知市浦戸湾の入口に位置する全長約400mの弓状海岸で、太平洋に面した荒々しい海岸線と五色の小石で知られる古来からの名所。古今集にも詠われた月の名所で、土佐の月見の地として「桂浜の月」は古来から日本三大名月の一つに数えられます。坂本龍馬像(1928年建立、台座含め13.5m、像高5.3m)は太平洋を見据える姿で、幕末維新の志士・坂本龍馬の故郷土佐の象徴。一帯は桂浜公園として整備され、桂浜水族館、坂本龍馬記念館、龍王岬展望台などを擁します。",
+      "Katsurahama is a 400 m bow-shaped beach at the mouth of Urado Bay in Kochi City, Kochi Prefecture, known since ancient times for its rugged Pacific coast and five-colored pebbles. Praised in the «Kokin Wakashu» as a moon-viewing site, the «moon over Katsurahama» counts among Japan's three classic moon-viewing locations. The bronze statue of Sakamoto Ryoma (erected 1928; 13.5 m including the pedestal, 5.3 m for the figure) gazes out over the Pacific as a symbol of the Bakumatsu reformist's homeland of Tosa. The area forms Katsurahama Park and includes Katsurahama Aquarium, the Sakamoto Ryoma Memorial Museum, and the Ryuomisaki Observatory."
+    ),
+    highlights: {
+      ja: [
+        "坂本龍馬像 — 1928年建立、像高5.3m、太平洋を見据える維新の志士、台座裏の階段から海側ローアングル",
+        "弓状の砂浜 — 全長約400mの白砂海岸、五色の小石(チャート、メノウ、紫水晶など)が散らばる",
+        "龍王岬・龍宮神社 — 桂浜の岬に立つ朱塗りの神社、太平洋越しの荒波と岬のコントラスト",
+        "中秋の名月 — 古来「桂浜の月」と呼ばれる名月、9月中秋に「名月絵金祭り」開催",
+        "桂浜水族館 — 1931年開業の老舗、太平洋を背景にしたショースタジアム、撮影映え",
+      ],
+      en: [
+        "Sakamoto Ryoma Statue — erected 1928, 5.3 m tall; the Bakumatsu reformist gazing across the Pacific. Climb stairs behind the pedestal for the seaside low-angle composition",
+        "Bow-shaped Beach — about 400 m of white sand strewn with multicolored stones (chert, agate, amethyst, and more)",
+        "Cape Ryuo and Ryugu Shrine — a vermilion shrine on the headland, contrasting the surf with the cape itself",
+        "Mid-Autumn Moon — the «moon over Katsurahama,» celebrated for centuries; the «Meigetsu Ekin Festival» is held in mid-autumn",
+        "Katsurahama Aquarium — opened in 1931; with a Pacific Ocean backdrop, the show stadium photographs spectacularly",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "桂浜とは?", a: "高知県高知市の太平洋に面した全長約400mの弓状海岸。古今集にも詠われた月の名所で、坂本龍馬像が立つ「土佐の象徴」。一帯は桂浜公園として水族館・龍馬記念館・展望台を擁する高知最大の観光地です。" },
+        { q: "龍馬像の撮影ベストアングルは?", a: "台座裏の階段を登った海側からのローアングル。龍馬と太平洋を背景にした構図が定番。夕日の時間帯は逆光シルエット、晴天日中は青空との順光ポートレートが両方撮れます。" },
+        { q: "撮影ベストタイムは?", a: "日の出前後(東向きの太平洋から朝日)、夕暮れ時(西陽が龍馬像を照らす)が最高。中秋の名月(9月)は古来「桂浜の月」、月光と海の構図は希少。荒波の冬は迫力ある波撮影に最適。" },
+      ],
+      en: [
+        { q: "What is Katsurahama?", a: "A 400 m bow-shaped beach in Kochi City facing the Pacific, celebrated in the Kokin Wakashu as a great moon-viewing site. The Sakamoto Ryoma statue makes it «the symbol of Tosa,» and the surrounding Katsurahama Park includes an aquarium, the Ryoma Memorial Museum, and observatories — Kochi's largest sightseeing site." },
+        { q: "Best angle for the Ryoma statue?", a: "From low angle on the seaside, reached by climbing the stairs behind the pedestal — pairs Ryoma with the Pacific backdrop. Sunset gives a striking silhouette; clear daytime light produces a sky-blue portrait. Both work." },
+        { q: "Best photography times?", a: "Sunrise (with the sun rising over the Pacific to the east) and twilight (with the western sun illuminating the statue) are best. The mid-autumn full moon (September) is especially rare — moonlight over the sea. Winter's pounding surf is also dramatic." },
+      ],
+    },
     faqs: [
       { q: d("龍馬像の撮影ベストアングルは？","Best angle for Ryoma statue?","龙马像最佳拍摄角度？","龍馬像最佳拍攝角度？","료마상 최고 촬영 각도는?"),
         a: d("台座裏の階段を登った海側からのローアングル。龍馬と太平洋を背景にした構図が定番。夕日の時間帯は逆光シルエットに。","From low angle on the seaside, reached by climbing stairs behind the pedestal — pairs Ryoma with the Pacific backdrop. Sunset gives a striking silhouette.","基座后方阶梯登顶，从海侧低角度拍摄。龙马与太平洋背景为经典构图。夕阳时段剪影绝佳。","基座後方階梯登頂，從海側低角度拍攝。龍馬與太平洋背景為經典構圖。夕陽時段剪影絕佳。","받침대 뒤 계단을 올라 바다 쪽 로우앵글. 료마와 태평양을 함께 담는 구도가 정석. 일몰에는 역광 실루엣이 극적입니다.") },
@@ -741,6 +869,38 @@ export const LOCATION_CONTENT = {
       "別府溫泉以日本第一的湧出量和源泉數聞名。血池地獄、海地獄、灶地獄等七個「地獄」為大自然奇觀。湯煙展望台所見的街景世界獨一。",
       "벳푸 온천은 일본 최대 용수량과 원천 수를 자랑하는 온천 왕국. 피의못지옥, 바다지옥, 가마도지옥 등 7개의 '지옥' 원천은 자연의 경이. 유케무리 전망대에서 바라보는 거리 풍경은 세계에 둘도 없는 풍경."
     ),
+    definition: lh(
+      "別府(べっぷ)は大分県別府市の温泉地で、源泉数約2,288・湧出量1日約87,000kLと日本一を誇る世界有数の温泉郷。八つの温泉地(別府八湯)から成り、街全体から立ち上る湯けむりは「世界に二つとない」と称される独特の風景。観光地として「地獄めぐり」(海地獄、血の池地獄、龍巻地獄など7つの源泉、いずれも自然湧出する高温の水・蒸気・泥のスペクタクル)が代表的。鉄輪温泉(かんなわおんせん)の湯けむり展望台からは特に冬の朝に湯煙が街全体を包む幻想的な光景が見られます。",
+      "Beppu, in Beppu City, Oita Prefecture, is a world-class hot-spring resort with about 2,288 sources and 87,000 kL of daily output — both Japan's greatest. Comprising eight hot-spring districts known as «Beppu Hatto,» the citywide steam plumes form a landscape often described as «unmatched anywhere on earth.» Its signature attraction, the «Hells of Beppu» tour, includes seven naturally erupting sources — Sea Hell, Blood Pond Hell, Tatsumaki Geyser Hell, and others — each producing high-temperature water, steam, or mud spectacles. The Yukemuri Observatory at Kannawa Onsen offers especially mystical views on winter mornings, when steam wraps the entire town."
+    ),
+    highlights: {
+      ja: [
+        "海地獄(うみじごく) — コバルトブルーの温泉、98℃の硫酸鉄含有泉、別府を象徴する一枚",
+        "血の池地獄(ちのいけじごく) — 酸化鉄により赤褐色に染まる温泉、日本最古の天然地獄",
+        "龍巻地獄 — 30〜40分間隔で噴出する間欠泉、噴出時150℃の蒸気と熱湯が立ち上る",
+        "鉄輪温泉湯けむり展望台 — 街全体から立ち上る湯煙のパノラマ、冬の朝に最も濃厚",
+        "別府八湯 — 別府・鉄輪・観海寺・明礬・浜脇・堀田・亀川・柴石、それぞれ異なる泉質と街並み",
+      ],
+      en: [
+        "Umi Jigoku (Sea Hell) — cobalt-blue, 98 °C iron-sulfate-rich pool; the iconic image of Beppu",
+        "Chinoike Jigoku (Blood Pond Hell) — colored deep red-brown by iron oxide, Japan's oldest natural hell",
+        "Tatsumaki Jigoku (Geyser Hell) — erupts every 30–40 minutes with 150 °C steam and water bursting upward",
+        "Kannawa Yukemuri Observatory — panoramic city-wide steam plumes, densest on winter mornings",
+        "The Beppu Eight Hot Springs — Beppu, Kannawa, Kankaiji, Myoban, Hamawaki, Horita, Kamegawa, and Shibaseki, each with distinct water quality and townscape",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "別府とは?", a: "大分県別府市の温泉地で、源泉数約2,288・湧出量日本一の世界有数の温泉郷。8つの温泉地(別府八湯)、海地獄・血の池地獄など7つの「地獄めぐり」、世界に二つとない湯けむりの街並みを擁する独特の撮影地です。" },
+        { q: "地獄巡りの所要時間は?", a: "7地獄すべてで2〜3時間。共通チケット(地獄共通観覧券、大人2,200円)がお得。海地獄・血の池地獄・龍巻地獄が写真映えする三大名所で、龍巻地獄は噴出時刻に合わせる必要あり。" },
+        { q: "湯けむりが最も濃い時期は?", a: "冬(12〜2月)の朝、特に氷点下の早朝に外気と湯の温度差で湯煙が最も濃く立ち上ります。鉄輪温泉湯けむり展望台で日の出前から待ち、街に光が射す瞬間が黄金構図。" },
+      ],
+      en: [
+        { q: "What is Beppu?", a: "A hot-spring resort in Beppu City, Oita Prefecture, with about 2,288 sources and Japan's greatest output. Comprising eight districts (Beppu Hatto), seven naturally erupting Hells like Sea Hell and Blood Pond Hell, and citywide steam plumes, Beppu offers a photographic landscape unmatched anywhere." },
+        { q: "How long does the Hells tour take?", a: "All 7 Hells take 2–3 hours; the combined ticket (Jigoku Kyotsu, ¥2,200 for adults) saves money. Sea Hell, Blood Pond Hell, and Tatsumaki Geyser are the top three photo spots — time your visit around the geyser's eruption schedule." },
+        { q: "When are steam plumes thickest?", a: "On winter (December–February) mornings, especially below freezing, when the gap between air and water temperature produces the densest steam. Wait at the Kannawa Yukemuri Observatory before sunrise — the moment first light strikes the town is the golden shot." },
+      ],
+    },
     faqs: [
       { q: d("地獄巡りの所要時間は？","How long does the Hells tour take?","地狱巡游耗时？","地獄巡遊耗時？","지옥 순례 소요시간?"),
         a: d("7地獄すべてで2〜3時間。共通チケットがお得。海地獄・血の池地獄・龍巻地獄が写真映えする三大名所。","All 7 Hells take 2–3 hours. The combo ticket saves money. Sea Hell, Blood Pond Hell, and Tatsumaki Hell are the top-3 photo spots.","全7处地狱需2-3小时，共通票划算。海、血池、龙卷地狱为三大拍摄名所。","全7處地獄需2-3小時，共通票划算。海、血池、龍卷地獄為三大拍攝名所。","7개 지옥 모두 2-3시간. 공통권이 유리. 바다·피의못·다쓰마키 지옥이 3대 촬영 명소.") },
@@ -754,6 +914,38 @@ export const LOCATION_CONTENT = {
       "由布院是仰望由布岳的高原溫泉。湯之坪街道、金鱗湖、晨霧街景、靜謐森林藝術空間等，與別府對照的靜雅溫泉鄉。秋冬清晨「金鱗湖晨霧」必拍。",
       "유후인은 유후다케를 바라보는 고원 온천지. 유노쓰보 거리, 긴린 호수, 아침 안개에 싸인 거리, 조용한 숲의 예술 공간 등 벳푸와 대조적인 차분한 온천 마을. 가을~겨울 이른 아침의 '아침 안개의 긴린 호수'는 꼭 담아야 할 장면."
     ),
+    definition: lh(
+      "湯布院(ゆふいん)は大分県由布市湯布院町の温泉地で、由布岳(ゆふだけ、1,583mの双峰の活火山)を仰ぐ標高400〜500mの高原に広がります。1995年から中谷健太郎ら町長を中心とする「自分達の町は自分達で」のまちづくり運動の結果、ホテル建設規制・看板規制で日本屈指の品格ある温泉街として発展。中心の金鱗湖(きんりんこ)は温泉と冷水が混じる珍しい池で、秋〜冬の早朝には水温と外気の温度差で立ち上る朝霧の絶景が有名。湯布院温泉は源泉数852で日本2位、女性に人気の優雅な温泉郷です。",
+      "Yufuin is a hot-spring town in Yufu City, Oita Prefecture, set on a plateau of 400–500 m beneath the twin-peaked active volcano Mt. Yufu (1,583 m). Since 1995, a community-led development movement (initiated by figures like Kentaro Nakaya) has restricted hotel construction and signage, growing Yufuin into one of Japan's most refined hot-spring towns. At its heart, Lake Kinrin — a rare pond where hot springs mix with cold water — is famous for the autumn-to-winter dawn mist born of the temperature gap. With 852 sources (Japan's second-most), Yufuin is a graceful onsen popular especially with women travelers."
+    ),
+    highlights: {
+      ja: [
+        "金鱗湖(きんりんこ) — 温泉と冷水が混じる珍しい湖、秋〜冬早朝の朝霧は別世界、湖畔1周徒歩15分",
+        "由布岳 — 1,583mの双峰活火山、湯布院盆地のシンボル、湯の坪街道からの構図が王道",
+        "湯の坪街道 — 由布院駅から金鱗湖までの約1km、町家・カフェ・工芸店が並ぶレトロな商店街",
+        "由布院温泉旅館街 — 看板規制と低層建築で品格を保つ街並み、夜の灯りが温かい",
+        "由布見通り(由布院駅前) — 1990年磯崎新設計の由布院駅、駅前から由布岳を望む撮影地",
+      ],
+      en: [
+        "Lake Kinrin — a rare pond where hot springs and cold water mix; the autumn-to-winter dawn mist transports you to another world (15-minute lakeside walk)",
+        "Mt. Yufu — a 1,583 m twin-peaked active volcano, the symbol of the Yufuin Basin; the classic frame is from Yunotsubo-kaido",
+        "Yunotsubo-kaido — about 1 km from Yufuin Station to Lake Kinrin, lined with traditional townhouses, cafés, and craft shops",
+        "Ryokan district — strict signage rules and low-rise architecture preserve the elegant streetscape; warm lighting at night",
+        "Yufu-mi-dori (Yufuin Station front) — Arata Isozaki designed the 1990 Yufuin Station; a great spot for Mt. Yufu compositions",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "湯布院とは?", a: "大分県由布市の温泉地で、由布岳(1,583m)を仰ぐ標高400〜500mの高原。1995年からの規制まちづくりで日本屈指の品格ある温泉街として発展、源泉数日本2位の852本、金鱗湖の朝霧で有名な女性に人気の温泉郷です。" },
+        { q: "金鱗湖の朝霧が出る条件は?", a: "11〜3月の晴れた朝、気温5度以下。温泉水と外気の温度差で発生します。日の出直前〜1時間が濃い。湖畔の足湯から望むと、湯気と朝霧が二重に立ち上る幻想的な光景に。" },
+        { q: "別府との違いは?", a: "別府は湯量・地獄めぐりの迫力、湯布院は静寂と高原の品格。別府から車で約1時間、由布院IC近く。半日ずつで両方を巡るのも可能、湯布院は宿泊して夜と朝霧を狙うのが理想です。" },
+      ],
+      en: [
+        { q: "What is Yufuin?", a: "A hot-spring town in Yufu City, Oita Prefecture, on a 400–500 m plateau beneath Mt. Yufu (1,583 m). Since 1995, regulated community-led development has shaped one of Japan's most refined onsen towns. With 852 sources (Japan's second-most) and the famous Lake Kinrin morning mist, it is especially popular with women travelers." },
+        { q: "Conditions for morning mist at Lake Kinrin?", a: "Clear mornings November to March with temperatures below 5 °C. The thermal gap between hot-spring water and air creates the mist, densest from just before sunrise to one hour after. From the lakeside foot bath you can see steam and mist rising in double layers — pure fantasy." },
+        { q: "How does Yufuin differ from Beppu?", a: "Beppu impresses with sheer onsen volume and the dramatic Hells; Yufuin offers quiet, highland refinement. About 1 hour by car from Beppu, near Yufuin IC. You can visit both in a single day, but staying overnight in Yufuin is ideal to capture the night and morning mist." },
+      ],
+    },
     faqs: [
       { q: d("金鱗湖の朝霧が出る条件は？","Conditions for morning mist at Kinrin Lake?","金鳞湖晨雾出现条件？","金鱗湖晨霧出現條件？","긴린 호수 아침 안개 조건은?"),
         a: d("11〜3月の晴れた朝、気温5度以下。温泉水と外気の温度差で発生。日の出直前〜1時間が濃い。","Clear mornings in Nov–Mar with temperatures below 5°C — the thermal gap between hot spring water and air produces mist. Densest from just before sunrise to one hour after.","11-3月晴朗清晨、气温5度以下。温泉与空气温差产生雾。日出前1小时最浓。","11-3月晴朗清晨、氣溫5度以下。溫泉與空氣溫差產生霧。日出前1小時最濃。","11-3월 맑은 아침, 기온 5도 이하. 온천수와 외기의 온도차로 발생. 일출 직전~1시간이 가장 짙습니다.") },
@@ -769,6 +961,38 @@ export const LOCATION_CONTENT = {
       "姬路城建於1609年，世界遺產、國寶級名城。白漆喰外壁如白鷺般美麗而得名「白鷺城」，是現存日本最大級木造城堡。2009-2015年大修繕後潔白復活，氣勢磅礴。",
       "히메지성은 1609년 건축, 세계유산·국보 명성. 백회반 외벽이 백로처럼 아름답다 하여 '백로성'이라 불리며, 현존 일본 최대급 목조 성곽. 2009~2015년 대수리 후 순백으로 되살아난 모습은 압권."
     ),
+    definition: lh(
+      "姫路城(ひめじじょう)は兵庫県姫路市本町68番地に位置する平山城で、1346年に赤松貞範が築いた砦が起源、1601〜1609年に池田輝政が現在の大規模な大改築を行った日本最大級の木造城郭。1993年に法隆寺と並んで日本初の世界文化遺産として登録、現存12天守の中でも唯一の世界遺産であり国宝。白漆喰総塗籠の優美な姿が白鷺(しらさぎ)が羽を広げたようだとして「白鷺城(はくろじょう)」と称されます。2009〜2015年の「平成の大修理」で漆喰を塗り直し、純白の姿を取り戻した今、桜・新緑・雪との組合せは日本を代表する絵画的風景です。",
+      "Himeji Castle, located at 68 Honmachi, Himeji City, Hyogo Prefecture, is a flatland-mountain castle whose origins trace to a 1346 fort built by Akamatsu Sadanori, with Ikeda Terumasa carrying out the major reconstruction we see today between 1601 and 1609. One of Japan's largest wooden castles, it was registered in 1993 as Japan's first World Cultural Heritage site (alongside Horyu-ji), making it both the only UNESCO-listed castle among the 12 surviving original keeps and a National Treasure. Its white-stucco silhouette is likened to a white heron spreading its wings, earning the name «White Heron Castle» (Hakuro-jo). After the 2009–2015 «Heisei Restoration» renewed the plaster, its now-pristine white form combined with cherry blossoms, fresh greenery, or snow creates a portrait of Japan that few other places can match."
+    ),
+    highlights: {
+      ja: [
+        "大天守 — 1601〜1609年池田輝政の大改修、五重六階地下一階の連立式天守、現存12天守の最大",
+        "三の丸広場と桜 — 例年4月上旬の桜ピーク時、約1,000本のソメイヨシノと白漆喰の天守が織りなす王道構図",
+        "西の丸庭園 — 千姫(豊臣秀頼夫人)が暮らした化粧櫓、紅葉と天守の側面構図",
+        "シロトピア記念公園 — 城北東の公園、桜と天守の俯瞰、観光客が少ない穴場",
+        "男山配水池公園 — 城北西の高台、姫路城を真正面から俯瞰できる隠れスポット",
+      ],
+      en: [
+        "Great Keep — Ikeda Terumasa's major reconstruction (1601–1609), the connected five-story-six-floor-plus-basement keep, the largest of Japan's 12 surviving originals",
+        "Sannomaru Plaza and cherry blossoms — at peak bloom in early April, about 1,000 Yoshino cherry trees frame the white keep in the canonical composition",
+        "Nishi-no-Maru Garden — where Princess Sen (wife of Toyotomi Hideyori) lived; the Keshou Yagura turret with autumn colors and the keep's side profile",
+        "Shirotopia Memorial Park — northeast of the castle, a less-crowded vantage with cherry blossoms and the keep from above",
+        "Otoko-yama Park — a hilltop northwest of the castle offering a hidden frontal aerial view of Himeji Castle",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "姫路城とは?", a: "兵庫県姫路市の平山城で、1601〜1609年に池田輝政が大改築した日本最大級の木造城郭。1993年に日本初の世界文化遺産・国宝、現存12天守唯一の世界遺産で、白漆喰の優美な姿から「白鷺城」と呼ばれる名城です。" },
+        { q: "桜と姫路城を撮るベスト時期は?", a: "例年4月上旬、特に3月末〜4月第1週がピーク。三の丸広場、西の丸庭園、シロトピア記念公園、男山配水池公園の4箇所が定番。早朝6時開門時が人少なく光柔らか、夕焼けの白鷺城も絶景。" },
+        { q: "撮影ベストポイントは?", a: "大手門前(正面)、三の丸広場(桜と共に)、西の丸庭園(側面)、シロトピア記念公園(俯瞰)、男山配水池公園(真正面の俯瞰、知る人ぞ知る穴場)。1日かけて全方位から撮ると圧巻です。" },
+      ],
+      en: [
+        { q: "What is Himeji Castle?", a: "A flatland-mountain castle in Himeji City, Hyogo, with the major reconstruction we see today carried out by Ikeda Terumasa between 1601 and 1609. One of Japan's largest wooden castles, it was registered in 1993 as Japan's first World Cultural Heritage site, is a National Treasure, and is the only UNESCO castle among the 12 surviving originals — nicknamed «White Heron Castle» for its graceful white silhouette." },
+        { q: "Best time to shoot the castle with cherry blossoms?", a: "Typically early April, especially late March to first week of April. Classic spots: Sannomaru Plaza, Nishi-no-Maru Garden, Shirotopia Memorial Park, and Otoko-yama Park. The 6 AM opening offers thin crowds and soft light. The white silhouette at sunset is also exceptional." },
+        { q: "Best photography spots?", a: "Front of Otemon (frontal), Sannomaru Plaza (with cherry blossoms), Nishi-no-Maru Garden (side view), Shirotopia Memorial Park (elevated view), and Otoko-yama Park (a hidden hilltop vantage). A full-day circuit yields stunning variety." },
+      ],
+    },
     faqs: [
       { q: d("桜と姫路城を撮るベスト時期は？","Best time to shoot castle with cherry blossoms?","姬路城与樱花合拍时期？","姬路城與櫻花合拍時期？","벚꽃과 히메지성 촬영 최적기?"),
         a: d("例年4月上旬、特に3月末〜4月第1週。三の丸広場、西の丸庭園、シロトピア記念公園の3カ所が定番ポイント。","Typically early April, especially late March to first week of April. Classic spots: Sannomaru Plaza, Nishi-no-maru Garden, and Shirotopia Memorial Park.","通常4月上旬，3月末-4月第1周最佳。三之丸广场、西之丸庭园、白鹭纪念公园为3处经典。","通常4月上旬，3月末-4月第1週最佳。三之丸廣場、西之丸庭園、白鷺紀念公園為3處經典。","보통 4월 초순, 특히 3월 말~4월 첫째 주. 산노마루 광장, 니시노마루 정원, 시로토피아 기념공원이 3대 정석 포인트.") },
@@ -784,6 +1008,38 @@ export const LOCATION_CONTENT = {
       "白川鄉是世界遺產合掌造聚落。60度陡坡的茅草屋頂能承受雪重，支撐多代同住的大家族制度。冬季點燈限定期間需預約。",
       "시라카와고는 세계유산 갓쇼즈쿠리 마을. 60도 급경사 초가지붕이 눈의 무게를 견디는 독특한 건축으로, 한 세대 여러 세대가 함께 사는 대가족 제도를 지탱했습니다. 겨울 라이트업은 한정 기간 예약 필수."
     ),
+    definition: lh(
+      "白川郷(しらかわごう)は岐阜県大野郡白川村にある合掌造り集落で、1995年に五箇山(富山県)とともに「白川郷・五箇山の合掌造り集落」として世界文化遺産登録。中心の荻町(おぎまち)集落には114棟の合掌造り家屋が現存し、急勾配約60度の茅葺き屋根が手を合わせた形に似ることから「合掌造り(がっしょうづくり)」の名が付きました。世帯一族が3〜4世代同居する大家族制度を支えた独特の建築で、屋根裏では蚕の飼育が行われた歴史も。冬の積雪と夜のライトアップ(年6回程度の限定開催、要事前予約)は世界中の写真家が憧れる日本の原風景です。",
+      "Shirakawa-go is a settlement of gassho-zukuri farmhouses in Shirakawa Village, Ono District, Gifu Prefecture, registered in 1995 as a UNESCO World Cultural Heritage Site («Historic Villages of Shirakawa-go and Gokayama,» the latter in Toyama Prefecture). At its center, the Ogimachi village preserves 114 gassho farmhouses; their steeply pitched 60° thatched roofs resemble hands held in prayer — the source of the name «gassho-zukuri» (palms-together construction). The architecture supported large extended families across three or four generations, with attic spaces historically used for silkworm rearing. The winter snow and the limited evening illuminations (about six dates per year, advance reservations required) form the Japanese rural landscape of which photographers worldwide dream."
+    ),
+    highlights: {
+      ja: [
+        "荻町城跡展望台 — 集落全体を俯瞰できる定番ポイント、徒歩20分または送迎バス、雪化粧の朝が最高",
+        "合掌造り民家園 — 移築・保存された26棟の合掌造り、内部見学可、屋根裏の蚕飼育空間も体験",
+        "明善寺(みょうぜんじ) — 集落唯一の合掌造り寺院、1827年築の本堂、鐘楼も合掌造りで珍しい",
+        "和田家(わだけ) — 国指定重要文化財、約300年の歴史、内部見学可、合掌造りの構造を学べる",
+        "冬季ライトアップ — 例年1〜2月の限定6日程度、雪と灯りの幻想的光景、要事前予約必須",
+      ],
+      en: [
+        "Ogimachi Castle Ruins Observatory — the classic vantage overlooking the entire village; reach by 20-minute walk or shuttle bus; snowy mornings are peak",
+        "Gassho-zukuri Folk Park — 26 relocated and preserved gassho farmhouses with interior tours, including the silkworm-rearing attic spaces",
+        "Myozen-ji — the village's only gassho-zukuri temple, with the 1827 main hall and a rare gassho bell tower",
+        "Wada Family House — a nationally designated Important Cultural Property over 300 years old; interior tours reveal the gassho structure",
+        "Winter illumination — held on about six dates each January–February; the snow-and-light scene is dreamlike and requires advance reservation",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "白川郷とは?", a: "岐阜県白川村の合掌造り集落で、1995年に世界遺産登録。荻町集落には114棟の合掌造り家屋(60度の茅葺き屋根)が現存し、3〜4世代同居の大家族制度を支えた独特の建築で日本の原風景です。" },
+        { q: "展望台からの撮影ポイントは?", a: "荻町城跡展望台が村全体を俯瞰できる定番。朝霧が出る秋〜冬、雪景色の1〜2月、新緑の5月、それぞれ名作を生む。徒歩20分または有料シャトルバス、駐車場あり。" },
+        { q: "ライトアップはいつ?", a: "毎年1〜2月の限定日程(例年6日程度)で開催。展望台からの撮影は完全予約制(2024年から有料化)、村内宿泊者または抽選当選者のみ入場可。早めの計画必須です。" },
+      ],
+      en: [
+        { q: "What is Shirakawa-go?", a: "A gassho-zukuri village in Shirakawa Village, Gifu, UNESCO-listed in 1995. The Ogimachi village preserves 114 farmhouses with 60° thatched roofs that supported extended families across 3–4 generations — the embodiment of the Japanese rural landscape." },
+        { q: "Shooting from the observatory?", a: "Ogimachi Castle Ruins Observatory overlooks the entire village — the classic vantage. Autumn-winter mist, January–February snow, and May greenery each yield masterpieces. Reach by a 20-minute walk or paid shuttle, with parking nearby." },
+        { q: "When is the light-up?", a: "Held on a limited number of dates (about six per year) in January and February. Observatory access is reservation-only (paid since 2024); only village guests or lottery winners may enter. Early planning is essential." },
+      ],
+    },
     faqs: [
       { q: d("展望台からの撮影ポイントは？","Shooting from the observatory?","展望台拍摄点？","展望台拍攝點？","전망대에서 촬영은?"),
         a: d("荻町城跡展望台が村全体を俯瞰できる定番。朝霧が出る秋〜冬、雪景色の1〜2月、新緑の5月がそれぞれ名作を生む。","Ogimachi Castle Ruins Observatory overlooks the entire village — the classic vantage. Autumn-winter mist, Jan-Feb snow, and May greenery each yield masterpieces.","荻町城迹展望台俯瞰全村为经典。秋冬晨雾、1-2月雪景、5月新绿各出名作。","荻町城跡展望台俯瞰全村為經典。秋冬晨霧、1-2月雪景、5月新綠各出名作。","오기마치 성터 전망대에서 마을 전체를 부감하는 것이 정석. 가을~겨울 아침 안개, 1-2월 설경, 5월 신록 각각 명작을 만듭니다.") },
@@ -799,6 +1055,38 @@ export const LOCATION_CONTENT = {
       "父母濱是三豐市的淺灘。退潮時殘留的水窪反射夕陽，被譽為「日本的烏尤尼鹽湖」而享譽世界。無風傍晚天空與人影如鏡般倒映。",
       "지치부가하마는 미토요시의 얕은 백사장. 간조 시 남은 물웅덩이가 석양을 반사해 '일본의 우유니 소금사막'으로 세계적으로 유명해졌습니다. 바람 없는 저녁 하늘과 사람 그림자가 수면에 거울처럼 비치는 절경을 담을 수 있습니다."
     ),
+    definition: lh(
+      "父母ヶ浜(ちちぶがはま)は香川県三豊市仁尾町(にお)にある瀬戸内海に面した全長約1kmの遠浅の砂浜で、2017年頃からSNSで「日本のウユニ塩湖」として世界的に有名になった水鏡夕景の聖地。干潮時に砂浜に残るタイドプール(潮だまり)が、空と夕陽を完璧に映し出す鏡となり、人物のシルエットを反転構図で撮影することで、まるでボリビアのウユニ塩湖のような神秘的な写真が撮れます。三豊市観光交流局が「天空の鏡カレンダー」で最適日を公開しており、世界中の写真愛好家が訪れる人気急上昇の撮影地です。",
+      "Chichibugahama is a 1 km stretch of shallow beach on the Inland Sea coast of Nio, Mitoyo City, Kagawa Prefecture, that became a globally famous «mirror sunset» destination from around 2017 — dubbed «Japan's Uyuni Salt Flat.» At low tide, residual tidal pools form a perfect mirror reflecting sky and setting sun, and photographing silhouettes mirrored in the wet sand produces images reminiscent of Bolivia's Uyuni Salt Flat. Mitoyo City Tourism publishes a «Sky Mirror Calendar» listing optimal dates, and the beach has rapidly risen as a sought-after destination for photo enthusiasts worldwide."
+    ),
+    highlights: {
+      ja: [
+        "水鏡の夕景 — 干潮と日没が重なる日に出現、空・人物・雲が水面に完璧に映る世界的構図",
+        "シルエット撮影 — 人物が両手を上げてジャンプ、跳ねる、横になるなど多彩なポーズで反転構図",
+        "天空の鏡カレンダー — 三豊市観光交流局公式サイトで最適日(干潮+日没+晴天)を月別に公開",
+        "周辺ダイニング — 砂浜目の前に「父母ヶ浜カフェ」、撮影後の食事と夕日鑑賞に最適",
+        "アクセス — 高松市から車で約1時間、JR詫間駅からタクシーまたはコミュニティバス",
+      ],
+      en: [
+        "Mirror sunset — appears on days when low tide and sunset coincide, perfectly reflecting sky, figures, and clouds",
+        "Silhouette photography — figures with raised arms, jumping, crouching, or lying down all reverse beautifully on the water surface",
+        "Sky Mirror Calendar — Mitoyo City Tourism publishes a monthly schedule of optimal days (low tide + sunset + clear weather) on its official site",
+        "Beachfront dining — «Chichibugahama Café» faces the beach directly, ideal for dining and watching the sunset after the shoot",
+        "Access — about 1 hour by car from Takamatsu City; from JR Takuma Station, taxi or community bus",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "父母ヶ浜とは?", a: "香川県三豊市仁尾町の遠浅の砂浜で、2017年頃から「日本のウユニ塩湖」としてSNSで世界的に有名になった水鏡夕景の聖地。干潮時のタイドプールが空と夕陽を映し、シルエット撮影で神秘的な写真が撮れます。" },
+        { q: "鏡面反射を撮る条件は?", a: "①干潮と日没が重なる日 ②風がほぼ無い ③空に雲(空だけだと単調)。三豊市観光協会の「天空の鏡カレンダー」で最適日を公開、必ず事前確認を。日没15分前から30分後がゴールデンタイム。" },
+        { q: "シルエット撮影のコツは?", a: "両手を広げて跳ぶ、夕陽を持つポーズ、寝そべる等のアクションが映えます。撮影者は地面ぎりぎりまでカメラを下げてローアングル、被写体は水たまりの奥(後ろ)に立つと反転がきれいです。" },
+      ],
+      en: [
+        { q: "What is Chichibugahama?", a: "A shallow beach in Nio, Mitoyo City, Kagawa Prefecture, that rose to global fame as «Japan's Uyuni Salt Flat» from around 2017. Tidal pools at low tide reflect sky and setting sun, enabling silhouette photography that produces almost otherworldly images." },
+        { q: "What conditions create the mirror reflection?", a: "①Low tide coinciding with sunset ②Near-zero wind ③Clouds in the sky (a clear sky looks flat). Mitoyo City Tourism publishes the «Sky Mirror Calendar» — confirm before going. The golden window is 15 minutes before to 30 minutes after sunset." },
+        { q: "Tips for silhouette photography?", a: "Spread arms and jump, hold the sun in a pinch, or lie down — dynamic poses photograph best. Lower the camera nearly to ground level for a low angle. Have your subject stand behind the puddle so the reflection is clean." },
+      ],
+    },
     faqs: [
       { q: d("絶景日の予約方法は？","How to book for optimal day?","如何预约最佳日？","如何預約最佳日？","최적일 예약 방법은?"),
         a: d("予約不要だが三豊市観光交流局が「天空の鏡カレンダー」で最適日を公開。干潮と日没が重なる日を選んで訪問。","No reservation, but Mitoyo City Tourism publishes a 'Sky Mirror Calendar' with optimal days. Plan for days when low tide and sunset coincide.","无需预约，三丰市观光交流局公布「天空之镜日历」。选择干潮与日落重合日前往。","無需預約，三豐市觀光交流局公布「天空之鏡日曆」。選擇乾潮與日落重合日前往。","예약 불필요. 미토요시 관광교류국이 '천공의 거울 캘린더'로 최적일을 공개. 간조와 일몰이 겹치는 날을 선택해 방문.") },
@@ -814,6 +1102,38 @@ export const LOCATION_CONTENT = {
       "法隆寺是607年聖德太子創建的世界最古木造建築群。金堂、五重塔等西院伽藍為7世紀末-8世紀初創建原貌。1993年作為日本首個世界遺產登錄，是日本佛教美術至寶。",
       "호류지는 607년 쇼토쿠 태자가 창건한 세계 최고(最古) 목조 건축군. 금당과 5중탑을 포함한 사이인 가람은 7세기 말~8세기 초 창건 당시의 모습 그대로 현존. 1993년 유네스코 세계유산 제1호로 등록된 일본 불교 미술의 지보."
     ),
+    definition: lh(
+      "法隆寺(ほうりゅうじ)は奈良県生駒郡斑鳩町(いかるがちょう)にある聖徳宗の総本山で、推古天皇15年(607年)に聖徳太子と推古天皇が建立したと伝わる世界最古の木造建築群。1993年に姫路城と並んで日本初の世界文化遺産として登録、世界遺産登録第1号の一つです。西院伽藍(さいいんがらん)の金堂・五重塔は7世紀後半から8世紀初頭の創建時の姿のまま約1,300年に渡って現存し、世界最古の現存木造建築としてユネスコに認定。東院伽藍の夢殿(739年)、約100棟の建造物中38棟が国宝、約4,600件の国宝・重要文化財を擁する日本仏教美術の至宝です。",
+      "Horyu-ji is the head temple of the Shotoku sect, located in Ikaruga Town, Ikoma District, Nara Prefecture. Tradition holds that it was founded by Prince Shotoku and Empress Suiko in the 15th year of Empress Suiko's reign (607 CE), and it preserves the world's oldest surviving wooden architecture. Registered in 1993 as one of Japan's first World Cultural Heritage sites (alongside Himeji Castle), it stands as one of the original UNESCO World Heritage entries. The Sai-in complex's Kondo and five-story pagoda survive from the late 7th to early 8th century — nearly 1,300 years — and are recognized by UNESCO as the world's oldest extant wooden buildings. With the To-in complex's Yumedono (Hall of Dreams, built 739), 38 of about 100 buildings designated as National Treasures, and roughly 4,600 designated cultural assets, Horyu-ji is the supreme repository of Japanese Buddhist art."
+    ),
+    highlights: {
+      ja: [
+        "金堂(こんどう) — 7世紀建立の世界最古の木造建築、釈迦三尊像(国宝)を安置、エンタシス柱の美",
+        "五重塔(ごじゅうのとう) — 高さ31.5m、世界最古の五重塔、1〜5層の屋根のバランスが完璧",
+        "夢殿(ゆめどの)・東院伽藍 — 739年建立の八角円堂、聖徳太子等身大の救世観音菩薩像(秘仏)",
+        "中門(ちゅうもん) — 西院伽藍の正面門、エンタシスの柱、2体の金剛力士像",
+        "百済観音像(国宝) — 大宝蔵院に安置、高さ2.1mの飛鳥時代の木造仏像、独特の細長い姿",
+      ],
+      en: [
+        "Kondo (Main Hall) — built in the 7th century, the world's oldest wooden building, enshrining the Shaka Triad (a National Treasure); admire the entasis columns",
+        "Five-Story Pagoda — 31.5 m tall, the world's oldest pagoda; the proportional balance from the first to fifth tiers is exquisite",
+        "Yumedono (Hall of Dreams) and To-in Precinct — built in 739 as an octagonal hall, with the secret Guze Kannon, said to be a life-sized image of Prince Shotoku",
+        "Chumon (Central Gate) — the main gate to the Sai-in Precinct, with entasis columns and two Niou (Vajra Warrior) guardians",
+        "Kudara Kannon (National Treasure) — enshrined in the Daihozoin, a 2.1 m wooden Asuka-period image with a uniquely elongated form",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "法隆寺とは?", a: "奈良県斑鳩町の聖徳宗総本山で、607年に聖徳太子が創建したと伝わる世界最古の木造建築群。1993年に日本初の世界文化遺産登録、金堂・五重塔は約1,300年前の創建時の姿のまま現存し、約4,600件の国宝・重要文化財を擁する日本仏教美術の至宝です。" },
+        { q: "写真撮影のルールは?", a: "境内の建築は撮影可。堂内の仏像はほぼ撮影禁止。三脚・フラッシュは境内でも不可、参拝者の邪魔にならないよう配慮を。早朝(8時開門)・夕方は人が少なく光が柔らかい絶好の撮影時間です。" },
+        { q: "アクセスと拝観料は?", a: "JR法隆寺駅から徒歩20分またはバスで約7分。拝観料は西院伽藍・大宝蔵院・東院伽藍の共通券で1,500円。所要時間2〜3時間。京都・奈良からの日帰り可、京都駅から快速で約45分。" },
+      ],
+      en: [
+        { q: "What is Horyu-ji?", a: "The head temple of the Shotoku sect in Ikaruga, Nara, said to have been founded in 607 by Prince Shotoku — preserving the world's oldest wooden architecture. Registered in 1993 as one of Japan's first World Cultural Heritage sites, its Kondo and five-story pagoda still stand from about 1,300 years ago, and the temple holds some 4,600 designated cultural assets — the supreme repository of Japanese Buddhist art." },
+        { q: "Photography rules?", a: "The exterior buildings are open for photography; statues inside the halls are mostly off-limits. No tripods or flashes even outdoors; be mindful of worshippers. Early morning (8 AM opening) and late afternoon offer thin crowds and soft light." },
+        { q: "Access and admission fees?", a: "From JR Horyu-ji Station: 20-minute walk or 7-minute bus. The combined ticket (Sai-in, Daihozoin, To-in) is ¥1,500. Allow 2–3 hours. Day trips from Kyoto or Nara are easy — about 45 minutes from Kyoto Station by rapid train." },
+      ],
+    },
     faqs: [
       { q: d("写真撮影のルールは？","Photography rules?","拍摄规则？","拍攝規則？","촬영 규칙은?"),
         a: d("境内は撮影可。堂内の仏像はほぼ撮影禁止。三脚・フラッシュは境内でも不可。早朝・夕方は人が少なく光が柔らかい。","Grounds are OK to photograph; Buddha statues inside halls are mostly off-limits. No tripods or flashes even outdoors. Early mornings and late afternoons are calmer and softer.","院内可拍摄，堂内佛像基本禁拍。院内也禁三脚架与闪光灯。清晨傍晚人少光柔。","院內可拍攝，堂內佛像基本禁拍。院內也禁三腳架與閃光燈。清晨傍晚人少光柔。","경내 촬영 가능, 불상 내부는 대부분 금지. 삼각대·플래시는 경내에서도 불가. 이른 아침·저녁이 한적하고 빛이 부드러움.") },
