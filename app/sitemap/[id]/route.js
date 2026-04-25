@@ -3,6 +3,7 @@ import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS } from "../../collections.js";
 import { POST_SLUGS } from "../../content/blog/posts.js";
+import { TAG_SLUGS } from "../../tags.js";
 
 /**
  * 個別sitemap生成
@@ -86,6 +87,20 @@ export async function GET(_req, { params }) {
           url: `${SITE_URL}/${lang}/blog/${slug}`,
           lastmod, changefreq: "monthly", priority: "0.55",
           alternates: pLangs,
+        }));
+      }
+    }
+
+    // tags (30 × 20 langs = 600 URLs)
+    for (const slug of TAG_SLUGS) {
+      const tLangs = {};
+      for (const l of LANGS) tLangs[HREFLANG[l]] = `${SITE_URL}/${l}/tags/${slug}`;
+      tLangs["x-default"] = `${SITE_URL}/en/tags/${slug}`;
+      for (const lang of LANGS) {
+        entries.push(buildUrlEntry({
+          url: `${SITE_URL}/${lang}/tags/${slug}`,
+          lastmod, changefreq: "monthly", priority: "0.55",
+          alternates: tLangs,
         }));
       }
     }
