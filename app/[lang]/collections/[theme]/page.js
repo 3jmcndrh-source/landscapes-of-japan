@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import CollectionClient from "../../../CollectionClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
-import { LANGS, HREFLANG, SITE_URL } from "../../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc, getCollectionPhotos } from "../../../collections.js";
 
 export const dynamicParams = false;
@@ -24,9 +24,7 @@ export async function generateMetadata({ params }) {
   const desc = getCollectionDesc(theme, lang);
   const title = `${name} | Landscapes of Japan`;
 
-  const languages = {};
-  for (const l of LANGS) languages[HREFLANG[l]] = `${SITE_URL}/${l}/collections/${theme}`;
-  languages["x-default"] = `${SITE_URL}/en/collections/${theme}`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/collections/${theme}`);
 
   const photos = getCollectionPhotos(theme, PREFECTURES);
   const ogImage = photos.length > 0 ? cldUrl(photos[0].id, 1200) : `${SITE_URL}/og-image.jpg`;

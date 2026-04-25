@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import PrefClient from "../../PrefClient.js";
 import { PREFECTURES, PREF_I18N, getPrefName } from "../../data.js";
-import { LANGS, HREFLANG, SITE_URL } from "../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
 import { getPrefDesc, getPrefFaqs } from "../../content/descriptions.js";
 
@@ -29,11 +29,7 @@ export async function generateMetadata({ params }) {
   const title = `${prefLocal} | Landscapes of Japan`;
   const description = desc || `${prefLocal} landscape photography — photos taken across ${prefLocal}, Japan.`;
 
-  const languages = {};
-  for (const l of LANGS) {
-    languages[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}`;
-  }
-  languages["x-default"] = `${SITE_URL}/en/${prefSlug}`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}`);
 
   return {
     title,

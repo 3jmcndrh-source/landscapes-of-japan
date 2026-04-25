@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { LANGS, HREFLANG, SITE_URL } from "../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { POSTS, getPostTitle, getPostExcerpt } from "../../content/blog/posts.js";
 import { TR, cldUrl } from "../../data.js";
 
@@ -19,9 +19,7 @@ export async function generateMetadata({ params }) {
     ? "日本の風景写真ガイド・撮影テクニック・名所紹介。北海道から沖縄まで、四季折々の絶景を撮るための実践記事。"
     : "Japan landscape photography guides, techniques, and location features. Practical articles for shooting Hokkaido through Okinawa across the seasons.";
 
-  const languages = {};
-  for (const l of LANGS) languages[HREFLANG[l]] = `${SITE_URL}/${l}/blog`;
-  languages["x-default"] = `${SITE_URL}/en/blog`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/blog`);
 
   return {
     title, description,

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import LocClient from "../../../LocClient.js";
 import { PREFECTURES, getPrefName, getLocName } from "../../../data.js";
-import { LANGS, HREFLANG, SITE_URL } from "../../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../slugs.js";
 import { getLocDesc, getLocFaqs } from "../../../content/descriptions.js";
 
@@ -37,11 +37,7 @@ export async function generateMetadata({ params }) {
   const title = `${locLocal} - ${prefLocal} | Landscapes of Japan`;
   const description = desc || `${locLocal} landscape photography — photos taken in ${locLocal}, ${prefLocal}, Japan.`;
 
-  const languages = {};
-  for (const l of LANGS) {
-    languages[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}`;
-  }
-  languages["x-default"] = `${SITE_URL}/en/${prefSlug}/${locSlug}`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}/${locSlug}`);
 
   return {
     title,

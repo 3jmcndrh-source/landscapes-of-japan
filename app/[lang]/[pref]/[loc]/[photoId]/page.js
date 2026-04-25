@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import PhotoClient from "../../../../PhotoClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../../data.js";
-import { LANGS, HREFLANG, SITE_URL } from "../../../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc } from "../../../../content/descriptions.js";
 
@@ -35,11 +35,7 @@ export async function generateMetadata({ params }) {
     ? `${locLocal}, ${prefLocal} — ${desc.slice(0, 140)}`
     : `Photograph of ${locLocal}, ${prefLocal}, Japan${yearStr}.`;
 
-  const languages = {};
-  for (const l of LANGS) {
-    languages[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photoId}`;
-  }
-  languages["x-default"] = `${SITE_URL}/en/${prefSlug}/${locSlug}/${photoId}`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photoId}`);
 
   const ogImage = cldUrl(photoId, 1200);
 

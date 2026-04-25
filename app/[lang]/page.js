@@ -1,5 +1,5 @@
 import PageClient from "../PageClient.js";
-import { LANGS, SEO_META, HREFLANG, SITE_URL } from "../i18n-meta.js";
+import { LANGS, SEO_META, HREFLANG, SITE_URL, buildHreflangMap } from "../i18n-meta.js";
 
 export const dynamicParams = false;
 
@@ -12,11 +12,7 @@ export async function generateMetadata({ params }) {
   const meta = SEO_META[lang];
   if (!meta) return {};
 
-  const languages = {};
-  for (const l of LANGS) {
-    languages[HREFLANG[l]] = `${SITE_URL}/${l}`;
-  }
-  languages["x-default"] = `${SITE_URL}/en`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}`);
 
   return {
     title: meta.title,

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { LANGS, HREFLANG, SITE_URL } from "../../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { POSTS, POST_SLUGS, getPost, getPostTitle, getPostExcerpt, getPostBody } from "../../../content/blog/posts.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../../slugs.js";
@@ -23,9 +23,7 @@ export async function generateMetadata({ params }) {
   const fullTitle = `${title} | Landscapes of Japan`;
   const ogImage = post.hero ? cldUrl(post.hero, 1200) : `${SITE_URL}/og-image.jpg`;
 
-  const languages = {};
-  for (const l of LANGS) languages[HREFLANG[l]] = `${SITE_URL}/${l}/blog/${slug}`;
-  languages["x-default"] = `${SITE_URL}/en/blog/${slug}`;
+  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/blog/${slug}`);
 
   return {
     title: fullTitle, description,

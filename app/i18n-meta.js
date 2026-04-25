@@ -12,6 +12,34 @@ export const HREFLANG = {
   hi:"hi", th:"th", vi:"vi", id:"id", tr:"tr", nl:"nl", pl:"pl", sv:"sv",
 };
 
+// 地域別hreflang拡張: 1つの slug を複数の region tag にマッピング
+// (Google等は同じURLに複数のhreflang指定OK)
+export const HREFLANG_VARIANTS = {
+  en: ["en-US", "en-GB", "en-CA", "en-AU"],
+  "zh-tw": ["zh-HK", "zh-MO"],   // 繁体字圏
+  es: ["es-MX", "es-AR", "es-CL"],
+  pt: ["pt-PT", "pt-BR"],
+  fr: ["fr-CA", "fr-BE"],
+  de: ["de-AT", "de-CH"],
+};
+
+/**
+ * hreflang map を構築するヘルパー。
+ * @param {(lang: string) => string} buildUrl - lang から URL を返す関数
+ * @returns {Record<string, string>} hreflang→URL のオブジェクト
+ */
+export function buildHreflangMap(buildUrl) {
+  const map = {};
+  for (const lang of LANGS) {
+    const url = buildUrl(lang);
+    map[HREFLANG[lang]] = url;
+    const variants = HREFLANG_VARIANTS[lang] || [];
+    for (const v of variants) map[v] = url;
+  }
+  map["x-default"] = buildUrl("en");
+  return map;
+}
+
 export const SEO_META = {
   ja: {
     title: "Landscapes of Japan — 日本の風景写真ポートフォリオ",
