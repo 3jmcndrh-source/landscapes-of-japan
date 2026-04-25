@@ -55,9 +55,33 @@ export default async function LangLayout({ children, params }) {
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="alternate" type="application/rss+xml" title="Landscapes of Japan — Latest Photos" href="/feed.xml" />
+        <meta name="theme-color" content="#dcbe64" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Landscapes of Japan" />
       </head>
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
         {children}
+        <noscript>
+          <div style={{ position: "fixed", inset: 0, background: "#0a0a0a", color: "#e8e4df", padding: "40px 24px", overflowY: "auto", zIndex: 9999, fontFamily: "Georgia, 'Noto Sans JP', sans-serif" }}>
+            <h1 style={{ fontStyle: "italic", fontSize: 32, color: "#f2ece2" }}>Landscapes of Japan</h1>
+            <p style={{ marginTop: 16, fontSize: 15, lineHeight: 1.7 }}>
+              JavaScript is disabled. The interactive map and lightbox require JavaScript, but you can still browse our content directly:
+            </p>
+            <ul style={{ marginTop: 16, fontSize: 15, lineHeight: 2 }}>
+              <li><a href={`/${lang}`} style={{ color: "#dcbe64" }}>Home (current language)</a></li>
+              <li><a href={`/${lang}/blog`} style={{ color: "#dcbe64" }}>Blog — 20 photography guides</a></li>
+              <li><a href={`/${lang}/collections/cherry-blossoms`} style={{ color: "#dcbe64" }}>Collections (Cherry Blossoms, Snow, Castles, ...)</a></li>
+              <li><a href="/sitemap.xml" style={{ color: "#dcbe64" }}>Site map (all 13,000+ pages)</a></li>
+              <li><a href="/feed.xml" style={{ color: "#dcbe64" }}>RSS feed (latest 50 photos)</a></li>
+            </ul>
+            <p style={{ marginTop: 24, fontSize: 13, color: "rgba(232,228,223,.6)" }}>
+              For the full experience with interactive map and gallery, please enable JavaScript.
+            </p>
+          </div>
+        </noscript>
         <Analytics />
       </body>
     </html>

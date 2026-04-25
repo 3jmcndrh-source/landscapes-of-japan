@@ -1,16 +1,57 @@
 {
-  "name": "Landscapes of Japan — 日本の風景",
-  "short_name": "日本の風景",
-  "description": "日本全国の風景写真ポートフォリオ",
+  "name": "Landscapes of Japan — Japanese Landscape Photography",
+  "short_name": "Landscapes of Japan",
+  "description": "A cinematic photography portfolio showcasing landscapes across Japan — 500+ photos from 20 prefectures, 20-language support.",
   "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "theme_color": "#dcbe64",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["photography", "travel", "art", "lifestyle"],
   "icons": [
     {
       "src": "/favicon.ico",
       "sizes": "any",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_512,h_512,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_512,h_512,c_pad,b_rgb:0a0a0a,f_png,q_auto/DSC07601_cocitq.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_1080,h_1920,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Japanese landscape gallery"
+    },
+    {
+      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,h_1080,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of Japanese landscape gallery"
     }
   ]
 }
