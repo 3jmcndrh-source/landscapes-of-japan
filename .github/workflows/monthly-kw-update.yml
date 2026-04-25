@@ -1,0 +1,47 @@
+name: Monthly Keyword Update
+
+# GSCから過去90日のtop queriesを取得 → app/seo-extras.js を更新 → auto commit
+# Vercel deploy は別途 (auto-deploy off の場合は手動 npx vercel --prod)
+
+on:
+  schedule:
+    - cron: "0 4 1 * *"  # 毎月1日 04:00 UTC = 13:00 JST
+  workflow_dispatch:
+
+jobs:
+  fetch-keywords:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch top queries from GSC
+        env:
+          GSC_KEY: ${{ secrets.GSC_KEY }}
+        run: |
+          if [ -z "$GSC_KEY" ]; then
+            echo "::warning::GSC_KEY secret not set — skipping"
+            exit 0
+          fi
+          echo "$GSC_KEY" > /tmp/gsc-key.json
+          GSC_KEY_PATH=/tmp/gsc-key.json node fetch-keywords.mjs
+          rm -f /tmp/gsc-key.json
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/seo-extras.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: monthly GSC keyword update [skip ci]"
+            git push
+          fi

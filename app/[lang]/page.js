@@ -1,5 +1,5 @@
 import PageClient from "../PageClient.js";
-import { LANGS, SEO_META, HREFLANG, SITE_URL, buildHreflangMap } from "../i18n-meta.js";
+import { LANGS, SEO_META, HREFLANG, SITE_URL, buildHreflangMap, getKeywords } from "../i18n-meta.js";
 
 export const dynamicParams = false;
 
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: meta.keywords,
+    keywords: getKeywords(lang),
     alternates: {
       canonical: `${SITE_URL}/${lang}`,
       languages,

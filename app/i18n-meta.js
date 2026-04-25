@@ -24,6 +24,26 @@ export const HREFLANG_VARIANTS = {
 };
 
 /**
+ * GSC API から取得した動的キーワード (#15)
+ * fetch-keywords.mjs が月次更新する seo-extras.js を import
+ * 失敗しても build 通るよう dynamic import で fallback
+ */
+let TOP_QUERIES_BY_LANG = {};
+try {
+  // synchronous import via require-style — top-level await would slow build
+  const mod = await import("./seo-extras.js");
+  TOP_QUERIES_BY_LANG = mod.TOP_QUERIES_BY_LANG || {};
+} catch {
+  TOP_QUERIES_BY_LANG = {};
+}
+
+export function getKeywords(lang) {
+  const base = SEO_META[lang]?.keywords || [];
+  const dynamic = TOP_QUERIES_BY_LANG[lang] || [];
+  return [...new Set([...base, ...dynamic])].slice(0, 50);
+}
+
+/**
  * hreflang map を構築するヘルパー。
  * @param {(lang: string) => string} buildUrl - lang から URL を返す関数
  * @returns {Record<string, string>} hreflang→URL のオブジェクト
