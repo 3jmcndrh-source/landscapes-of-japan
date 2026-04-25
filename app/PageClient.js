@@ -552,6 +552,10 @@ export default function PageClient({ initialLang = "ja" }) {
   const closeLightbox = useCallback(() => {
     setLbClosing(true);
     setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
+    // URL hash クリア (#23: shareable photo URL)
+    if (typeof window !== "undefined" && window.location.hash.startsWith("#photo=")) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
   }, []);
 
   /* Responsive image sizes (default to desktop for SSR, update on client) */
@@ -566,7 +570,7 @@ export default function PageClient({ initialLang = "ja" }) {
     const list = [];
     PREFECTURES.forEach(pf => {
       pf.photos.forEach(photo => {
-        list.push({ url: getUrl(photo, lbW), pref: pf.pref, loc: photo.loc || "", year: photo.year || null });
+        list.push({ id: photo.id, url: getUrl(photo, lbW), pref: pf.pref, loc: photo.loc || "", year: photo.year || null });
       });
     });
     return list;
@@ -574,16 +578,46 @@ export default function PageClient({ initialLang = "ja" }) {
 
   const openLightbox = useCallback((url) => {
     const idx = allPhotos.findIndex(p => p.url === url);
-    setLightbox(idx >= 0 ? idx : 0);
+    const target = idx >= 0 ? idx : 0;
+    setLightbox(target);
+    // URL hash 設定 (#23: shareable photo URL)
+    const photoId = allPhotos[target]?.id;
+    if (photoId && typeof window !== "undefined") {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#photo=${photoId}`);
+    }
+  }, [allPhotos]);
+
+  // 初回ロード時に #photo=xxx があれば該当ライトボックスを開く
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const m = window.location.hash.match(/^#photo=([a-zA-Z0-9_-]+)/);
+    if (!m) return;
+    const photoId = m[1];
+    const idx = allPhotos.findIndex(p => p.id === photoId);
+    if (idx >= 0) setLightbox(idx);
+  }, [allPhotos]);
+
+  const updateHash = useCallback((idx) => {
+    if (typeof window === "undefined") return;
+    const photoId = allPhotos[idx]?.id;
+    if (photoId) window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#photo=${photoId}`);
   }, [allPhotos]);
 
   const lbPrev = useCallback(() => {
-    setLightbox(i => (i <= 0 ? allPhotos.length - 1 : i - 1));
-  }, [allPhotos]);
+    setLightbox(i => {
+      const next = i <= 0 ? allPhotos.length - 1 : i - 1;
+      updateHash(next);
+      return next;
+    });
+  }, [allPhotos, updateHash]);
 
   const lbNext = useCallback(() => {
-    setLightbox(i => (i >= allPhotos.length - 1 ? 0 : i + 1));
-  }, [allPhotos]);
+    setLightbox(i => {
+      const next = i >= allPhotos.length - 1 ? 0 : i + 1;
+      updateHash(next);
+      return next;
+    });
+  }, [allPhotos, updateHash]);
   const [scrollY, setScrollY] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [hlPhoto, setHlPhoto] = useState(null);
