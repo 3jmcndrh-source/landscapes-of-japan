@@ -2,6 +2,7 @@ import { LANGS, HREFLANG, SITE_URL } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS } from "../../collections.js";
+import { POST_SLUGS } from "../../content/blog/posts.js";
 
 /**
  * 個別sitemap生成
@@ -59,6 +60,32 @@ export async function GET(_req, { params }) {
           url: `${SITE_URL}/${lang}/collections/${slug}`,
           lastmod, changefreq: "monthly", priority: "0.65",
           alternates: cLangs,
+        }));
+      }
+    }
+
+    // blog index (1 × 20 langs = 20 URLs)
+    const blogIdxLangs = {};
+    for (const l of LANGS) blogIdxLangs[HREFLANG[l]] = `${SITE_URL}/${l}/blog`;
+    blogIdxLangs["x-default"] = `${SITE_URL}/en/blog`;
+    for (const lang of LANGS) {
+      entries.push(buildUrlEntry({
+        url: `${SITE_URL}/${lang}/blog`,
+        lastmod, changefreq: "weekly", priority: "0.7",
+        alternates: blogIdxLangs,
+      }));
+    }
+
+    // blog posts (20 × 20 langs = 400 URLs)
+    for (const slug of POST_SLUGS) {
+      const pLangs = {};
+      for (const l of LANGS) pLangs[HREFLANG[l]] = `${SITE_URL}/${l}/blog/${slug}`;
+      pLangs["x-default"] = `${SITE_URL}/en/blog/${slug}`;
+      for (const lang of LANGS) {
+        entries.push(buildUrlEntry({
+          url: `${SITE_URL}/${lang}/blog/${slug}`,
+          lastmod, changefreq: "monthly", priority: "0.55",
+          alternates: pLangs,
         }));
       }
     }
