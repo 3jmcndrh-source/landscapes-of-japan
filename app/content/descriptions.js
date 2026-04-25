@@ -25,14 +25,32 @@ import sv from "./extras/sv.js";
 const EXTRA_LANGS = { es, fr, de, pt, it, ru, ar, hi, th, vi, id, tr, nl, pl, sv };
 
 function mergeExtras(base, type) {
+  // type は "prefectures" | "locations"
+  const faqKey = type === "prefectures" ? "prefectureFaqs" : "locationFaqs";
   return Object.fromEntries(
     Object.entries(base).map(([key, val]) => {
-      const extraDesc = {};
+      const newDesc = { ...val.desc };
+      // 既存 faqs を deep clone (q/a の lang map に追加するため)
+      const newFaqs = (val.faqs || []).map((f) => ({
+        q: { ...f.q },
+        a: { ...f.a },
+      }));
+
       for (const [lang, data] of Object.entries(EXTRA_LANGS)) {
+        // desc
         const d = data[type]?.[key];
-        if (d) extraDesc[lang] = d;
+        if (d) newDesc[lang] = d;
+
+        // faqs (per-language: extra FAQs は base index と同じ順序で対応)
+        const extraFaqs = data[faqKey]?.[key];
+        if (Array.isArray(extraFaqs)) {
+          for (let i = 0; i < extraFaqs.length && i < newFaqs.length; i++) {
+            if (extraFaqs[i]?.q) newFaqs[i].q[lang] = extraFaqs[i].q;
+            if (extraFaqs[i]?.a) newFaqs[i].a[lang] = extraFaqs[i].a;
+          }
+        }
       }
-      return [key, { ...val, desc: { ...val.desc, ...extraDesc } }];
+      return [key, { ...val, desc: newDesc, faqs: newFaqs }];
     })
   );
 }
