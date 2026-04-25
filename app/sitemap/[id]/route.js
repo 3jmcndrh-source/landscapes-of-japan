@@ -4,6 +4,7 @@ import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS, COLLECTIONS } from "../../collections.js";
 import { POSTS, POST_SLUGS } from "../../content/blog/posts.js";
 import { TAGS, TAG_SLUGS } from "../../tags.js";
+import { TECHNIQUES, TECHNIQUE_SLUGS } from "../../techniques.js";
 
 // 写真の最新 year を年-12-31 形式の lastmod に
 const yearLastmod = (year) => year ? `${year}-12-31` : null;
@@ -139,6 +140,22 @@ export async function GET(_req, { params }) {
         lastmod: today, changefreq: "monthly", priority: "0.6",
         alternates: allPrefLangs,
       }));
+    }
+
+    // techniques (8 topics × 20 langs = 160 URLs)
+    for (const slug of TECHNIQUE_SLUGS) {
+      const tcLangs = {};
+      for (const l of LANGS) tcLangs[HREFLANG[l]] = `${SITE_URL}/${l}/techniques/${slug}`;
+      tcLangs["x-default"] = `${SITE_URL}/en/techniques/${slug}`;
+      const tcMaxYear = maxYearForLocList(TECHNIQUES[slug]?.locs || []);
+      const tcLastmod = yearLastmod(tcMaxYear) || today;
+      for (const lang of LANGS) {
+        entries.push(buildUrlEntry({
+          url: `${SITE_URL}/${lang}/techniques/${slug}`,
+          lastmod: tcLastmod, changefreq: "monthly", priority: "0.6",
+          alternates: tcLangs,
+        }));
+      }
     }
 
     // tags — lastmod は含まれる写真の最新年
