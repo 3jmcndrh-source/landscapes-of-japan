@@ -880,6 +880,38 @@ export const LOCATION_CONTENT = {
       "東山動物園1937年開園的名古屋動物園。西部低地大猩猩「夏巴尼」因「太帥」走紅全國。自然光設計的展館與寬闊展示區適合動物攝影。可與東山植物園同遊。",
       "히가시야마 동물원은 1937년 개원 나고야의 동물원. 서부로랜드고릴라 '샤바니'가 '너무 잘생겼다'며 전국적 인기. 자연광이 드는 수조 설계와 넓은 전시장이 동물 사진에 최적. 인접한 히가시야마 식물원과 함께 즐기는 것도 좋습니다."
     ),
+    definition: lh(
+      "東山動植物園(ひがしやまどうしょくぶつえん)は愛知県名古屋市千種区東山元町3-70にある総合動植物園で、1937年(昭和12年)開園、面積約60ヘクタール、年間来園者数約240万人と日本トップクラス。動物園は約500種類17,000点超の生物を飼育する日本有数の規模で、ニシゴリラのオス「シャバーニ」が「世界で最もイケメンなゴリラ」として2015年に世界的話題に、年間入園者数を急増させた立役者として有名。コアラ館、アジアゾウ舎、自然動物園など飼育環境にこだわった展示で動物写真に最適、隣接する植物園は日本最大級5,000種を栽培しています。",
+      "Higashiyama Zoo and Botanical Gardens, located at 3-70 Higashiyama-Motomachi, Chikusa-ku, Nagoya City, Aichi Prefecture, opened in 1937 (Showa 12) and covers about 60 hectares — drawing roughly 2.4 million visitors a year, among Japan's top-tier zoos. The zoo houses over 17,000 individuals across about 500 species, with the male western lowland gorilla «Shabani» becoming a global sensation in 2015 as «the world's most handsome gorilla,» credited with the surge in visitor numbers. With dedicated environments like the Koala House, Asian Elephant Zone, and Natural Zoo, it is ideal for wildlife photography; the adjoining Botanical Gardens cultivates about 5,000 plant species — among Japan's largest collections."
+    ),
+    highlights: {
+      ja: [
+        "ニシゴリラ「シャバーニ」 — 2015年「世界で最もイケメンなゴリラ」として世界的話題、ガラス越し撮影",
+        "コアラ館 — 8頭のコアラ、餌のユーカリ、夕方の活動的な時間がベスト撮影タイム",
+        "アジアゾウ舎・自然動物園 — 開放的展示、群れ行動が撮れる、平日朝が活発",
+        "東山植物園 — 5,000種を栽培する日本最大級の植物園、桜・ハナミズキ・紫陽花の四季",
+        "東山スカイタワー(134m) — 名古屋市街と動植物園を一望、夕景〜夜景の名所",
+      ],
+      en: [
+        "Western lowland gorilla «Shabani» — became globally famous in 2015 as «the world's most handsome gorilla»; shoot through the glass",
+        "Koala House — eight koalas, eucalyptus feed, with the most active hours in the late afternoon",
+        "Asian Elephant Zone and Natural Zoo — open enclosures showing herd behavior; weekday mornings are most active",
+        "Higashiyama Botanical Garden — about 5,000 cultivated species, one of Japan's largest, with cherry blossoms, dogwood, and hydrangeas across the seasons",
+        "Higashiyama Sky Tower (134 m) — overlooks the Nagoya cityscape and the gardens; renowned for sunset and night views",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "東山動物園とは?", a: "1937年開園の名古屋市の総合動植物園で、面積約60ヘクタール、年間来園者数約240万人。動物約500種17,000点、植物約5,000種を擁し、世界的に話題のゴリラ「シャバーニ」を擁する日本トップクラスの動植物園です。" },
+        { q: "シャバーニを見るには?", a: "ゴリラ・チンパンジー舎で平日午前中が最も活発。ガラス越しの撮影なのでレンズを近づけて反射を抑える、明るい単焦点(50mm f/1.8等)で背景ボケを活かすと良い構図に。週末は混雑が激しいため平日朝一番がおすすめです。" },
+        { q: "アクセスと所要時間は?", a: "地下鉄東山線「東山公園駅」3番出口から徒歩3分。入園料500円、年間パス2,000円(2回で元が取れる)。動物園+植物園+スカイタワー全部見るなら半日〜1日。閉園16:30(夏季17時)。" },
+      ],
+      en: [
+        { q: "What is Higashiyama Zoo?", a: "Nagoya's combined zoo and botanical garden, opened in 1937, covering about 60 hectares with roughly 2.4 million annual visitors. Home to about 500 animal species (17,000+ individuals) and 5,000 plant species, it features the globally famous gorilla «Shabani» — one of Japan's top-tier zoological gardens." },
+        { q: "How to see Shabani?", a: "Most active in the mornings on weekdays at the Gorilla & Chimp enclosure. Press the lens against glass to cut reflections; a fast prime (50mm f/1.8) blurs the background. Weekends are very crowded — go early on a weekday morning." },
+        { q: "Access and time required?", a: "3 minutes on foot from Higashiyama-koen Station (Higashiyama Subway Line), Exit 3. Admission ¥500, annual pass ¥2,000 (pays for itself in two visits). Half a day to a full day for zoo + gardens + Sky Tower. Closes 16:30 (17:00 in summer)." },
+      ],
+    },
     faqs: [
       { q: d("シャバーニを見るには？","How to see Shabani?","如何见到夏巴尼？","如何見到夏巴尼？","샤바니를 보려면?"),
         a: d("ゴリラ・チンパンジー舎で平日午前中が最も活発。ガラス越しの撮影なのでレンズを近づけて反射を抑える。","Most active in the mornings on weekdays at the Gorilla & Chimp enclosure. Press the lens against glass to cut reflections.","大猩猩/黑猩猩馆，平日上午最活跃。镜头贴玻璃减少反光。","大猩猩/黑猩猩館，平日上午最活躍。鏡頭貼玻璃減少反光。","고릴라·침팬지 우리, 평일 오전이 가장 활발합니다. 렌즈를 유리에 밀착시켜 반사를 줄이세요.") },
@@ -893,6 +925,38 @@ export const LOCATION_CONTENT = {
       "東京中心（丸之內、銀座、新宿、澀谷、六本木等）是拍攝題材寶庫。東京站丸之內站舍、晴空塔、東京塔、皇居周邊、澀谷十字路口等，現代與傳統都市景觀無數。",
       "도쿄 중심부(마루노우치, 긴자, 신주쿠, 시부야, 롯폰기 등)는 촬영 소재의 보고. 도쿄역 마루노우치 역사, 스카이트리, 도쿄타워, 고쿄 주변, 시부야 스크램블 교차로 등 근대와 전통이 어우러진 도시 경관이 무수히 많습니다."
     ),
+    definition: lh(
+      "東京(中心部)は東京都の23区の中央部、千代田区・中央区・港区・新宿区・渋谷区など主要オフィス・商業地区を含む撮影対象地で、丸の内のレンガ駅舎(東京駅、1914年開業、2012年復原)、東京タワー(333m、1958年完成、戦後復興のシンボル)、東京スカイツリー(634m、世界第3位の電波塔、2012年開業)、皇居の四季、銀座・新宿・渋谷の繁華街、お台場のレインボーブリッジまで、世界最大級メガシティの近代建築・夜景・文化が集約。年間訪日外国人観光客の約7割が東京を訪れる、日本最大の都市撮影地です。",
+      "Tokyo's central area covers the heart of the 23 wards — including Chiyoda, Chuo, Minato, Shinjuku, and Shibuya — encompassing the city's main business and shopping districts. Subjects span the Marunouchi brick station of Tokyo Station (opened 1914, restored 2012), Tokyo Tower (333 m, completed 1958, a symbol of postwar reconstruction), Tokyo Skytree (634 m, the world's third-tallest broadcasting tower, opened 2012), the four seasons of the Imperial Palace, the entertainment districts of Ginza, Shinjuku, and Shibuya, and Odaiba's Rainbow Bridge. About 70% of international visitors to Japan come to Tokyo, making it the country's largest urban photographic destination."
+    ),
+    highlights: {
+      ja: [
+        "東京駅丸の内駅舎 — 1914年開業の赤レンガ駅舎、2012年に大正期の姿に復原、夜のライトアップは丸ビル・KITTE屋上から撮影",
+        "東京タワー — 1958年完成、333m、エッフェル塔より高い世界最高自立鉄塔だった戦後復興の象徴",
+        "東京スカイツリー — 2012年開業、634m、世界第3位の電波塔、夜は色の異なるライティング",
+        "渋谷スクランブル交差点 — 1日延べ50万人が交差、世界一忙しい交差点、SHIBUYA SKYからの俯瞰",
+        "皇居・千鳥ヶ淵 — 江戸城跡の緑のオアシス、桜・新緑・紅葉の四季、皇居前広場と二重橋",
+      ],
+      en: [
+        "Tokyo Station Marunouchi facade — the 1914 red-brick station, restored in 2012 to its Taisho-era form; capture the night illumination from the Marunouchi Building or KITTE rooftop",
+        "Tokyo Tower — completed 1958 at 333 m, once the world's tallest self-supporting tower (taller than the Eiffel Tower), a symbol of postwar reconstruction",
+        "Tokyo Skytree — opened 2012 at 634 m, the world's third-tallest broadcasting tower, with seasonal color illuminations at night",
+        "Shibuya Scramble Crossing — half a million people cross daily, the world's busiest intersection; capture the bird's-eye view from SHIBUYA SKY",
+        "Imperial Palace and Chidorigafuchi — green oasis on the Edo Castle site, with cherry blossoms, fresh green, autumn colors; includes the Imperial Plaza and Niju-bashi Bridge",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "東京(中心部)とは?", a: "東京都23区の中央部の主要オフィス・商業地区で、東京駅・東京タワー(333m)・スカイツリー(634m)・皇居・銀座・新宿・渋谷・お台場など、世界最大級メガシティの近代建築・夜景・文化が集約された日本最大の都市撮影地です。" },
+        { q: "東京で1日の撮影ルートは?", a: "朝:皇居→東京駅→丸の内、昼:浅草雷門・スカイツリー、夕:渋谷スクランブル→六本木ヒルズ夜景、が王道。地下鉄1日券800円で全部回れます。早朝の皇居・浅草が最も人少なく光柔らか。" },
+        { q: "東京の夜景撮影のコツは?", a: "三脚+低ISO+長秒露光が基本。ブルーアワー(日没後30分)が空と街の光のバランスがベスト。展望台は閉館時間に注意、屋上は風と寒さ対策必須。SHIBUYA SKY(229m)・東京シティビュー(238m)・カレッタ汐留が穴場。" },
+      ],
+      en: [
+        { q: "What is central Tokyo?", a: "The heart of Tokyo's 23 wards — its main business and shopping districts. Subjects include Tokyo Station, Tokyo Tower (333 m), Skytree (634 m), the Imperial Palace, Ginza, Shinjuku, Shibuya, and Odaiba — Japan's largest urban photographic destination, where modern architecture, nightscapes, and culture all converge." },
+        { q: "One-day shooting route in Tokyo?", a: "Morning: Imperial Palace → Tokyo Station → Marunouchi. Noon: Asakusa Kaminarimon, Skytree. Evening: Shibuya Scramble → Roppongi Hills nightscape. The ¥800 subway day pass covers it all. Early morning at the Imperial Palace and Asakusa is least crowded with softest light." },
+        { q: "Tips for Tokyo night photography?", a: "Use a tripod, low ISO, and long exposure. Blue hour (30 min after sunset) balances sky and city lights best. Watch observatory closing times; rooftops require wind and cold gear. SHIBUYA SKY (229 m), Tokyo City View (238 m), and Caretta Shiodome are insider picks." },
+      ],
+    },
     faqs: [
       { q: d("東京で1日の撮影ルートは？","One-day shooting route in Tokyo?","东京一日拍摄路线？","東京一日拍攝路線？","도쿄 당일 촬영 루트는?"),
         a: d("朝:皇居→東京駅→丸の内。昼:浅草雷門・スカイツリー。夕:渋谷スクランブル→六本木ヒルズ夜景。効率的な一日。","Morning: Imperial Palace, Tokyo Station, Marunouchi. Noon: Asakusa Kaminarimon, Skytree. Evening: Shibuya Scramble, Roppongi Hills nightscape. Efficient.","晨:皇居→东京站→丸之内。午:浅草雷门·晴空塔。晚:涩谷十字→六本木之丘夜景。","晨:皇居→東京站→丸之內。午:淺草雷門·晴空塔。晚:澀谷十字→六本木之丘夜景。","아침: 고쿄→도쿄역→마루노우치. 점심: 아사쿠사 가미나리몬·스카이트리. 저녁: 시부야 스크램블→롯폰기힐즈 야경. 효율적 일정.") },
@@ -906,6 +970,38 @@ export const LOCATION_CONTENT = {
       "金澤是加賀百萬石城下町。兼六園（日本三大名園之一）、金澤城公園、東茶屋街、長町武家屋敷跡、近江町市場、金澤21世紀美術館等，江戶街景與當代藝術共存。夜茶屋街夢幻。",
       "가나자와는 가가 백만석의 성하도시. 겐로쿠엔(일본 3대 정원 중 하나), 가나자와성 공원, 히가시차야 거리, 나가마치 무가 저택지, 오미초 시장, 가나자와21세기미술관 등 에도 거리와 현대 미술이 공존. 밤의 차야 거리는 환상적입니다."
     ),
+    definition: lh(
+      "金沢(かなざわ)は石川県の県庁所在地で、人口約46万人の北陸最大の都市。1583年に前田利家が入城し、加賀百万石の城下町として明治維新まで約290年間繁栄、「加賀百万石文化」を花開かせました。1676年作庭の兼六園(日本三名園の一つ、特別名勝)、1583年築の金沢城、ひがし茶屋街・主計町・にし茶屋街の3つの茶屋街(重伝建)、武家屋敷跡・長町、日本三大市場の一つ近江町市場、金沢21世紀美術館まで、江戸の町並みと現代アート、伝統工芸(金箔・九谷焼・加賀友禅)が共存する日本でも稀有な城下町です。",
+      "Kanazawa, the capital of Ishikawa Prefecture and the largest city in the Hokuriku region with about 460,000 residents, became a Maeda-clan castle town in 1583 when Maeda Toshiie took residence. For about 290 years until the Meiji Restoration, it flourished as the seat of the Kaga domain's «one-million-koku» wealth, blooming into «Kaga Hyakumangoku» culture. With Kenrokuen (landscaped from 1676, one of Japan's Three Great Gardens and a Special Place of Scenic Beauty), Kanazawa Castle (1583), three preserved tea-house districts (Higashi Chaya, Kazuemachi, Nishi Chaya), the Nagamachi samurai houses, the Omicho Market (one of Japan's three great markets), and the 21st Century Museum, it remains a rare castle town where Edo-period streetscapes, contemporary art, and traditional crafts (gold leaf, Kutani pottery, Kaga Yuzen dyeing) coexist."
+    ),
+    highlights: {
+      ja: [
+        "兼六園 — 1676年作庭、日本三名園の一つ、特別名勝、雪吊りの冬景色、霞ヶ池の徽軫(ことじ)灯籠が象徴",
+        "金沢城公園 — 加賀百万石・前田家の居城、白漆喰の海鼠壁(なまこかべ)、夜のライトアップ",
+        "ひがし茶屋街 — 1820年制定の最大級茶屋街、重伝建、紅殻格子の町家、夕暮れの提灯",
+        "金沢駅・鼓門 — 2005年完成の高さ13.7mの伝統的な門と現代ガラスドームの融合、夜のライトアップ",
+        "金沢21世紀美術館 — 2004年開館、SANAA設計の円形ガラス建築、レアンドロ・エルリッヒ「スイミング・プール」",
+      ],
+      en: [
+        "Kenrokuen — landscaped from 1676, one of Japan's Three Great Gardens and a Special Place of Scenic Beauty; the winter rope-suspended pines (yukitsuri) and the Kotoji Lantern at Kasumigaike Pond are emblematic",
+        "Kanazawa Castle Park — the seat of the Kaga domain's Maeda clan, with white-stucco namako-kabe walls and dramatic evening illumination",
+        "Higashi Chaya District — established in 1820 as a major tea-house district, a Designated Important Preservation District, with red-lattice machiya and lanterns at dusk",
+        "Kanazawa Station Tsuzumi Gate — opened 2005, fusing a 13.7 m traditional drum-shaped gate with a modern glass dome, beautifully lit at night",
+        "21st Century Museum of Contemporary Art — opened 2004, designed by SANAA as a circular glass building, including Leandro Erlich's «Swimming Pool»",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "金沢とは?", a: "石川県の県庁所在地で、人口約46万人の北陸最大の都市。1583年から1868年まで加賀百万石の城下町として栄え、兼六園・金沢城・3つの茶屋街・21世紀美術館など、江戸の町並みと現代アート、伝統工芸が共存する稀有な街です。" },
+        { q: "兼六園のベスト撮影時期は?", a: "冬の雪吊り(11月〜3月)、春の桜(4月)、秋の紅葉(11月中旬〜下旬)、初夏のカキツバタ(6月)。早朝開園(7時)直後が人も少なく光も柔らか。冬の雪吊りと雪景色は北陸の象徴的構図です。" },
+        { q: "1日で回れる定番ルートは?", a: "朝イチ兼六園(光が柔らかい)→金沢城→ひがし茶屋街(午後〜夕方)→近江町市場→金沢駅の鼓門で夜景、徒歩+城下まちバス(1日券500円)で全て巡れます。距離が近いコンパクトな観光地です。" },
+      ],
+      en: [
+        { q: "What is Kanazawa?", a: "Capital of Ishikawa Prefecture and Hokuriku's largest city (about 460,000 residents). From 1583 to 1868 it flourished as the Maeda-clan castle town of the Kaga domain, and today combines Kenrokuen, Kanazawa Castle, three tea-house districts, the 21st Century Museum, and traditional crafts in a uniquely layered cityscape." },
+        { q: "Best time for Kenrokuen photos?", a: "Winter yukitsuri tree supports (Nov–Mar), spring cherry blossoms (April), autumn foliage (mid–late Nov), early summer iris (June). Early morning at the 7 AM opening has fewer people and soft light. The yukitsuri-and-snow combination is the iconic Hokuriku composition." },
+        { q: "Classic one-day route?", a: "Early morning at Kenrokuen (soft light), then Kanazawa Castle, Higashi Chaya (afternoon to evening), Omicho Market, and the Tsuzumi Gate at Kanazawa Station for night shots — all walkable plus the «Castle Town Loop Bus» (¥500 day pass). The sights are compact and close together." },
+      ],
+    },
     faqs: [
       { q: d("兼六園のベスト撮影時期は？","Best time for Kenrokuen photos?","兼六园最佳拍摄时期？","兼六園最佳拍攝時期？","겐로쿠엔 촬영 최적기는?"),
         a: d("冬の雪吊り（11月〜3月）、春の桜（4月）、秋の紅葉（11月中旬〜下旬）、初夏のカキツバタ（6月）。早朝開園直後が人も少なく光も柔らか。","Winter yukitsuri tree supports (Nov–Mar), spring cherry blossoms (April), autumn foliage (mid–late Nov), early summer iris (June). Early morning at opening has fewer people and soft light.","冬雪吊（11-3月）、春樱（4月）、秋红叶（11月中下旬）、初夏菖蒲（6月）。开园清晨人少光柔。","冬雪吊（11-3月）、春櫻（4月）、秋紅葉（11月中下旬）、初夏菖蒲（6月）。開園清晨人少光柔。","겨울 유키즈리(11-3월), 봄 벚꽃(4월), 가을 단풍(11월 중·하순), 초여름 제비붓꽃(6월). 개장 직후 이른 아침은 한적하고 빛이 부드럽습니다.") },
@@ -1011,6 +1107,38 @@ export const LOCATION_CONTENT = {
       "來島海峽大橋是橫跨瀨戶內海來島海峽的3連吊橋（總長4105米）。島波海道的標誌性建築，世界首座3連吊橋。急潮海峽與壯麗橋樑構成瀨戶內海最戲劇性風景。",
       "구루시마 해협 대교는 세토내해의 구루시마 해협에 놓인 3연속 현수교(총연장 4,105m). 시마나미 가이도의 상징으로 세계 최초 3연 현수교. 거센 해협 조류와 장대한 교량은 세토내해 최고의 드라마틱한 풍경."
     ),
+    definition: lh(
+      "来島海峡大橋(くるしまかいきょうおおはし)は愛媛県今治市と大島の間の来島海峡に架かる総延長4,105mの3連の長大吊り橋で、1999年5月の本州四国連絡橋・尾道今治ルート(しまなみ海道)の全線開通と同時に開業した世界初の3連吊り橋。第一(960m)・第二(1,515m)・第三(1,570m)の三つの吊り橋が連続する独特の形状で、橋の下では日本三大急潮の一つ「来島海峡」の最大時速10ノットの潮流が流れます。橋上には自転車・歩行者専用道路もあり、しまなみ海道は世界的に有名なサイクリングルート、亀老山展望台や糸山公園からの俯瞰が瀬戸内海最高峰のドラマチックな構図を生み出します。",
+      "The Kurushima-Kaikyo Bridge connects Imabari City in Ehime Prefecture to Oshima Island across the Kurushima Strait — a three-in-a-row suspension bridge with a total length of 4,105 m. It opened in May 1999 with the completion of the Honshu-Shikoku Onomichi-Imabari route (Shimanami Kaido), as the world's first three-section suspension bridge. The first (960 m), second (1,515 m), and third (1,570 m) suspension structures connect in distinctive sequence; beneath them flow currents of up to 10 knots in the Kurushima Strait — one of Japan's three great fast-current straits. With a bicycle and pedestrian path along the deck, Shimanami Kaido is a globally renowned cycling route, and the views from Mt. Kiro Observatory and Itoyama Park form the Inland Sea's most dramatic compositions."
+    ),
+    highlights: {
+      ja: [
+        "3連吊り橋構造 — 第一・第二・第三吊り橋が連続する世界初の形状、全長4,105m、海峡を一直線に貫く",
+        "亀老山展望台からの俯瞰 — 標高307m、橋全体と来島海峡・島々を360度パノラマ、夕日の絶景",
+        "糸山公園(今治側) — 橋の起点を間近に望む公園、斜陽の橋脚と海面の煌めきが美しい",
+        "サイクリング道路 — 橋上6.5kmの自転車道、海上70mの絶景ライド、しまなみ海道の象徴",
+        "急潮の海峡 — 橋下の最大時速10ノットの潮流、白波と渦の動的な被写体",
+      ],
+      en: [
+        "Three-section suspension structure — a world-first sequence of First, Second, and Third bridges, totaling 4,105 m and slicing across the strait in a straight line",
+        "View from Mt. Kiro Observatory — at 307 m, a 360° panorama of the entire bridge, the strait, and surrounding islands; spectacular at sunset",
+        "Itoyama Park (Imabari side) — a park beside the bridge's foot, where the slanting late-day light and the shimmering surface combine beautifully",
+        "Cycling deck — a 6.5 km cycling path on top of the bridge, riding 70 m above the sea — the symbol of the Shimanami Kaido route",
+        "Fast strait currents — up to 10 knots beneath the bridge, with whitecaps and eddies that animate the shot",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "来島海峡大橋とは?", a: "愛媛県今治市と大島の間の来島海峡に架かる総延長4,105mの世界初の3連吊り橋で、1999年しまなみ海道全線開通と同時に開業。第一・第二・第三の三つの吊り橋が連続する独特の形状で、橋上を自転車・歩行者が通行できる世界的サイクリングルートの象徴です。" },
+        { q: "橋の撮影ベストポイントは?", a: "亀老山展望台(今治市大島)からの俯瞰が最強。夕日で橋がオレンジに染まる時間帯と、ブルーアワーの青の2つを撮るのが王道。糸山公園からは橋を間近で、自転車道からは海上70mのライド視点と多彩。" },
+        { q: "アクセスとサイクリング情報は?", a: "今治駅から亀老山展望台まで車で約30分、サイクリングは今治港レンタルサイクルから橋まで約20km。しまなみ海道全線サイクリングは70km、初心者は1日、本格派は半日で完走可。" },
+      ],
+      en: [
+        { q: "What is the Kurushima-Kaikyo Bridge?", a: "A 4,105 m three-section suspension bridge connecting Imabari (Ehime) to Oshima Island, opened in 1999 with the completion of the Shimanami Kaido — the world's first three-section suspension structure. With its bicycle and pedestrian path, it has become the symbol of one of the world's premier cycling routes." },
+        { q: "Best spot to photograph the bridge?", a: "Mt. Kiro Observatory (Oshima, Imabari) provides the definitive overview. Capture both the orange-lit bridge at sunset and the blue hour afterward. Itoyama Park puts you near the bridge's foot, and the cycling deck offers an in-flight view 70 m above the sea." },
+        { q: "Access and cycling information?", a: "About 30 minutes by car from Imabari Station to Mt. Kiro Observatory. By bike, it's about 20 km from Imabari Port (rental bikes available) to the bridge. Riding the entire 70 km Shimanami Kaido takes one day for casual riders or half a day for fast cyclists." },
+      ],
+    },
     faqs: [
       { q: d("橋の撮影ベストポイントは？","Best spot to photograph the bridge?","桥梁最佳拍摄点？","橋梁最佳拍攝點？","다리 최고 촬영 포인트는?"),
         a: d("亀老山展望台（今治市大島）からの俯瞰が最強。夕日で橋がオレンジに染まる時間帯と、ブルーアワーの青の2つを撮るのが王道。","Mt. Kiro Observatory (Oshima, Imabari) provides the definitive overview. Capture both the orange-lit bridge at sunset and the blue hour afterward.","龟老山展望台（今治市大岛）俯瞰最佳。傍晚桥身橙染与蓝色时刻各拍一张。","龜老山展望台（今治市大島）俯瞰最佳。傍晚橋身橙染與藍色時刻各拍一張。","기로산 전망대(이마바리시 오시마)의 부감이 최고. 일몰에 오렌지빛으로 물드는 다리와 블루아워를 모두 담는 것이 정석.") },
@@ -1024,6 +1152,38 @@ export const LOCATION_CONTENT = {
       "龜老山展望台位於今治市大島，海拔307米。由隈研吾設計、埋入地形的展望台可俯瞰來島海峽大橋與瀨戶內海多島美景。夕陽與藍色時刻尤為著名。",
       "기로산 전망대는 이마바리시 오시마의 해발 307m. 구마 켄고 설계로 지형에 묻힌 전망대에서 구루시마 해협 대교와 세토내해 다도미를 부감할 수 있는 절경 포인트. 일몰과 블루아워가 특히 유명합니다."
     ),
+    definition: lh(
+      "亀老山(きろうさん)展望台は愛媛県今治市吉海町南浦487-4、大島南端の標高307mの亀老山山頂に整備された展望公園で、世界的建築家・隈研吾が設計した「地形に埋もれる」展望デッキとして1994年に完成、ARCASIA建築賞ゴールドメダル(1995年)受賞作品。展望台は山頂の輪郭を崩さないよう地中に埋め込まれ、上から見ると公園のように見える革新的なデザイン。眼下には来島海峡大橋(全長4,105mの3連吊り橋)、瀬戸内海の多島美、晴れた日には西日本最高峰の石鎚山(1,982m)まで一望でき、夕日と橋・海・島々が織りなす光景は瀬戸内海屈指のサンセットスポットです。",
+      "Mt. Kiro Observatory, located at 487-4 Minamiura, Yoshiumi-cho, Imabari City, Ehime Prefecture, sits atop the 307 m summit of Mt. Kiro at the southern tip of Oshima Island. Designed by world-renowned architect Kengo Kuma as an «earth-integrated» viewing deck, it was completed in 1994 and won the ARCASIA Gold Medal for Architecture in 1995. The observatory is buried into the ground so that the mountain's outline remains intact — viewed from above, it appears as a park, an innovative design. Below lie the 4,105 m Kurushima-Kaikyo Bridge (the three-section suspension bridge), the Inland Sea's countless islands, and on clear days even Mt. Ishizuchi (1,982 m, West Japan's tallest peak). The interplay of sunset, bridge, sea, and islands makes it one of the Inland Sea's premier sunset locations."
+    ),
+    highlights: {
+      ja: [
+        "隈研吾設計の地中埋設展望台 — 1994年完成、ARCASIA金賞受賞、地形を残す革新的デザイン",
+        "来島海峡大橋の俯瞰 — 全長4,105m・3連吊り橋を真上から、夕日に染まる時間帯が王道",
+        "瀬戸内海の多島美 — 大三島・伯方島・大島・芸予諸島の島々が連なる、青い海と緑の島の絶景",
+        "石鎚山遠望 — 西日本最高峰1,982m、晴れた日のみ、特に冬の空気が澄んだ朝",
+        "夕景〜ブルーアワー — 西日本屈指のサンセットスポット、橋・海・島・空のオレンジから青への変化",
+      ],
+      en: [
+        "Earth-integrated observatory by Kengo Kuma — completed 1994, ARCASIA Gold Medal winner; an innovative design that preserves the mountain's silhouette",
+        "Bird's-eye view of the Kurushima-Kaikyo Bridge — the 4,105 m three-section suspension bridge from above, with sunset light as the canonical window",
+        "Inland Sea's multi-island beauty — Omishima, Hakatajima, Oshima, and the Geiyo Islands strung together, blue sea against green islands",
+        "Distant Mt. Ishizuchi — West Japan's tallest peak (1,982 m), visible only on clear days, especially crisp winter mornings",
+        "Sunset to blue hour — among West Japan's finest sunset spots; bridge, sea, islands, and sky shift from orange to blue",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "亀老山展望台とは?", a: "愛媛県今治市大島の標高307mの亀老山山頂に建つ、世界的建築家・隈研吾設計の地中埋設型展望台(1994年完成、ARCASIA金賞受賞)。来島海峡大橋と瀬戸内海の多島美を360度パノラマで俯瞰でき、西日本屈指のサンセットスポットです。" },
+        { q: "アクセス方法は?", a: "しまなみ海道バス(今治駅または福山駅から「亀老山展望公園入口」下車、徒歩30分)、自転車で(駐輪場あり)、車で(駐車場頂上近くまで)。今治駅からレンタカーで約30分、アクセスはしまなみ海道経由でドライブもおすすめ。" },
+        { q: "撮影ベストタイムは?", a: "夕日が来島海峡大橋を照らす時間帯と、その後のブルーアワー(日没後30分)の2回が圧倒的。冬は空気が澄んで石鎚山も見え、夕焼けの色も鮮やか。混雑回避は平日朝。" },
+      ],
+      en: [
+        { q: "What is Mt. Kiro Observatory?", a: "An earth-integrated observatory atop the 307 m Mt. Kiro on Oshima Island, Imabari, Ehime, designed by world-renowned architect Kengo Kuma (completed 1994, ARCASIA Gold Medal). It offers a 360° panorama of the Kurushima-Kaikyo Bridge and the Inland Sea — among West Japan's finest sunset destinations." },
+        { q: "How do I get there?", a: "Shimanami Kaido bus from Imabari or Fukuyama (alight at Kiro-san Tenbo Park-iriguchi, then 30 minutes on foot), by bicycle (with bike parking), or by car (with a parking lot near the summit). About 30 minutes by rental car from Imabari Station; the Shimanami Kaido drive itself is recommended." },
+        { q: "Best photography times?", a: "Two windows are unmatched: when sunset light strikes the Kurushima-Kaikyo Bridge, and the blue hour 30 minutes after. In winter, the air is clear enough to see Mt. Ishizuchi, and sunset colors are richest. Weekday mornings best avoid crowds." },
+      ],
+    },
     faqs: [
       { q: d("アクセス方法は？","How do I get there?","交通方式？","交通方式？","접근 방법은?"),
         a: d("しまなみ海道バス（今治駅または福山駅から）または自転車で。駐車場は頂上近くまで車で行ける。","Shimanami Kaido bus from Imabari or Fukuyama, or by bicycle. Parking is close to the summit.","岛波海道巴士（今治站或福山站）或自行车前往。停车场近山顶。","島波海道巴士（今治站或福山站）或自行車前往。停車場近山頂。","시마나미 가이도 버스(이마바리역 또는 후쿠야마역) 또는 자전거. 주차장은 정상 가까이까지 갈 수 있습니다.") },
@@ -1129,6 +1289,38 @@ export const LOCATION_CONTENT = {
       "高知城1611年築城、1747年重建，現存12天守之一。唯一保留完整本丸的城堡，本丸御殿與天守閣並存全國僅此一處。春櫻同框為經典。",
       "고치성은 1611년 축성, 1747년 재건된 현존 12천수 중 하나. 혼마루 전체가 남아 있는 유일한 성으로 혼마루 어전과 천수각이 함께 남아 있는 곳은 전국에 이곳뿐. 봄 벚꽃과 함께 담는 것이 정석."
     ),
+    definition: lh(
+      "高知城(こうちじょう)は高知県高知市丸ノ内にある平山城で、慶長6年(1611年)に山内一豊が築城を完成、現存12天守の一つで国の重要文化財。1727年の城下大火で天守を含む大半を焼失、寛延2年(1749年)に再建された天守(高さ18.5m)と本丸御殿が現存し、本丸内の天守と御殿が両方現存するのは日本でここ高知城のみという稀有な存在。15棟の重要文化財建造物を擁し、城内のソメイヨシノ約220本は「日本さくら名所100選」、夜のライトアップと相まって四国を代表する城撮影地です。山内氏は明治維新まで14代244年間、土佐藩主として高知を治めました。",
+      "Kochi Castle, in Marunouchi, Kochi City, Kochi Prefecture, is a flatland-mountain castle whose construction was completed by Yamauchi Kazutoyo in 1611 (Keicho 6); it is one of Japan's 12 surviving original tenshu and a designated Important Cultural Property. Most of the castle, including the keep, was lost in the 1727 great fire of the castle town; the surviving keep (18.5 m tall) and Honmaru Palace both date to a 1749 reconstruction. Kochi Castle is the only one in Japan where both the keep and the Honmaru Palace remain together within the inner bailey. With 15 Important Cultural Property structures and about 220 Yoshino cherry trees within the grounds (selected among Japan's «Top 100 Cherry Blossom Sites»), the castle — paired with its evening illumination — is Shikoku's foremost castle for photography. The Yamauchi clan ruled Tosa for 14 generations and 244 years until the Meiji Restoration."
+    ),
+    highlights: {
+      ja: [
+        "本丸天守(高さ18.5m) — 1749年再建、現存12天守の一つ、入母屋造り、内部公開、市街パノラマ",
+        "本丸御殿 — 高知城のみ残る天守と御殿のセット、書院造の華やかな空間、京間の畳",
+        "追手門(おうてもん) — 国指定重要文化財、1801年再建、桜のシーズンは天守との「桜と城」フレーム",
+        "ソメイヨシノ約220本 — 日本さくら名所100選、3月下旬〜4月上旬満開、夜のライトアップ",
+        "杉ノ段の石垣 — 黒い珪岩を多用した堅牢な石垣、苔と相まって独特の景観",
+      ],
+      en: [
+        "Honmaru keep (18.5 m) — rebuilt 1749, one of Japan's 12 surviving originals, with an irimoya hip-and-gable roof; interior open, with a city panorama from the top",
+        "Honmaru Palace — uniquely at Kochi, both keep and palace survive together within the inner bailey, in elegant shoin-zukuri style with kyo-ma tatami",
+        "Otemon Gate — a designated Important Cultural Property rebuilt in 1801; during cherry-blossom season it frames the keep in the classic «sakura and castle» composition",
+        "About 220 Yoshino cherry trees — selected among Japan's «Top 100 Cherry Blossom Sites,» in full bloom late March to early April with evening illumination",
+        "Sugi-no-Dan stonework — robust black quartzite walls, especially distinctive when overgrown with moss",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "高知城とは?", a: "1611年に山内一豊が築城を完成、1749年再建の現存12天守の一つで、本丸の天守と御殿が両方現存するのは全国でここだけ。日本さくら名所100選の桜220本、15棟の重要文化財を擁する四国を代表する城撮影地です。" },
+        { q: "城まで上る時間は?", a: "入口の追手門から天守まで階段で約15分。最初の追手門が桜の名フレーム、天守からの市街眺望も撮りたい。城内の所要時間は天守見学含めて1〜1.5時間、桜期は混雑するため早朝6時開門時が狙い目。" },
+        { q: "撮影ベストシーズンは?", a: "桜の3月下旬〜4月上旬(夜間ライトアップあり)、紅葉の11月下旬、雪の高知城は年に数回のレア構図。早朝の追手門+天守の構図が定番、夜は天守ライトアップで黄金色に染まる絶景。" },
+      ],
+      en: [
+        { q: "What is Kochi Castle?", a: "A castle in Kochi City completed in 1611 by Yamauchi Kazutoyo, with the surviving keep dating to a 1749 reconstruction. It is the only castle in Japan where both the keep and the Honmaru Palace remain together within the inner bailey. With about 220 cherry trees (selected as a Top 100 Cherry Blossom Site) and 15 Important Cultural Property buildings, it is Shikoku's premier castle for photography." },
+        { q: "How long to climb up?", a: "About 15 minutes by stairs from the Otemon entrance to the keep. The Otemon gate is a classic cherry-blossom frame, and don't miss the city view from the keep. Allow 1 to 1.5 hours including the keep tour; during cherry season, the 6 AM opening best avoids crowds." },
+        { q: "When is the best season to photograph?", a: "Cherry blossoms late March to early April (with evening illumination), autumn colors in late November, and rare winter snow shots. The Otemon-and-keep frame at dawn is classic; the evening keep illumination glows gold." },
+      ],
+    },
     faqs: [
       { q: d("城まで上る時間は？","How long to climb up?","登城耗时？","登城耗時？","성까지 오르는 시간은?"),
         a: d("入口から天守まで階段で約15分。最初の追手門が桜の名フレーム。天守からの市街眺望も撮りたい。","About 15 min on stairs from entrance to keep. The Otemon gate is a classic cherry-blossom frame. Don't miss the view of the city from the keep.","入口至天守阶梯约15分钟。追手门是樱花名框。天守俯瞰市区亦可拍。","入口至天守階梯約15分鐘。追手門是櫻花名框。天守俯瞰市區亦可拍。","입구에서 천수까지 계단으로 약 15분. 오테몬이 벚꽃 명소 프레임. 천수에서 시가지 전망도 꼭 담으세요.") },
@@ -1142,6 +1334,38 @@ export const LOCATION_CONTENT = {
       "名越屋沈下橋橫跨仁淀川。無護欄以防洪水沖走，樸素造型與清流仁淀川共構日本原風景。",
       "나고야 침하교는 니요도강에 놓인 침하교. 증수 시 침수되어 다리가 쓸려가지 않도록 난간 없이 소박하게 지어졌습니다. 맑은 니요도강 풍경과 어우러져 일본 원풍경의 상징적 피사체."
     ),
+    definition: lh(
+      "名越屋沈下橋(なごやちんかばし)は高知県吾川郡いの町、日本最後の清流と称される仁淀川(によどがわ、全長124km)に架かる全長191m・幅2.5mの沈下橋(ちんかばし)で、1965年(昭和40年)架橋。沈下橋とは増水時に水没することで橋桁・橋脚に水流の抵抗を受けず流失を防ぐ独特の構造の橋で、欄干がないシンプルな橋面が特徴。仁淀川には大小48本の沈下橋が架かりますが、名越屋沈下橋はその代表格で、橋の下を流れる「仁淀ブルー」の透明な川面、河原の石、対岸の山々が織りなす景色は日本の原風景そのもの。地元では生活道として現役で使用される橋上を、車・自転車・歩行者が共用する素朴な日常風景です。",
+      "Nagoya Submersible Bridge (Nagoya Chinkabashi), located in Ino Town, Agawa District, Kochi Prefecture, is a 191 m long, 2.5 m wide submersible bridge spanning the 124 km Niyodo River — Japan's «last clear river» — built in 1965 (Showa 40). Submersible bridges (chinkabashi) are uniquely engineered to flood with rising water rather than resist the current, preventing the bridge from being swept away; they have no railings, only a simple deck. The Niyodo carries 48 chinkabashi of various sizes; Nagoya is the most representative. Beneath it flows transparent «Niyodo Blue» water, with riverside stones and mountains on the far bank forming a scene that is the very picture of rural Japan. Locally still in active use as a road, with cars, bicycles, and pedestrians sharing the deck, it remains an unfussy daily-life landscape."
+    ),
+    highlights: {
+      ja: [
+        "全長191m・欄干なし — 沈下橋特有のシンプルな造形、増水時に水没する独特の機能美",
+        "仁淀ブルー — 日本最後の清流と称される仁淀川の透明な川面、橋越しに見下ろすエメラルドグリーン",
+        "車・自転車との共用 — 地元の生活道として現役、ローカルな日常風景が画面に入る",
+        "新緑〜紅葉の四季 — 5月の新緑、7〜8月の水遊び、10〜11月の紅葉、冬の朝霧",
+        "周辺の沈下橋網 — 仁淀川には48本の沈下橋、佐川沈下橋・蓮根沈下橋・小川沈下橋など組合せ可",
+      ],
+      en: [
+        "191 m long with no railings — the simple form unique to submersible bridges, with functional beauty hidden in their flood-tolerant design",
+        "Niyodo Blue — the transparent waters of Japan's «last clear river,» with emerald-green visible looking down from the bridge",
+        "Shared with cars and bicycles — still active as a local road, with everyday life lending the frame its charm",
+        "Four seasons from fresh greens to autumn colors — May's new growth, summer river play (July–August), October–November foliage, winter morning mist",
+        "A network of submersible bridges — the Niyodo carries 48 chinkabashi; consider combining Sagawa, Renkon, or Ogawa Submersible Bridges",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "名越屋沈下橋とは?", a: "高知県いの町、日本最後の清流・仁淀川に架かる全長191mの沈下橋(1965年架橋)。増水時に水没することで橋を守る独特の構造で、欄干のない素朴な橋面が特徴。仁淀ブルーの川面と素朴な日常風景は日本の原風景そのものです。" },
+        { q: "撮影に良い季節は?", a: "新緑の5月、夏の水遊び時期(7〜8月)、秋(10〜11月)の紅葉時。朝霧が出る冬の朝も幻想的。仁淀ブルーの濃さは晴天正午前後がピーク、橋上から撮るときはPLフィルターで反射を抑制すると深い色合いに。" },
+        { q: "アクセスと注意点は?", a: "高知市から車で40分、JR波川駅から車で10分。沈下橋上は車道なので、撮影時は通行車両に注意。橋の幅2.5mで対向車とすれ違いにくい、地元住民の生活道優先で長居しない配慮を。" },
+      ],
+      en: [
+        { q: "What is the Nagoya Submersible Bridge?", a: "A 191 m chinkabashi spanning the Niyodo River — Japan's «last clear river» — in Ino Town, Kochi Prefecture, built in 1965. Designed without railings to flood with rising water rather than resist it, the simple deck and surrounding daily scenery embody rural Japan." },
+        { q: "Best season to shoot?", a: "Fresh greens in May, summer river play (July–August), autumn foliage (October–November), and winter mornings with mist. The «Niyodo Blue» is at its richest around clear-sky midday; from the bridge, a polarizing filter cuts surface glare and deepens the color." },
+        { q: "Access and precautions?", a: "About 40 minutes by car from Kochi City, or 10 minutes from JR Hakawa Station. The bridge is a vehicle road, so watch for traffic when shooting. The deck is only 2.5 m wide, making it tight to pass; respect locals using it as a daily-life road and avoid lingering." },
+      ],
+    },
     faqs: [
       { q: d("撮影に良い季節は？","Best season to shoot?","最佳拍摄季节？","最佳拍攝季節？","촬영 최적 계절은?"),
         a: d("新緑の5月、夏の水遊び時期（7〜8月）、秋（10〜11月）の紅葉時。朝霧が出る冬の朝も幻想的。","Fresh greens in May, summer swimming season (July–Aug), autumn foliage (Oct–Nov). Winter mornings with mist are also dreamy.","5月新绿、7-8月戏水、10-11月红叶。冬晨有雾时亦梦幻。","5月新綠、7-8月戲水、10-11月紅葉。冬晨有霧時亦夢幻。","5월 신록, 7-8월 물놀이, 10-11월 단풍. 겨울 아침 안개 낀 날도 환상적입니다.") },
