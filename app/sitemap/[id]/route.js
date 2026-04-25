@@ -129,6 +129,18 @@ export async function GET(_req, { params }) {
       }
     }
 
+    // all-prefectures index (1 × 20 langs = 20 URLs)
+    const allPrefLangs = {};
+    for (const l of LANGS) allPrefLangs[HREFLANG[l]] = `${SITE_URL}/${l}/all-prefectures`;
+    allPrefLangs["x-default"] = `${SITE_URL}/en/all-prefectures`;
+    for (const lang of LANGS) {
+      entries.push(buildUrlEntry({
+        url: `${SITE_URL}/${lang}/all-prefectures`,
+        lastmod: today, changefreq: "monthly", priority: "0.6",
+        alternates: allPrefLangs,
+      }));
+    }
+
     // tags — lastmod は含まれる写真の最新年
     for (const slug of TAG_SLUGS) {
       const tLangs = {};

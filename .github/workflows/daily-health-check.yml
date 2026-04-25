@@ -1,10 +1,10 @@
-name: Weekly Health Check
+name: Daily Health Check
 
-# 全URLの404/500を週次で検出。サイト破損を早期発見
+# 全URLの404/500を日次で検出。サイト破損を早期発見
 
 on:
   schedule:
-    - cron: "0 3 * * 1"  # 毎週月曜 03:00 UTC = 12:00 JST
+    - cron: "0 3 * * *"  # 毎日 03:00 UTC = 12:00 JST
   workflow_dispatch:
 
 jobs:
