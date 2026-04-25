@@ -1661,6 +1661,38 @@ export const LOCATION_CONTENT = {
       "鳴門海峽位於德島與淡路島之間，世界三大潮流之一，最寬1.3公里。春秋大潮期直徑20米巨大漩渦形成，可從觀潮船或大鳴門橋步道「渦之道」拍攝。",
       "나루토 해협은 도쿠시마현과 아와지섬 사이, 세계 3대 조류 중 하나로 최대 폭 1.3km. 봄·가을 대조 시 지름 20m에 달하는 거대 소용돌이가 발생하며, 유람선이나 오나루토 대교 산책로 '우즈노미치'에서 촬영 가능."
     ),
+    definition: lh(
+      "鳴門海峡(なるとかいきょう)は徳島県鳴門市と兵庫県南あわじ市(淡路島)の間にある幅約1.3kmの狭い海峡で、瀬戸内海と紀伊水道を結ぶ位置にあります。瀬戸内海と紀伊水道の干満差(最大1.5m)と狭い海峡地形が組み合わさり、海水が時速約20km(最大10ノット)で流れる日本三大急潮の一つ、世界的にも珍しい巨大渦潮現象が発生。直径20mを超える渦潮は満潮・干潮前後の1〜2時間に最大となり、特に春・秋の大潮(新月・満月前後)は世界三大潮流(メッシーナ海峡・セイモア海峡と並ぶ)。観潮船または大鳴門橋遊歩道「渦の道」(海上45m)から撮影可能です。",
+      "The Naruto Strait, between Naruto City in Tokushima Prefecture and Minamiawaji City in Hyogo Prefecture (Awaji Island), is a narrow channel about 1.3 km wide that connects the Inland Sea to the Kii Channel. The combination of a tidal differential of up to 1.5 m and the narrow geography drives water through at about 20 km/h (max 10 knots), producing one of Japan's three great tidal currents — and one of the world's three (alongside the Strait of Messina and Seymour Narrows). Whirlpools over 20 m across reach maximum size 1–2 hours around high or low tide, especially during the spring tides of spring and autumn (near new and full moons). They can be photographed from sightseeing boats or from «Uzu-no-Michi,» the walkway 45 m above the strait beneath the Onaruto Bridge."
+    ),
+    highlights: {
+      ja: [
+        "渦潮(うずしお) — 直径20m超、世界三大潮流、満潮/干潮前後1〜2時間で最大化",
+        "観潮船 — 鳴門観光港から発着、約30分、迫力満点で渦潮の中まで近づく",
+        "渦の道(うずのみち) — 大鳴門橋下450mの遊歩道、海上45m、ガラス床から渦を直視",
+        "千畳敷展望台・鳴門公園 — 徳島側の俯瞰スポット、桜と海峡の組合せが春の絶景",
+        "道の駅うずしお(淡路島側) — 大鳴門橋と海峡の俯瞰、夕日に染まる瞬間が美しい",
+      ],
+      en: [
+        "Whirlpools — over 20 m across, one of the world's three great tidal currents; largest 1–2 hours around high or low tide",
+        "Sightseeing boat — departs from Naruto Sightseeing Port; a 30-minute cruise approaches the whirlpools at full intensity",
+        "Uzu-no-Michi — a 450 m walkway under the Onaruto Bridge, 45 m above the strait, with glass floors offering direct views of the whirlpools",
+        "Senjojiki Observatory and Naruto Park — overlooks on the Tokushima side; cherry blossoms with the strait make a stunning spring scene",
+        "Michi-no-Eki Uzushio (Awaji side) — sweeping view of the bridge and strait; the sunset moment is unforgettable",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "鳴門海峡とは?", a: "徳島県と淡路島の間の幅1.3kmの狭い海峡で、世界三大潮流の一つ。瀬戸内海と紀伊水道の干満差で時速20kmの潮流が発生し、直径20m超の渦潮を生む世界的にも珍しい現象が見られる撮影地です。" },
+        { q: "観潮船と遊歩道どっちがおすすめ?", a: "迫力は観潮船(海面まで近づく)、俯瞰と安全性は遊歩道「渦の道」(海上45mから真下を見下ろす)。船は波しぶきを浴びる覚悟が必要、両方乗ると渦潮を360度楽しめます。" },
+        { q: "撮影ベストタイムは?", a: "春・秋の大潮(新月・満月前後)、満潮/干潮前後1〜2時間が最大。事前に潮見表を確認、観光協会の「渦潮見頃カレンダー」が便利。観潮船は時刻指定で予約推奨です。" },
+      ],
+      en: [
+        { q: "What is the Naruto Strait?", a: "A 1.3 km-wide channel between Tokushima and Awaji Island, one of the world's three great tidal currents. The tidal gap between the Inland Sea and the Kii Channel pushes water at about 20 km/h, producing whirlpools over 20 m across — a globally rare phenomenon for photographers." },
+        { q: "Tour boat or walkway?", a: "Boats for intensity (up close to the surface), the «Uzu-no-Michi» walkway for safety and overhead views (45 m above the strait, looking straight down). Boat riders should expect spray; doing both lets you photograph the whirlpools from every angle." },
+        { q: "Best photography time?", a: "Spring and autumn spring tides (near new and full moons), 1–2 hours around high or low tide are the peak. Check tide tables; the tourism association's «Whirlpool Calendar» is helpful. Reserving a boat slot in advance is recommended." },
+      ],
+    },
     faqs: [
       { q: d("観潮船と遊歩道どっちがおすすめ？","Tour boat or walkway?","游船还是步道？","遊船還是步道？","유람선과 산책로 중 추천은?"),
         a: d("迫力は観潮船、俯瞰と安全性は遊歩道。渦の道はガラス床から真下に渦を見られる。観潮船は波しぶきを浴びる覚悟が必要。","Boats for intensity, walkway for overhead safety. Uzu-no-Michi's glass floor shows whirlpools directly below. Boat riders should expect sea spray.","游船更震撼，步道更俯瞰安全。涡之道玻璃地板可直视漩涡。游船需防浪花。","遊船更震撼，步道更俯瞰安全。渦之道玻璃地板可直視漩渦。遊船需防浪花。","박력은 유람선, 부감과 안전성은 산책로. 우즈노미치 유리 바닥에서 바로 아래 소용돌이를 볼 수 있습니다. 유람선은 물보라 각오 필요.") },
@@ -1676,6 +1708,38 @@ export const LOCATION_CONTENT = {
       "鴨川海洋世界位於千葉縣鴨川市。日本少數展示虎鯨的水族館，震撼表演為其名物。海豚、白鯨表演也豐富。以太平洋為背景的表演場十分上鏡。",
       "가모가와 시월드는 지바현 가모가와시의 수족관. 일본에서 드물게 범고래를 사육·전시하는 곳으로 박력 있는 공연이 명물. 돌고래, 벨루가 공연도 풍부. 태평양을 배경으로 한 공연장은 촬영 명소."
     ),
+    definition: lh(
+      "鴨川シーワールド(かもがわシーワールド)は千葉県鴨川市東町1464-18にある総合海洋テーマパークで、1970年(昭和45年)開業の老舗水族館。約11,000匹800種類の海洋生物を飼育・展示し、特に日本では現在2施設のみ(名古屋港水族館と当館)というシャチ(オルカ)の飼育・パフォーマンスで知られます。シャチショーは2,000席のメインプール「オーシャンスタジアム」で1日3〜4回開催され、太平洋を背景にした圧巻のスケール。ベルーガ(シロイルカ)、バンドウイルカ、アシカ、ペンギンなどのショーも充実、東京から特急で約2時間という近さで家族連れや写真愛好家が訪れる海洋撮影の名所です。",
+      "Kamogawa Sea World, located at 1464-18 Higashi-machi, Kamogawa City, Chiba Prefecture, is a comprehensive marine theme park and one of Japan's longest-running aquariums, opened in 1970 (Showa 45). Housing about 11,000 marine creatures across 800 species, it is one of only two Japanese facilities currently keeping orcas (the other being the Port of Nagoya Public Aquarium) and is renowned for its orca performances. Three to four times a day, the orca show is held in the «Ocean Stadium» main pool with 2,000 seats, set against the Pacific Ocean for spectacular scale. With strong beluga, bottlenose dolphin, sea lion, and penguin shows, and just 2 hours from Tokyo by limited express, it is a favorite of families and photographers."
+    ),
+    highlights: {
+      ja: [
+        "シャチショー(オーシャンスタジアム) — 2,000席、太平洋を背景に1日3〜4回、迫力満点の演技",
+        "ベルーガ(シロイルカ)ショー — シャチに次ぐ人気、白い体と青い水のコントラストが幻想的",
+        "バンドウイルカショー — 大ジャンプの瞬間、太平洋とイルカ、SS1/1000以上で水しぶき凍結",
+        "ロッキーワールド(アシカ・ペンギン) — 北極圏の生態系を再現、自然光が入る撮影に最適な空間",
+        "太平洋ビュー — 鴨川市の海岸線に立地、ショースタジアムの背景は本物の太平洋",
+      ],
+      en: [
+        "Orca Show (Ocean Stadium) — 2,000 seats, three to four times daily against the Pacific, a spectacular performance",
+        "Beluga Show — second only to the orcas in popularity; the white body against the blue water is dreamlike",
+        "Bottlenose Dolphin Show — the moment of a great leap, with the Pacific behind; freeze splashes at 1/1000s+ shutter",
+        "Rocky World (Sea Lions and Penguins) — recreates the polar ecosystem, with natural light making the perfect photographic space",
+        "Pacific View — the city's coastal setting means the Ocean Stadium's backdrop is the real Pacific",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "鴨川シーワールドとは?", a: "千葉県鴨川市の1970年開業の総合海洋テーマパーク。約11,000匹800種類の海洋生物を擁し、日本では2施設のみのシャチ飼育・パフォーマンスで有名。太平洋を背景にしたショースタジアムは家族連れ・写真愛好家に大人気の撮影地です。" },
+        { q: "シャチ撮影のコツは?", a: "SS1/1000以上で水しぶき凍結、連写モード必須。最前列は濡れるので座席選びに注意(防水対策必須)。ジャンプの瞬間は予測撮影、ガラス越しよりオープン水面の方が映えます。" },
+        { q: "アクセスとベストタイミングは?", a: "東京から特急わかしお号で約2時間、JR安房鴨川駅から無料シャトルバスで10分。ショーは1日3〜4回、午前中の方が照明が柔らかく撮影向き。混雑回避は平日朝の最初のショーが狙い目。" },
+      ],
+      en: [
+        { q: "What is Kamogawa Sea World?", a: "A comprehensive marine theme park in Kamogawa City, Chiba Prefecture, opened in 1970, with about 11,000 marine creatures across 800 species. As one of only two facilities in Japan keeping orcas, with shows set against the Pacific, it is hugely popular with families and photographers." },
+        { q: "Tips for orca photography?", a: "Shutter speed 1/1000+ to freeze splashes; burst mode is essential. Front rows get soaked — choose seats carefully (rain protection required). Anticipate the leap moments. Open-water surfaces photograph better than through glass." },
+        { q: "Access and best timing?", a: "From Tokyo, the Wakashio limited express runs about 2 hours; from JR Awa-Kamogawa Station, a free shuttle bus runs 10 minutes. Shows are held 3–4 times daily; morning lighting is softer for photography. The first weekday-morning show best avoids crowds." },
+      ],
+    },
     faqs: [
       { q: d("シャチ撮影のコツは？","Tips for orca photography?","虎鲸拍摄技巧？","虎鯨拍攝技巧？","범고래 촬영 팁은?"),
         a: d("SS1/1000以上で水しぶき凍結、連写モード必須。最前列は濡れるので座席選びに注意。","Shutter speed 1/1000+ to freeze splashes; burst mode essential. Front rows get soaked — choose seats carefully.","快门1/1000以上凝固水花，需连拍。前排会湿，选座需注意。","快門1/1000以上凝固水花，需連拍。前排會濕，選座需注意。","셔터 1/1000 이상으로 물보라 동결, 연사 모드 필수. 앞줄은 젖으니 좌석 선택 주의.") },
@@ -1691,6 +1755,38 @@ export const LOCATION_CONTENT = {
       "旭山動物園是旭川市立動物園。「行動展示」手法讓動物展現本能行為，展館設計革新。企鵝散步、北極熊跳水、海豹圓筒水槽等都適合動物攝影。",
       "아사히야마 동물원은 아사히카와 시립 동물원. '행동 전시' 기법으로 동물 본래의 생태·능력을 볼 수 있는 혁신적 전시 설계. 펭귄 산책, 북극곰 다이빙, 바다표범 원통 수조 등 동물 사진에 최적."
     ),
+    definition: lh(
+      "旭山動物園(あさひやまどうぶつえん)は北海道旭川市東旭川町倉沼にある日本最北の動物園で、1967年(昭和42年)開園。1990年代に経営危機に陥り廃園寸前まで追い込まれましたが、1997年から飼育員主導で「行動展示(こうどうてんじ)」という独創的な展示手法を導入。動物を見せ物にするのではなく、動物本来の生態・運動能力を引き出す展示設計が革新的と評価され、2004年には上野動物園を抜き月間入園者数日本一に。ペンギンの散歩(冬季)、ホッキョクグマの飛び込み、アザラシの円筒水槽「マリンウェイ」など、動物の自然な動きを至近距離で撮影できる「日本の動物園のあり方」を変えた施設です。",
+      "Asahiyama Zoo, in Higashi-Asahikawa-cho Kuranuma, Asahikawa City, Hokkaido, is Japan's northernmost zoo, opened in 1967 (Showa 42). Driven to the brink of closure in the 1990s, it pioneered «behavioral display» from 1997 — an innovative approach designed not to exhibit animals as spectacles but to draw out their natural behavior and abilities. By 2004, monthly attendance had surpassed Tokyo's Ueno Zoo, making it Japan's most visited. Penguin walks in winter, polar bear dives, and the «Marine Way» seal cylinder tank let visitors photograph animals in natural motion at close range — a facility that transformed the concept of the Japanese zoo."
+    ),
+    highlights: {
+      ja: [
+        "ペンギンの散歩(冬季限定) — 12月中旬〜3月、雪上の一列行進、キングペンギンが圧倒的に人気",
+        "ホッキョクグマ館 — 飛び込みプール、頭上を泳ぐ姿が見えるカプセル型観察ドーム",
+        "あざらし館「マリンウェイ」 — 円筒型水槽を行き来するアザラシ、世界初の革新的展示",
+        "ぺんぎん館 — 360度水中観察、空を飛ぶように泳ぐ姿、自然光が美しい",
+        "もぐもぐタイム — 飼育員が動物の生態を解説しながら餌やり、シャッターチャンスの宝庫",
+      ],
+      en: [
+        "Penguin Walk (winter only) — mid-December to March, a single-file procession through snow; the king penguin parade is overwhelmingly popular",
+        "Polar Bear Hall — a diving pool with capsule-shaped observation domes that show the bears swimming overhead",
+        "Seal Hall «Marine Way» — seals shuttling through cylinder-shaped tanks, a world-first innovation in display",
+        "Penguin Hall — 360° underwater observation; penguins appear to «fly» as they swim, beautifully lit by natural light",
+        "Mogu-mogu (feeding) Time — keepers explain animal behavior during feedings, offering rich photo opportunities",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "旭山動物園とは?", a: "北海道旭川市の日本最北の動物園で、1967年開園。1997年から「行動展示」を導入、動物本来の生態・能力を引き出す展示で2004年に月間入園者数日本一を達成。ペンギンの散歩、ホッキョクグマ館など動物の自然な動きを至近距離で撮影できる革新的施設です。" },
+        { q: "ペンギンの散歩は?", a: "12月中旬〜3月、雪が積もる冬季限定で1日2回開催。キングペンギンの一列歩きは冬の風物詩で世界的に有名。早朝の最初の散歩(11時頃)が混雑前で撮影に最適、白い雪と黒白のペンギンのコントラストが映えます。" },
+        { q: "アクセスは?", a: "JR旭川駅からバスで約40分、旭川空港から車で35分。札幌から特急で約1時間20分+バス。冬季は雪道の運転に注意、レンタカーよりJR・バスの方が安全です。所要時間は半日〜1日。" },
+      ],
+      en: [
+        { q: "What is Asahiyama Zoo?", a: "Japan's northernmost zoo, in Asahikawa City, Hokkaido — opened in 1967. From 1997 it pioneered «behavioral display» to draw out animals' natural abilities, and by 2004 it surpassed Tokyo's Ueno Zoo in monthly attendance. With penguin walks, polar bear halls, and other innovations, it lets visitors photograph natural animal motion at close range." },
+        { q: "Penguin walk schedule?", a: "Held twice daily from mid-December to March — winter only, when snow is on the ground. The king penguin parade is a globally famous winter staple. The first walk (around 11 AM) is best for photography before crowds; the contrast of white snow and black-and-white penguins is striking." },
+        { q: "Access?", a: "About 40 minutes by bus from JR Asahikawa Station, 35 minutes by car from Asahikawa Airport, or about 1 hour 20 minutes from Sapporo by limited express plus bus. In winter, snow-road driving is risky — JR and buses are safer than rental cars. Allow half a day to a full day." },
+      ],
+    },
     faqs: [
       { q: d("ペンギンの散歩は？","Penguin walk schedule?","企鹅散步何时？","企鵝散步何時？","펭귄 산책은?"),
         a: d("12月中旬〜3月、雪が積もる冬季限定で1日2回開催。キングペンギンの一列歩きは冬の風物詩。","Held twice daily in mid-December through March — winter only, when snow is on the ground. The king penguin parade is a winter staple.","12月中旬至3月雪季限定，每天2次。帝企鹅列队是冬季风物。","12月中旬至3月雪季限定，每天2次。帝企鵝列隊是冬季風物。","12월 중순~3월 눈이 쌓인 겨울 한정으로 하루 2회. 킹펭귄의 열 지어 걷기는 겨울의 풍물시.") },
@@ -1704,6 +1800,38 @@ export const LOCATION_CONTENT = {
       "美幌峠海拔525米，位於國道243號，俯瞰屈斜路湖。火山口湖的壯麗全景是北海道絕景之一。雲海、晨霧、夕陽四季變化。",
       "비호로 고개는 해발 525m, 굿샤로 호수를 한눈에 담는 국도 243호의 고개. 칼데라호의 웅장한 파노라마는 홋카이도 최고 수준의 절경. 운해, 아침 안개, 노을이 사계절 표정을 바꿉니다."
     ),
+    definition: lh(
+      "美幌峠(びほろとうげ)は北海道美幌町と弟子屈町の境界、国道243号線上に位置する標高525mの峠で、阿寒摩周国立公園の中核展望地。眼下にカルデラ湖の屈斜路湖(全周57km、北海道最大の湖、日本最大のカルデラ湖)、その向こうに摩周岳(857m)・斜里岳(1,547m)、晴天時には知床連山まで望める北海道屈指の絶景パノラマスポット。9〜11月の早朝、晴天で気温差が大きく無風の日には、屈斜路湖から立ち上る雲海が峠下まで広がり、その上に頭を出す摩周岳の姿は「天空の楽園」と称される幻想的な光景です。展望台はバリアフリー、道の駅ぐるっとパノラマ美幌峠も併設。",
+      "Bihoro Pass, on Route 243 at the boundary between Bihoro and Teshikaga in Hokkaido, sits at 525 m elevation as the central viewpoint of Akan-Mashu National Park. Below lies the caldera lake Kussharo (57 km in circumference, Hokkaido's largest lake and Japan's largest caldera lake), with Mt. Mashu (857 m) and Mt. Shari (1,547 m) beyond, and on clear days even the Shiretoko Range — making this one of Hokkaido's most spectacular panoramic spots. From September to November on clear, windless mornings with a big temperature differential, a sea of clouds rises from Lake Kussharo and spreads beneath the pass, with Mt. Mashu's peak emerging above — a phenomenon often called «paradise in the sky.» The barrier-free observatory adjoins Michi-no-Eki «Gurutto Panorama Bihoro-toge.»"
+    ),
+    highlights: {
+      ja: [
+        "屈斜路湖の俯瞰 — 全周57km・日本最大のカルデラ湖、520段階段の上にある展望台",
+        "雲海(9〜11月) — 早朝、晴天・気温差・無風の3条件で出現、摩周岳が雲海の上に浮かぶ",
+        "夕焼けの摩周岳 — 西陽が摩周岳を黄金色に染める、屈斜路湖との対比が絶景",
+        "アトサヌプリ(硫黄山) — 噴煙立ち上る活火山、屈斜路湖の対岸の火山地形",
+        "道の駅ぐるっとパノラマ美幌峠 — レストラン・売店・無料展望デッキ、銘菓「あげいも」",
+      ],
+      en: [
+        "Bird's-eye view of Lake Kussharo — Japan's largest caldera lake (57 km circumference), seen from the observatory atop a 520-step climb",
+        "Sea of Clouds (September–November) — appears on clear, windless mornings with a big temperature gap; Mt. Mashu floats above the clouds",
+        "Mt. Mashu at sunset — the western sun gilds the peak, contrasting with Lake Kussharo for a stunning composition",
+        "Mt. Atosanupuri (Mt. Iou) — an active volcano emitting plumes, on the opposite shore of Lake Kussharo",
+        "Michi-no-Eki Gurutto Panorama Bihoro-toge — restaurant, shop, and free observation deck; famous «Age-imo» fried potato dumplings",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "美幌峠とは?", a: "北海道阿寒摩周国立公園の中核展望地で、標高525mの峠。眼下に日本最大のカルデラ湖・屈斜路湖、その向こうに摩周岳・斜里岳・知床連山まで望める北海道屈指の絶景パノラマスポットです。" },
+        { q: "雲海はいつ見られる?", a: "9〜11月の朝、晴天で無風、気温差が大きい日。日の出前から30分程度が最盛。摩周湖は霧の確率が高いが美幌峠は雲海の確率が高い、相互補完的な撮影地です。" },
+        { q: "アクセスは?", a: "女満別空港から車で1時間、JR北見駅・網走駅から車で40分。冬季は雪道で凍結注意、レンタカーは4WD推奨。札幌からは車で5時間と遠いので、阿寒・知床と組合せた周遊が現実的。" },
+      ],
+      en: [
+        { q: "What is Bihoro Pass?", a: "The central viewpoint of Akan-Mashu National Park in Hokkaido, a 525 m pass overlooking Japan's largest caldera lake — Kussharo — with Mt. Mashu, Mt. Shari, and even the Shiretoko Range visible beyond. One of Hokkaido's most spectacular panoramic spots." },
+        { q: "When do sea-of-clouds occur?", a: "Mornings in September–November on clear, windless days with big temperature gaps. Peak roughly 30 min around sunrise. Lake Mashu has a higher chance of mist, while Bihoro Pass favors sea of clouds — they complement each other for photographers." },
+        { q: "Access?", a: "About 1 hour by car from Memanbetsu Airport; 40 minutes by car from JR Kitami or Abashiri Stations. Watch for icy roads in winter; a 4WD rental is recommended. From Sapporo it's 5 hours by car — practical only as part of an Akan/Shiretoko loop." },
+      ],
+    },
     faqs: [
       { q: d("雲海はいつ見られる？","When do sea-of-clouds occur?","云海何时出现？","雲海何時出現？","운해는 언제 볼 수 있나요?"),
         a: d("9〜11月の朝、晴天で無風、気温差が大きい日。日の出前から30分程度が最盛。","Mornings in Sept–Nov on clear, windless days with big temperature gaps. Peak roughly 30 min around sunrise.","9-11月晴朗无风、温差大的清晨。日出前后30分钟为高峰。","9-11月晴朗無風、溫差大的清晨。日出前後30分鐘為高峰。","9-11월 맑고 바람 없이 기온차가 큰 아침. 일출 전후 30분이 절정.") },
@@ -1717,6 +1845,38 @@ export const LOCATION_CONTENT = {
       "摩周湖是世界級透明度的火山口湖，有「霧之摩周湖」之稱。霧籠湖面的景象神秘。晴天鈷藍稱「摩周藍」，展望台俯瞰最佳。",
       "마슈호는 세계 최고 수준 투명도의 칼데라호. '안개의 마슈호'로 알려져 호수면을 덮는 안개가 신비롭습니다. 맑은 날 코발트블루는 '마슈 블루'라 불리며 전망대에서 부감할 수 있습니다."
     ),
+    definition: lh(
+      "摩周湖(ましゅうこ)は北海道川上郡弟子屈町の阿寒摩周国立公園内、約7,000年前の巨大噴火によって形成された二重カルデラ湖で、面積19.6km²・最大水深211m、湖周囲は20kmの双子のカルデラ湖。流出河川がない独立した湖で、流入する水が透明度を損なわないため、1931年の調査で透明度41.6mを記録、当時世界一(現在も世界第2位、ロシアのバイカル湖に次ぐ)。湖を取り囲む高さ200m級の急峻な外輪山(カムイヌプリ・摩周岳857m等)、その底に湛えられたコバルトブルーの湖面は「摩周ブルー」と称され、晴天時の青さは他の追随を許しません。霧が湖面を覆うことが多く「霧の摩周湖」の別名でも知られ、1965年布施明の歌で全国的に有名になりました。",
+      "Lake Mashu lies within Akan-Mashu National Park in Teshikaga, Kawakami District, Hokkaido — a double caldera lake formed by a massive eruption about 7,000 years ago, with an area of 19.6 km², a maximum depth of 211 m, and a 20 km perimeter. With no outflowing river, the lake's transparency goes undisturbed; in a 1931 survey it recorded 41.6 m of clarity, then the world's deepest reading (still second only to Lake Baikal). The 200 m-high outer rim — Mt. Kamuinupuri, Mt. Mashu (857 m), and others — surrounds a cobalt-blue water known as «Mashu Blue» that, on clear days, no other lake can match. Often shrouded in mist, it is also called «Misty Mashu,» and became nationally famous in 1965 through the song by Akira Fuse."
+    ),
+    highlights: {
+      ja: [
+        "摩周湖第一展望台 — 標高670m、湖を見下ろす定番展望台、駐車場とレストハウス併設",
+        "摩周湖第三展望台 — 標高800m、第一より高所、冬季閉鎖、屈斜路湖まで望める",
+        "摩周ブルー — 晴天時のコバルトブルー、特に正午前後の太陽高度が高い時間帯",
+        "霧の摩周湖 — 湖面が霧で覆われる神秘的光景、年間70%が霧、見えるのが約30%のレア度",
+        "摩周岳(857m) — カルデラ外輪山、登山可能(往復4時間)、湖を見下ろす独特の角度",
+      ],
+      en: [
+        "Mashu Daiichi Tenbodai (First Observatory) — at 670 m elevation, the standard overlook with parking and a rest house",
+        "Mashu Daisan Tenbodai (Third Observatory) — at 800 m, higher than the first; closed in winter, but offers views all the way to Lake Kussharo",
+        "Mashu Blue — the cobalt-blue water on clear days, especially around midday when the sun is highest",
+        "«Misty Mashu» — the mystical sight of mist covering the surface, present about 70% of the year (with only 30% clear viewing)",
+        "Mt. Mashu (857 m) — the outer caldera rim, climbable (4-hour round trip) for a unique angle looking down on the lake",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "摩周湖とは?", a: "北海道阿寒摩周国立公園の二重カルデラ湖で、面積19.6km²・最大水深211m。1931年に透明度41.6mで世界一を記録した湖で、晴天時の「摩周ブルー」と霧に覆われる「霧の摩周湖」が交互に現れる神秘的な撮影地です。" },
+        { q: "見える確率は?", a: "年間の晴天率は約30%。特に夏は霧の日が多く、冬〜春が比較的晴れやすい。諦めずに第一・第三展望台と裏摩周展望台の3ヶ所を回ると見える確率が上がります。早朝より昼前後がベスト。" },
+        { q: "アクセスは?", a: "女満別空港から車で1時間半、JR摩周駅から車で30分。冬季は第三展望台閉鎖、第一展望台のみ。標高800mの第三展望台は屈斜路湖も望める絶景、夏季限定の特別な体験です。" },
+      ],
+      en: [
+        { q: "What is Lake Mashu?", a: "A double caldera lake in Akan-Mashu National Park, Hokkaido — 19.6 km² with a maximum depth of 211 m. In 1931 it recorded a transparency of 41.6 m, then the world's deepest. The alternating «Mashu Blue» on clear days and the «Misty Mashu» when shrouded in fog make it a mystical photographic destination." },
+        { q: "What are the odds of seeing the lake?", a: "Annual clear-view rate ~30%. Summer is especially misty; winter and spring offer better clarity. Visit all three observatories (Daiichi, Daisan, and Ura-Mashu) to increase your chances. Late morning to midday is best, more so than dawn." },
+        { q: "Access?", a: "About 1.5 hours by car from Memanbetsu Airport, 30 minutes by car from JR Mashu Station. The Third Observatory closes in winter — only the First is open then. The Third (800 m) commands views of Lake Kussharo too, a special summer experience." },
+      ],
+    },
     faqs: [
       { q: d("見える確率は？","What are the odds of seeing the lake?","能看到湖面的概率？","能看到湖面的概率？","호수면을 볼 확률은?"),
         a: d("年間の晴天率は約30%。特に夏は霧の日が多く、冬〜春が比較的晴れやすい。諦めずに複数展望台を回る。","Annual clear-view rate ~30%. Summer is especially misty; winter and spring offer better clarity. Visit multiple observatories to increase chances.","年晴率约30%。夏季多雾，冬春较清。多处展望台轮换尝试。","年晴率約30%。夏季多霧，冬春較清。多處展望台輪換嘗試。","연간 맑은 날 확률 약 30%. 특히 여름은 안개 많고, 겨울~봄이 비교적 맑음. 여러 전망대를 돌며 시도.") },
@@ -1730,6 +1890,38 @@ export const LOCATION_CONTENT = {
       "阿寒湖是火山口湖，以毬藻（特別天然紀念物）棲息地著名。湖畔阿寒湖溫泉、阿伊努村傳統文化、夏季毬藻祭、冬季湖面結冰與觀星等四季可拍。",
       "아칸호는 마리모(특별천연기념물) 서식지로 알려진 칼데라호. 호반의 아칸코 온천, 아이누 코탄에서의 전통 문화, 여름 마리모 축제, 겨울 결빙과 천체 관측 등 사계절을 통한 촬영지."
     ),
+    definition: lh(
+      "阿寒湖(あかんこ)は北海道釧路市阿寒町の阿寒摩周国立公園内、雄阿寒岳(1,371m)と雌阿寒岳(1,499m)の間にある面積13.3km²・最大水深45mのカルデラ湖。湖底に生息する球状の藻「マリモ(毬藻)」は阿寒湖でしか天然に見られない世界で唯一の生態系で、1921年に天然記念物、1952年に特別天然記念物に指定された日本独自の貴重な種。湖畔の阿寒湖温泉街は北海道最大級のアイヌコタン(集落)を擁し、アイヌ古式舞踊(国指定重要無形民俗文化財)や木彫り工芸が継承されています。冬期はワカサギ釣り、湖面結氷、夜の星空観察、夏期はマリモ祭り(10月)と、四季を通じて自然と文化の撮影地です。",
+      "Lake Akan, in Akan-cho, Kushiro City, Hokkaido, lies within Akan-Mashu National Park between Mt. Oakan (1,371 m) and Mt. Meakan (1,499 m) — a caldera lake of 13.3 km² with a maximum depth of 45 m. The spherical algae «marimo» found at its bottom occur naturally nowhere else in the world; designated a Natural Monument in 1921 and a Special Natural Monument in 1952, marimo are uniquely Japanese. The lakeside Akanko Onsen hosts one of Hokkaido's largest Ainu Kotan (settlements), where Ainu Old-Style Dance (a designated Important Intangible Folk Cultural Property) and wood carving are still practiced. Winter brings smelt fishing, an ice-covered lake, and stargazing, while summer offers the October Marimo Festival — the lake is a year-round destination for nature and culture photography."
+    ),
+    highlights: {
+      ja: [
+        "マリモ展示観察センター(チュウルイ島) — 遊覧船で渡る、特別天然記念物の球状の藻を間近で観察",
+        "アイヌコタン — 北海道最大級のアイヌ集落、古式舞踊鑑賞、木彫り工芸店、伝統文化の継承",
+        "阿寒湖畔遊歩道 — ボッケ(泥火山)を巡る湖畔散策、湖面と火山地形の対比",
+        "冬の阿寒湖氷上フェスティバル — 1〜3月、ワカサギ釣り、雪上スポーツ、花火、満天の星空",
+        "マリモ祭り(10月) — アイヌの儀式とともにマリモを湖に返す伝統行事、神秘的な被写体",
+      ],
+      en: [
+        "Marimo Exhibition Observation Center (Churui Island) — reached by sightseeing boat; close-up views of the Special Natural Monument spherical algae",
+        "Ainu Kotan — one of Hokkaido's largest Ainu settlements, with Old-Style Dance performances, wood carving shops, and living tradition",
+        "Lakeside Promenade — a walking path past «Bokke» mud volcanoes, contrasting the lake surface with volcanic terrain",
+        "Winter Ice Festival (January–March) — smelt fishing, snow sports, fireworks, and skies full of stars",
+        "Marimo Festival (October) — an Ainu ritual returning marimo to the lake, a mystical subject for photography",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "阿寒湖とは?", a: "北海道釧路市の阿寒摩周国立公園内のカルデラ湖で、世界で唯一マリモが天然に生息する湖。北海道最大級のアイヌコタンも擁し、自然と文化の双方が撮影できる稀有な撮影地です。" },
+        { q: "マリモは見られる?", a: "阿寒湖畔のマリモ展示観察センター(チュウルイ島)で観察可能。遊覧船で渡る必要あり、所要時間は約1時間20分(船+島内見学)、運航期間は4〜11月。冬は湖面が結氷するため運休です。" },
+        { q: "ベストシーズンは?", a: "新緑の5〜6月、紅葉の10月(マリモ祭り)、冬の氷上フェスティバル(1〜3月)が三大シーズン。冬は満天の星空と凍結湖面が幻想的、夜のオーロラ観測会も時々開催されます。" },
+      ],
+      en: [
+        { q: "What is Lake Akan?", a: "A caldera lake in Akan-Mashu National Park, Kushiro City, Hokkaido — the only lake in the world where marimo (spherical algae, a Special Natural Monument) occur naturally. Hosting one of Hokkaido's largest Ainu Kotan settlements, it offers both nature and living culture for photographers." },
+        { q: "Can I see marimo?", a: "At the Marimo Exhibition Observation Center on Churui Island — reached by sightseeing boat. Total time is about 1 hour 20 minutes (boat + island tour); operating from April to November. Boats halt in winter when the lake freezes over." },
+        { q: "Best seasons?", a: "Three peak seasons: fresh greens of May–June, October foliage (with the Marimo Festival), and the Winter Ice Festival (January–March). Winter combines a star-filled sky with a frozen surface in dream-like compositions; aurora viewing events are occasionally held at night." },
+      ],
+    },
     faqs: [
       { q: d("マリモは見られる？","Can I see marimo?","能看到毬藻吗？","能看到毬藻嗎？","마리모를 볼 수 있나요?"),
         a: d("阿寒湖畔のマリモ展示観察センター（チュウルイ島）で観察可能。遊覧船で渡る必要あり。","At the Marimo Exhibition Observation Center on Churui Island — accessible by sightseeing boat.","阿寒湖畔的毬藻展示观察中心（中鲽岛）可观察，需乘游船前往。","阿寒湖畔的毬藻展示觀察中心（中鰈島）可觀察，需乘遊船前往。","아칸 호반의 마리모 전시 관찰 센터(추루이섬)에서 관찰 가능. 유람선으로 이동 필요.") },
@@ -1743,6 +1935,38 @@ export const LOCATION_CONTENT = {
       "三段瀑公園位於蘆別市溪流畔，15米寬的三段瀑布為亮點。5-6月新綠、10月紅葉、冬季冰瀑四季表情各異。停車場步行3分鐘即可抵達。",
       "산단 폭포 공원은 아시베쓰시의 계류 옆에 위치, 폭 15m에 펼쳐진 3단 폭포가 볼거리. 5~6월 신록, 10월 단풍, 겨울 빙폭 등 사계절 완전히 다른 표정. 주차장에서 폭포까지 도보 3분으로 편리합니다."
     ),
+    definition: lh(
+      "三段滝公園(さんだんたきこうえん)は北海道芦別市西芦別の芦別川支流・三段ノ沢沿いに整備された自然公園で、3段に流れ落ちる幅約15m・落差合計約26mの三段滝が見どころ。1段目・2段目・3段目と段階的に流れ落ちる構造で、上部からの水流が中段で岩盤に当たり水しぶきを上げる迫力ある光景。新緑の5〜6月、紅葉の10月、結氷する1〜2月と四季ごとに完全に異なる表情を見せる撮影地で、駐車場から滝の正面まで徒歩3分という手軽さも魅力です。芦別市は1万人規模の小さな町だが、空知地方の隠れた自然撮影地として写真愛好家に支持されています。",
+      "Sandan Falls Park is a natural park in Nishi-Ashibetsu, Ashibetsu City, Hokkaido, set along the Sandan-no-Sawa tributary of the Ashibetsu River. Its highlight is a three-tiered waterfall about 15 m wide with a total drop of about 26 m, falling in three stages. Water from the upper tier strikes bedrock at the middle level, throwing up dramatic spray. Fresh greens in May–June, foliage in October, and freezing in January–February give the falls four entirely different faces, and the 3-minute walk from the parking lot makes it remarkably accessible. Although Ashibetsu is a small city of about 10,000, the falls have become a cherished hidden photography destination in the Sorachi region."
+    ),
+    highlights: {
+      ja: [
+        "三段の滝(幅15m・落差26m) — 3段に流れ落ちる構造、中段で水しぶきを上げる迫力ある光景",
+        "新緑(5〜6月) — 周囲のミズナラ・カエデの緑と滝の白が爽やかなコントラスト",
+        "紅葉(10月中旬〜下旬) — 黄・赤・橙の三色紅葉と滝、北海道屈指の隠れた紅葉名所",
+        "結氷の冬(1〜2月) — 完全結氷すると青白い氷の彫刻のような幻想的な姿、要冬装備",
+        "駐車場から徒歩3分 — 手軽にアクセス、滝の正面まで観瀑橋で渡れる",
+      ],
+      en: [
+        "The Three-Tiered Falls (15 m wide, 26 m drop) — three stages of cascade, with dramatic spray rising as water strikes the middle bedrock",
+        "Fresh greens (May–June) — the surrounding oaks and maples make a refreshing contrast with the white falls",
+        "Autumn (mid-to-late October) — yellow, red, and orange tri-color foliage with the falls, a hidden gem among Hokkaido's autumn destinations",
+        "Frozen winter (January–February) — fully frozen, the falls become a bluish-white ice sculpture; winter gear required",
+        "Three minutes' walk from the parking lot — exceptionally accessible, with a viewing bridge crossing to the front of the falls",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "三段滝公園とは?", a: "北海道芦別市の三段ノ沢沿いの自然公園で、幅15m・落差26mの3段滝が見どころ。新緑・紅葉・結氷と四季で全く異なる表情を見せる、空知地方の隠れた自然撮影地として写真愛好家に支持されています。" },
+        { q: "冬の氷瀑はいつ見られる?", a: "1月中旬〜2月下旬、厳寒期のみ。完全結氷すると青白い氷の彫刻のような幻想的な姿になります。気温-15℃以下が連続する日が結氷の目安、要冬装備(防寒・滑り止め)、駐車場まで除雪あります。" },
+        { q: "アクセスは?", a: "JR芦別駅から車で約20分、札幌から車で約2時間。駐車場(無料)から滝まで徒歩3分の遊歩道整備、観瀑橋から滝を正面に眺められます。冬季は道路凍結注意、4WD推奨。" },
+      ],
+      en: [
+        { q: "What is Sandan Falls Park?", a: "A natural park along the Sandan-no-Sawa tributary in Ashibetsu City, Hokkaido, featuring a three-tiered waterfall 15 m wide with a 26 m drop. With four entirely different faces across the seasons, it has become a beloved hidden photography destination among enthusiasts in the Sorachi region." },
+        { q: "When to see winter ice falls?", a: "Mid-January to late February only, during the deep freeze. Fully frozen, the falls become a bluish-white ice sculpture. Multiple consecutive days below -15 °C are the threshold; winter gear (warm clothing and crampons) is required. The parking lot is plowed." },
+        { q: "Access?", a: "About 20 minutes by car from JR Ashibetsu Station, 2 hours by car from Sapporo. From the free parking lot, it's a 3-minute walk on a maintained path, with a viewing bridge facing the falls. In winter, watch for icy roads — 4WD is recommended." },
+      ],
+    },
     faqs: [
       { q: d("冬の氷瀑はいつ見られる？","When to see winter ice falls?","冰瀑何时出现？","冰瀑何時出現？","겨울 빙폭은 언제?"),
         a: d("1月中旬〜2月下旬、厳寒期のみ。完全結氷すると青白い氷の彫刻のような幻想的な姿になる。","Mid-January to late February only, during the deep freeze. Fully frozen, it becomes a bluish-white ice sculpture.","1月中旬至2月下旬严寒期。完全结冰时如蓝白冰雕。","1月中旬至2月下旬嚴寒期。完全結冰時如藍白冰雕。","1월 중순~2월 하순 혹한기 한정. 완전 결빙되면 푸른빛 얼음 조각 같은 환상적 모습.") },
@@ -1756,6 +1980,38 @@ export const LOCATION_CONTENT = {
       "室蘭市是北海道南部工業港口城市。「室蘭工廠夜景」被認定為日本夜景遺產。白鳥大橋、地球岬絕景、測量山眺望等，海與工業的對比激發創作欲。",
       "무로란시는 홋카이도 남부의 공업 항만 도시. '무로란 공장 야경'은 일본 야경 유산으로 지정되었으며, 하쿠초 대교, 지큐미사키, 소쿠료산 조망 등 바다와 공업의 대비가 촬영 욕구를 자극합니다."
     ),
+    definition: lh(
+      "室蘭(むろらん)は北海道南西部、太平洋に突き出た絵鞆(えとも)半島に位置する人口約7.5万人の港湾工業都市。明治期に石炭積出港として発展、戦後は鉄鋼業(日本製鉄室蘭製鉄所、現存)を中心とする重工業都市として知られ、その夜景は「日本五大工場夜景」(室蘭・北九州・川崎・周南・四日市)の一つに2012年認定。地球岬(チキウみさき)の140mの断崖、白鳥大橋(全長1,380m、北海道一の吊橋、1998年完成)、測量山(標高200m)からの全景、絵鞆半島の入江と工場群が織りなす独特の景観で、海と工業のコントラストが写真家を魅了する道南屈指の撮影地です。",
+      "Muroran is a port-and-industrial city of about 75,000 residents on the Etomo Peninsula jutting into the Pacific in southwestern Hokkaido. It grew during the Meiji era as a coal-export port, and remains known after the war as a heavy-industrial city centered on steel (Nippon Steel's Muroran Plant still operates). Its industrial nightscape was certified in 2012 as one of «Japan's Five Great Factory Nightscapes» (alongside Kitakyushu, Kawasaki, Shunan, and Yokkaichi). The 140 m cliffs of Cape Chikyu, the 1,380 m Hakucho Bridge (Hokkaido's longest suspension bridge, completed 1998), the panorama from Mt. Sokuryo (200 m), and the inlets and factory complexes of the Etomo Peninsula combine to make Muroran a leading southern Hokkaido subject for photographers fascinated by the contrast of sea and industry."
+    ),
+    highlights: {
+      ja: [
+        "工場夜景 — 日本五大工場夜景の一つ、祝津展望台・測量山展望台・白鳥大橋からの撮影が定番",
+        "白鳥大橋 — 全長1,380mの北海道一の吊橋、夜のライトアップは7色に変化、絵鞆半島と本土を結ぶ",
+        "地球岬(チキウみさき) — 140mの断崖、太平洋を望む新日本観光地100選1位の絶景",
+        "測量山展望台(標高200m) — 室蘭の街と港、白鳥大橋、太平洋まで一望、夜景の名所",
+        "イルカ・クジラウォッチング — 5〜10月の太平洋でミンククジラ・イルカ・シャチに遭遇",
+      ],
+      en: [
+        "Industrial nightscape — one of Japan's Five Great Factory Nightscapes; the classic shoots are from Iwaizumi Observatory, Mt. Sokuryo, and Hakucho Bridge",
+        "Hakucho Bridge — Hokkaido's longest suspension bridge at 1,380 m, with night illumination cycling through seven colors; links the Etomo Peninsula to the mainland",
+        "Cape Chikyu — 140 m cliffs over the Pacific, ranked first among «Japan's New 100 Tourist Destinations»",
+        "Mt. Sokuryo Observatory (200 m) — overlooks the Muroran cityscape, port, Hakucho Bridge, and the Pacific; an iconic night-view location",
+        "Dolphin and Whale Watching — May to October, Minke whales, dolphins, and orcas appear in the Pacific waters",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "室蘭とは?", a: "北海道南西部の港湾工業都市で、人口約7.5万人。日本五大工場夜景の一つに認定された工場夜景、北海道一の吊橋・白鳥大橋、地球岬の140m断崖、測量山からの絶景パノラマで、海と工業のコントラストが写真家を魅了する撮影地です。" },
+        { q: "工場夜景のベストポイントは?", a: "祝津展望台、測量山展望台、白鳥大橋の3ヶ所が定番。ブルーアワー(日没後30分)に白鳥大橋(7色ライト)と工場の煙突の光を同時に収める構図が王道。三脚必須、冬は防寒対策。" },
+        { q: "アクセスは?", a: "新千歳空港から車で約1時間20分、JR東室蘭駅から各展望台まで車・バスで15〜30分。札幌からは特急で約1時間半。市内主要観光地は車での移動が便利、レンタカー推奨です。" },
+      ],
+      en: [
+        { q: "What is Muroran?", a: "A port-and-industrial city of about 75,000 residents in southwestern Hokkaido. Its industrial nightscape is among Japan's Five Great Factory Nightscapes; with Hokkaido's longest suspension bridge (Hakucho), the 140 m cliffs of Cape Chikyu, and the Mt. Sokuryo panorama, it draws photographers captivated by the sea-and-industry contrast." },
+        { q: "Best factory night-view spot?", a: "Iwaizumi Observatory, Mt. Sokuryo Observatory, and Hakucho Bridge are the three classics. Capture Hakucho Bridge (cycling through seven colors) and the factory smokestacks during blue hour (30 min after sunset). Tripod essential; bundle up in winter." },
+        { q: "Access?", a: "About 1 hour 20 minutes by car from New Chitose Airport, 15–30 minutes by car or bus from JR Higashi-Muroran Station to each viewing spot. From Sapporo, about 1.5 hours by limited express. A rental car is recommended for navigating the main viewpoints." },
+      ],
+    },
     faqs: [
       { q: d("工場夜景のベストポイントは？","Best factory night-view spot?","工厂夜景最佳点？","工廠夜景最佳點？","공장 야경 최고 포인트는?"),
         a: d("祝津展望台、測量山展望台、白鳥大橋の3ヶ所が定番。ブルーアワーに白鳥大橋と工場の光を同時に収めるのが王道。","Iwaizumi Observatory, Mt. Sokuryo, and Hakucho Bridge are the three classics. Capture the bridge with factory lights during blue hour.","祝津展望台、测量山展望台、白鸟大桥三处经典。蓝时刻同时拍桥与工厂灯光。","祝津展望台、測量山展望台、白鳥大橋三處經典。藍時刻同時拍橋與工廠燈光。","이와이즈미 전망대, 소쿠료산 전망대, 하쿠초 대교 3곳이 정석. 블루아워에 다리와 공장 불빛을 함께 담는 것이 왕도.") },
@@ -1769,6 +2025,38 @@ export const LOCATION_CONTENT = {
       "美唄市位於石狩平原田園地帶。遼闊田園、阿爾泰皮亞扎美唄（雕塑家安田侃戶外美術館）、安格斯牧場野花、雪中穀倉等，呈現北海道牧歌風光。",
       "비바이시는 이시카리 평야의 전원 지대. 광활한 논밭, 알테피아차 비바이(조각가 야스다 칸의 야외 미술관), 앵거스 목장의 야생화, 설경의 사일로 등 목가적인 홋카이도다운 풍경이 펼쳐집니다."
     ),
+    definition: lh(
+      "美唄(びばい)は北海道空知総合振興局管内、石狩平野中央部に広がる人口約2万人の都市で、かつて炭鉱で栄えた歴史を持ち、現在は広大な田園地帯と独特のアート文化が共存。中心施設のアルテピアッツァ美唄(1992年開園)は世界的彫刻家・安田侃(やすだかん)が故郷美唄に開設した野外美術館で、廃校となった旧栄小学校の校舎を活用、白大理石の彫刻作品約40点が雪原や草原に点在する世界でも稀な空間。日本で唯一のラベンダー園以外の安田侃作品鑑賞地として、また石狩平野の田園・サイロ・牛・冬の雪景色など北海道らしい牧歌的な風景が楽しめる撮影地です。",
+      "Bibai is a city of about 20,000 residents in the central Ishikari Plain, within the Sorachi General Subprefectural Bureau of Hokkaido. Once thriving on coal mining, today it pairs vast farmland with a distinctive art culture. Its centerpiece, Arte Piazza Bibai (opened 1992), is an outdoor sculpture park created by world-renowned Italian-Japanese sculptor Kan Yasuda in his hometown — repurposing the former Sakae Elementary School, with about 40 white-marble works scattered across grasslands and snow fields. As one of the few places to see Yasuda's work outside lavender gardens, and with the Ishikari Plain's farmland, silos, cattle, and winter snow making for archetypal Hokkaido pastoral scenery, Bibai is a beloved photographic destination."
+    ),
+    highlights: {
+      ja: [
+        "アルテピアッツァ美唄 — 1992年開園、安田侃の野外美術館、白大理石の彫刻約40点、入場無料",
+        "旧栄小学校校舎 — 1981年閉校の木造校舎を活用、ノスタルジックな木造建築と現代彫刻の融合",
+        "雪原と彫刻 — 1〜3月の雪景色、白大理石と白雪の組合せは異世界、星空観察も可能",
+        "石狩平野の田園 — 広大な水田、サイロ、牛、北海道らしい牧歌的風景、夏の積乱雲が映える",
+        "やきとり美唄 — 全国に知られる「美唄やきとり」発祥の地、約30軒の名店が市内に",
+      ],
+      en: [
+        "Arte Piazza Bibai — opened 1992, Kan Yasuda's outdoor sculpture park with about 40 white-marble works, free admission",
+        "Former Sakae Elementary School — a wooden 1981-shuttered school building repurposed, blending nostalgic architecture with contemporary sculpture",
+        "Snow Field with Sculptures — January–March, when white marble meets white snow in an otherworldly composition, with stargazing possible",
+        "Ishikari Plain farmland — vast paddies, silos, cattle, and archetypal Hokkaido pastoral scenes; summer thunderclouds enhance the frame",
+        "Bibai Yakitori — birthplace of nationally known «Bibai Yakitori,» with about 30 famous shops across town",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "美唄とは?", a: "北海道空知地方、石狩平野中央部の人口約2万人の都市。かつて炭鉱で栄え、現在はアルテピアッツァ美唄(安田侃の野外美術館)と広大な田園地帯が共存する独特の街、北海道らしい牧歌的風景が楽しめる撮影地です。" },
+        { q: "アルテピアッツァの魅力は?", a: "1992年開園の入場無料の野外彫刻美術館。世界的彫刻家・安田侃の白大理石作品約40点と、廃校となった旧木造校舎、雪景色の組合せが絵画的。冬の雪原と白大理石彫刻の構図は世界でもここだけの撮影地です。" },
+        { q: "アクセスは?", a: "JR美唄駅から車で15分、または季節運行のシャトルバス。札幌から車で1時間。アルテピアッツァは年中開園、冬季は雪景色、夏は緑の草原と多様な表情。所要時間2〜3時間。" },
+      ],
+      en: [
+        { q: "What is Bibai?", a: "A city of about 20,000 residents in central Hokkaido's Ishikari Plain, once a coal-mining hub. Today it combines Arte Piazza Bibai (Kan Yasuda's outdoor sculpture park) with vast pastoral farmland — a distinctive setting where Hokkaido's archetypal rural scenes can be photographed." },
+        { q: "What's special about Arte Piazza?", a: "A free outdoor sculpture museum opened in 1992 with about 40 white-marble works by world-renowned Kan Yasuda, paired with a former wooden schoolhouse. The contrast of white marble and white snow in winter is uniquely photogenic — found nowhere else in the world." },
+        { q: "Access?", a: "15 minutes by car from JR Bibai Station, or by seasonal shuttle bus. About 1 hour by car from Sapporo. Arte Piazza is open year-round; winter brings snow scenes, summer green meadows. Allow 2–3 hours." },
+      ],
+    },
     faqs: [
       { q: d("アルテピアッツァの魅力は？","What's special about Arte Piazza?","阿尔泰皮亚扎魅力？","阿爾泰皮亞扎魅力？","알테피아차 매력은?"),
         a: d("廃校を活用した無料の野外彫刻美術館。白大理石の作品と木造校舎、雪景色の組み合わせが絵画的。","A free outdoor sculpture museum in a repurposed school. White marble works, the wooden schoolhouse, and snow together look painterly.","改建废校的免费户外雕塑美术馆。白大理石作品、木校舍、雪景如画。","改建廢校的免費戶外雕塑美術館。白大理石作品、木校舍、雪景如畫。","폐교를 활용한 무료 야외 조각 미술관. 백대리석 작품, 목조 교사, 설경의 조합이 회화적.") },
@@ -1782,6 +2070,38 @@ export const LOCATION_CONTENT = {
       "登別溫泉擁有9種泉質，是「溫泉百貨店」。登別地獄谷是火山活動形成的大型火口，有步道。蒸汽升騰的峽谷、奧之湯、大湯沼川天然足湯等溫泉景觀震撼。",
       "노보리베쓰 온천은 9종 수질을 가진 '온천의 백화점'. 노보리베쓰 지고쿠다니는 화산 활동으로 생긴 산책로 있는 거대 화구. 수증기 피어오르는 계곡, 오쿠노유, 오유누마강 천연 족욕탕 등 다이내믹한 온천 풍경."
     ),
+    definition: lh(
+      "登別(のぼりべつ)は北海道胆振総合振興局管内の登別市にある日本屈指の温泉郷で、9種類の異なる泉質の源泉が湧き出ることから「温泉のデパート」と称される温泉地。湯量は1日約10,000トン(東京ドーム約1.5杯分)、自然湧出量は世界トップクラス。中心となる登別地獄谷(じごくだに)は約1万年前の倶多楽火山の噴火で形成された直径約450m・面積11ヘクタールの火口跡で、現在も水蒸気・火山ガス・温泉水が噴出する活火山地帯。鉄分を含む湯が川となって流れる大湯沼川天然足湯、奥の湯(7,000m²の硫黄泉湖)、湯気立ち上る渓谷の遊歩道、夜の鬼花火(7〜8月)など、ダイナミックな温泉風景が楽しめます。",
+      "Noboribetsu, in Noboribetsu City within the Iburi General Subprefectural Bureau of Hokkaido, is one of Japan's premier hot spring towns — earning the nickname «department store of hot springs» because of its nine distinct water types. Producing about 10,000 tonnes of hot spring water daily (roughly 1.5 Tokyo Domes), its natural outflow ranks among the world's largest. The main landmark, Noboribetsu Jigokudani («Hell Valley»), is a roughly 450 m-wide, 11-hectare crater formed by the eruption of Mt. Kuttara about 10,000 years ago — an active volcanic zone where steam, volcanic gas, and hot spring water continue to vent. With the natural footbath of Oyunuma River (where iron-rich water flows like a stream), Oku-no-Yu (a 7,000 m² sulfur-spring lake), walking paths through steaming valleys, and the «Oni Hanabi» fireworks of July–August, it offers dynamic onsen photography."
+    ),
+    highlights: {
+      ja: [
+        "登別地獄谷 — 直径450m・11ヘクタールの火口跡、湯気立ち上る渓谷、遊歩道で巡れる",
+        "大湯沼(おおゆぬま) — 周囲1km・面積7,000m²の硫黄泉湖、表面温度40〜50℃、青白く神秘的",
+        "大湯沼川天然足湯 — 大湯沼から流れる温泉川、無料で足湯、森の中の天然温泉体験",
+        "奥の湯 — 大湯沼隣接の灰黒色の湖、地獄谷の奥に広がる別世界の景観",
+        "夜間ライトアップ・鬼花火(7〜8月) — 地獄谷の遊歩道がライトアップ、7〜8月は鬼の花火大会",
+      ],
+      en: [
+        "Noboribetsu Jigokudani — a 450 m-wide, 11-hectare crater with steaming valleys and walking paths",
+        "Oyunuma — a 1 km-perimeter, 7,000 m² sulfur-spring lake with surface temperatures of 40–50 °C, mystical pale-blue waters",
+        "Oyunuma River Natural Footbath — a hot spring stream flowing from Oyunuma, free to enjoy as a forest footbath",
+        "Oku-no-Yu — adjacent to Oyunuma, an ash-gray pond extending the Jigokudani's otherworldly landscape",
+        "Evening Illumination and Oni Hanabi (July–August) — the Jigokudani path is illuminated at night, with the «demon fireworks» festival in summer",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "登別とは?", a: "北海道胆振地方の温泉郷で、9種類の異なる泉質を持つ「温泉のデパート」。1日約10,000トンの湯量は世界トップクラス、登別地獄谷の火口跡、大湯沼、大湯沼川天然足湯など火山地形と温泉が織りなすダイナミックな撮影地です。" },
+        { q: "地獄谷の撮影時間帯は?", a: "朝〜午前中が光が柔らかく湯気も映える。夜間ライトアップ(5〜10月)も幻想的、特に冬の朝の湯気が最も濃厚で寒暖差が立ち上る蒸気を強調します。三脚で長秒露光すると湯気の流れが見えます。" },
+        { q: "アクセスは?", a: "新千歳空港から車で約1時間、JR登別駅からバスで15分。札幌から車で1時間半、特急バス・JRも便利。地獄谷から大湯沼までは徒歩30分の遊歩道、奥の湯まで含めて2〜3時間の散策コース。" },
+      ],
+      en: [
+        { q: "What is Noboribetsu?", a: "A hot spring town in the Iburi region of Hokkaido — the «department store of hot springs» with nine different water types. With about 10,000 tonnes of daily output (one of the world's largest natural flows), the Jigokudani crater, Oyunuma, and the Oyunuma River footbath form a dynamic photographic landscape of volcanic terrain and onsen." },
+        { q: "Best time to shoot Jigokudani?", a: "Morning is best for soft light and visible steam. Evening illumination (May–October) is atmospheric. Winter mornings produce the densest steam due to the temperature gap; long exposures with a tripod reveal the flow of vapor." },
+        { q: "Access?", a: "About 1 hour by car from New Chitose Airport, 15 minutes by bus from JR Noboribetsu Station. From Sapporo, about 1.5 hours by car or by limited-express bus/JR. From Jigokudani, walk 30 minutes to Oyunuma; include Oku-no-Yu for a 2–3 hour stroll." },
+      ],
+    },
     faqs: [
       { q: d("地獄谷の撮影時間帯は？","Best time to shoot Jigokudani?","地狱谷最佳拍摄时段？","地獄谷最佳拍攝時段？","지고쿠다니 최적 시간대는?"),
         a: d("朝〜午前中が光が柔らかく湯気も映える。夜間ライトアップ（5〜10月）も幻想的。","Morning for soft light and visible steam. The nighttime illumination (May–October) is atmospheric.","清晨至上午光柔，蒸汽明显。5-10月夜间灯光亦梦幻。","清晨至上午光柔，蒸汽明顯。5-10月夜間燈光亦夢幻。","아침~오전이 빛이 부드럽고 수증기도 돋보입니다. 5-10월 야간 조명도 환상적.") },
@@ -1795,6 +2115,38 @@ export const LOCATION_CONTENT = {
       "北龍町位於北海道空知郡，23萬株向日葵田「向日葵之里」聞名。7月下旬至8月中旬花期時，金色海洋延展至山腳，日本最大級向日葵田。",
       "호쿠류초는 홋카이도 소라치군, 23만 송이 해바라기 밭 '해바라기의 마을'로 유명. 7월 하순~8월 중순 개화기에는 온통 황금빛이 산기슭까지 펼쳐지는 일본 최대급 해바라기 밭으로 압도적 경관."
     ),
+    definition: lh(
+      "北竜町(ほくりゅうちょう)は北海道空知総合振興局管内、雨竜郡北竜町にある人口約1,700人の小さな町で、日本最大級のひまわり畑「ひまわりの里」(東京ドーム約5個分・約23ヘクタール)で知られます。1987年(昭和62年)、町おこしの一環としてヨーロッパ視察で見たひまわり畑から着想を得てスタート、現在は約23万本のひまわり(品種数12種類以上)が植えられ、毎年7月中旬〜8月下旬の「北竜町ひまわりまつり」期間中に100万人以上が訪れる北海道の夏の風物詩。一面の黄金色が山裾まで広がる景観は日本でも稀有で、満開期はひまわりの絨毯を上空から眺めるパラグライダー体験も人気です。",
+      "Hokuryu Town, in the Sorachi General Subprefectural Bureau of Hokkaido (Uryu District), has a population of about 1,700 — and is known for «Himawari no Sato,» one of Japan's largest sunflower fields (about 23 hectares, equivalent to roughly five Tokyo Domes). Inspired by sunflower fields seen on a European study tour in 1987 (Showa 62) as a town-revitalization project, the field today contains about 230,000 sunflowers across more than 12 varieties. During the «Hokuryu Sunflower Festival» from mid-July to late August, over a million visitors arrive, making it Hokkaido's quintessential summer scene. The sea of gold extending to the foothills is rare even by Japanese standards, and during peak bloom paragliding tours offer aerial views of the flower carpet."
+    ),
+    highlights: {
+      ja: [
+        "ひまわりの里(23ヘクタール) — 約23万本のひまわり、東京ドーム5個分、日本最大級",
+        "8月第1週〜10日頃の満開期 — ひまわりまつり開催、迷路・お土産・グルメも揃う",
+        "12種類以上のひまわり品種 — 黄色だけでなくレモン色・赤系・マルチカラーも、品種ガイド付き",
+        "展望台・ひまわり迷路 — 高所から全景を撮れる、迷路は子ども連れに人気",
+        "パラグライダー体験 — 上空からひまわり畑を俯瞰、夏季限定の特別体験",
+      ],
+      en: [
+        "Himawari no Sato (23 hectares) — about 230,000 sunflowers, equivalent to five Tokyo Domes, one of Japan's largest sunflower fields",
+        "Peak bloom early August — the Sunflower Festival features mazes, souvenirs, and gourmet food",
+        "More than 12 sunflower varieties — beyond yellow, lemon-yellow, red-tinged, and multicolor varieties, with a guide to each",
+        "Observatory and Sunflower Maze — overhead shots from the platform, with the maze popular among families",
+        "Paragliding — aerial views of the sunflower field, available only in summer",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "北竜町とは?", a: "北海道空知地方の人口約1,700人の小さな町で、日本最大級のひまわり畑「ひまわりの里」(23ヘクタール、約23万本)で有名。1987年から町おこしで始まり、毎年7〜8月のひまわりまつりに100万人以上が訪れる北海道の夏の風物詩です。" },
+        { q: "開花のピークは?", a: "例年8月第1週〜10日頃。展望台から全景を撮るのが定番。午前の順光が最も黄色が鮮やか、青空との組合せが王道。年により1週間ずれることがあるので公式サイトの開花情報を確認してください。" },
+        { q: "アクセスは?", a: "JR札幌駅から特急で約1時間20分、深川駅で乗換え留萌本線「碧水駅」→車で5分。札幌から車では約2時間。駐車場(無料)あり、まつり期間中は混雑するため早朝6〜8時着がおすすめです。" },
+      ],
+      en: [
+        { q: "What is Hokuryu Town?", a: "A small town of about 1,700 residents in the Sorachi region of Hokkaido, famous for «Himawari no Sato» — one of Japan's largest sunflower fields (23 hectares, about 230,000 sunflowers). Started in 1987 as a town-revitalization project, the July–August Sunflower Festival now draws over a million visitors as Hokkaido's summer signature." },
+        { q: "When is peak bloom?", a: "Typically from the first week of August to about August 10. The classic shot is a full-field panorama from the observatory. Morning front-light makes the yellow most vivid; pairing with blue sky is the canonical composition. Bloom can shift by a week year to year — check the official forecast." },
+        { q: "Access?", a: "About 1 hour 20 minutes from JR Sapporo Station by limited express, then transfer at Fukagawa to the Rumoi Main Line at Hekisui Station, then 5 minutes by car. About 2 hours by car from Sapporo. Free parking; during the festival, arrive 6–8 AM to beat the crowds." },
+      ],
+    },
     faqs: [
       { q: d("開花のピークは？","When is peak bloom?","盛花期？","盛花期？","개화 절정기는?"),
         a: d("例年8月第1週〜10日頃。展望台から全景を撮るのが定番。午前の順光が最も黄色が鮮やか。","Typically first week to ~10 August. Classic shot is full-field panorama from the observatory. Morning front-light is most vivid.","通常8月第1周至10日前后。展望台拍摄全景为经典。上午顺光黄色最艳。","通常8月第1週至10日前後。展望台拍攝全景為經典。上午順光黃色最豔。","보통 8월 첫째 주~10일경. 전망대에서 전경 촬영이 정석. 오전 순광이 가장 노랑이 선명.") },
@@ -1810,6 +2162,38 @@ export const LOCATION_CONTENT = {
       "品川源自江戶時代東海道53次第一宿場町，現為東京交通樞紐。高層樓群與新幹線、山手線站台為拍攝題材。早晚通勤、夜間站前燈光、運河與倉庫對比為都市攝影佳作。",
       "시나가와는 에도시대 도카이도 53차의 제1 역참 마을에서 유래한 도쿄의 교통 허브. 고층빌딩군과 신칸센·야마노테선이 달리는 플랫폼이 촬영 소재. 아침저녁 출퇴근 러시, 밤의 역 빌딩 조명, 운하와 창고 거리의 대비가 도시 사진으로 뛰어남."
     ),
+    definition: lh(
+      "品川(しながわ)は東京都港区南部から品川区北部にかけてのエリアで、JR東日本の主要ターミナル駅「品川駅」を中心とする東京の交通ハブ。1872年(明治5年)日本最初の鉄道として新橋〜横浜間に開業した時の中継駅で、150年以上の歴史を持つ重要拠点。現在は東海道新幹線・JR山手線・京浜東北線・東海道線・横須賀線・京急本線が乗り入れ、1日約36万人が利用、東京駅・新宿駅に次ぐ重要ターミナル。江戸時代の東海道53次の第1宿場町「品川宿」から発展した歴史と、品川インターシティ(157m)、KDDI大手町ビル、グランドプリンスホテル新高輪などの超高層ビル群、運河と倉庫街、天王洲アイルのウォーターフロントなど、近代都市・歴史・水辺が共存する都市撮影地です。",
+      "Shinagawa covers the southern part of Minato Ward and northern Shinagawa Ward in central Tokyo, anchored by the major JR East terminal of Shinagawa Station. As a midway station of Japan's first railway, opened between Shinbashi and Yokohama in 1872 (Meiji 5), it has 150+ years of history and serves about 360,000 passengers a day across the Tokaido Shinkansen, JR Yamanote Line, Keihin-Tohoku Line, Tokaido Line, Yokosuka Line, and the Keikyu Main Line — Tokyo's third-busiest hub after Tokyo and Shinjuku Stations. Originating as «Shinagawa-juku,» the first post station on the Edo-period Tokaido road, the area now combines that history with the skyscrapers of Shinagawa Intercity (157 m), the KDDI Otemachi Building, and Grand Prince Hotel New Takanawa, alongside canals, warehouses, and the Tennozu Isle waterfront — a multi-layered urban photographic destination."
+    ),
+    highlights: {
+      ja: [
+        "品川駅高輪口・港南口 — 東海道新幹線の発着、新幹線と高層ビルの組合せ、夕方の通勤ラッシュ",
+        "新幹線俯瞰 — 高輪口歩道橋から東海道新幹線の高速通過を捉える、シャッタースピード勝負",
+        "天王洲アイル — 東京湾とオフィスビルが融合するウォーターフロント、運河の夜景が幻想的",
+        "品川インターシティ — ガラス回廊と高層ビル群、現代建築の幾何学的構図",
+        "東京湾岸・大井ふ頭 — コンテナ埠頭の物流景観、夕日と港湾クレーンの対比",
+      ],
+      en: [
+        "Shinagawa Station Takanawa and Konan Exits — Tokaido Shinkansen arrivals and departures; combinations of bullet trains with skyscrapers; evening rush hour",
+        "Shinkansen Bird's-Eye View — capture high-speed passings of the Tokaido Shinkansen from the Takanawa pedestrian bridge — a shutter-speed challenge",
+        "Tennozu Isle — a waterfront where Tokyo Bay meets office towers; the canal nightscape is otherworldly",
+        "Shinagawa Intercity — glass corridors and skyscraper clusters; geometric compositions of contemporary architecture",
+        "Tokyo Bay-side and Oi Wharf — the logistics landscape of a container terminal, with sunset against gantry cranes",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "品川とは?", a: "東京都港区南部から品川区北部のエリアで、東海道新幹線・JR山手線等が乗り入れる東京の交通ハブ。江戸時代の東海道53次第1宿場町「品川宿」から発展、現在は超高層ビル群と運河・倉庫街、ウォーターフロントが共存する都市撮影地です。" },
+        { q: "品川駅周辺の撮影ポイントは?", a: "高輪口歩道橋からの新幹線俯瞰、港南口のビル群、品川インターシティのガラス回廊、天王洲アイルの運河夜景。日没前後のブルーアワーが空と街の光のバランスがベストです。" },
+        { q: "撮影マナーは?", a: "駅構内・ホームでは三脚・大型機材禁止、JR規定遵守必須。歩道橋・公道は基本可、人物撮影は許可必要。深夜の撮影は警備員に声をかけ、不審な行動と思われないよう注意。" },
+      ],
+      en: [
+        { q: "What is Shinagawa?", a: "A district stretching from southern Minato Ward to northern Shinagawa Ward in Tokyo, anchored by the Shinagawa Station hub on the Tokaido Shinkansen and JR lines. Originating as «Shinagawa-juku,» the first Edo-period post station on the Tokaido, it now combines skyscrapers with canals, warehouses, and waterfronts — a layered urban photographic destination." },
+        { q: "Photo spots near Shinagawa Station?", a: "Shinkansen view from the Takanawa pedestrian bridge, Kohnan-side skyscrapers, Shinagawa Intercity glass corridor, and the canal nightscape at Tennozu Isle. Blue hour around sunset offers the best balance of sky and city lights." },
+        { q: "Photography etiquette?", a: "Tripods and large gear are prohibited inside the station and on platforms — follow JR rules. Pedestrian bridges and public roads are generally fine; photographing individuals requires permission. At night, speak to security to avoid suspicion." },
+      ],
+    },
     faqs: [
       { q: d("品川駅周辺の撮影ポイントは？","Photo spots near Shinagawa Station?","品川站周边拍摄点？","品川站周邊拍攝點？","시나가와역 주변 촬영 포인트는?"),
         a: d("高輪口歩道橋からの新幹線、港南口のビル群、品川インターシティのガラス回廊、天王洲アイルの運河夜景。","Shinkansen view from the Takanawa side pedestrian bridge, Kohnan-side skyscrapers, Shinagawa Intercity glass corridor, and canal nightscape at Tennozu Isle.","高轮口天桥俯拍新干线、港南口楼群、品川Intercity玻璃回廊、天王洲运河夜景。","高輪口天橋俯拍新幹線、港南口樓群、品川Intercity玻璃迴廊、天王洲運河夜景。","다카나와 출구 보도교에서 신칸센, 고난 출구 빌딩군, 시나가와 인터시티 유리 회랑, 덴노즈 아일 운하 야경.") },
