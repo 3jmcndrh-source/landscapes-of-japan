@@ -27,6 +27,10 @@ const EXTRA_LANGS = { es, fr, de, pt, it, ru, ar, hi, th, vi, id, tr, nl, pl, sv
 function mergeExtras(base, type) {
   // type は "prefectures" | "locations"
   const faqKey = type === "prefectures" ? "prefectureFaqs" : "locationFaqs";
+  const defKey = type === "prefectures" ? "prefectureDefinitions" : "locationDefinitions";
+  const hlKey = type === "prefectures" ? "prefectureHighlights" : "locationHighlights";
+  const qaKey = type === "prefectures" ? "prefectureQuickAnswers" : "locationQuickAnswers";
+
   return Object.fromEntries(
     Object.entries(base).map(([key, val]) => {
       const newDesc = { ...val.desc };
@@ -35,11 +39,14 @@ function mergeExtras(base, type) {
         q: { ...f.q },
         a: { ...f.a },
       }));
+      const newDefinition = { ...(val.definition || {}) };
+      const newHighlights = { ...(val.highlights || {}) };
+      const newQuickAnswers = { ...(val.quickAnswers || {}) };
 
       for (const [lang, data] of Object.entries(EXTRA_LANGS)) {
         // desc
-        const d = data[type]?.[key];
-        if (d) newDesc[lang] = d;
+        const dval = data[type]?.[key];
+        if (dval) newDesc[lang] = dval;
 
         // faqs (per-language: extra FAQs は base index と同じ順序で対応)
         const extraFaqs = data[faqKey]?.[key];
@@ -49,8 +56,27 @@ function mergeExtras(base, type) {
             if (extraFaqs[i]?.a) newFaqs[i].a[lang] = extraFaqs[i].a;
           }
         }
+
+        // A14: definition (string)
+        const def = data[defKey]?.[key];
+        if (def) newDefinition[lang] = def;
+
+        // A14: highlights (array of strings)
+        const hl = data[hlKey]?.[key];
+        if (Array.isArray(hl)) newHighlights[lang] = hl;
+
+        // A14: quickAnswers (array of {q, a})
+        const qa = data[qaKey]?.[key];
+        if (Array.isArray(qa)) newQuickAnswers[lang] = qa;
       }
-      return [key, { ...val, desc: newDesc, faqs: newFaqs }];
+      return [key, {
+        ...val,
+        desc: newDesc,
+        faqs: newFaqs,
+        definition: newDefinition,
+        highlights: newHighlights,
+        quickAnswers: newQuickAnswers,
+      }];
     })
   );
 }
@@ -84,4 +110,42 @@ export function getLocFaqs(locJp, lang) {
   return c.faqs
     .map((f) => ({ q: f.q[lang] || f.q.en, a: f.a[lang] || f.a.en }))
     .filter((f) => f.q && f.a);
+}
+
+// A14: AI Overview対応 — definition (○○とは?), highlights (5項目), quickAnswers (3つの直結Q&A)
+// いずれも英語フォールバックを最終手段とし、データなしの場合は空 (UI側で表示しない)
+export function getPrefDefinition(prefJp, lang) {
+  const c = PREFECTURE_CONTENT[prefJp];
+  if (!c || !c.definition) return "";
+  return c.definition[lang] || c.definition.en || "";
+}
+
+export function getLocDefinition(locJp, lang) {
+  const c = LOCATION_CONTENT[locJp];
+  if (!c || !c.definition) return "";
+  return c.definition[lang] || c.definition.en || "";
+}
+
+export function getPrefHighlights(prefJp, lang) {
+  const c = PREFECTURE_CONTENT[prefJp];
+  if (!c || !c.highlights) return [];
+  return c.highlights[lang] || c.highlights.en || [];
+}
+
+export function getLocHighlights(locJp, lang) {
+  const c = LOCATION_CONTENT[locJp];
+  if (!c || !c.highlights) return [];
+  return c.highlights[lang] || c.highlights.en || [];
+}
+
+export function getPrefQuickAnswers(prefJp, lang) {
+  const c = PREFECTURE_CONTENT[prefJp];
+  if (!c || !c.quickAnswers) return [];
+  return c.quickAnswers[lang] || c.quickAnswers.en || [];
+}
+
+export function getLocQuickAnswers(locJp, lang) {
+  const c = LOCATION_CONTENT[locJp];
+  if (!c || !c.quickAnswers) return [];
+  return c.quickAnswers[lang] || c.quickAnswers.en || [];
 }

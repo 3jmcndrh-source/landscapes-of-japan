@@ -3,7 +3,7 @@ import PrefClient from "../../PrefClient.js";
 import { PREFECTURES, PREF_I18N, getPrefName } from "../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
-import { getPrefDesc, getPrefFaqs } from "../../content/descriptions.js";
+import { getPrefDesc, getPrefFaqs, getPrefDefinition, getPrefHighlights, getPrefQuickAnswers } from "../../content/descriptions.js";
 import { getPrefSameAs } from "../../wikidata.js";
 
 export const dynamicParams = false;
@@ -61,6 +61,9 @@ export default async function Page({ params }) {
 
   const desc = getPrefDesc(prefJp, lang);
   const faqs = getPrefFaqs(prefJp, lang);
+  const definition = getPrefDefinition(prefJp, lang);
+  const highlights = getPrefHighlights(prefJp, lang);
+  const quickAnswers = getPrefQuickAnswers(prefJp, lang);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -83,6 +86,25 @@ export default async function Page({ params }) {
           name: (p.loc ? p.loc + " - " : "") + prefJp,
         })),
       },
+      // A14: AI Overview対応 — DefinedTerm (○○とは?)
+      definition && {
+        "@type": "DefinedTerm",
+        "@id": `${SITE_URL}/${lang}/${prefSlug}#definition`,
+        name: getPrefName(prefJp, lang),
+        description: definition,
+        inDefinedTermSet: `${SITE_URL}/${lang}#prefectures`,
+      },
+      // A14: AI Overview対応 — quickAnswers は QAPage で AI 引用候補化
+      quickAnswers.length > 0 && {
+        "@type": "QAPage",
+        "@id": `${SITE_URL}/${lang}/${prefSlug}#qa`,
+        mainEntity: quickAnswers.map((qa) => ({
+          "@type": "Question",
+          name: qa.q,
+          acceptedAnswer: { "@type": "Answer", text: qa.a },
+        })),
+      },
+      // 既存FAQはFAQPageで(quickAnswersと別物として並立)
       faqs.length > 0 && {
         "@type": "FAQPage",
         mainEntity: faqs.map((f) => ({
@@ -104,7 +126,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PrefClient lang={lang} prefJp={prefJp} desc={desc} faqs={faqs} />
+      <PrefClient lang={lang} prefJp={prefJp} desc={desc} faqs={faqs} definition={definition} highlights={highlights} quickAnswers={quickAnswers} />
     </>
   );
 }
