@@ -15,6 +15,38 @@ export const LOCATION_CONTENT = {
       "知床半島是世界自然遺產，突入鄂霍次克海。棲息棕熊與毛腳魚鴞的原始森林、冬季流冰、夏季神威瀑布等原始自然保留完好。只能從觀光船見到的絕壁海岸線震撼人心。",
       "시레토코 반도는 오호츠크해로 돌출된 세계자연유산. 불곰과 시마후쿠로가 사는 원시림, 겨울 유빙, 여름 가무이왓카 폭포 등 손대지 않은 자연이 남아 있습니다. 관광선에서만 볼 수 있는 절벽 해안선은 압권."
     ),
+    definition: lh(
+      "知床(しれとこ)は北海道東部、オホーツク海と根室海峡に挟まれた長さ約65kmの半島で、2005年に「知床」としてユネスコ世界自然遺産登録。アイヌ語の「シリエトク(地の果て)」に由来する名の通り、原生林・流氷・絶壁・滝・ヒグマ・シマフクロウなど北半球で最も南に到達する流氷帯と高密度のヒグマ生息地を併せ持つ稀有な生態系。冬は流氷ウォーク、夏は知床五湖や観光船からの絶壁海岸線、知床岬まで陸路では行けない秘境性が、地球の最果ての風景を求める写真家の最終目的地となっています。",
+      "Shiretoko is a peninsula about 65 km long in eastern Hokkaido, between the Sea of Okhotsk and the Nemuro Strait, registered as a UNESCO World Natural Heritage Site in 2005. The name derives from the Ainu «Sir-etok» («the end of the earth»), and it lives up to that meaning: primeval forests, drift ice, sheer cliffs, waterfalls, brown bears, and Blakiston's fish owls combine in the most southerly extent of the Northern Hemisphere's drift ice and one of the world's densest brown bear habitats. Winter offers drift-ice walks; summer reveals the Shiretoko Five Lakes and cliff coastlines visible only from sightseeing boats; Cape Shiretoko itself remains unreachable by road — a final pilgrimage for photographers seeking edge-of-the-earth landscapes."
+    ),
+    highlights: {
+      ja: [
+        "知床五湖 — 原始林に囲まれた5つの湖、高架木道で熊と遭遇せず散策可、湖面の知床連山リフレクション",
+        "オホーツクの流氷 — 1月下旬〜3月上旬、世界最南端の流氷帯、流氷ウォークで氷の上を歩ける",
+        "カムイワッカ湯の滝 — 温泉が流れる珍しい滝、夏季の沢登りで4の滝まで遡上可",
+        "プユニ岬・夕陽台 — ウトロから車で5分、オホーツク海への日没とプユニ岬のシルエット",
+        "観光船 — ウトロ港発の知床岬航路、断崖絶壁・滝・ヒグマ目撃、3.5時間コース",
+      ],
+      en: [
+        "Shiretoko Five Lakes — five lakes ringed by primeval forest; raised boardwalks let you walk safely above bear country, with the Shiretoko range reflected in calm water",
+        "Sea of Okhotsk drift ice — late January to early March, the most southerly drift-ice zone in the world; «drift-ice walks» let you stand on it",
+        "Kamuiwakka Falls — a rare waterfall fed by hot springs; in summer, hike upstream to the fourth fall",
+        "Cape Puyuni and Yuhi-dai — five minutes by car from Utoro; sunset over the Sea of Okhotsk silhouettes the cape",
+        "Sightseeing boats — from Utoro Port to Cape Shiretoko, viewing cliffs, waterfalls, and brown bears on a 3.5-hour cruise",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "知床とは?", a: "北海道東部の長さ約65kmの半島で、2005年世界自然遺産登録。アイヌ語「地の果て」由来、流氷・原生林・ヒグマ・絶壁が織りなす北半球最南の流氷帯と高密度のヒグマ生息地を併せ持つ稀有な生態系の聖地です。" },
+        { q: "知床へのアクセスは?", a: "女満別空港からバスで約2時間のウトロ温泉が拠点。冬期は流氷観光、夏期はクルーズ船・五湖散策が定番。札幌からは車で約7時間、レンタカー推奨です。" },
+        { q: "撮影ベストシーズンは?", a: "1月下旬〜3月上旬の流氷期(最も人気)、6月の新緑、9〜10月の紅葉と五湖のリフレクションが三大シーズン。冬の流氷ウォークは予約必須、流氷の状態は年により変動します。" },
+      ],
+      en: [
+        { q: "What is Shiretoko?", a: "A 65 km peninsula in eastern Hokkaido, registered as a UNESCO World Natural Heritage Site in 2005. From the Ainu for «end of the earth,» it combines drift ice, primeval forest, brown bears, and sheer cliffs in the Northern Hemisphere's most southerly drift-ice zone — a rare ecological sanctuary." },
+        { q: "How do I access Shiretoko?", a: "Fly into Memanbetsu Airport; Utoro Onsen (2 hours by bus) is the gateway. Drift-ice tours in winter, cruises and Five Lakes hiking in summer. About 7 hours by car from Sapporo — a rental car is strongly recommended." },
+        { q: "When is the best season to photograph it?", a: "Late January to early March for drift ice (most popular), June for fresh greenery, September–October for autumn colors and Five Lakes reflections. Drift-ice walks require reservations; ice conditions vary year to year." },
+      ],
+    },
     faqs: [
       { q: d("知床へのアクセスは？","How do I access Shiretoko?","知床怎么去？","知床怎麼去？","시레토코 가는 법은?"),
         a: d("女満別空港からバスで約2時間のウトロ温泉が拠点。冬期は流氷観光、夏期はクルーズ船・五湖散策が定番。","Fly to Memanbetsu Airport; Utoro Onsen (2 hrs by bus) is the gateway. Drift-ice tours in winter, sightseeing cruises and Shiretoko Five Lakes walks in summer.","飞抵女满别机场后乘巴士2小时至宇登吕温泉。冬季流冰观光，夏季游船与知床五湖散步为主。","飛抵女滿別機場後乘巴士2小時至宇登呂溫泉。冬季流冰觀光，夏季遊船與知床五湖散步為主。","메만베쓰 공항에서 버스로 약 2시간 우토로 온천이 거점. 겨울 유빙 관광, 여름 유람선·시레토코 5호 산책이 정석.") },
@@ -28,6 +60,38 @@ export const LOCATION_CONTENT = {
       "札幌是北海道中心城市。大通公園、薄野、札幌時計台、北海道廳舊本廳舍（紅磚）等現代都市與雪國風情並存。藻岩山山頂夜景為日本新三大夜景之一。",
       "삿포로는 홋카이도의 중심 도시. 오도리 공원, 스스키노, 삿포로 시계탑, 홋카이도청 구본청사(빨간 벽돌) 등 현대 도시와 설국 정서가 공존. 모이와산 정상의 야경은 일본 신 3대 야경 중 하나."
     ),
+    definition: lh(
+      "札幌(さっぽろ)は北海道の道庁所在地で、人口約197万人の北海道最大の都市、政令指定都市。アイヌ語「サッ・ポロ・ペッ(乾いた大きな川)」由来、1869年(明治2年)に開拓使が置かれ計画的な碁盤の目状の都市設計で発展した若い都市。象徴的なランドマークとして大通公園(全長1.5km)、札幌時計台(1878年築、現存最古の時計台)、北海道庁旧本庁舎「赤れんが」(1888年築)、藻岩山(531m、新日本三大夜景)、すすきの歓楽街、JRタワー展望室など、雪国の都市景観と近代建築が共存する、日本でも稀有な都市撮影地です。",
+      "Sapporo, the capital of Hokkaido and Japan's fifth-largest city with about 1.97 million residents, is a designated «government ordinance city.» The name comes from the Ainu «Sat-Poro-Pet» («the dry large river»). Established in 1869 (Meiji 2) as the seat of the Hokkaido Development Commission, it grew on a planned grid pattern as one of Japan's youngest major cities. Iconic landmarks include the 1.5 km Odori Park, the Sapporo Clock Tower (built 1878, Japan's oldest surviving clock tower), the Red Brick Former Hokkaido Government Building (1888), Mt. Moiwa (531 m, one of Japan's New Three Great Night Views), the Susukino entertainment district, and the JR Tower observatory — a rare combination of snow-country urban landscape and modern architecture."
+    ),
+    highlights: {
+      ja: [
+        "藻岩山(もいわやま) — 531m、新日本三大夜景の一つ、ロープウェイで山頂、ハート型の街灯と札幌全景",
+        "大通公園 — 全長1.5kmの帯状公園、2月雪まつり、5月ライラックまつり、12月ホワイトイルミネーション",
+        "札幌時計台 — 1878年築、日本最古の時計台、米国製の機械式振り子時計、明治洋風建築",
+        "北海道庁旧本庁舎(赤れんが庁舎) — 1888年築、ネオバロック様式、紅葉の銀杏並木との組合せ",
+        "JRタワー展望室T38 — 地上160m、北海道最高の展望台、360度パノラマ夜景",
+      ],
+      en: [
+        "Mt. Moiwa — 531 m, one of Japan's New Three Great Night Views; reach the summit by ropeway for heart-shaped lights and full Sapporo panorama",
+        "Odori Park — 1.5 km of belt-shaped park hosting the February Snow Festival, May Lilac Festival, and December White Illumination",
+        "Sapporo Clock Tower — built 1878, Japan's oldest surviving clock tower; the American-made pendulum still keeps time, embodying Meiji Western architecture",
+        "Red Brick Former Hokkaido Government Building — built 1888 in Neo-Baroque style; pairs beautifully with the autumn ginkgo avenue",
+        "JR Tower Observatory T38 — 160 m above ground, Hokkaido's highest observation deck, 360° panoramic nightscape",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "札幌とは?", a: "北海道の道庁所在地、人口約197万人の北海道最大都市。1869年に開拓使が置かれた若い計画都市で、藻岩山の新日本三大夜景、大通公園、札幌時計台、赤れんが庁舎など雪国都市と近代建築が共存する撮影地です。" },
+        { q: "札幌市内観光に最適な時期は?", a: "2月さっぽろ雪まつり、6月ライラックまつり、10月の紅葉、12月ホワイトイルミネーション、年間通して表情が変わる。冬の方が空気が澄み夜景がより鮮明、夏は緑が美しい。" },
+        { q: "夜景撮影のベストポイントは?", a: "藻岩山(新日本三大夜景、ロープウェイで山頂、ハート型の街灯)、JRタワー展望室T38(160m最高)、テレビ塔、旭山記念公園(穴場)。日没30分後のブルーアワーが空と街の光のバランスがベスト。" },
+      ],
+      en: [
+        { q: "What is Sapporo?", a: "The capital of Hokkaido, Japan's fifth-largest city with about 1.97 million residents. Founded in 1869 as a planned grid-pattern city, it features Mt. Moiwa's New Three Great Night Views, Odori Park, the Sapporo Clock Tower, and the Red Brick Building — combining snow-country urbanity and modern architecture." },
+        { q: "Best time to visit central Sapporo?", a: "February Snow Festival, June Lilac Festival, October foliage, December White Illumination — the city changes face year-round. Winter clarity sharpens nightscapes; summer brings vibrant green." },
+        { q: "Best spots for night photography?", a: "Mt. Moiwa (one of Japan's New Three Great Night Views, ropeway to summit, heart-shaped lights), JR Tower T38 (Hokkaido's tallest at 160 m), TV Tower, Asahiyama Memorial Park (less crowded). Blue hour (30 min after sunset) is best for sky-and-city light balance." },
+      ],
+    },
     faqs: [
       { q: d("札幌市内観光に最適な時期は？","Best time to visit central Sapporo?","札幌市内观光最佳时期？","札幌市內觀光最佳時期？","삿포로 시내 관광 최적기는?"),
         a: d("2月さっぽろ雪まつり、6月ライラックまつり、10月紅葉、12月ホワイトイルミネーション。年間通して表情が変わる。","February (Snow Festival), June (Lilac Festival), October (foliage), December (White Illumination). The city changes face year-round.","2月雪祭、6月紫丁香节、10月红叶、12月白色灯饰节。四季表情各异。","2月雪祭、6月紫丁香節、10月紅葉、12月白色燈飾節。四季表情各異。","2월 눈축제, 6월 라일락 축제, 10월 단풍, 12월 화이트 일루미네이션. 연중 표정이 다양합니다.") },
@@ -41,6 +105,38 @@ export const LOCATION_CONTENT = {
       "每年2月上旬在大通公園舉辦的日本最大級雪像盛會。超過15米的巨型雪像、市民雪像、冰雕、夜間燈光秀是亮點。每年吸引超過200萬遊客。",
       "매년 2월 초 오도리 공원을 중심으로 개최되는 일본 최대급 눈 축제. 15m를 넘는 거대 눈조각, 시민 조각, 얼음 조각, 야간 조명이 볼거리. 200만 명 이상이 방문합니다."
     ),
+    definition: lh(
+      "さっぽろ雪まつり(さっぽろゆきまつり)は毎年2月初旬の約1週間、北海道札幌市中央区の大通公園・すすきの会場・つどーむ会場の3会場で開催される日本最大規模の冬のイベントで、1950年地元の中・高校生6人が大通公園に6基の雪像を作ったことから始まりました。現在は国内外から200万人以上が訪れる世界的祭典で、自衛隊が制作する高さ15m超の巨大雪像、市民雪像、国際雪像コンクール、氷彫刻、夜のプロジェクションマッピング、つどーむのスノーアクティビティまで、北の都市が一週間「雪の芸術都市」に変身します。",
+      "The Sapporo Snow Festival is held over about a week in early February each year across three Sapporo venues — Odori Park, Susukino, and Tsudome — and is Japan's largest winter event. It began in 1950 when six local middle and high school students built six snow sculptures in Odori Park; today it draws over 2 million visitors from around the world. Highlights include massive snow sculptures over 15 m built by the Japan Self-Defense Forces, citizen-made sculptures, the International Snow Sculpture Contest, ice carvings, evening projection mapping, and the snow activities at the Tsudome venue, transforming northern Sapporo into a «city of snow art» for one full week."
+    ),
+    highlights: {
+      ja: [
+        "大通会場(自衛隊大雪像) — 高さ15m級、隊員が約1か月かけて制作、国内外の名所がモチーフ",
+        "国際雪像コンクール — 11カ国・地域が参加、3日間で雪像を完成させる職人の技",
+        "夜のプロジェクションマッピング — 18時〜22時、巨大雪像にダイナミックな光と音楽",
+        "つどーむ会場 — 体験型雪まつり、雪のすべり台、ふぶき体験、家族連れに人気",
+        "すすきの氷の祭典 — 国際的な氷彫刻家による精巧な氷像、夜のライトアップが幻想的",
+      ],
+      en: [
+        "Odori Site (JSDF Sculptures) — over 15 m tall, taking the Self-Defense Forces about a month to build, modeled on famous landmarks worldwide",
+        "International Snow Sculpture Contest — 11 countries and regions compete, completing sculptures in three days",
+        "Evening Projection Mapping — 18:00–22:00, with dynamic light and music projected onto the giant sculptures",
+        "Tsudome Venue — interactive snow festival with slides and blizzard experiences, popular with families",
+        "Susukino Ice Festival — finely crafted ice sculptures by international artists, magically illuminated at night",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "さっぽろ雪まつりとは?", a: "毎年2月初旬の約1週間、札幌市の大通公園・すすきの・つどーむの3会場で開催される日本最大の冬のイベント。1950年に学生6人で始まり、今や200万人以上が訪れる世界的祭典で、15m超の巨大雪像とライトアップが目玉です。" },
+        { q: "撮影のベスト時間帯は?", a: "日没後〜21時のライトアップ時間帯が最も美しい。三脚+低ISOで雪の質感を残します。昼間は青空バックの構図も映えます。22時の消灯後は人がいない雪像を独占撮影できる隠れタイム。" },
+        { q: "開催期間と場所は?", a: "毎年2月初旬の約1週間(2025年は2月4〜11日)。大通公園(西1丁目〜西12丁目)、すすきの、つどーむ(東区)の3会場。大通会場が中心で、最寄駅は札幌駅・大通駅。日没前後の混雑は最大級です。" },
+      ],
+      en: [
+        { q: "What is the Sapporo Snow Festival?", a: "Japan's largest winter event, held over about a week in early February at three Sapporo venues (Odori Park, Susukino, Tsudome). Started in 1950 by six students, it now draws over 2 million visitors as a global festival, featuring snow sculptures over 15 m and stunning illuminations." },
+        { q: "Best time to shoot the festival?", a: "Illumination from sunset to 21:00 is most photogenic — use a tripod and low ISO to preserve snow texture. Daytime works against blue skies. After lights-out at 22:00, you can photograph the sculptures uncrowded — a hidden window." },
+        { q: "When and where is it held?", a: "About a week in early February each year (Feb 4–11 in 2025), at three venues: Odori Park (West 1 to West 12), Susukino, and Tsudome (Higashi Ward). Odori is the main site, accessed from Sapporo or Odori Stations. Crowds peak around sunset." },
+      ],
+    },
     faqs: [
       { q: d("撮影のベスト時間帯は？","Best time to shoot the festival?","拍摄最佳时段？","拍攝最佳時段？","촬영 최적 시간대는?"),
         a: d("日没後〜21時のライトアップ時間帯が最も美しい。三脚＋低ISOで雪の質感を残す。昼間は青空バック構図も映える。","Illumination from sunset to 21:00 is most photogenic — use tripod and low ISO to retain snow texture. Daytime works with blue-sky backdrops.","日落后至21点的灯光时段最美，建议三脚架+低ISO保留雪质感。白天蓝天为背景也不错。","日落後至21點的燈光時段最美，建議三腳架+低ISO保留雪質感。白天藍天為背景也不錯。","일몰 후~21시 조명 시간대가 가장 아름답습니다. 삼각대+저ISO로 눈의 질감을 살려주세요. 낮에는 파란 하늘을 배경으로도 좋습니다.") },
@@ -54,6 +150,38 @@ export const LOCATION_CONTENT = {
       "小樽運河與石造倉庫群是懷舊港城象徵。煤氣燈下的夜間運河、雪景倉庫、玻璃工藝街區都極具畫面感。距札幌40分鐘電車車程。",
       "오타루 운하와 석조 창고군은 노스탤직한 항구 도시의 상징. 가스등이 밝혀진 야간 운하, 설경의 창고, 유리 공예 거리가 그림 같습니다. 삿포로에서 전철 40분."
     ),
+    definition: lh(
+      "小樽(おたる)は北海道後志総合振興局管内の市で、人口約11万人の港湾都市。明治・大正期に北海道の物流拠点として栄え、銀行・商社が立ち並ぶ「北のウォール街」と称されました。中心の小樽運河(全長1,140m、1923年完成)は、海上輸送と倉庫を結ぶために造られたが、1986年から散策路として整備、石造倉庫群と63基のガス灯がノスタルジックな夜景を生み出します。札幌から快速で約30分の至近距離で、ガラス工芸(北一硝子)、オルゴール堂、寿司・海鮮グルメ、にしん御殿、天狗山ロープウェイの夜景まで、半日〜1日で巡れる港町撮影地です。",
+      "Otaru, in the Shiribeshi General Subprefectural Bureau of Hokkaido, is a port city of about 110,000 residents. It flourished as Hokkaido's logistics hub during the Meiji and Taisho eras, lined with banks and trading houses to the point of being called «the Wall Street of the North.» The 1,140 m Otaru Canal (completed 1923) was built to link sea transport and warehousing, but since 1986 has been redeveloped as a promenade where stone warehouses and 63 gas lamps create a nostalgic night view. About 30 minutes by rapid train from Sapporo, it offers glasswork (Kitaichi Glass), the Music Box Museum, sushi and seafood, the Nishin Goten herring mansion, and the night view from the Mt. Tengu ropeway — all within a half- to full-day photographic itinerary."
+    ),
+    highlights: {
+      ja: [
+        "小樽運河 — 全長1,140m、1923年完成、63基のガス灯と石造倉庫群、青の時間帯〜夜景の聖地",
+        "メルヘン交差点 — 蒸気時計、北一硝子、オルゴール堂が並ぶ観光中心地、雪降る冬は別世界",
+        "天狗山ロープウェイ — 標高532m、小樽と石狩湾の夜景、新日本三大夜景候補級",
+        "堺町通り商店街 — 北のウォール街の旧銀行群、寿司・海鮮グルメ・ガラス工芸、雪歩きが楽しい",
+        "祝津(しゅくつ)半島 — にしん御殿、青の洞窟ツアー、灯台、海岸線の絶景",
+      ],
+      en: [
+        "Otaru Canal — 1,140 m completed in 1923, with 63 gas lamps and stone warehouses, a sacred ground for blue-hour and nightscapes",
+        "Marchen Crossing — the steam clock, Kitaichi Glass, and the Music Box Museum cluster at the tourism center; in winter snow, otherworldly",
+        "Mt. Tengu Ropeway — 532 m elevation, with the night view of Otaru and Ishikari Bay rivaling Japan's New Three Great Night Views",
+        "Sakaimachi Street — former banks of the «Wall Street of the North,» plus sushi, seafood, and glasswork; magical to walk in falling snow",
+        "Shukutsu Peninsula — the Nishin Goten herring mansion, the Blue Cave tour, lighthouses, and dramatic coastlines",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "小樽とは?", a: "北海道の港湾都市で、明治・大正期に「北のウォール街」と称された物流拠点。小樽運河と63基のガス灯、石造倉庫群が織りなすノスタルジックな夜景、ガラス工芸、北の海鮮グルメで札幌から30分の人気撮影地です。" },
+        { q: "運河の撮影ベストスポットは?", a: "浅草橋と中央橋の中間地点。倉庫・運河・ガス灯が一枚に収まる構図が可能。夕暮れ〜夜の青い時間帯(日没後30分)が理想で、雪が降る冬の夜景は世界的にも稀有な被写体。" },
+        { q: "ベストシーズンは?", a: "1〜2月の雪化粧した運河は世界的に有名な構図、6月のあじさい、10月の紅葉、ガラス工芸の街並みは通年。冬のキャンドルナイト(2月)は運河に小さな灯りが浮かぶ幻想的なイベント。" },
+      ],
+      en: [
+        { q: "What is Otaru?", a: "A port city in Hokkaido that flourished as a logistics hub in the Meiji and Taisho eras — once called «the Wall Street of the North.» The canal with 63 gas lamps and stone warehouses creates a nostalgic nightscape; with glasswork, seafood, and 30 minutes from Sapporo, it ranks among the region's top photography destinations." },
+        { q: "Best photo spot along the canal?", a: "Midway between Asakusa Bridge and Chuo Bridge — warehouses, canal, and gas lamps fit in one frame. The blue hour (30 min after sunset) is ideal; the snowy winter canal is a world-class rare subject." },
+        { q: "When is the best season to photograph?", a: "January–February's snow-clad canal is globally iconic; June for hydrangeas; October for autumn colors; glasswork streets year-round. The February «Otaru Snow Light Path» fills the canal with tiny candle flames — a magical limited-time event." },
+      ],
+    },
     faqs: [
       { q: d("運河の撮影ベストスポットは？","Best photo spot along the canal?","运河最佳拍摄点？","運河最佳拍攝點？","운하 최고 촬영 포인트는?"),
         a: d("浅草橋と中央橋の中間地点。倉庫・運河・ガス灯が一枚に収まる構図が可能。夕暮れ〜夜の青い時間帯が理想。","Midway between Asakusa Bridge and Chuo Bridge — warehouses, canal, and gas lamps all fit in one frame. The blue hour just after sunset is ideal.","浅草桥与中央桥之间。仓库、运河、煤气灯可一并入镜。黄昏至蓝色时刻最佳。","淺草橋與中央橋之間。倉庫、運河、煤氣燈可一併入鏡。黃昏至藍色時刻最佳。","아사쿠사바시와 주오바시 중간 지점. 창고·운하·가스등을 한 프레임에 담을 수 있습니다. 블루아워가 이상적.") },
@@ -67,6 +195,38 @@ export const LOCATION_CONTENT = {
       "洞爺湖是支笏洞爺國立公園的破火山口湖。湖畔眺望羊蹄山、2000年有珠山噴發遺跡、中島自然、每晚煙火（4-10月）等。推薦從溫泉街與湖畔步道拍攝。",
       "도야호는 시코쓰도야 국립공원의 칼데라호. 호반에서 요테이산을 바라보고, 2000년 우스산 분화 흔적, 나카지마의 자연, 매일 밤 불꽃놀이(4-10월)가 인기. 온천가와 호반 산책로에서 촬영 추천."
     ),
+    definition: lh(
+      "洞爺湖(とうやこ)は北海道虻田郡洞爺湖町・壮瞥町にまたがるカルデラ湖で、面積70.7km²、最大水深180mの日本第3位の透明度を誇る湖。約11万年前の巨大噴火で形成され、湖の中央には4つの島(中島)が浮かびます。隣接する有珠山(737m)と昭和新山(398m)は今も活動を続ける活火山で、湖+山+温泉が一帯となった支笏洞爺国立公園の中核。2008年G8北海道洞爺湖サミット開催地としても知られ、4〜10月の毎晩開催される洞爺湖ロングラン花火大会(450発)は湖面に映る花火の絶景で日本でも屈指です。",
+      "Lake Toya is a caldera lake spanning Toyako and Sobetsu in Abuta District, Hokkaido — 70.7 km² in area, 180 m at its deepest, with Japan's third-highest water clarity. Formed about 110,000 years ago by a massive eruption, four islands (Nakajima) float at the center of the lake. The neighboring Mt. Usu (737 m) and Showa-Shinzan (398 m) remain active, and the lake-mountain-onsen ensemble forms the heart of Shikotsu-Toya National Park. Known as the host of the 2008 G8 Hokkaido Toya Lake Summit, it also features the «Long-Run Fireworks» — 450 shots fired every night from April to October — whose reflection on the lake's surface ranks among Japan's finest spectacles."
+    ),
+    highlights: {
+      ja: [
+        "洞爺湖サミット記念展望台 — シレンビ岬山頂、湖と中島と羊蹄山(蝦夷富士)を一枚に俯瞰",
+        "毎晩花火大会(4〜10月) — 20:45〜21:05、450発、世界一長期間の花火大会、湖面の倒影が必撮",
+        "有珠山(うすざん) — 標高737mの活火山、ロープウェイで山頂、洞爺湖と内浦湾の壮大なパノラマ",
+        "昭和新山 — 1944〜45年の噴火で出現した398mの新山、赤茶色の山肌が印象的、世界的にも珍しい",
+        "中島(なかじま) — 湖中央の4つの島、フェリーで上陸、原生林とエゾシカの生息地",
+      ],
+      en: [
+        "Toya Summit Memorial Observatory — atop Cape Shirenbi, capturing the lake, Nakajima, and Mt. Yotei («Ezo Fuji») in one frame",
+        "Nightly Fireworks (April–October) — 20:45–21:05, 450 shots, the world's longest-running fireworks display; the reflection on the lake is essential",
+        "Mt. Usu — a 737 m active volcano; a ropeway leads to the summit, offering grand views over Lake Toya and Uchiura Bay",
+        "Showa-Shinzan — a 398 m «new mountain» that emerged in the 1944–45 eruption; its red-brown slopes are striking and globally rare",
+        "Nakajima — four islands at the lake's center reachable by ferry, with primeval forest and Hokkaido sika deer",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "洞爺湖とは?", a: "北海道のカルデラ湖で面積70.7km²、日本第3位の透明度。11万年前の巨大噴火で形成、活火山の有珠山・昭和新山と一体の支笏洞爺国立公園の中核、2008年G8サミット開催地で、4〜10月の毎晩花火大会が名物です。" },
+        { q: "花火撮影のコツは?", a: "三脚必須。ISO100・F8・シャッター4〜8秒バルブ。湖に映る花火も狙える湖畔の展望台がベスト。20:45開始、約20分間で450発。風がない日は湖面の倒影が完璧に映ります。" },
+        { q: "アクセスとベストシーズンは?", a: "札幌から車で約2時間、JR洞爺駅からバスで20分。新千歳空港から車で約2時間。ベストは4〜10月の花火期、特に夏〜秋の湖面が穏やかな時期。冬の雪化粧した湖と火山も独特の美しさ。" },
+      ],
+      en: [
+        { q: "What is Lake Toya?", a: "A caldera lake in Hokkaido — 70.7 km² with Japan's third-highest water clarity, formed by a massive eruption 110,000 years ago. With the active volcanoes Mt. Usu and Showa-Shinzan, it forms the heart of Shikotsu-Toya National Park, hosted the 2008 G8 Summit, and is famous for nightly fireworks April through October." },
+        { q: "Tips for shooting fireworks?", a: "Tripod required. ISO 100, f/8, 4–8s bulb exposure. The lakeside observation deck captures fireworks with their reflection. 450 shots in about 20 minutes from 20:45. On windless nights the reflection on the water is mirror-perfect." },
+        { q: "Access and best season?", a: "About 2 hours by car from Sapporo, 20 minutes by bus from JR Toya Station, or 2 hours by car from New Chitose Airport. Best from April to October during fireworks season, especially summer–autumn when the lake is calm. Snow-clad lake and volcanoes in winter offer their own beauty." },
+      ],
+    },
     faqs: [
       { q: d("花火撮影のコツは？","Tips for shooting fireworks?","烟火拍摄技巧？","煙火拍攝技巧？","불꽃놀이 촬영 팁은?"),
         a: d("三脚必須。ISO100・F8・シャッター4〜8秒バルブ。湖に映る花火も狙える湖畔の展望台がベスト。","Tripod required. ISO 100, f/8, 4–8s bulb exposure. The lakeside observation deck captures fireworks with their reflection.","必备三脚架。ISO 100、F8、4-8秒B门。湖畔展望台可同时拍到花火与倒影。","必備三腳架。ISO 100、F8、4-8秒B門。湖畔展望台可同時拍到煙火與倒影。","삼각대 필수. ISO 100, F8, 4-8초 벌브. 호반 전망대에서 불꽃과 반영을 함께 담을 수 있습니다.") },
@@ -80,6 +240,38 @@ export const LOCATION_CONTENT = {
       "富良野位於北海道中部，以富田農場為中心的薰衣草田而聞名。7月中下旬為盛花期，紫色花毯與藍天的對比堪稱日本代表風景。8月至秋季有其他香草與花卉接力開放。",
       "후라노는 홋카이도 중앙부, 팜 도미타를 중심으로 한 라벤더 밭으로 유명합니다. 7월 중순~하순이 절정으로 보라색 융단과 파란 하늘의 대비는 일본 최고의 회화적 풍경. 8월~가을에는 다른 허브와 꽃들이 이어서 핍니다."
     ),
+    definition: lh(
+      "富良野(ふらの)は北海道のほぼ中央、十勝岳連峰の西麓に広がる人口約2万人の盆地都市で、隣接する美瑛(びえい)とともに「丘のまち」として知られる日本屈指の田園風景の聖地。1958年に富田忠雄氏が始めた「ファーム富田」のラベンダー栽培が、1976年JR国鉄カレンダーの表紙を飾ったことで全国的に有名となり、現在は7月のラベンダー満開期に約100万人が訪れます。ラベンダーのほか、彩りの畑(虹色のパッチワーク)、ひまわり畑、秋の紅葉、冬の樹氷とパウダースノーまで四季それぞれに代表的な日本の田園風景を提供する撮影地です。",
+      "Furano lies in the heart of Hokkaido at the western foot of the Tokachi Range — a basin city of about 20,000 residents that, together with neighboring Biei, is known as the «town of hills,» a sacred ground of Japan's finest pastoral landscapes. Tadao Tomita started lavender cultivation at «Farm Tomita» in 1958, and when it appeared on the cover of the 1976 Japanese National Railways calendar, the area gained nationwide fame; today, about a million visitors arrive at peak lavender bloom in July. Beyond lavender, the «Rainbow Patchwork Fields,» sunflower fields, autumn colors, and winter rime ice with powder snow each offer iconic Japanese rural landscapes across the seasons."
+    ),
+    highlights: {
+      ja: [
+        "ファーム富田 — 1958年創業、12種類のラベンダーと「彩りの畑」、7月中旬〜下旬がピーク",
+        "彩りの畑(パッチワーク) — 7色の花が虹色の縞模様に並ぶ、世界的にも珍しい構図",
+        "美瑛の青い池 — 立ち枯れた白樺と青い水面、北海道電力の砂防ダムの副産物、AppleのMacBookProの壁紙",
+        "四季彩の丘 — 美瑛町、15万㎡の花畑、夏〜秋の連続開花、トラクター散策可",
+        "新栄の丘・パッチワークの路 — 美瑛の代表的丘風景、「ケンとメリーの木」「セブンスターの木」",
+      ],
+      en: [
+        "Farm Tomita — founded 1958, with 12 lavender varieties and the «Rainbow Patchwork Fields,» peaking mid-to-late July",
+        "Rainbow Patchwork Fields — seven colors of flowers arranged in rainbow stripes, a globally rare composition",
+        "Biei Blue Pond — dead birches and blue water, a byproduct of Hokkaido Electric's sediment dams, used as Apple's MacBook Pro wallpaper",
+        "Shikisai-no-Oka — 150,000 m² of flower fields in Biei, with continuous summer–autumn blooms; tractor tours available",
+        "Shin-ei Hills and Patchwork Road — iconic Biei hill landscapes, including the «Ken & Mary Tree» and «Seven Star Tree»",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "富良野とは?", a: "北海道中央部、美瑛と並ぶ「丘のまち」の代表で、1958年創業のファーム富田のラベンダー畑で世界的に有名。7月の紫の絨毯、虹色のパッチワーク畑、美瑛の青い池まで、日本屈指の田園風景の聖地です。" },
+        { q: "ラベンダーのベストな撮影時期は?", a: "7月15日〜25日頃が満開のピーク。早朝は光が斜めで花の立体感が出る。晴れた日の午前中が最も色が冴える。週末は混雑するため平日早朝6〜8時が狙い目です。" },
+        { q: "美瑛とセットで巡れる?", a: "可能、富良野と美瑛は車で約30分、ファーム富田→四季彩の丘→青い池→パッチワークの路の周遊コースが定番。1日で巡るならレンタカー推奨、JRも利用可だが本数少ない。" },
+      ],
+      en: [
+        { q: "What is Furano?", a: "Located in central Hokkaido alongside Biei as «towns of hills,» Furano is globally famous for the lavender fields of Farm Tomita (founded 1958). With purple July carpets, rainbow patchwork fields, and Biei's Blue Pond, it remains a sacred ground for Japanese pastoral landscapes." },
+        { q: "Best time for lavender photos?", a: "Peak bloom is roughly July 15–25. Early morning's low-angle light brings out floral depth; clear-sky mornings yield the richest color. Weekends are crowded — weekday early mornings 6–8 AM are ideal." },
+        { q: "Can I combine Furano with Biei?", a: "Yes — about 30 minutes apart by car. The classic loop: Farm Tomita → Shikisai-no-Oka → Blue Pond → Patchwork Road. A rental car is recommended for a day trip; JR runs but with infrequent service." },
+      ],
+    },
     faqs: [
       { q: d("ラベンダーのベストな撮影時期は？","Best time for lavender photos?","薰衣草最佳拍摄时期？","薰衣草最佳拍攝時期？","라벤더 촬영 최적기는?"),
         a: d("7月15日〜25日頃が満開のピーク。早朝は光が斜めで花の立体感が出る。晴れた日の午前中が最も色が冴える。","Peak bloom is roughly July 15–25. Early morning's low-angle light brings out floral depth; clear-sky mornings yield the richest color.","7月15日-25日为盛开高峰。清晨斜光突出立体感，晴天上午色彩最浓。","7月15日-25日為盛開高峰。清晨斜光突出立體感，晴天上午色彩最濃。","7월 15-25일경이 절정. 이른 아침 사광이 꽃의 입체감을 살리고, 맑은 날 오전이 색이 가장 선명합니다.") },
