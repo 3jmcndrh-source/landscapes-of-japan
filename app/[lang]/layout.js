@@ -1,8 +1,11 @@
 import { Cormorant_Garamond, Noto_Sans_JP, Noto_Sans, Zen_Kaku_Gothic_New, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { LANGS, RTL_LANGS, SITE_URL } from "../i18n-meta.js";
+
+const CLARITY_PROJECT_ID = "wh6fyaj6ok";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -78,6 +81,14 @@ export default async function LangLayout({ children, params }) {
         />
       </head>
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
+        {/* Microsoft Clarity (#4): user behavior heatmap & session recording */}
+        <Script id="ms-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");`}
+        </Script>
         {children}
         <noscript>
           <div style={{ position: "fixed", inset: 0, background: "#0a0a0a", color: "#e8e4df", padding: "40px 24px", overflowY: "auto", zIndex: 9999, fontFamily: "Georgia, 'Noto Sans JP', sans-serif" }}>

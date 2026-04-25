@@ -16,10 +16,10 @@ const nextConfig = {
     const csp = [
       "default-src 'self'",
       "img-src 'self' res.cloudinary.com images.unsplash.com data:",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' va.vercel-scripts.com www.clarity.ms",
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com",
       "font-src fonts.gstatic.com",
-      "connect-src 'self' formspree.io raw.githubusercontent.com api.open-meteo.com va.vercel-scripts.com vitals.vercel-insights.com",
+      "connect-src 'self' formspree.io raw.githubusercontent.com api.open-meteo.com va.vercel-scripts.com vitals.vercel-insights.com *.clarity.ms c.bing.com",
       "frame-ancestors 'none'",
     ].join("; ");
     return [
