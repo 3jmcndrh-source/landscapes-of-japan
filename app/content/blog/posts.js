@@ -299,8 +299,28 @@ Critical etiquette: never step into the flower beds (private land, plants are da
     hero: "qvsgt1aw6o4iwewvhmdc",
     title: { ja: "白川郷の雪景色 — 世界遺産・合掌造りに降り積もる冬", en: "Shirakawa-go in Snow: Winter on a UNESCO Gassho-zukuri Village" },
     excerpt: { ja: "茅葺き屋根に積もる雪、ライトアップの幻想、展望台からの俯瞰。冬撮影の入門。", en: "Snow piled on thatched roofs, the magic of evening illumination, and the elevated view from the observation deck." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `岐阜県大野郡白川村の合掌造り集落は、1995年に世界文化遺産に登録された日本を代表する山村風景です。急勾配の茅葺き屋根は豪雪地帯特有の構造で、冬は屋根に1m以上の雪が積もり、おとぎ話のような世界が広がります。
+
+撮影シーズンは1月中旬〜2月下旬。例年1月から雪が積もり始め、2月中旬に最も深く積雪します。「白川郷ライトアップ」は1月中旬〜2月の特定日（要事前予約、近年は完全予約制）の17:30〜19:30開催。ライトアップ時の集落は雪に光が反射し幻想的な金色の世界に。
+
+撮影スポットは2つに集約。①集落内の道：合掌造り民家を間近に。明善寺、和田家など重要文化財建築が点在。②荻町城跡展望台（村営シャトルバスで5分）：集落全体を俯瞰する王道アングル。展望台撮影はライトアップ時間内のみ大人気で混雑、開始30分前到着を。
+
+機材：標準ズーム（24-70mm）+望遠（70-200mm）。展望台では70mm前後で集落をフレームいっぱいに。手持ち撮影の場合手振れ補正必須。三脚はライトアップ時の指定エリアのみ可。
+
+冬装備は本気で。岐阜の山間部は氷点下5〜15℃、深い雪で足元が悪い。防水ブーツ、スノーゲイター、雪上対応の靴底ピン、手袋（タッチ操作可能なもの）必携。バッテリー予備2個、レンズの結露を防ぐためジップロック持参。
+
+注意：①住民の生活集落なので、夜間の私有地敷地内立入禁止、フラッシュは民家に向けない、②夏期と違ってドライブで来る場合は冬タイヤ必須、③ライトアップは予約のみ。日帰り撮影なら高山駅・金沢駅から日帰りバスツアーが便利です。`,
+    bodyEn: `The gassho-zukuri village of Shirakawa-go in Ono District, Gifu, was inscribed as UNESCO World Cultural Heritage in 1995 — a quintessential Japanese mountain village. Its steeply-pitched thatched roofs are designed for heavy snow country, and in winter they accumulate over 1 m of snow, creating a fairy-tale landscape.
+
+Peak season is mid-January to late February. Snow typically begins accumulating in January and depth peaks in mid-February. The «Shirakawa-go Light-up» runs on selected days from mid-January through February (now fully reservation-only) from 17:30 to 19:30. During illumination, snow reflects the light into a golden, dreamlike world.
+
+Two main vantages: (1) within the village, where you photograph gassho farmhouses up close, including Important Cultural Property buildings like Myozenji and the Wada Residence. (2) Ogimachi Castle Ruin Observation Deck (5 minutes by village shuttle bus) — the classic elevated view of the entire village. The deck during light-up is extremely popular; arrive 30 minutes before start.
+
+Gear: standard zoom (24–70 mm) and a telephoto (70–200 mm). At the deck, ~70 mm fills the frame with the village. Image stabilization is essential for handheld. Tripods are restricted to designated areas during light-up.
+
+Take winter prep seriously. Gifu's mountain region runs −5 to −15 °C; deep snow makes walking difficult. Waterproof boots, snow gaiters, ice-grip soles, touchscreen-compatible gloves are essential. Two spare batteries, plus ziplocks to prevent lens condensation when re-entering warm spaces.
+
+Notes: (1) the village is inhabited — don't enter private property at night, never aim flash at residences; (2) winter tires are mandatory if driving (unlike summer); (3) light-up is reservation-only. For day trips, bus tours from Takayama or Kanazawa stations are convenient.`,
   },
   {
     slug: "kyoto-autumn-temples",
@@ -309,8 +329,32 @@ Critical etiquette: never step into the flower beds (private land, plants are da
     hero: "",
     title: { ja: "京都の紅葉と寺社 — 11月、千年の都を歩く", en: "Kyoto's Autumn Foliage and Temples: November in the Thousand-Year Capital" },
     excerpt: { ja: "東福寺の通天橋、清水寺、金閣寺。混雑を避けて朝イチで巡るルートと時間配分。", en: "Tofuku-ji's Tsutenkyo, Kiyomizu-dera, and Kinkaku-ji. An early-morning route plan that beats the crowds." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `京都の紅葉は11月中旬〜下旬がピーク。1600以上の寺社のうち、特にカメラマンが目指すのが東福寺、清水寺、金閣寺の三大スポットです。1日で全部回るには朝6時開始の超早朝ルートが鉄則。
+
+【06:30 東福寺】最初に向かうべきは東福寺。通天橋から眺める2,000本のモミジの紅葉は息を呑む景観です。8:30の開門前から行列ができるため、開門と同時に通天橋へ。狭い橋上で立ち止まらないルールがあるので、構図は事前に決めておく。順光は午前中、午後は逆光のシルエット撮影が狙い目。退去9:30まで。
+
+【10:30 清水寺】徒歩・タクシーで30分。清水の舞台と紅葉、子安の塔と紅葉を狙う。本堂の舞台からは京都市街と紅葉が見渡せます。所要1.5時間、混雑のため三脚不可、手持ちで素早く。退去12:00。
+
+【14:00 金閣寺】昼食後、北西へ移動（バス1時間）。鏡湖池に映る金閣と紅葉のリフレクションが王道。逆光になる午後がドラマチック。所要45分、退去14:45。
+
+【夕方 補足スポット】時間があれば永観堂（モミジの数No.1）、嵐山（渡月橋＋紅葉）、瑠璃光院（床紅葉）も。瑠璃光院は秋限定公開（10月〜12月初旬）で要予約。
+
+混雑回避のコツ：①平日狙い、②朝7時前後に最重要スポット、③紅葉ピーク前後を1週間ずらす（前は青紅葉ミックス、後は散り紅葉が美しい）、④傘の日は人が減り、雨に濡れた紅葉が深く色づく。
+
+機材：標準ズーム（24-70mm）+望遠（70-200mm）。PLフィルターで葉の反射を抑え赤を鮮明に。三脚禁止スポット多いので一脚 or 手持ち中心。`,
+    bodyEn: `Kyoto's autumn foliage peaks from mid-to-late November. Among the city's 1,600+ temples and shrines, three rise as photographer's icons: Tofuku-ji, Kiyomizu-dera, and Kinkaku-ji. Hitting all three in a day requires an extreme-early-morning route.
+
+【06:30 Tofuku-ji】Start here. The 2,000 maples viewed from Tsutenkyo bridge form a breathtaking carpet. Lines form before the 8:30 opening — be at the gate when it opens and head straight to Tsutenkyo. The bridge has a no-stopping rule, so pre-plan your composition. Front light arrives in the morning; afternoon offers backlit silhouette opportunities. Exit by 9:30.
+
+【10:30 Kiyomizu-dera】30 minutes by foot or taxi. Target the wooden stage with foliage, plus the Koyasu Pagoda framed by leaves. The stage offers panoramic Kyoto cityscape with autumn color. Allow 90 minutes. Tripods aren't allowed — shoot handheld, work fast. Exit by 12:00.
+
+【14:00 Kinkaku-ji】After lunch, head northwest (1 hour by bus). The classic shot is the Golden Pavilion mirrored in Kyoko-chi pond among reds. Afternoon backlight is most dramatic. Allow 45 minutes; exit by 14:45.
+
+【Evening extras】If time permits: Eikan-do (most maples in Kyoto), Arashiyama (Togetsukyo Bridge + foliage), Ruriko-in (the famous lacquered floor reflection — fall-only, requires advance booking, October to early December).
+
+Crowd avoidance: (1) target weekdays; (2) hit top spots before 7 a.m.; (3) shift dates 1 week off-peak (earlier = green-and-red mix, later = beautifully fallen leaves); (4) rainy days bring fewer visitors and deeper colors on wet leaves.
+
+Gear: standard zoom (24–70 mm) plus telephoto (70–200 mm). A CPL filter cuts leaf glare and saturates reds. Many spots ban tripods — monopod or handheld is the rule.`,
   },
   {
     slug: "kiyomizu-illumination",
@@ -319,8 +363,24 @@ Critical etiquette: never step into the flower beds (private land, plants are da
     hero: "",
     title: { ja: "清水寺 紅葉ライトアップ — 京都の夜、舞台に灯る秋", en: "Kiyomizu-dera Autumn Illumination: Kyoto Nights, the Lit Stage of Fall" },
     excerpt: { ja: "13mの懸造り舞台と紅葉を青空の時間帯に撮る。三脚不可の制約下での実践設定。", en: "Shooting the 13 m wooden stage with autumn leaves at blue hour. Practical settings under the no-tripod restriction." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `世界遺産・清水寺の「秋の夜の特別拝観」は11月中旬〜12月初旬の限定開催。日没後17:30〜21:00（受付20:30まで）、釘を使わず組み上げた高さ13mの「清水の舞台」と境内の紅葉が青白いライトと暖色で照らされ、別世界の景観が広がります。
+
+最大の特権は「青の時間帯（ブルーアワー）」。日没10〜30分後、空がまだ深い青色を残している間が最も美しい瞬間です。空が真っ黒になる夜より、青空の中に浮かび上がる朱色の三重塔と赤い紅葉のコントラストが圧倒的に映えます。
+
+時間配分：①17:00受付前到着し列に並ぶ、②17:30開場と同時に「奥の院」（舞台を正面から見られる撮影ポイント）へ直行、③ブルーアワー（17:50〜18:30）に最高の構図を決める、④18:30以降は他のアングルや三重塔、子安の塔も巡る、⑤20:30受付終了前に音羽の滝へ。
+
+【三脚不可】境内全域で三脚使用禁止。手持ちで撮るには高ISO耐性のあるカメラが必要。設定例：ISO3200〜6400、F2.8〜4、SS1/30〜1/60秒、手ブレ補正ON、連写3枚で歩留まり向上。レンズは明るい標準ズーム（24-70mm F2.8）か単焦点（35mm F1.8 or 50mm F1.8）が最強。
+
+【撮影マナー】①フラッシュ禁止、②三脚不可（一脚も実質不可）、③進路を塞いで構図を固定しない（流動的な撮影を）、④境内は神聖な場、私語は最小限。京都市バスの「五条坂」または「清水道」から徒歩10分、夜は人が多くタクシー混雑のため公共交通機関推奨。`,
+    bodyEn: `UNESCO World Heritage Kiyomizu-dera holds its «Autumn Night Special Viewing» for a limited window from mid-November to early December. From 17:30 to 21:00 (last entry 20:30), the 13 m nail-free wooden «stage» and the temple's autumn foliage are illuminated under cool blue and warm light, creating an otherworldly scene.
+
+The crown jewel is blue hour. From 10 to 30 minutes after sunset, while deep blue lingers in the sky, the contrast between the vermilion three-story pagoda, red maples, and the blue twilight is unforgettable — far more striking than later when the sky is fully black.
+
+Itinerary: (1) arrive before 17:00 to queue; (2) at 17:30 opening, head straight to «Okuno-in» — the prime vantage facing the stage; (3) lock down your top composition during blue hour (17:50–18:30); (4) after 18:30 explore other angles, the three-story pagoda, and Koyasu Pagoda; (5) finish at Otowa Falls before the 20:30 last entry.
+
+【No tripods】Tripods are banned throughout the temple. Handheld shooting requires a camera with strong high-ISO performance. Practical settings: ISO 3200–6400, f/2.8–4, 1/30–1/60 s, image stabilization on, three-frame burst for keeper rate. A fast standard zoom (24–70 mm f/2.8) or fast prime (35 mm f/1.8 or 50 mm f/1.8) is the strongest tool.
+
+【Etiquette】(1) no flash, (2) no tripods (monopods are also impractical), (3) don't block paths to lock compositions — keep moving, (4) the grounds are sacred, so keep talk minimal. Take Kyoto City Bus to «Gojozaka» or «Kiyomizu-michi» (10-minute walk). At night, taxi traffic is heavy — public transit is recommended.`,
   },
   {
     slug: "byodoin-phoenix-hall",
@@ -329,8 +389,28 @@ Critical etiquette: never step into the flower beds (private land, plants are da
     hero: "",
     title: { ja: "平等院鳳凰堂 — 10円玉に刻まれた1000年の対称美", en: "Byodo-in Phoenix Hall: A Thousand Years of Symmetry Engraved on the 10-Yen Coin" },
     excerpt: { ja: "阿字池に映る鳳凰堂。風のない朝の鏡面と、紅葉・雪との季節構図。", en: "The hall reflected in Aji Pond. Mirror-still mornings, plus seasonal pairings with autumn leaves and snow." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `京都府宇治市の平等院鳳凰堂は、平安時代1053年（藤原頼通による）の建立で、世界文化遺産にして10円硬貨と1万円札（旧新両面）の図柄。左右対称の美しい姿が阿字池の水面に映る景観は、平安貴族が思い描いた「極楽浄土」そのものです。
+
+撮影は4つの季節で表情が違います。①春（4月上旬）：藤の花と桜が境内に。境内入口の藤棚は推定樹齢280年。②秋（11月下旬）：境内の紅葉が朱色に染まり、鳳凰堂の朱と紅葉が共鳴。③冬（12〜2月）：雪化粧の鳳凰堂、雪と金箔のコントラストは別格。④初夏（5月中下旬）：青葉と蓮の花。
+
+ベスト時間は8:30の開門直後。朝のうちは風が穏やかで、阿字池の水面が鏡のような状態を保ちます。風が出る前の30分間が勝負時間。観光客が増える10時以降は人物が映り込みます。
+
+【撮影スポット】①池の南東岸（最も有名な「鳳凰堂正面」アングル、王道）、②南西岸（堂を斜めから捉える）、③橋上（高さがあり俯瞰可能）。14時頃から夕方は逆光になり、シルエットの鳳凰堂と夕焼け空のドラマチックな構図が狙えます。
+
+【機材】広角〜標準ズーム（24-70mm）が万能。完全な対称構図を作るため水平器使用、または三脚で慎重に構図を整える。三脚は許可エリアのみ可（境内入口で確認）。PLフィルターで水面反射をコントロール、ただし強くしすぎると逆さの像が消える。
+
+ヒント：①新緑の朝は霧が出やすく幻想的、②有料拝観で内部の阿弥陀如来像も拝観可（撮影禁止）、③隣接する平等院ミュージアム鳳翔館は鳳凰像など国宝多数。宇治茶も忘れずに。`,
+    bodyEn: `Byodo-in Phoenix Hall in Uji, Kyoto, was built in 1053 by Fujiwara no Yorimichi during the Heian period. It is a UNESCO World Heritage site and the design featured on Japan's 10-yen coin and 10,000-yen note (old/new). Its perfectly symmetric form mirrored on Aji Pond visualizes the Heian aristocracy's vision of the «Pure Land» paradise.
+
+Four seasons offer distinct moods: (1) spring (early April): wisteria and cherry blossoms — the wisteria trellis at the entrance is estimated to be 280 years old; (2) autumn (late November): grounds turn crimson, harmonizing with the hall's vermilion; (3) winter (December–February): snow on the hall, with snow and gold-leaf creating a singular contrast; (4) early summer (mid-late May): fresh greens and lotus flowers.
+
+Best time is right after the 8:30 opening. Mornings are calm and Aji Pond holds a mirror-still surface — the 30 minutes before wind picks up are your window. After 10 a.m. crowds reflect into your frame.
+
+【Vantages】(1) southeast pond bank (the iconic full-front view); (2) southwest bank (oblique angle); (3) the bridge (slightly elevated overhead). After 14:00, the hall becomes backlit, allowing dramatic silhouette compositions against sunset skies.
+
+【Gear】Wide to standard zoom (24–70 mm) is versatile. Use a level for true symmetry, or compose carefully on a tripod. Tripods are allowed only in designated areas — check at the entrance. CPL filter manages water reflection; too strong and the inverted reflection disappears.
+
+Tips: (1) misty mornings in spring are ethereal; (2) paid admission lets you view the Amida Nyorai statue inside (no photography); (3) the adjacent Hosho-kan museum holds national treasures including the original phoenix statues. Don't leave without trying Uji matcha.`,
   },
   {
     slug: "ise-jingu-pilgrimage",
@@ -339,8 +419,28 @@ Critical etiquette: never step into the flower beds (private land, plants are da
     hero: "",
     title: { ja: "伊勢神宮 参拝と撮影 — 神域の杜を歩く", en: "Ise Jingu Pilgrimage and Photography: Walking the Sacred Grove" },
     excerpt: { ja: "外宮・内宮の参拝順路、撮影マナー、おかげ横丁の食と街並み。日本の心を巡る一日。", en: "Outer/Inner shrine route, photography etiquette, and the food and streets of Okage Yokocho. A day at Japan's spiritual heart." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `三重県伊勢市の伊勢神宮は、日本全国8万社の頂点に立つ最高位の神社。皇室の祖神とされる天照大御神を祀る「内宮」と、衣食住・産業の神である豊受大御神を祀る「外宮」の2宮を中心に、125社で構成されます。20年に一度社殿を新しく建て替える「式年遷宮」が今も続く、世界的にも稀有な神社です。
+
+【正式な参拝順】古来「外宮先祭」が正式。①7:30 外宮（豊受大神宮）から。北御門口入口、約30〜45分で本殿。②9:00 内宮（皇大神宮）へバス20分。宇治橋を渡り五十鈴川御手洗場で清め、約45分〜1時間で本殿。③11:00 おかげ横丁・おはらい町で食事と街並み撮影。
+
+【撮影マナー絶対遵守】①本殿撮影禁止（ご正宮の階段から先は撮影不可、白い御幌も）、②鳥居の前で撮影スタッフが立つのは止めましょう、③参拝者の顔は写さない、④三脚は参道では使用不可（広場のみ可、混雑時遠慮）、⑤神域での飲食喫煙禁止。
+
+【撮影ポイント】①宇治橋（朝日が橋を照らす早朝が美しい）、②五十鈴川御手洗場（清らかな川と緑）、③樹齢千年超の杉並木（縦構図、参道の奥行き）、④おかげ横丁の街並み（江戸〜明治の町並みを再現）、⑤夫婦岩（隣接、日の出と二見興玉神社）。
+
+【機材】標準ズーム（24-70mm）が万能。神域は深い杉に囲まれ薄暗いので、F2.8〜F4の明るいレンズが有利。手ブレ補正必須。PLフィルターで川面の反射、苔の発色を活かす。
+
+ヒント：①早朝（朝6時の開門）が最も静謐で人が少ない。②伊勢神宮は3度参拝すると願いが叶うとされる。③おかげ横丁の「赤福本店」の赤福餅、伊勢うどん、てこね寿司は伊勢の三大グルメ。`,
+    bodyEn: `Ise Jingu in Mie Prefecture is the most prestigious shrine in Japan, standing atop the country's 80,000+ Shinto shrines. It centers on two main shrines — the «Naiku» (Inner) enshrining Amaterasu Omikami, the imperial ancestral deity, and the «Geku» (Outer) enshrining Toyouke Omikami, deity of food, clothing, shelter, and industry — together with 125 affiliated shrines. The «Shikinen Sengu» tradition of rebuilding the entire main hall every 20 years remains alive — a world-rare practice.
+
+【Proper visit order】Tradition dictates «Geku first.» (1) 7:30 — start at the Outer Shrine (Toyouke Daijingu) via the Kitamikadoguchi entrance, ~30–45 minutes to reach the main hall. (2) 9:00 — bus 20 minutes to Naiku (Kotai Jingu). Cross Uji Bridge, purify at the Isuzu River Mitarashi pavilion, ~45–60 minutes to the main hall. (3) 11:00 — head to Okage Yokocho and Oharaimachi for food and streetscape photography.
+
+【Etiquette is non-negotiable】(1) no photographs of the main halls (no shooting beyond the steps of Goshogu, including the white curtain); (2) don't have someone pose blocking the torii gate; (3) don't capture other worshippers' faces; (4) tripods are forbidden on the approach paths (allowed only in plazas, and best avoided when crowded); (5) no eating, drinking, or smoking in sacred areas.
+
+【Vantages】(1) Uji Bridge — gorgeous when morning sun strikes the bridge; (2) Isuzu River Mitarashi (pure river and greenery); (3) the 1000+ year-old cedar avenues (vertical compositions of approach depth); (4) Okage Yokocho streetscape (Edo-to-Meiji period reconstruction); (5) Meoto-iwa nearby (sunrise and Futami Okitama Shrine).
+
+【Gear】Standard zoom (24–70 mm) is versatile. The grove is dim — fast f/2.8–f/4 lenses help. Image stabilization essential. CPL filter enhances river reflections and moss saturation.
+
+Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition holds that visiting Ise Jingu three times grants your wishes; (3) Okage Yokocho's Akafuku Honten (akafuku rice cakes), Ise udon, and tekone-zushi are the three Ise food classics.`,
   },
   {
     slug: "miyakojima-blue",
