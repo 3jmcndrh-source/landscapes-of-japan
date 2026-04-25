@@ -5,23 +5,13 @@ import { LANGS, HREFLANG, SITE_URL } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc } from "../../../../content/descriptions.js";
 
-export const dynamicParams = false;
+// 写真個別ページ ~10,320 通り。全ビルド時 SSG は Vercel deploy size 制限に
+// かかるため、build時 pre-render は 0、on-demand ISR で生成 → CDN キャッシュ。
+export const dynamicParams = true;
+export const revalidate = 86400; // 24時間
 
 export function generateStaticParams() {
-  const params = [];
-  for (const lang of LANGS) {
-    for (const pf of PREFECTURES) {
-      const prefSlug = PREF_SLUGS[pf.pref];
-      if (!prefSlug) continue;
-      for (const photo of pf.photos) {
-        if (!photo.loc) continue;
-        const locSlug = LOC_SLUGS[photo.loc];
-        if (!locSlug) continue;
-        params.push({ lang, pref: prefSlug, loc: locSlug, photoId: photo.id });
-      }
-    }
-  }
-  return params;
+  return [];
 }
 
 export async function generateMetadata({ params }) {
