@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 
 export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
   const t = TR[lang] || TR.en;
@@ -118,6 +120,25 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
             </div>
           </section>
         )}
+
+        {/* Related collections + tags + techniques (内部リンク強化 #18) */}
+        <section style={{ marginTop: 56, padding: "0 8px" }}>
+          <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 16 }}>
+            {lang === "ja" ? "関連カテゴリー" : "Related Categories"}
+          </h2>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {COLLECTION_SLUGS.filter((s) => COLLECTIONS[s].locs.includes(locJp)).slice(0, 4).map((s) => (
+              <a key={`c-${s}`} href={`/${lang}/collections/${s}`} style={{ background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
+                {getCollectionName(s, lang)}
+              </a>
+            ))}
+            {TAG_SLUGS.filter((s) => TAGS[s].locs.includes(locJp)).slice(0, 6).map((s) => (
+              <a key={`t-${s}`} href={`/${lang}/tags/${s}`} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(220,190,100,.15)", borderRadius: 999, padding: "6px 14px", color: "rgba(232,228,223,.85)", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
+                #{getTagName(s, lang)}
+              </a>
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );

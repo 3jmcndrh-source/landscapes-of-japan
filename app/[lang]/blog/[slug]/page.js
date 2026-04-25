@@ -84,6 +84,10 @@ export default async function BlogPost({ params }) {
 
   const blogTitle = lang === "ja" ? "ブログ" : lang === "zh" ? "博客" : lang === "zh-tw" ? "部落格" : lang === "ko" ? "블로그" : "Blog";
 
+  // wordCount and articleBody: stronger BlogPosting signals for Google
+  const wordCount = body ? body.split(/\s+/).filter(Boolean).length : 0;
+  const articleSection = lang === "ja" ? "撮影ガイド" : lang === "ko" ? "사진 가이드" : lang === "zh" ? "摄影指南" : lang === "zh-tw" ? "攝影指南" : "Photography Guide";
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -94,10 +98,34 @@ export default async function BlogPost({ params }) {
     dateModified: post.date,
     inLanguage: HREFLANG[lang] || lang,
     url: `${SITE_URL}/${lang}/blog/${slug}`,
-    ...(post.hero && { image: cldUrl(post.hero, 1200) }),
-    author: { "@type": "Person", name: "Landscapes of Japan", url: SITE_URL },
-    publisher: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
+    ...(post.hero && {
+      image: {
+        "@type": "ImageObject",
+        url: cldUrl(post.hero, 1200),
+        width: 1200,
+        height: 800,
+      },
+    }),
+    author: {
+      "@type": "Person",
+      name: "Landscapes of Japan",
+      url: SITE_URL,
+      jobTitle: "Landscape Photographer",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Landscapes of Japan",
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.ico`, width: 32, height: 32 },
+    },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/${lang}/blog/${slug}` },
+    ...(wordCount > 0 && { wordCount }),
+    ...(body && { articleBody: body }),
+    articleSection,
+    keywords: post.locs.join(", "),
+    isAccessibleForFree: true,
+    copyrightHolder: { "@type": "Person", name: "Landscapes of Japan" },
+    copyrightYear: parseInt(post.date.slice(0, 4), 10),
   };
 
   const breadcrumb = {

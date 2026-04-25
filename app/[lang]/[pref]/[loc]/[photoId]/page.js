@@ -97,6 +97,10 @@ export default async function Page({ params }) {
         thumbnailUrl: photoUrlLarge,
         url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}/${photoId}`,
         inLanguage: HREFLANG[lang] || lang,
+        encodingFormat: "image/jpeg",
+        width: { "@type": "QuantitativeValue", value: 2400, unitCode: "E37" },
+        height: { "@type": "QuantitativeValue", value: 1600, unitCode: "E37" },
+        keywords: [getLocName(locJp, "en"), getPrefName(prefJp, "en"), "Japanese landscape", "landscape photography", "Japan", photo.year ? String(photo.year) : null].filter(Boolean).join(", "),
         creator: {
           "@type": "Person",
           name: "Landscapes of Japan",
@@ -107,9 +111,11 @@ export default async function Page({ params }) {
         license: `${SITE_URL}/${lang}`,
         acquireLicensePage: `${SITE_URL}/${lang}#contact`,
         creditText: "Landscapes of Japan",
+        isAccessibleForFree: true,
         ...(photo.year && {
-          dateCreated: `${photo.year}`,
-          datePublished: `${photo.year}`,
+          dateCreated: `${photo.year}-01-01`,
+          datePublished: `${photo.year}-12-31`,
+          copyrightYear: photo.year,
         }),
         contentLocation: {
           "@type": "Place",
