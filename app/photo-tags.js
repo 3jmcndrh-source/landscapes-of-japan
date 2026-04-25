@@ -138,6 +138,97 @@ export const PHOTO_TAGS = {
   "cmf5zpinkqrdzmxyq7ol": ["shrine"],
   "yw3azffdkstu48ih5tpt": ["street"],
   "eih6ffrbddltvx3bjzgp": ["shrine"],
+
+  // ── 札幌 (北海道、27枚) ──
+  // 野幌森林公園の野鳥(コゲラ・ゴジュウカラ・クマゲラ)、幌見峠ラベンダー、藻岩山夜景
+  "softyjlanqcbgshlzo9w": ["animal"],
+  "ubtkpbv0t0vqp6mmgww7": ["animal"],
+  "jwati7zcdj7ctipmonwa": ["animal"],
+  "yfkhhrtc4lzhtdsn0yk7": ["animal"],
+  "bhkmoyskvqwypxp3gcuj": ["animal"],
+  "y0vh9qsl6exl3cwjvp4n": ["animal"],
+  "bx39jxhwcpjicx4mbif4": ["animal"],
+  "ymfqvkrt8gpxhqlceo9w": ["animal"],
+  "pttbtrtbyyqtrnxbugur": ["animal"],
+  "fxe4nsjpar0tkocgjftf": ["animal"],
+  "jgmcsj3io9kle9pvo5dx": ["animal"],
+  "kwwsvawt7qpth5g0luhs": ["animal"],
+  "twwgiayzit8kqxfmghtx": ["animal"],
+  "sxmtareqehuc5nlr2wvf": ["animal"],
+  "mjwdtvn6eaxh2wkpmvgs": ["animal"],
+  "pixyahpx1kgkivfdefny": ["animal"],
+  "pa02u0isj9xximnvp7bu": ["animal"],
+  "rkmlqi18ra5o0dcutace": ["animal"],
+  "lhhheuwpth3ljujvqyub": ["urban"],
+  "fy9x8yjintsr8qsoujzb": ["flower-field"],
+  "wkfty1tifq11h9pggdou": ["urban"],
+  "totyxhutqqiwqtbdtl1d": ["flower-field"],
+  "oozy0rqivqbygaivdoe5": ["flower-field", "urban"],
+  "tlr1wtzxsppiruqg9unf": ["flower-field", "urban"],
+  "mftjoje8rvy6l9hd1uk4": ["flower-field"],
+  "zkq3u4coguskgyylylwc": ["night", "urban"],
+  "mfyb6epqbtpimoklolix": ["night", "urban"],
+
+  // ── 東山動物園 (愛知県、24枚) ── 全て動物
+  "d9zzmvbrhcra5yiz7wf2": ["animal"],
+  "esnwda2bmizzfkzz8wio": ["animal"],
+  "d7kuuzdma3caurtxqnl2": ["animal"],
+  "bmnvk4yvrdr0tbuy1mpu": ["animal"],
+  "tdt6v72szvtnkkljprzo": ["animal"],
+  "rpx3qhx4cetajlsvhbdf": ["animal"],
+  "aggz4yfjjq5jb6ksmjas": ["animal"],
+  "nvppjkkhgoidh24ilcri": ["animal"],
+  "j8dccwqcudkzcjclwjdl": ["animal"],
+  "gzzzjgl7zbppkkv5fafp": ["animal"],
+  "oalpuwnwov6mqkdoxuxj": ["animal"],
+  "ihvclom5aynceacv1b9c": ["animal"],
+  "fmkvychabpy0nkfsy7ct": ["animal"],
+  "iruajiykij2sfoqdxxgm": ["animal"],
+  "yfbqyipnasg0ccxfn9c8": ["animal"],
+  "smx4ztgstf905vdrbmvc": ["animal"],
+  "q1mzddbwimo7vypffpak": ["animal"],
+  "uwefhpwm7e85ewi68tgp": ["animal"],
+  "cemg184iixgrlutqlkkr": ["animal"],
+  "cfnt5wcgast0i0c9ha5h": ["animal"],
+  "ciehvlktddmfmao1zhj4": ["animal"],
+  "gswfddvq2q8c0t8saclg": ["animal"],
+  "ezesf5vrqpli8znbvjpi": ["animal"],
+  "wdlkpcyvsr5g4sklgd4w": ["animal"],
+
+  // ── 鳥羽水族館 (三重県、18枚) ── 海洋生物中心、外観2枚
+  "elpprz829ghgpuvgh9c1": ["urban"],     // 水族館外観
+  "dbexqjaj5yoy7tugr6nv": ["animal"],
+  "nze6lvbizsyc2rdoeksi": ["animal"],
+  "v0pbwtscokak0sfnz9lc": ["animal"],
+  "gvswuk8pqczrhib2fo0d": ["animal"],
+  "lrn9jljffnnkiifl02jv": ["animal"],
+  "oxltiu41uiekga5zrdlc": ["animal"],
+  "hby2zcizym4q02kyplrs": ["animal"],
+  "zrtfurwejoxf4zdqoxe9": ["animal"],
+  "aiaqkp1bnrxmckphpowu": ["animal"],
+  "uvegilhugmzsppzt1i3n": ["animal"],
+  "pkfhxqbarnxusn6jdpdy": ["animal"],
+  "jjkfqca5ztizzngwxvy0": ["animal"],
+  "rfzr79edmgjca6opnljt": ["animal"],
+  "ndtofmydaitspbsburef": ["animal"],
+  "ysiak3am7dmste2sldb4": ["animal"],
+  "xbhrwavgo6wbsuu5jl9k": ["animal"],
+  "uouqy7tcwrewlt34ai6z": ["urban"],     // 水族館外観
+
+  // ── 宮古島 (沖縄県、38枚中 8枚 sample 確認) ── 残り30枚は loc fallback
+  "wt6ow9shewohl0dm0lnj": ["coastal"],
+  "iw0ue8i6asslgwkredsv": ["coastal"],
+  "noogzrhpbx4h8uk6wet5": ["coastal"],
+  "iutfwnyuojdgmm3zvghl": ["coastal"],
+  "sd95do3wwohnsnevmfod": ["coastal"],   // 天の川+海
+  "jg5yb3rx5vvn2c9v0jlv": ["coastal"],
+  "hu3psnou05kneq6nvna1": ["coastal"],   // 伊良部大橋
+  "t3gq5xm4udnrgmnwyibs": ["urban"],     // 観光建物
+
+  // ── 沖縄 (43枚中 3枚 sample 確認) ── 残り40枚は loc fallback (混在多)
+  "gmywadlhis8t8qq7qzad": ["urban", "coastal"],   // 那覇市街+港
+  "wwegz4pphz9rqlbzcufj": ["urban", "coastal"],   // 那覇市街+港
+  "sqga5qi1232ctbwiy9yg": ["urban"],              // ホテル+ヤシ
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
