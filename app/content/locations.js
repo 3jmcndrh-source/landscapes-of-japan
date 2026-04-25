@@ -1,7 +1,9 @@
 /**
  * Location-level localized content. ja/en/zh/zh-tw/ko populated; others fall back to en.
+ * A14 (definition/highlights/quickAnswers) starts ja+en first, other langs follow.
  */
 const d = (ja, en, zh, zhtw, ko) => ({ ja, en, zh, "zh-tw": zhtw, ko });
+const lh = (ja, en) => ({ ja, en });
 
 export const LOCATION_CONTENT = {
   /* ── 北海道 ── */
@@ -93,6 +95,38 @@ export const LOCATION_CONTENT = {
       "宮古島是沖繩縣宮古群島主島。世界級透明度的「宮古藍」海、與那霸前濱（東洋第一沙灘）、伊良部大橋（日本最長免費橋3540米）、池間大橋、砂山海灘天然拱門等，亞熱帶樂園。",
       "미야코지마는 오키나와현 미야코 제도의 주도(主島). 세계 최고 수준의 투명도를 자랑하는 '미야코 블루' 바다, 요나하 마에하마(동양 최고 해변), 이라부 대교(일본 최장 무료 다리 3,540m), 이케마 대교, 스나야마 비치 천연 아치 등 아열대 낙원."
     ),
+    definition: lh(
+      "宮古島(みやこじま)は沖縄県宮古諸島の主島で、面積約158km²・人口約5万人の珊瑚礁が隆起してできた平坦な島。沖縄本島から南西300kmに位置し、那覇から飛行機で約45分。世界屈指の透明度を誇る「宮古ブルー」と称される海と、ホワイトサンドのビーチで近年世界的観光地に。日本最長の無料橋・伊良部大橋(全長3,540m、2015年開通)、東洋一の砂浜と謳われる与那覇前浜ビーチ(全長7km)、池間大橋、来間大橋などを擁し、年間100万人以上が訪れます。",
+      "Miyakojima is the main island of Okinawa's Miyako archipelago — a flat coral-uplift island of about 158 km² with roughly 50,000 residents. Located 300 km southwest of Okinawa's main island and 45 minutes by air from Naha, it has become a globally recognized destination thanks to its «Miyako Blue» waters (with some of the world's clearest visibility) and white-sand beaches. The island is home to Japan's longest toll-free bridge — the 3,540 m Irabu Bridge (opened 2015) — the 7 km Yonaha Maehama Beach (often called «Asia's whitest sand»), the Ikema Bridge, and the Kurima Bridge, drawing more than a million visitors a year."
+    ),
+    highlights: {
+      ja: [
+        "与那覇前浜ビーチ — 全長7kmの真白な砂浜、東洋一の美しさ、来間大橋を背景に夕景の名所",
+        "伊良部大橋 — 2015年開通の日本最長無料橋(3,540m)、橋を駆け抜ける一直線の構図とエメラルドの海",
+        "宮古ブルーの海 — 透明度40m級、晴天正午にPLフィルターでサンゴ礁と砂地のグラデーションを撮影",
+        "砂山ビーチ — 天然の岩アーチがある秘境ビーチ、夕景のシルエット構図、約20分の散策",
+        "池間大橋・池間島 — 全長1,425m、橋上から望む宮古島本島、池間湿原と渡り鳥の生態系",
+      ],
+      en: [
+        "Yonaha Maehama Beach — a 7 km stretch of pure-white sand, dubbed Asia's most beautiful, with Kurima Bridge framing classic sunset scenes",
+        "Irabu Bridge — Japan's longest toll-free bridge (3,540 m, opened 2015); a perfectly straight composition above an emerald sea",
+        "Miyako Blue waters — visibility approaching 40 m on clear midday with a polarizing filter, the gradient of coral and sand is unmatched",
+        "Sunayama Beach — a hidden cove with a natural rock arch; silhouette compositions at sunset, reachable on a ~20-minute walk",
+        "Ikema Bridge and Ikemajima — 1,425 m bridge framing Miyakojima from above, plus Ikema Wetland and migratory bird habitat",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "宮古島とは?", a: "沖縄県の宮古諸島の主島、面積約158km²の平坦な珊瑚礁の島。「宮古ブルー」と称される世界屈指の透明度の海、東洋一の与那覇前浜ビーチ、伊良部大橋など、年間100万人以上が訪れる亜熱帯の楽園です。" },
+        { q: "宮古ブルーが一番映える時間は?", a: "正午前後(11〜14時)の晴天時。太陽が高く光が海底まで届くため、浅瀬は白〜水色、深い所は深海ブルーの最も鮮やかなグラデーションが現れます。PLフィルターで反射を抑えると更に深い青になります。" },
+        { q: "ベストシーズンと飛行時間は?", a: "5〜9月の海の透明度がピーク、特に7〜8月。9月は台風シーズン要注意。10月・4月は混雑回避のベスト。那覇から45分、東京から3時間20分(直行便あり)です。" },
+      ],
+      en: [
+        { q: "What is Miyakojima?", a: "The main island of Okinawa's Miyako archipelago — a flat coral-uplift island of about 158 km². Famous for its «Miyako Blue» — among the world's clearest waters — Yonaha Maehama (Asia's whitest sand), and the Irabu Bridge, it draws over a million visitors a year as a subtropical paradise." },
+        { q: "When does Miyako Blue shine brightest?", a: "Midday (11–14:00) on clear days. With the sun high, light reaches the seabed and shallow water turns white-cyan while deeper water becomes deep blue, producing the most vivid gradient. A polarizing filter cuts surface glare to deepen the blue further." },
+        { q: "Best season and flight time?", a: "May to September for water clarity, peaking in July and August. September is typhoon season — watch warnings. October and April best avoid crowds. 45 minutes by air from Naha; 3 hr 20 min direct from Tokyo." },
+      ],
+    },
     faqs: [
       { q: d("宮古ブルーが一番映える時間は？","When does Miyako Blue shine brightest?","宫古蓝何时最美？","宮古藍何時最美？","미야코 블루가 가장 빛나는 시간대는?"),
         a: d("正午前後（11〜14時）の晴天時。太陽が高く光が海底まで届くため、浅瀬は白〜水色、深い所は深海ブルーのグラデーションが最も鮮やか。","Midday (11–14) on clear days. The sun is high, light reaches the seabed — shallow water looks white-cyan, deeper water deep blue, with the most vivid gradient.","正午前后（11-14点）晴天时。阳光高位直射海底，浅处呈白至水蓝、深处深蓝，渐变最生动。","正午前後（11-14點）晴天時。陽光高位直射海底，淺處呈白至水藍、深處深藍，漸變最生動。","정오 전후(11-14시) 맑은 날. 태양이 높고 빛이 해저까지 닿아 얕은 곳은 백~수색, 깊은 곳은 짙은 블루로 가장 선명한 그라데이션이 생깁니다.") },
@@ -106,6 +140,38 @@ export const LOCATION_CONTENT = {
       "沖繩本島是琉球王國歷史與亞熱帶自然共存之地。首里城遺址（重建中）、萬座毛、殘波岬、古宇利大橋、美麗海水族館、燒物之里、國際通等，南國景觀與琉球文化盡在此。",
       "오키나와 본섬은 류큐 왕국의 역사와 아열대 자연이 공존하는 곳. 슈리성 터(복원 중), 만자모, 잔파 곶, 고우리 대교, 추라우미 수족관, 야치문 도자기 마을, 국제거리 등 남국 풍경과 류큐 문화가 가득합니다."
     ),
+    definition: lh(
+      "沖縄(本島)は沖縄県の中心となる本島で、南北約106km・東西最大28km、人口約140万人の亜熱帯島。1429〜1879年は独立国「琉球王国」として、中国・東南アジアと交易した独自の文化を育み、首里城跡(2000年に世界遺産登録、2019年に正殿焼失後再建中)はその象徴。エメラルドグリーンの海と隆起珊瑚礁の万座毛・残波岬、海中道路で繋がる古宇利島、世界最大級の美ら海水族館、「やちむんの里」の伝統陶芸まで、南国の自然と独自文化が融合する撮影地です。",
+      "The main island of Okinawa is the prefecture's heart — about 106 km north-south, up to 28 km east-west, with 1.4 million residents in a subtropical setting. From 1429 to 1879 it served as the independent «Ryukyu Kingdom,» trading with China and Southeast Asia and developing a distinct culture symbolized by Shurijo Castle (UNESCO-listed in 2000 and rebuilding after the 2019 main hall fire). With emerald seas, the uplifted coral cliffs of Manzamo and Cape Zanpa, Kouri Island connected by sea bridge, the world-class Churaumi Aquarium, and the «Yachimun no Sato» pottery village, the island fuses tropical nature with a singular indigenous culture."
+    ),
+    highlights: {
+      ja: [
+        "首里城跡 — 1429年首里王府の宮殿、世界遺産、2019年焼失後の正殿再建工事中(2026年完了予定)、守礼門は完全復元",
+        "万座毛 — 隆起珊瑚礁の絶壁、「象の鼻」の形をした天然の岩、東シナ海のサンセットスポット",
+        "古宇利大橋・古宇利島 — 全長1,960mの海中道路、エメラルドブルーの海と「ハートロック」、ロマンチックな撮影地",
+        "美ら海水族館 — 世界最大級のアクリル水槽(高さ8.2m×幅22.5m)、ジンベエザメと巨大マンタの泳ぐ姿",
+        "やちむんの里(読谷村) — 19の窯元が点在する陶芸の里、登り窯と工房の風景、伝統琉球陶器",
+      ],
+      en: [
+        "Shurijo Castle Ruins — the royal palace of the Ryukyu Kingdom from 1429, UNESCO-listed; the main hall is being rebuilt after the 2019 fire (scheduled completion 2026), and the Shureimon gate is fully restored",
+        "Manzamo Cliff — uplifted coral with a «Trunk of an Elephant» natural arch, a renowned sunset spot facing the East China Sea",
+        "Kouri Bridge and Kouri Island — a 1,960 m sea-spanning bridge above emerald-blue water, with the «Heart Rock» drawing romantic photography",
+        "Churaumi Aquarium — one of the world's largest acrylic tanks (8.2 m × 22.5 m) showcasing whale sharks and giant manta rays",
+        "Yachimun no Sato (Yomitan) — a pottery village dotted with 19 kilns; climbing kilns, workshops, and traditional Ryukyu ceramics",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "沖縄(本島)とは?", a: "沖縄県の中心となる南北約106kmの亜熱帯本島。1429〜1879年は独立国「琉球王国」として独自の文化を育み、首里城跡、万座毛、古宇利大橋、美ら海水族館など南国自然と琉球文化が融合する撮影地です。" },
+        { q: "本島で1日の撮影モデルコースは?", a: "朝:首里城跡 → 昼:万座毛・残波岬 → 夕:古宇利大橋・古宇利ビーチ → 夜:那覇国際通り、が王道。北部は車必須、移動時間が長いので南部か北部に絞る方が効率的です。" },
+        { q: "ベストシーズンとアクセスは?", a: "海と空が最高なのは5〜9月(特に7〜8月、9月は台風要注意)。10月・4月は混雑回避ベスト。那覇空港から那覇市内まで車で20分、北部の美ら海水族館まで約2時間。" },
+      ],
+      en: [
+        { q: "What is Okinawa Main Island?", a: "The heart of Okinawa Prefecture — a 106 km long subtropical island. From 1429 to 1879 it was the independent «Ryukyu Kingdom,» whose distinctive culture is symbolized by Shurijo Castle. With Manzamo, Kouri Bridge, Churaumi Aquarium and more, it fuses tropical nature with Ryukyu heritage." },
+        { q: "Suggested one-day shooting route on the main island?", a: "Morning at Shurijo → noon at Manzamo and Cape Zanpa → sunset at Kouri Bridge and Beach → night on Kokusai-dori. A car is essential for the north; given the distances, focus on either south or north for efficiency." },
+        { q: "Best season and access?", a: "May to September for sea and sky (peak July–August; watch typhoons in September). October and April best avoid crowds. From Naha Airport, central Naha is 20 min by car; the northern Churaumi Aquarium is about 2 hours." },
+      ],
+    },
     faqs: [
       { q: d("本島で1日の撮影モデルコースは？","Suggested one-day shooting route on the main island?","本岛一日拍摄路线？","本島一日拍攝路線？","본섬 당일 촬영 모델 코스는?"),
         a: d("朝:首里城跡 → 昼:万座毛・残波岬 → 夕:古宇利大橋・古宇利ビーチ → 夜:那覇国際通り、が王道。北部は車必須。","Morning at Shurijo → noon at Manzamo/Cape Zanpa → sunset at Kouri Bridge/Beach → night on Kokusai-dori. A car is needed for the north.","晨:首里城→午:万座毛/残波岬→夕:古宇利大桥/海滩→夜:那霸国际通。北部需自驾。","晨:首里城→午:萬座毛/殘波岬→夕:古宇利大橋/海灘→夜:那霸國際通。北部需自駕。","아침: 슈리성 → 점심: 만자모·잔파 곶 → 저녁: 고우리 대교·해변 → 밤: 나하 국제거리가 정석. 북부는 렌터카 필수.") },
@@ -121,6 +187,38 @@ export const LOCATION_CONTENT = {
       "橫濱是開港歷史的國際港口城市。港未來21高樓群、橫濱紅磚倉庫、山下公園、橫濱中華街、大棧橋夜景、灣橋等，現代與歷史港口景觀交融。",
       "요코하마는 개항 역사를 지닌 국제 항만 도시. 미나토미라이21 고층빌딩군, 요코하마 아카렌가 창고, 야마시타 공원, 요코하마 차이나타운, 오산바시 부두 야경, 베이 브릿지 등 근대와 역사적 항만 풍경이 융합됩니다."
     ),
+    definition: lh(
+      "横浜は神奈川県の県庁所在地で、1859年の開港以降日本の国際貿易の中心となった人口約377万人の日本第2の都市。みなとみらい21地区の超高層ビル群を中心に、1989年完成のランドマークタワー(296m)、観覧車「コスモクロック21」、1911年築の赤レンガ倉庫、横浜中華街(日本最大、約500店舗)、開国の歴史を伝える山下公園・氷川丸、大さん橋国際客船ターミナル、ベイブリッジまで、近代と歴史的港湾が共存する関東屈指の夜景・都市撮影地です。",
+      "Yokohama, capital of Kanagawa Prefecture and Japan's second-largest city with about 3.77 million residents, has been the country's center of international trade since opening in 1859. With the Minato Mirai 21 district's high-rises — including the 296 m Landmark Tower (opened 1989) and the «Cosmo Clock 21» Ferris wheel — the 1911 Red Brick Warehouse, the 500-restaurant Yokohama Chinatown (Japan's largest), Yamashita Park and the Hikawa-maru ship that recall the opening era, the Osanbashi International Passenger Terminal, and Bay Bridge, Yokohama is one of Kanto's foremost subjects for nightscape and urban photography."
+    ),
+    highlights: {
+      ja: [
+        "みなとみらい21・ランドマークタワー — 1989年完成、高さ296m、日本第3位、上層階の展望台「スカイガーデン」",
+        "横浜赤レンガ倉庫 — 1911年築の歴史的倉庫、現在はショップとレストラン、夜のライトアップは港の象徴",
+        "大さん橋国際客船ターミナル — 屋上「くじらのせなか」から望むみなとみらい・赤レンガの夕景〜夜景",
+        "横浜中華街 — 日本最大規模、約500店舗、4つの牌楼(門)、提灯と看板の夜景は別世界",
+        "コスモクロック21 — 1989年設置、高さ112.5mの大観覧車、夜景撮影で必ず入る象徴的構図",
+      ],
+      en: [
+        "Minato Mirai 21 and Landmark Tower — opened 1989 at 296 m, Japan's third tallest, with the «Sky Garden» observation deck",
+        "Yokohama Red Brick Warehouse — built in 1911, now home to shops and restaurants; its evening illumination is a port-city icon",
+        "Osanbashi International Passenger Terminal — the rooftop «Whale's Back» overlooks Minato Mirai and the Red Brick Warehouse at sunset and night",
+        "Yokohama Chinatown — Japan's largest, with about 500 restaurants, four ornate gates, and a lantern-and-signboard night atmosphere of its own",
+        "Cosmo Clock 21 — installed in 1989 at 112.5 m, an essential element of any classic Yokohama nightscape",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "横浜とは?", a: "神奈川県の県庁所在地で、1859年開港以来日本の国際貿易の中心。日本第2の都市(人口約377万人)で、みなとみらい21の超高層ビル、赤レンガ倉庫、中華街、山下公園など近代と歴史的港湾が共存する関東屈指の夜景撮影地です。" },
+        { q: "横浜の夜景撮影ポイントは?", a: "大さん橋・赤レンガ倉庫前・みなとみらい汽車道・山下公園氷川丸が定番4箇所。三脚+広角でコスモクロック21を入れる構図が王道。日没30分後のブルーアワーが空と街の光のバランスがベスト。" },
+        { q: "撮影ベストシーズンは?", a: "夜景は通年(冬の方が空気が澄む)、観覧車のライトアップが最も鮮やかなのも冬。横浜開港祭(6月)の花火、クリスマス時期の特別ライトアップは特に華やかです。" },
+      ],
+      en: [
+        { q: "What is Yokohama?", a: "The capital of Kanagawa Prefecture and Japan's second-largest city (about 3.77 million residents). Since opening in 1859 it has been Japan's gateway for international trade. With Minato Mirai 21's skyscrapers, the Red Brick Warehouse, Chinatown, and Yamashita Park, it is one of Kanto's premier nightscape destinations." },
+        { q: "Best night-view spots in Yokohama?", a: "Osanbashi, the Red Brick Warehouse area, the Kisha-michi promenade, and Yamashita Park (Hikawa-maru) are the four classics. A wide lens framing Cosmo Clock 21 is the canonical shot. Blue hour (30 min after sunset) gives the best balance of sky and city lights." },
+        { q: "When is the best season to photograph Yokohama?", a: "Nightscapes work year-round (clearer in winter), and Ferris-wheel illumination is brightest in winter. The Yokohama Port Festival fireworks (June) and the Christmas-season special illumination are particularly spectacular." },
+      ],
+    },
     faqs: [
       { q: d("横浜の夜景撮影ポイントは？","Best night-view spots in Yokohama?","横滨夜景拍摄点？","橫濱夜景拍攝點？","요코하마 야경 포인트는?"),
         a: d("大さん橋・赤レンガ倉庫前・みなとみらい汽車道・山下公園氷川丸が定番4点。三脚＋魚眼/広角で観覧車込みの構図が人気。","Osanbashi, Red Brick Warehouse, Kisha-michi, and Yamashita Park (Hikawa Maru) are the 4 classic spots. Tripod with wide/fisheye to include the Ferris wheel is popular.","大栈桥、红砖仓库前、港未来汽车道、山下公园冰川丸是4大经典点。三脚架+广角/鱼眼含摩天轮构图受欢迎。","大棧橋、紅磚倉庫前、港未來汽車道、山下公園冰川丸是4大經典點。三腳架+廣角/魚眼含摩天輪構圖受歡迎。","오산바시, 아카렌가 창고 앞, 기샤미치, 야마시타 공원 히카와마루가 정석 4곳. 삼각대+광각/어안으로 관람차까지 담는 구도가 인기.") },
@@ -134,6 +232,38 @@ export const LOCATION_CONTENT = {
       "鎌倉是1185-1333年鎌倉幕府首都。鎌倉大佛（高德院）、長谷寺、鶴岡八幡宮、報國寺竹林、江之電平交道口、由比濱與七里濱海岸等，歷史與大海同框的罕見之地。",
       "가마쿠라는 1185-1333년 가마쿠라 막부의 수도. 가마쿠라 대불(고토쿠인), 하세데라, 쓰루가오카 하치만구, 호코쿠지 대숲, 에노덴 건널목, 유이가하마·시치리가하마 해변 등 역사와 바다를 모두 담을 수 있는 드문 곳."
     ),
+    definition: lh(
+      "鎌倉は神奈川県南東部の人口約17万人の古都で、1185年に源頼朝が日本初の武家政権「鎌倉幕府」を開き、1333年まで約150年間政治の中心として栄えた地。市内には100以上の寺社が点在し、特に高徳院の鎌倉大仏(1252年鋳造、高さ11.4m、国宝)、長谷寺(あじさい・紅葉)、鶴岡八幡宮(源氏の総氏神)、報国寺(竹林の寺)が代表的。江ノ電が走る海岸線、由比ヶ浜・七里ヶ浜から望む江ノ島と富士山まで、歴史と海を1日で巡れる関東屈指の撮影地です。",
+      "Kamakura is an ancient capital in southeastern Kanagawa Prefecture (population ~170,000), where Minamoto no Yoritomo founded Japan's first samurai government — the Kamakura Shogunate — in 1185. It served as the political center for about 150 years until 1333. The city contains over 100 temples and shrines, most famously the Great Buddha at Kotoku-in (cast 1252, 11.4 m tall, a National Treasure), Hasedera (hydrangeas and autumn colors), Tsurugaoka Hachimangu (the Minamoto clan's tutelary shrine), and Hokoku-ji (the «Bamboo Temple»). With the Enoden train running along the coast and views of Enoshima and Mt. Fuji from Yuigahama and Shichirigahama, Kamakura ranks among Kanto's finest one-day photographic destinations combining history and the sea."
+    ),
+    highlights: {
+      ja: [
+        "鎌倉大仏(高徳院) — 1252年鋳造、高さ11.4m・重さ約121tの青銅製阿弥陀如来坐像、国宝、像内も拝観可",
+        "長谷寺 — 6月のあじさい(40種2,500株)、11月の紅葉ライトアップ、見晴台からの相模湾の絶景",
+        "鶴岡八幡宮 — 1063年創建、段葛の桜並木、舞殿、大銀杏(2010年倒伏、再生中)、源氏池の蓮",
+        "江ノ電・鎌倉高校前踏切 — アニメ『スラムダンク』のオープニングの聖地、海越しの江ノ島と踏切",
+        "報国寺 — 「竹寺」と呼ばれる孟宗竹2,000本の竹林、抹茶を頂きながら静寂を撮影",
+      ],
+      en: [
+        "Great Buddha at Kotoku-in — cast in 1252, an 11.4 m, 121-tonne bronze Amida Buddha; a National Treasure, with interior viewing available",
+        "Hasedera — June hydrangeas (40 varieties, 2,500 plants), November illuminated maples, with sweeping views of Sagami Bay from the lookout",
+        "Tsurugaoka Hachimangu — founded 1063; the Dankazura cherry-tree avenue, the Maiden stage, the great gingko (fell 2010, regrowing), and the lotus-filled Genji Pond",
+        "Enoden Kamakurakokomae crossing — the «Slam Dunk» opening-credits landmark, with the level crossing in front of Enoshima across the sea",
+        "Hokokuji — the «Bamboo Temple,» with a grove of 2,000 moso bamboo; sip matcha while photographing the silence",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "鎌倉とは?", a: "神奈川県南東部の古都で、1185〜1333年に源頼朝が日本初の武家政権「鎌倉幕府」を置いた地。100以上の寺社、鎌倉大仏(国宝)、長谷寺、鶴岡八幡宮、江ノ電と海岸線まで歴史と海が1日で巡れる関東屈指の撮影地です。" },
+        { q: "鎌倉で外せない撮影スポットは?", a: "鎌倉大仏、長谷寺(あじさい・紅葉)、鶴岡八幡宮、報国寺の竹林、江ノ電鎌倉高校前踏切(『スラムダンク』の聖地)の5つが定番。1日で全て巡るなら午前から計画的にどうぞ。" },
+        { q: "ベストシーズンは?", a: "桜の4月上旬、長谷寺のあじさいの6月中旬、紅葉の11月下旬〜12月上旬、富士山と江ノ島の冬。あじさい時期は長谷寺・明月院に長蛇の列、平日早朝が必須です。" },
+      ],
+      en: [
+        { q: "What is Kamakura?", a: "An ancient capital in southeastern Kanagawa Prefecture, where Minamoto no Yoritomo founded Japan's first samurai government — the Kamakura Shogunate — in 1185. With 100+ temples and shrines, the National Treasure Great Buddha, Hasedera, Tsurugaoka Hachimangu, the Enoden coast, it offers history and sea in a single day's outing." },
+        { q: "Must-see photo spots in Kamakura?", a: "The Great Buddha, Hasedera (hydrangeas, autumn colors), Tsurugaoka Hachimangu, Hokokuji's bamboo grove, and the Enoden Kamakurakokomae crossing (a «Slam Dunk» landmark). To cover all five in a day, plan an early-morning start." },
+        { q: "When is the best season?", a: "Cherry blossoms early April, Hasedera's hydrangeas mid-June, autumn colors late November to early December, and Mt. Fuji with Enoshima in winter. Hasedera and Meigetsu-in see long lines during hydrangea season — go on a weekday morning." },
+      ],
+    },
     faqs: [
       { q: d("鎌倉で外せない撮影スポットは？","Must-see photo spots in Kamakura?","镰仓必拍景点？","鎌倉必拍景點？","가마쿠라 필수 촬영지는?"),
         a: d("鎌倉大仏、長谷寺（紫陽花・紅葉）、鶴岡八幡宮、報国寺竹林、江ノ電鎌倉高校前踏切（『スラムダンク』の聖地）の5つ。","Great Buddha, Hasedera (hydrangeas/autumn foliage), Tsurugaoka Hachimangu, Hokokuji bamboo, and the Enoden crossing at Kamakurakokomae (Slam Dunk landmark).","镰仓大佛、长谷寺（绣球花/红叶）、鹤冈八幡宫、报国寺竹林、江之电镰仓高校前平交道（《灌篮高手》圣地）5处。","鎌倉大佛、長谷寺（繡球花/紅葉）、鶴岡八幡宮、報國寺竹林、江之電鎌倉高校前平交道（《灌籃高手》聖地）5處。","가마쿠라 대불, 하세데라(수국·단풍), 쓰루가오카 하치만구, 호코쿠지 대숲, 에노덴 가마쿠라고코마에 건널목(슬램덩크 성지) 5곳.") },
@@ -149,6 +279,38 @@ export const LOCATION_CONTENT = {
       "伊勢神宮位居日本約8萬神社頂點，是最高聖地。由祭祀天照大神的內宮和祭祀豐受大神的外宮組成，每20年式年遷宮保持常新。五十鈴川清流、神宮杉巨木、靜謐參道充滿神聖氛圍。",
       "이세신궁은 전국 약 8만 신사의 정점에 위치한 일본 최고 성지. 아마테라스를 모시는 내궁과 도요우케를 모시는 외궁으로 구성되며, 20년마다 신궁을 재건축해 항상 신선함을 유지합니다. 이스즈강의 맑은 물, 거대 삼나무, 고요한 참배길이 신성한 공기를 자아냅니다."
     ),
+    definition: lh(
+      "伊勢神宮は三重県伊勢市にある日本神道の最高位の神社で、全国約8万社の神社の頂点に位置する天照大神(皇室の祖神)を祀る聖地。皇大神宮(内宮、ないくう)と豊受大神宮(外宮、げくう)の2つの正宮を中心に、計125の宮社から構成され、その総称が「神宮」または「伊勢神宮」。約2,000年の歴史を持ち、20年ごとに社殿・神宝・装束のすべてを造り替える「式年遷宮(しきねんせんぐう)」(西暦690年から続く、次回は2033年)により常に瑞々しさを保つ世界でも稀有な祭祀文化を継承しています。",
+      "Ise Jingu is the highest-ranking Shinto shrine in Japan, situated in Ise City, Mie Prefecture. As the head of approximately 80,000 shrines nationwide, it enshrines Amaterasu Omikami — the imperial ancestor deity. Centered on the two main sanctuaries — Naiku (Kotai Jingu) and Geku (Toyouke Daijingu) — it comprises 125 shrines in total, all known collectively as «Jingu» or «Ise Jingu.» With about 2,000 years of history, the shrine perpetuates the «Shikinen Sengu» — the rebuilding of every sanctuary, sacred treasure, and vestment every 20 years (a tradition unbroken since 690 AD; the next occurs in 2033) — preserving a ritual culture nearly without parallel in the world."
+    ),
+    highlights: {
+      ja: [
+        "内宮(皇大神宮) — 天照大神を祀る、宇治橋を渡り神苑・五十鈴川・正宮・荒祭宮の参道、最重要の聖地",
+        "外宮(豊受大神宮) — 天照大神の食事を司る豊受大神を祀る、まずは外宮から参拝するのが古来の慣習",
+        "宇治橋 — 内宮の入り口、長さ約100mの木造橋、20年ごとに架け替え、欄干越しの五十鈴川が美しい",
+        "五十鈴川と神宮杉 — 樹齢千年級の巨木が並ぶ参道、川で身を清める「御手洗場(みたらしば)」",
+        "式年遷宮御用材 — 御木曳(おきひき)行事や20年に一度の神聖な遷宮儀式、次回は2033年",
+      ],
+      en: [
+        "Naiku (Kotai Jingu) — enshrining Amaterasu Omikami; cross Uji Bridge to enter the shrine grounds, the Isuzu River, the inner sanctuary, and the Aramatsuri-no-miya — the most sacred ground",
+        "Geku (Toyouke Daijingu) — enshrines Toyouke, deity of Amaterasu's daily meals; tradition holds that worshippers visit Geku first",
+        "Uji Bridge — about 100 m of wooden bridge marking Naiku's entrance, rebuilt every 20 years; the Isuzu River framed through its rails is exquisite",
+        "Isuzu River and shrine cedars — millennia-old cedars line the approach, with «Mitarashiba» a place to purify hands in the river",
+        "Shikinen Sengu rituals — the «Okihiki» log-pulling ceremony and the once-in-20-years sacred rebuilding; the next occurs in 2033",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "伊勢神宮とは?", a: "三重県伊勢市にある日本神道の最高位の神社で、全国約8万社の神社の頂点。天照大神を祀る内宮と豊受大神を祀る外宮を中心に125の宮社から成る、約2,000年の歴史を持つ日本の精神的中心です。" },
+        { q: "内宮と外宮どちらから参拝?", a: "古来の慣習では外宮→内宮の順。両宮は約5km離れ、バスで15分。早朝5時から参拝可、人の少ない朝6〜8時が撮影にも最適です。所要時間は両宮で半日程度を見込んでください。" },
+        { q: "撮影マナーは?", a: "正宮(御正宮)の中は撮影禁止。鳥居から内側は節度ある撮影にとどめ、参拝者や神職を直接撮らないのが原則。三脚使用は事前確認、内宮の朝5時開門が最も静かで光も柔らかいです。" },
+      ],
+      en: [
+        { q: "What is Ise Jingu?", a: "The highest-ranking Shinto shrine in Japan, located in Ise City, Mie Prefecture. As the head of about 80,000 shrines nationwide, it enshrines Amaterasu Omikami at Naiku and Toyouke at Geku, comprising 125 shrines in total — Japan's spiritual heart with about 2,000 years of history." },
+        { q: "Naiku or Geku first?", a: "Tradition: Geku first, then Naiku. The two sanctuaries are about 5 km apart, 15 minutes by bus. Both open from 5 AM, and 6–8 AM is best for photography with fewest visitors. Allow about half a day to visit both." },
+        { q: "Photography etiquette?", a: "Inside the main sanctuaries is strictly off-limits. Keep photography modest within the torii gates, and avoid shooting worshippers or priests directly. Confirm tripod use in advance; Naiku's 5 AM opening offers the calmest, softest light." },
+      ],
+    },
     faqs: [
       { q: d("内宮と外宮どちらから参拝？","Naiku or Geku first?","内宫外宫先参拜哪个？","內宮外宮先參拜哪個？","내궁과 외궁 어느 쪽부터?"),
         a: d("古来の慣習では外宮→内宮の順。外宮から約5km、バスで15分。早朝6時から参拝可、人の少ない朝が撮影にも最適。","Tradition: Geku first, then Naiku. 5 km apart, 15 min by bus. Shrines open from 6 AM — early morning is both less crowded and best for photography.","传统先外宫后内宫。相距5公里，巴士15分钟。6点起开放参拜，清晨人少最宜拍摄。","傳統先外宮後內宮。相距5公里，巴士15分鐘。6點起開放參拜，清晨人少最宜拍攝。","전통은 외궁→내궁 순. 약 5km, 버스 15분. 오전 6시부터 참배 가능, 사람 적은 아침이 촬영에도 최적.") },
@@ -162,6 +324,38 @@ export const LOCATION_CONTENT = {
       "夫婦岩是二見興玉神社前並立海中的大小兩塊岩石。大岩（夫）與小岩（妻）由注連繩連結，象徵夫妻和睦。僅夏至前後可拍到太陽從兩岩間升起的絕景。",
       "메오토이와는 후타미 오키타마 신사 앞 바다에 나란히 선 크고 작은 두 바위. 큰 바위(남편)와 작은 바위(아내)를 금줄로 잇고, 부부 원만의 상징. 하지 무렵에만 두 바위 사이로 일출이 떠오르는 절경을 담을 수 있습니다."
     ),
+    definition: lh(
+      "夫婦岩(めおといわ)は三重県伊勢市二見町、二見興玉神社(ふたみおきたまじんじゃ)の境内前面の海中に立つ大小2つの岩で、大岩(高さ9m、男岩)と小岩(高さ4m、女岩)を全長35m・重さ40kgの大注連縄で結んでいます。夫婦円満・縁結びの象徴とされる古来の聖地で、注連縄は年3回(5月5日、9月5日、12月中旬)張り替えられる神事を伴います。5〜7月の夏至前後にのみ、2つの岩の間から日の出が昇る絶景が見られ、富士山のシルエットも遠望できる(年に数日)世界でも珍しいフォトジェニックスポットです。",
+      "Meoto Iwa («married couple rocks») are two rocks of differing sizes — Otoiwa (male, 9 m) and Meiwa (female, 4 m) — rising from the sea before Futami Okitama Shrine in Futami-cho, Ise City, Mie Prefecture. They are linked by a 35 m, 40 kg sacred shimenawa rope, symbolizing marital harmony and matchmaking. The shimenawa is replaced three times each year (May 5, September 5, mid-December) in shrine rituals. Only around the summer solstice (May to July) does the sun rise directly between the two rocks, producing a world-class spectacle in which the silhouette of Mt. Fuji can also be seen on rare days — one of Japan's rarest photographic alignments."
+    ),
+    highlights: {
+      ja: [
+        "夫婦岩 — 大岩(男岩、9m)と小岩(女岩、4m)、夫婦円満の象徴、年3回の大注連縄張替神事",
+        "夏至前後の日の出 — 5〜7月のみ、2つの岩の間から朝日が昇る、特に6月初旬は晴天率高",
+        "富士山遠望 — 年に数日、200km先の富士山シルエットが見える奇跡の朝、冬至〜2月の特定条件",
+        "二見興玉神社 — 猿田彦大神を祀る、伊勢神宮参拝前の禊ぎの社、蛙の像「無事帰る」",
+        "二見浦海岸 — 古来からの禊ぎ場、明治の伊勢参詣で立ち寄り必須の聖地、白砂の海岸線",
+      ],
+      en: [
+        "Meoto Iwa — Otoiwa (male, 9 m) and Meiwa (female, 4 m), symbol of marital harmony, with the shimenawa replaced in three annual rituals",
+        "Sunrise around the solstice — only May through July does the sun rise between the two rocks; clear-sky odds peak in early June",
+        "Mt. Fuji on the horizon — on rare days, Mt. Fuji's silhouette appears 200 km away; conditions align only briefly between the winter solstice and February",
+        "Futami Okitama Shrine — enshrines Sarutahiko-no-Okami, the purification site visited before pilgrimage to Ise Jingu, with frog statues («buji kaeru,» a homophone for «return safely»)",
+        "Futami Bay coast — an ancient ritual purification site and a mandatory stop on the Meiji-era Ise pilgrimage route, with white-sand shoreline",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "夫婦岩とは?", a: "三重県伊勢市の二見興玉神社前の海に立つ大小2つの岩で、大注連縄(35m、40kg)で結ばれた夫婦円満の象徴。5〜7月の夏至前後のみ2つの岩の間から日の出が昇る世界的にも珍しい絶景です。" },
+        { q: "日の出撮影の具体的な時期と時間は?", a: "5月〜7月下旬、特に夏至(6/21前後)が中心。日の出時刻は4:40〜5:00頃。三脚+望遠レンズで1時間前到着推奨。富士山シルエットが見える奇跡の朝は12月〜2月の特定条件下のみ。" },
+        { q: "アクセスは?", a: "JR二見浦駅から徒歩15分、伊勢神宮内宮から車で約15分。駐車場あり(無料)。日の出撮影は夜明け前の到着が必須なので、二見浦温泉や鳥羽の宿が便利です。" },
+      ],
+      en: [
+        { q: "What are the Meoto Iwa?", a: "Two rocks rising from the sea before Futami Okitama Shrine in Ise, Mie Prefecture, joined by a 35 m, 40 kg sacred rope. Symbols of marital harmony, they offer one of the world's rarest sights: the sun rising directly between them around the summer solstice." },
+        { q: "Specific dates and times for sunrise shots?", a: "Mid-May to late July, peaking around the solstice (June 21). Sunrise 4:40–5:00 AM. Arrive with tripod and telephoto lens an hour before. The miraculous mornings with Mt. Fuji silhouette occur only under specific conditions from December to February." },
+        { q: "How do I get there?", a: "15 minutes on foot from JR Futaminoura Station, or 15 minutes by car from Ise Jingu Naiku. Free parking available. For sunrise shoots, arriving before dawn is essential — staying at Futamiura Onsen or Toba accommodations is most practical." },
+      ],
+    },
     faqs: [
       { q: d("日の出撮影の具体的な時期と時間は？","Specific dates and times for sunrise shots?","日出拍摄具体时间？","日出拍攝具體時間？","일출 촬영 구체적 시기·시간은?"),
         a: d("5月〜7月下旬、特に夏至（6/21前後）が中心。日の出時刻は4:40〜5:00頃。三脚＋望遠レンズで1時間前に到着推奨。","Mid-May to late July, peaking around the solstice (June 21). Sunrise 4:40–5:00 AM. Arrive with tripod and telephoto lens an hour before.","5月至7月下旬，夏至前后（6/21）为中心。日出4:40-5:00左右。建议携三脚架+长焦镜头提前1小时到达。","5月至7月下旬，夏至前後（6/21）為中心。日出4:40-5:00左右。建議攜三腳架+長焦鏡頭提前1小時到達。","5월~7월 하순, 특히 하지(6/21) 무렵. 일출 시각 4:40~5:00. 삼각대+망원 렌즈로 1시간 전 도착 권장.") },
@@ -216,6 +410,38 @@ export const LOCATION_CONTENT = {
       "清水寺創建於778年，世界遺產，京都代表寺院。正殿「清水舞台」為不用一釘的木造建築，從13米高處俯瞰京都市區。春櫻、秋紅葉、冬雪、夜間特別拜觀與燈光秀令人屏息。",
       "기요미즈데라는 778년 창건, 세계유산 교토 대표 사찰. 본당 '기요미즈 무대'는 못을 하나도 사용하지 않은 목조 건축으로 13m 높이에서 교토 시가지를 조망. 봄 벚꽃, 가을 단풍, 겨울 설경, 야간 특별 참배와 라이트업이 숨이 멎을 정도로 아름답습니다."
     ),
+    definition: lh(
+      "清水寺は778年創建、京都府京都市東山区の真言宗系の単立寺院で、世界遺産「古都京都の文化財」の構成資産の一つ。本堂(国宝)の「清水の舞台」は釘を一本も使わない懸造り(かけづくり)技法による木造建築で、高さ13mの崖上から京都市街を一望できます。年間600万人以上が訪れる京都最大の集客地で、千手観音菩薩を本尊とし、平安時代から続く観音信仰の聖地として、また春の桜・秋の紅葉・冬の雪・夜のライトアップで日本写真の象徴的存在です。",
+      "Kiyomizu-dera, founded in 778 in Kyoto's Higashiyama Ward, is an independent Shingon-school temple and a constituent property of the UNESCO «Historic Monuments of Ancient Kyoto.» Its National Treasure main hall — the famous «Kiyomizu Stage» — was built without a single nail using the kakezukuri stilt-construction method, projecting 13 m above a hillside with panoramic Kyoto views. Drawing more than 6 million visitors a year, it is Kyoto's most visited site. Enshrining a thousand-armed Kannon, it has been a center of Kannon worship since the Heian period, and its cherry blossoms, autumn colors, winter snow, and night illumination make it iconic in Japanese photography."
+    ),
+    highlights: {
+      ja: [
+        "本堂「清水の舞台」 — 国宝、釘を一本も使わない懸造り、高さ13mから京都市街と桜・紅葉を一望",
+        "三重塔(さんじゅうのとう) — 高さ31mの朱塗り三重塔、京都を象徴する写真フレーム、桜と紅葉の借景",
+        "仁王門と西門 — 鮮やかな朱の二層門、参道(産寧坂・二年坂)からの登り口、夕陽が差す西門は絶景",
+        "音羽の瀧 — 寺名の由来となった三筋の清水、それぞれ「学業」「恋愛」「延命」のご利益",
+        "地主神社(じしゅじんじゃ) — 清水寺本堂背後の縁結びの神社、桜の名所(地主桜)、現在は工事のため2025年まで閉鎖",
+      ],
+      en: [
+        "Main Hall and «Kiyomizu Stage» — National Treasure, built without nails using kakezukuri stilt construction, with a 13 m drop overlooking Kyoto and the cherry/maple canopy",
+        "Three-Story Pagoda (Sanjunoto) — 31 m vermilion pagoda, an iconic Kyoto frame paired with cherry blossoms and autumn foliage",
+        "Niomon and West Gate — vivid two-tier vermilion gates at the top of the Sannenzaka and Ninenzaka approach; the West Gate at sunset is unforgettable",
+        "Otowa Falls — the «sound-of-feathers» triple stream that gave the temple its name; each thread offers a different blessing (study, love, longevity)",
+        "Jishu Shrine — the «matchmaking» shrine behind the main hall, famous for jishu-zakura cherry trees; closed for renovation through 2025",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "清水寺とは?", a: "778年創建、京都市東山区の世界遺産寺院。本堂「清水の舞台」は釘を一本も使わない懸造りの木造建築で、高さ13mから京都市街を一望。年間600万人以上が訪れる京都最大の集客地です。" },
+        { q: "拝観時間と料金は?", a: "通常6:00開門、18:00閉門(時期で変動)、大人400円。春・夏・秋の特別夜間拝観時は21時頃まで(別途700円程度)。早朝6時開門時が人が最も少なく光も柔らかい撮影タイムです。" },
+        { q: "撮影ベストシーズンは?", a: "桜の3月下旬〜4月上旬、新緑の5月、紅葉の11月下旬〜12月初旬がピーク。夜間ライトアップは特別期間のみで圧倒的に幻想的。雪が積もる冬は年に数回だけのレア構図です。" },
+      ],
+      en: [
+        { q: "What is Kiyomizu-dera?", a: "A UNESCO World Heritage temple founded in 778 in Kyoto's Higashiyama Ward. The «Kiyomizu Stage» of the main hall — built without a single nail in kakezukuri stilt construction — projects 13 m above the hillside, offering panoramic city views. Over 6 million visitors annually make it Kyoto's most popular site." },
+        { q: "What are opening hours and fees?", a: "Generally 6:00 to 18:00 (varies seasonally), ¥400 for adults. Special evening illumination periods in spring, summer, and autumn extend to ~21:00 (additional ¥700). The 6 AM opening is the quietest and offers the softest light for photography." },
+        { q: "When is the best season to photograph it?", a: "Cherry blossoms peak late March to early April, fresh greenery in May, autumn colors late November to early December. The night illumination, held only during special periods, is the most magical. Winter snow shots are rare — possible only a few times a year." },
+      ],
+    },
     faqs: [
       { q: d("清水寺の夜間拝観はいつ？","When is the evening illumination?","清水寺夜间参拜何时？","清水寺夜間參拜何時？","기요미즈데라 야간 참배는 언제?"),
         a: d("春（3月末の桜）、夏（8月千日詣り）、秋（11月末〜12月初の紅葉）の限定期間のみ。18時〜21時頃、要個別チェック。","Limited periods in spring (late March cherry blossoms), summer (Sennichi-mairi in August), and autumn (late Nov–early Dec foliage), roughly 18:00–21:00. Check dates.","限春（3月末樱花）、夏（8月千日诣）、秋（11月末至12月初红叶）开放。18-21点前后，需查具体日期。","限春（3月末櫻花）、夏（8月千日詣）、秋（11月末至12月初紅葉）開放。18-21點前後，需查具體日期。","봄(3월 말 벚꽃), 여름(8월 센니치마이리), 가을(11월 말~12월 초 단풍) 한정. 18-21시경, 날짜 확인 필요.") },
@@ -229,6 +455,38 @@ export const LOCATION_CONTENT = {
       "金閣寺（鹿苑寺）建於1397年，整體貼金箔的三層樓閣倒映於鏡湖池。世界遺產。雪中的「雪金閣」一生難遇。池畔經典構圖是必拍鏡頭。",
       "긴카쿠지(로쿠온지)는 1397년 건립, 전면을 금박으로 덮은 3층 누각이 교코치 연못에 비치는 절경으로 유명. 세계유산. 눈 덮인 '설금각'은 일생에 한 번 볼까 말까 한 명장면. 연못 너머의 정석 구도는 반드시 찍어야 할 장면."
     ),
+    definition: lh(
+      "金閣寺(正式名称・鹿苑寺(ろくおんじ))は1397年に室町幕府3代将軍・足利義満が造営した山荘「北山殿」を起源とする臨済宗相国寺派の禅寺で、世界遺産「古都京都の文化財」の構成資産。三層の楼閣全面を金箔で覆った舎利殿が「金閣」と呼ばれ、寺院全体の通称になっています。鏡湖池(きょうこち)に映る逆さ金閣は世界中で最も有名な日本建築の構図の一つで、1950年放火事件により焼失後、1955年に再建、1987年と2003年に金箔の張り替えが行われました。",
+      "Kinkaku-ji (formally Rokuon-ji) is a Rinzai Zen temple of the Shokoku-ji branch, founded on the site of the Kitayama Villa established in 1397 by Ashikaga Yoshimitsu, third shogun of the Muromachi shogunate, and a constituent property of UNESCO's «Historic Monuments of Ancient Kyoto.» Its three-tier reliquary hall, completely covered in gold leaf, is known as the «Golden Pavilion» (Kinkaku) and gives the entire temple its popular name. The inverted reflection in Kyoko-chi pond is one of the world's most famous frames of Japanese architecture; the original burned in a 1950 arson and was rebuilt in 1955, with the gold leaf renewed in 1987 and 2003."
+    ),
+    highlights: {
+      ja: [
+        "金閣(舎利殿) — 三層構造、上二層に金箔約20kg分、最上層は禅宗様、頂部に鳳凰像、鏡湖池への倒影が王道構図",
+        "鏡湖池(きょうこち) — 池に浮かぶ9つの島と岩を借景に、無風時は完璧な水鏡、雨上がりは更に鮮明",
+        "陸舟(りくしゅう)の松 — 義満手植えと伝わる樹齢約600年の松、舟の形に剪定された名木",
+        "夕佳亭(せっかてい) — 江戸時代の茶室、後水尾天皇行幸の場、「夕日に映える金閣を眺める」名前の由来",
+        "雪化粧の金閣 — 京都中心部の積雪は年数回のみ、雪と金箔のコントラストは「一生に一度」の被写体",
+      ],
+      en: [
+        "Kinkaku (Reliquary Hall) — three tiers, with about 20 kg of gold leaf on the upper two; topped by a phoenix in the Zen Buddhist style. The reflection in Kyoko-chi pond is the classic frame",
+        "Kyoko-chi Pond — punctuated by nine borrowed islands and stones; on a windless day, a perfect mirror, especially after rain",
+        "Rikushu Pine — said to have been planted by Yoshimitsu, this ~600-year-old pine is pruned to resemble a boat",
+        "Sekkatei Tearoom — an Edo-period tea pavilion visited by Emperor Gomizunoo; its name evokes «watching the Golden Pavilion glow at sunset»",
+        "Snow-capped Kinkaku — central Kyoto sees snow only a handful of times a year, making the snow-and-gold contrast a once-in-a-lifetime subject",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "金閣寺とは?", a: "1397年に足利義満が造営した山荘「北山殿」を起源とする臨済宗の禅寺、正式名称は鹿苑寺(ろくおんじ)。三層楼閣の全面を金箔で覆った舎利殿が「金閣」と呼ばれ、世界遺産「古都京都の文化財」の構成資産です。" },
+        { q: "金閣を綺麗に撮るコツは?", a: "朝9時開門直後、順光(南向き)の時間帯がベスト。PLフィルターで水面反射を調整すると金閣の倒影が鮮やかに。雨上がりの水鏡も狙えます。三脚は禁止区域あり、要事前確認。" },
+        { q: "ベストシーズンは?", a: "通年美しいですが、桜の3月末、新緑の5月、紅葉の11月中旬〜下旬が華やか。雪の金閣は12月下旬〜2月の数日のみ。冬の早朝は気温0℃以下で池の水が澄み、最高の水鏡が現れます。" },
+      ],
+      en: [
+        { q: "What is Kinkaku-ji?", a: "A Rinzai Zen temple — formally Rokuon-ji — founded on the site of the Kitayama Villa built in 1397 by shogun Ashikaga Yoshimitsu. Its three-tier reliquary hall covered entirely in gold leaf is called «Kinkaku» (Golden Pavilion) and the temple is a constituent property of UNESCO's «Historic Monuments of Ancient Kyoto.»" },
+        { q: "Tips for photographing Kinkaku?", a: "Right at 9 AM opening in forward light (facing south) is best. A polarizing filter helps tune the water reflection for a vivid mirror image. After rain also yields beautiful mirror shots. Tripod use is restricted in some zones — confirm in advance." },
+        { q: "When is the best season to visit?", a: "Beautiful year-round, but cherry blossoms in late March, fresh green in May, and autumn colors mid-to-late November all add color. Snow-capped Kinkaku is rare — only a few days from late December to February. Winter mornings below 0 °C produce the clearest pond mirror." },
+      ],
+    },
     faqs: [
       { q: d("金閣を綺麗に撮るコツは？","Tips for photographing Kinkaku?","金阁拍摄技巧？","金閣拍攝技巧？","긴카쿠 촬영 팁은?"),
         a: d("朝9時開門直後、順光（南向き）の時間帯がベスト。PLフィルターで水面反射を調整すると金閣の倒影が鮮やかに。雨上がりの水鏡も狙える。","Right at 9 AM opening in forward light (facing south) is best. PL filter helps control water reflection for vivid mirror image. After rain also yields mirror shots.","上午9点开门后顺光（朝南）时段最佳。PL滤镜调整水面反光使倒影更清。雨后水镜也可拍。","上午9點開門後順光（朝南）時段最佳。PL濾鏡調整水面反光使倒影更清。雨後水鏡也可拍。","오전 9시 개문 직후 순광(남향) 시간대가 최고. PL 필터로 수면 반사를 조정하면 금각의 반영이 선명해집니다. 비온 뒤 수경도 노릴 수 있습니다.") },
@@ -242,6 +500,38 @@ export const LOCATION_CONTENT = {
       "平等院鳳凰堂創建於1053年，世界遺產，10日圓硬幣背面所繪日本代表建築。左右對稱的優雅身姿浮於阿字池，如將極樂淨土再現於地上。春紫藤、夏綠意、秋紅葉、冬靜寂皆入畫。",
       "뵤도인 호오도는 1053년 창건 세계유산, 10엔 주화 뒷면에 그려진 일본 대표 건축물. 아지 연못에 떠 있듯 좌우대칭으로 서 있는 우아한 자태는 극락정토를 지상에 옮긴 것. 봄 등나무, 여름 녹음, 가을 단풍, 겨울 정적 모두 그림이 됩니다."
     ),
+    definition: lh(
+      "平等院鳳凰堂(ほうおうどう)は京都府宇治市にある藤原氏ゆかりの天台宗・浄土宗の単立寺院・平等院の主要建築で、1053年に藤原頼通が父・道長から譲り受けた別荘を寺院に改めた際の阿弥陀堂。世界遺産「古都京都の文化財」の構成資産で国宝。屋根に一対の鳳凰像を戴く左右対称の優美な姿は10円硬貨の裏面に描かれ、日本人にとって最も馴染み深い古建築の一つ。阿字池(あじいけ)の対岸から望む正面構図は、平安貴族が憧れた「極楽浄土」を地上に再現した姿として、1000年を超えて愛され続けています。",
+      "Byodoin Phoenix Hall (Hoodo) is the central building of Byodoin Temple in Uji, Kyoto Prefecture — an independent temple of mixed Tendai and Jodo affiliations linked to the Fujiwara clan. Built in 1053 by Fujiwara no Yorimichi when he converted his father Michinaga's villa into a temple, it served as the Amida Hall and is both a constituent property of the UNESCO «Historic Monuments of Ancient Kyoto» and a National Treasure. With its symmetrical silhouette crowned by a pair of phoenix figures, it appears on the reverse of the ¥10 coin and is among the most familiar pieces of historic architecture for Japanese people. The frontal view from across Aji Pond — a Heian aristocrat's vision of the Pure Land made earthly — has been cherished for over a thousand years."
+    ),
+    highlights: {
+      ja: [
+        "鳳凰堂(国宝) — 阿字池に向かう左右対称の翼廊、屋根の一対の鳳凰像、10円硬貨の裏面の構図",
+        "阿字池(あじいけ) — 鳳凰堂の前面に広がる池、無風の早朝は完璧な水鏡、紅葉と桜の借景",
+        "鳳翔館(博物館) — 国宝阿弥陀如来坐像と雲中供養菩薩像26躯を展示、平安美術の最高傑作",
+        "藤(ふじ) — 鳳凰堂前の樹齢280年超の藤、4月下旬〜5月上旬の花期は紫の藤と朱の鳳凰堂が幻想的",
+        "夜間ライトアップ — 春・秋の限定期間に開催、闇に浮かぶ朱と金の鳳凰堂が水面に映る景色",
+      ],
+      en: [
+        "Phoenix Hall (National Treasure) — symmetrical wings facing Aji Pond, a pair of phoenix figures on the roof, the very view depicted on the reverse of the ¥10 coin",
+        "Aji Pond — pool spreading before the Phoenix Hall; on a windless dawn it forms a perfect mirror, with cherry blossoms and autumn colors as borrowed scenery",
+        "Hosho-kan Museum — displays the National Treasure Amida Buddha statue and 26 «Cloud-borne Bodhisattvas,» peak masterpieces of Heian art",
+        "Wisteria — over 280 years old, blooming in late April to early May; the purple wisteria with the vermilion Phoenix Hall is otherworldly",
+        "Evening Illumination — held in limited spring and autumn periods; the vermilion-and-gold hall floating in darkness reflects across the pond",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "平等院鳳凰堂とは?", a: "1053年に藤原頼通が建立した京都府宇治市の世界遺産。阿字池に浮かぶ左右対称の優美な姿は10円硬貨の裏面に描かれ、平安貴族が憧れた極楽浄土を地上に再現した日本古建築の最高峰の一つです。" },
+        { q: "ベスト撮影ポジションは?", a: "阿字池の対岸(南向き)から順光での正面構図が王道。朝一番(8時半開門)は池の水鏡が静かで最も美しい。藤の4月下旬、紅葉の11月下旬、雪の冬は特別な被写体になります。" },
+        { q: "拝観料と所要時間は?", a: "庭園+鳳翔館で大人600円、鳳凰堂内部拝観は別途300円(時間予約制、定員50名)。撮影中心なら庭園のみで2時間、内部含めれば3時間程度を見ておくと余裕です。" },
+      ],
+      en: [
+        { q: "What is Byodoin Phoenix Hall?", a: "A UNESCO World Heritage temple in Uji, Kyoto Prefecture, built in 1053 by Fujiwara no Yorimichi. Its symmetrical silhouette floating on Aji Pond — depicted on the reverse of the ¥10 coin — is one of Japan's foremost works of historic architecture, embodying the Pure Land that Heian aristocrats yearned for." },
+        { q: "Best photo position?", a: "The classic shot is from the south side of Aji Pond, in forward light. The 8:30 AM opening offers the calmest water and brightest mirror reflection. Wisteria in late April, autumn colors in late November, and rare winter snow each add unique character." },
+        { q: "What are admission fees and time required?", a: "Garden plus Hosho-kan Museum is ¥600 for adults; interior tours of Phoenix Hall are an additional ¥300 (timed entry, capacity 50). Plan two hours for the gardens, three including the interior." },
+      ],
+    },
     faqs: [
       { q: d("ベスト撮影ポジションは？","Best photo position?","最佳拍摄位置？","最佳拍攝位置？","최고 촬영 위치는?"),
         a: d("阿字池の対岸（南向き）から順光での正面構図が王道。朝一番（8時半開門）は池の水鏡が静かで最も美しい。","Classic shot: from the south side of Aji Pond in forward light. First entry (8:30 AM) has the calmest water for mirror reflections.","阿字池对岸（朝南）顺光正面构图为经典。8:30开门时池面最静，倒影最美。","阿字池對岸（朝南）順光正面構圖為經典。8:30開門時池面最靜，倒影最美。","아지 연못 건너편(남향) 순광 정면 구도가 정석. 개문(8:30) 직후 연못이 잔잔해 반영이 가장 아름답습니다.") },
@@ -255,6 +545,38 @@ export const LOCATION_CONTENT = {
       "東福寺創建於1236年，臨濟宗大本山。紅葉名所，從「通天橋」眺望的景色為京都首屈一指。2000株楓葉構成的深紅之海象徵日本之秋。初夏新綠亦清爽。",
       "도후쿠지는 1236년 창건 임제종 대본산. 단풍 명소로 '쓰텐쿄' 다리에서 바라보는 경관은 교토 최고. 2,000그루 단풍이 그리는 붉은 바다는 일본 가을을 상징하는 절경. 초여름 신록도 상쾌합니다."
     ),
+    definition: lh(
+      "東福寺は京都府京都市東山区にある臨済宗東福寺派の大本山で、1236年に九条道家が奈良の東大寺と興福寺から一字ずつ取って命名した京都最大級の禅寺。三門(国宝、1425年再建、現存最古最大の禅寺三門)、本堂、方丈、開山堂など25の塔頭と広大な伽藍を有し、特に「通天橋(つうてんきょう)」から望む洗玉澗(せんぎょくかん)の渓谷は約2,000本のカエデが織りなす紅葉の絶景として日本随一。重森三玲(しげもりみれい)作の方丈庭園は近代日本庭園の最高傑作の一つです。",
+      "Tofuku-ji is the head temple of the Tofuku-ji school of Rinzai Zen Buddhism in Kyoto's Higashiyama Ward. Founded in 1236 by Kujo Michiie — who took one character each from Nara's Todai-ji and Kofuku-ji to name it — it is one of Kyoto's largest Zen temples. Its Sanmon Gate (a National Treasure rebuilt in 1425) is the oldest and largest surviving Zen temple gate. With 25 sub-temples and a vast precinct, it is most famous for the «Tsuten-kyo Bridge» overlooking the Sengyokukan ravine, a sea of about 2,000 maple trees that form Japan's premier autumn foliage view. The hojo (abbot's quarters) garden, designed by Mirei Shigemori, is among the great masterpieces of modern Japanese garden art."
+    ),
+    highlights: {
+      ja: [
+        "通天橋(つうてんきょう) — 全長100mの渡り廊下橋、洗玉澗を渡り開山堂へ、紅葉の海に浮かぶ構図",
+        "三門(国宝) — 1425年再建、現存最古最大の禅寺三門、高さ22m、特別公開時のみ楼上拝観可",
+        "方丈庭園(重森三玲作) — 北・南・西・東の4庭で構成、現代と古典が融合した近代日本庭園の最高傑作",
+        "本堂と仏殿 — 1934年再建の昭和大伽藍、天井の堂本印象作「蒼龍図」は圧巻",
+        "塔頭 — 25の塔頭が点在、特に光明院「波心の庭」、勝林寺、芬陀院は知る人ぞ知る紅葉名所",
+      ],
+      en: [
+        "Tsuten-kyo Bridge — a 100 m covered walkway across the Sengyokukan ravine to the Founder's Hall, framing a sea of crimson maples",
+        "Sanmon Gate (National Treasure) — rebuilt in 1425, the oldest and largest surviving Zen temple gate at 22 m tall; the upper level opens only during special exhibitions",
+        "Hojo Garden by Mirei Shigemori — four gardens (north, south, west, east) blending modern and classical motifs, a masterpiece of modern Japanese garden design",
+        "Main Hall and Butsuden — Showa-era reconstruction (1934) with Domoto Insho's overwhelming «Sōryū-zu» (Azure Dragon) ceiling painting",
+        "Sub-temples — 25 in total; Komyo-in's «Hashin no Niwa,» Shorin-ji, and Funda-in are insider autumn foliage destinations",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "東福寺とは?", a: "1236年創建、京都府京都市東山区の臨済宗東福寺派大本山。京都最大級の禅寺で、国宝の三門、通天橋からの紅葉の海、重森三玲作の方丈庭園、25の塔頭を擁する京都屈指の名刹です。" },
+        { q: "紅葉のベスト時期は?", a: "例年11月下旬〜12月上旬がピーク。通天橋は11月の混雑期は撮影禁止時期あり(混雑緩和のため)。早朝開門直後(8:30〜)が人が少なく狙い目。一斉に色づくため気温の急降下を狙います。" },
+        { q: "拝観料と所要時間は?", a: "通天橋・開山堂400円、方丈庭園400円、共通券では1,000円程度。塔頭巡りも含めれば2〜3時間。混雑期は特別な交通規制と入場制限があるため事前確認必須です。" },
+      ],
+      en: [
+        { q: "What is Tofuku-ji?", a: "A Rinzai Zen head temple founded in 1236 in Kyoto's Higashiyama Ward. One of Kyoto's largest Zen temples, with a National Treasure Sanmon Gate, the famous «sea of maples» from Tsuten-kyo Bridge, the Mirei Shigemori-designed hojo garden, and 25 sub-temples." },
+        { q: "When are autumn colors at their best?", a: "Peak is typically late November to early December. Photography from Tsuten-kyo is restricted during peak weeks to ease congestion. Early morning right after the 8:30 opening offers thin crowds. Track sudden cold snaps that trigger color." },
+        { q: "What are admission fees and time required?", a: "About ¥400 for Tsuten-kyo and the Founder's Hall, ¥400 for the hojo garden, ~¥1,000 for the combined ticket. Including sub-temples, allow 2–3 hours. During peak weeks, traffic and entry restrictions apply — check in advance." },
+      ],
+    },
     faqs: [
       { q: d("紅葉のベスト時期は？","Best time for autumn foliage?","红叶最佳时期？","紅葉最佳時期？","단풍 절정기는?"),
         a: d("例年11月下旬〜12月上旬がピーク。通天橋は11月は撮影禁止時期あり（混雑対策）。早朝開門直後が人が少なく狙い目。","Peak is typically late Nov to early Dec. Photography is banned from Tsuten-kyo during peak weeks due to crowds. Early morning at opening is ideal.","每年11月下旬至12月上旬高峰。通天桥在11月部分日禁拍（防拥堵）。清晨开门为最佳时机。","每年11月下旬至12月上旬高峰。通天橋在11月部分日禁拍（防擁堵）。清晨開門為最佳時機。","매년 11월 하순~12월 초순이 절정. 쓰텐쿄는 11월 일부 촬영 금지(혼잡 방지). 개문 직후 이른 아침이 좋습니다.") },

@@ -9,7 +9,7 @@ import { getLocInfo } from "./loc-info.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 
-export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
+export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition, highlights, quickAnswers }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
@@ -124,10 +124,54 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
           )}
         </header>
 
+        {/* A14: definition (○○とは?) */}
+        {definition && (
+          <div style={{ marginBottom: 32, padding: "20px 24px", background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 8, maxWidth: 820 }}>
+            <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(232,228,223,.95)", margin: 0 }}>
+              {definition}
+            </p>
+          </div>
+        )}
+
         {desc && (
-          <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 17, lineHeight: 1.85, color: "rgba(232,228,223,.9)", marginBottom: 48, maxWidth: 820 }}>
+          <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 17, lineHeight: 1.85, color: "rgba(232,228,223,.9)", marginBottom: 32, maxWidth: 820 }}>
             {desc}
           </p>
+        )}
+
+        {/* A14: highlights (5項目) */}
+        {highlights && highlights.length > 0 && (
+          <section style={{ marginBottom: 40, maxWidth: 820 }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 16 }}>
+              {lang === "ja" ? "見どころ・特徴" : lang === "zh" ? "亮点与特色" : lang === "zh-tw" ? "亮點與特色" : lang === "ko" ? "하이라이트" : "Highlights"}
+            </h2>
+            <ul style={{ margin: 0, paddingLeft: 22, fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 15.5, lineHeight: 1.9, color: "rgba(232,228,223,.88)" }}>
+              {highlights.map((h, i) => (
+                <li key={i} style={{ marginBottom: 8 }}>{h}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* A14: quickAnswers (3 Q&A) */}
+        {quickAnswers && quickAnswers.length > 0 && (
+          <section style={{ marginBottom: 40, maxWidth: 820 }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 16 }}>
+              {lang === "ja" ? "クイック情報" : lang === "zh" ? "快速问答" : lang === "zh-tw" ? "快速問答" : lang === "ko" ? "빠른 답변" : "Quick Answers"}
+            </h2>
+            <div>
+              {quickAnswers.map((qa, i) => (
+                <div key={i} style={{ marginBottom: 18, paddingBottom: 14, borderBottom: i < quickAnswers.length - 1 ? "1px solid rgba(220,190,100,.1)" : "none" }}>
+                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 15, fontWeight: 500, color: "#f2ece2", marginBottom: 6 }}>
+                    {qa.q}
+                  </div>
+                  <div style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(232,228,223,.82)" }}>
+                    {qa.a}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         )}
 
         <section>
