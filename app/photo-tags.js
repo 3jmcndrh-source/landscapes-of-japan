@@ -404,6 +404,114 @@ export const PHOTO_TAGS = {
   "iqzmqcxvlmzmpxb3e8nl": ["autumn", "night"],        // 兼六園紅葉ライトアップ
   "vravjelowaeamknkqkte": ["urban"],                  // 21世紀美術館
   "zip572vkpw2oinqbodt9": ["autumn", "street"],       // 浅野川+紅葉
+
+  // ── 宮古島 残り30枚 ──
+  "ccthpmmrxzfv9fgctuws": ["coastal"],
+  "asrmh4euv3ntt5saqm0o": ["coastal"],
+  "zo1fxoj920zvxfgavwuo": ["urban"],         // ヤシ+カフェ
+  "vnduczpwqmgjkhll1l0z": ["coastal"],
+  "jwirovp2d1kqfae6gqti": ["coastal"],
+  "l1ihzzfw2lkah7rim3hk": ["coastal"],
+  "hfyo4tn30ahh2xz3asnn": ["coastal"],
+  "lcfe4zz4xvxjzruda1yo": ["coastal"],
+  "pprmxtxaj53r93mkk7f3": ["coastal"],
+  "gcmokjrl4gjekujs3sws": ["coastal"],       // 来間大橋
+  "akk660cretzdipzyhoz1": ["coastal"],
+  "ccggglphvsgibbj9bdmn": ["coastal"],
+  "e3kwo6gyrnbspcplkmnc": ["coastal"],
+  "ksrpgxpsgmiffx3krp8n": ["coastal"],
+  "iyxrkq7ojni4adbkd2id": ["coastal"],
+  "oxgq7nub2ad0mixlkgdj": ["urban", "coastal"],   // 住宅街+海
+  "eb6mwk1ahcoubidkfh36": ["coastal"],
+  "k1eg8vwxkgjugoffr8mf": ["coastal"],
+  "hx1ucufb7xc2hbcvpfsb": ["coastal"],
+  "bti9ugmg2jr2874wglyy": ["coastal"],
+  "yj9bzxco6ntjdxqfxvwe": ["coastal"],
+  "uotk9tgqbswqr1ennalv": ["coastal"],
+  "mztgcepivlstffevagwz": ["coastal"],
+  "ovui6gb8bdpvlc2gd9gl": ["coastal"],
+  "kgk6jnvbfx3wvqgjia9m": ["coastal"],         // 灯台
+  "afjaenvla1eya7kiv5zh": ["coastal"],
+  "oes9giyouydgsdqq0f4t": ["coastal"],         // クルーズ船+夕日
+  "sgzeqvsvqk2whkqjlbbi": ["coastal"],         // 伊良部大橋
+  "axgmmojhbauycrqe0ihk": ["coastal"],
+  "jvxvv4qs8b5sot8hcaka": ["coastal"],
+
+  // ── 沖縄 残り40枚 ──
+  "mrrqu1cggsemlqpmivff": ["coastal"],
+  "i09y2z1ym2i4gnccanrz": ["coastal"],         // 古宇利島ハートロック
+  "uogey3f0zr0sqnd6hnhe": ["coastal"],
+  "j0yqruzfnhlvo71uvqlw": ["coastal"],
+  "ufnlccnqlf5uhtq11dng": ["coastal"],         // 古宇利大橋
+  "ypfqwllaxnyzquznta8g": ["urban"],           // シーサーお守り
+  "yz0zk0vhgpb9gindz10d": ["animal"],          // 美ら海イルカショー
+  "fwufx8wdz5dzwyajob2n": ["animal"],
+  "s91ox51yhpumogn8hkwo": ["animal"],          // ジンベエザメ
+  "koq3wiap1lqqdthqltue": ["animal"],
+  "i36rj6ku3zowegj99l2o": ["animal"],          // マンタ
+  "fsbi0m8rqjnh3b5ip2ci": ["animal"],          // 巨大水槽
+  "kx4tcd5ofly9wr00slek": ["urban", "night"],  // アメリカンビレッジ
+  "eosimyutys8zgrwnolti": ["urban", "night"],
+  "lk2f5q4sb8x8gtyetead": ["urban", "night"],
+  "vcwbt8mzkznp8ky34awl": ["coastal"],         // 海洋博公園
+  "o79k95rgx51w398bouzg": ["urban"],           // 万座毛VC
+  "bg8qrozxyqvokbgmgcei": ["coastal"],
+  "ybe2noyobnmhpnrgtboh": ["castle"],          // 城跡
+  "zfxeserikfeqjzqe2skq": ["urban"],           // 玉泉洞看板
+  "z8y0ijv4wdcxgwams241": ["urban"],           // 玉泉洞
+  "ytopadczpa7puematekd": ["urban"],
+  "prpernet3o52fo34dupj": ["urban"],
+  "k52lizfrccqy0iebr2ow": ["urban"],
+  "dmucdvrhjhjwvatwrfip": ["urban"],
+  "xcpxauh33nsys4w3ij38": ["urban"],
+  "qk9bh31p4bhspwavb7el": ["urban"],
+  "yxotgv2k34lk3vxpacid": ["mountain"],        // ガンガラーの谷
+  "gnvfynyo0rpwekzj1y3i": ["mountain"],        // ガジュマル
+  "ujgluuxpb7v5wxzijeok": ["mountain"],
+  "wnp3s6tlu7zatmiin3as": ["urban"],           // 洞窟内レストラン
+  "wwa7xzb2qldnh7qwczci": ["urban"],           // カルビープラス
+  "hjutoisviwwj6ulptodt": ["castle"],          // 首里城門
+  "eun1he1u4mpcl3hjfpba": ["urban"],           // 那覇市街+夕日
+  "gfznqpn18mawgeimrmyr": ["urban"],
+  "jrirgyo3urvp49udusvg": ["urban"],
+  "teo40vgijk8hodqm8871": ["castle"],          // 首里城朱塗り
+  "h9setuefm4wxfu6udlrh": ["urban"],
+  "c4mljbvi3zl6e9nxwlrz": ["castle", "urban"], // 首里城+那覇
+  "vdmsartx9qcs9w3f0snu": ["castle"],          // 首里城歓会門
+
+  // ── 中規模 loc サンプルベース全枚タグ付け ──
+  // (各locで sample 1枚確認、その被写体を全枚に適用。
+  //  混在性が高いと判明したloc(河口湖・小樽・姫路城等)はそのまま loc-fallback)
+
+  // 高島公園(諏訪市) 9枚 → 全 castle (諏訪城跡)
+  "bxjoxoiwkkfggxgokmwt": ["castle"],
+
+  // 城山公園(松本市) 8枚 → 全 cherry (桜名所)
+  "auyi7ohcpsmbozph6mqm": ["cherry"],
+
+  // 安養寺 6枚 → 全 cherry (しだれ桜)
+  "kgjfrzmhnnohh4p8m3z1": ["cherry"],
+
+  // おはらい町・おかげ横丁 6枚 → 全 street (門前町)
+  "dhwplqr8k5e49mis89hz": ["street"],
+
+  // 松本城 5枚 → 全 castle
+  "c0d1bsl50csyyr2xtugg": ["castle"],
+
+  // 東福寺 5枚 → 全 temple+autumn (紅葉名所)
+  "DSC07394_hhq8bw": ["temple", "autumn"],
+
+  // 道後温泉 4枚 → 全 onsen (一部 night)
+  "jizpq9o0ag6bt1nmynv4": ["onsen", "night"],
+
+  // 河口湖 5枚: cherry+lake+mountain (富士+桜+湖の代表構図)
+  "bsesdqubicdiilhcynyh": ["cherry", "lake", "mountain"],
+
+  // 姫路城 5枚: castle主、紅葉混在
+  "DSC07121_fxsgn9": ["castle", "autumn"],
+
+  // 小樽 5枚: 海岸も(運河だけでなく)
+  "heugkwts7mna2tb7okh0": ["coastal"],
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
