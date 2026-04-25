@@ -229,6 +229,181 @@ export const PHOTO_TAGS = {
   "gmywadlhis8t8qq7qzad": ["urban", "coastal"],   // 那覇市街+港
   "wwegz4pphz9rqlbzcufj": ["urban", "coastal"],   // 那覇市街+港
   "sqga5qi1232ctbwiy9yg": ["urban"],              // ホテル+ヤシ
+
+  // ── 知床 (北海道、30枚) ── 夏の知床(知床五湖・原生林・オシンコシン滝・ウトロ海岸)
+  "cofy806dc83kq5kr9voy": ["rural", "mountain"],  // 天に続く道
+  "rsg8i9kvy6dgk7zrbf03": ["waterfall"],          // オシンコシンの滝
+  "ygixf3zg86txffk3rfdc": ["waterfall"],
+  "sgqomcwsuq18xc1oyr3g": ["coastal"],            // ウトロ海岸
+  "ucywl4kzi2dyfnvvcqxs": ["coastal"],            // ウトロ街並み+オロンコ岩
+  "ig54fdyrmd5i1nm0kkjw": ["coastal"],            // 夕日と海
+  "ievzbaoy5zffokh9iye4": ["mountain"],
+  "x8dzdtol6icmixl5elrc": ["mountain"],           // 知床連山+原野
+  "y9gpq3cbjzxtbyope84v": ["mountain", "coastal"],
+  "icv9vzvxw5cfb7zw1j4f": ["lake", "mountain"],   // 知床五湖
+  "l5u87lvqtypftfcjmbwj": ["lake", "mountain"],
+  "ecrvsnz2nf3tdotj3p79": ["lake", "mountain"],
+  "w5stev0e8hgyhlmfkgyi": ["mountain"],           // 原生林
+  "hovzpx74azpzuflnsmpm": ["lake", "mountain"],
+  "s2c5awvwr66iowp35h2c": ["lake", "mountain"],
+  "fpolpty5arwxbpeq6gfo": ["mountain"],
+  "ucoyzrjnu4jcaowchnyf": ["lake", "mountain"],
+  "nvzuynx7xanlkdmtithn": ["mountain"],
+  "avbnpuch4zqf2uggedeu": ["lake", "mountain"],
+  "acalqxeajcchzvdrzkos": ["lake", "mountain"],
+  "bxegtf9vgggrnwfqazvb": ["lake", "mountain"],
+  "oqkdlmmlgir1yqqfyov7": ["lake", "mountain"],
+  "ohoqrtxg97rup7g05ups": ["lake", "mountain"],
+  "pu85sedyzf9nvt53rd4n": ["lake", "mountain"],
+  "grehvbvz4bwun6atuibb": ["lake", "mountain"],
+  "ywfdk96oy02x8qmdqa9d": ["lake", "mountain"],
+  "drbam4ipptjc6ye3jnc9": ["mountain"],
+  "g5zkvhiefql4b8npve9j": ["mountain"],
+  "mlrekiokelsrjmoev8ru": ["mountain"],
+  "ccwj6ftxoygltoalpqoq": ["mountain"],
+
+  // ── 旭山動物園 (北海道、6枚) ── 全て動物
+  "gueqzi2t9iacfrcz9fxh": ["animal"],   // 猿+夕日
+  "dayk8svfgi7qvyogccli": ["animal"],
+  "nynaw9ykoregt6zml4ob": ["animal"],
+  "o2mawg9skfvhayynvnio": ["animal"],
+  "tdn43okylfpfvipei9ct": ["animal"],
+  "vebkeapnmubqy4fkka6n": ["animal"],
+
+  // ── 富良野 (北海道、6枚) ── 全て花畑
+  "hvnlsmmmikzqkmooht8u": ["flower-field"],
+  "byu71ylpugsuuphprww3": ["flower-field"],
+  "m2d7xxomq41swkkbfw2f": ["flower-field"],
+  "pxsovtxkmho2fczrlti3": ["flower-field"],
+  "ifhfmrhwjcvmeijvskac": ["flower-field"],
+  "ein3krfvgsxxzw4vhx48": ["flower-field"],
+
+  // ── 高遠城址公園 (長野県、6枚) ── 全て桜
+  "jfvqos5wbosqddnnrgxo": ["cherry"],
+  "clam0hkd2te1a5psxwev": ["cherry"],
+  "j8jrsyxwu2aagr2rnlh4": ["cherry"],
+  "uct8pqjakk2twm5vsdvg": ["cherry"],
+  "m64dm2z2krxj40vfjnrd": ["cherry"],
+  "uvxr5yeva9pc5abjv0uk": ["cherry"],
+
+  // ── 伊勢神宮 (三重県、7枚) ── 全て神社(鳥居・参道)
+  "gzs6fz39kbyjlywoppuf": ["shrine"],
+  "w2h5cjtnpeekmtld3dmy": ["shrine"],
+  "wbdpz61p1xxcdumsr4ua": ["shrine"],
+  "r244rjurupipzhamaiuv": ["shrine"],
+  "lt1vn7wimwlslgwgv6qk": ["shrine"],
+  "lpspgxkqt5vekjyztt5g": ["shrine"],
+  "oa1yiaxflqbq3afxsggp": ["shrine"],
+
+  // ── 清水寺 (京都府、7枚) ── 紅葉ライトアップ中心
+  "DSC07592_anjr5r": ["temple", "autumn"],          // 清水の舞台+紅葉夕焼け
+  "DSC07563_icizbb": ["temple", "autumn"],          // 清水の舞台+紅葉夕焼け
+  "DSC07546_gaplky": ["temple", "autumn"],          // 清水の舞台+紅葉夕焼け
+  "DSC07393_xtp40k": ["temple", "night"],           // 仁王門+三重塔ライトアップ
+  "DSC07386_vrsz1g": ["temple", "autumn", "night"], // 三重塔+紅葉ライトアップ
+  "DSC07355_zyqovr": ["temple", "autumn", "night"], // 清水の舞台+紅葉ライトアップ
+  "DSC07337_kaejdo": ["temple", "night"],           // 三重塔+月
+
+  // ── 高知城 (高知県、6枚) ── 全て城
+  "ekyaldwcry9gqiy9tgre": ["castle"],
+  "yhenlvvvz5kucqldydfm": ["castle"],
+  "z5dppj2tdaf1ovyjq3id": ["castle"],
+  "pk5nouibsptedo8wds3h": ["castle"],
+  "pkszsvhktqyiwlyfurkd": ["castle"],
+  "w43utexm5kjyu54hducu": ["castle"],
+
+  // ── 別府 (大分県、7枚) ── 全て地獄めぐり(温泉)
+  "szm5n4mwwmmh3fksqukz": ["onsen"],   // 鬼石坊主地獄
+  "yuufchifryqi13eyyoor": ["onsen"],   // 海地獄
+  "qxfxsuorglm0r8fzfgcr": ["onsen"],   // 地獄系池
+  "znmygcxoyxe7uihta2a3": ["onsen"],   // 血の池地獄
+  "nhcofuhnbijxmqf7heop": ["onsen"],   // 白池地獄
+  "bwtpdo3ycszgiokdrkqz": ["onsen"],   // 鬼石坊主地獄
+  "nejr6pdgmudgjynjhpzl": ["onsen"],   // 龍巻地獄
+
+  // ── 美幌峠 (北海道、11枚) ── 屈斜路湖の俯瞰
+  "jlnmop3no0c6apanqg0j": ["lake", "mountain"],
+  "dulixcwj07zpcjlhdmtv": ["lake", "mountain"],
+  "w09z0y5dytwnhbqaa26n": ["lake", "mountain"],
+  "dciohyawhu4uwppull42": ["lake", "mountain"],
+  "dauymniifixeho9ewvaj": ["lake", "mountain"],
+  "bwg4daxogde6yg99ahfc": ["lake", "mountain"],
+  "bnbmrqj3s9ig3ap8yulh": ["lake", "mountain"],
+  "isy0pekq31wadfzoukdb": ["lake", "mountain"],
+  "bfkqyvkq33cnx9k98dx9": ["lake", "mountain"],
+  "v6n5rruvjocwtqif5cej": ["lake", "mountain"],
+  "ykop4xhde4uibnd3zotl": ["lake", "mountain"],
+
+  // ── 新倉山浅間公園 (山梨県、8枚) ── 桜+富士山
+  "wcrs6gq9eutte8fwrzpp": ["cherry", "mountain"],
+  "sdjdpuhu1xmjqlyfu0ji": ["cherry", "mountain"],
+  "flwkbyaadyjsauwndgll": ["cherry", "mountain"],
+  "ubnattnp6rlf4wtv61mi": ["cherry", "mountain"],
+  "lzabjelxserdjz9wmzig": ["cherry", "mountain"],
+  "xatffycdhlinbpis36og": ["cherry", "mountain"],
+  "mbubw3dtejisp0ng7ttz": ["cherry", "mountain"],
+  "li8plarxiosywpp2qwq1": ["cherry", "mountain"],
+
+  // ── 弘法山古墳 (長野県、11枚) ── 桜+松本市街+北アルプス
+  "ewpcre6qnksncnu1ymem": ["cherry", "mountain"],
+  "sosd9vi7tiwq8ezyvsaa": ["cherry", "mountain"],
+  "otxag9j26cytaettnnhu": ["cherry", "mountain"],
+  "wrfx6anvys7zbrfrjhmy": ["cherry", "mountain"],
+  "olhsgzum3ivcgytg4ur2": ["cherry", "mountain"],
+  "ulr12vkexneue5epkhkt": ["cherry", "mountain"],
+  "xrehdxqbmffx6gn7ilh2": ["cherry", "mountain"],
+  "rb1guenezzppmmwcoed6": ["cherry", "mountain"],
+  "xojxmbgagtlp3oph82pt": ["cherry", "mountain"],
+  "pslwa9g3czm5f2gj64s2": ["cherry", "mountain"],
+  "xlvzqzimzksxzxfwkrll": ["cherry", "mountain"],
+
+  // ── 湯布院 (大分県、1枚) ──
+  "gcjxpyk0fxof7we3ytqo": ["urban"],   // 由布院駅
+
+  // ── 阿寒 (北海道、10枚) ── 阿寒湖+温泉街+エゾシカ
+  "k5ctrte2solhpgtl1gfi": ["lake", "mountain"],
+  "pewpzn9x8dxwtdf8yety": ["lake", "mountain"],
+  "h8i0rxmcioxwbnfagiqm": ["lake", "mountain"],
+  "lyvcmp5qignj3j8b04e3": ["lake", "mountain", "animal"],   // エゾシカ+湖+船
+  "evwlr6fgjoxbuaoshv3i": ["animal"],                       // エゾシカ
+  "pjtr6rjgdlxvhxp8ehpr": ["urban", "lake"],                // 阿寒湖温泉街+夕景
+  "s8tldtnav0mudikuyhci": ["urban", "lake"],                // アイヌコタン参道
+  "pqj0meeyzbhve6mfb2q0": ["urban", "lake"],
+  "vrl4wjhzjwabtd2xinc9": ["lake"],                         // 桟橋+ボート
+  "h2vsed9dz1fj935lh9li": ["lake", "mountain"],
+
+  // ── 横浜 (神奈川県、9枚) ── 港・夜景・赤レンガ・客船
+  "roeiwcd2bexzyq5eswsn": ["urban"],                  // 赤レンガ倉庫
+  "dyejili3mrrizyvpwcvb": ["urban"],
+  "aa9zrjl0dcnlulqjilee": ["urban", "coastal"],       // 港+高速道
+  "j3g8s2rcorimyusaf83i": ["urban", "coastal"],       // ベイブリッジ
+  "nvlttty0qgchzstxo6fb": ["urban", "coastal"],       // みなとみらい+客船
+  "xghhx4hetbdgvw69ou9g": ["urban"],                  // 高層ビル群
+  "prfajod3kbdxntzhooxt": ["urban"],                  // 氷川丸
+  "payoa5eewjukgzk7vrjk": ["coastal"],                // 大型客船
+  "gj8s9sm7ixl9iz7aczew": ["urban"],                  // 都市俯瞰
+
+  // ── 東京 (東京都、11枚) ── 東京タワー + ハリポタスタジオ
+  "hhuf0fqsgs4qdztehnzb": ["urban"],                  // 東京タワー俯瞰
+  "my7re28ckggxseludvlj": ["urban"],
+  "n9wv3krjeebsash5zvxv": ["urban", "night"],         // 東京タワーライトアップ
+  "irwultgwnqvfpj3ufrhq": ["urban"],                  // ハリポタクリスマス装飾
+  "voty0hrw6k95t7cq2nmp": ["urban"],                  // ハリポタ騎士バス
+  "fdatlwqk3m6b2auwxcra": ["urban"],                  // ハリポタ Privet Drive
+  "wpnpqjmfgrpx0pkqq4wf": ["urban"],                  // ハグリッド小屋
+  "lokxylhdsiai3w8cjy6e": ["urban"],
+  "veheffiav3eqsnlyidg7": ["urban"],                  // オリバンダー杖屋
+  "al0m8swfnbyrbkc9ebeo": ["urban"],                  // ホニーデュークス
+  "n0e8xeyvaabkthqbjgoh": ["urban"],
+
+  // ── 金沢 (石川県、7枚) ── 鼓門・武家屋敷・寿司・兼六園・茶屋街
+  "tholpq2n9n3es1zbunl2": ["urban"],                  // 金沢駅鼓門
+  "fvmfopoju9j1afeyfmfq": ["urban"],                  // 寿司屋
+  "njkhpu1dsjnaqdpuibsl": ["autumn"],                 // 武家屋敷+紅葉
+  "a7mrvz28s8bhljtvxerd": ["urban"],                  // 寿司
+  "iqzmqcxvlmzmpxb3e8nl": ["autumn", "night"],        // 兼六園紅葉ライトアップ
+  "vravjelowaeamknkqkte": ["urban"],                  // 21世紀美術館
+  "zip572vkpw2oinqbodt9": ["autumn", "street"],       // 浅野川+紅葉
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
