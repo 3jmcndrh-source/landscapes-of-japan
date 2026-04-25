@@ -62,6 +62,21 @@ export default async function TechniquePage({ params }) {
         })),
         ...(photos.length > 0 && { image: cldUrl(photos[0].id, 1200) }),
       },
+      ...(photos.length > 0 ? [{
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/${lang}/techniques/${slug}#itemlist`,
+        name: `${name} — example photos`,
+        numberOfItems: photos.length,
+        itemListElement: photos.slice(0, 20).map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "ImageObject",
+            contentUrl: cldUrl(p.id, 1200),
+            name: `${getLocName(p.loc, lang)} - ${getPrefName(p.pref, lang)}`,
+          },
+        })),
+      }] : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [

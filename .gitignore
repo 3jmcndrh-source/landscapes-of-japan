@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# nested working dir created by some build tools (NOT a git submodule, just dev cache)
+/landscapes-of-japan/
+
 # production
 /build
 

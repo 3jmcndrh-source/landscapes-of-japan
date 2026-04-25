@@ -76,6 +76,21 @@ export default async function Page({ params }) {
         })),
       },
       {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/${lang}/collections/${theme}#itemlist`,
+        name: `${name} — Landscapes of Japan`,
+        numberOfItems: photos.length,
+        itemListElement: photos.slice(0, 30).map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "ImageObject",
+            contentUrl: cldUrl(p.id, 1200),
+            name: `${getLocName(p.loc, lang)} - ${getPrefName(p.pref, lang)}`,
+          },
+        })),
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Landscapes of Japan", item: `${SITE_URL}/${lang}` },

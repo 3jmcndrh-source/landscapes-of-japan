@@ -68,24 +68,42 @@ export default async function AllPrefecturesPage({ params }) {
     return pf?.photos.length || 0;
   };
 
+  const coveredPrefs = ALL_PREFS_ORDERED.filter((p) => haveData.has(p));
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: `${titleLabel} | Landscapes of Japan`,
-    url: `${SITE_URL}/${lang}/all-prefectures`,
-    inLanguage: HREFLANG[lang] || lang,
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Landscapes of Japan", item: `${SITE_URL}/${lang}` },
-        { "@type": "ListItem", position: 2, name: titleLabel, item: `${SITE_URL}/${lang}/all-prefectures` },
-      ],
-    },
-    hasPart: ALL_PREFS_ORDERED.filter((p) => haveData.has(p)).map((prefJp) => ({
-      "@type": "WebPage",
-      name: getPrefName(prefJp, lang),
-      url: `${SITE_URL}/${lang}/${PREF_SLUGS[prefJp]}`,
-    })),
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${SITE_URL}/${lang}/all-prefectures#page`,
+        name: `${titleLabel} | Landscapes of Japan`,
+        url: `${SITE_URL}/${lang}/all-prefectures`,
+        inLanguage: HREFLANG[lang] || lang,
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Landscapes of Japan", item: `${SITE_URL}/${lang}` },
+            { "@type": "ListItem", position: 2, name: titleLabel, item: `${SITE_URL}/${lang}/all-prefectures` },
+          ],
+        },
+        hasPart: coveredPrefs.map((prefJp) => ({
+          "@type": "WebPage",
+          name: getPrefName(prefJp, lang),
+          url: `${SITE_URL}/${lang}/${PREF_SLUGS[prefJp]}`,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/${lang}/all-prefectures#itemlist`,
+        name: titleLabel,
+        numberOfItems: coveredPrefs.length,
+        itemListElement: coveredPrefs.map((prefJp, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: getPrefName(prefJp, lang),
+          url: `${SITE_URL}/${lang}/${PREF_SLUGS[prefJp]}`,
+        })),
+      },
+    ],
   };
 
   return (

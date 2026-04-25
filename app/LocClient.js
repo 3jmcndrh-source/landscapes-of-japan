@@ -6,6 +6,7 @@ import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { POSTS, getPostTitle } from "./content/blog/posts.js";
 import { getLocInfo } from "./loc-info.js";
+import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 
 export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
@@ -293,6 +294,37 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
                   </div>
                 </div>
               )}
+            </section>
+          );
+        })()}
+
+        {/* A19: PageRank流通最適化 — 同地方の他pref へのリンク */}
+        {(() => {
+          const region = getRegionOfPref(prefJp);
+          const siblings = getSiblingPrefs(prefJp);
+          if (!region || siblings.length === 0) return null;
+          const siblingsCovered = siblings
+            .map((s) => ({ jp: s, pf: PREFECTURES.find((p) => p.pref === s), slug: PREF_SLUGS[s] }))
+            .filter((x) => x.pf && x.slug);
+          if (siblingsCovered.length === 0) return null;
+          const regionLocal = lang === "ja" ? region.nameJa : region.nameEn;
+          return (
+            <section style={{ marginTop: 64 }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
+                {lang === "ja" ? `${regionLocal}地方の他の都道府県` : `Other prefectures in ${regionLocal}`}
+              </h2>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {siblingsCovered.map(({ jp, pf, slug }) => (
+                  <a
+                    key={jp}
+                    href={`/${lang}/${slug}`}
+                    style={{ background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 999, padding: "8px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}
+                  >
+                    {getPrefName(jp, lang)}
+                    <span style={{ marginLeft: 8, opacity: .55, fontSize: 11 }}>({pf.photos.length})</span>
+                  </a>
+                ))}
+              </div>
             </section>
           );
         })()}

@@ -3,6 +3,7 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl } from "./data.js";
 import { SITE_URL, HREFLANG } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 
 export default function PrefClient({ lang, prefJp, desc, faqs }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
@@ -196,6 +197,42 @@ export default function PrefClient({ lang, prefJp, desc, faqs }) {
             </div>
           </section>
         )}
+
+        {/* A19: PageRank流通最適化 — 同地方の他pref へのリンク */}
+        {(() => {
+          const region = getRegionOfPref(prefJp);
+          const siblings = getSiblingPrefs(prefJp);
+          if (!region || siblings.length === 0) return null;
+          const siblingsCovered = siblings
+            .map((s) => ({ jp: s, pf: PREFECTURES.find((p) => p.pref === s), slug: PREF_SLUGS[s] }))
+            .filter((x) => x.pf && x.slug);
+          if (siblingsCovered.length === 0) return null;
+          const regionLocal = lang === "ja" ? region.nameJa : region.nameEn;
+          return (
+            <section style={{ marginTop: 64 }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
+                {lang === "ja" ? `${regionLocal}地方の他の都道府県` : `Other prefectures in ${regionLocal}`}
+              </h2>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {siblingsCovered.map(({ jp, pf, slug }) => (
+                  <a
+                    key={jp}
+                    href={`/${lang}/${slug}`}
+                    style={{ background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 999, padding: "8px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}
+                  >
+                    {getPrefName(jp, lang)}
+                    <span style={{ marginLeft: 8, opacity: .55, fontSize: 11 }}>({pf.photos.length})</span>
+                  </a>
+                ))}
+              </div>
+              <div style={{ marginTop: 16 }}>
+                <a href={`/${lang}/all-prefectures`} style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none" }}>
+                  {lang === "ja" ? "47都道府県すべてを見る →" : "View all 47 prefectures →"}
+                </a>
+              </div>
+            </section>
+          );
+        })()}
       </main>
 
       {lightbox !== null && cur && (

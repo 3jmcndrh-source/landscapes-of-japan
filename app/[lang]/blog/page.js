@@ -39,17 +39,41 @@ export default async function BlogIndex({ params }) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    "@id": `${SITE_URL}/${lang}/blog`,
-    name: `${blogTitle} | Landscapes of Japan`,
-    inLanguage: HREFLANG[lang] || lang,
-    blogPost: sortedPosts.slice(0, 20).map((p) => ({
-      "@type": "BlogPosting",
-      headline: getPostTitle(p, lang),
-      datePublished: p.date,
-      url: `${SITE_URL}/${lang}/blog/${p.slug}`,
-      ...(p.hero && { image: cldUrl(p.hero, 1200) }),
-    })),
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": `${SITE_URL}/${lang}/blog#blog`,
+        name: `${blogTitle} | Landscapes of Japan`,
+        url: `${SITE_URL}/${lang}/blog`,
+        inLanguage: HREFLANG[lang] || lang,
+        blogPost: sortedPosts.slice(0, 20).map((p) => ({
+          "@type": "BlogPosting",
+          headline: getPostTitle(p, lang),
+          datePublished: p.date,
+          url: `${SITE_URL}/${lang}/blog/${p.slug}`,
+          ...(p.hero && { image: cldUrl(p.hero, 1200) }),
+        })),
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/${lang}/blog#itemlist`,
+        name: blogTitle,
+        numberOfItems: sortedPosts.length,
+        itemListElement: sortedPosts.slice(0, 30).map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: getPostTitle(p, lang),
+          url: `${SITE_URL}/${lang}/blog/${p.slug}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Landscapes of Japan", item: `${SITE_URL}/${lang}` },
+          { "@type": "ListItem", position: 2, name: blogTitle, item: `${SITE_URL}/${lang}/blog` },
+        ],
+      },
+    ],
   };
 
   return (

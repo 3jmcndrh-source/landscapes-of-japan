@@ -1,0 +1,45 @@
+name: IndexNow on Push
+
+# git push 後、Vercel デプロイ完了を待ってから IndexNow 通知
+# 通常の daily-resubmit より高速反映 (push → 数分でBing index対象化)
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Wait for Vercel deploy
+        run: sleep 300
+
+      - name: Verify production reflects HEAD commit
+        run: |
+          # Production HTML or any indicator that latest deploy succeeded
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://landscapes-of-japan.vercel.app/")
+          echo "Production status: $STATUS"
+          if [ "$STATUS" != "200" ] && [ "$STATUS" != "301" ] && [ "$STATUS" != "308" ]; then
+            echo "::warning::Production not 200, skipping IndexNow"
+            exit 0
+          fi
+
+      - name: Notify IndexNow (full sitemap)
+        run: node notify-indexnow.mjs --sitemap
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### IndexNow on Push Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Trigger: push to master" >> $GITHUB_STEP_SUMMARY
+          echo "- Commit: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Run at: $(date -u)" >> $GITHUB_STEP_SUMMARY
