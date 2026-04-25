@@ -1,6 +1,7 @@
 import { LANGS, HREFLANG, SITE_URL } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
+import { COLLECTION_SLUGS } from "../../collections.js";
 
 /**
  * 個別sitemap生成
@@ -46,6 +47,20 @@ export async function GET(_req, { params }) {
         priority: lang === "ja" || lang === "en" ? "1.0" : "0.8",
         alternates: rootLangs,
       }));
+    }
+
+    // collections (10 themes × 20 langs = 200 URLs)
+    for (const slug of COLLECTION_SLUGS) {
+      const cLangs = {};
+      for (const l of LANGS) cLangs[HREFLANG[l]] = `${SITE_URL}/${l}/collections/${slug}`;
+      cLangs["x-default"] = `${SITE_URL}/en/collections/${slug}`;
+      for (const lang of LANGS) {
+        entries.push(buildUrlEntry({
+          url: `${SITE_URL}/${lang}/collections/${slug}`,
+          lastmod, changefreq: "monthly", priority: "0.65",
+          alternates: cLangs,
+        }));
+      }
     }
 
     for (const pf of PREFECTURES) {
