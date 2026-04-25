@@ -561,6 +561,38 @@ export const LOCATION_CONTENT = {
       "內宮前石板參道御祓町再現江戶至明治街景。中段的「御蔭橫丁」是參拜後熱鬧區域，赤福本店、伊勢烏龍、手捏壽司等美食與風情兼具。",
       "내궁 앞 돌길 참배로 오하라이마치는 에도~메이지 시대 거리를 재현. 그 중간의 '오카게요코초'는 참배 후 활기찬 구역으로 아카후쿠 본점, 이세 우동, 데코네즈시 등 먹거리와 정취를 즐길 수 있습니다."
     ),
+    definition: lh(
+      "おはらい町・おかげ横丁(おはらいまち・おかげよこちょう)は三重県伊勢市の伊勢神宮内宮(皇大神宮)門前に広がる石畳の参道(全長約800m)で、江戸末期から明治初期の伊勢路の町並みを再現した観光商業地区。中心部にある「おかげ横丁」(2,700坪、約50店舗)は1993年に「赤福本店」を擁する赤福が創業290周年事業として開発した伝統町並み再現エリアで、伊勢神宮参拝後の「お蔭まいり」文化を体現します。赤福本店、伊勢うどん、てこね寿司、松阪牛、神宮酒場、伊勢萬古焼など、伊勢の食文化と伝統工芸が一堂に集まり、年間約400万人が訪れる日本有数の門前町です。",
+      "Oharaimachi and Okage Yokocho form an 800 m stone-paved approach to the Inner Shrine (Kotai Jingu) of Ise Jingu in Ise City, Mie Prefecture, recreating the late-Edo to early-Meiji townscape of the Ise pilgrimage route. At its heart, «Okage Yokocho» (2,700 tsubo, about 50 shops) was developed in 1993 by Akafuku as the 290th-anniversary project, embodying the post-pilgrimage «Okage-mairi» tradition. With Akafuku Honten, Ise udon, tekone-zushi, Matsusaka beef, the Jingu Sakaba, and Iseban-ko pottery all gathered in one place, this temple-front district welcomes about 4 million visitors a year and ranks among Japan's foremost approach-streets."
+    ),
+    highlights: {
+      ja: [
+        "おかげ横丁 — 江戸〜明治の町並み再現、約50店舗、赤福本店、伊勢うどん、てこね寿司の本場",
+        "おはらい町通り — 内宮へ続く石畳の参道、五十鈴川沿いの木造建築の連なり",
+        "赤福本店 — 1707年創業の伊勢の名物餅、店内で五十鈴川を眺めながら頂ける",
+        "招き猫店・伊勢萬古焼工房 — 伝統工芸店が並び、職人の手仕事を間近で観察",
+        "夜のライトアップ — 提灯と石畳のレトロな夜景、雨上がりの石畳の反射が幻想的",
+      ],
+      en: [
+        "Okage Yokocho — recreates the Edo-to-Meiji townscape with about 50 shops, including Akafuku Honten, traditional Ise udon, and tekone-zushi",
+        "Oharaimachi Street — the stone-paved approach to the Inner Shrine, lined with wooden buildings along the Isuzu River",
+        "Akafuku Honten — Ise's famous mochi shop founded in 1707; enjoy it inside while gazing at the Isuzu River",
+        "Maneki-neko Shop and Iseban-ko Pottery — traditional craft shops where you can watch artisans at work",
+        "Evening Illumination — lanterns and stone paving create a retro nightscape, especially atmospheric when wet stone reflects light after rain",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "おはらい町・おかげ横丁とは?", a: "三重県伊勢市の伊勢神宮内宮門前に広がる全長約800mの石畳の参道で、江戸末期〜明治初期の伊勢路の町並みを再現。1993年赤福が開発した「おかげ横丁」(50店舗)を中心に、年間400万人が訪れる日本有数の門前町です。" },
+        { q: "ベストな時間帯は?", a: "早朝7〜9時は観光客が少なく、木造建築の陰影が美しい撮影タイム。夕方〜夜のライトアップは提灯の灯りと石畳の組合せが情緒的。雨天の石畳も被写体として秀逸です。" },
+        { q: "アクセスと参拝後の流れは?", a: "近鉄宇治山田駅・伊勢市駅からバスで内宮前まで20分。内宮参拝(早朝)→おはらい町・おかげ横丁(朝食〜昼食)が定番ルート。半日で十分に巡れます。" },
+      ],
+      en: [
+        { q: "What are Oharaimachi and Okage Yokocho?", a: "An 800 m stone-paved approach to the Inner Shrine of Ise Jingu in Ise City, Mie Prefecture, recreating the late-Edo to early-Meiji Ise pilgrimage townscape. Anchored by «Okage Yokocho» (50 shops, developed by Akafuku in 1993), it welcomes 4 million visitors a year and ranks among Japan's foremost temple-front districts." },
+        { q: "Best time of day?", a: "Early morning (7–9 AM) has fewer tourists and beautiful shadows on wooden buildings — the prime photo window. Evening illumination is atmospheric with lanterns and stone paving. Wet stone after rain also photographs well." },
+        { q: "Access and post-shrine flow?", a: "From Kintetsu Ujiyamada Station or Iseshi Station, 20 minutes by bus to the Inner Shrine entrance. Classic flow: shrine visit (early morning) → Oharaimachi and Okage Yokocho (breakfast/lunch). Half a day is plenty." },
+      ],
+    },
     faqs: [
       { q: d("ベストな時間帯は？","Best time of day?","最佳时段？","最佳時段？","최적 시간대는?"),
         a: d("早朝7〜9時は観光客が少なく、木造建築の陰影が美しい。夕方〜夜のライトアップも情緒的。雨天の石畳も被写体として秀逸。","Early morning (7–9 AM) has fewer tourists and beautiful shadows on wooden buildings. Evening illumination is atmospheric. Wet stone paving after rain also photographs well.","清晨7-9点人少，木造建筑光影美。傍晚灯饰有情调。雨后石板路也很上镜。","清晨7-9點人少，木造建築光影美。傍晚燈飾有情調。雨後石板路也很上鏡。","이른 아침 7-9시는 관광객이 적고 목조 건축의 음영이 아름답습니다. 저녁 조명도 운치 있고, 비 온 후 돌길도 훌륭한 피사체.") },
@@ -574,6 +606,38 @@ export const LOCATION_CONTENT = {
       "朝熊山展望台海拔555米，是伊勢志摩國立公園最高峰。晴天可眺望伊勢灣、富士山、鳥羽灣的800米高空全景。有天空郵筒和足湯。",
       "아사마산 전망대는 해발 555m, 이세시마 국립공원 내 최고봉. 맑은 날에는 이세만, 후지산, 도바만, 지상 800m 절경 파노라마를 조망. '천공 우체통'과 족욕탕도 있습니다."
     ),
+    definition: lh(
+      "朝熊山(あさまやま)展望台は三重県伊勢市朝熊町、標高555mの朝熊ヶ岳山頂付近にある展望台で、伊勢志摩国立公園内の最高峰。伊勢志摩スカイライン(1964年開通の有料道路、全長16.3km)を通って車・バイクでアクセス可能で、晴天時には眼下に伊勢湾の島々、北西方向に富士山(直線距離約200km)、南には鳥羽湾と志摩半島のリアス式海岸線まで一望できる西日本屈指のパノラマスポット。「天空のポスト」と称される赤いポスト、足湯、開運招福朝熊岳金剛證寺など、伊勢神宮参拝者が「奥の院」として参拝する古来の聖地でもあります。",
+      "The Mt. Asama Observatory in Asama-cho, Ise City, Mie Prefecture, sits near the summit of Asamagatake at 555 m — the highest peak within Ise-Shima National Park. Accessible by car or motorcycle via the Ise-Shima Skyline (a 16.3 km toll road opened in 1964), on clear days it commands the islands of Ise Bay below, Mt. Fuji to the northwest about 200 km in the distance, and Toba Bay and the Shima Peninsula's ria coastline to the south — one of western Japan's premier panoramas. With its red «Sky Post,» foot bath, and Kongoshoji Temple (the «inner sanctuary» of Ise Jingu, traditionally visited together with the main shrines), it serves as a sacred site as well as a viewpoint."
+    ),
+    highlights: {
+      ja: [
+        "山頂展望台 — 標高555m、東に伊勢湾と富士山、南に鳥羽湾と志摩半島の360度パノラマ",
+        "天空のポスト — 山頂の赤いポスト、ハガキを投函できる、富士山との写真が定番",
+        "金剛證寺(こんごうしょうじ) — 平安時代創建、伊勢神宮の「奥の院」、宮大工による江戸期の本堂",
+        "足湯 — 山頂のレストラン横、伊勢湾を眺めながら無料で利用可、冬の絶景",
+        "伊勢志摩スカイライン — 全長16.3km、1964年開通の絶景ドライブ、桜・新緑・紅葉と四季",
+      ],
+      en: [
+        "Summit Observatory — 555 m elevation, 360° panorama with Ise Bay and Mt. Fuji to the east, Toba Bay and the Shima Peninsula to the south",
+        "Sky Post — the red mailbox at the summit, where you can drop a postcard; the classic shot pairs it with Mt. Fuji",
+        "Kongoshoji Temple — founded in the Heian period, the «inner sanctuary» of Ise Jingu; the Edo-period main hall was built by master shrine carpenters",
+        "Foot Bath — beside the summit restaurant, free to use while gazing over Ise Bay; especially memorable in winter",
+        "Ise-Shima Skyline — a 16.3 km scenic drive opened in 1964, with cherry blossoms, fresh green, and autumn colors across the seasons",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "朝熊山展望台とは?", a: "三重県伊勢市の標高555mの朝熊ヶ岳山頂付近の展望台で、伊勢志摩国立公園の最高峰。伊勢志摩スカイラインで車アクセス、晴天時に富士山(200km)、伊勢湾、鳥羽湾を一望、「天空のポスト」と足湯のある絶景スポットです。" },
+        { q: "富士山が見える条件は?", a: "冬〜春の空気が乾燥した晴天早朝(特に11〜2月)。年間50〜60日程度。日の出前後の逆光シルエットが美しい。降水後の翌日は空気がクリアで富士見え率が上がります。" },
+        { q: "アクセスは?", a: "伊勢志摩スカイライン(有料1,270円)を通って車・バイクで山頂まで。伊勢神宮内宮から車で約30分。バス便もあるが本数少なめ。営業時間は7〜19時(季節で変動)、夜は閉鎖されます。" },
+      ],
+      en: [
+        { q: "What is the Mt. Asama Observatory?", a: "An observatory at 555 m near the summit of Asamagatake in Ise City, Mie Prefecture — the highest peak of Ise-Shima National Park. Reached by the Ise-Shima Skyline, on clear days it offers Mt. Fuji (200 km away), Ise Bay, and Toba Bay panoramas, plus the «Sky Post» and a foot bath." },
+        { q: "When can Mt. Fuji be seen?", a: "Clear, dry winter-to-spring mornings, especially November to February — about 50–60 days per year. Silhouettes against sunrise are stunning. The day after rain has the cleanest air and the highest odds of seeing Fuji." },
+        { q: "Access?", a: "Drive or ride a motorcycle via the Ise-Shima Skyline (toll ¥1,270) to the summit; about 30 minutes by car from Ise Jingu Inner Shrine. Limited bus service available. Hours 7–19 (seasonal); the road closes at night." },
+      ],
+    },
     faqs: [
       { q: d("富士山が見える条件は？","When can Mt. Fuji be seen?","何时能看到富士山？","何時能看到富士山？","후지산이 보이는 조건은?"),
         a: d("冬〜春の空気が乾燥した晴天早朝（特に11〜2月）。年間50〜60日程度。日の出前後の逆光シルエットが美しい。","Clear dry winter-to-spring mornings, especially Nov–Feb, about 50–60 days per year. Silhouette against sunrise is stunning.","冬春空气干燥的晴天清晨（尤其11-2月）。每年约50-60天。日出前后剪影极美。","冬春空氣乾燥的晴天清晨（尤其11-2月）。每年約50-60天。日出前後剪影極美。","겨울~봄 공기가 건조한 맑은 아침(특히 11-2월). 연간 약 50-60일. 일출 전후 실루엣이 아름답습니다.") },
@@ -587,6 +651,38 @@ export const LOCATION_CONTENT = {
       "橫山展望台可眺望英虞灣多島美景，是三重縣代表絕景。里亞式海岸散落60餘座小島與珍珠養殖筏，宛如日本的地中海。無障礙展望台便於拍攝。",
       "요코야마 전망대는 아고만의 다도해 절경을 한눈에 담을 수 있는 미에현 대표 전망대. 리아스식 해안에 흩어진 60여 개 섬과 진주 양식 뗏목이 어우러져 일본의 지중해 같습니다. 배리어프리 전망대에서 편하게 촬영 가능."
     ),
+    definition: lh(
+      "横山展望台(よこやまてんぼうだい)は三重県志摩市阿児町鵜方、標高140mの横山山頂付近にある展望台で、英虞湾(あごわん)のリアス式海岸の多島美を一望できる伊勢志摩国立公園内の代表的な絶景スポット。2018年に横山ビジターセンター・スカイテラスとして大規模リニューアルされ、バリアフリーの木造ウッドデッキ「天空カフェテラス」「桜広場」「見晴らし展望台」など複数のデッキが整備されました。眼下には英虞湾の60を超える小さな島々と真珠養殖の筏が広がり、日本のミコノス島とも称される風景。2016年G7伊勢志摩サミット記念碑も設置されています。",
+      "Yokoyama Observatory, atop Mt. Yokoyama (about 140 m) in Ago-cho Ukata, Shima City, Mie Prefecture, is the iconic viewpoint within Ise-Shima National Park overlooking the multi-island beauty of the Ago Bay ria coastline. Following a major 2018 renovation as the «Yokoyama Visitor Center & Sky Terrace,» the site now offers barrier-free wooden boardwalks across multiple decks — the «Sky Café Terrace,» «Sakura Plaza,» and the original observatory. Below, more than 60 small islands and pearl-cultivation rafts dot Ago Bay, earning comparisons to Mykonos. A monument also commemorates the 2016 G7 Ise-Shima Summit."
+    ),
+    highlights: {
+      ja: [
+        "天空カフェテラス — 2018年新設のバリアフリーウッドデッキ、英虞湾を見下ろすカフェ併設",
+        "見晴らし展望台 — 元からある定番展望台、雲海の朝(秋〜冬)が幻想的",
+        "桜広場 — 約200本のソメイヨシノ、4月上旬は桜越しの英虞湾の絶景",
+        "G7伊勢志摩サミット記念碑 — 2016年首脳会議開催地として設置",
+        "夕景〜ブルーアワー — 真珠筏越しの夕日、島影のシルエット、西日本屈指の夕景スポット",
+      ],
+      en: [
+        "Sky Café Terrace — a barrier-free wooden deck added in 2018, with a café overlooking Ago Bay",
+        "Original Observatory — the long-standing main lookout, with autumn-to-winter morning sea-of-clouds turning the bay otherworldly",
+        "Sakura Plaza — about 200 Yoshino cherry trees framing Ago Bay in early April",
+        "G7 Ise-Shima Summit Monument — installed to commemorate the 2016 leaders' meeting held here",
+        "Sunset to Blue Hour — sun setting beyond the pearl rafts and silhouetted islands; one of West Japan's finest sunset spots",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "横山展望台とは?", a: "三重県志摩市の標高140mの横山山頂の展望台で、英虞湾のリアス式海岸と60を超える小島・真珠筏を一望できる伊勢志摩国立公園の代表絶景スポット。2018年バリアフリー化され、日本のミコノス島と称される風景です。" },
+        { q: "おすすめ撮影時間は?", a: "日の出〜朝、もしくは夕日に染まる時間帯。特に夕日〜ブルーアワーは島影と真珠筏のシルエットが幻想的。秋〜冬の朝は雲海が出ることもあり、その日のうちは海と空がオレンジ色に。" },
+        { q: "アクセスは?", a: "近鉄志摩線「鵜方駅」から車で10分、シャトルバスもあり(夏季のみ)。駐車場あり(無料)。階段なしのバリアフリー設計で、車椅子・ベビーカーでも展望台まで容易にアクセスできます。" },
+      ],
+      en: [
+        { q: "What is Yokoyama Observatory?", a: "Atop Mt. Yokoyama (about 140 m) in Shima City, Mie Prefecture — the iconic viewpoint of Ise-Shima National Park overlooking Ago Bay's ria coast with 60+ small islands and pearl rafts. The 2018 barrier-free renewal added new wooden decks; the landscape is often compared to Mykonos." },
+        { q: "Recommended time to shoot?", a: "Sunrise to morning, or golden hour to sunset. Sunset-to-blue-hour turns silhouetted islands and pearl rafts into dream-like shapes. Autumn-to-winter mornings sometimes bring sea-of-clouds; the day after often glows orange." },
+        { q: "Access?", a: "10 minutes by car from Kintetsu Ukata Station; a shuttle bus runs in summer only. Free parking. The barrier-free design makes the observatory accessible by wheelchair or stroller without stairs." },
+      ],
+    },
     faqs: [
       { q: d("おすすめ撮影時間は？","Recommended time to shoot?","推荐拍摄时段？","推薦拍攝時段？","추천 촬영 시간대는?"),
         a: d("日の出〜朝、もしくは夕日に染まる時間帯。特に夕日〜ブルーアワーは島影と真珠筏のシルエットが幻想的。","Sunrise to morning, or golden hour to sunset. Golden-to-blue-hour turns islet silhouettes and pearl rafts into dreamy shapes.","日出至清晨，或夕阳时段。黄昏至蓝时刻岛影与珍珠筏剪影梦幻。","日出至清晨，或夕陽時段。黃昏至藍時刻島影與珍珠筏剪影夢幻。","일출~아침 또는 석양 시간대. 특히 저녁~블루아워의 섬 실루엣과 진주 뗏목은 환상적입니다.") },
@@ -1505,6 +1601,38 @@ export const LOCATION_CONTENT = {
       "三重縣梅林公園（津市結城神社等）是早春2-3月梅花盛開名所。紅梅、白梅、垂枝梅齊放，遠眺伊勢灣與山巒，宣告春的到來。",
       "미에현의 매림 공원(쓰시 유키신사 등)은 이른 봄 2~3월 매화가 만개하는 명소. 홍매·백매·수양매화가 어우러지고 흐릿한 이세만과 주변 산봉우리를 배경으로 봄의 도래를 알립니다."
     ),
+    definition: lh(
+      "梅林公園(ばいりんこうえん)は三重県の梅の名所の総称で、特に津市の結城神社境内梅園(約300本、樹齢300年超の枝垂れ梅含む)と、いなべ市農業公園梅林(約4,500本、東海地区最大級)が代表的。早春2〜3月に紅梅・白梅・枝垂れ梅が次々と開花し、桜より一足早い春の訪れを告げる伝統的な被写体です。結城神社は南北朝時代の忠臣・結城宗広を祀る古社で、梅の名所としても古来詠まれ、いなべ市梅林はパッチワーク状の白とピンクの絨毯が圧巻。",
+      "Plum Grove Parks (Bairin-koen) is the collective name for Mie Prefecture's plum-blossom destinations, most notably Yuki Shrine in Tsu City (about 300 trees including weeping plums over 300 years old) and Inabe City Agricultural Park's plum grove (about 4,500 trees, the largest in the Tokai region). From mid-February through early March, red, white, and weeping plums bloom in succession, heralding spring earlier than cherry blossoms. Yuki Shrine, an old shrine venerating the Nanboku-cho-era loyalist Munehiro Yuki, has been celebrated in poetry as a plum-viewing site, while Inabe's grove unfolds a patchwork carpet of white and pink across its hillsides."
+    ),
+    highlights: {
+      ja: [
+        "結城神社梅園(津市) — 約300本、樹齢300年超の枝垂れ梅が境内を彩る、神社建築との組合せ",
+        "いなべ市農業公園梅林 — 東海地区最大級、約4,500本、白とピンクのパッチワーク状の丘",
+        "枝垂れ梅 — 梅の中でも特に絵画的な品種、地面に届くほどの花房は写真映えする",
+        "鈴鹿の森庭園 — 200本以上の枝垂れ梅、3月のライトアップは幻想的",
+        "雪輪・八重咲き品種 — 多彩な品種が混じり合い、紅・白・薄桃のグラデーションが楽しめる",
+      ],
+      en: [
+        "Yuki Shrine Plum Grove (Tsu) — about 300 trees, including weeping plums over 300 years old, paired with shrine architecture",
+        "Inabe Agricultural Park Plum Grove — the largest in the Tokai region with about 4,500 trees forming a patchwork of white and pink across the hills",
+        "Weeping Plums — among plum varieties, the most painterly; flower clusters dropping nearly to the ground photograph spectacularly",
+        "Suzuka no Mori Garden — over 200 weeping plums, with magical illumination in March",
+        "Yukiwa and Yae-zaki Varieties — many cultivars mingle, offering gradients of red, white, and pale pink",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "梅林公園とは?", a: "三重県の梅の名所の総称で、結城神社境内梅園(津市、樹齢300年超の枝垂れ梅)、いなべ市農業公園梅林(東海最大、約4,500本)、鈴鹿の森庭園などが代表。早春2〜3月の紅梅・白梅・枝垂れ梅で、桜より一足早い春の被写体です。" },
+        { q: "見頃はいつ?", a: "2月中旬〜3月上旬がピーク。早咲き・遅咲きの品種があるため、2月末頃が最も多種が揃う。寒の戻りで開花が遅れる年もあるため、各公園公式サイトの開花情報の確認が必須です。" },
+        { q: "アクセスは?", a: "結城神社は近鉄津駅からバスで20分。いなべ市梅林公園は近鉄阿下喜駅から車で15分(梅まつり期間中はシャトルバスあり)。両方を1日で巡るならレンタカー推奨です。" },
+      ],
+      en: [
+        { q: "What are Plum Grove Parks?", a: "A collective term for Mie Prefecture's plum destinations — including Yuki Shrine in Tsu (300+ trees with weeping plums over 300 years old), Inabe Agricultural Park (Tokai's largest at 4,500 trees), and Suzuka no Mori Garden. From mid-February to early March, plums bloom before cherry blossoms, marking the earliest spring." },
+        { q: "When is peak bloom?", a: "Mid-February to early March. Early- and late-blooming cultivars overlap, so late February offers the widest variety. Cold spells can delay bloom — check the official forecasts for each park before visiting." },
+        { q: "Access?", a: "Yuki Shrine: 20 minutes by bus from Kintetsu Tsu Station. Inabe Plum Grove Park: 15 minutes by car from Kintetsu Agaki Station (with shuttle buses during the festival). A rental car is recommended for visiting both in a day." },
+      ],
+    },
     faqs: [
       { q: d("見頃はいつ？","When is peak bloom?","盛开期？","盛開期？","절정기는?"),
         a: d("2月中旬〜3月上旬がピーク。早咲き・遅咲きの品種があるため、2月末頃が最も多種が揃う。","Mid-February to early March. With early- and late-blooming varieties, late February offers the widest variety.","2月中旬至3月上旬。早晚品种并存，2月末最丰富。","2月中旬至3月上旬。早晚品種並存，2月末最豐富。","2월 중순~3월 초. 조생·만생 품종이 있어 2월 말이 가장 다양합니다.") },
@@ -1518,6 +1646,38 @@ export const LOCATION_CONTENT = {
       "鳥羽水族館擁有1200種3萬餘件日本最多展示生物。儒艮、海牛、海獺等珍稀生物亦可見。12個生態區自由路線，適合全家遊覽。",
       "도바 수족관은 1,200종 3만 점이 넘는 일본 최다 전시 생물을 자랑하는 종합 수족관. 듀공, 매너티, 해달 등 다른 곳에서 볼 수 없는 귀한 생물도 있습니다. 12개 생태계 구역으로 나뉜 전시는 자유 동선으로 가족 단위에도 최적."
     ),
+    definition: lh(
+      "鳥羽水族館(とばすいぞくかん)は三重県鳥羽市鳥羽3丁目3-6にある総合水族館で、1955年開業の老舗。飼育種類数は約1,200種(国内最多)、飼育数約30,000匹に達する西日本最大級の水族館。日本で唯一ジュゴン(現在は1頭、セレナ)を飼育・展示する施設として知られ、ラッコ、マナティ、スナメリ、アフリカマナティ、コウテイペンギンの仲間など、他では見られない貴重な海洋生物を多数展示。展示は12のテーマゾーンに分かれ、決まった順路がなく自由に巡れる「フリーフロー」方式。鳥羽駅から徒歩10分、伊勢神宮参拝とセットで訪れる人気の観光地です。",
+      "Toba Aquarium, located at 3-6 3-chome Toba in Toba City, Mie Prefecture, opened in 1955 and is one of Japan's most established aquariums. With about 1,200 species — the most of any Japanese aquarium — and roughly 30,000 individuals, it ranks as one of West Japan's largest. It is the only Japanese facility that houses a dugong (currently a single individual, Serena), alongside sea otters, manatees, finless porpoises, African manatees, emperor-penguin relatives, and many other rare marine creatures unavailable elsewhere. Its 12 themed zones use a free-flow design, letting visitors explore at their own pace. Located 10 minutes on foot from Toba Station, it is a popular destination paired with Ise Jingu pilgrimages."
+    ),
+    highlights: {
+      ja: [
+        "ジュゴン「セレナ」 — 日本で唯一の飼育、餌やり時間(11時・15時)に活発、ガラス越しの近接撮影",
+        "ラッコ — 国内では数少ない貴重種、貝割り行動の瞬間、餌やりタイムが見どころ",
+        "マナティ・スナメリ — のんびりした泳ぎが愛らしい、家族連れに大人気",
+        "古代の海ゾーン — シーラカンス、オウムガイなど生きた化石、青い照明のバックが幻想的",
+        "ペンギンの散歩 — 日替わり開催、館内を歩くペンギンの行進、子どもの目線で撮影が映える",
+      ],
+      en: [
+        "Dugong «Serena» — the only one in Japan; most active at feeding times (11 AM, 3 PM); close-up shots through the glass",
+        "Sea Otter — a rare species in Japan; the shell-cracking moments and feeding time are highlights",
+        "Manatee and Finless Porpoise — their leisurely swimming charms families",
+        "Ancient Seas Zone — coelacanths, nautiluses, and other living fossils against a magical blue-lit backdrop",
+        "Penguin Walk — held on rotating days; a parade of penguins through the aquarium photographs delightfully at child-eye level",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "鳥羽水族館とは?", a: "三重県鳥羽市の1955年開業の総合水族館で、飼育種類数約1,200種は日本最多。日本で唯一ジュゴン「セレナ」を飼育、ラッコやマナティなど他では見られない貴重な海洋生物を展示。12テーマゾーンを自由に巡る西日本最大級の水族館です。" },
+        { q: "ジュゴンは何時に活発?", a: "餌やりタイム(11時・15時頃)が最も動きます。ガラス越しにピタリと寄ってくる珍しい瞬間を狙うとシャッターチャンス。日中はゆったり泳ぐ姿が多く、暗めの水槽でISO上げ目に。" },
+        { q: "撮影テクニックは?", a: "ガラス越しの撮影なので、レンズを反射防止フードのように水槽ガラスに密着させ反射を消す。明るい単焦点(50mm f/1.8)で背景ボケ、ISO800〜3200で動きを止める。フラッシュは生物に有害で禁止。" },
+      ],
+      en: [
+        { q: "What is Toba Aquarium?", a: "An aquarium in Toba City, Mie Prefecture, opened in 1955 with about 1,200 species — the most in Japan. It is the only facility in Japan housing a dugong («Serena») and showcases rare marine creatures like sea otters and manatees in 12 themed zones with a free-flow layout — one of West Japan's largest aquariums." },
+        { q: "When is the dugong most active?", a: "Around feeding times (approx. 11 AM and 3 PM). It sometimes swims right up to the glass — a prized moment. During the day it moves leisurely; raise your ISO in the dim tank lighting." },
+        { q: "Photography techniques?", a: "Press the lens against the tank glass like an anti-reflection hood to eliminate reflections. A fast prime (50mm f/1.8) blurs the background; ISO 800–3200 freezes movement. Flash is harmful to the animals and prohibited." },
+      ],
+    },
     faqs: [
       { q: d("ジュゴンは何時に活発？","When is the dugong most active?","儒艮何时活跃？","儒艮何時活躍？","듀공은 언제 활발한가요?"),
         a: d("餌やりタイム（11時・15時頃）が最も動く。ガラス越しにピタリと寄ってくる珍しい瞬間を狙う。","Around feeding times (approx. 11 AM and 3 PM). It sometimes swims right up to the glass — a prized moment.","投喂时段（11、15点左右）最活跃，偶尔贴近玻璃。","投喂時段（11、15點左右）最活躍，偶爾貼近玻璃。","먹이 시간(11시·15시경)이 가장 활동적. 유리에 바짝 다가오는 귀한 순간을 노려보세요.") },
@@ -1533,6 +1693,38 @@ export const LOCATION_CONTENT = {
       "清水寺周邊的二年坂、三年坂、清水坂是石板路與傳統町家並排的重要傳統建築群保護區。以八坂塔（法觀寺）為借景構圖為京都經典。清晨遊客少時最佳。",
       "기요미즈데라 주변의 니넨자카·산넨자카·기요미즈자카는 돌길과 전통 마치야가 늘어선 중요 전통건조물군 보존지구. 야사카 탑(호칸지)을 차경한 구도는 교토의 정석. 이른 아침 관광객이 적은 시간대가 추천."
     ),
+    definition: lh(
+      "清水寺周辺(きよみずでらしゅうへん)は京都府京都市東山区にある清水寺へと続く参道地区で、三年坂(産寧坂)・二年坂(二寧坂)・清水坂・八坂通など江戸〜明治期の町家と石畳が連なる重要伝統的建造物群保存地区(重伝建)。エリアの象徴である八坂の塔(法観寺、高さ46mの五重塔、5世紀末聖徳太子創建伝、現在の塔は1440年再建)は京都市街のスカイラインに古都の顔を与えています。狭い石畳の坂道、格子戸の町家、和服姿の観光客と八坂の塔を組み合わせた構図は世界中の写真家に愛され、京都を象徴する撮影地として年間数百万人が訪れます。",
+      "The lanes around Kiyomizu-dera (Kiyomizu-dera shu-hen) form the approach district to the temple in Kyoto's Higashiyama Ward, including Sannenzaka, Ninenzaka, Kiyomizuzaka, and Yasaka-dori — a Designated Important Preservation District for Groups of Traditional Buildings, where Edo-to-Meiji-era machiya houses line stone-paved streets. The district's icon, the Yasaka Pagoda (Hokan-ji), is a 46 m five-story pagoda — said to have been founded by Prince Shotoku in the late 5th century, with the current structure dating to 1440 — that defines Kyoto's old-city skyline. Compositions combining narrow stone-paved slopes, lattice-fronted machiya, kimono-clad visitors, and the pagoda are beloved by photographers worldwide, drawing several million visitors a year as Kyoto's quintessential photographic district."
+    ),
+    highlights: {
+      ja: [
+        "三年坂(産寧坂) — 1740年代整備の石段坂、江戸の町並みと八坂の塔越しの構図、桜と紅葉の借景",
+        "二年坂(二寧坂) — 三年坂より緩やかな坂、明治の町家と石畳、夕暮れの提灯の灯りが情緒",
+        "八坂の塔(法観寺) — 高さ46mの五重塔、八坂通の坂道下方から見上げる構図が世界的に有名",
+        "ねねの道 — 高台寺へと続く石畳の小径、ねね(豊臣秀吉夫人)ゆかりの道、和服の着付け体験で人気",
+        "清水坂 — 清水寺への正面参道、土産物店と京都らしい風情、夕方の混雑が消えた頃が狙い目",
+      ],
+      en: [
+        "Sannenzaka — a stone-stepped slope laid out in the 1740s; framing the Yasaka Pagoda over Edo-era streetscapes makes a classic shot, with cherry blossoms or autumn colors as borrowed scenery",
+        "Ninenzaka — a gentler slope above Sannenzaka, with Meiji-era machiya, stone paving, and atmospheric lantern light at dusk",
+        "Yasaka Pagoda (Hokan-ji) — the 46 m five-story tower; looking up from below on Yasaka-dori is the iconic worldwide composition",
+        "Nene-no-Michi — a stone-paved path leading to Kodai-ji, named for Nene (wife of Toyotomi Hideyoshi), popular for kimono dressing experiences",
+        "Kiyomizuzaka — the main approach to Kiyomizu-dera, with souvenir shops and Kyoto-style atmosphere; photograph after the evening crowds disperse",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "清水寺周辺とは?", a: "京都市東山区にある清水寺への参道地区(三年坂・二年坂・清水坂・八坂通)で、江戸〜明治期の町家と石畳が連なる重要伝統的建造物群保存地区。八坂の塔(法観寺)を借景した構図は京都を象徴する撮影地です。" },
+        { q: "八坂の塔の撮影ポイントは?", a: "八坂通の坂道下方から見上げるアングルが世界的に有名な定番。朝6〜7時は観光客ほぼゼロで、和服姿のポートレート撮影にも最適。雨上がりの石畳が反射する夕方も独特の情緒があります。" },
+        { q: "ベストな撮影時間帯は?", a: "早朝6〜8時が圧倒的に空いていて光も柔らか、和服姿の観光客が画面を彩る午後3時頃も◎。日没前後の青の時間帯は提灯と石畳の組合せが幻想的、雨の日の濡れた石畳も外国人写真家に大人気。" },
+      ],
+      en: [
+        { q: "What is the Kiyomizu-dera district?", a: "The approach district to Kiyomizu-dera in Kyoto's Higashiyama Ward (Sannenzaka, Ninenzaka, Kiyomizuzaka, Yasaka-dori) — a Designated Important Preservation District lined with Edo-to-Meiji machiya and stone-paved streets, where compositions framing the Yasaka Pagoda epitomize Kyoto in photography." },
+        { q: "Best spot for the Yasaka Pagoda?", a: "Looking up the Yasaka-dori slope from below is the world-famous classic angle. 6–7 AM is virtually empty — ideal also for kimono portraits. After rain, when stone paving reflects evening light, the atmosphere is unique." },
+        { q: "Best time of day to shoot?", a: "Early morning (6–8 AM) is uncrowded with soft light. Around 3 PM, kimono-clad visitors add color. Blue hour around sunset combines lanterns and stone paving for a magical scene; wet stones after rain are especially loved by international photographers." },
+      ],
+    },
     faqs: [
       { q: d("八坂の塔の撮影ポイントは？","Best spot for Yasaka Pagoda?","八坂塔最佳拍摄点？","八坂塔最佳拍攝點？","야사카 탑 최고 촬영 포인트는?"),
         a: d("八坂通の坂道を下方から見上げるアングルが定番。朝6〜7時は観光客ほぼゼロで着物姿のポートレートにも最適。","Looking up the Yasaka-dori slope from below is the classic angle. 6–7 AM has almost no tourists — ideal for kimono portraits too.","八坂通道下方仰拍为经典。6-7点几乎无游客，适合和服人像。","八坂通道下方仰拍為經典。6-7點幾乎無遊客，適合和服人像。","야사카도리 비탈길 아래에서 올려다보는 앵글이 정석. 아침 6~7시는 관광객이 거의 없어 기모노 포트레이트에도 최적.") },
@@ -1548,6 +1740,38 @@ export const LOCATION_CONTENT = {
       "法隆寺東院夢殿建於739年聖德太子斑鳩宮故址上的八角圓堂。中央安置秘藏救世觀音（飛鳥時代），僅春秋特別公開。均衡的八角形剪影是日本建築至寶。",
       "호류지 동원의 유메도노는 쇼토쿠 태자의 이카루가 궁터에 739년 건립된 팔각원당. 중앙에 비불 구세관음(아스카시대)을 안치하며, 봄·가을에만 특별 공개. 균형 잡힌 팔각형 실루엣은 일본 건축의 지보."
     ),
+    definition: lh(
+      "法隆寺夢殿(ほうりゅうじゆめどの)は奈良県斑鳩町にある法隆寺東院の中心建築で、天平11年(739年)に行信僧都(ぎょうしんそうず)が聖徳太子の住まい「斑鳩宮(いかるがのみや)」の遺址に建立した八角形の円堂。直径12mの八角形プラン、檜皮葺の屋根、宝珠の頂部から成る均整のとれた優美な形姿で、日本最古の八角円堂として国宝に指定されています。中央には聖徳太子の等身像と伝わる救世観音菩薩立像(秘仏、飛鳥時代の楠木一木造、像高178.8cm)を安置し、長らく白布に包まれ祟りを恐れて開帳禁止だったところ、1884年にフェノロサと岡倉天心が初めて開帳しました。春と秋の特別公開期間のみ拝観可能です。",
+      "Yumedono (the Hall of Dreams) of Horyu-ji, in Ikaruga Town, Nara Prefecture, is the central building of Horyu-ji's East Precinct. It was built in 739 by the priest Gyoshin Sozu on the site of Prince Shotoku's «Ikaruga Palace.» An octagonal hall 12 m across with a hinoki-bark-shingled roof and a jewel-shaped finial, it is the oldest octagonal hall in Japan and a National Treasure. At its center stands the Guze Kannon — said to be a life-sized image of Prince Shotoku, carved from a single block of camphor wood in the Asuka period (statue height 178.8 cm). For centuries it was wrapped in white cloth and not displayed, due to fears of curses; in 1884, Ernest Fenollosa and Tenshin Okakura unveiled it for the first time. It is visible only during limited spring and autumn openings."
+    ),
+    highlights: {
+      ja: [
+        "夢殿外観 — 八角形プラン直径12m、均整の取れた檜皮葺の優美な姿、外観は通年撮影可",
+        "救世観音菩薩立像(国宝、秘仏) — 飛鳥時代の楠木一木造、像高178.8cm、聖徳太子の等身像と伝わる",
+        "中宮寺・絵殿(東院伽藍) — 夢殿に隣接、聖徳太子作と伝わる天寿国繍帳の写しを展示",
+        "鎌倉時代の補修 — 1230年代に礼堂が増築され、現在の建物は天平の意匠を保ちつつ鎌倉の手が入っている",
+        "春・秋の特別公開 — 春期4月11日〜5月18日、秋期10月22日〜11月22日、内陣と救世観音を間近で拝観",
+      ],
+      en: [
+        "Yumedono Exterior — an octagonal plan 12 m across, with a balanced hinoki-bark-shingled roof; the exterior may be photographed year-round",
+        "Guze Kannon (National Treasure, hidden statue) — a single-block camphor sculpture from the Asuka period, 178.8 cm tall, said to be a life-sized image of Prince Shotoku",
+        "Chuguji and the Edono of the East Precinct — adjacent to Yumedono, displaying replicas of the Tenjukoku Shucho thought to have been designed by Prince Shotoku",
+        "Kamakura-Era Renovation — a worship hall was added in the 1230s; the current building preserves Tenpyo design while bearing Kamakura-period touches",
+        "Spring and Autumn Special Openings — Spring April 11–May 18, Autumn October 22–November 22; the inner sanctum and Guze Kannon become viewable up close",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "法隆寺夢殿とは?", a: "奈良県斑鳩町の法隆寺東院の中心建築で、739年に聖徳太子の斑鳩宮跡に建立された日本最古の八角円堂(国宝)。聖徳太子等身大と伝わる秘仏・救世観音(飛鳥時代の楠木一木造)を安置し、春秋限定公開で世界中から拝観者が訪れます。" },
+        { q: "救世観音の公開時期は?", a: "春期4月11日〜5月18日、秋期10月22日〜11月22日の年2回限定。1884年にフェノロサと岡倉天心が初開帳した秘仏で、像内部の撮影は禁止です。建物外観と境内は通年撮影可。" },
+        { q: "アクセスと拝観料は?", a: "JR法隆寺駅から徒歩20分またはバス7分。法隆寺西院伽藍と共通券で1,500円(東院伽藍・夢殿含む)。所要時間は東院伽藍だけで30分、法隆寺全体で2〜3時間。京都駅から快速で約45分の日帰り圏内。" },
+      ],
+      en: [
+        { q: "What is Yumedono?", a: "The central building of Horyu-ji's East Precinct in Ikaruga Town, Nara — built in 739 on Prince Shotoku's «Ikaruga Palace» site, Japan's oldest octagonal hall and a National Treasure. It enshrines the secret Guze Kannon, a single-block camphor sculpture from the Asuka period believed to be a life-sized image of Prince Shotoku, viewable only in limited spring and autumn openings." },
+        { q: "When is Guze Kannon shown?", a: "Twice a year only: Spring April 11–May 18, Autumn October 22–November 22. The hidden statue was first unveiled by Fenollosa and Tenshin Okakura in 1884. Photography of the statue is prohibited; the exterior building and grounds are open year-round." },
+        { q: "Access and admission?", a: "20 minutes on foot from JR Horyu-ji Station or 7 minutes by bus. Combined ticket with the West Precinct (including East Precinct and Yumedono) is ¥1,500. The East Precinct alone takes 30 minutes; all of Horyu-ji takes 2–3 hours. Easy day trip from Kyoto Station — about 45 minutes by rapid train." },
+      ],
+    },
     faqs: [
       { q: d("救世観音の公開時期は？","When is Guze Kannon shown?","救世观音何时公开？","救世觀音何時公開？","구세관음 공개 시기는?"),
         a: d("春期4月11日〜5月18日、秋期10月22日〜11月22日の限定公開。像内部は撮影禁止。","Spring: April 11–May 18; autumn: October 22–November 22. Photography of the statue is prohibited.","春季4月11日-5月18日、秋季10月22日-11月22日限定公开。禁止拍摄佛像。","春季4月11日-5月18日、秋季10月22日-11月22日限定公開。禁止拍攝佛像。","봄 4월 11일~5월 18일, 가을 10월 22일~11월 22일 한정 공개. 불상 촬영 금지.") },
@@ -1563,6 +1787,38 @@ export const LOCATION_CONTENT = {
       "大鳴門橋是跨鳴門海峽的1629米吊橋（1985年開通）。橋下步道「渦之道」玻璃地板可俯瞰45米下的漩渦。橋身曲線與海峽相映絕景。",
       "오나루토 대교는 나루토 해협을 가로지르는 전장 1,629m 현수교(1985년 개통). 다리 바로 아래 산책로 '우즈노미치'에서는 유리 바닥을 통해 45m 아래 소용돌이를 내려다볼 수 있습니다. 다리의 아름다운 곡선과 해협의 조합이 절경."
     ),
+    definition: lh(
+      "大鳴門橋(おおなるときょう)は徳島県鳴門市と兵庫県南あわじ市(淡路島)を繋ぐ全長1,629m・主塔高さ144mの吊り橋で、1985年に本州四国連絡橋・神戸鳴門ルートとして開通。鳴門海峡の最も狭い部分(幅約1.3km)を一跨ぎし、橋下では世界三大潮流の一つ・直径20mに及ぶ巨大渦潮が発生します。橋の徳島側橋脚部分には全長450mの遊歩道「渦の道(うずのみち)」(1階下、海上45m)が設けられ、ガラス床から真下の渦潮を覗き込める日本でも稀有な体験施設。橋自体の優美な曲線と海峡・淡路島の組合せは瀬戸内海最高峰のドラマチックな風景です。",
+      "Onaruto Bridge is a 1,629 m suspension bridge with 144 m towers connecting Naruto City in Tokushima Prefecture to Minamiawaji City in Hyogo Prefecture (Awaji Island). Opened in 1985 as part of the Honshu-Shikoku Bridge Project's Kobe-Naruto route, it spans the narrowest section of the Naruto Strait (about 1.3 km wide), beneath which whirlpools up to 20 m across — one of the world's three great tidal currents — form. On the Tokushima side, beneath the bridge, the 450 m «Uzu-no-Michi» promenade (one level down, 45 m above the sea) lets visitors look directly down through glass floors at whirlpools — a rare experience even by Japanese standards. The bridge's graceful curves combined with the strait and Awaji Island make for the Inland Sea's most dramatic scenery."
+    ),
+    highlights: {
+      ja: [
+        "大鳴門橋本体 — 全長1,629m、主塔高さ144m、優美な吊り橋曲線、淡路島側からの全景が王道",
+        "渦の道(うずのみち) — 橋下の450m遊歩道、海上45m、ガラス床から渦潮を見下ろせる",
+        "鳴門公園・千畳敷展望台 — 橋を間近に望む観光拠点、桜と橋の組合せが春の絶景",
+        "道の駅うずしお(淡路島側) — 橋の俯瞰スポット、夕日に染まる橋と海峡のコントラスト",
+        "鳴門スカイライン — 橋を望むドライブコース、複数の展望台、ブルーアワーの絶景",
+      ],
+      en: [
+        "Onaruto Bridge itself — 1,629 m total length, 144 m towers; the elegant suspension curves are best framed from the Awaji side",
+        "Uzu-no-Michi — the 450 m walkway beneath the bridge, 45 m above the sea, with glass floors offering direct views down to the whirlpools",
+        "Naruto Park and Senjojiki Observatory — a viewing hub close to the bridge; cherry blossoms paired with the bridge make a stunning spring scene",
+        "Michi-no-Eki Uzushio (Awaji side) — a sweeping overlook of the bridge, with sunset igniting bridge and strait in vivid contrast",
+        "Naruto Skyline — a scenic drive route with multiple observatories overlooking the bridge; especially exquisite at blue hour",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "大鳴門橋とは?", a: "徳島県鳴門市と淡路島を繋ぐ全長1,629mの吊り橋で1985年開通。主塔高さ144m、世界三大潮流の鳴門海峡を跨ぎ、橋下の遊歩道「渦の道」(海上45m)からガラス床で渦潮を見下ろせる稀有な観光地です。" },
+        { q: "橋の撮影ポイントは?", a: "亀老山展望台級の俯瞰なら淡路島側「道の駅うずしお」がベスト。夕日に染まる橋と海峡のコントラストが美しい。徳島側からは鳴門公園・千畳敷展望台で橋を間近に望め、桜と橋の組合せが春の絶景。" },
+        { q: "渦の道のアクセスは?", a: "JR鳴門駅からバスで「鳴門公園」下車、徒歩5分。営業時間9:00〜18:00(夏季)、入場料520円。渦潮ピークは大潮の日(春・秋の新月・満月前後)、満潮/干潮前後1〜2時間が最大。" },
+      ],
+      en: [
+        { q: "What is the Onaruto Bridge?", a: "A 1,629 m suspension bridge with 144 m towers connecting Naruto in Tokushima to Awaji Island, opened in 1985. It spans the Naruto Strait — one of the world's three great tidal currents — and the «Uzu-no-Michi» walkway beneath (45 m above the sea) lets you look through a glass floor at the whirlpools below — a globally rare experience." },
+        { q: "Best spot to shoot the bridge?", a: "For a sweeping overhead view, Michi-no-Eki Uzushio on Awaji side is best. The bridge and strait glowing at sunset are beautiful. From the Tokushima side, Naruto Park and Senjojiki Observatory put you close to the bridge; cherry blossoms paired with the bridge create a stunning spring scene." },
+        { q: "How do I access Uzu-no-Michi?", a: "From JR Naruto Station, take a bus to «Naruto Park» and walk 5 minutes. Hours 9:00–18:00 (summer); admission ¥520. Whirlpools peak around spring tides (near new and full moons in spring and autumn), strongest about 1–2 hours before/after high or low tide." },
+      ],
+    },
     faqs: [
       { q: d("橋の撮影ポイントは？","Best spot to shoot the bridge?","桥梁拍摄点？","橋樑拍攝點？","다리 촬영 포인트는?"),
         a: d("淡路島側の道の駅うずしおからの俯瞰がベスト。夕日に染まる橋と海峡のコントラストが美しい。","Michi-no-Eki Uzushio on Awaji side for the best overview. The bridge and strait glowing at sunset is beautiful.","淡路岛侧道之站涡潮俯瞰最佳，夕阳下桥与海峡对比美。","淡路島側道之站渦潮俯瞰最佳，夕陽下橋與海峽對比美。","아와지섬 쪽 '미치노에키 우즈시오'에서의 부감이 최고. 석양에 물드는 다리와 해협의 대비가 아름답습니다.") },
@@ -1578,6 +1834,38 @@ export const LOCATION_CONTENT = {
       "福岡市是九州最大都市。博多、天神、中洲商圈，博多拉麵與烏龍屋台文化，博多灣與福岡塔，大濠公園櫻花，絲島半島沙灘等，現代都市與自然近距共存。",
       "후쿠오카시는 규슈 최대 도시. 하카타·덴진·나카스 번화가, 하카타 라멘과 우동의 포장마차 문화, 하카타만과 후쿠오카 타워, 오호리 공원의 벚꽃, 이토시마 반도의 해변 등 현대 도시와 자연이 가까이 공존하는 독특한 도시."
     ),
+    definition: lh(
+      "福岡(ふくおか)は九州北部・福岡県の県庁所在地で、人口約164万人の九州最大の政令指定都市。古来「博多(はかた)」と呼ばれた商業の地と、1601年に福岡藩主黒田長政が築いた「福岡」の城下町が合併して現在の福岡市となった、博多と福岡という二つの顔を持つ街。福岡空港から市街地まで地下鉄5分という日本一のアクセス、博多どんたく(5月、220万人動員の日本最大級祭り)、博多祇園山笠(7月)、中洲川端の屋台街(全国の約4割、約100軒)、太宰府天満宮、糸島半島など、コンパクトに観光資源が凝縮した九州の玄関口です。",
+      "Fukuoka, capital of Fukuoka Prefecture in northern Kyushu, is the region's largest designated «government ordinance city» with about 1.64 million residents. The city formed when «Hakata» — the historic merchant district — merged with «Fukuoka,» the castle town built by feudal lord Kuroda Nagamasa in 1601, leaving the city with two distinct identities. Notable for Japan's quickest airport-to-city transit (5 minutes by subway from Fukuoka Airport), it hosts the Hakata Dontaku festival in May (drawing 2.2 million attendees, one of Japan's largest), the Hakata Gion Yamakasa in July, the Nakasu-Kawabata food-stall district (about 100 yatai — roughly 40% of all Japan's stalls), Dazaifu Tenmangu, and the Itoshima Peninsula — the gateway to Kyushu, packing tourism into a compact city."
+    ),
+    highlights: {
+      ja: [
+        "中洲屋台街 — 全国の屋台の約4割、約100軒、夜の煙と提灯の灯りは九州の象徴",
+        "太宰府天満宮 — 学問の神様・菅原道真を祀る、年間1,000万人参拝、参道の梅と本殿の朱色",
+        "福岡タワー(234m)・百道浜 — 博多湾とシーサイドももちのパノラマ、夕景〜夜景の名所",
+        "大濠公園 — 1929年開園の都市オアシス、満開の桜(4月上旬)、池に映る逆さビル",
+        "博多どんたく(5月)・博多祇園山笠(7月) — 動員数日本最大級の祭り、勢いある被写体",
+      ],
+      en: [
+        "Nakasu Yatai District — about 40% of all yatai food stalls in Japan (~100 stalls); evening smoke and lanterns epitomize Kyushu nights",
+        "Dazaifu Tenmangu — head shrine to deity-of-learning Sugawara no Michizane; 10 million worshippers annually, plums lining the approach and the vermilion main hall",
+        "Fukuoka Tower (234 m) and Momochi Beach — panorama of Hakata Bay and Seaside Momochi; renowned for sunsets and nightscapes",
+        "Ohori Park — opened 1929 as an urban oasis, with cherry blossoms in early April and skyscrapers reflected upside-down on the pond",
+        "Hakata Dontaku (May) and Hakata Gion Yamakasa (July) — among Japan's largest festivals by attendance, energetic subjects to photograph",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "福岡とは?", a: "九州北部の県庁所在地で人口約164万人の九州最大の政令指定都市。商業の地「博多」と城下町「福岡」が合併した二つの顔を持つ街。博多どんたく・山笠、屋台街、太宰府、糸島半島まで観光資源が凝縮した九州の玄関口です。" },
+        { q: "屋台撮影のマナーは?", a: "店員・客への許可が基本。食事中の人や調理場のクローズアップは一声かけてから。外観と町並みは自由に撮影可。中洲川端・天神・長浜の3エリアが屋台街、夜の風物詩を撮るなら20〜23時頃が最も活気あります。" },
+        { q: "1日の撮影モデルコースは?", a: "朝:大濠公園で桜or池の朝景。昼:太宰府天満宮の参道。夕:福岡タワー(展望台)→百道浜で夕景。夜:中洲川端の屋台街。1日でほぼ網羅でき、地下鉄1日券700円が便利です。" },
+      ],
+      en: [
+        { q: "What is Fukuoka?", a: "Capital of Fukuoka Prefecture in northern Kyushu and the region's largest designated «ordinance city» with about 1.64 million residents. The city has two faces: «Hakata,» the historic merchant district, and «Fukuoka,» the castle town. Highlights include Hakata Dontaku and Yamakasa festivals, food-stall districts, Dazaifu, and the Itoshima Peninsula — Kyushu's gateway packed with tourism." },
+        { q: "Yatai photography etiquette?", a: "Ask staff and customers first. Close-ups of diners or kitchen work require permission. Exteriors and streetscapes are free to shoot. The three yatai districts are Nakasu-Kawabata, Tenjin, and Nagahama — the most lively for photography is 20:00–23:00." },
+        { q: "One-day photography route?", a: "Morning at Ohori Park (cherry blossoms or sunrise on the pond). Noon at Dazaifu Tenmangu. Evening at Fukuoka Tower (observation deck) → Momochi Beach for sunset. Night at the Nakasu-Kawabata yatai. Most can be covered in a day; the ¥700 subway day pass is convenient." },
+      ],
+    },
     faqs: [
       { q: d("屋台撮影のマナーは？","Yatai photography etiquette?","屋台拍摄礼仪？","屋台拍攝禮儀？","포장마차 촬영 매너는?"),
         a: d("店員・客への許可が基本。食事中の人や調理場のクローズアップは一声かけてから。外観と町並みは自由。","Ask staff/customers first. Close-ups of diners or kitchen work should be after asking. Exteriors and streetscapes are free to shoot.","需向店主/客人打招呼。特写用餐者或厨房前请求许可。外观街景可自由拍摄。","需向店主/客人打招呼。特寫用餐者或廚房前請求許可。外觀街景可自由拍攝。","직원·손님에게 허락이 기본. 식사 중인 사람이나 조리장 클로즈업은 말을 건네고. 외관과 거리는 자유.") },
