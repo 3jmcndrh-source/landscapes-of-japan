@@ -1401,6 +1401,38 @@ export const LOCATION_CONTENT = {
       "新倉山淺間公園位於富士吉田市山腰，是櫻花名所。登398級台階後的觀景台可將忠靈塔（五重塔）、櫻花與富士山三段同框，是吸引全球攝影師的日本象徵性景觀。4月中旬櫻花與雪富士的對比尤為震撼。",
       "아라쿠라야마 센겐 공원은 후지요시다시 산 중턱의 벚꽃 명소. 398계단을 오르면 추레이토(5층탑)·벚꽃·후지산이 한 프레임에 담기는 3단 구도가 세계 사진가들을 매료시키는 일본의 상징적 풍경. 4월 중순 벚꽃과 설관 후지의 대비는 압권."
     ),
+    definition: lh(
+      "新倉山浅間公園(あらくらやませんげんこうえん)は山梨県富士吉田市の新倉山(標高約650m)中腹にある公園で、705年創建の新倉富士浅間神社の境内地に整備された桜の名所。中心となる「忠霊塔(ちゅうれいとう)」は1962年に第一次・第二次世界大戦戦没者慰霊のために建立された朱塗りの五重塔(高さ19.5m)で、神社境内から398段の急な階段を上った先の展望デッキから、忠霊塔・約650本のソメイヨシノ・富士山を一枚に収める「三段構図」は世界中の写真家とインバウンド観光客が憧れる日本を象徴する撮影地。海外で「富士山と桜と五重塔の写真」と言えば必ずこの場所、台湾・タイ・欧米のSNSで爆発的に拡散されました。",
+      "Arakurayama Sengen Park stands on the mid-slope of Mt. Arakura (about 650 m) in Fujiyoshida City, Yamanashi Prefecture, on the precincts of the Niikura Fuji Sengen Shrine, founded in 705. The centerpiece is the «Chureito Pagoda» — a 19.5 m vermilion five-story tower built in 1962 to honor the war dead of World Wars I and II. From the shrine grounds, climbing 398 steep steps brings you to the viewing deck, where the pagoda, about 650 Yoshino cherry trees, and Mt. Fuji align in the world-famous «three-tier composition.» When the phrase «Mt. Fuji with cherry blossoms and a pagoda» appears anywhere in international media, it almost always points to this spot — explosively shared across social media in Taiwan, Thailand, and the West, drawing global photographers and inbound visitors."
+    ),
+    highlights: {
+      ja: [
+        "三段構図(忠霊塔・桜・富士山) — 4月中旬桜満開時、忠霊塔と約650本のソメイヨシノと冠雪富士が一枚に",
+        "忠霊塔(五重塔) — 1962年建立の朱塗り五重塔(高さ19.5m)、第一次・第二次世界大戦戦没者慰霊塔",
+        "398段の階段 — 神社境内から展望デッキへの急な階段、混雑期は登り順番待ち、迂回坂道もあり",
+        "夜明けの朝焼け富士 — 日の出前30分のマジックアワー、空が紫〜オレンジに染まる絶景、4月の早朝は寒い",
+        "新倉富士浅間神社 — 705年創建の古社、富士信仰の聖地、本殿前から望む富士山も絶景",
+      ],
+      en: [
+        "The three-tier composition (Pagoda + Cherry Blossoms + Mt. Fuji) — at peak bloom in mid-April, the pagoda, about 650 Yoshino cherry trees, and snow-capped Fuji align perfectly",
+        "Chureito Pagoda — a 19.5 m vermilion five-story tower built in 1962 to honor the dead of World Wars I and II",
+        "The 398 steps — a steep climb from the shrine grounds to the viewing deck; expect queues during peak season, with a gentler slope path also available",
+        "Pre-dawn pink-purple Fuji — the magic hour 30 minutes before sunrise turns the sky purple to orange; April mornings are cold but unforgettable",
+        "Niikura Fuji Sengen Shrine — founded in 705, a sacred site of Fuji worship; the view of Mt. Fuji from before the main hall is itself spectacular",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "新倉山浅間公園とは?", a: "山梨県富士吉田市の新倉山中腹の桜の名所で、忠霊塔(1962年建立、高さ19.5mの朱塗り五重塔)・約650本の桜・富士山が一枚に収まる「三段構図」が世界中の写真家に愛される日本を象徴する撮影地です。" },
+        { q: "桜のベスト時期は?", a: "例年4月上旬〜中旬がピーク、特に4月10〜15日前後の満開時が王道。寒の戻りや春の温暖差で年により2週間ずれることも。富士吉田市公式サイトの開花情報を確認、夜明け直後の朝焼け富士が理想。" },
+        { q: "展望デッキへの行き方は?", a: "富士急行線「下吉田駅」から徒歩約10分。神社境内から398段の階段を上る(高齢者向けに迂回坂道あり)。混雑期は階段下に長蛇の列、早朝5〜6時着が必須。新宿から特急で約2時間。" },
+      ],
+      en: [
+        { q: "What is Arakurayama Sengen Park?", a: "A cherry blossom site on the mid-slope of Mt. Arakura in Fujiyoshida City, Yamanashi. The Chureito Pagoda (built 1962, a 19.5 m vermilion five-story tower), about 650 cherry trees, and Mt. Fuji align in a «three-tier composition» beloved by photographers worldwide as an icon of Japan." },
+        { q: "When are cherry blossoms at their best?", a: "Typically peak from early to mid-April, especially around April 10–15 at full bloom. Cold-weather returns or warm springs can shift bloom by up to two weeks. Check Fujiyoshida City's official forecast; the magic moment is just-before-sunrise pink-Fuji." },
+        { q: "How do I reach the viewing deck?", a: "From Shimo-Yoshida Station on the Fuji Kyuko Line, 10 minutes on foot. From the shrine grounds, climb 398 steep steps (a gentler bypass slope is available for seniors). During peak season, the queue at the foot of the stairs is long — arrive at 5–6 AM. About 2 hours from Shinjuku by limited express." },
+      ],
+    },
     faqs: [
       { q: d("展望デッキへの行き方は？","How do I reach the viewing deck?","观景台怎么去？","觀景台怎麼去？","전망 데크 가는 법은?"),
         a: d("富士急行線「下吉田駅」から徒歩約10分。神社境内から398段の階段を上る（迂回坂道もあり）。早朝5〜6時着が空いていて朝焼け富士に間に合う。","From «Shimo-Yoshida» on the Fujikyu Line, about 10 min on foot. From the shrine grounds, climb the 398 steps (a gentler slope path is also available). Arrive at 5-6 AM to beat the crowds and catch the sunrise on Fuji.","富士急行线「下吉田站」步行约10分钟。从神社境内登398级台阶（也有缓坡可绕行）。清晨5-6点抵达可避开人潮并赶上朝阳富士。","富士急行線「下吉田站」步行約10分鐘。從神社境內登398級台階（也有緩坡可繞行）。清晨5-6點抵達可避開人潮並趕上朝陽富士。","후지큐 행 「시모요시다역」에서 도보 약 10분. 신사 경내에서 398계단을 올라갑니다(완만한 우회로도 있음). 이른 아침 5-6시 도착이 한산하고 아침놀 후지를 볼 수 있습니다.") },
