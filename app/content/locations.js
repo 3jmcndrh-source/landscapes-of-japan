@@ -2534,6 +2534,38 @@ export const LOCATION_CONTENT = {
       "河口湖是富士五湖之一，位於富士山北麓。以湖面倒映的「逆富士」聞名於世，春有產屋崎與八木崎公園櫻花、夏有花火大會、秋有紅葉迴廊、冬有雪冠富士，四季皆美。湖畔住宿、溫泉、咖啡館齊全。",
       "가와구치호는 후지 5호의 하나로 후지산 북쪽 기슭에 펼쳐진 호수. 호수면에 비친 「역 후지」 촬영지로 가장 유명하며, 봄에는 우부야가사키·야기사키 공원의 벚꽃, 여름에는 불꽃놀이, 가을에는 단풍 회랑, 겨울에는 설관 후지로 사계절 모두 아름답습니다. 호반은 숙박·온천·카페가 충실."
     ),
+    definition: lh(
+      "河口湖(かわぐちこ)は山梨県南都留郡富士河口湖町、富士山の北麓に広がる富士五湖の一つで、面積5.7km²・最大水深15m・湖面標高833mの堰止湖。約1,200万年前の富士山(1707年最後の噴火)の溶岩流によって形成された湖で、湖の中央に「鵜の島」(うのしま、富士五湖唯一の島)が浮かびます。湖面に映る「逆さ富士」の代表的な撮影地として世界的に有名で、特に湖北岸の大石公園・産屋ヶ崎・八木崎公園からの構図は世界中で複製される日本の象徴的風景。春の桜、夏の紅葉花火大会(8月)、秋の紅葉回廊、冬の冠雪富士と四季を通じて表情豊か、富士急行河口湖駅周辺は宿泊・温泉・カフェも充実しています。",
+      "Lake Kawaguchi is a barrier lake at the northern foot of Mt. Fuji in Fujikawaguchiko Town, Yamanashi Prefecture — one of the Fuji Five Lakes (5.7 km², up to 15 m deep, surface 833 m above sea level). Formed by lava flows from Mt. Fuji's eruptions over the last 12 million years (the most recent in 1707), it is the only one of the Five Lakes to host an island, Uno-shima, at its center. As the most famous spot for the «inverted Fuji» mirror reflection, the views from Oishi Park, Ubuyagasaki, and Yagisaki Park on the northern shore have been replicated worldwide as iconic Japanese imagery. With spring cherry blossoms, the Kojo Festival fireworks of August, an autumn maple corridor, and snow-capped Fuji in winter, it changes with the seasons; the Fujikyu Kawaguchiko Station area offers ample lodging, hot springs, and cafés."
+    ),
+    highlights: {
+      ja: [
+        "逆さ富士 — 風がない朝6〜8時の鏡面状態が条件、湖北の大石公園・産屋ヶ崎が定番",
+        "大石公園 — 北岸の人気撮影地、ラベンダー(7月)・コキア(秋紅葉)と富士山の組合せ",
+        "もみじ回廊(11月) — 北岸の紅葉トンネル、夜のライトアップと冠雪富士の絶景",
+        "湖北の桜並木(4月) — 産屋ヶ崎・八木崎公園、桜と富士山の三段構図",
+        "冬の冠雪富士 — 12〜2月、空気が澄む早朝、湖面の透明度も最高",
+      ],
+      en: [
+        "Inverted Fuji — requires a windless mirror surface at dawn (6–8 AM); Oishi Park and Ubuyagasaki on the northern shore are the classics",
+        "Oishi Park — the most popular north-shore spot, with lavender (July) and kochia (autumn red) paired with Mt. Fuji",
+        "Momiji Corridor (November) — the autumn maple tunnel on the north shore; evening illumination paired with snow-capped Fuji",
+        "Cherry-Lined North Shore (April) — Ubuyagasaki and Yagisaki Park, with blossoms framing Mt. Fuji",
+        "Snow-Capped Fuji in Winter — December–February, with the clearest air at dawn and peak lake transparency",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "河口湖とは?", a: "山梨県の富士五湖の一つで、富士山北麓に広がる面積5.7km²の堰止湖。湖面に映る「逆さ富士」の代表的撮影地として世界的に有名、春の桜、夏の花火、秋の紅葉、冬の冠雪富士と四季を通じて表情豊かで、富士山ビューの聖地です。" },
+        { q: "逆さ富士を撮るベストポイントは?", a: "湖北の大石公園・産屋ヶ崎が定番。風がない朝6〜8時の鏡面状態を狙う。冬は空気が澄み透明度が最高、月に数日の絶好条件。富士急行河口湖駅から大石公園まで車で15分、レンタカー推奨です。" },
+        { q: "ベストシーズンは?", a: "桜と富士の4月上旬、新緑の5月、ラベンダーと富士の7月、紅葉と富士の11月、冠雪富士の12〜2月。逆さ富士は風が穏やかな冬〜春が最も成功率高、夜の星空と富士の組合せは新月の冬が絶景。" },
+      ],
+      en: [
+        { q: "What is Lake Kawaguchi?", a: "One of Yamanashi's Fuji Five Lakes — a barrier lake of 5.7 km² spreading at the northern foot of Mt. Fuji. As the most famous spot for the «inverted Fuji» reflection, it is globally renowned, varying its faces season by season — cherry blossoms, fireworks, autumn colors, and snow-capped Fuji — the sacred ground for Mt. Fuji photography." },
+        { q: "Best spot for the inverted Fuji reflection?", a: "Oishi Park and Ubuyagasaki on the northern shore are classics. Aim for windless mornings 6–8 AM when the lake mirrors. Winter offers the clearest air and best transparency — ideal conditions occur a few times a month. From Fujikyu Kawaguchiko Station, Oishi Park is 15 minutes by car — a rental car is recommended." },
+        { q: "Best season?", a: "Cherry blossoms with Fuji in early April, fresh greenery in May, lavender with Fuji in July, autumn colors with Fuji in November, snow-capped Fuji December–February. The inverted Fuji has the highest success rate in calm winter-to-spring weather; the night Milky Way with Fuji at the new moon in winter is sublime." },
+      ],
+    },
     faqs: [
       { q: d("逆さ富士を撮るベストポイントは？","Best spot for the inverted Fuji reflection?","拍逆富士最佳点？","拍逆富士最佳點？","역 후지 촬영 최고 포인트는?"),
         a: d("湖北の大石公園・産屋ヶ崎が定番。風がない朝6〜8時の鏡面状態を狙う。冬は空気が澄み透明度が最高。","Oishi Park and Ubuyagasaki on the northern shore are classics. Aim for windless mornings 6-8 AM when the lake mirrors. Winter offers the clearest air and best transparency.","湖北大石公园、产屋崎为经典。无风的清晨6-8点湖面呈镜面。冬季空气通透度最佳。","湖北大石公園、產屋崎為經典。無風的清晨6-8點湖面呈鏡面。冬季空氣通透度最佳。","호수 북쪽 오이시 공원과 우부야가사키가 정석. 바람 없는 오전 6-8시 거울처럼 잔잔한 호수면을 노리세요. 겨울이 공기가 맑아 투명도가 가장 좋습니다.") },
@@ -2549,6 +2581,38 @@ export const LOCATION_CONTENT = {
       "松本城位於長野縣松本市，國寶、現存12天守之一。漆黑牆壁讓其也被稱為「烏城」。五重六階天守再現戰國時代雄姿。背靠北阿爾卑斯雪嶺，內護城河水鏡與櫻花、新綠、紅葉、雪景四季各異。",
       "마쓰모토성은 나가노현 마쓰모토시의 국보·현존 12천수 중 하나. 칠흑의 벽에서 「까마귀성」이라고도 불립니다. 5중 6층 천수는 센고쿠 시대의 위용을 전합니다. 뒤쪽으로 우뚝 솟은 북알프스의 흰 능선, 내해자의 거울 같은 수면, 벚꽃·신록·단풍·눈 등 사계절 모두 아름답습니다."
     ),
+    definition: lh(
+      "松本城(まつもとじょう)は長野県松本市丸の内4-1にある平城で、現存12天守の中で最も古い1593〜1594年(文禄2〜3年)に石川数正・康長親子が建造した五重六階の大天守を持つ国宝。2015年の解体修理を経た現在も創建当時の姿を留め、漆黒の下見板張りと白漆喰のコントラストから「烏城(からすじょう)」とも呼ばれます(姫路城の「白鷺城」と対比)。日本の城で天守が国宝に指定されているのは姫路城・松本城・犬山城・彦根城・松江城の5城のみ。背後にそびえる北アルプスの白い稜線、内堀の水鏡、桜(4月中旬)・新緑・紅葉・雪と四季それぞれの表情が、松本市の象徴として愛されています。",
+      "Matsumoto Castle, located at 4-1 Marunouchi, Matsumoto City, Nagano Prefecture, is a flatland castle whose great keep — built in 1593–1594 (Bunroku 2–3) by Ishikawa Kazumasa and his son Yasunaga — is the oldest of Japan's 12 surviving original tenshu and a National Treasure. Even after the 2015 restoration, it retains its founding form. Its black lacquered weatherboards and white plaster create the contrast that earned it the nickname «Crow Castle» (in opposition to Himeji's «White Heron Castle»). Only five Japanese castle keeps are designated National Treasures — Himeji, Matsumoto, Inuyama, Hikone, and Matsue — and Matsumoto's combination with the white ridges of the Northern Alps behind it, the mirror-still inner moat, and four-season changes (cherry blossoms in mid-April, fresh greens, autumn leaves, and snow) makes it the city's beloved symbol."
+    ),
+    highlights: {
+      ja: [
+        "国宝大天守 — 1593〜94年築、現存12天守の最古、五重六階、漆黒の壁が特徴の「烏城」",
+        "内堀と埋橋(うずみばし) — 北西側の朱色の橋と天守の構図、桜の4月中旬は王道",
+        "北アルプスの借景 — 天守背後の白い稜線、特に4月の冠雪と桜が織りなす絶景",
+        "夜のライトアップ — 通年実施(日没〜22時)、ブルーアワーと黒い天守のコントラスト",
+        "本丸庭園 — 牡丹・藤・蓮など季節の花、城内見学コースの庭園美",
+      ],
+      en: [
+        "Great Keep (National Treasure) — built 1593–94, the oldest of Japan's 12 surviving originals; its black walls earn the «Crow Castle» nickname",
+        "Inner Moat and Uzumi Bridge — the vermilion bridge on the northwest side framing the keep; mid-April cherry blossoms are the canonical composition",
+        "Northern Alps Borrowed Backdrop — the white ridges behind the keep, especially stunning paired with cherry blossoms in April",
+        "Evening Illumination — year-round from sunset to 22:00; the blue hour against the black keep is striking",
+        "Honmaru Garden — seasonal flowers (peonies, wisteria, lotus) within the castle tour route",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "松本城とは?", a: "長野県松本市の平城で、1593〜94年築の現存12天守の最古。漆黒の下見板張りと白漆喰のコントラストから「烏城」と呼ばれ、国宝。日本で天守が国宝の5城の一つ、北アルプスを借景に四季それぞれの絶景を見せる撮影地です。" },
+        { q: "天守と桜・北アルプスを一枚に撮るには?", a: "内堀北西側の埋橋(うずみばし)周辺がベスト。望遠で天守と稜線を圧縮し、桜(4月中旬)を前ボケに。早朝は逆光が柔らかい、夜のライトアップは黒い天守と空のコントラストが幻想的。" },
+        { q: "アクセスとベストシーズンは?", a: "JR松本駅から徒歩15分または周遊バスで5分。桜の4月中旬、新緑の5月、紅葉の10月下旬〜11月中旬、雪の松本城は年に数回のレア構図。早朝6時開門時が人少なく光柔らか、夜のライトアップは22時まで。" },
+      ],
+      en: [
+        { q: "What is Matsumoto Castle?", a: "A flatland castle in Matsumoto City, Nagano Prefecture, with the oldest of Japan's 12 surviving original keeps (built 1593–94). The contrast of black lacquered weatherboards with white plaster earned it the nickname «Crow Castle.» As one of only five National Treasure keeps in Japan, with the Northern Alps as backdrop, it offers seasonal masterpieces year-round." },
+        { q: "How to frame the keep with cherry blossoms and the Alps?", a: "Around Uzumi Bridge on the northwest side of the inner moat is best. Use a telephoto to compress the keep and Alps ridges, with mid-April cherry blossoms as foreground bokeh. Early morning offers softer backlight; the evening illumination dramatizes the black keep against the sky." },
+        { q: "Access and best season?", a: "From JR Matsumoto Station, 15 minutes on foot or 5 minutes by loop bus. Cherry blossoms mid-April, fresh greenery in May, autumn colors late October to mid-November, and rare winter snow shots. Arrive at the 6 AM opening for thin crowds and soft light; evening illumination runs until 22:00." },
+      ],
+    },
     faqs: [
       { q: d("天守と桜・北アルプスを一枚に撮るには？","How to frame the keep with cherry blossoms and the Alps?","如何同框天守、樱花与北阿尔卑斯？","如何同框天守、櫻花與北阿爾卑斯？","천수와 벚꽃·북알프스를 한 프레임에?"),
         a: d("内堀北西側の埋橋（うずみばし）周辺がベスト。望遠で天守と稜線を圧縮し、桜（4月中旬）を前ボケに。早朝は逆光が柔らかい。","Around Uzumi Bridge on the northwest side of the inner moat is best. Use a telephoto to compress the keep and Alps ridges, with mid-April cherry blossoms as foreground bokeh. Early morning offers softer backlight.","内护城河西北埋桥周边最佳。用长焦压缩天守与雪岭，4月中旬樱花作前景虚化。清晨逆光柔和。","內護城河西北埋橋周邊最佳。用長焦壓縮天守與雪嶺，4月中旬櫻花作前景虛化。清晨逆光柔和。","내해자 북서쪽 우즈미바시 주변이 최고. 망원으로 천수와 알프스 능선을 압축하고 4월 중순 벚꽃을 전경 보케로. 이른 아침의 부드러운 역광이 좋습니다.") },
@@ -2562,6 +2626,38 @@ export const LOCATION_CONTENT = {
       "高遠城址公園位於伊那市高遠町，武田氏舊城遺跡。約1500棵特有「高遠小彼岸櫻」於4月上中旬染成淡粉色，被譽為「天下第一櫻」。日本櫻花名所100選、三大櫻花勝地之一。夜間「櫻花祭」燈光秀夢幻，中央阿爾卑斯為背景的絕景令人沉醉。",
       "다카토 성지 공원은 이나시 다카토마치의 다케다씨 옛 성터. 고유종 「다카토 고히간자쿠라」 약 1500그루가 4월 상-중순 연분홍빛으로 물들어 「천하제일 벚꽃」이라 불립니다. 일본 벚꽃 명소 100선·3대 벚꽃 명소 중 하나. 밤의 「벚꽃 축제」 조명은 환상적이며, 중앙알프스를 배경으로 한 절경이 펼쳐집니다."
     ),
+    definition: lh(
+      "高遠城址公園(たかとうじょうしこうえん)は長野県伊那市高遠町、戦国時代の武田信玄ゆかりの古城・高遠城跡を整備した公園で、城跡指定面積14ヘクタール。1547年に武田信玄が築城、1582年武田勝頼の時代に織田信長の侵攻で落城した歴史を持ち、現在は約1,500本の固有種「タカトオコヒガンザクラ(高遠小彼岸桜)」が4月上〜中旬に淡紅色に染まり「天下第一の桜」と称されます。「日本さくら名所100選」、青森県弘前公園・奈良県吉野山と並ぶ「日本三大桜の名所」。夜のライトアップ「さくら祭り」は幻想的で、中央アルプスを背景にした絶景が広がる、長野県を代表する春の撮影地です。",
+      "Takato Castle Park, in Takato-machi, Ina City, Nagano Prefecture, occupies the 14-hectare ruins of Takato Castle — a Sengoku-era fortress with ties to warlord Takeda Shingen. Built by Shingen in 1547, it fell in 1582 during Oda Nobunaga's invasion under Takeda Katsuyori. Today, about 1,500 endemic Takato Kohigan cherry trees bloom soft pink in early to mid-April, earning the title «No.1 cherry blossoms under heaven.» The park is selected for Japan's «Top 100 Cherry Blossom Sites» and ranked alongside Hirosaki Park (Aomori) and Mt. Yoshino (Nara) as one of Japan's «Three Great Cherry Blossom Sites.» Evening illumination during the «Sakura Festival» is dreamlike, and with the Central Alps as backdrop, the park stands as Nagano's representative spring photography destination."
+    ),
+    highlights: {
+      ja: [
+        "タカトオコヒガンザクラ — 高遠原産の固有種、約1,500本、淡紅色の小ぶりな花、満開時は雲のような姿",
+        "桜雲橋(おううんきょう) — 公園の象徴的赤い橋、桜と橋の組合せが撮影定番",
+        "中央アルプスの借景 — 西駒ケ岳(2,956m)・木曽駒ケ岳の白い稜線、桜越しの絶景",
+        "夜のライトアップ — さくら祭り期間、ぼんぼり1,000個の暖色光、青の時間帯が幻想的",
+        "高遠閣(こうえんかく) — 1936年築の木造2階建て休憩所、レトロな建築と桜の組合せ",
+      ],
+      en: [
+        "Takato Kohigan Cherry — endemic to Takato; about 1,500 trees, smaller pale-pink blooms forming a cloud-like canopy at peak",
+        "Oun Bridge — the park's iconic red bridge; the bridge with cherry blossoms is the canonical shot",
+        "Central Alps backdrop — the white ridges of Nishi-Komagatake (2,956 m) and Kiso-Komagatake; spectacular through the cherry blossoms",
+        "Evening Illumination — during the Sakura Festival, about 1,000 warm-toned bonbori lanterns make the blue hour magical",
+        "Koen-kaku — a 1936 two-story wooden rest house; the retro architecture pairs beautifully with the cherry blossoms",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "高遠城址公園とは?", a: "長野県伊那市の武田信玄ゆかりの古城跡公園で、固有種「タカトオコヒガンザクラ」約1,500本が「天下第一の桜」と称される。日本さくら名所100選・三大桜の名所の一つで、中央アルプスを背景にした絶景は長野県を代表する春の撮影地です。" },
+        { q: "高遠の桜のベスト撮影時間は?", a: "早朝6時前の青い光と人がいない時間帯が王道。午後はライトアップ前の夕方〜青の時間帯が華やかで、夜は提灯の暖色光と桜の対比が美しい。混雑回避は平日早朝が必須です。" },
+        { q: "アクセスとベスト時期は?", a: "JR伊那市駅からバスで25分、または高遠駅(JR高遠駅)から徒歩15分。例年4月上旬〜中旬がピークで「天下第一の桜」と称されます。早朝の薄明〜日の出が逆光柔らかく狙い目、混雑回避は平日早朝です。" },
+      ],
+      en: [
+        { q: "What is Takato Castle Park?", a: "A 14-hectare park on the ruins of a Sengoku-era castle linked to Takeda Shingen, in Ina City, Nagano. About 1,500 endemic Takato Kohigan cherry trees earn it the title «No.1 cherry blossoms under heaven.» It is selected for Japan's «Top 100 Cherry Blossom Sites» and counted among Japan's «Three Great Cherry Blossom Sites» — Nagano's signature spring photography destination." },
+        { q: "Best time of day to shoot Takato cherry blossoms?", a: "Before 6 AM offers crowdless blue light. Afternoon transitions through the blue hour into illumination, when warm lantern light meets pink blossoms beautifully. Plan a weekday early-morning visit to avoid crowds." },
+        { q: "Access and best timing?", a: "About 25 minutes by bus from JR Ina-shi Station, or 15 minutes on foot from Takato Station. Peak typically falls in early to mid-April under the «No.1 cherry blossoms under heaven.» Twilight to sunrise gives the softest backlight; weekday early mornings best avoid the crowds." },
+      ],
+    },
     faqs: [
       { q: d("高遠の桜のベスト撮影時間は？","Best time of day to shoot Takato cherry blossoms?","高远樱花最佳拍摄时段？","高遠櫻花最佳拍攝時段？","다카토 벚꽃 최고 촬영 시간대는?"),
         a: d("早朝6時前の青い光と人がいない時間帯が王道。午後はライトアップ前の夕方〜青の時間帯が華やかで、夜は提灯の暖色光と桜の対比が美しい。","Before 6 AM offers crowdless blue light. Afternoon transitions through the blue hour into illumination, when warm lantern light meets pink blossoms beautifully.","清晨6点前蓝调光与无人时段为佳。午后黄昏至蓝色时刻华丽，夜间灯笼暖光与樱花对比迷人。","清晨6點前藍調光與無人時段為佳。午後黃昏至藍色時刻華麗，夜間燈籠暖光與櫻花對比迷人。","이른 아침 6시 전의 푸른빛과 인적 없는 시간대가 정석. 오후는 점등 전 황혼-블루아워가 화려하고 밤은 등불의 따뜻한 빛과 벚꽃의 대비가 아름답습니다.") },
@@ -2575,6 +2671,38 @@ export const LOCATION_CONTENT = {
       "駒繫櫻花是阿智村智里深山中樹齡超過400年的江戶彼岸櫻。相傳源義經赴奧州時曾在此繫馬，故得此名。孤立於山田畔，氣概如老武士。4月中下旬盛花期，倒映在棚田水面的逆櫻與星空同框是長野代表性的一本櫻絕景。",
       "고마쓰나기 벚꽃은 아치 마을 치사토의 산속에 우뚝 선 수령 400년이 넘는 에도히간자쿠라. 미나모토노 요시쓰네가 오슈로 향할 때 말을 매어 두었다는 전설에서 이름이 붙었습니다. 산 논두렁에 홀로 서 있는 모습은 노무사 같은 풍격. 4월 중-하순 만개 시 다랑논에 비친 역 벚꽃과 별하늘이 어우러지는 풍경은 나가노를 대표하는 한 그루 벚꽃 절경입니다."
     ),
+    definition: lh(
+      "駒つなぎの桜(こまつなぎのさくら)は長野県下伊那郡阿智村智里(あちむらちさと)の標高約950mの山あいにそびえる、樹齢約400年(推定)・樹高約20m・幹周約3.5mのエドヒガンザクラの一本桜。1189年に源義経が奥州へ下向する際、ここで馬を繋いだという伝説から「駒つなぎ」の名が付き、長野県の天然記念物に指定されています。山の棚田の畔にぽつんと立つ姿は古武士のような風格を漂わせ、4月中旬〜下旬の満開期には、田植え時期の水を張った棚田に映る逆さ桜と、阿智村の「日本一の星空」を組み合わせた構図が長野県を代表する一本桜の絶景。撮影マナー(畔の踏み荒らし禁止・三脚位置等)が整備されており、早朝の人がいない時間帯が狙い目です。",
+      "The Komatsunagi Cherry Tree, in mountainous Chisato of Achi Village, Shimoina District, Nagano Prefecture, stands at about 950 m elevation — an Edohigan cherry estimated to be about 400 years old, around 20 m tall, with a trunk circumference of 3.5 m. According to legend, in 1189 Minamoto no Yoshitsune tied his horse to it on his journey to Oshu, giving the tree its name («Horse-Tying Cherry»). It is a designated Nagano Prefecture Natural Monument. Standing alone beside terraced rice fields with the dignity of an old warrior, in mid- to late April it pairs at full bloom with the surrounding paddies — flooded for planting — to mirror the cherry tree, often combined with Achi Village's «No.1 starry sky in Japan» for one of Nagano's signature single-tree compositions. Photography etiquette (no trampling paddy ridges, designated tripod positions) is in place; early morning before the crowds is the prime window."
+    ),
+    highlights: {
+      ja: [
+        "樹齢約400年のエドヒガンザクラ — 樹高約20m、長野県天然記念物、源義経伝説の歴史",
+        "棚田の水鏡 — 4月中下旬の田植え時期、逆さ桜が水面に完璧に映る",
+        "夜の星空と桜 — 阿智村は「日本一の星空」、新月期の天の川と桜の組合せが絶景",
+        "早朝の薄明 — 日の出前の青い時間帯、人が少なく桜のシルエットが美しい",
+        "周辺の散策路 — 駒つなぎの桜以外にも阿智村には桜の名所多数(暮白の滝桜・浪合関所跡)",
+      ],
+      en: [
+        "About 400-year-old Edohigan Cherry — 20 m tall, a Nagano Prefecture Natural Monument linked to the Minamoto no Yoshitsune legend",
+        "Paddy Reflection — when paddies flood for planting in mid-to-late April, the cherry mirrors perfectly on the water",
+        "Stars and Cherry at Night — Achi Village holds Japan's «No.1 starry sky» certification; the Milky Way at new moon paired with cherry blossoms is unforgettable",
+        "Pre-Dawn Twilight — the blue hour before sunrise, when crowds are absent and the cherry's silhouette is most beautiful",
+        "Nearby Trails — beyond Komatsunagi, Achi Village offers other cherry spots like Kurahaku Falls Cherry and the Namiai Checkpoint ruins",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "駒つなぎの桜とは?", a: "長野県阿智村智里の標高950mの山あいにそびえる樹齢約400年のエドヒガンザクラ。源義経が奥州下向時に馬を繋いだ伝説から名がつき、長野県天然記念物。4月中下旬の棚田の水鏡と逆さ桜、星空との組合せが絶景の一本桜です。" },
+        { q: "水鏡撮影に必要な条件は?", a: "4月中下旬の田植え時期で水が張られ、無風の早朝〜薄明が必須。三脚と広角〜標準レンズ、星と桜なら高感度耐性のあるボディが推奨。撮影マナー遵守(畔を踏み荒らさない、三脚位置を守る)が必須です。" },
+        { q: "アクセスは?", a: "JR飯田駅から車で約1時間、中央自動車道飯田山本ICから車で30分。アクセスは車一択、駐車場は限られるため早朝5時着が必須。星と桜の撮影は新月期の4月中下旬の特定夜のみ、年に数日のレアタイミングです。" },
+      ],
+      en: [
+        { q: "What is the Komatsunagi Cherry Tree?", a: "An approximately 400-year-old Edohigan cherry standing at about 950 m elevation in Chisato, Achi Village, Nagano. Named for the legend that Minamoto no Yoshitsune tied his horse to it on his way to Oshu, it is a designated Nagano Natural Monument. In mid-to-late April it offers a paddy mirror reflection paired with the village's «No.1 starry sky» — a signature single-tree spectacle." },
+        { q: "What's needed for the paddy reflection shot?", a: "Mid-to-late April when paddies are flooded for planting, on a windless dawn or early twilight. Bring a tripod and wide-to-standard lens; for stars and blossoms a high-ISO-tolerant body is recommended. Strict etiquette — no trampling paddy ridges, designated tripod positions — is essential." },
+        { q: "Access?", a: "About 1 hour by car from JR Iida Station, or 30 minutes by car from the Iida-Yamamoto Interchange of the Chuo Expressway. A car is essentially required; parking is limited so arrive at 5 AM. The combined stars-and-cherry shot is possible only on new-moon nights in mid-to-late April — only a few days per year." },
+      ],
+    },
     faqs: [
       { q: d("水鏡撮影に必要な条件は？","What's needed for the paddy reflection shot?","拍水镜倒影需要什么条件？","拍水鏡倒影需要什麼條件？","수면 반영 촬영에 필요한 조건은?"),
         a: d("4月中下旬の田植え時期で水が張られ、無風の早朝〜薄明が必須。三脚と広角〜標準レンズ、星と桜なら高感度耐性のあるボディが推奨。","Mid-to-late April when paddies are flooded for planting, on a windless dawn or early twilight. Bring a tripod and wide-to-standard lens; for stars+blossoms a high-ISO-tolerant body is recommended.","4月中下旬插秧水满期，无风的清晨或薄明必备。三脚架与广角到标准镜头，拍星空与樱花建议高感性能好的机身。","4月中下旬插秧水滿期，無風的清晨或薄明必備。三腳架與廣角到標準鏡頭，拍星空與櫻花建議高感性能好的機身。","4월 중-하순 모내기 시기에 물이 차고, 바람 없는 새벽이나 박명이 필수. 삼각대와 광각-표준 렌즈, 별과 벚꽃을 함께라면 고감도 내성이 좋은 바디가 좋습니다.") },
@@ -2588,6 +2716,38 @@ export const LOCATION_CONTENT = {
       "長野縣阿智村被環境省認證為「日本第一星空」，是全國頂級觀星地。星之村阿智「天空樂園夜遊」乘纜車登海拔1400米富士見台高原，山頂無光害，群星滿天。新月期銀河與冬季星座尤為震撼。",
       "나가노현 아치 마을은 환경성이 「일본 제일의 별하늘」로 인정한 일본 굴지의 별 관측지. 스타빌리지 아치 「천공의 낙원 나이트 투어」는 곤돌라로 해발 1400m 후지미다이 고원까지 올라가 가로등 없는 산정에서 만점 별하늘에 둘러싸입니다. 신월기 은하수와 겨울 별자리가 압권."
     ),
+    definition: lh(
+      "長野県天空の楽園(てんくうのらくえん)は長野県下伊那郡阿智村智里、ヘブンスそのはらスキー場が運営する標高1,400m富士見台高原の星空観賞ツアーの愛称で、2006年に環境省「全国星空継続観察」で「日本一星空が綺麗な場所」に認定された日本屈指のスターウォッチング聖地。ゴンドラで約15分、夜の山頂に上がると周囲は街灯ゼロの完全な暗闇となり、満点の星空に360度包まれます。新月期の天の川、夏の夏の大三角形、冬のオリオン座と冬の大六角形まで、肉眼でも見える星の数は季節により6,000〜10,000個。年間来場者は約14万人、日本のアストロツーリズムを牽引する代表的存在です。",
+      "«Tenku no Rakuen» (Paradise in the Sky) is the brand name for stargazing tours at Fujimidai Highlands (1,400 m) operated by Heavens Sonohara ski resort in Chisato, Achi Village, Shimoina District, Nagano Prefecture. In 2006, the area was certified by Japan's Ministry of the Environment as having the «most beautiful starry sky in Japan» (under the National Star-Sky Continuous Observation program). After about a 15-minute gondola ride, visitors reach the summit, where light pollution is eliminated and a 360° panorama of stars surrounds them. Depending on season, 6,000 to 10,000 stars are visible to the naked eye — the Milky Way at new moon, the Summer Triangle, Orion in winter, and the Winter Hexagon. Drawing about 140,000 visitors annually, it leads Japanese astrotourism."
+    ),
+    highlights: {
+      ja: [
+        "ナイトツアー — ゴンドラで15分、標高1,400mの星空観賞、年間約14万人来場",
+        "新月期の天の川 — 4〜10月の新月前後、夏の天の川中心部が肉眼でも雲のように見える",
+        "ペルセウス座流星群(8月) — 年間最多の流星群、星空観賞には最高のタイミング",
+        "冬の星座(11〜2月) — オリオン座、冬の大六角形、空気が澄み透明度が極高",
+        "ヘブンスそのはらスキー場 — 冬季はスキー場、夜は星空ツアー、夏はマウンテンバイクと多彩",
+      ],
+      en: [
+        "Night Tour — a 15-minute gondola ride to 1,400 m for stargazing, drawing about 140,000 visitors a year",
+        "Milky Way at New Moon — around new moon from April to October, the summer Milky Way's core is visible to the naked eye like a cloud",
+        "Perseid Meteor Shower (August) — Japan's busiest meteor shower, the best stargazing timing of the year",
+        "Winter Constellations (November–February) — Orion, the Winter Hexagon, with the clearest air and exceptional transparency",
+        "Heavens Sonohara Ski Resort — ski runs in winter, star tours at night, mountain biking in summer — varied year-round",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "長野県天空の楽園とは?", a: "長野県阿智村のヘブンスそのはらスキー場運営の標高1,400m富士見台高原の星空観賞ツアー。2006年環境省「日本一星空が綺麗な場所」認定、年間約14万人が訪れる日本屈指のアストロツーリズムの聖地です。" },
+        { q: "星空撮影の最適時期は?", a: "新月の前後・空気が澄む冬(11月〜2月)が銀河は弱まるが星の鋭さは最高。夏は天の川が中心(7〜8月の新月前後がピーク)。ペルセウス座流星群(8月12〜13日)は年間最大、ナイトツアーは予約必須です。" },
+        { q: "アクセスとツアー予約は?", a: "JR飯田駅から車で約25分、中央自動車道園原ICから車で5分。ナイトツアーは公式サイトから予約必須(大人2,500円)、運行は4〜10月の特定日。雨天・濃霧時は中止、リスケジュールサービスあり。" },
+      ],
+      en: [
+        { q: "What is «Paradise in the Sky»?", a: "A stargazing tour brand operated by the Heavens Sonohara ski resort at the 1,400 m Fujimidai Highlands in Achi Village, Nagano. Certified in 2006 by Japan's Ministry of the Environment as the «most beautiful starry sky in Japan,» it draws about 140,000 visitors a year as Japan's leading astrotourism destination." },
+        { q: "Best time of year for stargazing?", a: "Around new moon. Winter (Nov–Feb) gives the sharpest stars (the Milky Way is fainter). Summer is best for the Milky Way's core (peaks around new moon in July–August). The Perseid meteor shower (August 12–13) is the year's busiest. Night tours require advance booking." },
+        { q: "Access and tour reservations?", a: "About 25 minutes by car from JR Iida Station; 5 minutes by car from the Sonohara Interchange of the Chuo Expressway. Reservations are required (¥2,500 for adults); tours run on selected dates April–October. Rain or fog cancels, with rescheduling available." },
+      ],
+    },
     faqs: [
       { q: d("星空撮影の最適時期は？","Best time of year for stargazing?","观星最佳时期？","觀星最佳時期？","별 관측 최적기는?"),
         a: d("新月の前後・空気が澄む冬（11月〜2月）が銀河は弱まるが星の鋭さは最高。夏は天の川が中心。ナイトツアーは予約必須。","Around new moon. Winter (Nov-Feb) gives the sharpest stars (the Milky Way is fainter). Summer is best for the Milky Way's core. The night tour requires advance booking.","新月前后、空气清澈的冬季（11-2月）银河淡但星象最锐利；夏季银河中心最美。夜游须提前预约。","新月前後、空氣清澈的冬季（11-2月）銀河淡但星象最銳利；夏季銀河中心最美。夜遊須提前預約。","신월 전후. 공기가 맑은 겨울(11-2월)은 은하수는 약하지만 별이 가장 또렷합니다. 여름은 은하수 중심부가 절경. 나이트 투어는 사전 예약 필수.") },
@@ -2601,6 +2761,38 @@ export const LOCATION_CONTENT = {
       "弘法山古墳位於松本市，是東日本最古老的前方後方墳之一（3世紀末建造）。位於海拔650米弘法山頂，約4000棵櫻花4月中旬盛放。山頂可俯瞰松本市區與北阿爾卑斯絕景，櫻花之間殘雪峰巒的構圖是松本春景代表。",
       "고보산 고분은 마쓰모토시에 있는 동일본 최고급 전방후방분(3세기 말 축조). 해발 650m 고보산 정상에 위치하며 약 4000그루의 벚꽃이 4월 중순 만개합니다. 정상에서는 마쓰모토 시가지와 북알프스의 절경이 펼쳐지고, 벚꽃 너머 잔설의 봉우리들을 바라보는 구도는 마쓰모토 봄의 대표 풍경입니다."
     ),
+    definition: lh(
+      "弘法山古墳(こうぼうやまこふん)は長野県松本市並柳の標高約650mの弘法山(こうぼうやま)山頂部に築造された全長約66mの東日本最古級の前方後方墳(ぜんぽうこうほうふん)で、3世紀末築造と推定される国の史跡。1974年(昭和49年)に長野県・松本市の発掘調査で「弘法山古墳出土品」(三角縁神獣鏡など)が確認され、4世紀代の畿内文化が早期に北信地方に伝わった証拠として古代史学的に重要。山頂周辺には約4,000本のソメイヨシノ・ヤマザクラが植えられ、4月中旬の満開期には松本市街と北アルプス連峰(乗鞍岳・穂高連峰・常念岳など)が一望できる絶景が広がります。桜越しに残雪のアルプスの稜線を望む構図は松本随一の春の風景として全国的に知られています。",
+      "Kobo-yama Tumulus, atop the 650 m Mt. Kobo in Namiyanagi, Matsumoto City, Nagano Prefecture, is a roughly 66 m «zenpo-koho-fun» — a square-front, square-back keyhole-style tomb — and one of eastern Japan's oldest, estimated to date from the late 3rd century. Designated a National Historic Site, the tumulus yielded Triangular-Rim Mythical-Beast Mirrors and other artifacts during a 1974 excavation by Nagano and Matsumoto, providing crucial evidence that 4th-century Kinai culture had reached the northern Shinano region remarkably early. About 4,000 Yoshino and yamazakura cherry trees encircle the summit; in mid-April at peak bloom, sweeping views unfold of downtown Matsumoto and the Northern Alps — Mt. Norikura, the Hotaka Range, Mt. Jonen — making the snow-capped peaks framed by cherry blossoms one of Matsumoto's most celebrated spring scenes nationally."
+    ),
+    highlights: {
+      ja: [
+        "東日本最古級の前方後方墳 — 全長66m、3世紀末築造、国指定史跡、古代史の重要遺跡",
+        "山頂の桜(約4,000本) — ソメイヨシノとヤマザクラ、4月中旬満開、松本市街を見下ろす",
+        "北アルプスの大パノラマ — 乗鞍岳・穂高連峰・常念岳の稜線、桜越しの構図が王道",
+        "朝焼けのモルゲンロート — 日の出時に北アルプスがピンク色に染まる、桜と組合せ最高峰",
+        "登山道(15〜20分) — バス停から徒歩、整備された山道、家族連れも気軽に登れる",
+      ],
+      en: [
+        "Among Eastern Japan's Oldest Keyhole Tombs — 66 m long, late-3rd-century, National Historic Site, key archaeological evidence",
+        "About 4,000 Cherry Trees at the Summit — Yoshino and yamazakura at peak bloom in mid-April, overlooking Matsumoto",
+        "Northern Alps Panorama — the ridges of Mt. Norikura, the Hotaka Range, and Mt. Jonen; the canonical shot frames them through cherry blossoms",
+        "Morning «Alpenglow» — at sunrise the Alps blush pink; combined with cherry blossoms, the peak photographic moment",
+        "Trail (15–20 min) — from the bus stop on foot via a maintained trail, accessible even for families",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "弘法山古墳とは?", a: "長野県松本市の標高650m弘法山山頂の3世紀末築造の前方後方墳(全長66m)で、東日本最古級・国指定史跡。山頂周囲の約4,000本の桜と北アルプスの絶景が織りなす松本随一の春景撮影地です。" },
+        { q: "弘法山古墳のアクセスと撮影ポイントは?", a: "松本駅からバス約20分・徒歩約20分で登山口。山頂までは坂道15〜20分。早朝の薄明〜日出が逆光柔らかく北アルプスが映え、混雑回避にも有効。朝焼けのモルゲンロート(雪山がピンクに染まる)が最高峰のタイミングです。" },
+        { q: "桜のベスト時期は?", a: "例年4月中旬がピーク。松本市街地より標高があるため平地より数日遅れて満開。ピーク時の早朝は薄霧と桜と北アルプスの3要素が揃う奇跡の時間、写真愛好家が集まります。" },
+      ],
+      en: [
+        { q: "What is Kobo-yama Tumulus?", a: "A late-3rd-century keyhole-style tumulus (66 m long) atop the 650 m Mt. Kobo in Matsumoto City, Nagano — among eastern Japan's oldest, designated a National Historic Site. With about 4,000 cherry trees encircling the summit and the Northern Alps in the distance, it is Matsumoto's most spectacular spring photography location." },
+        { q: "How to access and where to shoot?", a: "From Matsumoto Station, about 20 minutes by bus and 20 minutes on foot to the trailhead, then 15–20 minutes uphill to the summit. Dawn to sunrise gives soft backlight on the Northern Alps and avoids the crowds; the «alpenglow» moment when snow peaks blush pink is the absolute peak." },
+        { q: "Best timing for cherry blossoms?", a: "Peak in mid-April. The summit's altitude delays bloom by a few days compared to the city below. Early mornings at peak combine light mist, cherry blossoms, and the Northern Alps in a miraculous trifecta that draws serious photographers." },
+      ],
+    },
     faqs: [
       { q: d("弘法山古墳のアクセスと撮影ポイントは？","How to access and where to shoot?","怎么去？最佳拍摄点？","怎麼去？最佳拍攝點？","접근 방법과 촬영 포인트?"),
         a: d("松本駅からバス約20分・徒歩約20分で登山口。山頂までは坂道15〜20分。早朝の薄明〜日出が逆光柔らかく北アルプスが映え、混雑回避にも有効。","From Matsumoto Station, ~20 min by bus + ~20 min walk to the trailhead, then 15-20 min uphill to the summit. Dawn to sunrise gives soft backlight on the Northern Alps and avoids the crowds.","松本站乘巴士约20分钟+步行20分钟到登山口，山顶15-20分钟。清晨薄明至日出逆光柔和，北阿尔卑斯尤其美，亦可避开人潮。","松本站乘巴士約20分鐘+步行20分鐘到登山口，山頂15-20分鐘。清晨薄明至日出逆光柔和，北阿爾卑斯尤其美，亦可避開人潮。","마쓰모토역에서 버스 약 20분+도보 약 20분으로 등산로 입구, 정상까지 15-20분. 새벽 박명-일출이 역광이 부드럽고 북알프스가 돋보이며 혼잡 회피에도 유효합니다.") },
@@ -2614,6 +2806,38 @@ export const LOCATION_CONTENT = {
       "安養寺位於松本市，是真宗大谷派古剎。境內百年以上垂枝櫻4月中旬粉花垂地，蔚為壯觀。本堂、鐘樓的沉穩木造建築與櫻花的對比如畫，是當地人喜愛的靜謐賞櫻名所。",
       "안요지는 마쓰모토시의 진종 오타니파 고찰. 경내의 수양벚나무는 수령 100년이 넘으며 4월 중순 연분홍 꽃송이가 땅까지 늘어지는 모습이 압권. 본당과 종루의 차분한 목조 건축과 벚꽃의 대비는 회화적이며, 현지인이 사랑하는 조용한 벚꽃 명소입니다."
     ),
+    definition: lh(
+      "安養寺(あんようじ)は長野県松本市島内にある真宗大谷派の寺院で、創建年代は不詳ながら松本城下町の歴史を伝える古刹。境内に立つ樹齢約100年のしだれ桜は、4月中旬に淡紅色の花房を地面まで垂らす圧巻の姿で、地元では「安養寺のしだれ桜」として静かに愛され続けています。境内に面した本堂と鐘楼の落ち着いた木造建築と、優美な滝のように咲き誇るしだれ桜のコントラストは絵画的。観光地化されていない隠れた桜名所として、人混みを避けたい写真愛好家に支持される松本市の春の撮影地です。",
+      "Anyo-ji is a Jodo Shinshu Otani-ha temple in Shimauchi, Matsumoto City, Nagano Prefecture; though its founding date is unrecorded, it preserves the heritage of Matsumoto's castle-town history. Within its grounds, an approximately 100-year-old weeping cherry tree drapes pale-pink blossoms to the ground in mid-April — a breathtaking sight known affectionately as «Anyo-ji's weeping cherry.» The contrast of the serene wooden Main Hall and bell tower with the cherry tree blooming like an elegant cascade creates a painterly scene. Untouched by mass tourism, it is a hidden cherry-blossom destination cherished by photographers seeking calmer alternatives to Matsumoto's busier sites."
+    ),
+    highlights: {
+      ja: [
+        "樹齢約100年のしだれ桜 — 淡紅色の花房が地面まで垂れる優美な姿、4月中旬満開",
+        "本堂と鐘楼との対比 — 落ち着いた木造建築と桜の華やかさが絵画的構図",
+        "観光地化されていない隠れ名所 — 地元の人が訪れる静かな桜寺、ゆっくり撮影できる",
+        "夕方の桜 — 西陽が桜と本堂を黄金色に染める時間帯、人がいない静寂な雰囲気",
+        "境内の小径 — 苔むした石段、参道、写真にしたくなる和の風景",
+      ],
+      en: [
+        "Around 100-year-old weeping cherry — pale-pink blossoms drape to the ground in an elegant cascade at peak bloom in mid-April",
+        "Contrast with Main Hall and Bell Tower — the serene wooden architecture against the lush cherry creates a painterly composition",
+        "Hidden, Uncrowded Spot — a quiet cherry temple visited mostly by locals, where you can shoot at leisure",
+        "Evening Cherry — the western sun gilds tree and hall, with no crowds and a meditative stillness",
+        "Within the Grounds — moss-covered stone steps and paths offer countless quintessentially Japanese photographic moments",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "安養寺とは?", a: "長野県松本市島内の真宗大谷派の寺院で、樹齢約100年のしだれ桜が4月中旬に圧巻の姿を見せる隠れた桜名所。観光地化されておらず人混みを避けたい写真愛好家に愛される、松本市の静謐な春の撮影地です。" },
+        { q: "安養寺のしだれ桜の見頃は?", a: "4月中旬。早朝〜午前は順光で花の色が鮮やか。夕方は本堂と桜のシルエットが映える。境内は静かな宗教施設なのでマナーを守って撮影を、お参りの方の邪魔にならないよう配慮してください。" },
+        { q: "アクセスは?", a: "JR松本駅から車で約15分、または北松本駅から徒歩30分。駐車場あり(寺の駐車場、参拝者用)。松本城・弘法山古墳と組合せた市内桜巡りの一環として訪問するのがおすすめ、撮影所要時間30分〜1時間。" },
+      ],
+      en: [
+        { q: "What is Anyo-ji?", a: "A Jodo Shinshu Otani-ha temple in Shimauchi, Matsumoto City, Nagano. Its approximately 100-year-old weeping cherry tree at peak bloom in mid-April makes it a hidden cherry-blossom destination. Uncommercialized, it is cherished by photographers seeking quiet alternatives to Matsumoto's busy sites." },
+        { q: "When is peak bloom?", a: "Mid-April. Morning offers front-lit, vivid blossom colors. Evening gives stunning silhouettes of the hall and tree. The grounds are a quiet religious site — please shoot respectfully and avoid disturbing worshippers." },
+        { q: "Access?", a: "From JR Matsumoto Station, about 15 minutes by car, or 30 minutes on foot from Kita-Matsumoto Station. Temple parking (for worshippers) is available. Combine with Matsumoto Castle and Kobo-yama for a city cherry-blossom circuit; allow 30 minutes to 1 hour at Anyo-ji." },
+      ],
+    },
     faqs: [
       { q: d("安養寺のしだれ桜の見頃は？","When is peak bloom?","垂枝樱花期？","垂枝櫻花期？","수양벚나무 절정은?"),
         a: d("4月中旬。早朝〜午前は順光で花の色が鮮やか。夕方は本堂と桜のシルエットが映える。境内は静かなのでマナーを守って撮影を。","Mid-April. Morning offers front-lit, vivid blossom colors. Evening gives stunning silhouettes of the hall and tree. The grounds are quiet — please shoot respectfully.","4月中旬。清晨至上午顺光，花色鲜艳。傍晚本堂与樱花剪影迷人。境内安静，请保持礼仪。","4月中旬。清晨至上午順光，花色鮮豔。傍晚本堂與櫻花剪影迷人。境內安靜，請保持禮儀。","4월 중순. 아침-오전은 순광이라 꽃 색이 선명. 저녁은 본당과 벚꽃의 실루엣이 돋보입니다. 경내는 조용하니 매너를 지켜 촬영하세요.") },
@@ -2627,6 +2851,38 @@ export const LOCATION_CONTENT = {
       "松本市新村位於松本西部田園區。阿爾皮可交通上高地線穿行，稻田、果園、水渠與北阿爾卑斯山脊構成質樸里山風景。春季櫻花路、初夏青田、秋季稻穗與雪嶺的搭配可拍下日本原風景。",
       "마쓰모토시 니이무라는 마쓰모토시 서부의 농촌 지역. 알피코 교통 가미코치선이 지나가고 논·과수원·수로와 북알프스 능선이 어우러지는 소박한 시골 풍경이 남아 있습니다. 봄에는 벚꽃길, 초여름에는 푸른 논, 가을에는 벼 이삭과 설관 알프스 등 일본의 원풍경을 촬영할 수 있습니다."
     ),
+    definition: lh(
+      "松本市新村(まつもとしにいむら)は長野県松本市西部の田園地域で、JR松本駅から西に約4kmの場所に位置し、アルピコ交通上高地線(松本電気鉄道)の小さな新村駅(にいむらえき)を中心とする旧新村地区。1954年(昭和29年)に松本市と合併する以前は東筑摩郡新村村として独立した農村で、現在もリンゴ園・水田・果樹園・石州瓦の蔵が残る素朴な里の風景が松本市街中心部とは対照的な日本の原風景を形成。北アルプス連峰(乗鞍岳・常念岳・穂高連峰)を借景に、上高地線のレトロな2両編成電車が田園を走り抜ける情景は、鉄道写真と田園風景の両方を愛する写真家に支持される松本市西郊の隠れた撮影地です。",
+      "Matsumoto City Niimura is a rural area in western Matsumoto City, Nagano Prefecture, about 4 km west of JR Matsumoto Station, centered on the small Niimura Station of the Alpico Kotsu Kamikochi Line (the former Matsumoto Electric Railway). Until merging with Matsumoto City in 1954, it was the independent farming village of Niimura in Higashi-Chikuma District. Today, apple orchards, paddy fields, fruit groves, and Sekishu-tile-roofed kura storehouses preserve the simple village landscape that contrasts with the city center, embodying classic rural Japan. With the Northern Alps — Mt. Norikura, Mt. Jonen, the Hotaka Range — as borrowed scenery, the retro two-car Kamikochi Line train threading through the paddies is beloved by photographers who appreciate both railway and pastoral imagery — a hidden gem in Matsumoto's western suburbs."
+    ),
+    highlights: {
+      ja: [
+        "上高地線の田園風景 — 2両編成のレトロ電車と北アルプス、鉄道写真の聖地",
+        "桜並木(4月) — 新村駅周辺の桜、電車と桜のコラボ、地元密着の春景",
+        "青田(6〜8月) — 田植え後の水田、夕日と稲が織りなす緑の田園",
+        "稲穂(9〜10月) — 黄金色の稲、北アルプスの白い稜線とのコントラスト",
+        "旧三溝駅舎 — 木造の小さな駅、廃線跡、ノスタルジックな建築被写体",
+      ],
+      en: [
+        "Pastoral Kamikochi Line — the two-car retro train against the Northern Alps, sacred ground for railway photography",
+        "Cherry-Lined Paths (April) — cherry blossoms around Niimura Station, the train-and-blossom combo capturing local spring",
+        "Green Paddies (June–August) — flooded paddies after planting; setting sun and rice form vibrant green landscapes",
+        "Ripe Rice (September–October) — golden ears against the white ridges of the Northern Alps",
+        "Former Mitsumizo Station — a small wooden station and disused line, a nostalgic architectural subject",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "松本市新村とは?", a: "長野県松本市西部の田園地域で、アルピコ交通上高地線の新村駅を中心とする旧新村地区。リンゴ園・水田・果樹園と北アルプスの組合せが日本の原風景を形成、レトロな上高地線電車が走り抜ける鉄道写真の聖地です。" },
+        { q: "新村駅周辺の見どころは?", a: "旧三溝駅の木造駅舎、田園とアルプス、桜並木、稲穂期の朝霧。鉄道写真とランドスケープ両方楽しめる隠れた撮影地。レトロな電車の通過時刻表を事前確認、列車本数は1時間に1〜2本。" },
+        { q: "ベスト時期と撮影テクは?", a: "桜の4月中旬、青田の6〜8月、稲穂と冠雪アルプスの9〜10月、雪景色の1〜2月、四季それぞれ被写体豊富。望遠レンズで電車と山を圧縮、広角で田園と空の組合せ。早朝の朝霧は秋〜冬の特別な被写体です。" },
+      ],
+      en: [
+        { q: "What is Niimura?", a: "A rural area in western Matsumoto City, Nagano, centered on Niimura Station of the Alpico Kotsu Kamikochi Line. Apple orchards, paddies, and orchards combine with the Northern Alps to form a classic rural Japan landscape — a sacred ground for photographers loving the retro Kamikochi Line train." },
+        { q: "What's near Niimura Station?", a: "The wooden former Mitsumizo Station, paddies with the Alps, cherry-lined lanes, morning mist over rice fields. A hidden gem combining train and landscape photography. Confirm the train timetable in advance — service runs 1–2 trains per hour." },
+        { q: "Best timing and techniques?", a: "Cherry blossoms mid-April, green paddies June–August, ripe rice with snow-capped Alps September–October, winter snow January–February — every season offers rich subjects. A telephoto compresses train and mountains; a wide lens combines paddies with sky. Autumn-to-winter morning mist is a special subject." },
+      ],
+    },
     faqs: [
       { q: d("新村駅周辺の見どころは？","What's near Niimura Station?","新村站附近看点？","新村站附近看點？","니이무라역 주변 볼거리는?"),
         a: d("旧三溝駅の木造駅舎、田園とアルプス、桜並木、稲穂期の朝霧。鉄道写真とランドスケープ両方楽しめる隠れた撮影地。","Wooden former Mitsumizo Station, paddies with the Alps, cherry-lined lanes, morning mist over rice fields — a hidden gem combining train and landscape photography.","旧三沟站木造站舍、田园与阿尔卑斯、樱花路、稻穗期晨雾。铁道与风景兼得的隐秘拍摄点。","舊三溝站木造站舍、田園與阿爾卑斯、櫻花路、稻穗期晨霧。鐵道與風景兼得的隱秘拍攝點。","구 미쓰미조역의 목조 역사, 논과 알프스, 벚꽃길, 벼이삭기의 새벽 안개. 철도와 풍경 둘 다 즐길 수 있는 숨은 촬영지.") },
@@ -2640,6 +2896,38 @@ export const LOCATION_CONTENT = {
       "松本市城山公園海拔約650米，是市內頂級賞櫻名所，入選「日本櫻花名所100選」。約400棵櫻花盛放，展望廣場可遠眺松本市區、北阿爾卑斯山脈與乘鞍岳。春櫻與雪嶺組合是松本獨有的春景。",
       "마쓰모토시의 조야마 공원은 해발 약 650m, 시내 최고 벚꽃 명소로 「일본 벚꽃 명소 100선」에 선정. 약 400그루 벚꽃이 만개하며, 전망 광장에서는 마쓰모토 시가지·북알프스 연봉·노리쿠라다케까지 대 파노라마가 펼쳐집니다. 봄 벚꽃과 설관 알프스의 조합은 마쓰모토만의 봄 풍경."
     ),
+    definition: lh(
+      "城山公園(じょうやまこうえん)は長野県松本市蟻ケ崎の標高約650mの城山(じょうやま)山頂部に整備された松本市の総合公園で、戦国時代に小笠原氏の出城(林大城)が置かれた歴史を持つ場所。「日本さくら名所100選」に選定された松本市屈指の桜名所で、約400本のソメイヨシノと約30本のしだれ桜が4月中旬に咲き誇ります。標高があるため平地より数日遅れて満開になるのが特徴。展望広場からは松本市街・北アルプス連峰(乗鞍岳・穂高連峰・常念岳)・乗鞍岳までの大パノラマが広がり、桜と冠雪の北アルプスを一枚に収める春の構図は松本ならではの絶景。市民憩いの公園で、桜・新緑・紅葉・雪と四季それぞれの表情が楽しめます。",
+      "Joyama Park is a comprehensive municipal park atop the 650 m Mt. Joyama in Arigasaki, Matsumoto City, Nagano Prefecture. The site once held a Sengoku-era branch castle (Hayashi Daijo) of the Ogasawara clan. Listed among Japan's «Top 100 Cherry Blossom Sites,» the park is one of Matsumoto's premier cherry-blossom destinations, with about 400 Yoshino cherries and about 30 weeping cherries blooming in mid-April; due to its elevation, peak comes a few days later than on the plain. The observation plaza commands a sweeping panorama of downtown Matsumoto, the Northern Alps (Mt. Norikura, the Hotaka Range, Mt. Jonen), and Mt. Norikura itself. Combining cherry blossoms with the snow-capped Alps in a single frame yields a uniquely Matsumoto spring scene. A beloved municipal park, it offers different faces across the four seasons — cherry blossoms, fresh greens, autumn colors, and snow."
+    ),
+    highlights: {
+      ja: [
+        "桜の名所(約430本) — 日本さくら名所100選、ソメイヨシノとしだれ桜の混植、4月中旬満開",
+        "展望広場の大パノラマ — 松本市街・北アルプス・乗鞍岳まで一望、桜と山の組合せが王道",
+        "朝焼けのモルゲンロート — 日の出時に北アルプスが赤く染まる、桜と組合せ最高峰",
+        "桜トンネル — 約2kmの桜並木、車道沿いの桜のトンネルが圧巻",
+        "夜桜ライトアップ — 桜の季節限定、ぼんぼりの暖色光と桜",
+      ],
+      en: [
+        "Cherry-Blossom Spot (about 430 trees) — listed in Japan's «Top 100 Cherry Blossom Sites,» with mixed Yoshino and weeping cherry trees blooming mid-April",
+        "Observation Plaza Panorama — sweeping views of Matsumoto, the Northern Alps, and Mt. Norikura; cherry blossoms with mountains is the classic frame",
+        "Morning Alpenglow — at sunrise the Alps blush red; combined with cherry blossoms, the absolute peak",
+        "Cherry Tunnel — about 2 km of cherry-lined road, a roadside tunnel of blossoms",
+        "Evening Cherry-Blossom Illumination — only during cherry season; warm bonbori-lantern light against the blossoms",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "城山公園(松本市)とは?", a: "長野県松本市の標高約650mの城山山頂の総合公園で、戦国時代の出城跡。日本さくら名所100選に選定、約430本の桜と北アルプスの大パノラマが楽しめる、松本市屈指の春の撮影地です。" },
+        { q: "展望広場でのベスト構図は?", a: "桜を前ボケに北アルプスの稜線を入れる縦構図が王道。早朝のモルゲンロート(朝焼けで赤く染まる雪山)と桜の組み合わせが最高潮。望遠で山を引き寄せ、桜の前ボケで奥行き表現。" },
+        { q: "アクセスとベスト時期は?", a: "JR松本駅から車で約15分または上高地線「西松本駅」から徒歩30分。例年4月中旬の桜が満開、平地の市街地よりも数日遅れて咲くため見逃しても狙い直しが可能。夜桜ライトアップは桜祭り期間のみ。" },
+      ],
+      en: [
+        { q: "What is Joyama Park?", a: "A municipal park atop the 650 m Mt. Joyama in Matsumoto, Nagano — once the site of a Sengoku-era branch castle. Listed among Japan's «Top 100 Cherry Blossom Sites,» it offers about 430 cherry trees and a sweeping panorama of the Northern Alps — one of Matsumoto's premier spring photography spots." },
+        { q: "Best framing from the observation plaza?", a: "A vertical frame with cherry blossoms in foreground and the Alps ridge behind is classic. The morning alpenglow (snow peaks turning red at sunrise) with sakura is the absolute peak. A telephoto pulls the mountains forward; cherry blossoms in the foreground create depth." },
+        { q: "Access and best timing?", a: "About 15 minutes by car from JR Matsumoto Station, or 30 minutes on foot from Nishi-Matsumoto Station. Cherry blossoms peak in mid-April, a few days later than the plain — leaving second chances if missed. Evening illumination runs only during the Cherry Blossom Festival." },
+      ],
+    },
     faqs: [
       { q: d("展望広場でのベスト構図は？","Best framing from the observation plaza?","展望广场最佳构图？","展望廣場最佳構圖？","전망 광장 최고 구도?"),
         a: d("桜を前ボケに北アルプスの稜線を入れる縦構図が王道。早朝のモルゲンロート（朝焼けで赤く染まる雪山）と桜の組み合わせが最高潮。","A vertical frame with cherry blossoms in foreground and the Alps ridge behind is classic. The morning «alpenglow» (snow peaks turning red at sunrise) with sakura is the absolute peak.","樱花前景虚化加北阿尔卑斯山脊纵构图为王道。清晨「朝霞红雪山」与樱花的搭配最为震撼。","櫻花前景虛化加北阿爾卑斯山脊縱構圖為王道。清晨「朝霞紅雪山」與櫻花的搭配最為震撼。","벚꽃을 전경 보케로 북알프스 능선을 넣는 세로 구도가 정석. 이른 아침의 알펜글로(설산이 붉게 물드는 현상)와 벚꽃의 조합이 최고조.") },
@@ -2653,6 +2941,38 @@ export const LOCATION_CONTENT = {
       "中町通保留松本舊城下町的藏造老街。白漆與黑海鼠牆的土藏並列，江戶末至明治風情濃厚。改造土藏開設的咖啡館、工藝店、畫廊林立，是難得的生活與觀光共存的歷史街區，適合漫步抓拍。",
       "나카마치 거리는 마쓰모토시 옛 성하 마을에 남은 창고(쿠라) 건축의 거리. 흰 회벽과 검은 나마코 무늬 토창이 늘어서 있으며, 에도 말기-메이지 시대의 정취가 짙게 남아 있습니다. 개조된 창고에 카페·공예점·갤러리가 자리해, 생활과 관광이 공존하는 보기 드문 역사 지구로 산책하며 스냅하기 좋습니다."
     ),
+    definition: lh(
+      "中町通り(なかまちどおり)は長野県松本市中央2丁目の旧城下町・善光寺街道沿いに約400m続く蔵造りの町並みで、江戸末期から明治時代の白漆喰と黒なまこ壁の土蔵が連なる景観が松本市の歴史地区を象徴。1888年(明治21年)の松本大火で大半の建物が焼失したのち、防火対策として土蔵造りの建物が建てられ、現在もその姿を留めています。約20軒の蔵を改装したカフェ・工芸店・ギャラリー・蕎麦店・地酒屋が並び、生活と観光が共存する稀有な歴史地区。松本市は商都・酒どころとしての歴史を持ち、中町は商家の集まる商業中心地でした。「中町・蔵シック館」(明治時代の蔵を改装した観光案内所兼資料館)も訪問必須で、江戸の風情を残す散策・スナップ撮影に最適です。",
+      "Nakamachi Street is a roughly 400 m stretch along the former Zenkoji Kaido road in 2-chome Chuo, Matsumoto City, Nagano Prefecture, lined with «kura» storehouse-style buildings. Their white plaster walls and black «namako» tile patterns (late-Edo to Meiji-era) define Matsumoto's historic district. After most of the area burned in the Great Matsumoto Fire of 1888 (Meiji 21), buildings were rebuilt as fireproof storehouses, and that streetscape survives today. About 20 renovated kura now host cafés, craft shops, galleries, soba restaurants, and local sake stores — a rare historic district where daily life and tourism coexist. As a city with deep merchant and brewing traditions, Nakamachi was Matsumoto's commercial heart, with «Nakamachi Kurashic-kan» (a Meiji-era kura converted into a tourist office and museum) a must-visit. It is ideal for strolling and snapping photographs amid Edo-period atmosphere."
+    ),
+    highlights: {
+      ja: [
+        "白壁・黒なまこ壁の蔵 — 約20軒、江戸末期〜明治の防火建築、整然と続く蔵の連なり",
+        "中町・蔵シック館 — 明治の蔵を改装した観光案内所兼資料館、内部見学無料",
+        "蔵カフェ・工芸店 — 改装された土蔵で営業、コーヒー・ガラス・木工・松本民芸を扱う",
+        "夕方の街灯と蔵 — 暖色のライトアップで蔵が黄金色に染まる、ノスタルジックな雰囲気",
+        "雨の日の石畳 — 雨に濡れた石畳と蔵壁の反射、人がいない朝の特別な被写体",
+      ],
+      en: [
+        "White-Plaster, Black-Namako Kura — about 20 of them; the late-Edo to Meiji-era fireproof architecture creates an orderly procession of storehouses",
+        "Nakamachi Kurashic-kan — a Meiji-era kura converted into a tourist office and museum, free interior tours",
+        "Kura Cafés and Craft Shops — set in renovated storehouses serving coffee, glass, woodwork, and Matsumoto folk crafts",
+        "Evening Streetlights with Kura — warm lighting bathes the kura in gold, with a nostalgic atmosphere",
+        "Stone Paving in Rain — wet stones reflect the kura walls, a special early-morning subject when the streets are empty",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "中町通りとは?", a: "長野県松本市の旧城下町に残る約400mの蔵造りの町並み。1888年の松本大火後に防火対策で建てられた白漆喰と黒なまこ壁の土蔵約20軒が連なり、現在はカフェ・工芸店・ギャラリーとして活用される松本市の歴史地区を象徴する撮影地です。" },
+        { q: "撮影に最適な時間帯は?", a: "早朝6〜8時は人通りが少なく整然とした蔵壁を撮れる。夕方の街灯が灯る時間帯はノスタルジックで、白壁が暖色に染まる。雨天の石畳も被写体として秀逸、観光客が少ない平日朝が圧倒的におすすめ。" },
+        { q: "アクセスは?", a: "JR松本駅から徒歩10分、松本城から徒歩5分。中町通りは縄手通り(松本城下の女鳥羽川南岸の道)とセットで歩くと松本城下町を完全制覇。所要時間は通り全体で30分〜1時間、カフェ立ち寄り含めれば2〜3時間。" },
+      ],
+      en: [
+        { q: "What is Nakamachi Street?", a: "An approximately 400 m kura-storehouse-style street in Matsumoto's former castle town. After the Great Matsumoto Fire of 1888, fireproof storehouses with white-plaster walls and black namako tile patterns were built — about 20 still line the street and now host cafés, craft shops, and galleries, symbolizing Matsumoto's historic district." },
+        { q: "Best time of day to photograph?", a: "6–8 AM offers empty streets and clean compositions of kura walls. Evening, when streetlights flicker on and white walls warm to amber, gives the most nostalgic mood. Wet stone paving after rain also photographs well; weekday mornings with few visitors are overwhelmingly recommended." },
+        { q: "Access?", a: "10 minutes on foot from JR Matsumoto Station, or 5 minutes from Matsumoto Castle. Combine with Nawate Street (the road on the south bank of the Metoba River below the castle) for a full Matsumoto castle-town circuit. Plan 30 minutes to 1 hour for the street, or 2–3 hours including café stops." },
+      ],
+    },
     faqs: [
       { q: d("撮影に最適な時間帯は？","Best time of day to photograph?","拍摄最佳时段？","拍攝最佳時段？","촬영 최적 시간대는?"),
         a: d("早朝6〜8時は人通りが少なく整然とした蔵壁を撮れる。夕方の街灯が灯る時間帯はノスタルジックで、白壁が暖色に染まる。","6-8 AM offers empty streets and clean compositions of kura walls. Evening, when streetlights flicker on and white walls warm to amber, gives the most nostalgic mood.","清晨6-8点人少，可拍整齐土藏墙。傍晚街灯亮起时白墙染暖色，最具怀旧感。","清晨6-8點人少，可拍整齊土藏牆。傍晚街燈亮起時白牆染暖色，最具懷舊感。","아침 6-8시는 인적이 적어 창고 벽을 깔끔히 담을 수 있습니다. 저녁 가로등이 켜질 때 흰 벽이 따뜻한 색으로 물들며 가장 노스탤직.") },
@@ -2666,6 +2986,38 @@ export const LOCATION_CONTENT = {
       "高島公園位於諏訪市，由諏訪藩居城高島城遺址整治而成。曾被稱為「諏訪浮城」，重建天守再現昔日風貌，護城河四周約100棵櫻花4月中旬盛放。水中倒影天守與櫻花是諏訪代表春景。冬季燈光、夏季蓮花亦為看點。",
       "다카시마 공원은 스와시·스와번의 거성이었던 다카시마성 터를 정비한 공원. 「스와의 떠 있는 성」이라 불렸던 옛 모습을 재건된 천수가 전합니다. 해자 주변 약 100그루 벚꽃이 4월 중순 만개. 해자에 비친 천수와 벚꽃은 스와의 대표 봄 풍경. 겨울 조명, 여름 연꽃도 볼거리."
     ),
+    definition: lh(
+      "高島公園(たかしまこうえん)は長野県諏訪市高島にある諏訪藩・諏訪氏の居城だった高島城跡を整備した都市公園で、面積約4ヘクタール、長野県の指定史跡。高島城は1592〜1598年に日根野織部正高吉によって築城された平城で、当時は諏訪湖の水を引き入れた堀に囲まれた水城だったため「諏訪の浮城(うきしろ)」と称され、日本三大湖城の一つに数えられた名城。現在の天守(三層三階)は1970年に外観復元、内部は諏訪藩関連の歴史博物館。堀の周囲約100本の桜(ソメイヨシノ)が4月中旬に咲き乱れ、堀の水鏡に映る桜と天守の構図は諏訪を代表する春景。冬は氷結した堀のライトアップ、夏は蓮の花、秋は紅葉と四季それぞれ被写体として優れた撮影地です。",
+      "Takashima Park, in Takashima, Suwa City, Nagano Prefecture, is a roughly 4-hectare municipal park developed on the ruins of Takashima Castle — the seat of the Suwa clan and Suwa domain. Designated a Nagano Prefecture Historic Site, the castle was a flatland fortress built between 1592 and 1598 by Hineno Oribe-no-kami Takayoshi. Originally surrounded by moats fed by Lake Suwa's waters, it was known as «Suwa's Floating Castle» and counted among Japan's three great «lake castles.» The current keep (three stories, three tiers) was reconstructed in 1970 (exterior only); the interior houses a Suwa-domain history museum. About 100 Yoshino cherry trees around the moat bloom in mid-April, and the keep mirrored in the moat with cherry blossoms is one of Suwa's signature spring scenes. Winter brings illumination over the frozen moat, summer the lotus, and autumn the foliage — making the park a year-round photography destination."
+    ),
+    highlights: {
+      ja: [
+        "再建天守と堀 — 1970年外観復元の三層天守と堀の組合せ、水鏡が美しい",
+        "桜と水鏡(4月中旬) — 約100本の桜と堀に映る天守、諏訪の代表的春景",
+        "蓮の花(7〜8月) — 堀の蓮、ピンクと白の蓮と天守の組合せが幻想的",
+        "紅葉(11月) — モミジ・カエデの紅葉と天守、堀に映る紅葉が美しい",
+        "冬のライトアップ — 結氷した堀のライトアップ、青の時間帯が幻想的",
+      ],
+      en: [
+        "Reconstructed Keep and Moat — the 1970-reconstructed three-tier keep with the moat; the mirror reflection is beautiful",
+        "Cherry Blossoms with Moat Reflection (mid-April) — about 100 cherry trees and the keep mirrored on water — Suwa's signature spring frame",
+        "Lotus Flowers (July–August) — pink and white lotus blossoms on the moat against the keep, fantastically dreamlike",
+        "Autumn Foliage (November) — Japanese maples reflected on the moat with the keep behind",
+        "Winter Illumination — illuminated over the frozen moat; blue hour is most magical",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "高島公園(諏訪市)とは?", a: "長野県諏訪市の諏訪藩・諏訪氏の居城だった高島城跡公園。「諏訪の浮城」と呼ばれた水城の伝統を継ぐ再建天守と堀、約100本の桜と水鏡の絶景は諏訪を代表する春景の撮影地です。" },
+        { q: "水鏡を狙うベストポイントは?", a: "天守南側の堀端から望遠で天守と桜を圧縮。風のない朝夕の鏡面が理想。夜のライトアップ時は青の時間帯(日没後30分)が幻想的、桜のシーズンは特に混雑するため早朝5〜6時着が必須です。" },
+        { q: "アクセスとベスト時期は?", a: "JR上諏訪駅から徒歩10分または車で5分。桜の4月中旬がピーク、夏の蓮(7〜8月)、紅葉の11月、冬のライトアップ(2月の御神渡りに合わせて時々開催)と四季を通じて訪問可能、所要時間1時間。" },
+      ],
+      en: [
+        { q: "What is Takashima Park?", a: "A municipal park in Suwa City, Nagano, on the ruins of Takashima Castle — the seat of the Suwa clan and domain. With its reconstructed keep, moat (heir to the «Suwa's Floating Castle» tradition), and about 100 cherry trees mirrored on water, it is one of Suwa's signature spring photography destinations." },
+        { q: "Best spot for the moat reflection?", a: "From the south side of the moat, use a telephoto to compress the keep and cherry blossoms. Windless mornings or evenings give mirror-still water. During illumination, the blue hour (30 minutes after sunset) is most magical. Cherry season is especially crowded — arrive 5–6 AM." },
+        { q: "Access and best timing?", a: "10 minutes on foot from JR Kami-Suwa Station, or 5 minutes by car. Cherry blossoms in mid-April are the peak; summer lotus (July–August), November foliage, and winter illumination (occasionally held in February for the Omiwatari ice ridges) make it a year-round destination. Allow 1 hour." },
+      ],
+    },
     faqs: [
       { q: d("水鏡を狙うベストポイントは？","Best spot for the moat reflection?","拍水中倒影最佳点？","拍水中倒影最佳點？","해자 반영 최고 포인트?"),
         a: d("天守南側の堀端から望遠で天守と桜を圧縮。風のない朝夕の鏡面が理想。夜のライトアップ時は青の時間帯が幻想的。","From the south side of the moat, use a telephoto to compress the keep and cherry blossoms. Windless mornings or evenings give mirror-still water. During illumination, the blue hour is most magical.","天守南侧护城河岸用长焦压缩天守与樱。无风的清晨或傍晚水面如镜。夜间灯光下蓝色时刻最梦幻。","天守南側護城河岸用長焦壓縮天守與櫻。無風的清晨或傍晚水面如鏡。夜間燈光下藍色時刻最夢幻。","천수 남쪽 해자 가에서 망원으로 천수와 벚꽃을 압축. 바람 없는 아침-저녁의 거울 같은 수면이 이상적. 야간 조명 시 블루아워가 환상적.") },
@@ -2679,6 +3031,38 @@ export const LOCATION_CONTENT = {
       "諏訪湖位於長野縣中部，海拔759米的破火山口湖，是縣內最大湖泊。冬季冰面隆起的「御神渡」現象、夏季諏訪湖花火大會、環湖步道、對岸的「諏訪富士」與八岳連峰等四季表情豐富。亦是電影《你的名字。》湖泊原型。",
       "스와호는 나가노현 중부, 해발 759m의 칼데라호로 현내 최대. 겨울 결빙 시 얼음이 솟아오르는 「오미와타리」 현상, 여름의 스와호 불꽃놀이, 호반 산책로, 건너편 「스와 후지」와 야쓰가타케 연봉의 조망 등 사계절 다양한 표정. 영화 「너의 이름은.」의 호수 모델로도 알려져 있습니다."
     ),
+    definition: lh(
+      "諏訪湖(すわこ)は長野県中央部、諏訪市・岡谷市・諏訪郡下諏訪町にまたがる長野県内最大の湖で、面積13.3km²・周囲16km・最大水深7.6m・標高759m。約100万年前のフォッサマグナ運動で形成された地溝湖(構造湖)で、流入河川31本に対して流出河川は天竜川1本のみ、湖面の標高は富士山の北麓の山中湖(標高980m)に次ぐ日本第2位の高地湖。冬季の厳寒期(過去30年間で約10回)に湖面全体が結氷し、温度差で氷が膨張して亀裂部分がせり上がる「御神渡り(おみわたり)」現象で世界的に有名。約700年の歴史を持つ諏訪大社の神事として記録され、夏の諏訪湖花火大会(8月15日、4万発、日本最大級)、新海誠監督の映画『君の名は。』のモデル湖としても知られる長野県を代表する撮影地です。",
+      "Lake Suwa, in central Nagano Prefecture spanning Suwa City, Okaya City, and Shimo-Suwa Town, is the prefecture's largest lake at 13.3 km² with a 16 km perimeter, a maximum depth of 7.6 m, and a surface elevation of 759 m. Formed by Fossa Magna tectonic movement about a million years ago, it is a graben (structural) lake with 31 inflowing rivers and only one outflow — the Tenryu River. At 759 m elevation, it is Japan's second-highest highland lake (after Lake Yamanaka at 980 m at the northern foot of Mt. Fuji). When the entire surface freezes during severe winters (about 10 times in the past 30 years), thermal expansion produces cracks that rise into ridges — the famous «Omiwatari» phenomenon, recorded as a Suwa Taisha shrine ritual for some 700 years. The Lake Suwa Fireworks Festival (August 15, 40,000 shells — one of Japan's largest), the lake's role as inspiration for Makoto Shinkai's film «Your Name,» and its panoramic views all make it Nagano's representative photographic destination."
+    ),
+    highlights: {
+      ja: [
+        "御神渡り(おみわたり) — 厳寒期の結氷時に氷が亀裂部分でせり上がる現象、約700年の歴史的神事",
+        "諏訪湖花火大会(8月15日) — 4万発の日本最大級花火、湖面の倒影が圧巻",
+        "立石公園 — 標高934mの絶景展望台、映画「君の名は。」聖地、夜景の宝庫",
+        "八ヶ岳の借景 — 諏訪湖東岸から望む八ヶ岳連峰、夕日に染まる稜線が絶景",
+        "間欠泉センター — 上諏訪温泉のシンボル、間欠泉と湖の構図、温泉街と湖の散策路",
+      ],
+      en: [
+        "Omiwatari — when the lake fully freezes in extreme winters and ice ridges rise from cracks; recorded as a Suwa Taisha shrine ritual for some 700 years",
+        "Lake Suwa Fireworks Festival (August 15) — one of Japan's largest at 40,000 shells, with magnificent reflections on the water",
+        "Tateishi Park — a 934 m vantage; «Your Name» pilgrimage spot and treasure trove of nightscapes",
+        "Yatsugatake as Backdrop — the Yatsugatake range seen from the east shore, with the ridges glowing at sunset",
+        "Geyser Center — the symbol of Kami-Suwa Onsen; geyser and lake compositions, plus a hot-spring promenade along the lake",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "諏訪湖とは?", a: "長野県中央部の長野県内最大の湖で、面積13.3km²・標高759m・日本第2位の高地湖。御神渡り現象、日本最大級の諏訪湖花火大会、映画『君の名は。』モデル湖として知られる、長野県を代表する撮影地です。" },
+        { q: "諏訪湖の撮影ベストスポットは?", a: "立石公園(俯瞰)、諏訪湖岸通り(湖と街並み)、間欠泉センター周辺(夕日)、八ヶ岳が映る東岸が定番。御神渡りは1〜2月の早朝、花火大会は8月15日、各時期に合わせた撮影計画が必要です。" },
+        { q: "ベストシーズンは?", a: "桜の4月、新緑の5月、花火の8月15日、紅葉の10月下旬、御神渡り(結氷時)の1〜2月、冬の朝霧と立石公園の夜景は冬季限定の絶景。映画『君の名は。』ファンは7〜8月に撮影したシーンの追体験ができます。" },
+      ],
+      en: [
+        { q: "What is Lake Suwa?", a: "Nagano Prefecture's largest lake in its central area — 13.3 km², at 759 m elevation, Japan's second-highest highland lake. With the Omiwatari phenomenon, one of Japan's largest fireworks festivals, and its role as inspiration for the film «Your Name,» it is Nagano's representative photographic destination." },
+        { q: "Best photo spots around Lake Suwa?", a: "Tateishi Park (overhead), the lakeshore promenade (lake and town), the Geyser Center area (sunset), and the eastern shore where Yatsugatake reflects. Omiwatari forms in the early mornings of January–February; the fireworks festival is August 15. Plan around each period." },
+        { q: "Best seasons?", a: "Cherry blossoms in April, fresh greens in May, fireworks on August 15, autumn colors in late October, Omiwatari (when frozen) in January–February. Winter morning mist and Tateishi Park's nightscape are winter-only spectacles. Fans of «Your Name» can revisit film locations in July–August." },
+      ],
+    },
     faqs: [
       { q: d("諏訪湖の撮影ベストスポットは？","Best photo spots around Lake Suwa?","诹访湖最佳拍摄点？","諏訪湖最佳拍攝點？","스와호 최고 촬영 포인트?"),
         a: d("立石公園（俯瞰）、諏訪湖岸通り（湖と街並み）、間欠泉センター周辺（夕日）、八ヶ岳が映る東岸が定番。御神渡りは1〜2月の早朝。","Tateishi Park (overhead view), the lakeshore promenade (lake + town), Geyser Center area (sunset), and the eastern shore where Yatsugatake reflects. Omiwatari ice ridges form in the early mornings of January-February.","立石公园（俯瞰）、诹访湖岸通（湖与街）、间歇泉中心周边（夕阳）、东岸八岳倒影为经典点。御神渡为1-2月清晨。","立石公園（俯瞰）、諏訪湖岸通（湖與街）、間歇泉中心周邊（夕陽）、東岸八岳倒影為經典點。御神渡為1-2月清晨。","다테이시 공원(부감), 스와호반 거리(호수+거리), 간헐천 센터 주변(석양), 야쓰가타케가 비치는 동쪽 호반이 정석. 오미와타리는 1-2월 이른 아침.") },
@@ -2692,6 +3076,38 @@ export const LOCATION_CONTENT = {
       "立石公園位於諏訪湖之上的海拔934米高地，眼下諏訪湖、對岸八岳與富士山盡收眼底。夜晚諏訪市夜景如寶盒。是電影《你的名字。》聖地，櫻花、新綠、夕陽、夜景、星空皆入畫，是長野頂級觀景點。",
       "다테이시 공원은 스와호를 한눈에 내려다보는 해발 934m 고대 공원. 발 아래 스와호와 건너편 야쓰가타케·후지산까지 이어지는 대 파노라마, 밤에는 보석함 같은 스와시 야경이 펼쳐집니다. 영화 「너의 이름은.」 성지로도 유명하며, 벚꽃·신록·노을·야경·별하늘 등 모든 시간대에 그림이 되는 나가노 굴지의 뷰포인트."
     ),
+    definition: lh(
+      "立石公園(たていしこうえん)は長野県諏訪市上諏訪角間沢、諏訪湖を一望する標高934mの高台に位置する都市公園で、諏訪市民の憩いの場であり長野県屈指の絶景ビューポイント。眼下に広がる諏訪湖(面積13.3km²)、対岸の八ヶ岳連峰(2,899m赤岳)、晴れた日には富士山(150km先)まで望める大パノラマで、夜は諏訪市・岡谷市・茅野市の街明かりが宝石箱のように輝く諏訪盆地の夜景の聖地。新海誠監督の映画『君の名は。』(2016年公開、興行収入250億円)で糸守湖のモデルとしてベンチマークされたシーンの聖地巡礼地として、世界中から映画ファンが訪れます。展望デッキ、駐車場、トイレが整備され、夜間も自由に立ち入り可能(マナー遵守)、桜・新緑・夕焼け・夜景・星空とすべての時間帯で絵になる撮影地です。",
+      "Tateishi Park, located at 934 m elevation in Kakuma-zawa, Kami-Suwa, Suwa City, Nagano Prefecture, is a municipal park overlooking Lake Suwa — a recreational space for Suwa's citizens and one of Nagano's premier scenic vantages. The sweeping panorama takes in Lake Suwa below (13.3 km²), the Yatsugatake Range (Mt. Akadake, 2,899 m) opposite, and on clear days even Mt. Fuji 150 km away. By night, the lights of Suwa, Okaya, and Chino Cities sparkle like a jewel box, making the park a sacred ground for Suwa Basin nightscapes. After being featured as the model for Lake Itomori in Makoto Shinkai's «Your Name» (released 2016, ¥25 billion box office), it has become an international pilgrimage site for film fans. With a viewing deck, parking, and restrooms — and 24-hour access (with appropriate etiquette) — it photographs beautifully at every hour: cherry blossoms, fresh greens, sunsets, night views, and starscapes."
+    ),
+    highlights: {
+      ja: [
+        "諏訪湖の俯瞰 — 標高934mから諏訪湖と諏訪盆地を一望、八ヶ岳・富士山まで見える",
+        "夜景 — 諏訪市・岡谷市・茅野市の街明かりが宝石箱のような光景、ブルーアワーが至高",
+        "映画『君の名は。』聖地 — 糸守湖のモデルとして世界的に有名、聖地巡礼者が多い",
+        "桜と諏訪湖 — 4月中旬の桜と眼下の諏訪湖、新緑と紅葉も四季の被写体",
+        "星空 — 標高934mで街明かりがあるが、新月期は意外と星も見える",
+      ],
+      en: [
+        "Bird's-Eye View of Lake Suwa — from 934 m, the lake and Suwa Basin spread below, with Yatsugatake and even Mt. Fuji visible",
+        "Nightscape — the city lights of Suwa, Okaya, and Chino glittering like a jewel box; blue hour is the absolute peak",
+        "«Your Name» Pilgrimage Site — internationally famous as the model for Lake Itomori, drawing film fans worldwide",
+        "Cherry Blossoms with Lake Suwa — mid-April blossoms with the lake below; fresh greens and autumn colors round out the seasons",
+        "Stars — at 934 m elevation, despite some city light, new-moon nights surprisingly reveal stars",
+      ],
+    },
+    quickAnswers: {
+      ja: [
+        { q: "立石公園とは?", a: "長野県諏訪市の標高934mの諏訪湖を一望する都市公園で、長野県屈指の絶景ビューポイント。新海誠監督の映画『君の名は。』(2016年)の糸守湖モデルとして世界的に有名、夜景・桜・夕焼け・星空など全ての時間帯で絵になる撮影地です。" },
+        { q: "夜景・星空撮影のコツは?", a: "三脚必須。夜景はISO200・F8・10〜30秒、星はISO3200・F2.8・15秒前後。日没後20〜30分のマジックアワーが街灯と空のグラデーションで最も美しい。冬は空気が澄んで富士山も見え、夏は花火大会の時期(8/15)は混雑必至。" },
+        { q: "アクセスとマナーは?", a: "JR上諏訪駅から車で約15分または徒歩で約30分(急坂)。駐車場無料、24時間アクセス可能。深夜は近隣住民への配慮で大声・大音量NG、エンジン切って静かに撮影してください。冬季は道路凍結注意、4WD推奨。" },
+      ],
+      en: [
+        { q: "What is Tateishi Park?", a: "A municipal park at 934 m in Suwa City, Nagano, overlooking Lake Suwa — one of Nagano's premier scenic vantages. Internationally famous as the model for Lake Itomori in Makoto Shinkai's «Your Name» (2016), it photographs beautifully at every hour: nightscapes, cherry blossoms, sunsets, and starscapes." },
+        { q: "Tips for night view and starscape?", a: "Tripod essential. For night views: ISO 200, f/8, 10–30 s. For stars: ISO 3200, f/2.8, ~15 s. The 20–30 min after sunset (magic hour) gives the loveliest gradient of city lights against twilight sky. Winter air clarity even reveals Mt. Fuji; the August 15 fireworks festival makes the area extremely crowded." },
+        { q: "Access and etiquette?", a: "About 15 minutes by car from JR Kami-Suwa Station, or 30 minutes on foot (steep). Free parking, 24-hour access. Late at night, be mindful of nearby residents — no loud voices or engine noise. Watch for icy roads in winter; a 4WD is recommended." },
+      ],
+    },
     faqs: [
       { q: d("夜景・星空撮影のコツは？","Tips for night view and starscape?","夜景与星空拍摄秘诀？","夜景與星空拍攝秘訣？","야경과 별하늘 촬영 팁?"),
         a: d("三脚必須。夜景はISO200・F8・10〜30秒、星はISO3200・F2.8・15秒前後。日没後20〜30分のマジックアワーが街灯と空のグラデーションで最も美しい。","Tripod essential. For night views: ISO 200, f/8, 10-30 s. For stars: ISO 3200, f/2.8, ~15 s. The 20-30 min after sunset (magic hour) gives the loveliest gradient of city lights against twilight sky.","三脚架必备。夜景ISO200·F8·10-30秒；星空ISO3200·F2.8·15秒。日落后20-30分钟魔幻时刻街灯与天空渐变最美。","三腳架必備。夜景ISO200·F8·10-30秒；星空ISO3200·F2.8·15秒。日落後20-30分鐘魔幻時刻街燈與天空漸變最美。","삼각대 필수. 야경은 ISO200·F8·10-30초, 별은 ISO3200·F2.8·15초 전후. 일몰 후 20-30분의 매직아워가 가로등과 하늘 그라데이션으로 가장 아름답습니다.") },
