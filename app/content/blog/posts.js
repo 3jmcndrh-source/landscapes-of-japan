@@ -449,8 +449,28 @@ Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition hold
     hero: "wt6ow9shewohl0dm0lnj",
     title: { ja: "宮古ブルーを撮る — 与那覇前浜と伊良部大橋、3540mの絶景", en: "Capturing Miyako Blue: Yonaha Maehama and the 3,540 m Irabu Bridge" },
     excerpt: { ja: "日本一の透明度を誇る海。PLフィルター、時間帯、ドローンと地上の使い分け。", en: "Japan's clearest waters. Polarizing filters, timing, and the trade-offs between aerial and ground perspectives." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `沖縄県宮古島は「宮古ブルー」と呼ばれるエメラルドグリーンと深いブルーのグラデーションで知られる亜熱帯の島。透明度40m級の海は日本一級で、晴天下では海底のサンゴまでクリアに見えます。
+
+【撮影スポット5選】①与那覇前浜：日本一の白砂ビーチ7km、来間大橋とのコラボが王道。②伊良部大橋：3,540mの無料橋として日本最長、宮古島本島と伊良部島を結ぶ。橋の上から、または対岸から橋全景を狙う。③砂山ビーチ：天然のアーチ岩が有名、夕日が抜ける構図。④池間大橋：池間島へ渡る2km橋、橋上の駐車スペースから絶景。⑤東平安名崎：島の東端、断崖と灯台、青い太平洋の俯瞰。
+
+【ベストシーズン】6月下旬〜9月中旬、特に7〜8月は海の透明度ピーク。9月は台風シーズン要注意。冬季（12〜2月）も海は美しいが日差しが弱まり「宮古ブルー」の発色は半減。
+
+【時間帯】太陽が高い10〜14時が最も海が鮮やかに撮れます。光が海底まで届き、エメラルドグリーンの発色が最大化。早朝・夕方は色が落ち着くため、橋やビーチのシルエット撮影向き。
+
+【撮影テクニック】①PLフィルター必須（海面の反射を抑え、海底まで透ける）、②露出補正+0.3〜+1（白い砂浜で測光が暗くなる）、③望遠レンズで圧縮効果（砂山ビーチのアーチ）、④ドローンが本領発揮するエリア（規制区域少、ビーチ撮影解禁）。
+
+【機材】広角〜標準ズーム（16-70mm）+望遠（70-200mm）+PL+ND（NDで日中の橋を長秒露光、波の動きを表現）。日焼け対策と熱中症対策必須。レンタカーで島内移動が必須（公共交通機関は弱い）。`,
+    bodyEn: `Miyakojima in Okinawa is famed for the «Miyako Blue» — a gradient from emerald green to deep blue across these subtropical waters. Visibility reaches 40 m, among the clearest in Japan; on sunny days you can see corals on the seafloor.
+
+【Top 5 spots】(1) Yonaha Maehama: Japan's #1 white-sand beach, a 7 km expanse, classic with Kurima Bridge in frame. (2) Irabu Bridge: Japan's longest toll-free bridge at 3,540 m, connecting the main island to Irabu — shoot from on the bridge or from the opposite shore. (3) Sunayama Beach: famous natural rock arch, sunset framing through it. (4) Ikema Bridge: 2 km span to Ikema Island, parking spots on the bridge offer epic views. (5) Higashi Hennazaki: the eastern cape, cliffs, lighthouse, and Pacific overlook.
+
+【Best season】Late June through mid-September, with peak water clarity in July–August. Watch for typhoons in September. Winter (December–February) waters are still beautiful, but weaker sunlight halves the «Miyako Blue» saturation.
+
+【Timing】Sun-high hours (10:00–14:00) yield the most vivid sea — light penetrates to the seafloor, maximizing emerald color. Early morning and evening tone things down, ideal for bridge or beach silhouettes.
+
+【Techniques】(1) CPL filter is mandatory (kills sea-surface glare, reveals the seafloor); (2) exposure compensation +0.3 to +1 (white sand fools the meter); (3) telephoto compression (the Sunayama arch); (4) drones thrive here (few restricted zones, beach shooting allowed).
+
+【Gear】Wide-to-standard zoom (16–70 mm) plus telephoto (70–200 mm) plus CPL plus ND (ND filters enable daytime long exposures of bridges, capturing wave motion). Sun protection and hydration are essential. A rental car is mandatory — public transit is sparse.`,
   },
   {
     slug: "chichibugahama-uyuni",
@@ -459,8 +479,28 @@ Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition hold
     hero: "",
     title: { ja: "父母ヶ浜「日本のウユニ塩湖」を撮る — 香川の干潟夕景", en: "Chichibugahama, the «Uyuni of Japan»: Shooting Kagawa's Tidal Sunset Reflections" },
     excerpt: { ja: "干潮+夕暮れ+無風の三条件。鏡のような水面に人物シルエットを写す撮影設計。", en: "Low tide + twilight + windless: three conditions converging. Designing silhouette shots on the mirror tidepool." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `香川県三豊市の父母ヶ浜（ちちぶがはま）は、潮が引いた後の干潟に薄く水が残り、その水面が鏡のように夕焼けと人物を映す現象で「日本のウユニ塩湖」と呼ばれ、SNSで一躍世界的人気スポットになりました。
+
+【三条件】奇跡の一枚を撮るには3つの条件が同時に揃う必要があります。①干潮時刻が日没と重なる、②風がほぼない（風速2m/秒以下）、③晴れて夕焼けが綺麗。これらは月に数日しかない貴重な日。三豊市観光交流局が「ベストコンディションカレンダー」を毎月公開しているので必ず確認を。
+
+【撮影テクニック】①日没30分前に到着、②膝立ちか地面スレスレのアングル（水鏡を最大化）、③人物を被写体にするなら逆光シルエット、④ジャンプ撮影は連写・シャッタースピード1/500秒以上、⑤マジックアワー（日没直後10〜30分）が最も色がドラマチック。
+
+【露出設定】夕焼けの色を残すには、空に合わせて露出を決めます。マニュアルでF8・SS1/60〜1/125・ISO200程度。HDRブラケット3〜5枚撮影で、後処理で空と地面のバランス調整。RAW撮影必須。
+
+【機材】広角レンズ（16-35mm or 14-24mm）が必須。地面スレスレの構図のため、背面液晶チルト機能のあるカメラが便利。三脚は使えるが、地面スレスレで撮るなら手持ちまたはミニ三脚。膝立ち、地面に寝そべる用に着替えと敷物を持参。
+
+【アクセス】高松空港から車で1時間、JR詫間駅からタクシー15分。駐車場は有料（500円）で日没3時間前から満車になる週末も。混雑期は隣の有明浜や大潮の日の津田の松原もチェック。`,
+    bodyEn: `Chichibugahama in Mitoyo City, Kagawa Prefecture, became internationally famous on social media as «Japan's Uyuni Salt Flats.» When the tide retreats, a thin layer of water remains on the tidal flats, becoming a mirror that reflects sunset skies and silhouetted figures.
+
+【Three conditions】Three conditions must align simultaneously for the miracle shot: (1) low tide coinciding with sunset; (2) near-zero wind (under 2 m/s); (3) clear skies with vivid sunset. Only a few days each month meet all three. Mitoyo City Tourism publishes a monthly «Best Conditions Calendar» — always check it.
+
+【Techniques】(1) arrive 30 minutes before sunset; (2) shoot kneeling or ground-level (maximize the mirror); (3) for subjects, backlit silhouettes work best; (4) jump shots need continuous burst at 1/500 s or faster; (5) the magic hour (10–30 minutes after sunset) delivers the most dramatic colors.
+
+【Exposure】Meter for the sky to preserve sunset color. Manual mode at f/8, 1/60–1/125 s, ISO ~200. Bracket 3–5 frames in HDR for post-balance between sky and ground. Always shoot RAW.
+
+【Gear】Wide-angle lens (16–35 mm or 14–24 mm) is essential. A camera with a tilting LCD helps for ground-level compositions. A tripod works, but ground-level shots are easier handheld or with a mini-tripod. Bring extra clothing and a tarp/mat for kneeling or lying on wet sand.
+
+【Access】1 hour by car from Takamatsu Airport; 15 minutes by taxi from JR Takuma Station. Parking is paid (¥500) and weekends fill 3 hours before sunset. During crowded periods, check nearby Ariake-hama or Tsuda no Matsubara on spring-tide days as alternates.`,
   },
   {
     slug: "himeji-castle-spring",
@@ -469,8 +509,28 @@ Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition hold
     hero: "",
     title: { ja: "姫路城 春 — 世界遺産・白鷺城と1000本の桜", en: "Himeji Castle in Spring: UNESCO White Heron Castle and 1,000 Cherry Trees" },
     excerpt: { ja: "白漆喰の天守と桜のコントラスト。三の丸広場・西の丸からの王道構図と裏ビュー。", en: "White-plaster keep against pink blossoms. Classic compositions from Sannomaru and Nishinomaru, plus lesser-known angles." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `兵庫県姫路市の姫路城は、白漆喰の優美な姿から「白鷺城（しらさぎじょう）」と呼ばれ、1993年に法隆寺と同時に日本初の世界文化遺産に登録された名城。日本最大級の現存天守で、桜の季節には城内に約1,000本のソメイヨシノが咲き、白い天守と桜のコントラストは日本で最も絵になる春景の一つです。
+
+【ベスト時期】4月初旬〜中旬。例年4月1日前後に開花、4月7日〜10日頃にピーク。標準木は三の丸広場のソメイヨシノで、姫路市公式が毎日開花情報を更新。日本さくら名所100選にも選定されています。
+
+【撮影スポット5選】①三の丸広場：王道。広い芝生越しに白い天守と桜のフレーミング。②西の丸庭園：天守を見下ろす高所から桜越しの構図。③シロトピア記念公園（北側）：天守を北東から、人が少なめの穴場。④城見台公園（南東）：望遠レンズで天守と桜を圧縮、人混みなし。⑤男山配水池公園：標高高く、城下町と天守を俯瞰、夕日と桜の組み合わせがドラマチック。
+
+【時間帯】早朝6〜7時：観光客が少なく、東からの順光が天守を白く輝かせる。夕方17〜18時：西日が天守を金色に染め、桜が逆光で透ける。夜のライトアップ19〜21時：「観桜会」期間中、ぼんぼりに灯る桜と白い天守は別格。
+
+【設定・機材】標準ズーム（24-70mm）+望遠（70-200mm）。三の丸では広角〜標準、城見台公園では望遠。PLフィルターで空の青を強調。手持ちでISO400・F8・1/250で安全。
+
+【アクセス】JR姫路駅から徒歩15分。新大阪から新幹線50分、関西空港から特急90分でアクセス可。城内拝観料1,000円。土日は朝9時前到着しないと混雑必至です。`,
+    bodyEn: `Himeji Castle in Hyogo Prefecture is nicknamed «White Heron Castle» (Shirasagi-jo) for its elegant white-plaster form. In 1993 it became Japan's first UNESCO World Cultural Heritage site (alongside Horyu-ji). It is Japan's largest surviving castle keep, and in spring some 1,000 Yoshino cherry trees within the grounds bloom — making the white keep against pink blossoms one of Japan's most photogenic spring scenes.
+
+【Best timing】Early-to-mid April. Blooms typically start around April 1 and peak April 7–10. The reference tree is the Yoshino cherry on Sannomaru Plaza; Himeji City updates bloom status daily. The site is listed in Japan's «100 Best Sakura Spots.»
+
+【Top 5 vantages】(1) Sannomaru Plaza: the classic — spacious lawn, white keep with cherry framing. (2) Nishinomaru Garden: elevated angle looking down at the keep through cherry blossoms. (3) Shirotopia Memorial Park (north): castle from the northeast, less crowded. (4) Shiromidai Park (southeast): telephoto compression of keep with cherry trees, no crowds. (5) Otokoyama Distribution Reservoir Park: highest elevation, panoramic of castle town and keep — sunset with cherry blossoms is dramatic.
+
+【Timing】Early morning (6–7): light tourists, eastern front-light makes the keep glow white. Late afternoon (17–18): western light bathes the keep in gold; backlit cherry blossoms become translucent. Night illumination (19–21): during the «cherry-viewing event,» lantern-lit blossoms with the floodlit keep are extraordinary.
+
+【Settings & gear】Standard zoom (24–70 mm) plus telephoto (70–200 mm). Wide-to-standard at Sannomaru; telephoto at Shiromidai. CPL filter saturates the blue sky. Handheld at ISO 400, f/8, 1/250 s is safe.
+
+【Access】15 minutes on foot from JR Himeji Station. 50 minutes by Shinkansen from Shin-Osaka, 90 minutes by limited express from Kansai International Airport. Castle admission ¥1,000. On weekends, arrive before 9 a.m. to avoid heavy crowds.`,
   },
   {
     slug: "otaru-canal-night",
@@ -479,8 +539,32 @@ Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition hold
     hero: "yh7e0rhvhnzzxj5esa5f",
     title: { ja: "小樽運河の夜 — ガス灯が灯るノスタルジー", en: "Otaru Canal at Night: A Nostalgia Lit by Gas Lamps" },
     excerpt: { ja: "石造倉庫とガス灯の温かい光。雪の運河、青の時間帯、長秒露光のテクニック。", en: "Stone warehouses and warm gaslight. The snowy canal, blue hour, and long-exposure techniques." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `北海道小樽市の運河は、1923年に完成した全長1,140mの石造倉庫街。かつての海運の中心地で、現在は63基のガス灯が灯る観光スポットとして親しまれています。札幌から電車で約40分、ノスタルジックな港町の夜は、北海道屈指の撮影地です。
+
+【撮影シーズン】通年美しいですが、特に冬（12〜2月）が最高。雪が積もった運河、ガス灯の暖色光、雪の反射、すべてが一体になった景観は他に類を見ません。「小樽雪あかりの路」が2月上〜中旬に開催され、ろうそくの灯りが運河を照らす1週間限定の特別景観も。
+
+【ベスト時間】日没後30〜40分の「ブルーアワー」が最も美しい。空が深い青を残しつつガス灯の暖色が映え、コントラストが最大化。完全に暗くなった21時以降は空が黒く沈み、ドラマチックさが減少します。
+
+【撮影ポイント】①浅草橋（中央橋の南）：最も有名なアングル、運河と倉庫群と橋を1フレームに、長秒露光で水面を滑らかに。②中央橋：橋の北側から運河を見下ろす俯瞰、観光客が少なめ。③北運河（小樽倉庫の北、観光客少）：静かな水面と倉庫、知る人ぞ知る穴場。
+
+【長秒露光テクニック】三脚必須、ISO100、F8、SS10〜30秒。NDフィルターで日暮れ間際の光量調整。設定例：①ブルーアワー：F8・SS15秒・ISO100、②夜：F4〜5.6・SS30秒・ISO200、③雪降りの日：シャッタースピードを4〜8秒にして雪の流れを線で表現。
+
+【冬装備】小樽の12〜2月は氷点下5〜10℃。雪上対応ブーツ、防水手袋、カイロ必携。三脚は雪に埋もれないようスパイク付きが安心。レンズ結露防止にジップロック密封必須。
+
+【アクセス】JR小樽駅から徒歩10分。札幌から快速エアポートで32分。日帰り可能ですが、夜景目当てなら小樽宿泊がおすすめ。`,
+    bodyEn: `The Otaru Canal in Otaru City, Hokkaido, is a 1,140 m stretch of stone warehouses completed in 1923. Once a hub of shipping commerce, it now welcomes visitors with 63 gas lamps illuminating the historic banks. About 40 minutes by train from Sapporo, this nostalgic port town is one of Hokkaido's premier night-photography spots.
+
+【Best season】Beautiful year-round, but winter (December–February) is supreme. Snow-covered banks, warm gas-lamp glow, and snow's reflectivity merge into a singular landscape. The «Otaru Yuki Akari no Michi» candle festival in early-to-mid February adds a week-long special view as candles line the canal.
+
+【Best time】The «blue hour» 30–40 minutes after sunset is most beautiful. Deep blue lingers in the sky while gas lamps' warm light pops — maximum color contrast. After 21:00 the sky goes fully black, reducing drama.
+
+【Vantages】(1) Asakusa Bridge (south of Chuo Bridge): the most famous shot — canal, warehouses, and bridge in one frame, with long exposures smoothing the water. (2) Chuo Bridge: looking down on the canal from the north side, less crowded. (3) North Canal (north of Otaru Warehouse, sparse visitors): still water and warehouses, a hidden gem.
+
+【Long-exposure technique】Tripod essential, ISO 100, f/8, 10–30 s. ND filters help just before sunset. Examples: (1) blue hour: f/8, 15 s, ISO 100; (2) full night: f/4–5.6, 30 s, ISO 200; (3) snowy days: 4–8 s captures snowfall as gentle streaks.
+
+【Winter prep】Otaru in December–February runs −5 to −10 °C. Snow-rated boots, waterproof gloves, heat warmers essential. A spike-foot tripod stays stable in snow. Use ziplocks against lens condensation when re-entering warm spaces.
+
+【Access】10 minutes on foot from JR Otaru Station. 32 minutes from Sapporo on the Rapid Airport. Day trips are possible, but for night photography, staying overnight in Otaru is recommended.`,
   },
   {
     slug: "noboribetsu-jigokudani",
@@ -489,8 +573,32 @@ Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition hold
     hero: "",
     title: { ja: "登別 地獄谷 — 火山と湯けむりの撮影地", en: "Noboribetsu Jigokudani: A Volcanic, Steam-Veiled Photo Spot" },
     excerpt: { ja: "硫黄の蒸気と紅葉、エメラルドの大湯沼。北海道随一の温泉郷で湯けむりを撮る。", en: "Sulfur steam, autumn foliage, and the emerald Oyunuma. Shooting steam in Hokkaido's premier onsen valley." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `北海道登別市の地獄谷は、火山活動でできた直径450mの爆裂火口跡で、湯けむりが立ち上る地表は荒涼とした景観。1日1万トンの温泉が湧き出し、登別温泉街の源泉となっています。日本でも有数の「異世界感」が撮れる場所です。
+
+【撮影シーズン】通年撮影可能ですが、ベストは秋（10月中〜下旬）。地獄谷を取り囲む山が紅葉に染まり、灰色の岩肌・白い湯けむり・赤や黄色の紅葉という三色のコントラストは絶景。冬は雪と湯けむりのモノトーン、春の新緑、夏の濃緑も撮影向き。
+
+【撮影スポット】①地獄谷展望台：駐車場から徒歩5分、最も有名なメインアングル。湯気と火口を間近に。②大湯沼：地獄谷から徒歩15分、エメラルドグリーンの硫黄湯沼。③大湯沼川天然足湯：硫黄川を歩いて足湯、川と紅葉を撮影。④日和山展望台（無料）：地獄谷を俯瞰する高所、紅葉シーズンの全景はここから。
+
+【時間帯】早朝7〜8時：観光客がほぼいない、湯気が朝日に金色に染まる。15〜17時の夕方：西日が湯気と紅葉を暖色に染める。霧雨や朝霧の日は湯気と霧が混じり幻想的。
+
+【撮影テクニック】①湯気は風で形が変わるため連写、②露出は岩肌で測光（湯気で測ると暗くなる）、③望遠（70-200mm）で湯気と紅葉を圧縮、広角（16-35mm）で火口全景、④ND8〜16フィルターで湯気を流す長秒露光（1〜4秒）も◎。
+
+【注意・装備】①遊歩道から外れない（火傷の危険、ガス発生区域）、②硫黄臭でレンズ・カメラに付着すると劣化するためレンズフィルター推奨、③滑りやすい木道、滑りにくい靴。撮影後は登別温泉街の宿で温泉、第一滝本館や登別グランドホテルが有名。
+
+【アクセス】札幌から特急で1時間20分。新千歳空港からバスで70分。鉄道+徒歩なら登別駅からバス15分→温泉街→徒歩10分で地獄谷。`,
+    bodyEn: `Jigokudani («Hell Valley») in Noboribetsu, Hokkaido, is a 450 m crater formed by volcanic activity, where steam rises from a desolate gray landscape. Some 10,000 tons of hot-spring water gush forth daily, supplying the entire Noboribetsu onsen town. It's one of Japan's most «otherworldly» photo locations.
+
+【Best season】Year-round, with autumn (mid-to-late October) supreme. The surrounding mountains turn crimson, and the three-color contrast — gray rocks, white steam, red-yellow foliage — is unforgettable. Winter brings monochrome of snow and steam; spring offers fresh greens; summer deep emerald.
+
+【Vantages】(1) Jigokudani Observation Deck: 5 minutes from the parking lot, the famous main view of steam and crater up close. (2) Oyunuma: 15 minutes' walk from Jigokudani, an emerald-green sulfur pond. (3) Oyunuma River natural foot bath: stroll along the sulfur river to the foot-soak — shoot river and foliage together. (4) Hiyoriyama Observatory (free): elevated overlook of Jigokudani — the autumn panorama is from here.
+
+【Timing】Early morning (7–8): nearly empty, steam turns gold in dawn light. Late afternoon (15–17): western light bathes steam and foliage in warm tones. Misty rain or morning fog days mix steam and mist into ethereal scenes.
+
+【Techniques】(1) steam shifts with wind — burst shoot; (2) meter on the gray rock (steam fools the meter dark); (3) telephoto (70–200 mm) compresses steam with foliage; wide angle (16–35 mm) captures the entire crater; (4) ND 8–16 filters allow long exposures (1–4 s) that flow the steam into streams.
+
+【Cautions & gear】(1) stay on boardwalks (burn risk and gas zones); (2) sulfur fumes degrade lenses/cameras — use a UV filter as protection; (3) slippery boardwalks — wear non-slip shoes. After shooting, soak at any of Noboribetsu's classic onsen — Daiichi Takimotokan or Noboribetsu Grand Hotel are renowned.
+
+【Access】1 hour 20 minutes by limited express from Sapporo. 70 minutes by bus from New Chitose Airport. By rail: Noboribetsu Station, then 15-minute bus to onsen town, plus 10-minute walk to Jigokudani.`,
   },
 ];
 
