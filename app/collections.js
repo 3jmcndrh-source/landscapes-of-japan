@@ -21,11 +21,11 @@ export const COLLECTIONS = {
       pl: "Kwitnące wiśnie", sv: "Körsbärsblommor",
     },
     desc: {
-      ja: "日本の春を象徴する桜の名所。新倉山浅間公園の富士山+五重塔+桜の三段構図、天下第一と称される高遠城址公園、樹齢400年超の駒つなぎの一本桜、北アルプスを背景にした松本の桜、諏訪湖を見下ろす立石公園など、4月の絶景を集めました。",
-      en: "Iconic cherry blossom spots that define Japanese spring. The three-tier composition of Mt. Fuji + Chureito Pagoda + sakura at Arakurayama Sengen Park, the «No.1 cherry under heaven» at Takato Castle Park, the 400-year-old solitary cherry at Komatsunagi, sakura framed by the Northern Alps in Matsumoto, and Tateishi Park overlooking Lake Suwa — April's finest scenes.",
-      zh: "代表日本春天的樱花名所。新仓山浅间公园富士山+五重塔+樱花三段构图、被誉为「天下第一樱」的高远城址公园、树龄超过400年的驹系一本樱、以北阿尔卑斯为背景的松本樱花、俯瞰诹访湖的立石公园等，汇集4月绝景。",
-      "zh-tw": "代表日本春天的櫻花名所。新倉山淺間公園富士山+五重塔+櫻花三段構圖、被譽為「天下第一櫻」的高遠城址公園、樹齡超過400年的駒繫一本櫻、以北阿爾卑斯為背景的松本櫻花、俯瞰諏訪湖的立石公園等，匯集4月絕景。",
-      ko: "일본의 봄을 상징하는 벚꽃 명소. 아라쿠라야마 센겐 공원의 후지산+5층탑+벚꽃 3단 구도, 「천하제일 벚꽃」 다카토 성지 공원, 수령 400년이 넘는 고마쓰나기 한 그루 벚꽃, 북알프스를 배경으로 한 마쓰모토의 벚꽃, 스와호를 내려다보는 다테이시 공원 등 4월의 절경을 모았습니다.",
+      ja: "日本の春を象徴する桜の名所。新倉山浅間公園の富士山+五重塔+桜の三段構図、天下第一と称される高遠城址公園、樹齢400年超の駒つなぎの一本桜、松本の弘法山古墳と城山公園(さくら名所100選)、樹齢百年のしだれ桜が美しい安養寺、諏訪湖畔の高島公園など、4月の絶景を集めました。",
+      en: "Iconic cherry blossom spots that define Japanese spring. The three-tier composition of Mt. Fuji + Chureito Pagoda + sakura at Arakurayama Sengen Park, the «No.1 cherry under heaven» at Takato Castle Park, the 400-year-old solitary cherry at Komatsunagi, Matsumoto's Kobo-yama Tumulus and Joyama Park (a Top-100 Sakura Site), the century-old weeping cherry at Anyo-ji, and Takashima Park beside Lake Suwa — April's finest scenes.",
+      zh: "代表日本春天的樱花名所。新仓山浅间公园富士山+五重塔+樱花三段构图、被誉为「天下第一樱」的高远城址公园、树龄超过400年的驹系一本樱、松本的弘法山古坟与城山公园(樱花名所100选)、树龄百年垂枝樱的安养寺、诹访湖畔的高岛公园等,汇集4月绝景。",
+      "zh-tw": "代表日本春天的櫻花名所。新倉山淺間公園富士山+五重塔+櫻花三段構圖、被譽為「天下第一櫻」的高遠城址公園、樹齡超過400年的駒繫一本櫻、松本的弘法山古墳與城山公園(櫻花名所100選)、樹齡百年垂枝櫻的安養寺、諏訪湖畔的高島公園等,匯集4月絕景。",
+      ko: "일본의 봄을 상징하는 벚꽃 명소. 아라쿠라야마 센겐 공원의 후지산+5층탑+벚꽃 3단 구도, 「천하제일 벚꽃」 다카토 성지 공원, 수령 400년이 넘는 고마쓰나기 한 그루 벚꽃, 마쓰모토의 고보야마 고분과 조야마 공원(벚꽃 명소 100선), 수령 100년의 수양벚꽃이 아름다운 안요지, 스와호반의 다카시마 공원 등 4월의 절경을 모았습니다.",
     },
   },
   "autumn-foliage": {
