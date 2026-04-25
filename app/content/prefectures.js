@@ -21,10 +21,13 @@ export const PREFECTURE_CONTENT = {
       "北海道是日本最北端的島嶼，擁有四季壯麗的風景——冬季的札幌雪祭和流冰，夏季富良野的薰衣草田，以及世界自然遺產知床的原始森林。火山湖泊、廣袤農田和崎嶇海岸線構成了獨特的北國風光。本圖庫收錄札幌、知床、摩周湖、富良野、小樽、洞爺湖等地共118張照片。",
       "홋카이도는 일본 최북단의 섬으로 겨울 삿포로 눈축제와 유빙, 여름 후라노 라벤더 밭, 세계자연유산 시레토코의 원시림 등 사계절 웅장한 풍경을 자랑합니다. 화산 호수, 광활한 농지, 장엄한 해안선이 일본의 다른 지역과 구별되는 북녘의 땅 매력을 만듭니다. 삿포로, 시레토코, 마슈호, 후라노, 오타루, 도야호 등 118장의 사진을 수록했습니다."
     ),
-    definition: lh(
-      "北海道は日本最北端の本島で、面積83,424km²と日本の総面積の約22%を占める広大な土地。火山・原生林・湖沼・大農地が織りなす独自の地形に、流氷・ラベンダー・深い雪景色など本州では撮れない四季の表情が宿ります。札幌、函館、知床、富良野、小樽など個性の異なる撮影地が点在し、写真家にとって日本で最も豊かなフィールドのひとつです。",
-      "Hokkaido is Japan's northernmost main island and, at 83,424 km², covers about 22% of the country's total land area. Its volcanoes, primeval forests, lakes, and vast farmland produce landscapes — drift ice, lavender, deep winter snow — that simply cannot be photographed elsewhere in Japan. With Sapporo, Hakodate, Shiretoko, Furano, Otaru, and many more distinct destinations, it remains one of the country's richest grounds for landscape photography."
-    ),
+    definition: {
+      ja: "北海道は日本最北端の本島で、面積83,424km²と日本の総面積の約22%を占める広大な土地。火山・原生林・湖沼・大農地が織りなす独自の地形に、流氷・ラベンダー・深い雪景色など本州では撮れない四季の表情が宿ります。札幌、函館、知床、富良野、小樽など個性の異なる撮影地が点在し、写真家にとって日本で最も豊かなフィールドのひとつです。",
+      en: "Hokkaido is Japan's northernmost main island and, at 83,424 km², covers about 22% of the country's total land area. Its volcanoes, primeval forests, lakes, and vast farmland produce landscapes — drift ice, lavender, deep winter snow — that simply cannot be photographed elsewhere in Japan. With Sapporo, Hakodate, Shiretoko, Furano, Otaru, and many more distinct destinations, it remains one of the country's richest grounds for landscape photography.",
+      zh: "北海道是日本最北端的本岛,面积83,424平方公里,占日本总面积约22%。火山、原始森林、湖泊、广袤农田构成独特地形,蕴藏着流冰、薰衣草、深雪等本州无法拍摄的四季表情。札幌、函馆、知床、富良野、小樽等个性迥异的拍摄地点缀其中,是摄影师在日本最丰富的取材地之一。",
+      "zh-tw": "北海道是日本最北端的本島,面積83,424平方公里,佔日本總面積約22%。火山、原始森林、湖泊、廣袤農田構成獨特地形,蘊藏著流冰、薰衣草、深雪等本州無法拍攝的四季表情。札幌、函館、知床、富良野、小樽等個性迥異的拍攝地點綴其中,是攝影師在日本最豐富的取材地之一。",
+      ko: "홋카이도는 일본 최북단의 본섬으로, 면적 83,424km²로 일본 전체 면적의 약 22%를 차지하는 광활한 땅입니다. 화산·원시림·호수·대농지가 어우러진 독특한 지형에는 유빙·라벤더·깊은 설경 등 혼슈에서는 촬영할 수 없는 사계절의 표정이 깃들어 있습니다. 삿포로·하코다테·시레토코·후라노·오타루 등 개성이 다른 촬영지가 흩어져 있어, 사진가에게 일본에서 가장 풍요로운 필드 중 하나로 꼽힙니다.",
+    },
     highlights: {
       ja: [
         "世界自然遺産の知床半島 — 原生林、流氷、ヒグマ、シマフクロウなど手付かずの自然が残る最果ての聖地",
@@ -40,6 +43,27 @@ export const PREFECTURE_CONTENT = {
         "Drift ice on the Sea of Okhotsk — late January through early March along Abashiri, Shiretoko, and Monbetsu, with sunsets behind floating floes",
         "Caldera lakes Mashu, Toya, and Shikotsu — surreal blue waters carved by ancient volcanism, unique to Hokkaido's geology",
       ],
+      zh: [
+        "世界自然遗产知床半岛 — 原始森林、流冰、棕熊、毛脚渔鸮等未被破坏的最尽头圣地",
+        "富良野·美瑛花田 — 7月薰衣草和色彩斑斓的拼布之丘是日本屈指的写真级田园风景",
+        "2月札幌雪祭 — 大通公园林立的巨型雪雕和梦幻灯光,象征北国冬季的盛会",
+        "鄂霍次克海流冰 — 1月下旬至3月上旬,网走·知床·纹别沿岸覆盖的流冰与夕阳",
+        "摩周湖·洞爷湖·支笏湖 — 火山口湖的透明度和独特蓝色是火山地形特有的题材",
+      ],
+      "zh-tw": [
+        "世界自然遺產知床半島 — 原始森林、流冰、棕熊、毛腳魚鴞等未被破壞的最盡頭聖地",
+        "富良野·美瑛花田 — 7月薰衣草和色彩斑斕的拼布之丘是日本屈指的寫真級田園風景",
+        "2月札幌雪祭 — 大通公園林立的巨型雪雕和夢幻燈光,象徵北國冬季的盛會",
+        "鄂霍次克海流冰 — 1月下旬至3月上旬,網走·知床·紋別沿岸覆蓋的流冰與夕陽",
+        "摩周湖·洞爺湖·支笏湖 — 火山口湖的透明度和獨特藍色是火山地形特有的題材",
+      ],
+      ko: [
+        "세계자연유산 시레토코 반도 — 원시림, 유빙, 불곰, 시마후쿠로 등 손대지 않은 최북단의 성지",
+        "후라노·비에이의 꽃밭 — 7월 라벤더와 색색의 패치워크 언덕은 일본 굴지의 포토제닉한 농촌 풍경",
+        "2월 삿포로 눈축제 — 오도리 공원에 늘어선 거대 눈조각과 환상적인 조명, 북국 겨울을 상징하는 이벤트",
+        "오호츠크해 유빙 — 1월 하순부터 3월 초순, 아바시리·시레토코·몬베쓰 연안을 메우는 유빙과 노을",
+        "마슈호·도야호·시코쓰호 — 칼데라호의 투명도와 독특한 푸른빛은 화산 지형 특유의 피사체",
+      ],
     },
     quickAnswers: {
       ja: [
@@ -51,6 +75,21 @@ export const PREFECTURE_CONTENT = {
         { q: "What is Hokkaido?", a: "Japan's northernmost main island, covering about 22% of the country's total area. Its volcanoes, lakes, farmland, and primeval forests produce landscapes — drift ice, lavender, deep snow — unavailable anywhere else in Japan." },
         { q: "When is the best season to photograph Hokkaido?", a: "February for the Sapporo Snow Festival and drift ice, July for Furano lavender, October for autumn colors, and January–March for Shiretoko drift ice. Match the subject to its peak season." },
         { q: "What are the main photography spots in Hokkaido?", a: "Sapporo, Otaru Canal, Furano & Biei, Lake Mashu, Lake Toya, Shiretoko Peninsula, Hakodate's night skyline, Noboribetsu, and Asahiyama Zoo. Each area has a distinct character, so plan a multi-stop itinerary." },
+      ],
+      zh: [
+        { q: "北海道是?", a: "日本最北端的本岛,面积约占日本全土的22%。独特的火山·湖泊·农田·原始森林风景,以及流冰·薰衣草·深雪等本州无法拍摄的四季魅力。" },
+        { q: "北海道摄影的最佳季节?", a: "2月的札幌雪祭和流冰、7月的富良野薰衣草、10月红叶、1-3月的知床流冰最受欢迎。根据拍摄主题选择季节为铁则。" },
+        { q: "主要的拍摄地点?", a: "札幌、小樽运河、富良野·美瑛、摩周湖、洞爷湖、知床半岛、函馆夜景、登别、旭山动物园等。各区域特色不同,需要周游计划。" },
+      ],
+      "zh-tw": [
+        { q: "北海道是?", a: "日本最北端的本島,面積約佔日本全土的22%。獨特的火山·湖泊·農田·原始森林風景,以及流冰·薰衣草·深雪等本州無法拍攝的四季魅力。" },
+        { q: "北海道攝影的最佳季節?", a: "2月的札幌雪祭和流冰、7月的富良野薰衣草、10月紅葉、1-3月的知床流冰最受歡迎。根據拍攝主題選擇季節為鐵則。" },
+        { q: "主要的拍攝地點?", a: "札幌、小樽運河、富良野·美瑛、摩周湖、洞爺湖、知床半島、函館夜景、登別、旭山動物園等。各區域特色不同,需要周遊計劃。" },
+      ],
+      ko: [
+        { q: "홋카이도는?", a: "일본 최북단의 본섬으로 면적은 일본 전토의 약 22%. 화산·호수·농지·원시림이 어우러진 독특한 풍경과 유빙·라벤더·깊은 설경 등 혼슈에서는 담을 수 없는 사계절이 매력입니다." },
+        { q: "홋카이도 촬영 최적기는 언제?", a: "2월 삿포로 눈축제와 유빙, 7월 후라노 라벤더, 10월 단풍, 1-3월 시레토코 유빙이 가장 인기. 피사체에 맞춰 계절을 고르는 것이 철칙입니다." },
+        { q: "주요 촬영 명소는?", a: "삿포로, 오타루 운하, 후라노·비에이, 마슈호, 도야호, 시레토코 반도, 하코다테 야경, 노보리베쓰, 아사히야마 동물원 등. 지역별 특색이 크게 달라 일정 계획이 중요합니다." },
       ],
     },
     faqs: [
@@ -97,10 +136,13 @@ export const PREFECTURE_CONTENT = {
       "千葉縣位於東京灣與太平洋之間的半島，擁有房總海岸線、九十九里濱、成田山新勝寺等多彩景觀。交通便利，是遠離都市喧囂欣賞自然海景的好去處。本圖庫收錄鴨川海洋世界1張。",
       "지바현은 도쿄만과 태평양 사이의 반도로 보소 반도 해안선, 구주쿠리 해변, 나리타산 신쇼지 등 다양한 경관을 갖추고 있습니다. 도쿄에서 접근성이 좋아 도심을 벗어나 자연과 바다 풍경을 즐길 수 있는 곳입니다. 가모가와 시월드의 사진 1장을 수록."
     ),
-    definition: lh(
-      "千葉県は本州中央部の太平洋側、東京湾と房総半島から成る人口620万人の関東第3の県。海岸線は460kmに及び、九十九里浜の長大なビーチ、外房の断崖、内房の穏やかな入江まで多彩。成田国際空港を擁する日本の玄関口でもあり、東京から1時間以内で訪れられる海と寺社の撮影地です。",
-      "Chiba sits on the Pacific coast of central Honshu, formed by Tokyo Bay and the Boso Peninsula, with 6.2 million residents. Its 460 km of coastline ranges from the long sweep of Kujukuri Beach to the dramatic cliffs of the outer coast and the calm inlets of the inner bay. Home to Narita International Airport, it offers seascapes and historic temples within an hour of Tokyo."
-    ),
+    definition: {
+      ja: "千葉県は本州中央部の太平洋側、東京湾と房総半島から成る人口620万人の関東第3の県。海岸線は460kmに及び、九十九里浜の長大なビーチ、外房の断崖、内房の穏やかな入江まで多彩。成田国際空港を擁する日本の玄関口でもあり、東京から1時間以内で訪れられる海と寺社の撮影地です。",
+      en: "Chiba sits on the Pacific coast of central Honshu, formed by Tokyo Bay and the Boso Peninsula, with 6.2 million residents. Its 460 km of coastline ranges from the long sweep of Kujukuri Beach to the dramatic cliffs of the outer coast and the calm inlets of the inner bay. Home to Narita International Airport, it offers seascapes and historic temples within an hour of Tokyo.",
+      zh: "千叶县位于本州中部太平洋一侧,由东京湾和房总半岛构成,人口620万,关东第3大县。460公里海岸线从九十九里浜的悠长沙滩、外房断崖到内房静谧入江变化多端。拥有成田国际机场,是日本的门户,东京1小时圈内的海与寺社拍摄地。",
+      "zh-tw": "千葉縣位於本州中部太平洋一側,由東京灣和房總半島構成,人口620萬,關東第3大縣。460公里海岸線從九十九里濱的悠長沙灘、外房斷崖到內房靜謐入江變化多端。擁有成田國際機場,是日本的門戶,東京1小時圈內的海與寺社拍攝地。",
+      ko: "지바현은 혼슈 중앙부 태평양 측에 위치하며 도쿄만과 보소반도로 이루어진 인구 620만 명의 간토 제3의 현. 460km에 이르는 해안선은 구주쿠리 비치의 긴 모래사장에서 외해의 단애·내해의 잔잔한 만까지 다양합니다. 나리타 국제공항을 갖춘 일본의 관문으로, 도쿄에서 1시간 권내의 바다와 사찰 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "九十九里浜 — 太平洋に面した日本屈指の長大ビーチ、66kmの直線海岸",
@@ -116,6 +158,27 @@ export const PREFECTURE_CONTENT = {
         "Cape Inubo — easternmost point of Honshu and the first place to see the year's first sunrise",
         "Yoro Valley — central Boso ravine known for some of the Tokyo region's latest autumn colors in late November",
       ],
+      zh: [
+        "九十九里浜 — 面向太平洋的日本屈指可数的悠长海滩,66公里直线海岸",
+        "鸭川海洋世界 — 可近距离拍摄虎鲸表演的人气水族馆",
+        "成田山新胜寺 — 940年创建的真言宗大本山,节分和新年参拜年访客超过1000万人",
+        "犬吠埼 — 日本最早可见初日出的本州最东端灯塔",
+        "养老溪谷 — 房总半岛中部的溪谷,11月下旬红叶是关东地区较晚开放的红叶名所",
+      ],
+      "zh-tw": [
+        "九十九里濱 — 面向太平洋的日本屈指可數的悠長海灘,66公里直線海岸",
+        "鴨川海洋世界 — 可近距離拍攝虎鯨表演的人氣水族館",
+        "成田山新勝寺 — 940年創建的真言宗大本山,節分和新年參拜年訪客超過1000萬人",
+        "犬吠埼 — 日本最早可見初日出的本州最東端燈塔",
+        "養老溪谷 — 房總半島中部的溪谷,11月下旬紅葉是關東地區較晚開放的紅葉名所",
+      ],
+      ko: [
+        "구주쿠리 해변 — 태평양에 면한 일본 굴지의 긴 해변, 66km 직선 해안",
+        "가모가와 시월드 — 범고래 퍼포먼스를 가까이에서 촬영할 수 있는 인기 수족관",
+        "나리타산 신쇼지 — 940년 창건의 진언종 대본산, 세쓰분과 신년 참배에 연간 1,000만 명 이상 방문",
+        "이누보사키 — 일본에서 가장 일찍 새해 일출을 볼 수 있는 혼슈 최동단의 등대",
+        "요로 계곡 — 보소반도 중부의 계곡, 11월 하순의 단풍은 간토 지방에서도 늦게 피는 단풍 명소로 인기",
+      ],
     },
     quickAnswers: {
       ja: [
@@ -127,6 +190,21 @@ export const PREFECTURE_CONTENT = {
         { q: "What is Chiba Prefecture?", a: "An eastern neighbor of Tokyo formed by the Boso Peninsula and Tokyo Bay. Its 460 km of coastline, Narita International Airport, and proximity to the capital make it a convenient combination of nature and access." },
         { q: "When is the best season to photograph Chiba?", a: "Coastline year-round, cherry blossoms late March to April, autumn colors at Yoro Valley in late November, and the iconic January 1 sunrise from Cape Inubo. Winter offers crisp air and clear Mt. Fuji views." },
         { q: "How do I get there from Tokyo?", a: "Maihama and Narita are 30–60 min from Tokyo Station; Kamogawa and Katsuura on the outer coast are about 2 hours. Day trips are practical, especially for early-morning light." },
+      ],
+      zh: [
+        { q: "千叶县是?", a: "东京的东邻,由房总半岛和东京湾构成的关东海洋县。460公里海岸线、成田国际机场、九十九里浜·房总的自然与都市近郊便利的交通是特色。" },
+        { q: "千叶县摄影的最佳季节?", a: "海岸线全年,樱花3月下旬至4月,红叶11月下旬的养老溪谷,初日出1月1日的犬吠埼为经典。冬季空气清澈,富士山清晰可见。" },
+        { q: "从东京怎么去?", a: "东京站到舞滨·成田30-60分钟,外房的鸭川·胜浦约2小时。当日往返圈内,清晨出发可捕捉早晨光线最高效。" },
+      ],
+      "zh-tw": [
+        { q: "千葉縣是?", a: "東京的東鄰,由房總半島和東京灣構成的關東海洋縣。460公里海岸線、成田國際機場、九十九里濱·房總的自然與都市近郊便利的交通是特色。" },
+        { q: "千葉縣攝影的最佳季節?", a: "海岸線全年,櫻花3月下旬至4月,紅葉11月下旬的養老溪谷,初日出1月1日的犬吠埼為經典。冬季空氣清澈,富士山清晰可見。" },
+        { q: "從東京怎麼去?", a: "東京站到舞濱·成田30-60分鐘,外房的鴨川·勝浦約2小時。當日往返圈內,清晨出發可捕捉早晨光線最高效。" },
+      ],
+      ko: [
+        { q: "지바현은?", a: "도쿄의 동쪽 이웃, 보소반도와 도쿄만으로 이루어진 간토의 해양현. 460km 해안선, 나리타 국제공항, 구주쿠리·보소의 자연과 도시 근교의 좋은 접근성이 특징입니다." },
+        { q: "지바현 촬영 최적기는?", a: "해안선은 연중, 벚꽃은 3월 하순~4월, 단풍은 11월 하순 요로 계곡, 새해 일출은 1월 1일 이누보사키가 정석. 겨울은 공기가 맑아 후지산이 잘 보입니다." },
+        { q: "도쿄에서 가는 법은?", a: "도쿄역에서 마이하마·나리타까지 30~60분, 외해의 가모가와·가쓰우라는 2시간. 당일치기 권내라 이른 아침 출발해 새벽 빛을 노리는 게 효율적." },
       ],
     },
     faqs: [
@@ -145,10 +223,13 @@ export const PREFECTURE_CONTENT = {
       "東京是世界級大都市，高樓大廈與江戶風情交織，是獨特的都市景觀。品川夜景、神社古剎、公園櫻花、灣區風光等，每時每刻都有不同表情。本圖庫收錄東京與品川14張照片。",
       "세계적 메가시티 도쿄는 초고층 빌딩과 에도 시대의 정취, 첨단과 전통이 교차하는 독특한 도시 경관을 자랑합니다. 시나가와 야경, 신사·사찰, 공원의 벚꽃, 베이 지역 등 시시각각 표정을 바꾸는 도시 풍경을 담을 수 있습니다. 도쿄·시나가와에서 14장을 수록했습니다."
     ),
-    definition: lh(
-      "東京都は日本の首都であり、人口約1,400万人・都市圏3,800万人の世界最大級のメガシティ。江戸幕府開府(1603年)からの400年の歴史と、新宿・渋谷・東京の超高層ビル群が共存する稀有な都市景観を持ちます。神社仏閣、皇居の四季、ベイエリアの夜景、地下街と高層ビルが織りなす都市の表情は、刻一刻と変化し被写体に事欠きません。",
-      "Tokyo is Japan's capital and one of the world's largest megacities, with 14 million residents in the prefecture and 38 million across the metropolitan area. It blends 400 years of history since the establishment of the Edo shogunate in 1603 with the high-rise skylines of Shinjuku, Shibuya, and Tokyo Station. Shrines, the Imperial Palace's four seasons, bay-side nightscapes, and the contrast of underground arcades and skyscrapers offer endlessly shifting subjects."
-    ),
+    definition: {
+      ja: "東京都は日本の首都であり、人口約1,400万人・都市圏3,800万人の世界最大級のメガシティ。江戸幕府開府(1603年)からの400年の歴史と、新宿・渋谷・東京の超高層ビル群が共存する稀有な都市景観を持ちます。神社仏閣、皇居の四季、ベイエリアの夜景、地下街と高層ビルが織りなす都市の表情は、刻一刻と変化し被写体に事欠きません。",
+      en: "Tokyo is Japan's capital and one of the world's largest megacities, with 14 million residents in the prefecture and 38 million across the metropolitan area. It blends 400 years of history since the establishment of the Edo shogunate in 1603 with the high-rise skylines of Shinjuku, Shibuya, and Tokyo Station. Shrines, the Imperial Palace's four seasons, bay-side nightscapes, and the contrast of underground arcades and skyscrapers offer endlessly shifting subjects.",
+      zh: "东京都是日本首都,人口约1,400万、都市圈3,800万的世界最大级别大都市。从江户幕府开府(1603年)400年的历史,到新宿·涩谷·东京站超高层楼群共存的独特都市景观。神社佛阁、皇居四季、湾区夜景、地下街与高楼交织的都市表情时刻变化,题材取之不尽。",
+      "zh-tw": "東京都是日本首都,人口約1,400萬、都市圈3,800萬的世界最大級別大都市。從江戶幕府開府(1603年)400年的歷史,到新宿·澀谷·東京站超高層樓群共存的獨特都市景觀。神社佛閣、皇居四季、灣區夜景、地下街與高樓交織的都市表情時刻變化,題材取之不盡。",
+      ko: "도쿄도는 일본의 수도로 인구 약 1,400만 명·도시권 3,800만 명의 세계 최대급 메가시티. 에도 막부 개부(1603년)부터의 400년 역사와 신주쿠·시부야·도쿄역의 초고층 빌딩군이 공존하는 독특한 도시 경관. 신사 사찰, 고쿄의 사계, 베이 지역 야경, 지하상가와 고층빌딩이 어우러진 도시 표정은 시시각각 변하며 피사체가 무궁무진합니다.",
+    },
     highlights: {
       ja: [
         "新宿・渋谷・東京の超高層ビル群 — 都庁展望台、渋谷スクランブル交差点、丸の内の夜景は世界レベルの都市風景",
@@ -164,6 +245,27 @@ export const PREFECTURE_CONTENT = {
         "Asakusa and Ueno — Kaminarimon gate, Nakamise shopping street, Sensoji temple, plus Ueno Park's cherry blossoms and Ameyoko market",
         "Odaiba and Toyosu — Rainbow Bridge and the bay-side district, exceptional nightscapes and blue-hour photography",
       ],
+      zh: [
+        "新宿·涩谷·东京站超高层楼群 — 都厅展望台、涩谷十字路口、丸之内夜景为世界级都市风景",
+        "东京塔与晴空塔 — 333米红色铁塔与634米世界第3电波塔,灯光颜色随季节变化",
+        "皇居·千鸟之渊 — 以江户城遗址为中心的绿色绿洲,春天的赏樱No.1名所",
+        "浅草·上野 — 雷门、仲见世通、浅草寺,上野公园樱花与阿美横丁,保留江户风情的下町",
+        "台场·丰洲 — 彩虹桥与临海副都心,湾区夜景与蓝色时刻绝景",
+      ],
+      "zh-tw": [
+        "新宿·澀谷·東京站超高層樓群 — 都廳展望台、澀谷十字路口、丸之內夜景為世界級都市風景",
+        "東京塔與晴空塔 — 333米紅色鐵塔與634米世界第3電波塔,燈光顏色隨季節變化",
+        "皇居·千鳥之淵 — 以江戶城遺址為中心的綠色綠洲,春天的賞櫻No.1名所",
+        "淺草·上野 — 雷門、仲見世通、淺草寺,上野公園櫻花與阿美橫丁,保留江戶風情的下町",
+        "台場·豐洲 — 彩虹橋與臨海副都心,灣區夜景與藍色時刻絕景",
+      ],
+      ko: [
+        "신주쿠·시부야·도쿄역의 초고층 빌딩군 — 도청 전망대, 시부야 스크램블 교차로, 마루노우치 야경은 세계적 수준의 도시 풍경",
+        "도쿄타워와 스카이트리 — 333m의 붉은 철탑과 634m로 세계 3위인 전파탑, 조명 색상도 계절마다 변화",
+        "고쿄·치도리가후치 — 에도성 터를 중심으로 한 녹색 오아시스, 봄 벚꽃 명소로 도쿄 No.1 인기",
+        "아사쿠사·우에노 — 가미나리몬·나카미세도리·센소지, 우에노 공원의 벚꽃과 아메요코, 에도 정취가 남은 시타마치",
+        "오다이바·도요스 — 레인보 브리지와 임해 부도심, 베이 지역의 야경과 블루아워 절경",
+      ],
     },
     quickAnswers: {
       ja: [
@@ -175,6 +277,21 @@ export const PREFECTURE_CONTENT = {
         { q: "What is Tokyo?", a: "Japan's capital with about 14 million residents, one of the world's largest megacities. It combines 400 years of Edo-era heritage with cutting-edge skyscrapers, offering endless variety from shrines and palace seasons to bay-side nightscapes." },
         { q: "When is the best season to photograph Tokyo?", a: "Cherry blossoms late March to early April, autumn colors late November to early December, and nightscapes year-round (clearer in winter). Rare snow occasionally transforms central Tokyo into a unique subject." },
         { q: "What are tips for Tokyo night photography?", a: "Use a tripod, low ISO, and long exposure. Blue hour (30 min after sunset) balances sky and city lights best. Watch observatory closing times; rooftops require wind and cold gear." },
+      ],
+      zh: [
+        { q: "东京都是?", a: "日本首都,人口约1,400万。江户历史与现代超高层楼并存的世界最大级别大都市。神社佛阁、皇居四季、湾区夜景等多样的都市风景宝库。" },
+        { q: "东京摄影的最佳季节?", a: "樱花3月下旬至4月上旬,红叶11月下旬至12月上旬,夜景全年(冬季空气更清澈视野远)。雪是难得的题材,雪化都心罕见。" },
+        { q: "东京夜景拍摄技巧?", a: "三脚架·低ISO·长曝光为基础。蓝色时刻(日落后30分钟)天空与街灯平衡最佳。展望台需注意闭馆时间,屋顶要做好防风防寒。" },
+      ],
+      "zh-tw": [
+        { q: "東京都是?", a: "日本首都,人口約1,400萬。江戶歷史與現代超高層樓並存的世界最大級別大都市。神社佛閣、皇居四季、灣區夜景等多樣的都市風景寶庫。" },
+        { q: "東京攝影的最佳季節?", a: "櫻花3月下旬至4月上旬,紅葉11月下旬至12月上旬,夜景全年(冬季空氣更清澈視野遠)。雪是難得的題材,雪化都心罕見。" },
+        { q: "東京夜景拍攝技巧?", a: "三腳架·低ISO·長曝光為基礎。藍色時刻(日落後30分鐘)天空與街燈平衡最佳。展望台需注意閉館時間,屋頂要做好防風防寒。" },
+      ],
+      ko: [
+        { q: "도쿄도는?", a: "일본의 수도로 인구 약 1,400만 명. 에도의 역사와 현대 초고층 빌딩이 공존하는 세계 최대급 메가시티. 신사 사찰, 고쿄의 사계, 베이 지역 야경 등 다양한 도시 풍경의 보고입니다." },
+        { q: "도쿄 촬영 최적기는?", a: "벚꽃은 3월 하순~4월 초, 단풍은 11월 하순~12월 초, 야경은 연중(겨울이 공기가 맑아 멀리 보임). 눈은 연 몇 차례, 설경의 도심은 드문 피사체입니다." },
+        { q: "도쿄 야경 촬영 팁은?", a: "삼각대·저ISO·장노출이 기본. 블루아워(일몰 후 30분)가 하늘과 도시 빛의 균형이 최고. 전망대 폐관 시간 주의, 옥상은 바람·추위 대비 필수." },
       ],
     },
     faqs: [
@@ -193,10 +310,13 @@ export const PREFECTURE_CONTENT = {
       "神奈川縣緊鄰東京南部，古都鎌倉與國際港口橫濱並存。鎌倉大佛、長谷寺四季、橫濱灣區夜景、紅磚倉庫、中華街、港未來21等，歷史與現代交融。本圖庫收錄橫濱與鎌倉共50張照片。",
       "가나가와현은 도쿄 남쪽에 위치해, 고도 가마쿠라와 국제 항만 도시 요코하마가 공존하는 다채로운 지역입니다. 가마쿠라 대불과 사찰의 사계, 하세데라, 요코하마 베이 야경, 아카렌가 창고, 차이나타운, 미나토미라이 21 등 역사와 현대를 모두 담을 수 있습니다. 요코하마·가마쿠라 50장을 수록."
     ),
-    definition: lh(
-      "神奈川県は東京都の南に隣接する人口920万人の関東第2の県で、相模湾と太平洋に開けた地形を持ちます。源頼朝が1192年に幕府を開いた古都鎌倉、開国の歴史を持つ横浜港、富士山を仰ぐ箱根、湘南海岸、丹沢山地まで、わずか1日でアクセスできる距離に歴史・海・山が同居する稀有な撮影圏です。",
-      "Kanagawa neighbors Tokyo to the south and is Kanto's second-most populous prefecture with 9.2 million residents, opening onto Sagami Bay and the Pacific. Within easy day-trip range it combines Kamakura — the ancient capital where Minamoto no Yoritomo founded his shogunate in 1192 — Yokohama's port (gateway during Japan's opening to the world), the Hakone hot springs with Mt. Fuji views, the Shonan coast, and the Tanzawa mountains, all in one compact photography region."
-    ),
+    definition: {
+      ja: "神奈川県は東京都の南に隣接する人口920万人の関東第2の県で、相模湾と太平洋に開けた地形を持ちます。源頼朝が1192年に幕府を開いた古都鎌倉、開国の歴史を持つ横浜港、富士山を仰ぐ箱根、湘南海岸、丹沢山地まで、わずか1日でアクセスできる距離に歴史・海・山が同居する稀有な撮影圏です。",
+      en: "Kanagawa neighbors Tokyo to the south and is Kanto's second-most populous prefecture with 9.2 million residents, opening onto Sagami Bay and the Pacific. Within easy day-trip range it combines Kamakura — the ancient capital where Minamoto no Yoritomo founded his shogunate in 1192 — Yokohama's port (gateway during Japan's opening to the world), the Hakone hot springs with Mt. Fuji views, the Shonan coast, and the Tanzawa mountains, all in one compact photography region.",
+      zh: "神奈川县位于东京都南邻,人口920万,是关东第2大县,面向相模湾和太平洋。源赖朝1192年开幕府的古都镰仓、开国历史的横滨港、远眺富士山的箱根、湘南海岸、丹泽山地等,1日内可达的距离内历史·海·山共存,是罕见的摄影圈。",
+      "zh-tw": "神奈川縣位於東京都南鄰,人口920萬,是關東第2大縣,面向相模灣和太平洋。源賴朝1192年開幕府的古都鎌倉、開國歷史的橫濱港、遠眺富士山的箱根、湘南海岸、丹澤山地等,1日內可達的距離內歷史·海·山共存,是罕見的攝影圈。",
+      ko: "가나가와현은 도쿄도 남쪽에 인접한 인구 920만 명의 간토 제2의 현으로, 사가미만과 태평양에 면한 지형을 지닙니다. 미나모토노 요리토모가 1192년 막부를 연 고도 가마쿠라, 개국의 역사를 지닌 요코하마항, 후지산을 바라보는 하코네, 쇼난 해안, 단자와 산지까지, 단 하루 만에 접근할 수 있는 거리에 역사·바다·산이 공존하는 보기 드문 촬영권입니다.",
+    },
     highlights: {
       ja: [
         "鎌倉大仏と長谷寺 — 1252年鋳造、高さ11.4mの国宝、長谷寺はあじさい(6月)・紅葉(11月)の名所",
@@ -212,6 +332,27 @@ export const PREFECTURE_CONTENT = {
         "Hakone — Lake Ashi with Mt. Fuji, the volcanic plumes of Owakudani, the Hakone Open-Air Museum, and Gora hot springs",
         "Miura Peninsula and Jogashima — cliffs with views of Boso and Tokyo Bay, a lighthouse, and sea caves; an underrated coastal photography spot",
       ],
+      zh: [
+        "镰仓大佛与长谷寺 — 1252年铸造,高11.4米国宝,长谷寺是绣球花(6月)·红叶(11月)的名所",
+        "横滨港未来21·红砖仓库 — 296米地标大厦,夜景与蓝色时刻是关东屈指",
+        "江之岛与湘南海岸 — 富士山与江之岛剪影是日本海岸风景的象征,夕景名作众多",
+        "箱根 — 芦之湖与富士山组合的绝景,大涌谷喷烟、雕刻之森美术馆、强罗温泉",
+        "三浦半岛与城之岛 — 远眺房总半岛与东京湾的断崖,灯塔与海蚀洞,关东的隐秘摄影地",
+      ],
+      "zh-tw": [
+        "鎌倉大佛與長谷寺 — 1252年鑄造,高11.4米國寶,長谷寺是繡球花(6月)·紅葉(11月)的名所",
+        "橫濱港未來21·紅磚倉庫 — 296米地標大廈,夜景與藍色時刻是關東屈指",
+        "江之島與湘南海岸 — 富士山與江之島剪影是日本海岸風景的象徵,夕景名作眾多",
+        "箱根 — 蘆之湖與富士山組合的絕景,大涌谷噴煙、雕刻之森美術館、強羅溫泉",
+        "三浦半島與城之島 — 遠眺房總半島與東京灣的斷崖,燈塔與海蝕洞,關東的隱秘攝影地",
+      ],
+      ko: [
+        "가마쿠라 대불과 하세데라 — 1252년 주조, 높이 11.4m의 국보, 하세데라는 수국(6월)·단풍(11월)의 명소",
+        "요코하마 미나토미라이21·아카렌가 창고 — 296m 랜드마크 타워, 야경과 블루아워는 간토 굴지",
+        "에노시마와 쇼난 해안 — 후지산과 에노시마의 실루엣은 일본 해안 풍경의 상징, 노을의 걸작 다수",
+        "하코네 — 아시노호와 후지산의 조합은 절경, 오와쿠다니의 분연, 조각의 숲 미술관, 고라 온천",
+        "미우라 반도와 조가시마 — 보소반도와 도쿄만을 바라보는 단애, 등대와 해식동, 간토의 숨은 촬영지",
+      ],
     },
     quickAnswers: {
       ja: [
@@ -223,6 +364,21 @@ export const PREFECTURE_CONTENT = {
         { q: "What is Kanagawa Prefecture?", a: "Tokyo's southern neighbor and Kanto's second-largest prefecture, where the ancient capital of Kamakura (founded 1192), the port city of Yokohama, Hakone with Mt. Fuji views, and the Shonan coast are all within day-trip range." },
         { q: "Best way to visit Kamakura and Yokohama?", a: "Morning at Kamakura temples (Great Buddha, Hasedera, Kenchoji), then afternoon to Yokohama for Red Brick Warehouse sunset and Minato Mirai night shots. JR connects them in 25 minutes." },
         { q: "When is the best season to photograph Kanagawa?", a: "Kamakura hydrangeas mid-June, autumn colors late November to early December, Shonan sunsets with Mt. Fuji in winter (clearest air), and cherry blossoms in early April. Hakone peaks for autumn colors in November." },
+      ],
+      zh: [
+        { q: "神奈川县是?", a: "位于东京南部的关东第2大县。古都镰仓(1192年-)与国际港湾横滨、远眺富士山的箱根、湘南海岸都在1日内可达,历史·海·山一应俱全的摄影地。" },
+        { q: "镰仓与横滨的最佳游览方式?", a: "上午镰仓寺社(大佛·长谷寺·建长寺),下午移步横滨拍红砖仓库黄昏至港未来夜景为经典。镰仓到横滨JR 25分钟。" },
+        { q: "摄影最佳季节?", a: "镰仓绣球花6月中旬,红叶11月下旬至12月上旬,湘南海岸夕景与富士山冬季(空气清澈),樱花4月上旬。箱根11月红叶最受欢迎。" },
+      ],
+      "zh-tw": [
+        { q: "神奈川縣是?", a: "位於東京南部的關東第2大縣。古都鎌倉(1192年-)與國際港灣橫濱、遠眺富士山的箱根、湘南海岸都在1日內可達,歷史·海·山一應俱全的攝影地。" },
+        { q: "鎌倉與橫濱的最佳遊覽方式?", a: "上午鎌倉寺社(大佛·長谷寺·建長寺),下午移步橫濱拍紅磚倉庫黃昏至港未來夜景為經典。鎌倉到橫濱JR 25分鐘。" },
+        { q: "攝影最佳季節?", a: "鎌倉繡球花6月中旬,紅葉11月下旬至12月上旬,湘南海岸夕景與富士山冬季(空氣清澈),櫻花4月上旬。箱根11月紅葉最受歡迎。" },
+      ],
+      ko: [
+        { q: "가나가와현은?", a: "도쿄 남쪽의 간토 제2의 현. 고도 가마쿠라(1192년~)와 국제 항구 요코하마, 후지산을 조망하는 하코네, 쇼난 해안이 하루에 돌 수 있는 거리에 있으며 역사·바다·산이 모두 갖춰진 촬영지입니다." },
+        { q: "가마쿠라와 요코하마 동선은?", a: "오전은 가마쿠라 사찰(대불·하세데라·겐초지), 오후에 요코하마로 이동해 아카렌가 창고의 노을~미나토미라이 야경이 정석. 가마쿠라에서 요코하마까지 JR로 25분입니다." },
+        { q: "촬영 최적기는?", a: "가마쿠라 수국은 6월 중순, 단풍은 11월 하순~12월 초, 쇼난 해안의 노을과 후지산은 겨울(공기 맑음), 벚꽃은 4월 초. 하코네는 11월 단풍이 압도적 인기." },
       ],
     },
     faqs: [
