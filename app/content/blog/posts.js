@@ -149,8 +149,28 @@ Top vantages: (1) Uzumi Bridge for the classic vertical; (2) the cherry tunnel a
     hero: "bykxlizpdzufezqttzca",
     title: { ja: "駒つなぎの桜と星空 — 阿智村に立つ樹齢400年の一本桜", en: "The Komatsunagi Cherry Tree Under the Stars: A 400-Year-Old Solitary Sakura in Achi Village" },
     excerpt: { ja: "源義経が馬を繋いだという伝説の一本桜。棚田の水鏡と銀河を一枚に収める撮影テクニック。", en: "A legendary cherry tree said to have tethered Yoshitsune's horse. Techniques for capturing the rice-paddy reflection with the Milky Way." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `長野県阿智村智里、山あいの棚田の畔にぽつんと立つ樹齢400年超のエドヒガンザクラ。それが「駒つなぎの桜」です。源義経が奥州へ下る途中で馬を繋いだという伝説からこの名がつき、孤高の佇まいは古武士のような風格を漂わせます。
+
+撮影シーズンは4月中旬〜下旬。標高約700mの山あいで、平地より1〜2週間遅く咲きます。この時期は田植え前の棚田に水が張られ、桜と星空が水面に映る奇跡の構図が成立します。「水鏡の一本桜」と呼ばれるこのアングルは、世界的にも類を見ない一枚です。
+
+撮影には3条件が必要：①新月期（月明かりがあると星が消える）、②無風（水面の鏡面状態キープ）、③晴天（雲一つない透明度）。年に数日しかない奇跡の組み合わせを狙うため、村のSNSや天気予報を毎日確認しましょう。
+
+撮影テクニック：星空と桜を一枚に収める「比較明合成」が王道。カメラ1台では桜の暗部と星の明るさを両立できないため、①桜と棚田を露出ブレンド（前景）、②星空を露出ブレンド（背景）、③Photoshopで合成、という流れ。または1枚撮りでISO3200・F2.8・15秒・桜にリモコンライトで微弱補光、もアリ。
+
+機材：広角レンズ（14-24mm or 16-35mm F2.8）、しっかりした三脚、ライトペインティング用のLED（弱光、暖色フィルター）、レリーズ。寒さ対策として上下ダウン+カイロ。トイレは現地になく、阿智村中心部から30分以上かかります。
+
+注意：駐車場は数台分のみ。深夜から場所取りする撮影者多数。地元の方の生活圏なので、田んぼには絶対に踏み込まず、ライトは最小限に、静かに撮影を。`,
+    bodyEn: `«Komatsunagi-no-Sakura,» a 400+ year-old Edohigan cherry tree, stands alone beside terraced rice paddies in the mountain hamlet of Chisato, Achi Village, Nagano. Legend has it that Minamoto no Yoshitsune tethered his horse here on his way to Oshu — hence the name «horse-tying cherry.» Its solitary stance carries the dignity of an old warrior.
+
+Peak bloom is mid-to-late April. At about 700 m elevation in a mountain valley, it blooms 1–2 weeks later than the lowlands. This is also when the paddies are flooded for planting — creating the miraculous composition of cherry tree and stars mirrored in still water. This «mirror-pond solitary cherry» frame is one of the rarest in the world.
+
+Three conditions must align: (1) new moon (any moonlight washes out the stars); (2) no wind (preserve the mirror); (3) cloudless skies. Such combinations occur only a few nights a year — check local SNS and weather daily.
+
+Technique: «brightness blending» of two exposures is the classic approach. A single camera cannot expose both the dark cherry tree and bright stars correctly, so: (1) expose for tree and paddy reflection (foreground); (2) expose for stars (background); (3) blend in Photoshop. A single-frame alternative: ISO 3200, f/2.8, 15 s, with a soft warm-toned LED faintly illuminating the tree.
+
+Gear: wide-angle lens (14–24 mm or 16–35 mm f/2.8), solid tripod, light-painting LED (low output, warm filter), and remote shutter. Bring serious cold-weather layers and warmers. There are no toilets nearby — the village center is 30+ minutes away.
+
+Notes: parking holds only a few cars; many photographers stake spots from late evening. This is local farmland — never step into the paddies, keep lights to a minimum, and shoot quietly out of respect.`,
   },
   {
     slug: "achi-stargazing",
@@ -159,8 +179,28 @@ Top vantages: (1) Uzumi Bridge for the classic vertical; (2) the cherry tunnel a
     hero: "bxt5gtw3rnuqxrx46ppl",
     title: { ja: "日本一の星空 阿智村 — 標高1400mの「天空の楽園」で星を撮る", en: "Japan's No.1 Starry Sky in Achi Village: Stargazing Photography at 1,400 m «Tenku no Rakuen»" },
     excerpt: { ja: "環境省が日本一と認定した星空。新月期と冬の透明度、ナイトツアー予約のコツ。", en: "Officially Japan's clearest night sky. New-moon timing, winter transparency, and night-tour booking tips." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `長野県阿智村は2006年、環境省の全国星空継続観察で「星が最も輝いて見える場所」第1位に認定されました。標高1400mの富士見台高原は、周囲の山に囲まれ街の光が届かない、日本有数の暗い空を持ちます。
+
+撮影は「スタービレッジ阿智」が運営する『ナイトツアー（天空の楽園）』への参加が最も確実。富士見台高原ロープウェイで山頂駅へ上がり、消灯時間中は完全な暗闇の中で満点の星空を体験できます（4月〜11月開催、12〜3月は冬季ツアー）。料金は3500〜4500円程度、人気期は1ヶ月前完売も。
+
+ベストシーズンは2つ。①夏（6〜8月）：天の川の中心部（いて座方向）が最も濃く輝く。22時頃に天頂を横切り、迫力満点。②冬（12〜2月）：空気の透明度が最高で、銀河は薄まるがオリオン座・冬の大三角・すばる（プレアデス）が鋭く写る。雪の上に立つ撮影では満天の星と雪のリフレクションが別世界。
+
+新月期は必須条件。月齢カレンダーで確認し、新月±3日以内の晴天を狙います。月が出るとISO感度を上げても銀河が消えるため、新月期外の撮影は厳しい。
+
+機材：広角レンズ（14-24mm F2.8 or 20mm単焦点）、しっかりした三脚、レリーズ。設定はマニュアル：ISO3200〜6400、F2.8、SS15〜25秒（500ルール）、ホワイトバランス3500〜4000K。RAW撮影必須、後処理で銀河を強調。
+
+ヒント：①ヘッドライトは赤色LEDモード（暗順応を妨げない）、②熱対策にレンズヒーターでレンズの結露防止、③カメラ予備バッテリーは保温ポケットへ。ナイトツアー以外でも、阿智村中心部の道の駅周辺で十分撮影可能ですが、ロープウェイ山頂が圧倒的に暗いです。`,
+    bodyEn: `In 2006 Japan's Ministry of the Environment designated Achi Village in Nagano as the country's No.1 location for «the brightest visible stars.» Fujimidai Highlands, at 1,400 m elevation and surrounded by mountains shielding it from urban light, holds one of Japan's darkest skies.
+
+The most reliable approach is the «Star Village Achi» Night Tour (Tenku no Rakuen). The Fujimidai Highland Ropeway carries visitors to the summit station, where during designated lights-out hours the experience of a fully dark sky filled with stars is unforgettable (April–November regular tours; December–March winter tours). Tickets run roughly ¥3,500–¥4,500; peak nights sell out a month in advance.
+
+Two top seasons: (1) Summer (June–August): the dense Milky Way core (Sagittarius direction) crosses the zenith around 22:00 — overwhelming. (2) Winter (December–February): air transparency peaks; while the galactic core fades, Orion, the Winter Triangle, and the Pleiades render sharply. Snow-covered ground in winter adds a reflective brightness that feels otherworldly.
+
+New moon is mandatory. Use a moon-phase calendar and target clear nights within ±3 days of new moon. Moonlight at any phase washes out the Milky Way regardless of ISO.
+
+Gear: wide lens (14–24 mm f/2.8 or 20 mm prime), solid tripod, remote shutter. Manual settings: ISO 3200–6400, f/2.8, 15–25 s exposure (500 rule), white balance 3500–4000 K. Always shoot RAW and recover Milky Way detail in post.
+
+Tips: (1) red-LED headlamp mode preserves dark adaptation; (2) lens heaters prevent dew; (3) keep spare camera batteries in inner pockets. Outside the night tour, decent shooting is possible near the village center «michi-no-eki,» but the ropeway summit is dramatically darker.`,
   },
   {
     slug: "sapporo-snow-festival",
@@ -169,8 +209,28 @@ Top vantages: (1) Uzumi Bridge for the classic vertical; (2) the cherry tunnel a
     hero: "usvnljzznwmqu93sftg1",
     title: { ja: "さっぽろ雪まつり完全撮影ガイド — 200万人が訪れる白銀の祭典", en: "The Complete Photographer's Guide to the Sapporo Snow Festival: Two Million Visitors and a Silver Spectacle" },
     excerpt: { ja: "巨大雪像、市民像、氷彫刻、夜のライトアップ。三脚・低ISO・防寒の実践テクニック。", en: "Massive sculptures, citizen-built works, ice carvings, and night illumination. Practical tripod, low-ISO, and cold-weather techniques." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `さっぽろ雪まつりは毎年2月初旬、札幌市中心部の大通公園・すすきの・つどーむの3会場で開催される日本最大級の雪と氷の祭典です。1950年に地元高校生6人が雪像を作ったのが始まりで、今や200万人以上が訪れる国際的イベントに成長しました。
+
+会場はそれぞれ性格が違います。①大通公園会場：1〜12丁目に並ぶ大雪像と市民雪像のメインステージ。15mを超える巨大雪像はテレビ番組や歴史建築をテーマに毎年新作。②すすきの会場：氷彫刻のミニ会場、繁華街のネオンと氷のコントラストが◎。③つどーむ会場：滑り台や雪遊び、家族向け。
+
+ベスト時間帯は3つ：①日没直後〜18時のマジックアワー（青の時間帯と暖色イルミの対比が美しい）、②夜のライトアップ20〜21時（人混みが減り三脚も使いやすい）、③朝7時の開場直後（人がいない静かな雪像）。三脚利用エリアは「指定区域のみ」なので必ず公式サイトで確認を。
+
+設定：日中はISO100・F8・1/250秒で雪の質感を残す。露出補正+1〜+2EVで白を白く。ライトアップ撮影はISO400〜800・F4・SS1秒前後。手持ちなら手ブレ補正必須。
+
+防寒は本気で。札幌の2月は氷点下5〜10℃が常で、風があると体感は更に低下。ダウン上下、防水手袋、雪上対応ブーツ、カイロ最低3個（手・足・腰）、フェイスマスクが推奨。カメラはバッテリー消耗が早いので予備2個、レンズヒーターは結露防止に有効。
+
+撮影マナー：他の観光客の進路を塞がない、雪像に触れない、フラッシュは雪像が「白飛び」するため不要。ドローンは禁止です。`,
+    bodyEn: `The Sapporo Snow Festival, held in early February at three venues across central Sapporo (Odori Park, Susukino, and Tsudome), is Japan's largest snow-and-ice festival. It began in 1950 when six local high-school students built sculptures, and has since grown into an international event drawing over 2 million visitors annually.
+
+Each venue has its own character: (1) Odori Park (main): massive snow sculptures and citizen-built works line the 1st through 12th blocks; the 15+ m headline sculptures are themed on movies, anime, or historical architecture and remade each year. (2) Susukino: ice sculptures in the entertainment district — nightlife neon against ice is striking. (3) Tsudome: slides and snow play for families.
+
+Three best windows: (1) 30 minutes after sunset to 18:00 (the magic-hour contrast between blue twilight and warm illumination is gorgeous); (2) night illumination 20:00–21:00 (crowds thin, tripods workable); (3) 7 a.m. opening (silent, empty sculptures). Tripods are allowed only in designated zones — always check the official site.
+
+Settings: Daytime ISO 100, f/8, 1/250 s preserves snow texture. Exposure compensation +1 to +2 EV keeps whites white. Illumination: ISO 400–800, f/4, ~1 s. Handheld requires image stabilization.
+
+Dress seriously: Sapporo February runs −5 to −10 °C; wind chill drops it further. Down jacket and pants, waterproof gloves, snow-rated boots, three+ heat packs (hands, feet, lower back), and a face cover. Cameras drain batteries fast — bring two spares. Lens heaters help with condensation.
+
+Etiquette: don't block other visitors' paths; never touch sculptures; flash flattens snow detail (skip it); drones are prohibited.`,
   },
   {
     slug: "shiretoko-drift-ice",
@@ -179,8 +239,28 @@ Top vantages: (1) Uzumi Bridge for the classic vertical; (2) the cherry tunnel a
     hero: "sgqomcwsuq18xc1oyr3g",
     title: { ja: "知床の流氷を撮る — 1月〜3月、世界自然遺産の冬", en: "Shooting Drift Ice at Shiretoko: January–March in a UNESCO Natural Heritage Winter" },
     excerpt: { ja: "オホーツクから流れ着く氷原。ウトロ発のクルーズと陸上撮影、それぞれのベストポジション。", en: "Ice fields drifting from the Sea of Okhotsk. Best vantage from cruise boats out of Utoro, and from land." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `知床半島は世界自然遺産で、冬はオホーツク海から流れ着く流氷で覆われます。流氷シーズンは1月下旬〜3月上旬。極寒のシベリアから1000km以上を漂流して接岸する氷原は、北半球で最も低緯度（北緯44度）まで到達する流氷として世界的にも稀有な存在です。
+
+撮影は2つのアプローチ。①ウトロ港発の流氷クルーズ船「おーろら」（所要1時間、流氷の中を航行、ワシ・アザラシ遭遇率高）。②陸からのウトロ高台、知床五湖、フレペの滝展望台。クルーズは流氷接岸状況によって運休・コース変更があるので、前日の運航状況確認必須。
+
+ベスト時期は2月上旬〜中旬。流氷が最も多く接岸し、晴天日も比較的多い時期。早朝の朝焼けに染まる流氷、夕焼けに沈むオレンジの氷原、夜の星空+流氷の組み合わせはこの時期だけ。日中は青空と白い氷のコントラストがハイライト。
+
+撮影テクニックは3点。①露出補正+1〜+1.5EV（雪と氷で測光が暗く出る）、②PLフィルターで氷の青みと水面反射をコントロール、③白い被写体に対しスポット測光で適正露出。望遠レンズ（70-200mm）でオオワシ・オジロワシも狙えます。
+
+機材保護は徹底を。氷点下20℃以下も普通で、強風時は体感-30℃。バッテリー消耗が極端に早く、内ポケットで温め予備3個必携。レンズの結露を防ぐため、屋外から暖かい船内へ戻る時はジップロック密封してから。
+
+知床は野生動物の宝庫。エゾシカ、キタキツネ、運が良ければオオワシ・オジロワシ・シャチも。流氷の上で羽を広げるオオワシは究極の被写体です。`,
+    bodyEn: `The Shiretoko Peninsula is a UNESCO Natural Heritage site, and in winter it is enveloped by drift ice flowing in from the Sea of Okhotsk. Drift-ice season runs from late January through early March. Ice originating in extreme-cold Siberia drifts over 1,000 km to reach Shiretoko's coast — the lowest latitude (~44° N) of any drift ice in the Northern Hemisphere, a globally rare phenomenon.
+
+Two approaches: (1) the «Aurora» drift-ice cruise from Utoro Port (about 1 hour, navigating through the ice with high chances of seeing eagles and seals); (2) land-based vantages from Utoro highlands, Shiretoko Goko (Five Lakes), and Furepe Falls observation deck. Cruise schedules and routes shift with ice conditions — check the day-before status.
+
+Best timing is early-to-mid February when ice coverage peaks and clear days are more common. Sunrise turning the ice red, sunset bathing the floes orange, and night skies with starlit ice are unique to this window. Daytime offers stark blue-sky-and-white-ice contrast.
+
+Three techniques: (1) exposure compensation +1 to +1.5 EV (snow and ice fool the meter into underexposure); (2) CPL filter to manage ice's blue cast and water reflections; (3) spot-meter on white subjects for accurate exposure. A 70–200 mm telephoto also catches Steller's sea eagles and white-tailed eagles.
+
+Take gear protection seriously. Below −20 °C is routine, with wind chill reaching −30 °C. Batteries drain dramatically — keep three spares in inner pockets. To prevent lens condensation when returning from outside to a warm cabin, seal the camera in a ziplock bag first.
+
+Shiretoko teems with wildlife: ezo deer, foxes, and with luck, Steller's eagles, white-tailed eagles, and even orcas. A Steller's eagle spreading its wings on drifting ice is the ultimate subject.`,
   },
   {
     slug: "furano-lavender",
@@ -189,8 +269,28 @@ Top vantages: (1) Uzumi Bridge for the classic vertical; (2) the cherry tunnel a
     hero: "hvnlsmmmikzqkmooht8u",
     title: { ja: "富良野ラベンダー畑の絶景 — 7月中旬の紫の絨毯を狙う", en: "Furano's Lavender Fields: Targeting the Purple Carpet of Mid-July" },
     excerpt: { ja: "ファーム富田を中心とした花畑。早朝の光線、構図、混雑回避のための時間帯。", en: "Flower fields centered on Farm Tomita. Morning light, composition, and the timing that avoids crowds." },
-    bodyJa: "",
-    bodyEn: "",
+    bodyJa: `北海道富良野市は日本一のラベンダー産地。1903年から始まったラベンダー栽培は、町の風景そのものになりました。代表的な「ファーム富田」を中心に、ハイランドふらの、彩香の里、フラワーランドかみふらのなど10以上の花畑が点在します。
+
+ベストシーズンは7月中旬〜下旬。例年7月15日前後に満開となり、20日頃にピークを迎えます。8月初旬には収穫が始まるため、撮影できる窓は約2週間と短く、計画は1ヶ月前から。富良野市公式サイトの開花情報で日々確認を。
+
+ファーム富田は無料開放。最も有名な「彩りの畑」は7色のしましま花畑で、彩りの撮影には標準〜中望遠（35-85mm）で圧縮効果を。「トラディショナルラベンダー畑」は紫一色の絨毯で、広角（16-35mm）で空・山・畑を一フレームに。背景に十勝岳連峰の冠雪を入れた構図は富良野ならでは。
+
+時間帯は早朝6時前到着が必須。8時を過ぎると国内外の観光バスが押し寄せ、構図に人が入ります。9時〜15時は混雑ピーク。日没後の17時以降も人が引いて狙い目で、夕日に染まる紫のラベンダーは別格の美しさ。
+
+機材：標準ズーム（24-70mm）一本+中望遠で十分。PLフィルターで葉の反射を抑え花の色を鮮やかに。マクロレンズがあればミツバチや滴も狙えます。三脚は混雑時迷惑になるので一脚 or 手持ち推奨。
+
+注意：花畑には絶対に入らない（私有地、踏み荒らし禁止）。決められた通路から撮影。ドローンは禁止。撮影後はファーム富田名物のラベンダーソフトクリームを忘れずに。`,
+    bodyEn: `Furano in central Hokkaido is Japan's premier lavender region. Cultivation began in 1903 and has shaped the town's identity. Centered on the famous Farm Tomita, the area includes Highland Furano, Saika no Sato, and Flowerland Kamifurano — ten-plus flower fields scattered across the basin.
+
+Peak season is mid-to-late July. Full bloom typically arrives around July 15, peaking near the 20th. Harvest begins early August, leaving a roughly two-week window. Plan a month ahead and check Furano City's daily bloom updates.
+
+Farm Tomita is free to enter. The famous «Irodori-no-Hatake» (rainbow-stripe field) is best with a normal-to-short-telephoto (35–85 mm) using compression. The «Traditional Lavender Field» is a pure purple carpet — wide angle (16–35 mm) frames sky, mountains, and field together. Including the snow-capped Tokachi Range in the background is the signature Furano composition.
+
+Arrive before 6 a.m. From 8:00 onward, domestic and international tour buses fill the paths. 9:00–15:00 is peak congestion. After 17:00 the crowds thin again — sunset-lit lavender is breathtakingly different. Cooler air also produces better photos.
+
+Gear: a standard zoom (24–70 mm) plus a short telephoto suffices. A CPL filter dampens leaf glare and saturates flower color. A macro lens captures bees and dewdrops. Tripods can obstruct other visitors during crowded hours — handheld or monopod is preferred.
+
+Critical etiquette: never step into the flower beds (private land, plants are damaged easily). Stay on designated paths. Drones are prohibited. After shooting, don't miss Farm Tomita's signature lavender soft-serve ice cream.`,
   },
   {
     slug: "shirakawa-go-snow",
