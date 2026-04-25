@@ -867,6 +867,9 @@ export default function PageClient({ initialLang = "ja" }) {
         </div>
         <div className={"top-nav" + (scrollY > 80 ? " scrolled" : "")}>
           <button className="top-nav-link" onClick={scrollToMap}>{t.nav.map}</button>
+          <a className="top-nav-link" href={`/${lang}/blog`}>{lang === "ja" ? "ブログ" : lang === "zh" ? "博客" : lang === "zh-tw" ? "部落格" : lang === "ko" ? "블로그" : "Blog"}</a>
+          <a className="top-nav-link" href={`/${lang}/collections/cherry-blossoms`}>{lang === "ja" ? "コレクション" : lang === "zh" ? "合集" : lang === "zh-tw" ? "合集" : lang === "ko" ? "컬렉션" : "Collections"}</a>
+          <a className="top-nav-link" href={`/${lang}/search`}>{lang === "ja" ? "検索" : lang === "zh" ? "搜索" : lang === "zh-tw" ? "搜尋" : lang === "ko" ? "검색" : "Search"}</a>
           <button className="top-nav-link" onClick={scrollToContact}>{t.contact.title}</button>
         </div>
         <div className="cin-hero">
