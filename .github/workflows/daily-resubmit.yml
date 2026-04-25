@@ -1,0 +1,57 @@
+name: Daily Sitemap Resubmit + IndexNow
+
+# Google/Bingにsitemapを毎日再送信し、IndexNowで全URLを通知
+# サイト更新の有無にかかわらず、クロール頻度を維持
+
+on:
+  schedule:
+    # 毎日 02:00 UTC = 11:00 JST に実行
+    - cron: "0 2 * * *"
+  workflow_dispatch:  # 手動実行も可能
+
+jobs:
+  resubmit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit cloudinary || true
+
+      - name: Resubmit sitemap to Google
+        env:
+          GSC_KEY: ${{ secrets.GSC_KEY }}
+        run: |
+          if [ -z "$GSC_KEY" ]; then
+            echo "::warning::GSC_KEY secret not set — skipping Google submission"
+            exit 0
+          fi
+          echo "$GSC_KEY" > /tmp/gsc-key.json
+          GSC_KEY_PATH=/tmp/gsc-key.json node resubmit-sitemap.mjs
+          rm -f /tmp/gsc-key.json
+
+      - name: Resubmit sitemap to Bing
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: |
+          if [ -z "$BING_WEBMASTER_API_KEY" ]; then
+            echo "::warning::BING_WEBMASTER_API_KEY secret not set — skipping Bing submission"
+            exit 0
+          fi
+          node resubmit-sitemap-bing.mjs
+
+      - name: Notify IndexNow (full sitemap)
+        run: node notify-indexnow.mjs --sitemap
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Daily Resubmit Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Sitemap: https://landscapes-of-japan.vercel.app/sitemap.xml" >> $GITHUB_STEP_SUMMARY
+          echo "- Run at: $(date -u)" >> $GITHUB_STEP_SUMMARY

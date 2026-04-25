@@ -1,5 +1,57 @@
+# Landscapes of Japan — robots.txt
+
+# Standard search engines: full access
 User-agent: *
 Allow: /
+Disallow: /search
 
+# Major AI crawlers: explicitly allowed for AI search visibility
+# (GPTBot is OpenAI/ChatGPT, ClaudeBot/anthropic-ai is Claude/Anthropic,
+#  PerplexityBot is Perplexity, Google-Extended is Google's Gemini training)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Sitemaps
 Sitemap: https://landscapes-of-japan.vercel.app/sitemap.xml
 Sitemap: https://landscapes-of-japan.vercel.app/sitemap-images.xml
+
+# Crawl-delay: not set (modern bots ignore this)

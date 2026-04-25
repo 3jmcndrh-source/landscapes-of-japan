@@ -46,6 +46,20 @@ export async function GET() {
         caption: p.year ? `${locJa} (${p.year})` : locJa,
       }));
       urls.push({ loc: locUrl, images: locImages });
+
+      // Photo detail pages: one URL per photo, one image entry each.
+      // This boosts Google Images traffic: each photo gets a dedicated indexable page.
+      for (const photo of photos) {
+        const photoUrl = `${SITE_URL}/ja/${prefSlug}/${locSlug}/${photo.id}`;
+        urls.push({
+          loc: photoUrl,
+          images: [{
+            loc: cldUrl(photo.id, 2400),  // 2400px for highest quality reference
+            title: `${locJa} - ${prefJa}${photo.year ? ` (${photo.year})` : ""}`,
+            caption: `${locJa}, ${prefJa}, Japan${photo.year ? ` — ${photo.year}` : ""}`,
+          }],
+        });
+      }
     }
   }
 

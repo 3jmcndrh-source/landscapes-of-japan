@@ -1,0 +1,57 @@
+name: Weekly Health Check
+
+# 全URLの404/500を週次で検出。サイト破損を早期発見
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"  # 毎週月曜 03:00 UTC = 12:00 JST
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Sample HEAD checks across the sitemap
+        run: |
+          set +e
+          # sitemap.xml index から各 sub-sitemap を取得 → ランダムサンプル50URLにHEAD
+          curl -s https://landscapes-of-japan.vercel.app/sitemap.xml \
+            | grep -oP '<loc>\K[^<]+' > sitemaps.txt
+          echo "Found $(wc -l < sitemaps.txt) sub-sitemaps"
+
+          for sm in $(cat sitemaps.txt); do
+            curl -s "$sm" | grep -oP '<loc>\K[^<]+' >> all-urls.txt
+          done
+
+          TOTAL=$(wc -l < all-urls.txt)
+          echo "Total URLs: $TOTAL"
+
+          # ランダムに 50 URL サンプリング
+          shuf all-urls.txt | head -50 > sample.txt
+
+          FAILED=0
+          while IFS= read -r url; do
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" -I "$url" -A "GitHub-HealthCheck/1.0")
+            if [ "$CODE" != "200" ] && [ "$CODE" != "301" ] && [ "$CODE" != "308" ]; then
+              echo "::error::FAIL $CODE — $url"
+              FAILED=$((FAILED + 1))
+            fi
+          done < sample.txt
+
+          echo "### Health Check Result" >> $GITHUB_STEP_SUMMARY
+          echo "- Total URLs in sitemap: $TOTAL" >> $GITHUB_STEP_SUMMARY
+          echo "- Sampled: 50" >> $GITHUB_STEP_SUMMARY
+          echo "- Failed: $FAILED" >> $GITHUB_STEP_SUMMARY
+
+          if [ $FAILED -gt 5 ]; then
+            echo "::error::More than 5 failures in 50-URL sample"
+            exit 1
+          fi

@@ -4,6 +4,7 @@ import { PREFECTURES, PREF_I18N, getPrefName } from "../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
 import { getPrefDesc, getPrefFaqs } from "../../content/descriptions.js";
+import { getPrefSameAs } from "../../wikidata.js";
 
 export const dynamicParams = false;
 
@@ -70,7 +71,12 @@ export default async function Page({ params }) {
         url: `${SITE_URL}/${lang}/${prefSlug}`,
         inLanguage: HREFLANG[lang] || lang,
         description: desc,
-        about: { "@type": "AdministrativeArea", name: getPrefName(prefJp, "en"), addressCountry: "JP" },
+        about: {
+          "@type": "AdministrativeArea",
+          name: getPrefName(prefJp, "en"),
+          addressCountry: "JP",
+          ...(getPrefSameAs(prefJp).length > 0 && { sameAs: getPrefSameAs(prefJp) }),
+        },
         image: pf.photos.slice(0, 10).map((p) => ({
           "@type": "Photograph",
           contentUrl: `https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/${encodeURIComponent(p.id)}.jpg`,

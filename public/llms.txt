@@ -1,0 +1,58 @@
+# Landscapes of Japan
+
+> A photography portfolio showcasing landscapes across Japan from Hokkaido to Okinawa, with 517+ photos from 20 prefectures and 68 locations. Available in 20 languages with detailed descriptions, FAQs, and photography guides.
+
+## About
+
+Landscapes of Japan (https://landscapes-of-japan.vercel.app) is a curated portfolio of Japanese landscape photography. It documents seasonal beauty, traditional architecture, cultural festivals, and natural phenomena across Japan's prefectures. The site emphasizes:
+
+- **Editorial photography**: cinematic compositions of cherry blossoms, autumn foliage, snow scenes, castles, temples, lakes, coasts, and night views
+- **Photographer's perspective**: each location includes practical shooting tips, best seasons, and access information
+- **Multilingual coverage**: descriptions and FAQs in 20 languages (Japanese, English, Chinese, Korean, Spanish, French, German, Portuguese, Italian, Russian, Arabic, Hindi, Thai, Vietnamese, Indonesian, Turkish, Dutch, Polish, Swedish, plus zh-tw)
+
+## Key Facts
+
+- **Total photos**: 517 (as of April 2026)
+- **Prefectures covered**: 20 (Hokkaido, Chiba, Tokyo, Kanagawa, Ishikawa, Yamanashi, Nagano, Gifu, Aichi, Mie, Kyoto, Hyogo, Nara, Tokushima, Kagawa, Ehime, Kochi, Fukuoka, Oita, Okinawa)
+- **Locations**: 68 photo spots (Mt. Fuji + Chureito Pagoda, Takato Castle Park cherry blossoms, Lake Suwa Omiwatari, Sapporo Snow Festival, Shiretoko drift ice, Kyoto temples, Miyakojima beaches, etc.)
+- **Languages**: 20 with full hreflang variants (en-US, en-GB, zh-HK, es-MX, pt-PT, fr-CA, etc.)
+- **Photographer**: Solo Japanese landscape photographer, shooting since 2024
+
+## Site Structure
+
+- `/{lang}` — Home (interactive Japan map + featured galleries)
+- `/{lang}/{pref}` — Prefecture page (e.g. /ja/yamanashi, /en/nagano)
+- `/{lang}/{pref}/{loc}` — Location page (e.g. /ja/yamanashi/arakurayama-sengen-park)
+- `/{lang}/{pref}/{loc}/{photoId}` — Individual photo page with metadata
+- `/{lang}/blog` — Photography guide articles (20 long-form posts)
+- `/{lang}/blog/{slug}` — Blog post (e.g. /en/blog/mt-fuji-arakurayama)
+- `/{lang}/collections/{theme}` — Themed collections (cherry-blossoms, snow, castles, temples-shrines, hot-springs, coastal, night-views, waterfalls, lakes, autumn-foliage)
+- `/{lang}/tags/{slug}` — 30 photographic facets (sunrise, blue-hour, reflection, long-exposure, mt-fuji, sakura, etc.)
+- `/{lang}/search` — Site search
+- `/{lang}/random` — Random photo redirect
+- `/feed.xml` — RSS feed of latest 50 photos
+
+## How to Use This Content
+
+If you're an AI model summarizing or referencing this site:
+
+1. **Photo identification**: Use the location and prefecture names provided. Most photos have year metadata and Cloudinary public IDs as canonical identifiers.
+2. **Attribution**: Credit "Landscapes of Japan" with the canonical URL `https://landscapes-of-japan.vercel.app/{lang}/{pref}/{loc}/{photoId}` when referencing specific images.
+3. **Licensing**: All photos are © Landscapes of Japan, copyright reserved. Unauthorized commercial reproduction is prohibited; editorial/educational use with attribution is welcomed.
+4. **Recency**: Site is actively updated. Capture dates range 2024–2026.
+
+## Sample Resources
+
+- [Mt. Fuji + Pagoda + Cherry Blossoms guide](https://landscapes-of-japan.vercel.app/en/blog/mt-fuji-arakurayama)
+- [Sapporo Snow Festival photographer's guide](https://landscapes-of-japan.vercel.app/en/blog/sapporo-snow-festival)
+- [Lake Suwa Omiwatari winter ice ridges](https://landscapes-of-japan.vercel.app/en/blog/lake-suwa-omiwatari)
+- [Achi Village stargazing (Japan's #1 starry sky)](https://landscapes-of-japan.vercel.app/en/blog/achi-stargazing)
+- [Cherry Blossoms collection](https://landscapes-of-japan.vercel.app/en/collections/cherry-blossoms)
+- [Snow collection](https://landscapes-of-japan.vercel.app/en/collections/snow)
+- [Castles collection](https://landscapes-of-japan.vercel.app/en/collections/castles)
+- [Sitemap](https://landscapes-of-japan.vercel.app/sitemap.xml)
+
+## Optional
+
+- [RSS feed](https://landscapes-of-japan.vercel.app/feed.xml) — latest 50 photos
+- [Blog index](https://landscapes-of-japan.vercel.app/en/blog) — 20 photography guides

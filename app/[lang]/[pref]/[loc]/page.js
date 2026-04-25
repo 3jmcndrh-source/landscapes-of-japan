@@ -5,6 +5,7 @@ import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../slugs.js";
 import { getLocDesc, getLocFaqs } from "../../../content/descriptions.js";
 import { getEvents } from "../../../events.js";
+import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
 
 export const dynamicParams = false;
 
@@ -83,10 +84,12 @@ export default async function Page({ params }) {
         inLanguage: HREFLANG[lang] || lang,
         description: desc,
         touristType: "Landscape Photography",
+        ...(getLocSameAs(locJp).length > 0 && { sameAs: getLocSameAs(locJp) }),
         containedInPlace: {
           "@type": "AdministrativeArea",
           name: getPrefName(prefJp, lang),
           address: { "@type": "PostalAddress", addressRegion: getPrefName(prefJp, "en"), addressCountry: "JP" },
+          ...(getPrefSameAs(prefJp).length > 0 && { sameAs: getPrefSameAs(prefJp) }),
         },
         image: photos.slice(0, 10).map(
           (p) => `https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/${encodeURIComponent(p.id)}.jpg`
