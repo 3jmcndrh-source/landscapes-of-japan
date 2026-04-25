@@ -44,31 +44,31 @@ export const SEO_META = {
   ja: {
     title: "Landscapes of Japan — 日本の風景写真ポートフォリオ",
     description: "北海道から沖縄まで、日本全国の風景写真を掲載。京都、鎌倉、知床、宮古島など18都道府県、380枚以上の写真を公開中。",
-    keywords: ["日本","風景写真","ポートフォリオ","京都","北海道","沖縄","鎌倉","知床","宮古島","自然","旅行"],
+    keywords: ["日本","風景写真","ポートフォリオ","京都","北海道","沖縄","鎌倉","知床","宮古島","自然","旅行","桜 撮影","紅葉 撮影","富士山 撮影","星空 撮影","流氷","白川郷","松本城","姫路城","ラベンダー","御神渡り","逆さ富士","撮影スポット","撮影ガイド","富士山と桜","新倉山浅間公園","高遠城址公園"],
     ogLocale: "ja_JP",
   },
   en: {
     title: "Landscapes of Japan — Japanese Landscape Photography Portfolio",
     description: "A cinematic photography portfolio showcasing landscapes across Japan — Hokkaido, Kyoto, Kamakura, Shiretoko, Miyako Island and more. Over 380 photos from 18 prefectures.",
-    keywords: ["Japan","landscape photography","portfolio","Kyoto","Hokkaido","Okinawa","Kamakura","Shiretoko","travel","nature"],
+    keywords: ["Japan","landscape photography","portfolio","Kyoto","Hokkaido","Okinawa","Kamakura","Shiretoko","travel","nature","Mt Fuji photography","cherry blossom photography","autumn foliage Japan","drift ice Shiretoko","Sapporo Snow Festival","Shirakawa-go","Himeji Castle","Matsumoto Castle","Lake Suwa Omiwatari","Miyakojima","stargazing Japan","Achi Village","Chureito Pagoda","Takato Castle Park","Niko-buchi","Chichibugahama","photo guide Japan","Japan travel photography"],
     ogLocale: "en_US",
   },
   zh: {
     title: "日本风景 — 日本风景摄影作品集",
     description: "从北海道到冲绳，收录日本各地的风景摄影作品。京都、镰仓、知床、宫古岛等18个都道府县，380张以上精选作品。",
-    keywords: ["日本","风景摄影","作品集","京都","北海道","冲绳","镰仓","自然","旅行"],
+    keywords: ["日本","风景摄影","作品集","京都","北海道","冲绳","镰仓","自然","旅行","富士山摄影","樱花摄影","红叶摄影","流冰","白川乡","姬路城","松本城","薰衣草","御神渡","逆富士","摄影攻略","摄影圣地","日本旅游摄影"],
     ogLocale: "zh_CN",
   },
   "zh-tw": {
     title: "日本風景 — 日本風景攝影作品集",
     description: "從北海道到沖繩，收錄日本各地的風景攝影作品。京都、鎌倉、知床、宮古島等18個都道府縣，380張以上精選作品。",
-    keywords: ["日本","風景攝影","作品集","京都","北海道","沖繩","鎌倉","自然","旅行"],
+    keywords: ["日本","風景攝影","作品集","京都","北海道","沖繩","鎌倉","自然","旅行","富士山攝影","櫻花攝影","紅葉攝影","流冰","白川鄉","姬路城","松本城","薰衣草","御神渡","逆富士","攝影攻略","攝影聖地","日本旅遊攝影","新倉山淺間公園"],
     ogLocale: "zh_TW",
   },
   ko: {
     title: "일본의 풍경 — 일본 풍경 사진 포트폴리오",
     description: "홋카이도에서 오키나와까지, 일본 전역의 풍경 사진을 소개합니다. 교토, 가마쿠라, 시레토코, 미야코섬 등 18개 도도부현, 380여 장의 사진.",
-    keywords: ["일본","풍경 사진","포트폴리오","교토","홋카이도","오키나와","가마쿠라","자연","여행"],
+    keywords: ["일본","풍경 사진","포트폴리오","교토","홋카이도","오키나와","가마쿠라","자연","여행","후지산 사진","벚꽃 촬영","단풍 촬영","유빙","시라카와고","히메지성","마쓰모토성","라벤더","오미와타리","역후지","촬영 가이드","촬영 명소","일본 여행 사진","아라쿠라야마","다카토 성지"],
     ogLocale: "ko_KR",
   },
   es: {

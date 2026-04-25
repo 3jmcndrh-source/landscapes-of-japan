@@ -6,6 +6,7 @@ import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { POSTS, getPostTitle } from "./content/blog/posts.js";
 import { getLocInfo } from "./loc-info.js";
+import Weather from "./Weather.js";
 
 export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
@@ -115,6 +116,11 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
               <span style={{ marginLeft: 12, opacity: .6 }}>· {getLocName(locJp, "en")}</span>
             )}
           </div>
+          {pf?.lat && pf?.lng && (
+            <div style={{ marginTop: 20 }}>
+              <Weather lat={pf.lat} lng={pf.lng} lang={lang} />
+            </div>
+          )}
         </header>
 
         {desc && (

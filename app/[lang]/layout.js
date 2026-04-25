@@ -61,6 +61,21 @@ export default async function LangLayout({ children, params }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Landscapes of Japan" />
+        {/* LCP最適化 (#22): ヒーロー背景画像preload (デバイス別) */}
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          href="https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,h_1080,c_fill,e_grayscale,f_auto,q_auto/hero_landscape.jpg"
+          media="(min-width: 769px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          href="https://res.cloudinary.com/dr53c12fo/image/upload/w_768,h_1024,c_fill,e_grayscale,f_auto,q_auto/hero_portrait.jpg"
+          media="(max-width: 768px)"
+        />
       </head>
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
         {children}
