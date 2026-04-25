@@ -5,6 +5,7 @@ import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { POSTS, getPostTitle } from "./content/blog/posts.js";
+import { getLocInfo } from "./loc-info.js";
 
 export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
@@ -149,6 +150,40 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs }) {
             ))}
           </div>
         </section>
+
+        {/* 実用情報 (#10): アクセス・駐車場・料金・所要時間・ベスト時間帯 */}
+        {(() => {
+          const info = getLocInfo(locJp);
+          if (!info) return null;
+          const labels = {
+            access:   { ja: "アクセス", en: "Access" },
+            parking:  { ja: "駐車場", en: "Parking" },
+            fee:      { ja: "料金", en: "Admission" },
+            duration: { ja: "所要時間", en: "Duration" },
+            bestTime: { ja: "ベスト時間帯", en: "Best Time" },
+          };
+          const fields = ["access", "parking", "fee", "duration", "bestTime"];
+          const isJa = lang === "ja";
+          return (
+            <section style={{ marginTop: 56, marginBottom: 24, padding: "24px 28px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8 }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.8)", marginBottom: 16 }}>
+                {lang === "ja" ? "実用情報" : "Practical Information"}
+              </h2>
+              <dl style={{ margin: 0, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, lineHeight: 1.7 }}>
+                {fields.map((f) => (
+                  <div key={f} style={{ display: "grid", gridTemplateColumns: "min-content 1fr", gap: 18, marginBottom: 10 }}>
+                    <dt style={{ minWidth: 100, color: "rgba(220,190,100,.85)", fontWeight: 500, whiteSpace: "nowrap" }}>
+                      {labels[f][isJa ? "ja" : "en"]}
+                    </dt>
+                    <dd style={{ margin: 0, color: "rgba(232,228,223,.92)" }}>
+                      {info[f][isJa ? "ja" : "en"]}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          );
+        })()}
 
         {faqs && faqs.length > 0 && (
           <section style={{ marginTop: 72 }}>
