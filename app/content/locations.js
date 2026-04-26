@@ -571,10 +571,13 @@ export const LOCATION_CONTENT = {
       "橫濱是開港歷史的國際港口城市。港未來21高樓群、橫濱紅磚倉庫、山下公園、橫濱中華街、大棧橋夜景、灣橋等，現代與歷史港口景觀交融。",
       "요코하마는 개항 역사를 지닌 국제 항만 도시. 미나토미라이21 고층빌딩군, 요코하마 아카렌가 창고, 야마시타 공원, 요코하마 차이나타운, 오산바시 부두 야경, 베이 브릿지 등 근대와 역사적 항만 풍경이 융합됩니다."
     ),
-    definition: lh(
-      "横浜は神奈川県の県庁所在地で、1859年の開港以降日本の国際貿易の中心となった人口約377万人の日本第2の都市。みなとみらい21地区の超高層ビル群を中心に、1989年完成のランドマークタワー(296m)、観覧車「コスモクロック21」、1911年築の赤レンガ倉庫、横浜中華街(日本最大、約500店舗)、開国の歴史を伝える山下公園・氷川丸、大さん橋国際客船ターミナル、ベイブリッジまで、近代と歴史的港湾が共存する関東屈指の夜景・都市撮影地です。",
-      "Yokohama, capital of Kanagawa Prefecture and Japan's second-largest city with about 3.77 million residents, has been the country's center of international trade since opening in 1859. With the Minato Mirai 21 district's high-rises — including the 296 m Landmark Tower (opened 1989) and the «Cosmo Clock 21» Ferris wheel — the 1911 Red Brick Warehouse, the 500-restaurant Yokohama Chinatown (Japan's largest), Yamashita Park and the Hikawa-maru ship that recall the opening era, the Osanbashi International Passenger Terminal, and Bay Bridge, Yokohama is one of Kanto's foremost subjects for nightscape and urban photography."
-    ),
+    definition: {
+      ja: "横浜は神奈川県の県庁所在地で、1859年の開港以降日本の国際貿易の中心となった人口約377万人の日本第2の都市。みなとみらい21地区の超高層ビル群を中心に、1989年完成のランドマークタワー(296m)、観覧車「コスモクロック21」、1911年築の赤レンガ倉庫、横浜中華街(日本最大、約500店舗)、開国の歴史を伝える山下公園・氷川丸、大さん橋国際客船ターミナル、ベイブリッジまで、近代と歴史的港湾が共存する関東屈指の夜景・都市撮影地です。",
+      en: "Yokohama, capital of Kanagawa Prefecture and Japan's second-largest city with about 3.77 million residents, has been the country's center of international trade since opening in 1859. With the Minato Mirai 21 district's high-rises — including the 296 m Landmark Tower (opened 1989) and the «Cosmo Clock 21» Ferris wheel — the 1911 Red Brick Warehouse, the 500-restaurant Yokohama Chinatown (Japan's largest), Yamashita Park and the Hikawa-maru ship that recall the opening era, the Osanbashi International Passenger Terminal, and Bay Bridge, Yokohama is one of Kanto's foremost subjects for nightscape and urban photography.",
+      zh: "横滨是神奈川县县厅所在地，1859年开港以来作为日本国际贸易中心，人口约377万人，日本第2大城市。以港未来21区超高层楼群为中心，1989年完工的地标塔(296米)、摩天轮「宇宙时钟21」、1911年建的红砖仓库、横滨中华街(日本最大，约500店铺)、传开国历史的山下公园·冰川丸、大栈桥国际客船码头、湾大桥等，近代与历史港湾共存的关东顶级夜景·都市撮影地。",
+      "zh-tw": "橫濱是神奈川縣縣廳所在地，1859年開港以來作為日本國際貿易中心，人口約377萬人，日本第2大城市。以港未來21區超高層樓群為中心，1989年完工的地標塔(296米)、摩天輪「宇宙時鐘21」、1911年建的紅磚倉庫、橫濱中華街(日本最大，約500店鋪)、傳開國歷史的山下公園·冰川丸、大棧橋國際客船碼頭、灣大橋等，近代與歷史港灣共存的關東頂級夜景·都市撮影地。",
+      ko: "요코하마는 가나가와현의 현청 소재지로, 1859년 개항 이래 일본 국제무역의 중심이 된 인구 약 377만 명의 일본 제2의 도시. 미나토미라이21 지구의 초고층 빌딩군을 중심으로, 1989년 완공된 랜드마크 타워(296m), 관람차 「코스모클락21」, 1911년 축 적벽돌 창고, 요코하마 차이나타운(일본 최대, 약 500개 점포), 개국의 역사를 전하는 야마시타 공원·히카와마루, 오산바시 국제객선 터미널, 베이 브릿지까지, 근대와 역사적 항만이 공존하는 간토 최고의 야경·도시 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "みなとみらい21・ランドマークタワー — 1989年完成、高さ296m、日本第3位、上層階の展望台「スカイガーデン」",
@@ -589,6 +592,27 @@ export const LOCATION_CONTENT = {
         "Osanbashi International Passenger Terminal — the rooftop «Whale's Back» overlooks Minato Mirai and the Red Brick Warehouse at sunset and night",
         "Yokohama Chinatown — Japan's largest, with about 500 restaurants, four ornate gates, and a lantern-and-signboard night atmosphere of its own",
         "Cosmo Clock 21 — installed in 1989 at 112.5 m, an essential element of any classic Yokohama nightscape",
+      ],
+      zh: [
+        "港未来21·地标塔 — 1989年完工，高296米，日本第3高，上层观景台「天空花园」",
+        "横滨红砖仓库 — 1911年建的历史仓库，现为商店与餐厅，夜间灯光是港口象征",
+        "大栈桥国际客船码头 — 屋顶「鲸鱼背」远眺港未来·红砖仓库的夕景至夜景",
+        "横滨中华街 — 日本最大规模，约500店铺，4座牌楼(门)，灯笼与招牌夜景宛若另一世界",
+        "宇宙时钟21 — 1989年设置，高112.5米的大摩天轮，夜景拍摄必入的象征性构图",
+      ],
+      "zh-tw": [
+        "港未來21·地標塔 — 1989年完工，高296米，日本第3高，上層觀景台「天空花園」",
+        "橫濱紅磚倉庫 — 1911年建的歷史倉庫，現為商店與餐廳，夜間燈光是港口象徵",
+        "大棧橋國際客船碼頭 — 屋頂「鯨魚背」遠眺港未來·紅磚倉庫的夕景至夜景",
+        "橫濱中華街 — 日本最大規模，約500店鋪，4座牌樓(門)，燈籠與招牌夜景宛若另一世界",
+        "宇宙時鐘21 — 1989年設置，高112.5米的大摩天輪，夜景拍攝必入的象徵性構圖",
+      ],
+      ko: [
+        "미나토미라이21·랜드마크 타워 — 1989년 완공, 높이 296m, 일본 제3위, 상층 전망대 「스카이 가든」",
+        "요코하마 아카렌가 창고 — 1911년 건립된 역사적 창고, 현재는 상점과 레스토랑, 밤의 조명은 항구의 상징",
+        "오산바시 국제객선 터미널 — 옥상 「고래의 등」에서 바라보는 미나토미라이·아카렌가의 석양~야경",
+        "요코하마 차이나타운 — 일본 최대 규모, 약 500개 점포, 4개의 패루(문), 등불과 간판의 야경은 별세계",
+        "코스모클락21 — 1989년 설치, 높이 112.5m의 대관람차, 야경 촬영에서 반드시 담는 상징적 구도",
       ],
     },
     quickAnswers: {
@@ -608,6 +632,30 @@ export const LOCATION_CONTENT = {
         { q: "Can I use a tripod?", a: "Tripods are fine outdoors at Osanbashi and the Red Brick Warehouse area (mind crowds). At Cosmo Clock's base and Kisha-michi, watch for passersby. The «Whale's Back» rooftop of Osanbashi International Passenger Terminal is the canonical tripod-friendly nightscape spot." },
         { q: "How do I photograph Yokohama Bay Bridge?", a: "The Daikoku Pier Skywalk reopened in 2024, restoring a great vantage. Honmoku Fishing Park gives the full bridge view. Pedestrians cannot cross the bridge itself — vehicles only. After sunset, illumination shifts to blue, a signature staging." },
       ],
+      zh: [
+        { q: "横滨是什么?", a: "神奈川县县厅所在地，1859年开港以来日本国际贸易中心。日本第2大城市(人口约377万人)，港未来21超高层楼群、红砖仓库、中华街、山下公园等近代与历史港湾共存的关东顶级夜景撮影地。" },
+        { q: "横滨夜景拍摄点是?", a: "大栈桥·红砖仓库前·港未来汽车道·山下公园冰川丸是经典4处。三脚架+广角含宇宙时钟21的构图为王道。日落后30分钟的蓝调时刻天空与街灯平衡最佳。" },
+        { q: "拍摄最佳季节是?", a: "夜景全年皆宜(冬季空气更清澈)，摩天轮灯光最鲜艳的也是冬季。横滨开港祭(6月)烟花、圣诞期间特别灯光秀尤为华丽。" },
+        { q: "如何前往横滨?", a: "东京站乘东海道线·横须贺线约25分钟·480日元。羽田机场乘京急线+地铁约30分钟。港未来21区从横滨站乘港未来线2站·3分钟。观光使用一日券「港游券」便利。" },
+        { q: "可以使用三脚架吗?", a: "大栈桥·红砖仓库的室外可用三脚架(拥挤时需注意)。宇宙时钟21摩天轮脚下·汽车道注意不要妨碍行人。横滨港大栈桥国际客船码头屋顶「鲸鱼背」是三脚架·拍摄会OK的夜景定番。" },
+        { q: "如何拍摄横滨湾大桥?", a: "大黑栈桥天空步道2024年重开，绝景桥拍摄点复活。本牧海钓设施可拍桥全景。横滨湾大桥本身仅车辆通行，禁止步行。日落后灯光变蓝是特色演出。" },
+      ],
+      "zh-tw": [
+        { q: "橫濱是什麼?", a: "神奈川縣縣廳所在地，1859年開港以來日本國際貿易中心。日本第2大城市(人口約377萬人)，港未來21超高層樓群、紅磚倉庫、中華街、山下公園等近代與歷史港灣共存的關東頂級夜景撮影地。" },
+        { q: "橫濱夜景拍攝點是?", a: "大棧橋·紅磚倉庫前·港未來汽車道·山下公園冰川丸是經典4處。三腳架+廣角含宇宙時鐘21的構圖為王道。日落後30分鐘的藍調時刻天空與街燈平衡最佳。" },
+        { q: "拍攝最佳季節是?", a: "夜景全年皆宜(冬季空氣更清澈)，摩天輪燈光最鮮豔的也是冬季。橫濱開港祭(6月)煙花、聖誕期間特別燈光秀尤為華麗。" },
+        { q: "如何前往橫濱?", a: "東京站搭東海道線·橫須賀線約25分鐘·480日元。羽田機場搭京急線+地鐵約30分鐘。港未來21區從橫濱站搭港未來線2站·3分鐘。觀光使用一日券「港遊券」便利。" },
+        { q: "可以使用三腳架嗎?", a: "大棧橋·紅磚倉庫的室外可用三腳架(擁擠時需注意)。宇宙時鐘21摩天輪腳下·汽車道注意不要妨礙行人。橫濱港大棧橋國際客船碼頭屋頂「鯨魚背」是三腳架·拍攝會OK的夜景定番。" },
+        { q: "如何拍攝橫濱灣大橋?", a: "大黑棧橋天空步道2024年重開，絕景橋拍攝點復活。本牧海釣設施可拍橋全景。橫濱灣大橋本身僅車輛通行，禁止步行。日落後燈光變藍是特色演出。" },
+      ],
+      ko: [
+        { q: "요코하마란?", a: "가나가와현 현청 소재지로, 1859년 개항 이래 일본 국제무역의 중심. 일본 제2의 도시(인구 약 377만 명)로, 미나토미라이21의 초고층 빌딩, 아카렌가 창고, 차이나타운, 야마시타 공원 등 근대와 역사적 항만이 공존하는 간토 최고의 야경 촬영지입니다." },
+        { q: "요코하마 야경 촬영 포인트는?", a: "오산바시·아카렌가 창고 앞·미나토미라이 기샤미치·야마시타 공원 히카와마루가 정석 4곳. 삼각대+광각으로 코스모클락21을 담는 구도가 왕도. 일몰 30분 후 블루 아워가 하늘과 거리 빛의 균형이 최고." },
+        { q: "촬영 베스트 시즌은?", a: "야경은 연중(겨울이 공기가 맑음), 관람차 조명이 가장 선명한 것도 겨울. 요코하마 개항제(6월)의 불꽃놀이, 크리스마스 시기 특별 조명은 특히 화려합니다." },
+        { q: "요코하마 가는 법은?", a: "도쿄역에서 도카이도선·요코스카선으로 약 25분·480엔. 하네다 공항에서 게이큐선+지하철로 약 30분. 미나토미라이21 지역은 요코하마역에서 미나토미라이선으로 2역·3분. 관광은 1일 승차권 「미나토부라리 티켓」이 편리." },
+        { q: "삼각대 사용 가능한가?", a: "오산바시·아카렌가 창고 야외는 삼각대 OK(혼잡 시 배려 필요). 코스모클락21 관람차 아래·기샤미치는 행인 방해에 주의. 요코하마 오산바시 국제객선 터미널 옥상 「고래의 등」은 삼각대·촬영회 OK의 야경 정석 스팟." },
+        { q: "요코하마 베이 브릿지를 찍으려면?", a: "다이코쿠 부두 스카이워크가 2024년 재개, 절경 다리 촬영지 부활. 혼모쿠 해낚시 시설에서는 다리 전경. 요코하마 베이 브릿지 자체는 차량만 통행 가능, 도보 불가. 일몰 후 조명이 파란색으로 바뀌는 연출이 있습니다." },
+      ],
     },
     faqs: [
       { q: d("横浜の夜景撮影ポイントは？","Best night-view spots in Yokohama?","横滨夜景拍摄点？","橫濱夜景拍攝點？","요코하마 야경 포인트는?"),
@@ -622,10 +670,13 @@ export const LOCATION_CONTENT = {
       "鎌倉是1185-1333年鎌倉幕府首都。鎌倉大佛（高德院）、長谷寺、鶴岡八幡宮、報國寺竹林、江之電平交道口、由比濱與七里濱海岸等，歷史與大海同框的罕見之地。",
       "가마쿠라는 1185-1333년 가마쿠라 막부의 수도. 가마쿠라 대불(고토쿠인), 하세데라, 쓰루가오카 하치만구, 호코쿠지 대숲, 에노덴 건널목, 유이가하마·시치리가하마 해변 등 역사와 바다를 모두 담을 수 있는 드문 곳."
     ),
-    definition: lh(
-      "鎌倉は神奈川県南東部の人口約17万人の古都で、1185年に源頼朝が日本初の武家政権「鎌倉幕府」を開き、1333年まで約150年間政治の中心として栄えた地。市内には100以上の寺社が点在し、特に高徳院の鎌倉大仏(1252年鋳造、高さ11.4m、国宝)、長谷寺(あじさい・紅葉)、鶴岡八幡宮(源氏の総氏神)、報国寺(竹林の寺)が代表的。江ノ電が走る海岸線、由比ヶ浜・七里ヶ浜から望む江ノ島と富士山まで、歴史と海を1日で巡れる関東屈指の撮影地です。",
-      "Kamakura is an ancient capital in southeastern Kanagawa Prefecture (population ~170,000), where Minamoto no Yoritomo founded Japan's first samurai government — the Kamakura Shogunate — in 1185. It served as the political center for about 150 years until 1333. The city contains over 100 temples and shrines, most famously the Great Buddha at Kotoku-in (cast 1252, 11.4 m tall, a National Treasure), Hasedera (hydrangeas and autumn colors), Tsurugaoka Hachimangu (the Minamoto clan's tutelary shrine), and Hokoku-ji (the «Bamboo Temple»). With the Enoden train running along the coast and views of Enoshima and Mt. Fuji from Yuigahama and Shichirigahama, Kamakura ranks among Kanto's finest one-day photographic destinations combining history and the sea."
-    ),
+    definition: {
+      ja: "鎌倉は神奈川県南東部の人口約17万人の古都で、1185年に源頼朝が日本初の武家政権「鎌倉幕府」を開き、1333年まで約150年間政治の中心として栄えた地。市内には100以上の寺社が点在し、特に高徳院の鎌倉大仏(1252年鋳造、高さ11.4m、国宝)、長谷寺(あじさい・紅葉)、鶴岡八幡宮(源氏の総氏神)、報国寺(竹林の寺)が代表的。江ノ電が走る海岸線、由比ヶ浜・七里ヶ浜から望む江ノ島と富士山まで、歴史と海を1日で巡れる関東屈指の撮影地です。",
+      en: "Kamakura is an ancient capital in southeastern Kanagawa Prefecture (population ~170,000), where Minamoto no Yoritomo founded Japan's first samurai government — the Kamakura Shogunate — in 1185. It served as the political center for about 150 years until 1333. The city contains over 100 temples and shrines, most famously the Great Buddha at Kotoku-in (cast 1252, 11.4 m tall, a National Treasure), Hasedera (hydrangeas and autumn colors), Tsurugaoka Hachimangu (the Minamoto clan's tutelary shrine), and Hokoku-ji (the «Bamboo Temple»). With the Enoden train running along the coast and views of Enoshima and Mt. Fuji from Yuigahama and Shichirigahama, Kamakura ranks among Kanto's finest one-day photographic destinations combining history and the sea.",
+      zh: "镰仓是神奈川县东南部人口约17万人的古都，1185年源赖朝在此开设日本首个武家政权「镰仓幕府」，至1333年作为政治中心繁荣约150年。市内100余座寺社遍布，尤以高德院镰仓大佛(1252年铸造，高11.4米，国宝)、长谷寺(绣球花·红叶)、鹤冈八幡宫(源氏总氏神)、报国寺(竹林寺)为代表。江之电沿海岸线奔驰，由比滨·七里滨可远眺江之岛与富士山，历史与大海一日可巡的关东顶级撮影地。",
+      "zh-tw": "鎌倉是神奈川縣東南部人口約17萬人的古都，1185年源賴朝在此開設日本首個武家政權「鎌倉幕府」，至1333年作為政治中心繁榮約150年。市內100餘座寺社遍布，尤以高德院鎌倉大佛(1252年鑄造，高11.4米，國寶)、長谷寺(繡球花·紅葉)、鶴岡八幡宮(源氏總氏神)、報國寺(竹林寺)為代表。江之電沿海岸線奔馳，由比濱·七里濱可遠眺江之島與富士山，歷史與大海一日可巡的關東頂級撮影地。",
+      ko: "가마쿠라는 가나가와현 남동부, 인구 약 17만 명의 고도로, 1185년 미나모토노 요리토모가 일본 최초의 무가 정권 「가마쿠라 막부」를 열고 1333년까지 약 150년간 정치의 중심으로 번영한 곳. 시내에는 100여 개의 사찰과 신사가 흩어져 있으며, 특히 고토쿠인의 가마쿠라 대불(1252년 주조, 높이 11.4m, 국보), 하세데라(수국·단풍), 쓰루가오카 하치만구(미나모토 가문의 총 씨신), 호코쿠지(대숲의 절)가 대표적. 에노덴이 달리는 해안선, 유이가하마·시치리가하마에서 바라보는 에노시마와 후지산까지, 역사와 바다를 하루에 둘러볼 수 있는 간토 최고의 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "鎌倉大仏(高徳院) — 1252年鋳造、高さ11.4m・重さ約121tの青銅製阿弥陀如来坐像、国宝、像内も拝観可",
@@ -640,6 +691,27 @@ export const LOCATION_CONTENT = {
         "Tsurugaoka Hachimangu — founded 1063; the Dankazura cherry-tree avenue, the Maiden stage, the great gingko (fell 2010, regrowing), and the lotus-filled Genji Pond",
         "Enoden Kamakurakokomae crossing — the «Slam Dunk» opening-credits landmark, with the level crossing in front of Enoshima across the sea",
         "Hokokuji — the «Bamboo Temple,» with a grove of 2,000 moso bamboo; sip matcha while photographing the silence",
+      ],
+      zh: [
+        "镰仓大佛(高德院) — 1252年铸造，高11.4米·重约121吨的青铜阿弥陀如来坐像，国宝，像内也可参观",
+        "长谷寺 — 6月绣球花(40种2,500株)、11月红叶灯光秀、见晴台远眺相模湾绝景",
+        "鹤冈八幡宫 — 1063年创建，段葛樱花并道，舞殿，大银杏(2010年倒伏、再生中)，源氏池莲花",
+        "江之电·镰仓高校前平交道 — 动画《灌篮高手》片头圣地，海后江之岛与平交道",
+        "报国寺 — 「竹寺」之称的孟宗竹2,000株竹林，品茶静摄静寂",
+      ],
+      "zh-tw": [
+        "鎌倉大佛(高德院) — 1252年鑄造，高11.4米·重約121噸的青銅阿彌陀如來坐像，國寶，像內也可參觀",
+        "長谷寺 — 6月繡球花(40種2,500株)、11月紅葉燈光秀、見晴台遠眺相模灣絕景",
+        "鶴岡八幡宮 — 1063年創建，段葛櫻花並道，舞殿，大銀杏(2010年倒伏、再生中)，源氏池蓮花",
+        "江之電·鎌倉高校前平交道 — 動畫《灌籃高手》片頭聖地，海後江之島與平交道",
+        "報國寺 — 「竹寺」之稱的孟宗竹2,000株竹林，品茶靜攝靜寂",
+      ],
+      ko: [
+        "가마쿠라 대불(고토쿠인) — 1252년 주조, 높이 11.4m·무게 약 121톤의 청동제 아미타여래 좌상, 국보, 상내도 참배 가능",
+        "하세데라 — 6월의 수국(40종 2,500그루), 11월의 단풍 라이트업, 미하라시다이에서의 사가미만 절경",
+        "쓰루가오카 하치만구 — 1063년 창건, 단카즈라 벚꽃 가로수, 마이덴, 대은행(2010년 도복, 재생 중), 겐지 연못의 연꽃",
+        "에노덴·가마쿠라 고교 앞 건널목 — 애니메이션 「슬램덩크」 오프닝의 성지, 바다 너머 에노시마와 건널목",
+        "호코쿠지 — 「대나무 절」이라 불리는 모쇼다케 2,000그루의 죽림, 말차를 마시며 정적을 촬영",
       ],
     },
     quickAnswers: {
@@ -658,6 +730,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get to Kamakura?", a: "From Tokyo Station, JR Yokosuka Line ~1 hr, ¥940. From Shinjuku, Shonan-Shinjuku Line ~1 hr. From Kamakura Station, the Enoden serves major sights. The «Noriorikun» day pass (¥800) is convenient. Weekends are crowded — go midweek if possible." },
         { q: "Etiquette for the Enoden crossing photo?", a: "The Kamakurakokomae crossing has been overwhelmed by «Slam Dunk» pilgrims, with complaints from residents. Don't step onto the tracks, don't shoot from the road, and don't block the spot at peak times. Before 7:00 AM or after 5:00 PM is much less crowded." },
         { q: "Can I enter the Great Buddha?", a: "Yes — a small interior is open (¥20 extra for adults). The cramped space lets you see the 8-section casting joints up close. Open 8:00–18:00, 5 minutes is plenty. No flash. During crowds, viewing time may be limited." },
+      ],
+      zh: [
+        { q: "镰仓是什么?", a: "神奈川县东南部古都，1185~1333年源赖朝在此设立日本首个武家政权「镰仓幕府」之地。100余座寺社、镰仓大佛(国宝)、长谷寺、鹤冈八幡宫、江之电与海岸线，历史与大海一日可巡的关东顶级撮影地。" },
+        { q: "镰仓必拍景点?", a: "镰仓大佛、长谷寺(绣球花·红叶)、鹤冈八幡宫、报国寺竹林、江之电镰仓高校前平交道(《灌篮高手》圣地)5处为定番。一日全巡需上午起计划。" },
+        { q: "最佳季节?", a: "4月上旬樱、6月中旬长谷寺绣球花、11月下旬~12月上旬红叶、冬季富士山与江之岛。绣球花期长谷寺·明月院排长队，平日清晨必备。" },
+        { q: "镰仓怎么去?", a: "东京站乘JR横须贺线约1小时·940日元。新宿乘湘南新宿线1小时。镰仓站搭江之电至各观光点。1日券「Noriorikun」(800日元)便利。周末拥挤建议平日。" },
+        { q: "江之电平交道撮影礼仪?", a: "镰仓高校前平交道作为《灌篮高手》圣地被外国游客挤爆，遭居民投诉。禁止入轨道、车道撮影、拥挤时长时间占据。清晨7点前或傍晚17点后较空。" },
+        { q: "可进入镰仓大佛内部?", a: "可胎内参拜(大人20日元另收)。内部意外狭小，可见铸造工艺(8段接缝)。8~18时随时入场，约5分钟。禁用闪光，拥挤时可能无法慢看。" },
+      ],
+      "zh-tw": [
+        { q: "鎌倉是什麼?", a: "神奈川縣東南部古都，1185~1333年源賴朝在此設立日本首個武家政權「鎌倉幕府」之地。100餘座寺社、鎌倉大佛(國寶)、長谷寺、鶴岡八幡宮、江之電與海岸線，歷史與大海一日可巡的關東頂級撮影地。" },
+        { q: "鎌倉必拍景點?", a: "鎌倉大佛、長谷寺(繡球花·紅葉)、鶴岡八幡宮、報國寺竹林、江之電鎌倉高校前平交道(《灌籃高手》聖地)5處為定番。一日全巡需上午起計劃。" },
+        { q: "最佳季節?", a: "4月上旬櫻、6月中旬長谷寺繡球花、11月下旬~12月上旬紅葉、冬季富士山與江之島。繡球花期長谷寺·明月院排長隊，平日清晨必備。" },
+        { q: "鎌倉怎麼去?", a: "東京車站搭JR橫須賀線約1小時·940日圓。新宿搭湘南新宿線1小時。鎌倉車站搭江之電至各觀光點。1日券「Noriorikun」(800日圓)便利。週末擁擠建議平日。" },
+        { q: "江之電平交道撮影禮儀?", a: "鎌倉高校前平交道作為《灌籃高手》聖地被外國遊客擠爆，遭居民投訴。禁止入軌道、車道撮影、擁擠時長時間佔據。清晨7點前或傍晚17點後較空。" },
+        { q: "可進入鎌倉大佛內部?", a: "可胎內參拜(大人20日圓另收)。內部意外狹小，可見鑄造工藝(8段接縫)。8~18時隨時入場，約5分鐘。禁用閃光，擁擠時可能無法慢看。" },
+      ],
+      ko: [
+        { q: "가마쿠라란?", a: "가나가와현 남동부 고도로, 1185~1333년에 미나모토노 요리토모가 일본 최초의 무가 정권 「가마쿠라 막부」를 둔 곳. 100여 개의 사찰·신사, 가마쿠라 대불(국보), 하세데라, 쓰루가오카 하치만구, 에노덴과 해안선까지 역사와 바다를 하루에 둘러볼 수 있는 간토 최고의 촬영지입니다." },
+        { q: "가마쿠라에서 빠뜨릴 수 없는 촬영 스폿은?", a: "가마쿠라 대불, 하세데라(수국·단풍), 쓰루가오카 하치만구, 호코쿠지의 대숲, 에노덴 가마쿠라고코마에 건널목(『슬램덩크』의 성지)의 5곳이 정석. 하루에 모두 도려면 오전부터 계획적으로." },
+        { q: "베스트 시즌은?", a: "벚꽃의 4월 상순, 하세데라의 수국 6월 중순, 단풍의 11월 하순~12월 상순, 후지산과 에노시마의 겨울. 수국 시기는 하세데라·메이게쓰인에 긴 줄, 평일 이른 아침이 필수입니다." },
+        { q: "가마쿠라 가는 법은?", a: "도쿄역에서 JR 요코스카선으로 약 1시간·940엔. 신주쿠에서는 쇼난신주쿠라인으로 1시간. 가마쿠라역에서 에노덴으로 각 관광 스폿으로. 1일 승차권 「노리오리쿤」(800엔)이 편리. 주말은 혼잡하므로 평일 권장." },
+        { q: "에노덴 건널목 촬영 매너는?", a: "가마쿠라고코마에 건널목은 『슬램덩크』의 성지로 외국인 관광객이 쇄도해 인근 주민에게 불만. 선로 출입 금지, 차도에서 촬영 금지, 혼잡 시 장시간 점거 불가. 이른 아침 7시 전 또는 저녁 17시 이후가 비교적 한산." },
+        { q: "가마쿠라 대불 내부에 들어갈 수 있나?", a: "태내 참배 가능(어른 20엔 별도). 안은 의외로 좁은 공간으로, 주조 기술(8단의 이음매가 보임)을 배울 수 있다. 8~18시 사이 수시 입장 가능, 소요 약 5분. 촬영은 플래시 금지, 혼잡 시 천천히 볼 수 없을 가능성도." },
       ],
     },
     faqs: [
