@@ -371,10 +371,13 @@ export const LOCATION_CONTENT = {
       "宮古島是沖繩縣宮古群島主島。世界級透明度的「宮古藍」海、與那霸前濱（東洋第一沙灘）、伊良部大橋（日本最長免費橋3540米）、池間大橋、砂山海灘天然拱門等，亞熱帶樂園。",
       "미야코지마는 오키나와현 미야코 제도의 주도(主島). 세계 최고 수준의 투명도를 자랑하는 '미야코 블루' 바다, 요나하 마에하마(동양 최고 해변), 이라부 대교(일본 최장 무료 다리 3,540m), 이케마 대교, 스나야마 비치 천연 아치 등 아열대 낙원."
     ),
-    definition: lh(
-      "宮古島(みやこじま)は沖縄県宮古諸島の主島で、面積約158km²・人口約5万人の珊瑚礁が隆起してできた平坦な島。沖縄本島から南西300kmに位置し、那覇から飛行機で約45分。世界屈指の透明度を誇る「宮古ブルー」と称される海と、ホワイトサンドのビーチで近年世界的観光地に。日本最長の無料橋・伊良部大橋(全長3,540m、2015年開通)、東洋一の砂浜と謳われる与那覇前浜ビーチ(全長7km)、池間大橋、来間大橋などを擁し、年間100万人以上が訪れます。",
-      "Miyakojima is the main island of Okinawa's Miyako archipelago — a flat coral-uplift island of about 158 km² with roughly 50,000 residents. Located 300 km southwest of Okinawa's main island and 45 minutes by air from Naha, it has become a globally recognized destination thanks to its «Miyako Blue» waters (with some of the world's clearest visibility) and white-sand beaches. The island is home to Japan's longest toll-free bridge — the 3,540 m Irabu Bridge (opened 2015) — the 7 km Yonaha Maehama Beach (often called «Asia's whitest sand»), the Ikema Bridge, and the Kurima Bridge, drawing more than a million visitors a year."
-    ),
+    definition: {
+      ja: "宮古島(みやこじま)は沖縄県宮古諸島の主島で、面積約158km²・人口約5万人の珊瑚礁が隆起してできた平坦な島。沖縄本島から南西300kmに位置し、那覇から飛行機で約45分。世界屈指の透明度を誇る「宮古ブルー」と称される海と、ホワイトサンドのビーチで近年世界的観光地に。日本最長の無料橋・伊良部大橋(全長3,540m、2015年開通)、東洋一の砂浜と謳われる与那覇前浜ビーチ(全長7km)、池間大橋、来間大橋などを擁し、年間100万人以上が訪れます。",
+      en: "Miyakojima is the main island of Okinawa's Miyako archipelago — a flat coral-uplift island of about 158 km² with roughly 50,000 residents. Located 300 km southwest of Okinawa's main island and 45 minutes by air from Naha, it has become a globally recognized destination thanks to its «Miyako Blue» waters (with some of the world's clearest visibility) and white-sand beaches. The island is home to Japan's longest toll-free bridge — the 3,540 m Irabu Bridge (opened 2015) — the 7 km Yonaha Maehama Beach (often called «Asia's whitest sand»), the Ikema Bridge, and the Kurima Bridge, drawing more than a million visitors a year.",
+      zh: "宫古岛是冲绳县宫古诸岛的主岛，面积约158平方公里·人口约5万人的珊瑚礁隆起形成的平坦岛屿。位于冲绳本岛西南300公里，那霸搭飞机约45分钟。以「宫古蓝」之名世界顶级透明度的海与白砂海滩近年成为世界级观光地。日本最长无料桥·伊良部大桥(全长3,540米，2015年开通)、东洋第一砂滩美誉的与那霸前浜海滩(全长7公里)、池间大桥、来间大桥等，年间访客超过100万人次。",
+      "zh-tw": "宮古島是沖繩縣宮古諸島的主島，面積約158平方公里·人口約5萬人的珊瑚礁隆起形成的平坦島嶼。位於沖繩本島西南300公里，那霸搭飛機約45分鐘。以「宮古藍」之名世界頂級透明度的海與白砂海灘近年成為世界級觀光地。日本最長無料橋·伊良部大橋(全長3,540米，2015年開通)、東洋第一砂灘美譽的與那霸前濱海灘(全長7公里)、池間大橋、來間大橋等，年間訪客超過100萬人次。",
+      ko: "미야코지마는 오키나와현 미야코 제도의 주된 섬으로, 면적 약 158km²·인구 약 5만 명의 산호초가 융기해 형성된 평탄한 섬. 오키나와 본섬에서 남서 300km에 위치하며, 나하에서 비행기로 약 45분. 세계 최고 수준의 투명도를 자랑하는 「미야코 블루」라 불리는 바다와 화이트 샌드의 비치로 최근 세계적 관광지가 됨. 일본 최장 무료 다리 이라부 대교(전장 3,540m, 2015년 개통), 동양 제일의 백사장으로 일컬어지는 요나하 마에하마 비치(전장 7km), 이케마 대교, 쿠리마 대교 등을 갖추며, 연간 100만 명 이상이 방문합니다.",
+    },
     highlights: {
       ja: [
         "与那覇前浜ビーチ — 全長7kmの真白な砂浜、東洋一の美しさ、来間大橋を背景に夕景の名所",
@@ -389,6 +392,27 @@ export const LOCATION_CONTENT = {
         "Miyako Blue waters — visibility approaching 40 m on clear midday with a polarizing filter, the gradient of coral and sand is unmatched",
         "Sunayama Beach — a hidden cove with a natural rock arch; silhouette compositions at sunset, reachable on a ~20-minute walk",
         "Ikema Bridge and Ikemajima — 1,425 m bridge framing Miyakojima from above, plus Ikema Wetland and migratory bird habitat",
+      ],
+      zh: [
+        "与那霸前浜海滩 — 全长7公里的洁白砂滩，东洋第一美景，以来间大桥为背景的夕景名所",
+        "伊良部大桥 — 2015年开通的日本最长免费桥(3,540米)，桥上一直线构图与翠绿海面",
+        "宫古蓝之海 — 透明度40米级，晴天正午用PL滤镜捕捉珊瑚礁与砂地的渐变",
+        "砂山海滩 — 有天然岩拱的秘境海滩，夕景剪影构图，徒步约20分钟",
+        "池间大桥·池间岛 — 全长1,425米，桥上眺望宫古岛本岛，池间湿地与候鸟生态系",
+      ],
+      "zh-tw": [
+        "與那霸前濱海灘 — 全長7公里的潔白砂灘，東洋第一美景，以來間大橋為背景的夕景名所",
+        "伊良部大橋 — 2015年開通的日本最長免費橋(3,540米)，橋上一直線構圖與翠綠海面",
+        "宮古藍之海 — 透明度40米級，晴天正午用PL濾鏡捕捉珊瑚礁與砂地的漸變",
+        "砂山海灘 — 有天然岩拱的秘境海灘，夕景剪影構圖，徒步約20分鐘",
+        "池間大橋·池間島 — 全長1,425米，橋上眺望宮古島本島，池間濕地與候鳥生態系",
+      ],
+      ko: [
+        "요나하 마에하마 비치 — 전장 7km의 새하얀 모래사장, 동양 제일의 아름다움, 쿠리마 대교를 배경으로 한 노을 명소",
+        "이라부 대교 — 2015년 개통된 일본 최장 무료 다리(3,540m), 다리를 가로지르는 일직선 구도와 에메랄드빛 바다",
+        "미야코 블루의 바다 — 투명도 40m급, 맑은 정오에 PL 필터로 산호초와 모래밭의 그라데이션 촬영",
+        "스나야마 비치 — 천연 바위 아치가 있는 비밀의 해변, 노을 실루엣 구도, 약 20분의 산책",
+        "이케마 대교·이케마섬 — 전장 1,425m, 다리 위에서 바라보는 미야코지마 본섬, 이케마 습원과 철새 생태계",
       ],
     },
     quickAnswers: {
@@ -407,6 +431,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get around Miyakojima?", a: "Public transit is limited — a rental car is essential (book 3+ months ahead in peak season). Airport to town is 15 min by car. A full circuit of Irabu Bridge, Yonaha Maehama, Cape Higashi-Hennazaki, and Sunayama Beach takes a full day. Mopeds and bicycles work but offer no shade — bring strong sun protection." },
         { q: "Recommended beaches?", a: "①Yonaha Maehama (7 km of white sand — Asia's finest) ②Sunayama Beach (arch-rock silhouette, gorgeous sunsets) ③Yoshino Beach (great for snorkeling) ④Ikima Beach on Ikema Island (hidden, exceptional clarity) ⑤Sawada-no-Hama on Irabu (rocky shoals at low tide). Early morning gives free parking and empty beaches." },
         { q: "Snorkeling and diving information?", a: "Miyakojima offers world-class visibility (40m+) and year-round diving. Yabiji is a coral-reef paradise 30 min by boat. License-free trial dives are widely available at shops (¥8,000–15,000 for 2 dives). For photography, bring an underwater housing or action camera." },
+      ],
+      zh: [
+        { q: "宫古岛是什么?", a: "冲绳县宫古诸岛主岛，面积约158平方公里的平坦珊瑚礁岛。「宫古蓝」之名世界顶级透明度的海、东洋第一与那霸前浜海滩、伊良部大桥等，年间访客超百万的亚热带乐园。" },
+        { q: "宫古蓝何时最美?", a: "正午前后(11~14时)晴天时。阳光高位直射海底，浅处呈白至水蓝、深处深蓝，渐变最生动。PL滤镜抑制反射可使蓝色更深。" },
+        { q: "最佳季节与飞行时间?", a: "5~9月海水透明度高峰，尤其7~8月。9月台风季需注意。10月·4月为避开拥挤的最佳时期。那霸出发45分钟，东京3小时20分(直飞航班)。" },
+        { q: "宫古岛怎么移动?", a: "公共交通有限，租车必须(主要公司皆有，旺季建议3个月前预约)。空港至市区车程15分钟，环游伊良部大桥·与那霸前浜·东平安名崎·砂山海滩需丸1日。机车或自行车也可，但无遮阴需防晒。" },
+        { q: "推荐的海滩?", a: "①与那霸前浜(7公里白砂·东洋第一)②砂山海滩(拱岩剪影、夕阳绝景)③吉野海岸(适合浮潜)④池间岛伊木真海滩(穴场·透明度极佳)⑤伊良部·佐和田之浜(干潮时礁石入画)。海滩停车场早晨免费且空。" },
+        { q: "浮潜·潜水资讯?", a: "宫古岛世界顶级透明度(40米以上)，全年可潜。八重干瀬是珊瑚礁圣地，乘船30分钟。无证体验潜各店举办(8,000~15,000日元/2次)。撮影建议带防水盒或运动相机。" },
+      ],
+      "zh-tw": [
+        { q: "宮古島是什麼?", a: "沖繩縣宮古諸島主島，面積約158平方公里的平坦珊瑚礁島。「宮古藍」之名世界頂級透明度的海、東洋第一與那霸前濱海灘、伊良部大橋等，年間訪客超百萬的亞熱帶樂園。" },
+        { q: "宮古藍何時最美?", a: "正午前後(11~14時)晴天時。陽光高位直射海底，淺處呈白至水藍、深處深藍，漸變最生動。PL濾鏡抑制反射可使藍色更深。" },
+        { q: "最佳季節與飛行時間?", a: "5~9月海水透明度高峰，尤其7~8月。9月颱風季需注意。10月·4月為避開擁擠的最佳時期。那霸出發45分鐘，東京3小時20分(直飛航班)。" },
+        { q: "宮古島怎麼移動?", a: "公共交通有限，租車必須(主要公司皆有，旺季建議3個月前預約)。機場至市區車程15分鐘，環遊伊良部大橋·與那霸前濱·東平安名崎·砂山海灘需丸1日。機車或自行車也可，但無遮蔭需防曬。" },
+        { q: "推薦的海灘?", a: "①與那霸前濱(7公里白砂·東洋第一)②砂山海灘(拱岩剪影、夕陽絕景)③吉野海岸(適合浮潛)④池間島伊木真海灘(穴場·透明度極佳)⑤伊良部·佐和田之濱(乾潮時礁石入畫)。海灘停車場早晨免費且空。" },
+        { q: "浮潛·潛水資訊?", a: "宮古島世界頂級透明度(40米以上)，全年可潛。八重干瀬是珊瑚礁聖地，乘船30分鐘。無證體驗潛各店舉辦(8,000~15,000日圓/2次)。撮影建議帶防水盒或運動相機。" },
+      ],
+      ko: [
+        { q: "미야코지마란?", a: "오키나와현 미야코 제도의 주된 섬, 면적 약 158km²의 평탄한 산호초 섬. 「미야코 블루」라 불리는 세계 최고 수준의 투명도의 바다, 동양 제일의 요나하 마에하마 비치, 이라부 대교 등, 연간 100만 명 이상이 방문하는 아열대 낙원입니다." },
+        { q: "미야코 블루가 가장 빛나는 시간대는?", a: "정오 전후(11~14시) 맑은 날. 태양이 높아 빛이 해저까지 닿기 때문에 얕은 곳은 백~수색, 깊은 곳은 심해 블루의 가장 선명한 그라데이션이 나타납니다. PL 필터로 반사를 억제하면 더 깊은 푸른빛이 됩니다." },
+        { q: "베스트 시즌과 비행시간은?", a: "5~9월 바다 투명도가 절정, 특히 7~8월. 9월은 태풍 시즌이라 주의. 10월·4월은 혼잡 회피의 베스트. 나하에서 45분, 도쿄에서 3시간 20분(직항편 있음)." },
+        { q: "미야코지마에서의 이동은?", a: "공공 교통이 제한적이므로 렌터카 필수(주요 회사 있음, 성수기는 3개월 전 예약 권장). 공항에서 시가지까지 차로 15분, 이라부 대교·요나하 마에하마·히가시 헨나자키·스나야마 비치를 일주하려면 꼬박 하루. 원동기나 렌탈 자전거로도 돌 수 있지만 그늘이 없어 햇볕 대책 필요." },
+        { q: "추천 비치는?", a: "①요나하 마에하마(7km 백사·동양 제일) ②스나야마 비치(아치 바위 실루엣, 석양 절경) ③요시노 해안(스노클링 적합) ④이케마섬 이키마 비치(비밀 스폿, 투명도 발군) ⑤이라부·사와다노 하마(간조 시 암초가 돋보임). 비치 주차장은 이른 아침이 무료·여유 있음." },
+        { q: "스노클링·다이빙 정보는?", a: "미야코지마는 세계 최고 수준의 투명도(40m 이상)로 연중 다이빙 가능. 야비지는 산호초의 성지로 보트로 30분. 라이센스 불요의 체험 다이브도 각 숍에서 실시(8,000~15,000엔/2회). 촬영 목적이라면 수중 하우징이나 액션 카메라를." },
       ],
     },
     faqs: [
