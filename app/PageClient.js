@@ -8,12 +8,12 @@ import { REGIONS } from "./regions.js";
 import TopNav from "./TopNav.js";
 
 const VIEW_ALL = {
-  ja: "全ての写真を見る", en: "View all photos", zh: "查看所有照片", "zh-tw": "查看所有照片",
-  ko: "모든 사진 보기", es: "Ver todas las fotos", fr: "Voir toutes les photos",
-  de: "Alle Fotos ansehen", pt: "Ver todas as fotos", it: "Vedi tutte le foto",
-  ru: "Все фотографии", ar: "عرض جميع الصور", hi: "सभी तस्वीरें देखें",
-  th: "ดูภาพทั้งหมด", vi: "Xem tất cả ảnh", id: "Lihat semua foto",
-  tr: "Tüm fotoğrafları gör", nl: "Bekijk alle foto's", pl: "Zobacz wszystkie zdjęcia", sv: "Visa alla foton",
+  ja: "ガイド/詳細を見る", en: "Guide & details", zh: "查看指南与详情", "zh-tw": "查看指南與詳情",
+  ko: "가이드/자세히 보기", es: "Guía y detalles", fr: "Guide & détails",
+  de: "Reiseführer & Details", pt: "Guia e detalhes", it: "Guida e dettagli",
+  ru: "Гид и подробности", ar: "الدليل والتفاصيل", hi: "गाइड और विवरण",
+  th: "คู่มือและรายละเอียด", vi: "Hướng dẫn & chi tiết", id: "Panduan & detail",
+  tr: "Rehber ve ayrıntılar", nl: "Gids & details", pl: "Przewodnik i szczegóły", sv: "Guide & detaljer",
 };
 
 /* ── Embedded Japan GeoJSON — real lat/lng, D3 projects accurately ── */
