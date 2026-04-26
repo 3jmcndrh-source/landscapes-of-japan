@@ -470,10 +470,13 @@ export const LOCATION_CONTENT = {
       "沖繩本島是琉球王國歷史與亞熱帶自然共存之地。首里城遺址（重建中）、萬座毛、殘波岬、古宇利大橋、美麗海水族館、燒物之里、國際通等，南國景觀與琉球文化盡在此。",
       "오키나와 본섬은 류큐 왕국의 역사와 아열대 자연이 공존하는 곳. 슈리성 터(복원 중), 만자모, 잔파 곶, 고우리 대교, 추라우미 수족관, 야치문 도자기 마을, 국제거리 등 남국 풍경과 류큐 문화가 가득합니다."
     ),
-    definition: lh(
-      "沖縄(本島)は沖縄県の中心となる本島で、南北約106km・東西最大28km、人口約140万人の亜熱帯島。1429〜1879年は独立国「琉球王国」として、中国・東南アジアと交易した独自の文化を育み、首里城跡(2000年に世界遺産登録、2019年に正殿焼失後再建中)はその象徴。エメラルドグリーンの海と隆起珊瑚礁の万座毛・残波岬、海中道路で繋がる古宇利島、世界最大級の美ら海水族館、「やちむんの里」の伝統陶芸まで、南国の自然と独自文化が融合する撮影地です。",
-      "The main island of Okinawa is the prefecture's heart — about 106 km north-south, up to 28 km east-west, with 1.4 million residents in a subtropical setting. From 1429 to 1879 it served as the independent «Ryukyu Kingdom,» trading with China and Southeast Asia and developing a distinct culture symbolized by Shurijo Castle (UNESCO-listed in 2000 and rebuilding after the 2019 main hall fire). With emerald seas, the uplifted coral cliffs of Manzamo and Cape Zanpa, Kouri Island connected by sea bridge, the world-class Churaumi Aquarium, and the «Yachimun no Sato» pottery village, the island fuses tropical nature with a singular indigenous culture."
-    ),
+    definition: {
+      ja: "沖縄(本島)は沖縄県の中心となる本島で、南北約106km・東西最大28km、人口約140万人の亜熱帯島。1429〜1879年は独立国「琉球王国」として、中国・東南アジアと交易した独自の文化を育み、首里城跡(2000年に世界遺産登録、2019年に正殿焼失後再建中)はその象徴。エメラルドグリーンの海と隆起珊瑚礁の万座毛・残波岬、海中道路で繋がる古宇利島、世界最大級の美ら海水族館、「やちむんの里」の伝統陶芸まで、南国の自然と独自文化が融合する撮影地です。",
+      en: "The main island of Okinawa is the prefecture's heart — about 106 km north-south, up to 28 km east-west, with 1.4 million residents in a subtropical setting. From 1429 to 1879 it served as the independent «Ryukyu Kingdom,» trading with China and Southeast Asia and developing a distinct culture symbolized by Shurijo Castle (UNESCO-listed in 2000 and rebuilding after the 2019 main hall fire). With emerald seas, the uplifted coral cliffs of Manzamo and Cape Zanpa, Kouri Island connected by sea bridge, the world-class Churaumi Aquarium, and the «Yachimun no Sato» pottery village, the island fuses tropical nature with a singular indigenous culture.",
+      zh: "冲绳(本岛)是冲绳县中心本岛，南北约106公里、东西最大28公里，人口约140万人的亚热带岛屿。1429~1879年作为独立国「琉球王国」与中国、东南亚通商，孕育独特文化。首里城遗址(2000年世界遗产登录，2019年正殿焼失后重建中)是其象征。翠绿海洋与隆起珊瑚礁的万座毛·残波岬、海中道路连接的古宇利岛、世界最大级美丽海水族馆、「烧物之里」的传统陶艺，南国自然与独特文化融合的撮影地。",
+      "zh-tw": "沖繩(本島)是沖繩縣中心本島，南北約106公里、東西最大28公里，人口約140萬人的亞熱帶島嶼。1429~1879年作為獨立國「琉球王國」與中國、東南亞通商，孕育獨特文化。首里城遺址(2000年世界遺產登錄，2019年正殿燒失後重建中)是其象徵。翠綠海洋與隆起珊瑚礁的萬座毛·殘波岬、海中道路連接的古宇利島、世界最大級美麗海水族館、「燒物之里」的傳統陶藝，南國自然與獨特文化融合的撮影地。",
+      ko: "오키나와(본섬)는 오키나와현의 중심이 되는 본섬으로, 남북 약 106km·동서 최대 28km, 인구 약 140만 명의 아열대 섬. 1429~1879년은 독립국 「류큐 왕국」으로서 중국·동남아시아와 교역한 독자적 문화를 키워, 슈리성 터(2000년 세계유산 등록, 2019년 정전 소실 후 재건 중)는 그 상징. 에메랄드 그린의 바다와 융기 산호초의 만자모·잔파 곶, 해중도로로 이어지는 고우리섬, 세계 최대급 추라우미 수족관, 「야치문의 마을」의 전통 도예까지, 남국의 자연과 독자 문화가 융합하는 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "首里城跡 — 1429年首里王府の宮殿、世界遺産、2019年焼失後の正殿再建工事中(2026年完了予定)、守礼門は完全復元",
@@ -488,6 +491,27 @@ export const LOCATION_CONTENT = {
         "Kouri Bridge and Kouri Island — a 1,960 m sea-spanning bridge above emerald-blue water, with the «Heart Rock» drawing romantic photography",
         "Churaumi Aquarium — one of the world's largest acrylic tanks (8.2 m × 22.5 m) showcasing whale sharks and giant manta rays",
         "Yachimun no Sato (Yomitan) — a pottery village dotted with 19 kilns; climbing kilns, workshops, and traditional Ryukyu ceramics",
+      ],
+      zh: [
+        "首里城遗址 — 1429年首里王府宫殿，世界遗产，2019年焼失后正殿重建中(2026年完成)，守礼门完全复元",
+        "万座毛 — 隆起珊瑚礁绝壁，「象鼻」形天然岩，东海日落圣地",
+        "古宇利大桥·古宇利岛 — 全长1,960米海中道路，翠蓝海与「心形岩」，浪漫撮影地",
+        "美丽海水族馆 — 世界最大级亚克力水槽(高8.2米×宽22.5米)，鲸鲨与巨大魔鬼鱼泳姿",
+        "烧物之里(读谷村) — 19家窯元星布的陶艺之里，登窯与工房风景，传统琉球陶器",
+      ],
+      "zh-tw": [
+        "首里城遺址 — 1429年首里王府宮殿，世界遺產，2019年燒失後正殿重建中(2026年完成)，守禮門完全復原",
+        "萬座毛 — 隆起珊瑚礁絕壁，「象鼻」形天然岩，東海日落聖地",
+        "古宇利大橋·古宇利島 — 全長1,960米海中道路，翠藍海與「心形岩」，浪漫撮影地",
+        "美麗海水族館 — 世界最大級壓克力水槽(高8.2米×寬22.5米)，鯨鯊與巨大魔鬼魚泳姿",
+        "燒物之里(讀谷村) — 19家窯元星布的陶藝之里，登窯與工房風景，傳統琉球陶器",
+      ],
+      ko: [
+        "슈리성 터 — 1429년 슈리 왕부의 궁전, 세계유산, 2019년 소실 후 정전 재건 중(2026년 완료 예정), 슈레이몬은 완전 복원",
+        "만자모 — 융기 산호초 절벽, 「코끼리 코」 모양의 천연 바위, 동중국해의 선셋 스폿",
+        "고우리 대교·고우리섬 — 전장 1,960m의 해중도로, 에메랄드 블루의 바다와 「하트 록」, 로맨틱한 촬영지",
+        "추라우미 수족관 — 세계 최대급 아크릴 수조(높이 8.2m×폭 22.5m), 고래상어와 거대 만타가 헤엄치는 모습",
+        "야치문의 마을(요미탄손) — 19개의 가마가 흩어져 있는 도예의 마을, 노보리가마와 공방 풍경, 전통 류큐 도자기",
       ],
     },
     quickAnswers: {
@@ -506,6 +530,30 @@ export const LOCATION_CONTENT = {
         { q: "Status of Shurijo Castle reconstruction?", a: "The October 2019 fire destroyed the Seiden, Hokuden, and Nanden. Reconstruction is underway, with the Seiden scheduled for autumn 2026 completion. The «visible recovery» policy allows visitors to observe and photograph the work — a rare chance to record traditional techniques as World Heritage craftsmanship. The Shureimon and Shirokane Hall remain standing and shootable." },
         { q: "Photographing Churaumi Aquarium?", a: "The Kuroshio main tank (8.2 m × 22.5 m) housing whale sharks is shot through glass. A fast prime (50mm f/1.8) blurs the background; ISO 1600–3200 freezes motion. No flash. The Coral Reef zone is rich in color. Right at 9 AM opening avoids crowds — 4.2 million annual visitors make it Okinawa's most popular site." },
         { q: "Photographing Ryukyu culture?", a: "①Shurijo + Shureimon (symbol of Ryukyu architecture) ②Naha Public Daiichi Makishi Market (Okinawan ingredients) ③Kokusai-dori (night yatai and Ryukyu cuisine) ④Yachimun no Sato (traditional pottery, climbing kilns) ⑤Shisa (lion-dog statues on every roof) ⑥Bingata and Bashofu (traditional textiles) ⑦Eisa (summer traditional dance). One to two days can capture both culture and nature." },
+      ],
+      zh: [
+        { q: "冲绳(本岛)是什么?", a: "冲绳县中心南北约106公里的亚热带本岛。1429~1879年作为独立国「琉球王国」孕育独特文化，首里城遗址、万座毛、古宇利大桥、美丽海水族馆等南国自然与琉球文化融合的撮影地。" },
+        { q: "本岛一日拍摄路线?", a: "晨:首里城 → 中:万座毛·残波岬 → 夕:古宇利大桥·古宇利海滩 → 夜:那霸国际通，为王道。北部必须开车，移动时间长，集中南部或北部更高效。" },
+        { q: "最佳季节与交通?", a: "海与天最美为5~9月(尤其7~8月，9月台风需注意)。10月·4月避开拥挤最佳。那霸空港至那霸市内车程20分钟，北部美丽海水族馆约2小时。" },
+        { q: "首里城重建现状?", a: "2019年10月火灾正殿·北殿·南殿焼失。现重建中预定2026年秋完成正殿。「展示重建」概念下重建过程可见学·摄影，是世界遗产传统工法记录的稀有机会。守礼门·白银堂现存可摄影。" },
+        { q: "美丽海水族馆撮影技巧?", a: "鲸鲨泳的「黑潮海」大水槽(高8.2米×宽22.5米)是隔玻璃撮影。亮单焦点(50mm F1.8)背景虚化，ISO1600~3200凝结动作。禁用闪光。珊瑚礁海域色彩鲜艳。建议拥挤前9点开园直入，年访客420万。" },
+        { q: "琉球文化撮影对象?", a: "①首里城+守礼门(琉球建筑象征)②那霸市第一牧志公设市场(冲绳食材)③国际通(夜屋台与琉球料理)④烧物之里(传统陶艺·登窯)⑤西萨(各家屋顶狮像)⑥琉球红型·芭蕉布(传统工艺)⑦御伊萨(夏日传统舞蹈)。1~2日可拍文化与自然。" },
+      ],
+      "zh-tw": [
+        { q: "沖繩(本島)是什麼?", a: "沖繩縣中心南北約106公里的亞熱帶本島。1429~1879年作為獨立國「琉球王國」孕育獨特文化，首里城遺址、萬座毛、古宇利大橋、美麗海水族館等南國自然與琉球文化融合的撮影地。" },
+        { q: "本島一日拍攝路線?", a: "晨:首里城 → 中:萬座毛·殘波岬 → 夕:古宇利大橋·古宇利海灘 → 夜:那霸國際通，為王道。北部必須開車，移動時間長，集中南部或北部更高效。" },
+        { q: "最佳季節與交通?", a: "海與天最美為5~9月(尤其7~8月，9月颱風需注意)。10月·4月避開擁擠最佳。那霸空港至那霸市內車程20分鐘，北部美麗海水族館約2小時。" },
+        { q: "首里城重建現狀?", a: "2019年10月火災正殿·北殿·南殿燒失。現重建中預定2026年秋完成正殿。「展示重建」概念下重建過程可見學·攝影，是世界遺產傳統工法記錄的稀有機會。守禮門·白銀堂現存可攝影。" },
+        { q: "美麗海水族館撮影技巧?", a: "鯨鯊泳的「黑潮海」大水槽(高8.2米×寬22.5米)是隔玻璃撮影。亮單焦點(50mm F1.8)背景虛化，ISO1600~3200凝結動作。禁用閃光。珊瑚礁海域色彩鮮豔。建議擁擠前9點開園直入，年訪客420萬。" },
+        { q: "琉球文化撮影對象?", a: "①首里城+守禮門(琉球建築象徵)②那霸市第一牧志公設市場(沖繩食材)③國際通(夜屋台與琉球料理)④燒物之里(傳統陶藝·登窯)⑤西薩(各家屋頂獅像)⑥琉球紅型·芭蕉布(傳統工藝)⑦御伊薩(夏日傳統舞蹈)。1~2日可拍文化與自然。" },
+      ],
+      ko: [
+        { q: "오키나와(본섬)란?", a: "오키나와현의 중심이 되는 남북 약 106km의 아열대 본섬. 1429~1879년은 독립국 「류큐 왕국」으로 독자적 문화를 키워, 슈리성 터·만자모·고우리 대교·추라우미 수족관 등 남국 자연과 류큐 문화가 융합하는 촬영지입니다." },
+        { q: "본섬 당일 촬영 모델 코스는?", a: "아침: 슈리성 → 점심: 만자모·잔파 곶 → 저녁: 고우리 대교·고우리 비치 → 밤: 나하 국제거리가 정석. 북부는 차 필수, 이동 시간이 길어 남부 또는 북부에 집중하는 편이 효율적입니다." },
+        { q: "베스트 시즌과 접근은?", a: "바다와 하늘이 최고인 것은 5~9월(특히 7~8월, 9월은 태풍 주의). 10월·4월은 혼잡 회피 베스트. 나하 공항에서 나하 시내까지 차로 20분, 북부의 추라우미 수족관까지 약 2시간." },
+        { q: "슈리성 재건 현황은?", a: "2019년 10월 화재로 정전·북전·남전이 소실. 현재 재건 공사 중으로 2026년 가을에 정전 완성 예정. 재건 중에도 「보여주는 부흥」 컨셉으로 공사 과정 견학·사진 촬영 가능, 전통 공법의 재현은 세계유산 기술로 기록할 수 있는 희귀한 기회. 슈레이몬·시로가네도는 현존·촬영 OK." },
+        { q: "추라우미 수족관 촬영 테크닉은?", a: "고래상어가 헤엄치는 「쿠로시오의 바다」 대형 수조(높이 8.2m×폭 22.5m)는 유리 너머의 촬영. 밝은 단렌즈(50mm F1.8)로 배경 흐리기, ISO1600~3200으로 움직임 정지. 플래시 엄금. 산호초 바다 존은 색채가 선명. 혼잡 전 아침 9시 개원 직후가 노릴 만, 연간 420만 명이 방문하는 인기 시설입니다." },
+        { q: "류큐 문화의 피사체는?", a: "①슈리성+슈레이몬(류큐 건축의 상징) ②나하시 다이이치 마키시 공설시장(오키나와 식재의 시장) ③국제거리(밤의 야타이와 류큐 요리) ④야치문의 마을(전통 도예, 노보리가마) ⑤시사(지붕의 사자상, 각 집에 있음) ⑥류큐 빙가타·바쇼후(전통 공예품) ⑦에이사(여름의 전통 무용). 문화와 자연을 1~2일에 촬영할 수 있습니다." },
       ],
     },
     faqs: [
