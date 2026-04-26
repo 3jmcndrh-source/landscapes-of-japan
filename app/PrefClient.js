@@ -243,14 +243,16 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
                   </a>
                 ))}
               </div>
-              <div style={{ marginTop: 16 }}>
-                <a href={`/${lang}/all-prefectures`} style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none" }}>
-                  {lang === "ja" ? "47都道府県すべてを見る →" : "View all 47 prefectures →"}
-                </a>
-              </div>
             </section>
           );
         })()}
+
+        {/* 北海道など同地方が自pref のみの場合でもリンク表示するため独立セクションに分離 */}
+        <div style={{ marginTop: 32 }}>
+          <a href={`/${lang}/all-prefectures`} style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none" }}>
+            {lang === "ja" ? "47都道府県すべてを見る →" : "View all 47 prefectures →"}
+          </a>
+        </div>
       </main>
 
       {lightbox !== null && cur && (

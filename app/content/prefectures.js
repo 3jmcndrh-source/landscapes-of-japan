@@ -15,7 +15,7 @@ const lh = (ja, en) => ({ ja, en });
 export const PREFECTURE_CONTENT = {
   "北海道": {
     desc: d(
-      "北海道は日本最北端の島で、冬のさっぽろ雪まつりや流氷、夏のラベンダー畑、世界自然遺産・知床の原生林など、四季折々の壮大な風景が広がります。湖沼や火山、広大な農地が織りなす独特の地形は、日本他地域とは一線を画す「北の大地」の魅力そのもの。本ギャラリーには札幌・知床・摩周湖・富良野・小樽・洞爺湖など118枚を収録。",
+      "北海道は日本最北端の島で、冬のさっぽろ雪まつりや流氷、夏のラベンダー畑、世界自然遺産・知床の原生林など、四季折々の壮大な風景が広がります。湖沼や火山、広大な農地が織りなす独特の地形は、日本他地域とは一線を画す「北の大地」の魅力そのもの。本ギャラリーには札幌・知床・摩周湖・富良野・小樽・洞爺湖など118枚を掲載。",
       "Hokkaido, Japan's northernmost main island, offers dramatic seasonal landscapes — the Sapporo Snow Festival and drift ice in winter, lavender fields of Furano in summer, and the primeval forests of Shiretoko, a UNESCO World Heritage site. Its volcanic lakes, vast farmland, and dramatic coastlines set it apart from the rest of Japan. This gallery features 118 photographs from Sapporo, Shiretoko, Lake Mashu, Furano, Otaru, Lake Toya, and more.",
       "北海道是日本最北端的岛屿，拥有四季壮丽的风景——冬季的札幌雪祭和流冰，夏季富良野的薰衣草田，以及世界自然遗产知床的原始森林。火山湖泊、广袤农田和崎岖海岸线构成了独特的北国风光。本图库收录札幌、知床、摩周湖、富良野、小樽、洞爷湖等地共118张照片。",
       "北海道是日本最北端的島嶼，擁有四季壯麗的風景——冬季的札幌雪祭和流冰，夏季富良野的薰衣草田，以及世界自然遺產知床的原始森林。火山湖泊、廣袤農田和崎嶇海岸線構成了獨特的北國風光。本圖庫收錄札幌、知床、摩周湖、富良野、小樽、洞爺湖等地共118張照片。",
@@ -130,7 +130,7 @@ export const PREFECTURE_CONTENT = {
 
   "千葉県": {
     desc: d(
-      "千葉県は東京湾と太平洋に挟まれた半島で、房総の海岸線や九十九里浜、成田山新勝寺など多彩な景観を持ちます。東京からのアクセスも良く、都心の喧騒を離れた自然と海辺の風景を楽しめる場所として人気。本ギャラリーでは鴨川シーワールドの1枚を収録。",
+      "千葉県は東京湾と太平洋に挟まれた半島で、房総の海岸線や九十九里浜、成田山新勝寺など多彩な景観を持ちます。東京からのアクセスも良く、都心の喧騒を離れた自然と海辺の風景を楽しめる場所として人気。本ギャラリーでは鴨川シーワールドの1枚を掲載。",
       "Chiba faces both Tokyo Bay and the Pacific, shaped by the Boso Peninsula's coastline, Kujukuri Beach, and the historic Naritasan Shinshoji temple. Easily accessed from Tokyo, it offers quiet nature and seascapes beyond the city buzz. This gallery includes one shot from Kamogawa Sea World.",
       "千叶县位于东京湾与太平洋之间的半岛，拥有房总海岸线、九十九里浜、成田山新胜寺等多彩景观。交通便利，是远离都市喧嚣欣赏自然海景的好去处。本图库收录鸭川海洋世界1张。",
       "千葉縣位於東京灣與太平洋之間的半島，擁有房總海岸線、九十九里濱、成田山新勝寺等多彩景觀。交通便利，是遠離都市喧囂欣賞自然海景的好去處。本圖庫收錄鴨川海洋世界1張。",
@@ -217,7 +217,7 @@ export const PREFECTURE_CONTENT = {
 
   "東京都": {
     desc: d(
-      "世界有数のメガシティ東京は、高層ビル群と江戸の風情、先端と伝統が交差する稀有な都市景観を持ちます。品川の夜景、神社仏閣、公園の桜、ベイエリアなど、刻一刻と表情を変える都市の風景を写真で捉える醍醐味があります。本ギャラリーでは東京・品川の14枚を収録。",
+      "世界有数のメガシティ東京は、高層ビル群と江戸の風情、先端と伝統が交差する稀有な都市景観を持ちます。品川の夜景、神社仏閣、公園の桜、ベイエリアなど、刻一刻と表情を変える都市の風景を写真で捉える醍醐味があります。本ギャラリーでは東京・品川の14枚を掲載。",
       "Tokyo, one of the world's great megacities, juxtaposes glass towers with Edo-era quietude. Neon-lit Shinagawa nightscapes, shrines, cherry blossoms in parks, and the bay district offer an ever-shifting urban canvas. This gallery features 14 images from central Tokyo and Shinagawa.",
       "东京是世界级大都市，高楼大厦与江户风情交织，是独特的都市景观。品川夜景、神社古刹、公园樱花、湾区风光等，每时每刻都有不同表情。本图库收录东京与品川14张照片。",
       "東京是世界級大都市，高樓大廈與江戶風情交織，是獨特的都市景觀。品川夜景、神社古剎、公園櫻花、灣區風光等，每時每刻都有不同表情。本圖庫收錄東京與品川14張照片。",
@@ -304,7 +304,7 @@ export const PREFECTURE_CONTENT = {
 
   "神奈川県": {
     desc: d(
-      "神奈川県は東京の南隣、古都鎌倉と国際港湾都市横浜が共存する変化に富んだ地域。鎌倉の大仏と寺社、長谷寺の四季、横浜のベイエリア夜景・赤レンガ倉庫・中華街、みなとみらい21など、歴史と現代性の両方を撮れる稀有な場所です。50枚の写真で横浜・鎌倉を収録。",
+      "神奈川県は東京の南隣、古都鎌倉と国際港湾都市横浜が共存する変化に富んだ地域。鎌倉の大仏と寺社、長谷寺の四季、横浜のベイエリア夜景・赤レンガ倉庫・中華街、みなとみらい21など、歴史と現代性の両方を撮れる稀有な場所です。50枚の写真で横浜・鎌倉を掲載。",
       "Kanagawa blends the ancient capital of Kamakura with the international port city of Yokohama. From Kamakura's Great Buddha and seasonal temple gardens to Yokohama's bay-side nightscapes, Red Brick Warehouse, Chinatown, and Minato Mirai 21, it offers both heritage and modernity in one frame. 50 photos of Yokohama and Kamakura.",
       "神奈川县紧邻东京南部，古都镰仓与国际港口横滨并存。镰仓大佛、长谷寺四季、横滨湾区夜景、红砖仓库、中华街、港未来21等，历史与现代交融。本图库收录横滨与镰仓共50张照片。",
       "神奈川縣緊鄰東京南部，古都鎌倉與國際港口橫濱並存。鎌倉大佛、長谷寺四季、橫濱灣區夜景、紅磚倉庫、中華街、港未來21等，歷史與現代交融。本圖庫收錄橫濱與鎌倉共50張照片。",
@@ -391,7 +391,7 @@ export const PREFECTURE_CONTENT = {
 
   "石川県": {
     desc: d(
-      "石川県は日本海側の伝統文化王国。兼六園（日本三名園）、金沢城、ひがし茶屋街、武家屋敷、金箔工芸、能登半島の海岸線など、北陸の雅と自然が調和した風景が広がります。加賀百万石の城下町・金沢を中心に7枚の写真を収録。",
+      "石川県は日本海側の伝統文化王国。兼六園（日本三名園）、金沢城、ひがし茶屋街、武家屋敷、金箔工芸、能登半島の海岸線など、北陸の雅と自然が調和した風景が広がります。加賀百万石の城下町・金沢を中心に7枚の写真を掲載。",
       "Ishikawa is a treasure trove of traditional culture on Japan's Sea of Japan side. Kenrokuen (one of Japan's Three Great Gardens), Kanazawa Castle, the Higashi Chaya geisha district, samurai houses, gold-leaf crafts, and the Noto Peninsula coastline combine refined elegance with nature. 7 photos centered on Kanazawa, the castle town of the Kaga domain.",
       "石川县是日本海侧传统文化的宝库。兼六园（日本三大名园）、金泽城、东茶屋街、武家屋敷、金箔工艺、能登半岛海岸线等，北陆雅致与自然共存。以加贺百万石城下町金泽为中心收录7张照片。",
       "石川縣是日本海側傳統文化的寶庫。兼六園（日本三大名園）、金澤城、東茶屋街、武家屋敷、金箔工藝、能登半島海岸線等，北陸雅致與自然共存。以加賀百萬石城下町金澤為中心收錄7張照片。",
@@ -439,7 +439,7 @@ export const PREFECTURE_CONTENT = {
 
   "山梨県": {
     desc: d(
-      "山梨県は富士山の北麓に広がる内陸県。富士五湖（河口湖・山中湖・西湖・本栖湖・精進湖）、新倉山浅間公園の五重塔と桜と富士山の三段構図、武田神社、昇仙峡、ぶどう畑とワイナリーなど、富士山ビューと果樹郷の二面性を持ちます。本ギャラリーには新倉山浅間公園の桜と富士、河口湖の湖畔風景の13枚を収録。",
+      "山梨県は富士山の北麓に広がる内陸県。富士五湖（河口湖・山中湖・西湖・本栖湖・精進湖）、新倉山浅間公園の五重塔と桜と富士山の三段構図、武田神社、昇仙峡、ぶどう畑とワイナリーなど、富士山ビューと果樹郷の二面性を持ちます。本ギャラリーには新倉山浅間公園の桜と富士、河口湖の湖畔風景の13枚を掲載。",
       "Yamanashi sits at the northern foot of Mt. Fuji. The Fuji Five Lakes (Kawaguchi, Yamanaka, Sai, Motosu, Shoji), the iconic three-tier composition of Arakurayama Sengen Park's pagoda + cherry blossoms + Mt. Fuji, Takeda Shrine, Shosenkyo Gorge, and the vineyards of Koshu give the prefecture its dual identity as Mt. Fuji's best vantage point and a fruit-and-wine country. This gallery features 13 photos from Arakurayama Sengen Park and Lake Kawaguchi.",
       "山梨县位于富士山北麓的内陆县。富士五湖（河口湖、山中湖、西湖、本栖湖、精进湖）、新仓山浅间公园的五重塔与樱花与富士山的三段构图、武田神社、升仙峡、葡萄园与酒庄等，兼具富士观景与果乡风情。本图库收录新仓山浅间公园的樱与富士、河口湖湖畔风景共13张。",
       "山梨縣位於富士山北麓的內陸縣。富士五湖（河口湖、山中湖、西湖、本栖湖、精進湖）、新倉山淺間公園的五重塔與櫻花與富士山的三段構圖、武田神社、昇仙峽、葡萄園與酒莊等，兼具富士觀景與果鄉風情。本圖庫收錄新倉山淺間公園的櫻與富士、河口湖湖畔風景共13張。",
@@ -487,7 +487,7 @@ export const PREFECTURE_CONTENT = {
 
   "長野県": {
     desc: d(
-      "長野県は日本アルプスと高原文化の中心地。国宝・松本城（現存12天守の一つで黒い壁が特徴）、桜の三大名所・高遠城址公園、上高地、地獄谷野猿公苑、戸隠神社、軽井沢、阿智村の「日本一の星空」など、山岳・歴史・天文と多彩な魅力。本ギャラリーには松本城・高遠城址・駒つなぎの桜・天空の楽園を13枚収録。",
+      "長野県は日本アルプスと高原文化の中心地。国宝・松本城（現存12天守の一つで黒い壁が特徴）、桜の三大名所・高遠城址公園、上高地、地獄谷野猿公苑、戸隠神社、軽井沢、阿智村の「日本一の星空」など、山岳・歴史・天文と多彩な魅力。本ギャラリーには松本城・高遠城址・駒つなぎの桜・天空の楽園を13枚掲載。",
       "Nagano is the heart of the Japanese Alps and highland culture. Matsumoto Castle (a National Treasure and one of 12 originals, distinguished by its black walls), Takato Castle Park (one of Japan's three great cherry blossom sites), Kamikochi, the Jigokudani snow monkeys, Togakushi Shrine, Karuizawa, and Achi Village's «No.1 starry sky in Japan» offer mountains, history, and astronomy in one prefecture. This gallery features 13 photos from Matsumoto Castle, Takato Castle Park, the Komatsunagi Cherry Tree, and Tenku no Rakuen.",
       "长野县是日本阿尔卑斯与高原文化的中心。国宝松本城（现存12天守之一，黑壁独具特色）、樱花三大名所之一高远城址公园、上高地、地狱谷野猴公苑、户隐神社、轻井泽、阿智村「日本第一星空」等，山岳·历史·天文兼备。本图库收录松本城、高远城址、驹系樱花、天空乐园共13张。",
       "長野縣是日本阿爾卑斯與高原文化的中心。國寶松本城（現存12天守之一，黑壁獨具特色）、櫻花三大名所之一高遠城址公園、上高地、地獄谷野猴公苑、戶隱神社、輕井澤、阿智村「日本第一星空」等，山岳·歷史·天文兼備。本圖庫收錄松本城、高遠城址、駒繫櫻花、天空樂園共13張。",
@@ -535,7 +535,7 @@ export const PREFECTURE_CONTENT = {
 
   "岐阜県": {
     desc: d(
-      "岐阜県は日本アルプスと清流に恵まれた内陸県。世界遺産・白川郷の合掌造り集落、飛騨高山の古い町並み、長良川の鵜飼い、下呂温泉など、日本の原風景が色濃く残るエリア。雪化粧した白川郷の景観を中心に4枚を収録。",
+      "岐阜県は日本アルプスと清流に恵まれた内陸県。世界遺産・白川郷の合掌造り集落、飛騨高山の古い町並み、長良川の鵜飼い、下呂温泉など、日本の原風景が色濃く残るエリア。雪化粧した白川郷の景観を中心に4枚を掲載。",
       "Gifu is an inland prefecture cradled by the Japanese Alps and pristine rivers. The UNESCO-listed Shirakawa-go gassho-zukuri village, Hida-Takayama old town, cormorant fishing on the Nagara River, and Gero Onsen preserve classic rural Japan. This gallery features 4 photos, centered on snow-covered Shirakawa-go.",
       "岐阜县是被日本阿尔卑斯山脉和清流环抱的内陆县。世界遗产白川乡合掌造村落、飞驒高山老街、长良川鹈饲、下吕温泉等保留着日本原始风景。本图库以雪中白川乡为中心收录4张照片。",
       "岐阜縣是被日本阿爾卑斯山脈和清流環抱的內陸縣。世界遺產白川鄉合掌造村落、飛驒高山老街、長良川鸕鷀捕魚、下呂溫泉等保留著日本原始風景。本圖庫以雪中白川鄉為中心收錄4張照片。",
@@ -583,7 +583,7 @@ export const PREFECTURE_CONTENT = {
 
   "愛知県": {
     desc: d(
-      "愛知県は名古屋を中心とする中部地方の中枢。名古屋城、熱田神宮、トヨタ産業技術記念館などの文化施設に加え、東山動植物園のゴリラ舎やコアラ館は動物写真の名所。都市と産業、自然が一体化した独特の魅力があります。本ギャラリーでは東山動物園の24枚を収録。",
+      "愛知県は名古屋を中心とする中部地方の中枢。名古屋城、熱田神宮、トヨタ産業技術記念館などの文化施設に加え、東山動植物園のゴリラ舎やコアラ館は動物写真の名所。都市と産業、自然が一体化した独特の魅力があります。本ギャラリーでは東山動物園の24枚を掲載。",
       "Aichi, centered on Nagoya, is the hub of central Japan. Beyond Nagoya Castle, Atsuta Shrine, and the Toyota Industrial Museum, Higashiyama Zoo's gorilla enclosure and koala house are destinations for wildlife photographers. The prefecture blends urban life, industry, and nature. 24 photos from Higashiyama Zoo.",
       "爱知县以名古屋为中心，是中部地区枢纽。除名古屋城、热田神宫、丰田产业技术纪念馆等文化设施外，东山动植物园的大猩猩馆和考拉馆是动物摄影名所。都市、产业与自然融合。本图库收录东山动物园24张照片。",
       "愛知縣以名古屋為中心，是中部地區樞紐。除名古屋城、熱田神宮、豐田產業技術紀念館等文化設施外，東山動植物園的大猩猩館和無尾熊館是動物攝影名所。都市、產業與自然融合。本圖庫收錄東山動物園24張照片。",
@@ -631,7 +631,7 @@ export const PREFECTURE_CONTENT = {
 
   "三重県": {
     desc: d(
-      "三重県は日本の精神的中心・伊勢神宮を擁する地。神宮の静謐な参道、門前町おかげ横丁の賑わい、二見の夫婦岩、英虞湾の真珠養殖、志摩半島の雄大な海岸線など、神域と海の幸が同居する独特の景観。本ギャラリーでは伊勢・朝熊山・夫婦岩・鳥羽水族館など38枚を収録。",
+      "三重県は日本の精神的中心・伊勢神宮を擁する地。神宮の静謐な参道、門前町おかげ横丁の賑わい、二見の夫婦岩、英虞湾の真珠養殖、志摩半島の雄大な海岸線など、神域と海の幸が同居する独特の景観。本ギャラリーでは伊勢・朝熊山・夫婦岩・鳥羽水族館など38枚を掲載。",
       "Mie is home to Ise Jingu, the most sacred Shinto shrine in Japan. The tranquil shrine paths, the bustling Oharai-machi/Okage Yokocho district, the Meoto Iwa 'married couple rocks' at Futami, pearl farms of Ago Bay, and the majestic Shima Peninsula coastline together weave sacred land and seaside abundance. 38 photos from Ise, Mt. Asama, Meoto Iwa, Toba Aquarium, and more.",
       "三重县拥有日本精神中心伊势神宫。神宫静谧参道、门前町御荫横丁、二见夫妻岩、英虞湾珍珠养殖、志摩半岛壮丽海岸线等，神域与海产并存的独特景观。本图库收录伊势、朝熊山、夫妻岩、鸟羽水族馆等38张。",
       "三重縣擁有日本精神中心伊勢神宮。神宮靜謐參道、門前町御蔭橫丁、二見夫婦岩、英虞灣珍珠養殖、志摩半島壯麗海岸線等，神域與海產並存的獨特景觀。本圖庫收錄伊勢、朝熊山、夫婦岩、鳥羽水族館等38張。",
@@ -683,7 +683,7 @@ export const PREFECTURE_CONTENT = {
 
   "京都府": {
     desc: d(
-      "千年の都・京都は1,600以上の寺社を擁する日本文化の核心。世界遺産の清水寺、金閣寺、10円硬貨にもなった平等院鳳凰堂、紅葉と通天橋で名高い東福寺など、四季折々の美しさが広がります。木造建築と庭園、石畳の路地が織りなす景観は写真家の聖地。清水寺・金閣寺・平等院・東福寺など18枚を収録。",
+      "千年の都・京都は1,600以上の寺社を擁する日本文化の核心。世界遺産の清水寺、金閣寺、10円硬貨にもなった平等院鳳凰堂、紅葉と通天橋で名高い東福寺など、四季折々の美しさが広がります。木造建築と庭園、石畳の路地が織りなす景観は写真家の聖地。清水寺・金閣寺・平等院・東福寺など18枚を掲載。",
       "Kyoto, Japan's thousand-year capital, houses over 1,600 temples and shrines at the heart of Japanese culture. UNESCO sites like Kiyomizu-dera and Kinkaku-ji, Byodoin Phoenix Hall (featured on the ¥10 coin), and the autumn-foliage-famed Tofuku-ji unveil distinct seasonal beauty. Wooden architecture, gardens, and stone-paved lanes make it sacred ground for photographers. 18 photos from Kiyomizu-dera, Kinkaku-ji, Byodoin, and Tofuku-ji.",
       "千年古都京都拥有1600多座寺庙神社，是日本文化核心。世界遗产清水寺、金阁寺、10日元硬币上的平等院凤凰堂、红叶名所东福寺等，四季之美尽收。木造建筑、庭园、石板小巷构成的景观是摄影圣地。本图库收录清水寺、金阁寺、平等院、东福寺等18张。",
       "千年古都京都擁有1600多座寺廟神社，是日本文化核心。世界遺產清水寺、金閣寺、10日圓硬幣上的平等院鳳凰堂、紅葉名所東福寺等，四季之美盡收。木造建築、庭園、石板小巷構成的景觀是攝影聖地。本圖庫收錄清水寺、金閣寺、平等院、東福寺等18張。",
@@ -735,7 +735,7 @@ export const PREFECTURE_CONTENT = {
 
   "兵庫県": {
     desc: d(
-      "兵庫県には日本最高峰の木造城郭・世界遺産の姫路城が聳え立ちます。白鷺が羽を広げたような優美な姿から「白鷺城」とも呼ばれ、桜や雪景色との組合せは日本を代表する絵画的風景。神戸港夜景、有馬温泉、淡路島と多彩な魅力を持ちます。5枚の写真で姫路城を収録。",
+      "兵庫県には日本最高峰の木造城郭・世界遺産の姫路城が聳え立ちます。白鷺が羽を広げたような優美な姿から「白鷺城」とも呼ばれ、桜や雪景色との組合せは日本を代表する絵画的風景。神戸港夜景、有馬温泉、淡路島と多彩な魅力を持ちます。5枚の写真で姫路城を掲載。",
       "Hyogo is home to Himeji Castle, Japan's greatest wooden fortress and a UNESCO World Heritage site. Its graceful silhouette — likened to a white heron spreading wings — makes it iconic in any season, especially with cherry blossoms or snow. Kobe's harbor nightscape, Arima Onsen, and Awaji Island round out the prefecture. 5 photos of Himeji Castle.",
       "兵库县拥有日本最高木造城堡——世界遗产姬路城。因洁白姿态如白鹭展翅而得名「白鹭城」，樱花或雪景相伴时堪称日本代表性画面。另有神户港夜景、有马温泉、淡路岛等魅力。本图库收录姬路城5张。",
       "兵庫縣擁有日本最高木造城堡——世界遺產姬路城。因潔白姿態如白鷺展翅而得名「白鷺城」，櫻花或雪景相伴時堪稱日本代表性畫面。另有神戶港夜景、有馬溫泉、淡路島等魅力。本圖庫收錄姬路城5張。",
@@ -783,7 +783,7 @@ export const PREFECTURE_CONTENT = {
 
   "奈良県": {
     desc: d(
-      "奈良県は710〜784年の日本最初の本格的首都・平城京が置かれた古都。世界遺産の法隆寺は世界最古の木造建築（7世紀）、東大寺大仏殿、春日大社、奈良公園の鹿など、1,300年前の日本文化が今に息づきます。法隆寺とその夢殿を中心に3枚を収録。",
+      "奈良県は710〜784年の日本最初の本格的首都・平城京が置かれた古都。世界遺産の法隆寺は世界最古の木造建築（7世紀）、東大寺大仏殿、春日大社、奈良公園の鹿など、1,300年前の日本文化が今に息づきます。法隆寺とその夢殿を中心に3枚を掲載。",
       "Nara hosted Japan's first permanent capital, Heijo-kyo (710–784). The UNESCO-listed Horyu-ji, dating to the 7th century, is the world's oldest wooden structure. Add Todai-ji Great Buddha Hall, Kasuga Taisha, and the deer roaming Nara Park, and 1,300-year-old Japan still breathes here. 3 photos centered on Horyu-ji and its Yumedono (Hall of Dreams).",
       "奈良县曾是710-784年日本第一个正式首都平城京所在地。世界遗产法隆寺为世界最古老木造建筑（7世纪），东大寺大佛殿、春日大社、奈良公园鹿群等，1300年前的日本文化至今鲜活。本图库以法隆寺及其梦殿为中心收录3张。",
       "奈良縣曾是710-784年日本第一個正式首都平城京所在地。世界遺產法隆寺為世界最古老木造建築（7世紀），東大寺大佛殿、春日大社、奈良公園鹿群等，1300年前的日本文化至今鮮活。本圖庫以法隆寺及其夢殿為中心收錄3張。",
@@ -831,7 +831,7 @@ export const PREFECTURE_CONTENT = {
 
   "徳島県": {
     desc: d(
-      "徳島県は四国東部、世界最大級の渦潮・鳴門海峡で知られます。大鳴門橋から見下ろす渦潮は迫力満点。阿波踊り、祖谷の秘境・かずら橋、剣山など、海と山の対比が劇的。2枚の写真で鳴門海峡と大鳴門橋を収録。",
+      "徳島県は四国東部、世界最大級の渦潮・鳴門海峡で知られます。大鳴門橋から見下ろす渦潮は迫力満点。阿波踊り、祖谷の秘境・かずら橋、剣山など、海と山の対比が劇的。2枚の写真で鳴門海峡と大鳴門橋を掲載。",
       "Tokushima, in eastern Shikoku, is known for the Naruto Strait's massive tidal whirlpools. Seen from Onaruto Bridge, the swirling water is dramatic. Awa Odori dance, the remote Iya Valley with its vine bridges, and sacred Mt. Tsurugi offer striking sea-versus-mountain contrast. 2 photos of Naruto Strait and Onaruto Bridge.",
       "德岛县位于四国东部，以世界级巨大漩涡鸣门海峡闻名。从大鸣门桥俯瞰漩涡震撼力十足。阿波舞、祖谷秘境葛藤桥、剑山等，海山对比戏剧。本图库收录鸣门海峡与大鸣门桥2张。",
       "德島縣位於四國東部，以世界級巨大漩渦鳴門海峽聞名。從大鳴門橋俯瞰漩渦震撼力十足。阿波舞、祖谷秘境葛藤橋、劍山等，海山對比戲劇。本圖庫收錄鳴門海峽與大鳴門橋2張。",
@@ -879,7 +879,7 @@ export const PREFECTURE_CONTENT = {
 
   "香川県": {
     desc: d(
-      "香川県は四国北東部、日本最小の県ながら名所が凝縮。父母ヶ浜は「ウユニ塩湖」のような夕景の水鏡で一躍世界的撮影地に。栗林公園、金刀比羅宮、讃岐うどん、瀬戸内海のアートの島・直島など、海と文化の魅力が詰まっています。父母ヶ浜の2枚を収録。",
+      "香川県は四国北東部、日本最小の県ながら名所が凝縮。父母ヶ浜は「ウユニ塩湖」のような夕景の水鏡で一躍世界的撮影地に。栗林公園、金刀比羅宮、讃岐うどん、瀬戸内海のアートの島・直島など、海と文化の魅力が詰まっています。父母ヶ浜の2枚を掲載。",
       "Kagawa, Japan's smallest prefecture in northeast Shikoku, packs an impressive density of sights. Chichibugahama beach, where sunsets reflect on tidal flats, gained global fame as Japan's 'Uyuni Salt Flat'. Ritsurin Garden, Kotohira Shrine, Sanuki udon, and art-island Naoshima on the Seto Inland Sea round out the offering. 2 photos of Chichibugahama.",
       "香川县位于四国东北部，日本最小县却名胜密集。父母浜因夕阳下的水镜效果如「玻利维亚乌尤尼盐湖」而成为世界摄影地。栗林公园、金刀比罗宫、赞岐乌冬、濑户内艺术岛直岛等海与文化的魅力密集。本图库收录父母浜2张。",
       "香川縣位於四國東北部，日本最小縣卻名勝密集。父母濱因夕陽下的水鏡效果如「玻利維亞烏尤尼鹽湖」而成為世界攝影地。栗林公園、金刀比羅宮、讚岐烏龍、瀨戶內藝術島直島等海與文化的魅力密集。本圖庫收錄父母濱2張。",
@@ -931,7 +931,7 @@ export const PREFECTURE_CONTENT = {
 
   "愛媛県": {
     desc: d(
-      "愛媛県は四国西部、日本最古の温泉・道後温泉本館、現存12天守の一つ松山城、しまなみ海道の島々を繋ぐ来島海峡大橋など、歴史と海景が融合した地域。亀老山展望台からの瀬戸内海の多島美は絶景。10枚で道後温泉・松山城・来島海峡大橋・亀老山展望台を収録。",
+      "愛媛県は四国西部、日本最古の温泉・道後温泉本館、現存12天守の一つ松山城、しまなみ海道の島々を繋ぐ来島海峡大橋など、歴史と海景が融合した地域。亀老山展望台からの瀬戸内海の多島美は絶景。10枚で道後温泉・松山城・来島海峡大橋・亀老山展望台を掲載。",
       "Ehime, in western Shikoku, blends history and seascapes: Japan's oldest hot spring (Dogo Onsen), Matsuyama Castle (one of 12 surviving originals), and the Kurushima Kaikyo Bridges linking the Shimanami Kaido islands. The Mt. Kiro observatory offers a sweeping view of the Seto Inland Sea's scattered islands. 10 photos from Dogo Onsen, Matsuyama Castle, Kurushima Bridges, and Mt. Kiro Observatory.",
       "爱媛县位于四国西部，融合历史与海景：日本最古老温泉道后温泉本馆、现存12天守之一松山城、连接岛波海道的来岛海峡大桥等。龟老山展望台俯瞰濑户内海群岛美景绝佳。本图库收录道后温泉、松山城、来岛海峡大桥、龟老山展望台共10张。",
       "愛媛縣位於四國西部，融合歷史與海景：日本最古老溫泉道後溫泉本館、現存12天守之一松山城、連接島波海道的來島海峽大橋等。龜老山展望台俯瞰瀨戶內海群島美景絕佳。本圖庫收錄道後溫泉、松山城、來島海峽大橋、龜老山展望台共10張。",
@@ -979,7 +979,7 @@ export const PREFECTURE_CONTENT = {
 
   "高知県": {
     desc: d(
-      "高知県は四国南部、太平洋に面した坂本龍馬の故郷。桂浜の荒々しい海岸、高知城（現存12天守）、日本最後の清流と称される四万十川、にこ淵のエメラルドグリーンの神秘、沈下橋など、雄大で原初的な自然風景が残る地。11枚で桂浜・高知城・にこ淵・名越屋沈下橋を収録。",
+      "高知県は四国南部、太平洋に面した坂本龍馬の故郷。桂浜の荒々しい海岸、高知城（現存12天守）、日本最後の清流と称される四万十川、にこ淵のエメラルドグリーンの神秘、沈下橋など、雄大で原初的な自然風景が残る地。11枚で桂浜・高知城・にこ淵・名越屋沈下橋を掲載。",
       "Kochi, southern Shikoku, faces the Pacific and is the birthplace of Sakamoto Ryoma. Its rugged Katsurahama beach, Kochi Castle (one of 12 surviving originals), the Shimanto River (called Japan's last clear river), the mystical emerald waters of Nikobuchi, and submersible low-water bridges retain primal, untouched nature. 11 photos of Katsurahama, Kochi Castle, Nikobuchi, and Nagoya submersible bridge.",
       "高知县位于四国南部，面向太平洋，坂本龙马的故乡。桂浜狂野海岸、高知城（现存12天守之一）、被誉为日本最后清流的四万十川、仁淀蓝的神秘、沈下桥等，保留壮丽原始自然风景。本图库收录桂浜、高知城、仁淀蓝、名越屋沈下桥11张。",
       "高知縣位於四國南部，面向太平洋，坂本龍馬的故鄉。桂濱狂野海岸、高知城（現存12天守之一）、被譽為日本最後清流的四萬十川、仁淀藍的神秘、沈下橋等，保留壯麗原始自然風景。本圖庫收錄桂濱、高知城、仁淀藍、名越屋沈下橋11張。",
@@ -1027,7 +1027,7 @@ export const PREFECTURE_CONTENT = {
 
   "福岡県": {
     desc: d(
-      "福岡県は九州最大の都市圏。博多の屋台文化、太宰府天満宮、福岡タワーと博多湾の夜景、糸島半島のビーチ、能古島など、都会と海の距離が近い暮らしやすさが魅力。本ギャラリーでは福岡市街の2枚を収録。",
+      "福岡県は九州最大の都市圏。博多の屋台文化、太宰府天満宮、福岡タワーと博多湾の夜景、糸島半島のビーチ、能古島など、都会と海の距離が近い暮らしやすさが魅力。本ギャラリーでは福岡市街の2枚を掲載。",
       "Fukuoka is Kyushu's largest urban area, famed for Hakata street-food stalls, Dazaifu Tenmangu shrine, Fukuoka Tower nightscapes over the bay, the Itoshima Peninsula beaches, and Nokonoshima Island — a city where downtown and sea sit close together. 2 photos of Fukuoka city.",
       "福冈县是九州最大都市圈。博多屋台文化、太宰府天满宫、福冈塔与博多湾夜景、糸岛半岛沙滩、能古岛等，城市与大海近距离共存。本图库收录福冈市区2张。",
       "福岡縣是九州最大都市圈。博多屋台文化、太宰府天滿宮、福岡塔與博多灣夜景、絲島半島沙灘、能古島等，城市與大海近距離共存。本圖庫收錄福岡市區2張。",
@@ -1075,7 +1075,7 @@ export const PREFECTURE_CONTENT = {
 
   "大分県": {
     desc: d(
-      "大分県は九州東部の温泉王国。別府は日本最大の湯量を誇り、「地獄めぐり」の血の池地獄・海地獄など非日常の光景が広がります。湯布院は由布岳を望む高原の風情ある温泉街。湯煙と山並みの共存は他にない被写体。8枚で別府・湯布院を収録。",
+      "大分県は九州東部の温泉王国。別府は日本最大の湯量を誇り、「地獄めぐり」の血の池地獄・海地獄など非日常の光景が広がります。湯布院は由布岳を望む高原の風情ある温泉街。湯煙と山並みの共存は他にない被写体。8枚で別府・湯布院を掲載。",
       "Oita is Kyushu's onsen kingdom. Beppu boasts Japan's largest hot-spring water volume; the 'Hells of Beppu' (Blood Pond, Sea Hell, etc.) offer surreal scenery. Yufuin is a highland onsen town graced by Mt. Yufu. The coexistence of steam plumes and mountains is a rare subject. 8 photos from Beppu and Yufuin.",
       "大分县是九州东部温泉王国。别府拥有日本最大涌泉量，「地狱巡游」的血池地狱、海地狱等超现实景观广布。由布院是仰望由布岳的高原温泉乡。汤烟与山峦并存是独特题材。本图库收录别府、由布院8张。",
       "大分縣是九州東部溫泉王國。別府擁有日本最大湧泉量，「地獄巡遊」的血池地獄、海地獄等超現實景觀廣布。由布院是仰望由布岳的高原溫泉鄉。湯煙與山巒並存是獨特題材。本圖庫收錄別府、由布院8張。",
@@ -1123,7 +1123,7 @@ export const PREFECTURE_CONTENT = {
 
   "沖縄県": {
     desc: d(
-      "沖縄県は日本最南端、47もの有人離島を擁する亜熱帯。本島の首里城跡（2019年焼失後再建中）、残波岬、万座毛。宮古島のエメラルドグリーンの海と真っ白な砂浜、伊良部大橋、与那覇前浜など、日本とは思えない南国の絶景。81枚で宮古島・沖縄本島を収録。",
+      "沖縄県は日本最南端、47もの有人離島を擁する亜熱帯。本島の首里城跡（2019年焼失後再建中）、残波岬、万座毛。宮古島のエメラルドグリーンの海と真っ白な砂浜、伊良部大橋、与那覇前浜など、日本とは思えない南国の絶景。81枚で宮古島・沖縄本島を掲載。",
       "Okinawa is Japan's southernmost prefecture — 47 inhabited subtropical islands. Shurijo Castle ruins (being rebuilt after a 2019 fire), Cape Zanpa, and Manzamo Cliff on the main island; Miyakojima's emerald seas, white-sand beaches, the Irabu Bridge, and Yonaha Maehama Beach redefine what Japan can look like. 81 photos from Miyakojima and Okinawa main island.",
       "冲绳县是日本最南端，包含47座有人离岛的亚热带。本岛首里城遗址（2019年火灾后重建中）、残波岬、万座毛；宫古岛翠绿海水与纯白沙滩、伊良部大桥、与那霸前浜等，颠覆你对日本的印象。本图库收录宫古岛、冲绳本岛81张。",
       "沖繩縣是日本最南端，包含47座有人離島的亞熱帶。本島首里城遺址（2019年火災後重建中）、殘波岬、萬座毛；宮古島翠綠海水與純白沙灘、伊良部大橋、與那霸前濱等，顛覆你對日本的印象。本圖庫收錄宮古島、沖繩本島81張。",

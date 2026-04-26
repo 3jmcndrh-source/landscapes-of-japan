@@ -40,7 +40,7 @@ export const COLLECTIONS = {
       pl: "Jesienne liście", sv: "Höstlöv",
     },
     desc: {
-      ja: "日本の秋を象徴する紅葉の名所。京都・東福寺の通天橋から眺める2,000本のモミジ、清水寺の紅葉ライトアップ、金閣寺の朱と金が織りなす11月の絶景を収録。",
+      ja: "日本の秋を象徴する紅葉の名所。京都・東福寺の通天橋から眺める2,000本のモミジ、清水寺の紅葉ライトアップ、金閣寺の朱と金が織りなす11月の絶景を掲載。",
       en: "Iconic autumn foliage spots of Japan. The 2,000 maples viewed from Tofuku-ji's Tsutenkyo bridge in Kyoto, the night illumination at Kiyomizu-dera, and the crimson-gold splendor of Kinkaku-ji in November.",
       zh: "代表日本秋天的红叶名所。京都东福寺通天桥俯瞰的2000棵枫树、清水寺夜间灯光秀、11月金阁寺朱红与金色辉映的绝景。",
       "zh-tw": "代表日本秋天的紅葉名所。京都東福寺通天橋俯瞰的2000棵楓樹、清水寺夜間燈光秀、11月金閣寺朱紅與金色輝映的絕景。",
