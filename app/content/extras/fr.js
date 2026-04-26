@@ -538,4 +538,108 @@ export default {
       `Falaise Manzamo et cap Zanpa — falaises de la côte ouest du centre d'Okinawa, spots privilégiés pour les couchers de soleil sur la mer de Chine orientale`,
     ],
   },
+
+  // A14: AI Overview対応 — quickAnswers (3 Q&A par préfecture)
+  prefectureQuickAnswers: {
+    "北海道": [
+      { q: `Qu'est-ce qu'Hokkaido ?`, a: `L'île principale la plus septentrionale du Japon, couvrant environ 22% du territoire national. Volcans, lacs, terres agricoles et forêts primaires produisent des paysages — glaces dérivantes, lavande, neige profonde — introuvables ailleurs au Japon.` },
+      { q: `Quelle est la meilleure saison pour photographier Hokkaido ?`, a: `Février pour le Festival de la Neige de Sapporo et les glaces dérivantes, juillet pour la lavande de Furano, octobre pour les couleurs d'automne, et janvier-mars pour les glaces de Shiretoko. Adaptez chaque sujet à sa saison de pic.` },
+      { q: `Quels sont les principaux spots photo d'Hokkaido ?`, a: `Sapporo, le canal d'Otaru, Furano et Biei, le lac Mashu, le lac Toya, la péninsule de Shiretoko, le skyline nocturne de Hakodate, Noboribetsu et le zoo d'Asahiyama. Chaque zone a un caractère distinct, prévoyez un itinéraire en plusieurs étapes.` },
+    ],
+    "千葉県": [
+      { q: `Qu'est-ce que la préfecture de Chiba ?`, a: `Voisine orientale de Tokyo, formée par la péninsule de Boso et la baie de Tokyo. Ses 460 km de littoral, l'aéroport international de Narita et sa proximité avec la capitale en font une combinaison pratique de nature et d'accessibilité.` },
+      { q: `Quelle est la meilleure saison pour photographier Chiba ?`, a: `Le littoral toute l'année, les cerisiers fin mars-avril, les couleurs d'automne dans la vallée de Yoro fin novembre, et l'iconique lever de soleil du 1er janvier au cap Inubo. L'hiver offre l'air le plus pur et de claires vues du mont Fuji.` },
+      { q: `Comment s'y rendre depuis Tokyo ?`, a: `Maihama et Narita sont à 30-60 min de la gare de Tokyo ; Kamogawa et Katsuura sur la côte extérieure environ 2 h. Les excursions à la journée sont pratiques, surtout pour la lumière du petit matin.` },
+    ],
+    "東京都": [
+      { q: `Qu'est-ce que Tokyo ?`, a: `Capitale du Japon avec environ 14 millions d'habitants, l'une des plus grandes mégapoles du monde. Elle marie 400 ans d'héritage Edo aux gratte-ciel ultramodernes, offrant une variété infinie : sanctuaires, saisons du palais, paysages nocturnes de la baie.` },
+      { q: `Quelle est la meilleure saison pour photographier Tokyo ?`, a: `Cerisiers fin mars-début avril, couleurs d'automne fin novembre-début décembre, et paysages nocturnes toute l'année (plus clairs en hiver). La rare neige transforme parfois le centre de Tokyo en sujet unique.` },
+      { q: `Conseils pour la photographie nocturne à Tokyo ?`, a: `Trépied, ISO bas et pose longue. L'heure bleue (30 min après le coucher) équilibre au mieux ciel et lumières urbaines. Surveillez les horaires de fermeture des observatoires ; les toits exigent vent et froid.` },
+    ],
+    "神奈川県": [
+      { q: `Qu'est-ce que la préfecture de Kanagawa ?`, a: `Voisine sud de Tokyo et deuxième préfecture la plus peuplée du Kanto, où l'ancienne capitale de Kamakura (fondée en 1192), Yokohama portuaire, Hakone avec vue sur le Fuji et la côte de Shonan sont tous accessibles à la journée.` },
+      { q: `Comment visiter Kamakura et Yokohama ?`, a: `Matin aux temples de Kamakura (Grand Bouddha, Hasedera, Kenchoji), puis après-midi à Yokohama pour le coucher de soleil sur l'Entrepôt de Brique Rouge et les clichés nocturnes de Minato Mirai. JR les relie en 25 minutes.` },
+      { q: `Quelle est la meilleure saison pour photographier Kanagawa ?`, a: `Hortensias de Kamakura mi-juin, couleurs d'automne fin novembre-début décembre, couchers de Shonan avec le Fuji en hiver (air le plus clair), cerisiers début avril. Hakone culmine pour les couleurs d'automne en novembre.` },
+    ],
+    "石川県": [
+      { q: `Qu'est-ce que la préfecture d'Ishikawa ?`, a: `Préfecture du Hokuriku sur la côte de la mer du Japon. Centrée sur Kanazawa — ville-château du domaine de Kaga —, elle marie l'ambiance d'époque Edo (Kenrokuen, château de Kanazawa, quartiers de geishas) à la côte naturelle de la péninsule de Noto.` },
+      { q: `Que photographier à Kanazawa en une journée ?`, a: `Tôt le matin à Kenrokuen (lumière douce), puis le château de Kanazawa, Higashi Chaya (après-midi à soir), le marché Omicho et la porte Tsuzumi de la gare pour les clichés nocturnes — tout à pied plus un court bus.` },
+      { q: `Quelle est la meilleure saison pour photographier Ishikawa ?`, a: `Neige et pins suspendus à la corde (décembre-février), verdure fraîche en mai, couleurs d'automne mi-novembre. Les rizières de Noto brillent en mai (plantation) et septembre (épis dorés), surtout au coucher du soleil.` },
+    ],
+    "山梨県": [
+      { q: `Qu'est-ce que la préfecture de Yamanashi ?`, a: `Préfecture intérieure au pied nord du mont Fuji. Abrite les Cinq Lacs du Fuji, le cadre emblématique pagode-cerisiers-Fuji d'Arakurayama et Oshino Hakkai — et également un pays de fruits et de vin avec les vignobles de Katsunuma et les vergers de pêchers.` },
+      { q: `Meilleur spot pour photographier le Fuji avec les cerisiers ?`, a: `La plate-forme de la pagode Chureito au parc Arakurayama Sengen est mondialement célèbre. Après 398 marches, pagode, cerisiers et mont Fuji s'alignent dans un cadre. Pic de floraison début-mi avril, le lever de soleil offre la lumière magique.` },
+      { q: `Quelles conditions pour le Fuji en miroir ?`, a: `Un matin presque sans vent (30 min avant à 30 min après le lever du soleil) est essentiel. Les taux de réussite culminent d'octobre à février ; la rive nord du lac Kawaguchi est le spot classique.` },
+    ],
+    "長野県": [
+      { q: `Qu'est-ce que la préfecture de Nagano ?`, a: `Préfecture intérieure du centre de Honshu connue comme « le toit du Japon », entourée par les Alpes japonaises de 3 000 m. Exceptionnellement riche en sujets : château de Matsumoto, cerisiers de Takato, Kamikochi, singes des neiges de Jigokudani et ciel étoilé d'Achi.` },
+      { q: `Quand sont les cerisiers du parc du château de Takato ?`, a: `Début à mi-avril. Environ 1 500 cerisiers Takato Kohigan fleurissent en rose tendre, méritant le titre « cerisiers n°1 sous le ciel ». L'illumination nocturne est onirique ; tôt le matin évite les foules.` },
+      { q: `Quand visiter le Parc des singes de Jigokudani ?`, a: `Fin décembre à début mars (saison de la neige). Les singes baignant dans les sources thermales parmi neige et vapeur créent l'image hivernale iconique. Environ 45 minutes en bus depuis la gare de Nagano puis 30 min de marche.` },
+    ],
+    "岐阜県": [
+      { q: `Qu'est-ce que la préfecture de Gifu ?`, a: `Préfecture intérieure du centre de Honshu, montagneuse à 80%. Elle abrite Shirakawa-go (UNESCO) et ses fermes gassho, le paysage Edo de Hida-Takayama, la pêche au cormoran sur le Nagara et les Alpes du Nord — un trésor de paysages japonais primigéniaux et alpins.` },
+      { q: `Quand a lieu l'illumination hivernale de Shirakawa-go ?`, a: `Sur un nombre limité de dates (environ 6 par an) en janvier et février. Les réservations sont obligatoires, et le tournage depuis l'observatoire exige une planification précoce. Le village gassho enneigé sous lumière est un événement photographique mondialement rare.` },
+      { q: `Peut-on visiter Hida-Takayama et Shirakawa-go en une journée ?`, a: `Possible mais serré. Takayama-Shirakawa-go en environ 50 min de bus. Itinéraire réaliste : marché matinal de Takayama → Shirakawa-go en milieu de journée → retour à Takayama le soir, comptez 1,5-2 h sur chaque site.` },
+    ],
+    "愛知県": [
+      { q: `Qu'est-ce que la préfecture d'Aichi ?`, a: `Puissance industrielle de la côte pacifique centrale de Honshu et plaque tournante du Chubu. Liée aux seigneurs de la guerre Sengoku et lieu de naissance de Tokugawa Ieyasu, elle reste aujourd'hui la base mondiale de fabrication de Toyota — sujets du château de Nagoya au zoo d'Higashiyama et à la gorge de Korankei.` },
+      { q: `Conseils pour photographier dans les zoos ?`, a: `Un objectif lumineux fixe (ex : 50mm f/1.8) flouera l'arrière-plan ; pressez l'objectif contre le grillage pour le faire disparaître. Mettez au point sur les yeux de l'animal, et photographiez dans la douce lumière du matin.` },
+      { q: `Quand le feuillage de Korankei est-il à son apogée ?`, a: `Mi-fin novembre. Ciel bleu en journée, lumière rasante de fin d'après-midi et l'illumination du soir uniquement en novembre offrent des scènes très différentes. Les week-ends sont bondés — tôt le matin en semaine est idéal.` },
+    ],
+    "三重県": [
+      { q: `Qu'est-ce que la préfecture de Mie ?`, a: `Préfecture sur la péninsule orientale de Kii, sanctuaire d'Ise Jingu — le site shinto le plus sacré du Japon avec 2 000 ans d'histoire. Sujets : forêt sacrée du sanctuaire, rochers Meoto Iwa, bourg d'époque Edo, fermes perlières de la baie d'Ago et chemin de pèlerinage Kumano Kodo.` },
+      { q: `Étiquette photographique à Ise Jingu ?`, a: `L'intérieur des sanctuaires principaux est strictement interdit. Restez discret avec votre appareil dans les torii et évitez de photographier directement fidèles ou prêtres. Confirmez l'usage du trépied à l'avance ; le Naiku ouvre à 5h avec la lumière la plus calme et le moins de monde.` },
+      { q: `Quand puis-je photographier le lever de soleil entre les Meoto Iwa ?`, a: `Seulement près du solstice d'été (mai à juillet) le soleil se lève directement entre les deux rochers. Début juin offre les meilleures chances de ciel clair ; arrivez avant l'aube pour suivre la marée et la couleur du ciel.` },
+    ],
+    "京都府": [
+      { q: `Qu'est-ce que la préfecture de Kyoto ?`, a: `Capitale du Japon pendant près de 1 000 ans (794-1868). La préfecture compte plus de 1 600 temples et sanctuaires et 17 sites UNESCO — Kiyomizu-dera, Kinkaku-ji, Fushimi Inari, Arashiyama —, ce qui en fait le premier terrain photographique du Japon.` },
+      { q: `Meilleur moment pour le feuillage d'automne à Kyoto ?`, a: `Le pic tombe généralement fin novembre-début décembre. Le pont Tsuten-kyo de Tofuku-ji, Eikando, Kiyomizu-dera et Arashiyama sont tous au mieux en lumière frontale matinale. Les coups de froid déclenchent la couleur, surveillez les prévisions.` },
+      { q: `Comment éviter les foules ?`, a: `Tôt le matin (6-8h) est de loin le meilleur. Kiyomizu-dera ouvre à 6h, parcourez l'extérieur de Kinkaku-ji avant 9h, et arrivez à Byodoin pile à l'ouverture. Les week-ends d'automne et de printemps, prévoyez d'être en mouvement à 4h.` },
+    ],
+    "兵庫県": [
+      { q: `Qu'est-ce que la préfecture de Hyogo ?`, a: `Deuxième préfecture du Kansai, face à la mer intérieure et à la mer du Japon. Elle combine de manière unique le château de Himeji UNESCO, le skyline nocturne de Kobe, les sources antiques d'Arima et les tourbillons de l'île d'Awaji — châteaux, ports, sources thermales et mer.` },
+      { q: `Meilleurs spots photo pour le château de Himeji ?`, a: `La porte Otemon, la place Sannomaru (avec les cerisiers), le jardin Nishi-no-maru (vue latérale) et le parc Otoko-yama (vue surélevée) sont les quatre classiques. La lumière du petit matin et la rare neige hivernale sont les plus dramatiques.` },
+      { q: `Quelle est la meilleure saison pour photographier Hyogo ?`, a: `Cerisiers du château de Himeji début avril, paysages nocturnes de Kobe toute l'année (plus clairs en hiver), neige aux onsens d'Arima et Kinosaki décembre-février, tourbillons de Naruto aux jours de grande marée du printemps et de l'automne.` },
+    ],
+    "奈良県": [
+      { q: `Qu'est-ce que la préfecture de Nara ?`, a: `Capitale ancienne — premier siège permanent du Japon à Heijo-kyo (710-784). Avec 8 sites UNESCO dont Horyu-ji (plus ancienne architecture en bois au monde), le Grand Bouddha de Todai-ji, Kasuga Taisha, les daims du parc de Nara et les cerisiers du mont Yoshino, elle préserve 1 300 ans de culture japonaise.` },
+      { q: `Conseils pour photographier avec les daims de Nara ?`, a: `Tenir des shika senbei (biscuits pour daims) les rapproche, mais ils s'éloignent une fois finis. Le contre-jour matinal qui souligne leur fourrure est le cliché classique. Ne les bousculez pas — la saison des faons mai-juillet exige une vigilance accrue.` },
+      { q: `Comment combiner Nara avec Kyoto ?`, a: `Gare de Kyoto-Nara : 45 min en ligne Kintetsu — facile à la journée. Matins au parc de Nara, Todai-ji et Kasuga Taisha ; après-midi à Horyu-ji (zone séparée, prévoir le trajet). Pour des scènes vides, arrivez à l'ouverture du parc à 7h.` },
+    ],
+    "徳島県": [
+      { q: `Qu'est-ce que la préfecture de Tokushima ?`, a: `Préfecture orientale de Shikoku encadrée par les tourbillons mareaux de classe mondiale du détroit de Naruto. Avec le festival Awa Odori vieux de 400 ans, la vallée reculée d'Iya, le sacré mont Tsurugi et le départ du pèlerinage des 88 temples, elle marie nature et culture festive.` },
+      { q: `Quand les tourbillons de Naruto sont-ils les plus grands ?`, a: `Autour de la marée haute ou basse (±1-2 h) lors des grandes marées de printemps et d'automne (près de la nouvelle ou pleine lune). Vérifiez les marées, puis photographiez depuis un bateau de 45 min ou la passerelle « Uzu no Michi » sous le pont Onaruto — vortex de plus de 20 m possibles.` },
+      { q: `Comment s'y rendre ?`, a: `30 minutes en voiture de l'aéroport d'Awaodori de Tokushima au port touristique de Naruto ; 1 heure d'avion de Tokyo ou Osaka. Le trajet en voiture sur les ponts Akashi-Kaikyo et Onaruto est en soi un parcours panoramique populaire.` },
+    ],
+    "香川県": [
+      { q: `Qu'est-ce que la préfecture de Kagawa ?`, a: `La plus petite préfecture du Japon (1 876 km²) sur la côte nord-est de Shikoku. Elle concentre le coucher de soleil miroir de Chichibugahama, le jardin Ritsurin, le sanctuaire Kotohira, le cœur des udon Sanuki et les îles d'art de la Triennale Setouchi (Naoshima et Teshima).` },
+      { q: `Quelles conditions créent le miroir de Chichibugahama ?`, a: `①Marée basse coïncidant avec le coucher du soleil ②Vent quasi nul ③Nuages dans le ciel (un ciel clair semble plat). Le tourisme de Mitoyo publie en ligne les dates optimales — vérifiez avant. La fenêtre dorée : 15 min avant à 30 min après le coucher.` },
+      { q: `Quelle est la meilleure saison pour photographier Kagawa ?`, a: `Chichibugahama toute l'année (selon l'alignement marée × coucher). Ritsurin idéal avec mont Shiun vert en mai et couleurs d'automne fin novembre. Kotohira brille sous les cerisiers en avril ; Naoshima culmine durant les sessions printanières, estivales et automnales de la Triennale.` },
+    ],
+    "愛媛県": [
+      { q: `Qu'est-ce que la préfecture d'Ehime ?`, a: `Préfecture du nord-ouest de Shikoku, abritant Dogo Onsen (le plus ancien onsen du Japon, 3 000 ans), le château de Matsuyama (l'un des 12 donjons survivants), les ponts du Shimanami Kaido et les vues multi-îles du mont Kiro — une fusion d'histoire et de paysages marins.` },
+      { q: `Peut-on photographier Dogo Onsen Honkan ?`, a: `L'extérieur est entièrement ouvert ; nous recommandons l'illumination du soir, les angles arrière et le cadrage par les ruelles. Certaines zones intérieures sont interdites pour respecter l'intimité des baigneurs. Suite à la rénovation de décembre 2024, le bâtiment paraît encore plus raffiné.` },
+      { q: `Meilleurs spots photo sur le Shimanami Kaido ?`, a: `Observatoire du mont Kiro (vue sur Onaruto), parc Itoyama (coucher de soleil), pont Tatara avec l'île d'Ikuchi en vue, et l'île Mijika au large d'Hakata. Une boucle complète à vélo permet de vivre les 60 km en une journée.` },
+    ],
+    "高知県": [
+      { q: `Qu'est-ce que la préfecture de Kochi ?`, a: `Préfecture du sud de Shikoku face au Pacifique, lieu de naissance de Sakamoto Ryoma. Avec 84% de couverture forestière, les rivières immaculées Shimanto et Niyodo, la plage de Katsurahama, le château original de Kochi, l'émeraude « Niyodo Blue » (Nikobuchi) et 49 ponts submersibles.` },
+      { q: `Conseils pour capturer le bleu de Nikobuchi ?`, a: `Vers midi par temps clair, quand le soleil direct atteint l'eau, le bleu est le plus fort. Un filtre polarisant approfondit la couleur en supprimant les reflets de surface. Chaussures antidérapantes essentielles — c'est une descente de 10 min sur des marches.` },
+      { q: `Quelle est la meilleure saison pour photographier Kochi ?`, a: `Nikobuchi et Shimanto au mieux de mai à octobre quand le débit et la verdure environnante culminent ; la brume sur la rivière se forme aux matins d'automne et d'hiver. Katsurahama toute l'année, mais la lune sur la baie est la plus belle en automne — surtout la pleine lune du 15 août.` },
+    ],
+    "福岡県": [
+      { q: `Qu'est-ce que la préfecture de Fukuoka ?`, a: `La plus grande préfecture de Kyushu (5,13 millions d'habitants) et le centre économique, de transit et culturel de la région. Avec l'accès aéroport-ville le plus rapide du Japon (5 min en métro), les yatai de Hakata, Dazaifu Tenmangu, la côte d'Itoshima et l'architecture rétro de Mojiko, elle offre des sujets variés.` },
+      { q: `Spots photo incontournables à Fukuoka ?`, a: `L'allée et la salle principale de Dazaifu Tenmangu, le couloir nocturne Tour de Fukuoka → plage de Momochi → Bayside Place, le coucher de soleil de Sakurai Futamigaura à Itoshima, les quartiers de yatai de Hakata (Nakasu-Kawabata, Tenjin) et Mojiko Retro.` },
+      { q: `Quelle est la meilleure saison pour photographier Fukuoka ?`, a: `Pruniers à Dazaifu en février, cerisiers début avril, couchers d'Itoshima toute l'année (plus clairs en hiver), yatai toute l'année (avec protection pluie/vent en hiver), couleurs d'automne de Komyo Zenji à Dazaifu fin novembre.` },
+    ],
+    "大分県": [
+      { q: `Qu'est-ce que la préfecture d'Oita ?`, a: `Préfecture orientale de Kyushu et « préfecture onsen n°1 du Japon » — première en nombre de sources et débit quotidien. Sujets : rues voilées de vapeur de Beppu, Yufuin de haute altitude, monts Kuju, plus haut pont suspendu piétonnier du Japon, rochers étranges de Yabakei et Usa Jingu (siège des sanctuaires Hachimangu).` },
+      { q: `Où capturer le skyline fumant de Beppu ?`, a: `L'observatoire Yukemuri à Kannawa Onsen. Les matins d'hiver produisent les panaches de vapeur les plus épais grâce au contraste de température. Attendez avant le lever ; le moment où la première lumière touche les rues est la composition dorée. Observatoire gratuit avec parking.` },
+      { q: `Quelle est la meilleure saison pour photographier Oita ?`, a: `Les panaches de vapeur sont incomparables aux matins d'hiver ; la brume matinale du lac Kinrin de Yufuin culmine en octobre-novembre ; Yabakei et le pont Kokonoe brillent mi-fin novembre ; les Enfers de Beppu visibles toute l'année mais la vapeur se distingue surtout en hiver.` },
+    ],
+    "沖縄県": [
+      { q: `Qu'est-ce que la préfecture d'Okinawa ?`, a: `Préfecture subtropicale la plus méridionale du Japon, composée de 47 îles habitées. Indépendante en tant que « Royaume des Ryukyu » de 1429 à 1879, elle a développé une culture distincte et offre mers émeraude, récifs coralliens et sable blanc bien différents du Japon continental.` },
+      { q: `Meilleure saison pour Miyakojima ?`, a: `Mai à septembre pour la clarté de l'eau (surtout juillet-août). Septembre est la saison des typhons — surveillez les avertissements. Décembre à février : frais et peu de monde mais activités marines limitées. Octobre et avril (autour de la fin de la saison des pluies) évitent au mieux les foules.` },
+      { q: `Meilleur moment de la journée pour des clichés de mer claire ?`, a: `10h à 14h, quand le soleil est haut et la lumière atteint le fond, produit le vert émeraude le plus fort. Un filtre polarisant est essentiel pour réduire l'éblouissement de surface. Ciel dégagé requis — un ciel couvert aplatit gravement le bleu.` },
+    ],
+  },
 };
