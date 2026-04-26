@@ -870,10 +870,13 @@ export const LOCATION_CONTENT = {
       "夫婦岩是二見興玉神社前並立海中的大小兩塊岩石。大岩（夫）與小岩（妻）由注連繩連結，象徵夫妻和睦。僅夏至前後可拍到太陽從兩岩間升起的絕景。",
       "메오토이와는 후타미 오키타마 신사 앞 바다에 나란히 선 크고 작은 두 바위. 큰 바위(남편)와 작은 바위(아내)를 금줄로 잇고, 부부 원만의 상징. 하지 무렵에만 두 바위 사이로 일출이 떠오르는 절경을 담을 수 있습니다."
     ),
-    definition: lh(
-      "夫婦岩(めおといわ)は三重県伊勢市二見町、二見興玉神社(ふたみおきたまじんじゃ)の境内前面の海中に立つ大小2つの岩で、大岩(高さ9m、男岩)と小岩(高さ4m、女岩)を全長35m・重さ40kgの大注連縄で結んでいます。夫婦円満・縁結びの象徴とされる古来の聖地で、注連縄は年3回(5月5日、9月5日、12月中旬)張り替えられる神事を伴います。5〜7月の夏至前後にのみ、2つの岩の間から日の出が昇る絶景が見られ、富士山のシルエットも遠望できる(年に数日)世界でも珍しいフォトジェニックスポットです。",
-      "Meoto Iwa («married couple rocks») are two rocks of differing sizes — Otoiwa (male, 9 m) and Meiwa (female, 4 m) — rising from the sea before Futami Okitama Shrine in Futami-cho, Ise City, Mie Prefecture. They are linked by a 35 m, 40 kg sacred shimenawa rope, symbolizing marital harmony and matchmaking. The shimenawa is replaced three times each year (May 5, September 5, mid-December) in shrine rituals. Only around the summer solstice (May to July) does the sun rise directly between the two rocks, producing a world-class spectacle in which the silhouette of Mt. Fuji can also be seen on rare days — one of Japan's rarest photographic alignments."
-    ),
+    definition: {
+      ja: "夫婦岩(めおといわ)は三重県伊勢市二見町、二見興玉神社(ふたみおきたまじんじゃ)の境内前面の海中に立つ大小2つの岩で、大岩(高さ9m、男岩)と小岩(高さ4m、女岩)を全長35m・重さ40kgの大注連縄で結んでいます。夫婦円満・縁結びの象徴とされる古来の聖地で、注連縄は年3回(5月5日、9月5日、12月中旬)張り替えられる神事を伴います。5〜7月の夏至前後にのみ、2つの岩の間から日の出が昇る絶景が見られ、富士山のシルエットも遠望できる(年に数日)世界でも珍しいフォトジェニックスポットです。",
+      en: "Meoto Iwa («married couple rocks») are two rocks of differing sizes — Otoiwa (male, 9 m) and Meiwa (female, 4 m) — rising from the sea before Futami Okitama Shrine in Futami-cho, Ise City, Mie Prefecture. They are linked by a 35 m, 40 kg sacred shimenawa rope, symbolizing marital harmony and matchmaking. The shimenawa is replaced three times each year (May 5, September 5, mid-December) in shrine rituals. Only around the summer solstice (May to July) does the sun rise directly between the two rocks, producing a world-class spectacle in which the silhouette of Mt. Fuji can also be seen on rare days — one of Japan's rarest photographic alignments.",
+      zh: "夫妻岩(めおといわ)位于三重县伊势市二见町，是二见兴玉神社(ふたみおきたまじんじゃ)境内前方海中并立的大小两块岩石，大岩(高9米，男岩)与小岩(高4米，女岩)由全长35米·重40公斤的大注连绳相连。被视为夫妻和睦·结缘的象征，是古来圣地，注连绳年3次(5月5日、9月5日、12月中旬)更换为神事仪式。5至7月夏至前后，可见太阳从两岩间升起的绝景，年中数日还可远眺富士山剪影(罕见)，是世界上少有的摄影地。",
+      "zh-tw": "夫婦岩(めおといわ)位於三重縣伊勢市二見町，是二見興玉神社(ふたみおきたまじんじゃ)境內前方海中並立的大小兩塊岩石，大岩(高9米，男岩)與小岩(高4米，女岩)由全長35米·重40公斤的大注連繩相連。被視為夫妻和睦·結緣的象徵，是古來聖地，注連繩年3次(5月5日、9月5日、12月中旬)更換為神事儀式。5至7月夏至前後，可見太陽從兩岩間升起的絕景，年中數日還可遠眺富士山剪影(罕見)，是世界上少有的攝影地。",
+      ko: "메오토이와(めおといわ)는 미에현 이세시 후타미초의 후타미 오키타마 신사(ふたみおきたまじんじゃ) 경내 앞바다에 서 있는 크고 작은 두 바위로, 큰 바위(높이 9m, 남편 바위)와 작은 바위(높이 4m, 아내 바위)를 전장 35m·무게 40kg의 큰 시메나와로 묶고 있습니다. 부부 원만·연결의 상징으로 여겨지는 고래의 성지로, 시메나와는 연 3회(5월 5일, 9월 5일, 12월 중순) 갈아 매는 신사로 의식이 동반됩니다. 5~7월의 하지 무렵에만 두 바위 사이로 일출이 떠오르는 절경을 볼 수 있고, 후지산 실루엣도 멀리서 볼 수 있는(연 수일) 세계적으로도 드문 포토제닉 스팟입니다.",
+    },
     highlights: {
       ja: [
         "夫婦岩 — 大岩(男岩、9m)と小岩(女岩、4m)、夫婦円満の象徴、年3回の大注連縄張替神事",
@@ -888,6 +891,27 @@ export const LOCATION_CONTENT = {
         "Mt. Fuji on the horizon — on rare days, Mt. Fuji's silhouette appears 200 km away; conditions align only briefly between the winter solstice and February",
         "Futami Okitama Shrine — enshrines Sarutahiko-no-Okami, the purification site visited before pilgrimage to Ise Jingu, with frog statues («buji kaeru,» a homophone for «return safely»)",
         "Futami Bay coast — an ancient ritual purification site and a mandatory stop on the Meiji-era Ise pilgrimage route, with white-sand shoreline",
+      ],
+      zh: [
+        "夫妻岩 — 大岩(男岩，9米)与小岩(女岩，4米)，夫妻和睦象征，年3次大注连绳更换神事",
+        "夏至前后日出 — 仅5至7月，太阳从两岩间升起，6月初晴天率最高",
+        "富士山远眺 — 年中数日，可见200公里外富士山剪影，冬至至2月特定条件下的奇迹之朝",
+        "二见兴玉神社 — 祀猿田彦大神，伊势神宫参拜前的禊身之社，青蛙像「无事归来」",
+        "二见浦海岸 — 古来禊身之地，明治伊势参诣必访的圣地，白砂海岸线",
+      ],
+      "zh-tw": [
+        "夫婦岩 — 大岩(男岩，9米)與小岩(女岩，4米)，夫婦和睦象徵，年3次大注連繩更換神事",
+        "夏至前後日出 — 僅5至7月，太陽從兩岩間升起，6月初晴天率最高",
+        "富士山遠眺 — 年中數日，可見200公里外富士山剪影，冬至至2月特定條件下的奇蹟之朝",
+        "二見興玉神社 — 祀猿田彥大神，伊勢神宮參拜前的禊身之社，青蛙像「無事歸來」",
+        "二見浦海岸 — 古來禊身之地，明治伊勢參詣必訪的聖地，白砂海岸線",
+      ],
+      ko: [
+        "메오토이와 — 큰 바위(남편 바위, 9m)와 작은 바위(아내 바위, 4m), 부부 원만의 상징, 연 3회 큰 시메나와 갈이 신사",
+        "하지 무렵의 일출 — 5~7월 한정, 두 바위 사이로 아침해가 솟음, 특히 6월 초가 청명률 높음",
+        "후지산 원망 — 연 수일, 200km 너머 후지산 실루엣이 보이는 기적의 아침, 동지~2월의 특정 조건",
+        "후타미 오키타마 신사 — 사루타히코노오카미를 모시는 곳, 이세 신궁 참배 전의 미소기 신사, 개구리상 「무사 귀환」",
+        "후타미우라 해안 — 고래의 미소기 장소, 메이지 시대 이세 참배 시 반드시 들르는 성지, 백사 해안선",
       ],
     },
     quickAnswers: {
@@ -906,6 +930,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended camera gear?", a: "Tripod essential (long exposure pre-dawn). Telephoto 70–200mm to compress the sun between rocks; wide 16–35mm for sea and sky. ND8 / graduated ND smooths exposure; CPL adjusts reflections. Cloudy days bring rich post-sunrise color. The shoreline calls for salt-spray protection (rain cover, fresh-water rinse afterwards)." },
         { q: "When are the rope-changing rituals?", a: "Three times a year — May 5, September 5, and December — Futami Okitama Shrine performs the «Meoto Iwa Onaha Hari Shinji.» Five sections of rope (35 m / 40 kg each, 175 m total) are renewed in a sacred ceremony. Photography is permitted; priests climbing the rocks to tie the ropes is a unique festival subject." },
         { q: "Onsen and lodging?", a: "Futamiura Onsen (seaside ryokan within walking distance of Meoto Iwa), Toba seafood inns (15 min by car), and Ise city hotels. Futamiura is most convenient for sunrise — 3:30 wake, 4:00 departure, 4:30 arrival at the rocks. Lodging from ¥8,000–15,000 with breakfast. For dining, ama-goya (woman diver hut) experiences in Toba (from ¥2,500) are unforgettable." },
+      ],
+      zh: [
+        { q: "夫妻岩是什么?", a: "三重县伊势市二见兴玉神社前海中并立的大小两块岩石，大注连绳(35米，40公斤)相连的夫妻和睦象征。仅5至7月夏至前后可见太阳从两岩间升起的世界少有绝景。" },
+        { q: "日出撮影具体时期与时间?", a: "5月至7月下旬，尤以夏至(6/21前后)为中心。日出时刻4:40至5:00左右。三脚架+长焦镜头建议提前1小时到达。富士山剪影可见的奇迹之朝仅12月至2月特定条件下。" },
+        { q: "如何前往?", a: "JR二见浦站步行15分钟，伊势神宫内宫开车约15分钟。停车场免费。日出撮影需黎明前抵达，二见浦温泉或鸟羽住宿便利。" },
+        { q: "撮影器材建议?", a: "三脚架必备(黎明前长曝)。长焦70-200mm压缩两岩间太阳构图，广角16-35mm拍宽阔海空。ND8/半ND平衡明暗差，CPL调反光。多云时日出后朝霞色彩浓。波浪边盐害对策(防雨罩、撮影后清水冲洗)必要。" },
+        { q: "夫妻岩注连绳更换何时?", a: "每年5月5日·9月5日·12月年3次，二见兴玉神社举行「夫妻岩大注连绳张神事」。长35米·重40公斤大注连绳5本(共175米)更换的神圣仪式。撮影获许可，神主登岩绑绳的姿态是别处难见的祭事撮影机会。" },
+        { q: "周边温泉与住宿?", a: "二见浦温泉(海岸沿宿，至夫妻岩步行可达)、鸟羽海鲜宿(车15分)、伊势市站周边酒店。日出撮影二见浦温泉最便利，3:30起床、4:00出发、4:30抵达岩前为佳。1宿含早餐8000至15000日元。料理重视者可选鸟羽海女小屋料理体验(2500日元起)。" },
+      ],
+      "zh-tw": [
+        { q: "夫婦岩是什麼?", a: "三重縣伊勢市二見興玉神社前海中並立的大小兩塊岩石，大注連繩(35米，40公斤)相連的夫婦和睦象徵。僅5至7月夏至前後可見太陽從兩岩間升起的世界少有絕景。" },
+        { q: "日出撮影具體時期與時間?", a: "5月至7月下旬，尤以夏至(6/21前後)為中心。日出時刻4:40至5:00左右。三腳架+長焦鏡頭建議提前1小時到達。富士山剪影可見的奇蹟之朝僅12月至2月特定條件下。" },
+        { q: "如何前往?", a: "JR二見浦站步行15分鐘，伊勢神宮內宮開車約15分鐘。停車場免費。日出撮影需黎明前抵達，二見浦溫泉或鳥羽住宿便利。" },
+        { q: "撮影器材建議?", a: "三腳架必備(黎明前長曝)。長焦70-200mm壓縮兩岩間太陽構圖，廣角16-35mm拍寬闊海空。ND8/半ND平衡明暗差，CPL調反光。多雲時日出後朝霞色彩濃。波浪邊鹽害對策(防雨罩、撮影後清水沖洗)必要。" },
+        { q: "夫婦岩注連繩更換何時?", a: "每年5月5日·9月5日·12月年3次，二見興玉神社舉行「夫婦岩大注連繩張神事」。長35米·重40公斤大注連繩5本(共175米)更換的神聖儀式。撮影獲許可，神主登岩綁繩的姿態是別處難見的祭事撮影機會。" },
+        { q: "周邊溫泉與住宿?", a: "二見浦溫泉(海岸沿宿，至夫婦岩步行可達)、鳥羽海鮮宿(車15分)、伊勢市站周邊酒店。日出撮影二見浦溫泉最便利，3:30起床、4:00出發、4:30抵達岩前為佳。1宿含早餐8000至15000日圓。料理重視者可選鳥羽海女小屋料理體驗(2500日圓起)。" },
+      ],
+      ko: [
+        { q: "메오토이와란?", a: "미에현 이세시의 후타미 오키타마 신사 앞 바다에 서 있는 크고 작은 두 바위로, 큰 시메나와(35m, 40kg)로 묶인 부부 원만의 상징. 5~7월의 하지 무렵에만 두 바위 사이로 일출이 떠오르는 세계적으로도 드문 절경입니다." },
+        { q: "일출 촬영의 구체적인 시기와 시간은?", a: "5월~7월 하순, 특히 하지(6/21 무렵)가 중심. 일출 시각은 4:40~5:00 무렵. 삼각대+망원 렌즈로 1시간 전 도착 권장. 후지산 실루엣이 보이는 기적의 아침은 12월~2월의 특정 조건 하에서만." },
+        { q: "가는 방법은?", a: "JR 후타미노우라역에서 도보 15분, 이세 신궁 내궁에서 차로 약 15분. 주차장 있음(무료). 일출 촬영은 새벽 전 도착이 필수이므로, 후타미우라 온천이나 도바의 숙소가 편리합니다." },
+        { q: "촬영 기재 추천은?", a: "삼각대 필수(새벽 전 장노출). 망원 70-200mm로 바위 사이에 태양을 압축하는 구도, 광각 16-35mm로 바다와 하늘을 넓게. ND8/하프 ND로 명암차 완화, CPL로 반사 조정. 구름이 많은 날은 일출 후 아침놀의 색이 잘 살아남. 파도가 치는 곳은 염해 대책(레인 커버, 촬영 후 민물 세정)을." },
+        { q: "메오토이와의 시메나와 갈이는 언제?", a: "매년 5월 5일·9월 5일·12월의 연 3회, 후타미 오키타마 신사에서 「메오토이와 오나와하리 신지(夫婦岩大注連縄張神事)」를 거행. 길이 35m·무게 40kg의 큰 시메나와 5본(총 175m)을 갈아 매는 신성한 의식. 촬영은 허가되어 있으며, 신주가 바위에 올라 줄을 묶는 모습은 다른 곳에서는 볼 수 없는 제사 촬영의 기회입니다." },
+        { q: "주변 온천·숙박은?", a: "후타미우라 온천(해안 변의 숙소, 메오토이와까지 도보권), 도바의 해산물 숙소(차 15분), 이세시역 주변 호텔. 일출 촬영에는 후타미우라 온천이 가장 편리, 3:30 기상으로 4:00 출발, 4:30에 바위 앞 도착이 확실. 1박 조식 포함 8,000~15,000엔 정도, 요리 중시라면 도바의 해녀 오두막 요리 체험(2,500엔~)도." },
       ],
     },
     faqs: [
@@ -1982,10 +2030,13 @@ export const LOCATION_CONTENT = {
       "桂濱是面向太平洋的賞月名所，古來詩歌詠。五色小石、黑潮浪濤、坂本龍馬像（1928年立，高5.3米）印象深刻。周邊為桂濱公園，有水族館與龍馬紀念館。",
       "가쓰라하마는 태평양에 면한 달의 명소로 예로부터 시가에 읊어진 아름다운 해안. 오색 조약돌, 구로시오 조류의 거친 파도, 사카모토 료마 동상(1928년 건립, 높이 5.3m)이 인상적. 일대는 가쓰라하마 공원으로 수족관과 료마 기념관도 있습니다."
     ),
-    definition: lh(
-      "桂浜(かつらはま)は高知県高知市浦戸湾の入口に位置する全長約400mの弓状海岸で、太平洋に面した荒々しい海岸線と五色の小石で知られる古来からの名所。古今集にも詠われた月の名所で、土佐の月見の地として「桂浜の月」は古来から日本三大名月の一つに数えられます。坂本龍馬像(1928年建立、台座含め13.5m、像高5.3m)は太平洋を見据える姿で、幕末維新の志士・坂本龍馬の故郷土佐の象徴。一帯は桂浜公園として整備され、桂浜水族館、坂本龍馬記念館、龍王岬展望台などを擁します。",
-      "Katsurahama is a 400 m bow-shaped beach at the mouth of Urado Bay in Kochi City, Kochi Prefecture, known since ancient times for its rugged Pacific coast and five-colored pebbles. Praised in the «Kokin Wakashu» as a moon-viewing site, the «moon over Katsurahama» counts among Japan's three classic moon-viewing locations. The bronze statue of Sakamoto Ryoma (erected 1928; 13.5 m including the pedestal, 5.3 m for the figure) gazes out over the Pacific as a symbol of the Bakumatsu reformist's homeland of Tosa. The area forms Katsurahama Park and includes Katsurahama Aquarium, the Sakamoto Ryoma Memorial Museum, and the Ryuomisaki Observatory."
-    ),
+    definition: {
+      ja: "桂浜(かつらはま)は高知県高知市浦戸湾の入口に位置する全長約400mの弓状海岸で、太平洋に面した荒々しい海岸線と五色の小石で知られる古来からの名所。古今集にも詠われた月の名所で、土佐の月見の地として「桂浜の月」は古来から日本三大名月の一つに数えられます。坂本龍馬像(1928年建立、台座含め13.5m、像高5.3m)は太平洋を見据える姿で、幕末維新の志士・坂本龍馬の故郷土佐の象徴。一帯は桂浜公園として整備され、桂浜水族館、坂本龍馬記念館、龍王岬展望台などを擁します。",
+      en: "Katsurahama is a 400 m bow-shaped beach at the mouth of Urado Bay in Kochi City, Kochi Prefecture, known since ancient times for its rugged Pacific coast and five-colored pebbles. Praised in the «Kokin Wakashu» as a moon-viewing site, the «moon over Katsurahama» counts among Japan's three classic moon-viewing locations. The bronze statue of Sakamoto Ryoma (erected 1928; 13.5 m including the pedestal, 5.3 m for the figure) gazes out over the Pacific as a symbol of the Bakumatsu reformist's homeland of Tosa. The area forms Katsurahama Park and includes Katsurahama Aquarium, the Sakamoto Ryoma Memorial Museum, and the Ryuomisaki Observatory.",
+      zh: "桂浜(かつらはま)位于高知县高知市浦户湾入口，全长约400米的弓状海岸，以面向太平洋的粗犷海岸线与五色小石闻名的古来名所。古今集咏月之名所，作为土佐赏月之地「桂浜之月」自古为日本三大名月之一。坂本龙马像(1928年建立，含台座13.5米，像高5.3米)凝望太平洋之姿，是幕末维新志士坂本龙马的故乡土佐的象征。一带整备为桂浜公园，包括桂浜水族馆、坂本龙马纪念馆、龙王岬展望台等。",
+      "zh-tw": "桂濱(かつらはま)位於高知縣高知市浦戶灣入口，全長約400米的弓狀海岸，以面向太平洋的粗獷海岸線與五色小石聞名的古來名所。古今集詠月之名所，作為土佐賞月之地「桂濱之月」自古為日本三大名月之一。坂本龍馬像(1928年建立，含台座13.5米，像高5.3米)凝望太平洋之姿，是幕末維新志士坂本龍馬的故鄉土佐的象徵。一帶整備為桂濱公園，包括桂濱水族館、坂本龍馬紀念館、龍王岬展望台等。",
+      ko: "가쓰라하마(かつらはま)는 고치현 고치시 우라도 만 입구에 위치한 전장 약 400m의 활 모양 해안으로, 태평양에 면한 거친 해안선과 오색 조약돌로 알려진 고래로부터의 명소. 『고킨와카슈』에도 읊어진 달의 명소로, 도사의 관월(觀月) 지로서 「가쓰라하마의 달」은 예로부터 일본 3대 명월의 하나로 꼽힙니다. 사카모토 료마상(1928년 건립, 받침대 포함 13.5m, 상 높이 5.3m)은 태평양을 응시하는 자태로, 막말 유신의 지사 사카모토 료마의 고향 도사의 상징. 일대는 가쓰라하마 공원으로 정비되어 가쓰라하마 수족관, 사카모토 료마 기념관, 류오미사키 전망대 등을 거느립니다.",
+    },
     highlights: {
       ja: [
         "坂本龍馬像 — 1928年建立、像高5.3m、太平洋を見据える維新の志士、台座裏の階段から海側ローアングル",
@@ -2000,6 +2051,27 @@ export const LOCATION_CONTENT = {
         "Cape Ryuo and Ryugu Shrine — a vermilion shrine on the headland, contrasting the surf with the cape itself",
         "Mid-Autumn Moon — the «moon over Katsurahama,» celebrated for centuries; the «Meigetsu Ekin Festival» is held in mid-autumn",
         "Katsurahama Aquarium — opened in 1931; with a Pacific Ocean backdrop, the show stadium photographs spectacularly",
+      ],
+      zh: [
+        "坂本龙马像 — 1928年建立，像高5.3米，凝望太平洋的维新志士，台座后方阶梯可登海侧低角度",
+        "弓状沙滩 — 全长约400米的白砂海岸，散布五色小石(燧石、玛瑙、紫水晶等)",
+        "龙王岬·龙宫神社 — 立于桂浜岬的朱漆神社，太平洋越的浪与岬的对比",
+        "中秋名月 — 古来「桂浜之月」之名，9月中秋举办「名月绘金祭」",
+        "桂浜水族馆 — 1931年开业老店，太平洋背景的演出场馆，撮影性强",
+      ],
+      "zh-tw": [
+        "坂本龍馬像 — 1928年建立，像高5.3米，凝望太平洋的維新志士，台座後方階梯可登海側低角度",
+        "弓狀沙灘 — 全長約400米的白砂海岸，散布五色小石(燧石、瑪瑙、紫水晶等)",
+        "龍王岬·龍宮神社 — 立於桂濱岬的朱漆神社，太平洋越的浪與岬的對比",
+        "中秋名月 — 古來「桂濱之月」之名，9月中秋舉辦「名月繪金祭」",
+        "桂濱水族館 — 1931年開業老店，太平洋背景的演出場館，撮影性強",
+      ],
+      ko: [
+        "사카모토 료마상 — 1928년 건립, 상 높이 5.3m, 태평양을 응시하는 유신의 지사, 받침대 뒤편 계단으로 바다 쪽 로우앵글",
+        "활 모양 모래사장 — 전장 약 400m의 흰 모래 해안, 오색 조약돌(차트·마노·자수정 등)이 흩어짐",
+        "류오미사키·류구 신사 — 가쓰라하마 곶에 서 있는 주홍색 신사, 태평양 너머 거친 파도와 곶의 대비",
+        "추석 명월 — 예로부터 「가쓰라하마의 달」로 불리는 명월, 9월 추석에 「명월 에킨 마쓰리」 개최",
+        "가쓰라하마 수족관 — 1931년 개업한 노포, 태평양을 배경으로 한 쇼 스타디움, 촬영에 적합",
       ],
     },
     quickAnswers: {
@@ -2018,6 +2090,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From JR Kochi Station, the «MY Yu Bus» direct from «Kochi Eki-mae» to «Katsurahama» takes 30 min, ¥490. From central Kochi, 20 min by car (parking ¥500 / large vehicles ¥1,000). The Katsurahama Hanakaido coastal road offers great scenery. Allow 2–3 hours for the beach itself, or a full day with the Ryoma Memorial and Aquarium." },
         { q: "Can I take the colorful stones home?", a: "No — the colorful stones are part of the natural monument and an ordinance forbids removal. If you pick one up, return it. Photography is free; macro lenses capture the stones beautifully. Their mix of chert, agate, amethyst, and other minerals reflects the geology of Shikoku's mountains and Kuroshio current dynamics." },
         { q: "Combined sightseeing route?", a: "①Katsurahama itself (early morning, Ryoma statue) ②Ryoma Memorial Museum (5 min by car) ③Katsurahama Aquarium (adjacent, retro architecture) ④Central Kochi (20 min by car, Hirome Market for Tosa-style bonito tataki) ⑤Kochi Castle (one of 12 originals, 30 min by car). A standard one-day route covering Tosa's history, culture, and nature." },
+      ],
+      zh: [
+        { q: "桂浜是什么?", a: "高知县高知市面向太平洋全长约400米的弓状海岸。古今集咏月之名所，坂本龙马像所立的「土佐象征」。一带为桂浜公园，含水族馆·龙马纪念馆·展望台，高知最大观光地。" },
+        { q: "龙马像最佳撮影角度?", a: "台座后方阶梯登顶后从海侧低角度。龙马与太平洋背景为经典构图。夕阳时段为逆光剪影，晴天日中可拍蓝天顺光肖像。" },
+        { q: "撮影最佳时段?", a: "日出前后(东向太平洋的朝日)、黄昏时(西阳照亮龙马像)为最佳。中秋名月(9月)古来「桂浜之月」，月光与海的构图稀有。冬季波涛汹涌时适合拍迫力浪景。" },
+        { q: "如何前往?", a: "JR高知站乘土佐电「高知站前」至「桂浜」直达巴士30分钟·490日元。高知市街开车20分钟，停车场(普通车500日元·大型1000日元)。「桂浜花海道」(海岸沿观光路)沿途景色佳。游览半日(2~3小时)，含龙马纪念馆·水族馆需1日。" },
+        { q: "五色小石可带回家吗?", a: "原则禁止。桂浜小石属天然纪念物，禁止带回有条例规定，找到请放回原处。撮影自由(微距镜拍小石细节有趣)。燧石·玛瑙·紫水晶等多彩岩石的成因为四国山地地质与黑潮流动的作用。" },
+        { q: "周边连续观光?", a: "①桂浜本体(早晨~上午，龙马像)②龙马纪念馆(车5分，坂本龙马生涯展示)③桂浜水族馆(邻接，怀旧建筑老店)④高知市街(车20分，弘人市场吃鲣鱼半烧)⑤高知城(现存12天守，车30分)。1日游可饱览土佐历史·文化·自然的定番路线。" },
+      ],
+      "zh-tw": [
+        { q: "桂濱是什麼?", a: "高知縣高知市面向太平洋全長約400米的弓狀海岸。古今集詠月之名所，坂本龍馬像所立的「土佐象徵」。一帶為桂濱公園，含水族館·龍馬紀念館·展望台，高知最大觀光地。" },
+        { q: "龍馬像最佳撮影角度?", a: "台座後方階梯登頂後從海側低角度。龍馬與太平洋背景為經典構圖。夕陽時段為逆光剪影，晴天日中可拍藍天順光肖像。" },
+        { q: "撮影最佳時段?", a: "日出前後(東向太平洋的朝日)、黃昏時(西陽照亮龍馬像)為最佳。中秋名月(9月)古來「桂濱之月」，月光與海的構圖稀有。冬季波濤洶湧時適合拍迫力浪景。" },
+        { q: "如何前往?", a: "JR高知站搭土佐電「高知站前」至「桂濱」直達巴士30分鐘·490日圓。高知市街開車20分鐘，停車場(普通車500日圓·大型1000日圓)。「桂濱花海道」(海岸沿觀光路)沿途景色佳。遊覽半日(2~3小時)，含龍馬紀念館·水族館需1日。" },
+        { q: "五色小石可帶回家嗎?", a: "原則禁止。桂濱小石屬天然紀念物，禁止帶回有條例規定，找到請放回原處。撮影自由(微距鏡拍小石細節有趣)。燧石·瑪瑙·紫水晶等多彩岩石的成因為四國山地地質與黑潮流動的作用。" },
+        { q: "周邊連續觀光?", a: "①桂濱本體(早晨~上午，龍馬像)②龍馬紀念館(車5分，坂本龍馬生涯展示)③桂濱水族館(鄰接，懷舊建築老店)④高知市街(車20分，弘人市場吃鰹魚半燒)⑤高知城(現存12天守，車30分)。1日遊可飽覽土佐歷史·文化·自然的定番路線。" },
+      ],
+      ko: [
+        { q: "가쓰라하마란?", a: "고치현 고치시의 태평양에 면한 전장 약 400m의 활 모양 해안. 『고킨와카슈』에도 읊어진 달의 명소로, 사카모토 료마상이 서 있는 「도사의 상징」. 일대는 가쓰라하마 공원으로 수족관·료마 기념관·전망대를 거느린 고치 최대의 관광지입니다." },
+        { q: "료마상의 베스트 촬영 앵글은?", a: "받침대 뒤편의 계단을 올라간 바다 쪽에서의 로우 앵글. 료마와 태평양을 배경으로 한 구도가 정석. 일몰 시간대는 역광 실루엣, 맑은 날 한낮은 푸른 하늘과의 순광 포트레이트가 모두 잘 나옵니다." },
+        { q: "촬영 베스트 타임은?", a: "일출 전후(동향의 태평양으로부터의 아침해), 황혼 시간(서양이 료마상을 비춤)이 최고. 추석 명월(9월)은 예로부터 「가쓰라하마의 달」, 달빛과 바다의 구도는 희소. 거친 파도가 치는 겨울은 박력 있는 파도 촬영에 최적." },
+        { q: "가는 방법은?", a: "JR 고치역에서 도사덴 「고치역 앞」에서 「가쓰라하마」 행 직행 버스로 30분·490엔. 고치 시가지에서 차로 20분, 주차장(보통차 500엔·대형 1,000엔). 「가쓰라하마 하나카이도」(해안 변의 관광 도로)를 통하면 경치도 즐길 수 있음. 관광은 반나절(2~3시간), 료마 기념관·수족관도 포함하면 하루." },
+        { q: "오색 조약돌은 가져갈 수 있나?", a: "원칙적으로 금지. 가쓰라하마의 조약돌은 천연기념물의 일부로 가져가는 것은 조례로 금지되어 있으니, 발견했다면 반드시 원래 자리에 돌려놓을 것. 촬영은 자유(매크로 렌즈로 조약돌의 디테일을 찍으면 재미있음). 차트·마노·자수정 등 다채로운 암석이 섞인 성인은 시코쿠 산지의 지질과 구로시오 해류의 작용." },
+        { q: "주변의 연속 관광은?", a: "①가쓰라하마 본체(이른 아침~오전, 료마상) ②료마 기념관(차 5분, 사카모토 료마의 생애 전시) ③가쓰라하마 수족관(인접, 레트로 건축의 노포) ④고치 시가지(차 20분, 히로메 시장에서 가다랑어 다타키) ⑤고치성(현존 12천수, 차 30분). 1일 코스로 도사의 역사·문화·자연을 만끽할 수 있는 정석 루트입니다." },
       ],
     },
     faqs: [
