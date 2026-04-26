@@ -3,6 +3,7 @@ import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js"
 import { PREFECTURES, PREF_I18N, getPrefName, getLocName, cldUrl } from "../../data.js";
 import { PREF_SLUGS } from "../../slugs.js";
 import { TR } from "../../data.js";
+import TopNav from "../../TopNav.js";
 
 // 47都道府県のISO標準順 (写真有無問わず)
 const ALL_PREFS_ORDERED = [
@@ -116,9 +117,7 @@ export default async function AllPrefecturesPage({ params }) {
               <a key={c} href={`/${c}/all-prefectures`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
             ))}
           </div>
-          <div className="top-nav">
-            <a className="top-nav-link" href={`/${lang}`}>← Landscapes of Japan</a>
-          </div>
+          <TopNav lang={lang} t={TR[lang] || TR.en} />
         </div>
 
         <main style={{ maxWidth: 1100, margin: "0 auto", padding: "100px 24px 80px" }}>

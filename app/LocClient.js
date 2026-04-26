@@ -6,6 +6,7 @@ import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { POSTS, getPostTitle } from "./content/blog/posts.js";
 import { getLocInfo } from "./loc-info.js";
+import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 
@@ -94,9 +95,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
             </a>
           ))}
         </div>
-        <div className="top-nav">
-          <a className="top-nav-link" href={`/${lang}/${prefSlug}`}>← {prefLocal}</a>
-        </div>
+        <TopNav lang={lang} t={t} />
       </div>
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import TopNav from "./TopNav.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 
 export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
@@ -34,9 +35,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
             </a>
           ))}
         </div>
-        <div className="top-nav">
-          <a className="top-nav-link" href={`/${lang}/${prefSlug}/${locSlug}`}>← {locLocal}</a>
-        </div>
+        <TopNav lang={lang} t={t} />
       </div>
 
       <main style={{ maxWidth: 1400, margin: "0 auto", padding: "100px 16px 80px" }}>

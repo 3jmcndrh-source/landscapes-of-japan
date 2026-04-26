@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREFECTURES, TR, cldUrl, getPrefName, getLocName } from "../../data.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc, getCollectionPhotos } from "../../collections.js";
+import TopNav from "../../TopNav.js";
 
 export const dynamicParams = false;
 
@@ -95,9 +96,7 @@ export default async function CollectionsIndex({ params }) {
               <a key={c} href={`/${c}/collections`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
             ))}
           </div>
-          <div className="top-nav">
-            <a className="top-nav-link" href={`/${lang}`}>← Landscapes of Japan</a>
-          </div>
+          <TopNav lang={lang} t={TR[lang] || TR.en} />
         </div>
 
         <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>

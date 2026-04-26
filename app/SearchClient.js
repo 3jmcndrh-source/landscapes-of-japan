@@ -6,6 +6,7 @@ import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc } from "./collections.js";
 import { TAGS, TAG_SLUGS, getTagName, getTagDesc } from "./tags.js";
 import { POSTS, getPostTitle, getPostExcerpt } from "./content/blog/posts.js";
+import TopNav from "./TopNav.js";
 
 function normalize(s) { return String(s || "").toLowerCase(); }
 
@@ -133,9 +134,7 @@ function SearchInner({ lang }) {
             </a>
           ))}
         </div>
-        <div className="top-nav">
-          <a className="top-nav-link" href={`/${lang}`}>← Landscapes of Japan</a>
-        </div>
+        <TopNav lang={lang} t={t} />
       </div>
 
       <main style={{ maxWidth: 900, margin: "0 auto", padding: "100px 24px 80px" }}>

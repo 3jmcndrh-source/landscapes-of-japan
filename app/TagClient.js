@@ -2,6 +2,7 @@
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
+import TopNav from "./TopNav.js";
 
 export default function TagClient({ lang, slug, photos, desc }) {
   const t = TR[lang] || TR.en;
@@ -56,9 +57,7 @@ export default function TagClient({ lang, slug, photos, desc }) {
             </a>
           ))}
         </div>
-        <div className="top-nav">
-          <a className="top-nav-link" href={`/${lang}`}>← Landscapes of Japan</a>
-        </div>
+        <TopNav lang={lang} t={t} />
       </div>
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>

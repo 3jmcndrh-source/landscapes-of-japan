@@ -3,6 +3,7 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import TopNav from "./TopNav.js";
 
 export default function CollectionClient({ lang, theme, photos, desc }) {
   const t = TR[lang] || TR.en;
@@ -72,9 +73,7 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
             </a>
           ))}
         </div>
-        <div className="top-nav">
-          <a className="top-nav-link" href={`/${lang}`}>← Landscapes of Japan</a>
-        </div>
+        <TopNav lang={lang} t={t} />
       </div>
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>

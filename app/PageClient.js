@@ -4,6 +4,7 @@ import * as d3 from "d3";
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+import TopNav from "./TopNav.js";
 
 const VIEW_ALL = {
   ja: "全ての写真を見る", en: "View all photos", zh: "查看所有照片", "zh-tw": "查看所有照片",
@@ -725,6 +726,17 @@ export default function PageClient({ initialLang = "ja" }) {
 
   const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
   const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const h = window.location.hash;
+    if (!h) return;
+    const tries = [200, 800, 1600];
+    tries.forEach((d) => setTimeout(() => {
+      const el = document.getElementById(h.slice(1));
+      if (el) el.scrollIntoView({ behavior: "smooth", block: h === "#map" ? "center" : "start" });
+    }, d));
+  }, []);
   const handlePin = useCallback(id => {
     const m = String(id).match(/^p(\d+)$/);
     const el = m ? document.getElementById("pref-" + m[1]) : null;
@@ -865,13 +877,8 @@ export default function PageClient({ initialLang = "ja" }) {
             ))}
           </div>
         </div>
-        <div className={"top-nav" + (scrollY > 80 ? " scrolled" : "")}>
-          <button className="top-nav-link" onClick={scrollToMap}>{t.nav.map}</button>
-          <a className="top-nav-link" href={`/${lang}/blog`}>{lang === "ja" ? "ブログ" : lang === "zh" ? "博客" : lang === "zh-tw" ? "部落格" : lang === "ko" ? "블로그" : "Blog"}</a>
-          <a className="top-nav-link" href={`/${lang}/collections`}>{lang === "ja" ? "コレクション" : lang === "zh" ? "合集" : lang === "zh-tw" ? "合集" : lang === "ko" ? "컬렉션" : "Collections"}</a>
-          <a className="top-nav-link" href={`/${lang}/search`}>{lang === "ja" ? "検索" : lang === "zh" ? "搜索" : lang === "zh-tw" ? "搜尋" : lang === "ko" ? "검색" : "Search"}</a>
-          <button className="top-nav-link" onClick={scrollToContact}>{t.contact.title}</button>
-        </div>
+        <TopNav lang={lang} t={t} scrollToMap={scrollToMap} scrollToContact={scrollToContact} />
+
         <div className="cin-hero">
           <div className={"cin-hero-bg" + (loaded ? " loaded" : "")} />
           <div className="cin-hero-content" style={{ zIndex: 2 }}>
@@ -880,7 +887,7 @@ export default function PageClient({ initialLang = "ja" }) {
           </div>
         </div>
         <section className="cin-section">
-          <div className="cin-map-wrap reveal" ref={mapRef}>
+          <div className="cin-map-wrap reveal" id="map" ref={mapRef}>
             <div className="cin-map-box">
               <JapanMap lang={lang} photos={MAP_PINS} onPinClick={handlePin} hlId={hlPhoto} />
             </div>
@@ -941,7 +948,7 @@ export default function PageClient({ initialLang = "ja" }) {
 
         {/* Contact Form */}
         <div style={{ width: "100%", height: 1, background: "rgba(232,228,223,.08)", maxWidth: 200, margin: "0 auto 60px" }} />
-        <div className="contact-section reveal" ref={contactRef}>
+        <div className="contact-section reveal" id="contact" ref={contactRef}>
           <h2 className="contact-title">{t.contact.title}</h2>
           <div className="contact-form">
             <div className="contact-field">

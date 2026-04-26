@@ -5,6 +5,7 @@ import { getHowTo } from "../../../howTo.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../../slugs.js";
 import { TR } from "../../../data.js";
+import TopNav from "../../../TopNav.js";
 
 export const dynamicParams = false;
 
@@ -169,9 +170,7 @@ export default async function BlogPost({ params }) {
               <a key={c} href={`/${c}/blog/${slug}`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
             ))}
           </div>
-          <div className="top-nav">
-            <a className="top-nav-link" href={`/${lang}/blog`}>← {blogTitle}</a>
-          </div>
+          <TopNav lang={lang} t={TR[lang] || TR.en} />
         </div>
 
         <article style={{ maxWidth: 820, margin: "0 auto", padding: "100px 24px 80px" }}>
