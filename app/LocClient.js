@@ -4,6 +4,7 @@ import { TR, PREFECTURES, getPrefName, getLocName, getUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
+import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import { POSTS, getPostTitle } from "./content/blog/posts.js";
 import { getLocInfo } from "./loc-info.js";
 import TopNav from "./TopNav.js";
@@ -268,12 +269,13 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           </section>
         )}
 
-        {/* Related categories: collections + tags + blog posts (#18 内部リンク強化) */}
+        {/* Related categories: collections + techniques + tags + blog posts (A15 内部リンク強化) */}
         {(() => {
           const myColls = COLLECTION_SLUGS.filter((s) => COLLECTIONS[s].locs.includes(locJp));
           const myTags = TAG_SLUGS.filter((s) => TAGS[s].locs.includes(locJp));
+          const myTechs = TECHNIQUE_SLUGS.filter((s) => TECHNIQUES[s].locs.includes(locJp));
           const myPosts = POSTS.filter((p) => p.locs.includes(locJp));
-          if (myColls.length === 0 && myTags.length === 0 && myPosts.length === 0) return null;
+          if (myColls.length === 0 && myTags.length === 0 && myTechs.length === 0 && myPosts.length === 0) return null;
           return (
             <section style={{ marginTop: 64 }}>
               <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
@@ -290,6 +292,21 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
                       → {getPostTitle(p, lang)}
                     </a>
                   ))}
+                </div>
+              )}
+
+              {myTechs.length > 0 && (
+                <div style={{ marginBottom: 24 }}>
+                  <div style={{ fontSize: 11, color: "rgba(220,190,100,.5)", textTransform: "uppercase", letterSpacing: ".2em", marginBottom: 8 }}>
+                    {lang === "ja" ? "撮影技法ガイド" : "Photography Techniques"}
+                  </div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                    {myTechs.slice(0, 6).map((s) => (
+                      <a key={`tech-${s}`} href={`/${lang}/techniques/${s}`} style={{ background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.22)", borderRadius: 8, padding: "8px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}>
+                        ▸ {getTechniqueName(s, lang)}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
 

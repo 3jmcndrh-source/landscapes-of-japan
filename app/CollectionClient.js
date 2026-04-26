@@ -3,6 +3,7 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionGuide } from "./collections.js";
+import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import TopNav from "./TopNav.js";
 
 // A8: ガイドセクションのラベル翻訳 (5 base langs + 15 langs は en fallback)
@@ -183,6 +184,56 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
             ))}
           </div>
         </section>
+
+        {/* A15: 関連テクニック (このコレクションの被写体に役立つ撮影技法) */}
+        {(() => {
+          const colLocs = new Set(COLLECTIONS[theme].locs);
+          const relatedTechs = TECHNIQUE_SLUGS.filter((s) => {
+            const techLocs = TECHNIQUES[s].locs;
+            return techLocs.some((l) => colLocs.has(l));
+          });
+          if (relatedTechs.length === 0) return null;
+          return (
+            <section style={{ marginTop: 72 }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
+                {lang === "ja" ? "関連の撮影技法" : "Related Photography Techniques"}
+              </h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
+                {relatedTechs.slice(0, 8).map((s) => (
+                  <a key={s} href={`/${lang}/techniques/${s}`} style={{ background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.22)", borderRadius: 8, padding: "12px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14 }}>
+                    ▸ {getTechniqueName(s, lang)}
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* A15: 注目ロケーション (このコレクションの主要な撮影地) */}
+        {(() => {
+          const photoLocs = [...new Set(photos.map((p) => p.loc).filter((l) => l && LOC_SLUGS[l]))];
+          if (photoLocs.length === 0) return null;
+          return (
+            <section style={{ marginTop: 56 }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
+                {lang === "ja" ? "注目の撮影地" : "Featured Locations"}
+              </h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10 }}>
+                {photoLocs.slice(0, 12).map((l) => {
+                  const photo = photos.find((p) => p.loc === l);
+                  const prefSlug = photo ? PREF_SLUGS[photo.pref] : null;
+                  if (!prefSlug || !LOC_SLUGS[l]) return null;
+                  return (
+                    <a key={l} href={`/${lang}/${prefSlug}/${LOC_SLUGS[l]}`} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 8, padding: "12px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}>
+                      <div style={{ fontWeight: 500 }}>{getLocName(l, lang)}</div>
+                      {photo && <div style={{ fontSize: 11, color: "rgba(232,228,223,.55)", marginTop: 2 }}>{getPrefName(photo.pref, lang)}</div>}
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })()}
 
         <section style={{ marginTop: 72 }}>
           <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
