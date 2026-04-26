@@ -15,10 +15,13 @@ export const LOCATION_CONTENT = {
       "知床半島是世界自然遺產，突入鄂霍次克海。棲息棕熊與毛腳魚鴞的原始森林、冬季流冰、夏季神威瀑布等原始自然保留完好。只能從觀光船見到的絕壁海岸線震撼人心。",
       "시레토코 반도는 오호츠크해로 돌출된 세계자연유산. 불곰과 시마후쿠로가 사는 원시림, 겨울 유빙, 여름 가무이왓카 폭포 등 손대지 않은 자연이 남아 있습니다. 관광선에서만 볼 수 있는 절벽 해안선은 압권."
     ),
-    definition: lh(
-      "知床(しれとこ)は北海道東部、オホーツク海と根室海峡に挟まれた長さ約65kmの半島で、2005年に「知床」としてユネスコ世界自然遺産登録。アイヌ語の「シリエトク(地の果て)」に由来する名の通り、原生林・流氷・絶壁・滝・ヒグマ・シマフクロウなど北半球で最も南に到達する流氷帯と高密度のヒグマ生息地を併せ持つ稀有な生態系。冬は流氷ウォーク、夏は知床五湖や観光船からの絶壁海岸線、知床岬まで陸路では行けない秘境性が、地球の最果ての風景を求める写真家の最終目的地となっています。",
-      "Shiretoko is a peninsula about 65 km long in eastern Hokkaido, between the Sea of Okhotsk and the Nemuro Strait, registered as a UNESCO World Natural Heritage Site in 2005. The name derives from the Ainu «Sir-etok» («the end of the earth»), and it lives up to that meaning: primeval forests, drift ice, sheer cliffs, waterfalls, brown bears, and Blakiston's fish owls combine in the most southerly extent of the Northern Hemisphere's drift ice and one of the world's densest brown bear habitats. Winter offers drift-ice walks; summer reveals the Shiretoko Five Lakes and cliff coastlines visible only from sightseeing boats; Cape Shiretoko itself remains unreachable by road — a final pilgrimage for photographers seeking edge-of-the-earth landscapes."
-    ),
+    definition: {
+      ja: "知床(しれとこ)は北海道東部、オホーツク海と根室海峡に挟まれた長さ約65kmの半島で、2005年に「知床」としてユネスコ世界自然遺産登録。アイヌ語の「シリエトク(地の果て)」に由来する名の通り、原生林・流氷・絶壁・滝・ヒグマ・シマフクロウなど北半球で最も南に到達する流氷帯と高密度のヒグマ生息地を併せ持つ稀有な生態系。冬は流氷ウォーク、夏は知床五湖や観光船からの絶壁海岸線、知床岬まで陸路では行けない秘境性が、地球の最果ての風景を求める写真家の最終目的地となっています。",
+      en: "Shiretoko is a peninsula about 65 km long in eastern Hokkaido, between the Sea of Okhotsk and the Nemuro Strait, registered as a UNESCO World Natural Heritage Site in 2005. The name derives from the Ainu «Sir-etok» («the end of the earth»), and it lives up to that meaning: primeval forests, drift ice, sheer cliffs, waterfalls, brown bears, and Blakiston's fish owls combine in the most southerly extent of the Northern Hemisphere's drift ice and one of the world's densest brown bear habitats. Winter offers drift-ice walks; summer reveals the Shiretoko Five Lakes and cliff coastlines visible only from sightseeing boats; Cape Shiretoko itself remains unreachable by road — a final pilgrimage for photographers seeking edge-of-the-earth landscapes.",
+      zh: "知床是北海道东部，鄂霍次克海与根室海峡之间长约65公里的半岛，2005年作为「知床」登录联合国教科文组织世界自然遗产。名字源自阿伊努语「シリエトク(大地尽头)」，原始林、流冰、绝壁、瀑布、棕熊、毛脚渔鸮等汇聚——北半球最南的流冰带与高密度棕熊栖息地兼有的稀有生态系统。冬有流冰漫步，夏有知床五湖与观光船看绝壁海岸，知床岬陆路不可达的秘境性，使其成为追求地球尽头风景的摄影师终极目的地。",
+      "zh-tw": "知床是北海道東部，鄂霍次克海與根室海峽之間長約65公里的半島，2005年作為「知床」登錄聯合國教科文組織世界自然遺產。名字源自愛努語「シリエトク(大地盡頭)」，原始林、流冰、絕壁、瀑布、棕熊、毛腳魚鴞等匯聚——北半球最南的流冰帶與高密度棕熊棲息地兼有的稀有生態系統。冬有流冰漫步，夏有知床五湖與觀光船看絕壁海岸，知床岬陸路不可達的秘境性，使其成為追求地球盡頭風景的攝影師終極目的地。",
+      ko: "시레토코는 홋카이도 동부, 오호츠크해와 네무로 해협 사이의 길이 약 65km의 반도로, 2005년 「시레토코」로서 유네스코 세계자연유산 등록. 아이누어의 「시리에토쿠(땅의 끝)」에서 유래한 이름대로 원시림·유빙·절벽·폭포·불곰·시마후쿠로 등 북반구에서 가장 남쪽까지 도달하는 유빙대와 고밀도 불곰 서식지를 함께 갖춘 희귀한 생태계. 겨울에는 유빙 워크, 여름에는 시레토코 5호와 관광선에서의 절벽 해안선, 시레토코 곶까지 육로로 갈 수 없는 비경성이 지구 끝 풍경을 찾는 사진가의 최종 목적지가 되고 있습니다.",
+    },
     highlights: {
       ja: [
         "知床五湖 — 原始林に囲まれた5つの湖、高架木道で熊と遭遇せず散策可、湖面の知床連山リフレクション",
@@ -33,6 +36,27 @@ export const LOCATION_CONTENT = {
         "Kamuiwakka Falls — a rare waterfall fed by hot springs; in summer, hike upstream to the fourth fall",
         "Cape Puyuni and Yuhi-dai — five minutes by car from Utoro; sunset over the Sea of Okhotsk silhouettes the cape",
         "Sightseeing boats — from Utoro Port to Cape Shiretoko, viewing cliffs, waterfalls, and brown bears on a 3.5-hour cruise",
+      ],
+      zh: [
+        "知床五湖 — 原始林环绕的5个湖泊，高架木道可避熊散步，湖面映出知床连山",
+        "鄂霍次克的流冰 — 1月下旬~3月上旬，世界最南端流冰带，流冰漫步可在冰上行走",
+        "神威胁瀑布 — 温泉流淌的珍贵瀑布，夏季可溯溪至第四瀑布",
+        "Puyuni岬·夕阳台 — 距宇登吕5分钟车程，鄂霍次克海日落与岬角剪影",
+        "观光船 — 宇登吕港发知床岬航线，绝壁·瀑布·棕熊目击，3.5小时航程",
+      ],
+      "zh-tw": [
+        "知床五湖 — 原始林環繞的5個湖泊，高架木道可避熊散步，湖面映出知床連山",
+        "鄂霍次克的流冰 — 1月下旬~3月上旬，世界最南端流冰帶，流冰漫步可在冰上行走",
+        "神威脅瀑布 — 溫泉流淌的珍貴瀑布，夏季可溯溪至第四瀑布",
+        "Puyuni岬·夕陽台 — 距宇登呂5分鐘車程，鄂霍次克海日落與岬角剪影",
+        "觀光船 — 宇登呂港發知床岬航線，絕壁·瀑布·棕熊目擊，3.5小時航程",
+      ],
+      ko: [
+        "시레토코 5호 — 원시림에 둘러싸인 5개의 호수, 고가 목도로 곰과 마주치지 않고 산책 가능, 호수면에 비치는 시레토코 연봉",
+        "오호츠크의 유빙 — 1월 하순~3월 상순, 세계 최남단 유빙대, 유빙 워크로 얼음 위를 걸을 수 있다",
+        "카무이왓카 유노타키 — 온천이 흐르는 진귀한 폭포, 여름철 계곡 등반으로 제4폭포까지 거슬러 오를 수 있다",
+        "푸유니 곶·유히다이 — 우토로에서 차로 5분, 오호츠크해의 일몰과 푸유니 곶의 실루엣",
+        "관광선 — 우토로 항 발 시레토코 곶 항로, 절벽·폭포·불곰 목격, 3.5시간 코스",
       ],
     },
     quickAnswers: {
@@ -51,6 +75,30 @@ export const LOCATION_CONTENT = {
         { q: "What if I encounter a brown bear?", a: "Shiretoko has one of the world's highest brown-bear densities. Don't run, don't turn your back — slowly retreat. Seal strong-smelling food and pack out all trash. Stay 20m+ away even for photos. The Shiretoko Five Lakes raised boardwalk lets you walk through bear country without encounters, with rangers patrolling." },
         { q: "How do I reach Cape Shiretoko?", a: "There are no roads. Sightseeing boats from Utoro or Rausu ports are the only way to see it (3.5–5 hr). Closed in winter due to drift ice — May–October only. Rare brown bear, orca, and dolphin sightings make the trip rewarding." },
         { q: "What is a «drift-ice walk»?", a: "A 2–3 hour activity walking on the Sea of Okhotsk's drift ice in a dry suit. Late January to early March only; book through Shiretoko Nature Office or similar. You can even submerge under the ice — for photography, a waterproof housing is essential." },
+      ],
+      zh: [
+        { q: "知床是什么?", a: "北海道东部长约65公里的半岛，2005年世界自然遗产登录。源自阿伊努语「大地尽头」，流冰·原始林·棕熊·绝壁汇聚的北半球最南流冰带与高密度棕熊栖息地兼有的稀有生态系统圣地。" },
+        { q: "知床怎么去?", a: "女满别机场乘巴士约2小时至宇登吕温泉为基地。冬期流冰观光，夏期游船·五湖散步为定番。札幌驾车约7小时，建议自驾。" },
+        { q: "拍摄最佳季节?", a: "1月下旬~3月上旬流冰期(最受欢迎)、6月新绿、9~10月红叶与五湖倒影为三大季节。冬季流冰漫步需预约，流冰状态因年而变。" },
+        { q: "遇到棕熊怎么办?", a: "知床棕熊密度世界顶级。遇到时勿跑·勿背向·缓慢后退。气味浓食物密封，垃圾带走。即使拍摄也勿靠近(保持20米以上)。「五湖高架木道」由护林员定期巡逻，可避熊散步。" },
+        { q: "如何到知床岬?", a: "陆路不可达的秘境。仅可乘宇登吕港或罗臼港发观光船(游船)从海上观赏。所需3.5~5小时。冬季因流冰停航，5~10月限定。可见稀有棕熊·虎鲸·海豚。" },
+        { q: "流冰漫步是什么?", a: "穿干式潜水服在鄂霍次克海流冰上行走的2~3小时活动。1月下旬~3月上旬限定，知床自然办公室等可预约。可潜入流冰下，拍摄需防水外壳。" },
+      ],
+      "zh-tw": [
+        { q: "知床是什麼?", a: "北海道東部長約65公里的半島，2005年世界自然遺產登錄。源自愛努語「大地盡頭」，流冰·原始林·棕熊·絕壁匯聚的北半球最南流冰帶與高密度棕熊棲息地兼有的稀有生態系統聖地。" },
+        { q: "知床怎麼去?", a: "女滿別機場搭巴士約2小時至宇登呂溫泉為基地。冬期流冰觀光，夏期遊船·五湖散步為定番。札幌駕車約7小時，建議自駕。" },
+        { q: "拍攝最佳季節?", a: "1月下旬~3月上旬流冰期(最受歡迎)、6月新綠、9~10月紅葉與五湖倒影為三大季節。冬季流冰漫步需預約，流冰狀態因年而變。" },
+        { q: "遇到棕熊怎麼辦?", a: "知床棕熊密度世界頂級。遇到時勿跑·勿背向·緩慢後退。氣味濃食物密封，垃圾帶走。即使拍攝也勿靠近(保持20米以上)。「五湖高架木道」由護林員定期巡邏，可避熊散步。" },
+        { q: "如何到知床岬?", a: "陸路不可達的秘境。僅可搭宇登呂港或羅臼港發觀光船(遊船)從海上觀賞。所需3.5~5小時。冬季因流冰停航，5~10月限定。可見稀有棕熊·虎鯨·海豚。" },
+        { q: "流冰漫步是什麼?", a: "穿乾式潛水服在鄂霍次克海流冰上行走的2~3小時活動。1月下旬~3月上旬限定，知床自然辦公室等可預約。可潛入流冰下，拍攝需防水外殼。" },
+      ],
+      ko: [
+        { q: "시레토코란?", a: "홋카이도 동부의 길이 약 65km의 반도로, 2005년 세계자연유산 등록. 아이누어 「땅의 끝」에서 유래, 유빙·원시림·불곰·절벽이 어우러지는 북반구 최남단 유빙대와 고밀도 불곰 서식지를 함께 갖춘 희귀한 생태계의 성지입니다." },
+        { q: "시레토코 가는 법은?", a: "메만베쓰 공항에서 버스로 약 2시간 우토로 온천이 거점. 겨울철은 유빙 관광, 여름철은 크루즈선·5호 산책이 정석. 삿포로에서 차로 약 7시간, 렌터카 추천입니다." },
+        { q: "촬영 베스트 시즌은?", a: "1월 하순~3월 상순의 유빙기(가장 인기), 6월 신록, 9~10월 단풍과 5호의 반영이 3대 시즌. 겨울 유빙 워크는 예약 필수, 유빙 상태는 해마다 변동합니다." },
+        { q: "불곰을 만나면?", a: "시레토코의 불곰 밀도는 세계 톱 클래스. 만나도 달리지 말고·등 돌리지 말고·천천히 후퇴. 냄새 강한 식료품은 밀폐, 쓰레기는 가지고 돌아간다. 촬영 목적이라도 가까이 가지 않기(20m 이상 유지). 레인저가 정기 순찰하는 「5호 고가 목도」는 곰과 마주치지 않고 산책 가능합니다." },
+        { q: "시레토코 곶까지 가는 방법은?", a: "육로로는 갈 수 없는 비경. 우토로 항 또는 라우스 항 발 관광선(크루즈)으로 해상에서 보는 것뿐. 소요 3.5시간~5시간. 겨울은 유빙으로 휴항하므로 5월~10월 한정. 희귀한 불곰·범고래·돌고래 목격 기회도 있습니다." },
+        { q: "유빙 워크란?", a: "드라이슈트를 입고 오호츠크해의 유빙 위를 걷는 2~3시간의 액티비티. 1월 하순~3월 상순 한정, 시레토코 네이처 오피스 등에서 예약. 유빙 아래로 잠수도 가능, 촬영 목적이라면 방수 하우징 필수입니다." },
       ],
     },
     faqs: [
@@ -788,10 +836,13 @@ export const LOCATION_CONTENT = {
       "清水寺創建於778年，世界遺產，京都代表寺院。正殿「清水舞台」為不用一釘的木造建築，從13米高處俯瞰京都市區。春櫻、秋紅葉、冬雪、夜間特別拜觀與燈光秀令人屏息。",
       "기요미즈데라는 778년 창건, 세계유산 교토 대표 사찰. 본당 '기요미즈 무대'는 못을 하나도 사용하지 않은 목조 건축으로 13m 높이에서 교토 시가지를 조망. 봄 벚꽃, 가을 단풍, 겨울 설경, 야간 특별 참배와 라이트업이 숨이 멎을 정도로 아름답습니다."
     ),
-    definition: lh(
-      "清水寺は778年創建、京都府京都市東山区の真言宗系の単立寺院で、世界遺産「古都京都の文化財」の構成資産の一つ。本堂(国宝)の「清水の舞台」は釘を一本も使わない懸造り(かけづくり)技法による木造建築で、高さ13mの崖上から京都市街を一望できます。年間600万人以上が訪れる京都最大の集客地で、千手観音菩薩を本尊とし、平安時代から続く観音信仰の聖地として、また春の桜・秋の紅葉・冬の雪・夜のライトアップで日本写真の象徴的存在です。",
-      "Kiyomizu-dera, founded in 778 in Kyoto's Higashiyama Ward, is an independent Shingon-school temple and a constituent property of the UNESCO «Historic Monuments of Ancient Kyoto.» Its National Treasure main hall — the famous «Kiyomizu Stage» — was built without a single nail using the kakezukuri stilt-construction method, projecting 13 m above a hillside with panoramic Kyoto views. Drawing more than 6 million visitors a year, it is Kyoto's most visited site. Enshrining a thousand-armed Kannon, it has been a center of Kannon worship since the Heian period, and its cherry blossoms, autumn colors, winter snow, and night illumination make it iconic in Japanese photography."
-    ),
+    definition: {
+      ja: "清水寺は778年創建、京都府京都市東山区の真言宗系の単立寺院で、世界遺産「古都京都の文化財」の構成資産の一つ。本堂(国宝)の「清水の舞台」は釘を一本も使わない懸造り(かけづくり)技法による木造建築で、高さ13mの崖上から京都市街を一望できます。年間600万人以上が訪れる京都最大の集客地で、千手観音菩薩を本尊とし、平安時代から続く観音信仰の聖地として、また春の桜・秋の紅葉・冬の雪・夜のライトアップで日本写真の象徴的存在です。",
+      en: "Kiyomizu-dera, founded in 778 in Kyoto's Higashiyama Ward, is an independent Shingon-school temple and a constituent property of the UNESCO «Historic Monuments of Ancient Kyoto.» Its National Treasure main hall — the famous «Kiyomizu Stage» — was built without a single nail using the kakezukuri stilt-construction method, projecting 13 m above a hillside with panoramic Kyoto views. Drawing more than 6 million visitors a year, it is Kyoto's most visited site. Enshrining a thousand-armed Kannon, it has been a center of Kannon worship since the Heian period, and its cherry blossoms, autumn colors, winter snow, and night illumination make it iconic in Japanese photography.",
+      zh: "清水寺创建于778年，京都府京都市东山区的真言宗单立寺院，世界遗产「古都京都的文化财产」的组成部分之一。本堂(国宝)的「清水舞台」采用不使用一根钉子的悬造(挂造)技法木造建筑，从13米高的崖上俯瞰京都市区。年间访客超过600万人，是京都最大的集客地。以千手观音菩萨为本尊，自平安时代起就是观音信仰的圣地，春樱、秋红叶、冬雪、夜间灯光秀使其成为日本摄影的象征性存在。",
+      "zh-tw": "清水寺創建於778年，京都府京都市東山區的真言宗單立寺院，世界遺產「古都京都的文化財產」的組成部分之一。本堂(國寶)的「清水舞台」採用不使用一根釘子的懸造(掛造)技法木造建築，從13米高的崖上俯瞰京都市區。年間訪客超過600萬人，是京都最大的集客地。以千手觀音菩薩為本尊，自平安時代起就是觀音信仰的聖地，春櫻、秋紅葉、冬雪、夜間燈光秀使其成為日本攝影的象徵性存在。",
+      ko: "기요미즈데라는 778년 창건, 교토부 교토시 히가시야마구의 진언종계 단립 사찰로, 세계유산 「고도 교토의 문화재」 구성자산 중 하나. 본당(국보)의 「기요미즈 무대」는 못을 하나도 사용하지 않는 카케즈쿠리(挂造) 기법의 목조 건축으로, 13m 높이의 절벽 위에서 교토 시가지를 조망할 수 있습니다. 연간 600만 명 이상이 방문하는 교토 최대의 집객지로, 천수관음보살을 본존으로 모시며 헤이안 시대부터 이어지는 관음 신앙의 성지, 또한 봄의 벚꽃·가을의 단풍·겨울의 눈·야간 라이트업으로 일본 사진의 상징적 존재입니다.",
+    },
     highlights: {
       ja: [
         "本堂「清水の舞台」 — 国宝、釘を一本も使わない懸造り、高さ13mから京都市街と桜・紅葉を一望",
@@ -806,6 +857,27 @@ export const LOCATION_CONTENT = {
         "Niomon and West Gate — vivid two-tier vermilion gates at the top of the Sannenzaka and Ninenzaka approach; the West Gate at sunset is unforgettable",
         "Otowa Falls — the «sound-of-feathers» triple stream that gave the temple its name; each thread offers a different blessing (study, love, longevity)",
         "Jishu Shrine — the «matchmaking» shrine behind the main hall, famous for jishu-zakura cherry trees; closed for renovation through 2025",
+      ],
+      zh: [
+        "本堂「清水舞台」— 国宝，不使用一根钉子的悬造，从13米高度俯瞰京都市区与樱花·红叶",
+        "三重塔 — 高31米朱漆三重塔，京都象征性的摄影画框，与樱花和红叶借景",
+        "仁王门与西门 — 鲜艳朱漆二层门，参道(产宁坂·二年坂)的登门口，夕阳下的西门绝景",
+        "音羽之瀑 — 寺名由来的三股清水，分别有「学业」「恋爱」「长寿」的功德",
+        "地主神社 — 清水寺本堂背后的结缘神社，樱花名所(地主樱)，现因施工至2025年关闭",
+      ],
+      "zh-tw": [
+        "本堂「清水舞台」— 國寶，不使用一根釘子的懸造，從13米高度俯瞰京都市區與櫻花·紅葉",
+        "三重塔 — 高31米朱漆三重塔，京都象徵性的攝影畫框，與櫻花和紅葉借景",
+        "仁王門與西門 — 鮮豔朱漆二層門，參道(產寧坂·二年坂)的登門口，夕陽下的西門絕景",
+        "音羽之瀑 — 寺名由來的三股清水，分別有「學業」「戀愛」「長壽」的功德",
+        "地主神社 — 清水寺本堂背後的結緣神社，櫻花名所(地主櫻)，現因施工至2025年關閉",
+      ],
+      ko: [
+        "본당 「기요미즈 무대」 — 국보, 못을 하나도 사용하지 않는 카케즈쿠리, 13m 높이에서 교토 시가지와 벚꽃·단풍을 조망",
+        "삼중탑 — 높이 31m의 주칠 삼중탑, 교토를 상징하는 사진 프레임, 벚꽃과 단풍을 차경",
+        "니오몬과 서문 — 선명한 주칠 이층문, 참배길(산넨자카·니넨자카)에서 오르는 입구, 석양이 비치는 서문은 절경",
+        "오토와 폭포 — 절 이름의 유래가 된 세 갈래의 청수, 각각 「학업」「연애」「장수」의 영험",
+        "지슈 신사 — 기요미즈데라 본당 뒤편의 결연 신사, 벚꽃 명소(지슈자쿠라), 현재 공사 중으로 2025년까지 폐쇄",
       ],
     },
     quickAnswers: {
@@ -824,6 +896,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From Kyoto Station, Bus 206 to «Gojozaka» or «Kiyomizu-michi,» then 10 min walk. Taxi about 15 min, ¥2,000. From Keihan «Kiyomizu-Gojo» Station, ~25 min walk. During peak season, walking is often smoother than the subway+bus combo." },
         { q: "Can I use a tripod?", a: "Tripods are forbidden on the grounds, inside the main hall, and during night illumination. Plan for handheld shooting — bring a fast lens (f/2.8–f/4) and a camera with strong high-ISO performance. Monopods are also forbidden." },
         { q: "What is the origin of «leaping from the Kiyomizu stage»?", a: "In the Edo period, surviving a leap from the stage was said to grant your wish — 234 jumps were recorded (85% survival). Today high railings prevent access. The phrase has become Japanese idiom for «taking a momentous decision.»" },
+      ],
+      zh: [
+        { q: "清水寺是什么?", a: "778年创建，京都市东山区的世界遗产寺院。本堂「清水舞台」是不使用一根钉子的悬造木造建筑，从13米高俯瞰京都市区。年间访客超过600万人，是京都最大的集客地。" },
+        { q: "参拜时间与门票?", a: "通常6:00开门、18:00闭门(随季节变动)，大人400日元。春·夏·秋的特别夜间参拜时延至21时左右(另收700日元左右)。清晨6点开门时人最少光线也柔和，是最佳拍摄时段。" },
+        { q: "拍摄最佳季节?", a: "樱花的3月下旬~4月上旬、新绿的5月、红叶的11月下旬~12月初旬为高峰。夜间灯光只在特别期间举办，幻想感压倒性。积雪的冬天每年只有数次，是稀有构图。" },
+        { q: "怎么去?", a: "京都站乘巴士206系统至「五条坂」或「清水道」下车步行10分钟。出租车约15分钟2,000日元。京阪电车「清水五条」站步行约25分钟。拥堵期步行比地铁+巴士更顺畅。" },
+        { q: "可以使用三脚架吗?", a: "境内禁用三脚架。本堂内部、夜间灯光时同样禁用。手持拍摄为前提，建议F2.8~F4大光圈镜头和高ISO耐性相机。一脚架也同样禁止。" },
+        { q: "「从清水舞台跳下」的由来?", a: "江户时代，从舞台跳下若幸存愿望就能实现的迷信，记录有234人跳下(生存率85%)。现在栏杆增高已禁止进入。这个故事成为「重大决断」的惯用语。" },
+      ],
+      "zh-tw": [
+        { q: "清水寺是什麼?", a: "778年創建，京都市東山區的世界遺產寺院。本堂「清水舞台」是不使用一根釘子的懸造木造建築，從13米高俯瞰京都市區。年間訪客超過600萬人，是京都最大的集客地。" },
+        { q: "參拜時間與門票?", a: "通常6:00開門、18:00閉門(隨季節變動)，大人400日圓。春·夏·秋的特別夜間參拜時延至21時左右(另收700日圓左右)。清晨6點開門時人最少光線也柔和，是最佳拍攝時段。" },
+        { q: "拍攝最佳季節?", a: "櫻花的3月下旬~4月上旬、新綠的5月、紅葉的11月下旬~12月初旬為高峰。夜間燈光只在特別期間舉辦，幻想感壓倒性。積雪的冬天每年只有數次，是稀有構圖。" },
+        { q: "怎麼去?", a: "京都車站搭巴士206系統至「五條坂」或「清水道」下車步行10分鐘。計程車約15分鐘2,000日圓。京阪電車「清水五條」站步行約25分鐘。擁堵期步行比地鐵+巴士更順暢。" },
+        { q: "可以使用三腳架嗎?", a: "境內禁用三腳架。本堂內部、夜間燈光時同樣禁用。手持拍攝為前提，建議F2.8~F4大光圈鏡頭和高ISO耐性相機。一腳架也同樣禁止。" },
+        { q: "「從清水舞台跳下」的由來?", a: "江戶時代，從舞台跳下若倖存願望就能實現的迷信，記錄有234人跳下(生存率85%)。現在欄杆增高已禁止進入。這個故事成為「重大決斷」的慣用語。" },
+      ],
+      ko: [
+        { q: "기요미즈데라란?", a: "778년 창건, 교토시 히가시야마구의 세계유산 사찰. 본당 「기요미즈 무대」는 못을 하나도 사용하지 않는 카케즈쿠리 목조 건축으로 13m 높이에서 교토 시가지를 조망. 연간 600만 명 이상이 방문하는 교토 최대의 집객지입니다." },
+        { q: "참배 시간과 요금은?", a: "일반적으로 6:00 개문, 18:00 폐문(시기에 따라 변동), 어른 400엔. 봄·여름·가을의 특별 야간 참배 시는 21시경까지(별도 700엔 정도). 이른 아침 6시 개문 시간이 가장 사람이 적고 빛도 부드러운 촬영 타임입니다." },
+        { q: "촬영 베스트 시즌은?", a: "벚꽃의 3월 하순~4월 상순, 신록의 5월, 단풍의 11월 하순~12월 초순이 절정. 야간 라이트업은 특별 기간에만 개최되어 압도적으로 환상적. 눈 쌓이는 겨울은 연 몇 번뿐인 레어 구도입니다." },
+        { q: "가는 방법은?", a: "교토역에서 버스 206계통으로 「고조자카」또는「기요미즈미치」하차 도보 10분. 택시로 약 15분 2,000엔. 게이한 전철 「기요미즈고조」역에서 도보 약 25분. 혼잡기는 지하철+버스보다 도보가 원활합니다." },
+        { q: "삼각대 사용 가능?", a: "경내는 삼각대 금지. 본당 내부·야간 라이트업 시도 마찬가지. 핸드헬드 촬영이 전제이므로 F2.8~F4의 밝은 렌즈와 고ISO 내성 카메라를 추천. 일각대도 마찬가지로 금지입니다." },
+        { q: "「기요미즈 무대에서 뛰어내린다」의 유래는?", a: "에도 시대, 무대에서 뛰어내려 목숨을 건지면 소원이 이루어진다는 속신이 있어 234명이 뛰어내린 기록(생존율 85%). 현재는 난간이 높아져 출입 금지. 이 고사가 「중대한 결단」의 관용구가 되었습니다." },
       ],
     },
     faqs: [
