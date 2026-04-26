@@ -2011,10 +2011,13 @@ export const LOCATION_CONTENT = {
       "父母濱是三豐市的淺灘。退潮時殘留的水窪反射夕陽，被譽為「日本的烏尤尼鹽湖」而享譽世界。無風傍晚天空與人影如鏡般倒映。",
       "지치부가하마는 미토요시의 얕은 백사장. 간조 시 남은 물웅덩이가 석양을 반사해 '일본의 우유니 소금사막'으로 세계적으로 유명해졌습니다. 바람 없는 저녁 하늘과 사람 그림자가 수면에 거울처럼 비치는 절경을 담을 수 있습니다."
     ),
-    definition: lh(
-      "父母ヶ浜(ちちぶがはま)は香川県三豊市仁尾町(にお)にある瀬戸内海に面した全長約1kmの遠浅の砂浜で、2017年頃からSNSで「日本のウユニ塩湖」として世界的に有名になった水鏡夕景の聖地。干潮時に砂浜に残るタイドプール(潮だまり)が、空と夕陽を完璧に映し出す鏡となり、人物のシルエットを反転構図で撮影することで、まるでボリビアのウユニ塩湖のような神秘的な写真が撮れます。三豊市観光交流局が「天空の鏡カレンダー」で最適日を公開しており、世界中の写真愛好家が訪れる人気急上昇の撮影地です。",
-      "Chichibugahama is a 1 km stretch of shallow beach on the Inland Sea coast of Nio, Mitoyo City, Kagawa Prefecture, that became a globally famous «mirror sunset» destination from around 2017 — dubbed «Japan's Uyuni Salt Flat.» At low tide, residual tidal pools form a perfect mirror reflecting sky and setting sun, and photographing silhouettes mirrored in the wet sand produces images reminiscent of Bolivia's Uyuni Salt Flat. Mitoyo City Tourism publishes a «Sky Mirror Calendar» listing optimal dates, and the beach has rapidly risen as a sought-after destination for photo enthusiasts worldwide."
-    ),
+    definition: {
+      ja: "父母ヶ浜(ちちぶがはま)は香川県三豊市仁尾町(にお)にある瀬戸内海に面した全長約1kmの遠浅の砂浜で、2017年頃からSNSで「日本のウユニ塩湖」として世界的に有名になった水鏡夕景の聖地。干潮時に砂浜に残るタイドプール(潮だまり)が、空と夕陽を完璧に映し出す鏡となり、人物のシルエットを反転構図で撮影することで、まるでボリビアのウユニ塩湖のような神秘的な写真が撮れます。三豊市観光交流局が「天空の鏡カレンダー」で最適日を公開しており、世界中の写真愛好家が訪れる人気急上昇の撮影地です。",
+      en: "Chichibugahama is a 1 km stretch of shallow beach on the Inland Sea coast of Nio, Mitoyo City, Kagawa Prefecture, that became a globally famous «mirror sunset» destination from around 2017 — dubbed «Japan's Uyuni Salt Flat.» At low tide, residual tidal pools form a perfect mirror reflecting sky and setting sun, and photographing silhouettes mirrored in the wet sand produces images reminiscent of Bolivia's Uyuni Salt Flat. Mitoyo City Tourism publishes a «Sky Mirror Calendar» listing optimal dates, and the beach has rapidly risen as a sought-after destination for photo enthusiasts worldwide.",
+      zh: "父母滨位于香川县三丰市仁尾町，面向濑户内海全长约1公里的遠浅砂滩，自2017年前后在社交媒体上以「日本的乌尤尼盐湖」之名而扬名世界的水镜夕景圣地。退潮时砂滩残留的潮池完美映射天空与夕阳，拍摄人物剪影的倒影构图就能获得宛如玻利维亚乌尤尼盐湖般神秘的照片。三丰市观光交流局公布「天空之镜日历」，是全球摄影爱好者前来的人气急升撮影地。",
+      "zh-tw": "父母濱位於香川縣三豐市仁尾町，面向瀨戶內海全長約1公里的遠淺砂灘，自2017年前後在社群媒體上以「日本的烏尤尼鹽湖」之名而揚名世界的水鏡夕景聖地。退潮時砂灘殘留的潮池完美映射天空與夕陽，拍攝人物剪影的倒影構圖就能獲得宛如玻利維亞烏尤尼鹽湖般神祕的照片。三豐市觀光交流局公布「天空之鏡日曆」，是全球攝影愛好者前來的人氣急升攝影地。",
+      ko: "지치부가하마는 가가와현 미토요시 니오마치에 있는 세토 내해를 향한 전장 약 1km의 얕은 백사장으로, 2017년경부터 SNS에서 「일본의 우유니 소금사막」으로 세계적으로 유명해진 수경 석양의 성지. 간조 시 백사장에 남는 타이드 풀(조수 웅덩이)이 하늘과 석양을 완벽히 비추는 거울이 되며, 인물의 실루엣을 반전 구도로 촬영하면 마치 볼리비아의 우유니 소금사막 같은 신비로운 사진을 찍을 수 있습니다. 미토요시 관광교류국이 「천공의 거울 캘린더」로 최적일을 공개하고 있어, 전 세계 사진 애호가가 찾는 인기 급상승의 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "水鏡の夕景 — 干潮と日没が重なる日に出現、空・人物・雲が水面に完璧に映る世界的構図",
@@ -2029,6 +2032,27 @@ export const LOCATION_CONTENT = {
         "Sky Mirror Calendar — Mitoyo City Tourism publishes a monthly schedule of optimal days (low tide + sunset + clear weather) on its official site",
         "Beachfront dining — «Chichibugahama Café» faces the beach directly, ideal for dining and watching the sunset after the shoot",
         "Access — about 1 hour by car from Takamatsu City; from JR Takuma Station, taxi or community bus",
+      ],
+      zh: [
+        "水镜夕景 — 干潮与日落重合日才出现，空·人·云完美映入水面的世界级构图",
+        "剪影摄影 — 人物双手上举跳跃、躺卧等多样姿势的倒影构图",
+        "天空之镜日历 — 三丰市观光交流局官网按月公布最佳日(干潮+日落+晴天)",
+        "周边餐饮 — 沙滩前「父母滨咖啡」，撮影后的用餐与夕阳鑑赏最佳",
+        "交通 — 高松市自驾约1小时，JR詫间站搭出租车或社区巴士",
+      ],
+      "zh-tw": [
+        "水鏡夕景 — 乾潮與日落重合日才出現，空·人·雲完美映入水面的世界級構圖",
+        "剪影攝影 — 人物雙手上舉跳躍、躺臥等多樣姿勢的倒影構圖",
+        "天空之鏡日曆 — 三豐市觀光交流局官網按月公布最佳日(乾潮+日落+晴天)",
+        "周邊餐飲 — 沙灘前「父母濱咖啡」，撮影後的用餐與夕陽鑑賞最佳",
+        "交通 — 高松市自駕約1小時，JR詫間站搭計程車或社區巴士",
+      ],
+      ko: [
+        "수경 석양 — 간조와 일몰이 겹치는 날에 출현, 하늘·인물·구름이 수면에 완벽하게 비치는 세계적 구도",
+        "실루엣 촬영 — 인물이 두 팔을 올려 점프, 뛰기, 누워 있기 등 다양한 포즈로 반전 구도",
+        "천공의 거울 캘린더 — 미토요시 관광교류국 공식 사이트에서 최적일(간조+일몰+청천)을 월별로 공개",
+        "주변 다이닝 — 백사장 바로 앞 「지치부가하마 카페」, 촬영 후 식사와 석양 감상에 최적",
+        "접근 — 다카마쓰시에서 차로 약 1시간, JR 다쿠마역에서 택시 또는 커뮤니티 버스",
       ],
     },
     quickAnswers: {
@@ -2047,6 +2071,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "About 1 hour by car from Takamatsu via the Seto-Chuo Expressway. Nearest station is JR Takuma — 15 min / ¥3,000 by taxi (the «Takuchan-go» community bus also runs). Three free lots; evening fills fast, so arrive 90 min before sunset." },
         { q: "What should I bring?", a: "Sandals or waterproof shoes (the flats get wet); walking in socks is fine too. Tripod essential for slow-shutter sunset work. Towels, lens cloths, and post-shoot care kit (salt sticks to gear). Bring warm clothes from autumn to winter." },
         { q: "What if the weather is bad?", a: "Heavy rain or wind kills the mirror, but cloudy days are actually ideal — sunset color reflects on the water. Pure clear skies tend to look flat. Clouds catching sunset colors at their base produce the best frames. Check Windy or JMA the day before for winds under 5 m/s." },
+      ],
+      zh: [
+        { q: "父母滨是什么?", a: "香川县三丰市仁尾町的遠浅砂滩，2017年前后以「日本的乌尤尼盐湖」名扬社交媒体的水镜夕景圣地。退潮时潮池映射天空与夕阳，剪影摄影可获得神秘照片。" },
+        { q: "拍镜面反射的条件?", a: "①退潮与日落重合日 ②几乎无风 ③天空有云(纯空显单调)。三丰市观光协会「天空之镜日历」公布最佳日，请务必事先确认。日落前15分至后30分为黄金时刻。" },
+        { q: "剪影摄影技巧?", a: "双手张开跳跃、托夕阳的姿势、躺卧等动作表现力强。摄影者将相机贴近地面以低角度，被摄体站在水洼后方使倒影更清晰。" },
+        { q: "怎么去?", a: "高松市自驾约1小时，经濑户中央道。最近车站JR詫间站搭出租车15分钟·约3,000日元(也有社区巴士「三丰市たく君号」)。停车场免费3处，傍晚常满，建议日落前90分钟到达。" },
+        { q: "带什么·穿什么?", a: "凉鞋或防水鞋(干潟会湿)，光着袜也行。三脚架必备(夕阳时段慢门)。毛巾、镜布，盐分易附机材请准备清洁用品。秋冬还需保暖。" },
+        { q: "天气不好的日子?", a: "雨或大风水镜无法呈现，但多云日反而最佳(夕阳色映入水面)。纯无云晴天意外不上镜。云底带夕阳色为最佳构图。前一日通过Windy或气象厅风预报确认5m/s以下。" },
+      ],
+      "zh-tw": [
+        { q: "父母濱是什麼?", a: "香川縣三豐市仁尾町的遠淺砂灘，2017年前後以「日本的烏尤尼鹽湖」名揚社群媒體的水鏡夕景聖地。退潮時潮池映射天空與夕陽，剪影攝影可獲得神祕照片。" },
+        { q: "拍鏡面反射的條件?", a: "①退潮與日落重合日 ②幾乎無風 ③天空有雲(純空顯單調)。三豐市觀光協會「天空之鏡日曆」公布最佳日，請務必事先確認。日落前15分至後30分為黃金時刻。" },
+        { q: "剪影攝影技巧?", a: "雙手張開跳躍、托夕陽的姿勢、躺臥等動作表現力強。攝影者將相機貼近地面以低角度，被攝體站在水窪後方使倒影更清晰。" },
+        { q: "怎麼去?", a: "高松市自駕約1小時，經瀨戶中央道。最近車站JR詫間站搭計程車15分鐘·約3,000日圓(也有社區巴士「三豐市たく君號」)。停車場免費3處，傍晚常滿，建議日落前90分鐘到達。" },
+        { q: "帶什麼·穿什麼?", a: "涼鞋或防水鞋(乾潟會濕)，光著襪也行。三腳架必備(夕陽時段慢門)。毛巾、鏡布，鹽分易附機材請準備清潔用品。秋冬還需保暖。" },
+        { q: "天氣不好的日子?", a: "雨或大風水鏡無法呈現，但多雲日反而最佳(夕陽色映入水面)。純無雲晴天意外不上鏡。雲底帶夕陽色為最佳構圖。前一日通過Windy或氣象廳風預報確認5m/s以下。" },
+      ],
+      ko: [
+        { q: "지치부가하마란?", a: "가가와현 미토요시 니오마치의 얕은 백사장으로, 2017년경부터 「일본의 우유니 소금사막」으로 SNS에서 세계적으로 유명해진 수경 석양의 성지. 간조 시 타이드 풀이 하늘과 석양을 비추어 실루엣 촬영으로 신비로운 사진을 찍을 수 있습니다." },
+        { q: "거울 반사를 찍는 조건은?", a: "①간조와 일몰이 겹치는 날 ②바람이 거의 없음 ③하늘에 구름(맑은 하늘만은 단조로움). 미토요시 관광협회의 「천공의 거울 캘린더」에서 최적일을 공개, 반드시 사전 확인을. 일몰 15분 전부터 30분 후가 골든타임." },
+        { q: "실루엣 촬영의 비결은?", a: "두 팔을 벌려 점프, 석양을 잡는 포즈, 누워 있기 등의 액션이 돋보입니다. 촬영자는 지면 가까이 카메라를 낮춰 로우 앵글로, 피사체는 물웅덩이 뒤(안쪽)에 서면 반전이 깨끗합니다." },
+        { q: "가는 방법은?", a: "다카마쓰시에서 차로 약 1시간, 세토 추오 고속도로 경유. 가장 가까운 역은 JR 다쿠마역에서 택시 15분·약 3,000엔(커뮤니티 버스 미토요시 다쿠짱호도 있음). 주차장은 무료 3곳, 저녁엔 만차가 되므로 일몰 90분 전 도착이 안심." },
+        { q: "준비물·복장은?", a: "샌들이나 방수 신발(개펄은 젖는다), 양말 신은 채로 걷는 것도 OK. 삼각대 필수(석양 시간에 슬로우 셔터). 수건, 렌즈 닦는 천, 소금기가 기재에 묻기 쉬우므로 귀가 후 손질용품. 가을~겨울은 방한 대책도." },
+        { q: "날씨가 나쁜 날은?", a: "비나 강풍으로는 수경이 보이지 않지만, 구름이 많은 날은 사실 최고(석양 색이 수면에 비친다). 완전 무운청천은 의외로 화면이 단조로움. 흐려서 구름 밑에 석양 색이 깃들면 최고의 구도. 전날에 Windy나 기상청 풍속 예보로 5m/s 이하 확인." },
       ],
     },
     faqs: [
