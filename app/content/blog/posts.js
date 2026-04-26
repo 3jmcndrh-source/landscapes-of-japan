@@ -87,30 +87,34 @@ For gear, a standard zoom (24–70 mm) is versatile. Use ND filters to smooth wa
 Winter mornings drop below freezing. Bring touchscreen-compatible gloves and spare batteries. Warm up at a café near Kawaguchiko Station afterwards, then head 30 minutes by Fujikyu Line to Arakurayama Sengen Park — the classic two-spot day.`,
   },
   {
-    slug: "lake-suwa-omiwatari",
+    slug: "lake-suwa-tateishi-overlook",
     date: "2026-04-13",
     locs: ["諏訪湖", "立石公園"],
     hero: "h4oyzzdqaydnwqtu6ni0",
-    title: { ja: "諏訪湖の御神渡り — 神が渡る氷の道を撮る冬の朝", en: "Lake Suwa's Omiwatari: Photographing the Path of the Gods on Winter Mornings" },
-    excerpt: { ja: "湖面の氷がせり上がる神秘的な現象。御神渡りが現れる条件と、立石公園からの絶景撮影点。", en: "A mystical phenomenon where lake ice rises into ridges. Conditions for Omiwatari and the best vantage from Tateishi Park above." },
-    bodyJa: `諏訪湖の「御神渡り（おみわたり）」は、湖面の全面結氷後、氷が膨張収縮を繰り返してせり上がり、湖面を縦断する氷の山脈を形成する自然現象です。古来より「諏訪大社上社の男神が下社の女神を訪ねた跡」とされ、出現すると諏訪市八剱神社の宮司が「拝観式」を執り行います。
+    title: { ja: "諏訪湖を見下ろす丘 — 立石公園から眺める信州の湖と街", en: "The Hill Above Lake Suwa: Tateishi Park's View of a Lake and a Town" },
+    excerpt: { ja: "標高934mから諏訪湖を一望する立石公園。アニメの聖地としても知られる、湖と山と街並みが折り重なる信州の眺望。", en: "Tateishi Park overlooks Lake Suwa from 934 m. Known as an anime pilgrimage spot, it offers a layered view of lake, mountains, and town nestled in the Shinshu highlands." },
+    bodyJa: `長野県中央部、標高759mに広がる諏訪湖は、長野県最大の湖です。湖を取り巻くように諏訪市・岡谷市・下諏訪町の街並みが広がり、その向こうに八ヶ岳連峰や霧ヶ峰が連なります。湖畔を歩けば白鳥型の遊覧船や噴水、そしてのどかな散歩道が続いています。
 
-出現条件は厳しく、近年は地球温暖化で全面結氷自体が稀。出現するのはおおむね5年に1回、1月下旬〜2月中旬の早朝、最低気温-10℃以下が連続3〜5日続いた後です。最新情報は八剱神社や諏訪市公式SNSで毎朝発表されます。
+この景色を最高の角度で見られるのが、湖の南側にある立石公園です。標高934m、湖面までの高低差は約170m。展望広場に立つと、諏訪湖の全形がはっきりと足元に見えて、思わず息をのむような眺望が広がります。
 
-撮影は2つのアングル。①湖畔（諏訪市湖岸通り、間欠泉センター周辺）から氷の隆起を間近に。霜と朝靄が漂う中、太陽が差し込み氷が黄金色に輝く瞬間が最高潮。②立石公園（標高934m）から俯瞰で湖全体と御神渡りの線をフレームに。八ヶ岳〜富士山を背景にした構図はここだけ。
+立石公園は近年、アニメ映画「君の名は。」の舞台モデルのひとつとされたことで一躍有名になりました。映画ファンが世界中から訪れる「聖地」です。とはいえ実際に立ってみると、特別なファンでなくても十分に感動的な景色。山と水と人の暮らしが、一枚の絵のように重なって見えます。
 
-時間は日の出30分前到着が必須。マイナス10℃以下になることが多く、装備は本気の冬山登山レベルが必要です。カメラのバッテリーは保温ポケットへ、予備は必須。レンズの結露対策にレンズフード+ジップロックも忘れずに。
+おすすめは夕方。日が傾くにつれて諏訪湖の水面がオレンジから紫へとゆっくり色を変え、街灯がぽつぽつと灯り始めます。夏には湖上で打ち上がる花火が立石公園から見下ろせ、夜空と湖面の両方に光が広がる珍しい花火体験ができます(諏訪湖祭湖上花火大会、毎年8月15日)。
 
-機材は広角〜標準（16-70mm）。氷の質感を活かすため横方向の光線（朝日のサイドライト）が決め手。三脚必須ですが氷上には立てないこと（湖畔のみ）。御神渡りが出ない年は「明けの海（あけのうみ）」と呼ばれる氷の湖面そのものが幻想的で、これも諏訪冬の絶景です。`,
-    bodyEn: `«Omiwatari» on Lake Suwa is a winter phenomenon: after the lake fully freezes, repeated expansion and contraction of the ice creates jagged ridges that traverse the surface like miniature mountain ranges. Folklore holds that this is the path of the male god of Upper Suwa Shrine visiting the female god of the Lower Shrine, and when it appears, the priest of Yatsurugi Shrine performs an official «viewing ceremony.»
+【アクセス】JR上諏訪駅から車で約10分。駅から徒歩だと急な坂を登り40分ほど。バスは便数が少ないので、レンタカーかタクシーが現実的です。駐車場は無料、20台ほど。
 
-Conditions are strict, and global warming makes even full freezing rare. Omiwatari now appears roughly once every five years, in the early mornings of late January to mid-February, after 3–5 consecutive days below −10 °C. Check the latest status via Yatsurugi Shrine or Suwa City social media each morning.
+【近くで楽しめること】湖畔の足湯(無料、諏訪湖ハイツ前ほか数か所)、上諏訪温泉の日帰り入浴、間欠泉センター、SUWAガラスの里。湖を一周するサイクリングロード(約16km)は半日で気軽に走れます。`,
+    bodyEn: `Lake Suwa, Nagano Prefecture's largest lake, sits at 759 m elevation in the heart of central Honshu. Three towns — Suwa, Okaya, and Shimosuwa — wrap around its shoreline, with the Yatsugatake and Kirigamine mountain ranges rising beyond. Walk the lakeside and you'll find swan-shaped pleasure boats, fountains, and a gentle promenade.
 
-Two angles: (1) up close from the lakeshore (Suwa lakeside drive, near the Geyser Center), where frost and morning mist drift across rising ice ridges that turn gold under the rising sun — this is the peak moment. (2) elevated from Tateishi Park (934 m), where the entire lake and the Omiwatari ridgelines fit in frame, with the Yatsugatake range or even Mt. Fuji as backdrop — only available here.
+For the best vantage of all this, head to Tateishi Park on the lake's southern hillside. At 934 m elevation — about 170 m above the water — the entire lake reveals itself in a single sweep. Town, lake, and mountains layer like a hand-painted scene.
 
-Arrive 30 minutes before sunrise. Temperatures often drop below −10 °C, so dress for serious winter mountaineering. Keep camera batteries warm in inner pockets and bring spares. Use a lens hood plus a ziplock bag against condensation as you re-enter warm spaces.
+Tateishi Park became famous in recent years as one of the inspirations for the anime film «Your Name» (Kimi no Na wa). Fans visit from around the world. But you don't need to know the film to be moved by the view: water, mountains, and a small town all stitched together in one frame.
 
-Wide-to-normal lenses (16–70 mm) are ideal. Side light from the rising sun reveals ice texture best. A tripod is essential, but never on the ice itself — only from shore. In years without Omiwatari, the «Akenoumi» (frozen lake surface) is itself ethereal and remains one of Suwa's signature winter scenes.`,
+Late afternoon is the best time. As the sun sets, the lake's surface shifts slowly from orange to purple, and streetlights begin to flicker on across the towns below. In summer, fireworks launched over the lake (the Lake Suwa Fireworks Festival, August 15) can be watched from above — a rare experience where the sky and the water both fill with light.
+
+【Access】About 10 minutes by car from JR Kami-Suwa Station. Walking takes around 40 minutes uphill. Buses run infrequently, so renting a car or taking a taxi is practical. Free parking for about 20 cars.
+
+【Nearby】Free lakeside footbaths (in front of Suwako Heights and a few other spots), day-onsen at Kami-Suwa, the Geyser Center, the Suwa Glass Village. A 16 km cycling path circles the entire lake — easy enough for an afternoon ride.`,
   },
   {
     slug: "matsumoto-castle-seasons",
@@ -233,64 +237,68 @@ Dress seriously: Sapporo February runs −5 to −10 °C; wind chill drops it fu
 Etiquette: don't block other visitors' paths; never touch sculptures; flash flattens snow detail (skip it); drones are prohibited.`,
   },
   {
-    slug: "shiretoko-drift-ice",
-    date: "2025-02-15",
+    slug: "shiretoko-summer-coast",
+    date: "2025-08-10",
     locs: ["知床"],
     hero: "sgqomcwsuq18xc1oyr3g",
-    title: { ja: "知床の流氷を撮る — 1月〜3月、世界自然遺産の冬", en: "Shooting Drift Ice at Shiretoko: January–March in a UNESCO Natural Heritage Winter" },
-    excerpt: { ja: "オホーツクから流れ着く氷原。ウトロ発のクルーズと陸上撮影、それぞれのベストポジション。", en: "Ice fields drifting from the Sea of Okhotsk. Best vantage from cruise boats out of Utoro, and from land." },
-    bodyJa: `知床半島は世界自然遺産で、冬はオホーツク海から流れ着く流氷で覆われます。流氷シーズンは1月下旬〜3月上旬。極寒のシベリアから1000km以上を漂流して接岸する氷原は、北半球で最も低緯度（北緯44度）まで到達する流氷として世界的にも稀有な存在です。
+    title: { ja: "夏の知床 — 世界自然遺産の海と原生林を歩く", en: "Summer in Shiretoko: Walking the Coast and Forests of a UNESCO World Heritage Site" },
+    excerpt: { ja: "ウトロの透き通る海、知床五湖の原生林、断崖から流れ落ちる滝。日本最後の秘境を夏に旅する。", en: "Utoro's clear coast, the primeval forests of the Five Lakes, and waterfalls cascading down sheer cliffs. A summer journey through one of Japan's last wild frontiers." },
+    bodyJa: `北海道東部、オホーツク海に細長く突き出た知床半島は、2005年に世界自然遺産に登録された日本でも特別な場所です。「知床」はアイヌ語の「シリ・エトク(地の果て)」に由来します。冬の流氷で世界的に有名ですが、訪れやすいのはむしろ初夏から秋。緑が深く、空も海も澄み切ります。
 
-撮影は2つのアプローチ。①ウトロ港発の流氷クルーズ船「おーろら」（所要1時間、流氷の中を航行、ワシ・アザラシ遭遇率高）。②陸からのウトロ高台、知床五湖、フレペの滝展望台。クルーズは流氷接岸状況によって運休・コース変更があるので、前日の運航状況確認必須。
+半島の玄関口がウトロ。漁港から見える海はびっくりするほど透き通り、岸壁の岩には海鳥が並んでいます。海岸線の道を北東へ進むと、海から立ち上がる切り立った断崖や、突端に立つ灯台、そして名物「オロンコ岩」の上から見渡す広大な海景に出会えます。
 
-ベスト時期は2月上旬〜中旬。流氷が最も多く接岸し、晴天日も比較的多い時期。早朝の朝焼けに染まる流氷、夕焼けに沈むオレンジの氷原、夜の星空+流氷の組み合わせはこの時期だけ。日中は青空と白い氷のコントラストがハイライト。
+少し内陸へ入ると知床五湖。原生林の中に静かに点在する5つの湖を、整備された木道を歩きながら巡れます。水面に映る山と森のリフレクションが美しく、運がよければエゾシカやキツネにも出会えます。クマ出没期(5〜7月)はガイドツアー制になりますので、訪問前に観光協会のサイトで確認を。
 
-撮影テクニックは3点。①露出補正+1〜+1.5EV（雪と氷で測光が暗く出る）、②PLフィルターで氷の青みと水面反射をコントロール、③白い被写体に対しスポット測光で適正露出。望遠レンズ（70-200mm）でオオワシ・オジロワシも狙えます。
+崖から海へ直接落ちる「フレペの滝」も知床らしい一景です。展望台までは草原の遊歩道を20分ほど。海と滝と空がひと続きに広がる開放感は、ここでしか味わえません。
 
-機材保護は徹底を。氷点下20℃以下も普通で、強風時は体感-30℃。バッテリー消耗が極端に早く、内ポケットで温め予備3個必携。レンズの結露を防ぐため、屋外から暖かい船内へ戻る時はジップロック密封してから。
+冬の流氷は確かに圧倒的ですが、夏の知床も負けていません。むしろ「人と自然が穏やかに共存している季節」として、家族旅行や初めての北海道にも向いています。
 
-知床は野生動物の宝庫。エゾシカ、キタキツネ、運が良ければオオワシ・オジロワシ・シャチも。流氷の上で羽を広げるオオワシは究極の被写体です。`,
-    bodyEn: `The Shiretoko Peninsula is a UNESCO Natural Heritage site, and in winter it is enveloped by drift ice flowing in from the Sea of Okhotsk. Drift-ice season runs from late January through early March. Ice originating in extreme-cold Siberia drifts over 1,000 km to reach Shiretoko's coast — the lowest latitude (~44° N) of any drift ice in the Northern Hemisphere, a globally rare phenomenon.
+【アクセス】女満別空港から車で約2時間、釧路空港から約3時間半。札幌からは飛行機+レンタカーが現実的。
+【ベストシーズン】6〜9月。7〜8月は緑と花のピーク、9月は涼しく観光客も減ります。
+【宿】ウトロ温泉に大小の宿が集中。日帰り温泉も複数。`,
+    bodyEn: `The long, narrow Shiretoko Peninsula juts into the Sea of Okhotsk on Hokkaido's far eastern edge. Inscribed as a UNESCO World Heritage site in 2005, it remains one of Japan's most uncompromised wild places. The name comes from the Ainu «sir etok» — «end of the earth.» Shiretoko is famous worldwide for its winter drift ice, but the easiest and most rewarding seasons to visit are early summer through autumn, when the greens deepen and both sky and sea turn perfectly clear.
 
-Two approaches: (1) the «Aurora» drift-ice cruise from Utoro Port (about 1 hour, navigating through the ice with high chances of seeing eagles and seals); (2) land-based vantages from Utoro highlands, Shiretoko Goko (Five Lakes), and Furepe Falls observation deck. Cruise schedules and routes shift with ice conditions — check the day-before status.
+The gateway is Utoro, a small fishing port. The water along its harbor is startlingly transparent, and seabirds line the rocky shore. Drive northeast along the coastal road and you'll meet sheer cliffs rising straight out of the sea, a small lighthouse on the headland, and the famous Oronko Rock — climb it for a sweeping ocean view.
 
-Best timing is early-to-mid February when ice coverage peaks and clear days are more common. Sunrise turning the ice red, sunset bathing the floes orange, and night skies with starlit ice are unique to this window. Daytime offers stark blue-sky-and-white-ice contrast.
+Slightly inland is Shiretoko Goko, the Five Lakes. Boardwalks lead you through dense primeval forest past five quiet lakes that mirror the surrounding mountains. Deer and foxes are common. During bear-active months (May–July), access is via guided tour only — check the local tourism office before visiting.
 
-Three techniques: (1) exposure compensation +1 to +1.5 EV (snow and ice fool the meter into underexposure); (2) CPL filter to manage ice's blue cast and water reflections; (3) spot-meter on white subjects for accurate exposure. A 70–200 mm telephoto also catches Steller's sea eagles and white-tailed eagles.
+Furepe Falls, where water drops directly from a cliff into the sea, is another scene that captures Shiretoko's character. A 20-minute meadow walk leads to the observation deck, where ocean, waterfall, and sky stretch open in one panorama.
 
-Take gear protection seriously. Below −20 °C is routine, with wind chill reaching −30 °C. Batteries drain dramatically — keep three spares in inner pockets. To prevent lens condensation when returning from outside to a warm cabin, seal the camera in a ziplock bag first.
+Winter drift ice is overwhelming, no question. But summer Shiretoko has its own quiet appeal — a season where humans and nature coexist gently, perfect for first-time Hokkaido trips and family travel.
 
-Shiretoko teems with wildlife: ezo deer, foxes, and with luck, Steller's eagles, white-tailed eagles, and even orcas. A Steller's eagle spreading its wings on drifting ice is the ultimate subject.`,
+【Access】About 2 hours by car from Memanbetsu Airport, 3.5 hours from Kushiro. From Sapporo, fly + rental car is most practical.
+【Best season】June–September. July–August peak for greenery and wildflowers; September brings cooler weather and fewer tourists.
+【Lodging】Utoro Onsen has hotels of all sizes plus several day-trip bath options.`,
   },
   {
-    slug: "furano-lavender",
+    slug: "furano-summer-hills",
     date: "2025-07-20",
     locs: ["富良野"],
     hero: "hvnlsmmmikzqkmooht8u",
-    title: { ja: "富良野ラベンダー畑の絶景 — 7月中旬の紫の絨毯を狙う", en: "Furano's Lavender Fields: Targeting the Purple Carpet of Mid-July" },
-    excerpt: { ja: "ファーム富田を中心とした花畑。早朝の光線、構図、混雑回避のための時間帯。", en: "Flower fields centered on Farm Tomita. Morning light, composition, and the timing that avoids crowds." },
-    bodyJa: `北海道富良野市は日本一のラベンダー産地。1903年から始まったラベンダー栽培は、町の風景そのものになりました。代表的な「ファーム富田」を中心に、ハイランドふらの、彩香の里、フラワーランドかみふらのなど10以上の花畑が点在します。
+    title: { ja: "夏の富良野・美瑛 — 丘とパッチワークの北海道", en: "Furano & Biei in Summer: Hokkaido's Patchwork Hills" },
+    excerpt: { ja: "鮮やかな花のしま、十勝岳連峰の遠望、丘の上から見下ろす平原。北海道らしい広い空の下を歩く夏の旅。", en: "Vivid flower stripes, the distant Tokachi Range, and the wide plain seen from a hilltop. A summer walk under Hokkaido's enormous sky." },
+    bodyJa: `北海道のほぼ中央、富良野盆地と美瑛の丘は、日本の田園風景の中でも特に「広い」と感じる場所です。空が大きく、地平線まで畑が続き、その向こうに十勝岳連峰が穏やかに浮かびます。北海道を旅したことがない人でも、写真や絵で一度は目にしたことがあるのではないでしょうか。
 
-ベストシーズンは7月中旬〜下旬。例年7月15日前後に満開となり、20日頃にピークを迎えます。8月初旬には収穫が始まるため、撮影できる窓は約2週間と短く、計画は1ヶ月前から。富良野市公式サイトの開花情報で日々確認を。
+夏の見どころのひとつは、農地と観光花畑が織りなす「色のしま」。赤・黄・白・紫と帯状に植えられた花が緩い丘に沿って広がり、まるでパッチワークのようです。観光花畑のなかでも「ぜるぶの丘」「四季彩の丘」は無料または数百円で入れて、家族連れにも人気。トラクターバスで畑を一周できる施設もあります。
 
-ファーム富田は無料開放。最も有名な「彩りの畑」は7色のしましま花畑で、彩りの撮影には標準〜中望遠（35-85mm）で圧縮効果を。「トラディショナルラベンダー畑」は紫一色の絨毯で、広角（16-35mm）で空・山・畑を一フレームに。背景に十勝岳連峰の冠雪を入れた構図は富良野ならでは。
+少し車を走らせて坂道を登ると、富良野市街と平原を見下ろせる展望台があります。屋根の連なる町、その向こうに広がる緑と黄色の畑、さらに奥に十勝岳。あれもこれも一枚の風景の中にすっと収まる感覚は、関東や関西では味わえない北海道ならではのスケール感です。
 
-時間帯は早朝6時前到着が必須。8時を過ぎると国内外の観光バスが押し寄せ、構図に人が入ります。9時〜15時は混雑ピーク。日没後の17時以降も人が引いて狙い目で、夕日に染まる紫のラベンダーは別格の美しさ。
+夏でも朝晩は涼しく、特に朝6〜8時は空気が澄んで遠くの山までよく見えます。日中に汗ばんで、夕方には心地よい風が吹く——そんな1日を過ごすだけで、北海道に来た実感が深まります。
 
-機材：標準ズーム（24-70mm）一本+中望遠で十分。PLフィルターで葉の反射を抑え花の色を鮮やかに。マクロレンズがあればミツバチや滴も狙えます。三脚は混雑時迷惑になるので一脚 or 手持ち推奨。
+【アクセス】旭川空港から車で約30分、新千歳空港から約2時間半。JR富良野線も走っており、富良野駅・美瑛駅から観光バスやレンタサイクルがあります。
+【ベストシーズン】6月下旬〜8月。7月中旬は花畑がピーク、8月は収穫の風景が見られます。
+【近くで】青い池(美瑛)、白金温泉、富田ファーム周辺のカフェ、北海道らしい大盛りスイーツがそろう富良野マルシェ。`,
+    bodyEn: `In the heart of Hokkaido, the Furano basin and the rolling hills of Biei feel uncommonly wide — even by Japanese countryside standards. The sky is enormous, fields run to the horizon, and the Tokachi mountain range floats gently in the distance. Even if you've never traveled in Hokkaido, you've probably seen this scene in photos or paintings.
 
-注意：花畑には絶対に入らない（私有地、踏み荒らし禁止）。決められた通路から撮影。ドローンは禁止。撮影後はファーム富田名物のラベンダーソフトクリームを忘れずに。`,
-    bodyEn: `Furano in central Hokkaido is Japan's premier lavender region. Cultivation began in 1903 and has shaped the town's identity. Centered on the famous Farm Tomita, the area includes Highland Furano, Saika no Sato, and Flowerland Kamifurano — ten-plus flower fields scattered across the basin.
+A summer highlight is the «stripes of color» where farms and flower gardens align. Red, yellow, white, and purple bands of flowers follow the slope of the hills like a giant patchwork quilt. Among the popular flower parks, Zerubu-no-Oka and Shikisai-no-Oka are inexpensive and family-friendly — some even offer tractor-bus rides through the fields.
 
-Peak season is mid-to-late July. Full bloom typically arrives around July 15, peaking near the 20th. Harvest begins early August, leaving a roughly two-week window. Plan a month ahead and check Furano City's daily bloom updates.
+Drive up one of the gentle slopes and you'll find a viewpoint that looks down onto Furano town and the plain below. Roofs cluster together, green-and-yellow fields stretch beyond them, and the Tokachi range rises further still. Holding all of that in one quiet view feels distinctly Hokkaido — not something you encounter elsewhere in Japan.
 
-Farm Tomita is free to enter. The famous «Irodori-no-Hatake» (rainbow-stripe field) is best with a normal-to-short-telephoto (35–85 mm) using compression. The «Traditional Lavender Field» is a pure purple carpet — wide angle (16–35 mm) frames sky, mountains, and field together. Including the snow-capped Tokachi Range in the background is the signature Furano composition.
+Even in summer, mornings and evenings are cool. Between 6 and 8 a.m., the air is crisp and the distant mountains stand out clearly. A day of warm afternoons and breezy evenings is enough to leave you feeling that you've truly arrived in Hokkaido.
 
-Arrive before 6 a.m. From 8:00 onward, domestic and international tour buses fill the paths. 9:00–15:00 is peak congestion. After 17:00 the crowds thin again — sunset-lit lavender is breathtakingly different. Cooler air also produces better photos.
-
-Gear: a standard zoom (24–70 mm) plus a short telephoto suffices. A CPL filter dampens leaf glare and saturates flower color. A macro lens captures bees and dewdrops. Tripods can obstruct other visitors during crowded hours — handheld or monopod is preferred.
-
-Critical etiquette: never step into the flower beds (private land, plants are damaged easily). Stay on designated paths. Drones are prohibited. After shooting, don't miss Farm Tomita's signature lavender soft-serve ice cream.`,
+【Access】~30 minutes by car from Asahikawa Airport, ~2.5 hours from New Chitose. JR Furano Line connects Furano and Biei stations, where bus tours and bike rentals are easy to find.
+【Best season】Late June through August. Mid-July is peak for flower fields; August adds the harvest scenery.
+【Nearby】The Blue Pond in Biei, Shirogane Onsen, cafés around Farm Tomita, and Furano Marche for typically generous Hokkaido sweets.`,
   },
   {
     slug: "shirakawa-go-snow",
@@ -325,62 +333,66 @@ Notes: (1) the village is inhabited — don't enter private property at night, n
   {
     slug: "kyoto-autumn-temples",
     date: "2025-11-20",
-    locs: ["東福寺", "清水寺", "金閣寺"],
-    hero: "",
-    title: { ja: "京都の紅葉と寺社 — 11月、千年の都を歩く", en: "Kyoto's Autumn Foliage and Temples: November in the Thousand-Year Capital" },
-    excerpt: { ja: "東福寺の通天橋、清水寺、金閣寺。混雑を避けて朝イチで巡るルートと時間配分。", en: "Tofuku-ji's Tsutenkyo, Kiyomizu-dera, and Kinkaku-ji. An early-morning route plan that beats the crowds." },
-    bodyJa: `京都の紅葉は11月中旬〜下旬がピーク。1600以上の寺社のうち、特にカメラマンが目指すのが東福寺、清水寺、金閣寺の三大スポットです。1日で全部回るには朝6時開始の超早朝ルートが鉄則。
+    locs: ["東福寺", "金閣寺"],
+    hero: "DSC07290_sz6x7s",
+    title: { ja: "京都の紅葉 — 東福寺と金閣寺、二つの名刹を歩く", en: "Kyoto's Autumn Color: A Walk Between Tofuku-ji and Kinkaku-ji" },
+    excerpt: { ja: "通天橋から見下ろすモミジの海、鏡湖池に映る金閣。1日で京都の秋の核を体感する。", en: "A sea of maples from Tsutenkyo bridge, the Golden Pavilion mirrored in Kyoko-chi pond. A single day at the heart of Kyoto's autumn." },
+    bodyJa: `京都の紅葉は11月中旬から下旬にピークを迎えます。1600以上もある寺社の中で、紅葉の名所として広く知られるのが東福寺と金閣寺。京都市内の南東と北西、対極の位置にありますが、半日ずつ使えば1日で両方じっくり巡れます。
 
-【06:30 東福寺】最初に向かうべきは東福寺。通天橋から眺める2,000本のモミジの紅葉は息を呑む景観です。8:30の開門前から行列ができるため、開門と同時に通天橋へ。狭い橋上で立ち止まらないルールがあるので、構図は事前に決めておく。順光は午前中、午後は逆光のシルエット撮影が狙い目。退去9:30まで。
+朝イチは東福寺へ。1236年創建の禅宗大本山で、通天橋(つうてんきょう)から眺める「モミジの海」が圧巻です。境内に植えられた約2,000本のカエデが、橋の下の渓谷を埋め尽くすように色づき、紅、橙、まだ青みの残る葉まで、グラデーションで広がります。8:30の開門と同時に入って通天橋へ向かうのが鉄則。橋の上は立ち止まり禁止のため、ゆっくり眺めたい人は橋の前後の境内をじっくり歩くといいでしょう。
 
-【10:30 清水寺】徒歩・タクシーで30分。清水の舞台と紅葉、子安の塔と紅葉を狙う。本堂の舞台からは京都市街と紅葉が見渡せます。所要1.5時間、混雑のため三脚不可、手持ちで素早く。退去12:00。
+午後は北西の金閣寺へ移動。バスで約1時間、ランチを挟むちょうどいいリズム。1397年に足利義満が造営した金閣は、今も鏡湖池(きょうこち)の水面にきれいに映り込みます。秋は周囲の紅葉が金色の楼閣を縁取り、池に紅葉と金閣が二重に映る独特の景観に。逆光になる午後の時間帯は、輝きが特に強くなります。
 
-【14:00 金閣寺】昼食後、北西へ移動（バス1時間）。鏡湖池に映る金閣と紅葉のリフレクションが王道。逆光になる午後がドラマチック。所要45分、退去14:45。
+混雑が気になる人は、平日午前中、または紅葉ピークから少しずらした時期がおすすめ。ピークの1週間前は青みが残る葉と紅のグラデーション、ピーク後は石畳に散った落ち葉の絨毯が美しく、それぞれ違った表情を楽しめます。雨の日は人が減り、濡れた葉が深い色になるため、これも狙い目です。
 
-【夕方 補足スポット】時間があれば永観堂（モミジの数No.1）、嵐山（渡月橋＋紅葉）、瑠璃光院（床紅葉）も。瑠璃光院は秋限定公開（10月〜12月初旬）で要予約。
+時間があれば、夕方は東山エリアへ移動して産寧坂や八坂神社方面を散策するのが定番。京都の昼の紅葉と夜の街並み、両方を味わう一日になります。
 
-混雑回避のコツ：①平日狙い、②朝7時前後に最重要スポット、③紅葉ピーク前後を1週間ずらす（前は青紅葉ミックス、後は散り紅葉が美しい）、④傘の日は人が減り、雨に濡れた紅葉が深く色づく。
+【アクセス】東福寺：JR奈良線「東福寺駅」徒歩10分。金閣寺：京都市バス「金閣寺道」下車すぐ。
+【拝観料】東福寺(通天橋・開山堂)600円、金閣寺500円。
+【ベスト時期】11月中旬〜下旬。気温と日照に左右されるので、京都市公式観光サイトの紅葉情報で最新を確認。`,
+    bodyEn: `Kyoto's autumn foliage peaks from mid-to-late November. Among the city's 1,600+ temples and shrines, two rise as the most beloved fall destinations: Tofuku-ji and Kinkaku-ji. They sit at opposite ends of the city — southeast and northwest — but with half a day each, you can take both in slowly in a single day.
 
-機材：標準ズーム（24-70mm）+望遠（70-200mm）。PLフィルターで葉の反射を抑え赤を鮮明に。三脚禁止スポット多いので一脚 or 手持ち中心。`,
-    bodyEn: `Kyoto's autumn foliage peaks from mid-to-late November. Among the city's 1,600+ temples and shrines, three rise as photographer's icons: Tofuku-ji, Kiyomizu-dera, and Kinkaku-ji. Hitting all three in a day requires an extreme-early-morning route.
+Start the morning at Tofuku-ji. Founded in 1236 as a major Zen temple, its Tsutenkyo bridge offers a dazzling «sea of maples.» Some 2,000 maples planted in the valley below color the entire ravine in red, orange, and lingering green — a layered gradient. The trick is to enter right at the 8:30 opening and head straight for the bridge. Stopping on the bridge isn't allowed, so if you want to linger, walk the temple grounds at either end and enjoy the trees up close.
 
-【06:30 Tofuku-ji】Start here. The 2,000 maples viewed from Tsutenkyo bridge form a breathtaking carpet. Lines form before the 8:30 opening — be at the gate when it opens and head straight to Tsutenkyo. The bridge has a no-stopping rule, so pre-plan your composition. Front light arrives in the morning; afternoon offers backlit silhouette opportunities. Exit by 9:30.
+In the afternoon, head northwest to Kinkaku-ji. About an hour by bus, with lunch in between for a comfortable rhythm. The Golden Pavilion was built in 1397 by Ashikaga Yoshimitsu, and it still mirrors clearly in Kyoko-chi pond. In autumn, surrounding maples frame the gold tower, and the reflection doubles the scene in the water. The afternoon backlight makes the gold glow especially intensely.
 
-【10:30 Kiyomizu-dera】30 minutes by foot or taxi. Target the wooden stage with foliage, plus the Koyasu Pagoda framed by leaves. The stage offers panoramic Kyoto cityscape with autumn color. Allow 90 minutes. Tripods aren't allowed — shoot handheld, work fast. Exit by 12:00.
+To avoid crowds, weekday mornings or a few days off-peak work best. A week before peak, you get the green-to-red gradient; a week after, fallen leaves carpet the stone paths — both are beautiful in different ways. Rainy days bring fewer visitors and richer color in wet leaves, another good window.
 
-【14:00 Kinkaku-ji】After lunch, head northwest (1 hour by bus). The classic shot is the Golden Pavilion mirrored in Kyoko-chi pond among reds. Afternoon backlight is most dramatic. Allow 45 minutes; exit by 14:45.
+If you have more time, ending the day east in the Higashiyama district — strolling Sannenzaka or Yasaka Shrine — completes a full Kyoto day, pairing autumn temples with the evening townscape.
 
-【Evening extras】If time permits: Eikan-do (most maples in Kyoto), Arashiyama (Togetsukyo Bridge + foliage), Ruriko-in (the famous lacquered floor reflection — fall-only, requires advance booking, October to early December).
-
-Crowd avoidance: (1) target weekdays; (2) hit top spots before 7 a.m.; (3) shift dates 1 week off-peak (earlier = green-and-red mix, later = beautifully fallen leaves); (4) rainy days bring fewer visitors and deeper colors on wet leaves.
-
-Gear: standard zoom (24–70 mm) plus telephoto (70–200 mm). A CPL filter cuts leaf glare and saturates reds. Many spots ban tripods — monopod or handheld is the rule.`,
+【Access】Tofuku-ji: 10 min walk from JR Nara Line «Tofukuji.» Kinkaku-ji: Kyoto City Bus «Kinkaku-ji-michi.»
+【Admission】Tofuku-ji (Tsutenkyo + Kaisando) ¥600, Kinkaku-ji ¥500.
+【Best season】Mid-to-late November. Color depends on temperature and sunlight — check Kyoto City's tourism site for current foliage status.`,
   },
   {
-    slug: "kiyomizu-illumination",
+    slug: "sannenzaka-night-walk",
     date: "2025-11-25",
-    locs: ["清水寺"],
-    hero: "",
-    title: { ja: "清水寺 紅葉ライトアップ — 京都の夜、舞台に灯る秋", en: "Kiyomizu-dera Autumn Illumination: Kyoto Nights, the Lit Stage of Fall" },
-    excerpt: { ja: "13mの懸造り舞台と紅葉を青空の時間帯に撮る。三脚不可の制約下での実践設定。", en: "Shooting the 13 m wooden stage with autumn leaves at blue hour. Practical settings under the no-tripod restriction." },
-    bodyJa: `世界遺産・清水寺の「秋の夜の特別拝観」は11月中旬〜12月初旬の限定開催。日没後17:30〜21:00（受付20:30まで）、釘を使わず組み上げた高さ13mの「清水の舞台」と境内の紅葉が青白いライトと暖色で照らされ、別世界の景観が広がります。
+    locs: ["清水寺周辺"],
+    hero: "DSC07601_cocitq",
+    title: { ja: "夜の産寧坂 — 清水寺へ続く石畳の路地を歩く", en: "Sannenzaka by Night: Walking the Lantern-Lit Lane to Kiyomizu" },
+    excerpt: { ja: "京都・東山。提灯と石畳と土産物屋。観光客が引いた夕方以降、本来の京都の夜が静かに姿を現す。", en: "Higashiyama, Kyoto. Lanterns, stone paving, and old shops. As the day-trippers leave, the quiet Kyoto night gradually appears." },
+    bodyJa: `清水寺へ続く参道のうち、もっとも京都らしい雰囲気が残るのが産寧坂(三年坂)・二寧坂(二年坂)です。江戸時代以前の町並みがほぼ手付かずで残り、文化財として保護された石畳の坂道に、木造の旅館や和菓子屋、漆器店が軒を連ねます。日中は世界中からの観光客で賑わい、写真や動画でも有名な「京都の代表的な路地」のひとつ。
 
-最大の特権は「青の時間帯（ブルーアワー）」。日没10〜30分後、空がまだ深い青色を残している間が最も美しい瞬間です。空が真っ黒になる夜より、青空の中に浮かび上がる朱色の三重塔と赤い紅葉のコントラストが圧倒的に映えます。
+おすすめは日が落ちてからの夕方以降。観光バスが去り、土産物店が一軒一軒灯りを点け始めると、町並みの輪郭が急に浮かび上がります。提灯の暖かいオレンジ色、店先の和紙ランプ、奥にぼんやり見える清水寺の塔のシルエット——目の前に広がるのは、昼とはまったく別の表情の京都です。
 
-時間配分：①17:00受付前到着し列に並ぶ、②17:30開場と同時に「奥の院」（舞台を正面から見られる撮影ポイント）へ直行、③ブルーアワー（17:50〜18:30）に最高の構図を決める、④18:30以降は他のアングルや三重塔、子安の塔も巡る、⑤20:30受付終了前に音羽の滝へ。
+産寧坂を上りきると、そのまま清水寺の門前に出ます。秋の特別拝観の時期(11月中旬〜12月初旬)は夜の参拝も可能で、参道の灯りと境内のライトアップが連続する贅沢な体験ができます。冬は底冷えしますが、人が少なく石畳がしんと静まり返る瞬間が訪れ、これも別格。
 
-【三脚不可】境内全域で三脚使用禁止。手持ちで撮るには高ISO耐性のあるカメラが必要。設定例：ISO3200〜6400、F2.8〜4、SS1/30〜1/60秒、手ブレ補正ON、連写3枚で歩留まり向上。レンズは明るい標準ズーム（24-70mm F2.8）か単焦点（35mm F1.8 or 50mm F1.8）が最強。
+途中には「八坂の塔」(法観寺、五重塔)を見上げる定番フォトスポットもあり、坂のカーブと塔がきれいに重なる構図はSNSでもよく見かけるかもしれません。実際にその場に立ってみると、写真より生身で感じる空気感の方がずっと印象的です。
 
-【撮影マナー】①フラッシュ禁止、②三脚不可（一脚も実質不可）、③進路を塞いで構図を固定しない（流動的な撮影を）、④境内は神聖な場、私語は最小限。京都市バスの「五条坂」または「清水道」から徒歩10分、夜は人が多くタクシー混雑のため公共交通機関推奨。`,
-    bodyEn: `UNESCO World Heritage Kiyomizu-dera holds its «Autumn Night Special Viewing» for a limited window from mid-November to early December. From 17:30 to 21:00 (last entry 20:30), the 13 m nail-free wooden «stage» and the temple's autumn foliage are illuminated under cool blue and warm light, creating an otherworldly scene.
+【アクセス】京都市バス「清水道」または「五条坂」から徒歩10分、京阪「祇園四条」から徒歩20分。坂道なので歩きやすい靴で。
+【ベスト時間帯】17:30〜19:30。日没直後の青い空と提灯の暖色が共存する短い時間が一番美しい。
+【近くで】八坂神社、円山公園、ねねの道(高台寺)、祇園白川。夕食は近くの京料理店や老舗甘味処で。`,
+    bodyEn: `Among the approaches leading to Kiyomizu-dera, Sannenzaka and Ninenzaka preserve the most quintessentially Kyoto atmosphere. Their stone-paved streets — protected as cultural heritage — are lined with wooden inns, traditional sweet shops, and lacquerware stores nearly unchanged since pre-Edo times. By day, they are among the most photographed lanes in Japan.
 
-The crown jewel is blue hour. From 10 to 30 minutes after sunset, while deep blue lingers in the sky, the contrast between the vermilion three-story pagoda, red maples, and the blue twilight is unforgettable — far more striking than later when the sky is fully black.
+The real charm, though, comes after sunset. Once the tour buses leave and shopkeepers light their lanterns one by one, the outline of the lane suddenly transforms. Warm-orange paper lanterns, soft washi lights at storefronts, and the silhouette of a distant pagoda — what emerges is an entirely different Kyoto from the daytime version.
 
-Itinerary: (1) arrive before 17:00 to queue; (2) at 17:30 opening, head straight to «Okuno-in» — the prime vantage facing the stage; (3) lock down your top composition during blue hour (17:50–18:30); (4) after 18:30 explore other angles, the three-story pagoda, and Koyasu Pagoda; (5) finish at Otowa Falls before the 20:30 last entry.
+Walk up to the top of Sannenzaka and you arrive directly at Kiyomizu-dera's main gate. During the autumn special evening opening (mid-November to early December), the lantern-lit approach flows seamlessly into the temple's nighttime illumination — a rare double experience. Winter is bitterly cold, but quieter; you'll have moments where the stone paving seems to fall completely silent.
 
-【No tripods】Tripods are banned throughout the temple. Handheld shooting requires a camera with strong high-ISO performance. Practical settings: ISO 3200–6400, f/2.8–4, 1/30–1/60 s, image stabilization on, three-frame burst for keeper rate. A fast standard zoom (24–70 mm f/2.8) or fast prime (35 mm f/1.8 or 50 mm f/1.8) is the strongest tool.
+Along the way you'll pass the famous viewpoint of the Yasaka Pagoda (Hokan-ji, a five-story pagoda), where the curve of the slope frames the tower in a composition you may have seen on social media. In person, the feeling of being there is more striking than any photograph.
 
-【Etiquette】(1) no flash, (2) no tripods (monopods are also impractical), (3) don't block paths to lock compositions — keep moving, (4) the grounds are sacred, so keep talk minimal. Take Kyoto City Bus to «Gojozaka» or «Kiyomizu-michi» (10-minute walk). At night, taxi traffic is heavy — public transit is recommended.`,
+【Access】10 minutes on foot from Kyoto City Bus stops «Kiyomizu-michi» or «Gojo-zaka»; 20 minutes from Keihan «Gion-Shijo.» Wear comfortable shoes — these are real slopes.
+【Best time】17:30–19:30. The brief window where blue twilight overlaps with warm lantern light is the most beautiful.
+【Nearby】Yasaka Shrine, Maruyama Park, Nene-no-michi (Kodai-ji), and Gion-Shirakawa. For dinner, try a traditional Kyoto restaurant or a long-established sweets shop.`,
   },
   {
     slug: "byodoin-phoenix-hall",
@@ -413,34 +425,38 @@ Best time is right after the 8:30 opening. Mornings are calm and Aji Pond holds 
 Tips: (1) misty mornings in spring are ethereal; (2) paid admission lets you view the Amida Nyorai statue inside (no photography); (3) the adjacent Hosho-kan museum holds national treasures including the original phoenix statues. Don't leave without trying Uji matcha.`,
   },
   {
-    slug: "ise-jingu-pilgrimage",
+    slug: "okage-yokocho-walk",
     date: "2025-09-15",
-    locs: ["伊勢神宮", "おはらい町・おかげ横丁"],
-    hero: "",
-    title: { ja: "伊勢神宮 参拝と撮影 — 神域の杜を歩く", en: "Ise Jingu Pilgrimage and Photography: Walking the Sacred Grove" },
-    excerpt: { ja: "外宮・内宮の参拝順路、撮影マナー、おかげ横丁の食と街並み。日本の心を巡る一日。", en: "Outer/Inner shrine route, photography etiquette, and the food and streets of Okage Yokocho. A day at Japan's spiritual heart." },
-    bodyJa: `三重県伊勢市の伊勢神宮は、日本全国8万社の頂点に立つ最高位の神社。皇室の祖神とされる天照大御神を祀る「内宮」と、衣食住・産業の神である豊受大御神を祀る「外宮」の2宮を中心に、125社で構成されます。20年に一度社殿を新しく建て替える「式年遷宮」が今も続く、世界的にも稀有な神社です。
+    locs: ["おはらい町・おかげ横丁"],
+    hero: "n0prvjjho2nf5ucrsoil",
+    title: { ja: "おかげ横丁を歩く — 伊勢神宮の門前町", en: "A Walk Through Okage Yokocho: The Town at Ise's Gate" },
+    excerpt: { ja: "江戸の町並みをそのまま再現したおはらい町。木造の店、人の賑わい、参拝後の甘いひと休み。", en: "An Edo-period townscape preserved in real life. Wooden shopfronts, lively crowds, and a sweet rest after the shrine visit." },
+    bodyJa: `三重県伊勢市、伊勢神宮内宮の鳥居をくぐる手前、五十鈴川に沿って続くのが「おはらい町」と、その中ほどに広がる「おかげ横丁」です。約800mの石畳の参道は、江戸時代から続く街並みを残し、木造の店が軒を連ねます。神社へお参りしたあと、ちょっと甘いものを食べて、土産物を選んで帰る——そんな日本人の旅の原型がここにあります。
 
-【正式な参拝順】古来「外宮先祭」が正式。①7:30 外宮（豊受大神宮）から。北御門口入口、約30〜45分で本殿。②9:00 内宮（皇大神宮）へバス20分。宇治橋を渡り五十鈴川御手洗場で清め、約45分〜1時間で本殿。③11:00 おかげ横丁・おはらい町で食事と街並み撮影。
+歩き始めると、屋根瓦の連なりや格子戸、暖簾の風合い、店先に並ぶ手書きの看板——一つひとつの細部に手をかけられた町並みであることが伝わってきます。観光地化されてはいるものの「テーマパーク的に作られた」というよりは、地元の人と参拝客が長い時間をかけて育ててきた雰囲気です。
 
-【撮影マナー絶対遵守】①本殿撮影禁止（ご正宮の階段から先は撮影不可、白い御幌も）、②鳥居の前で撮影スタッフが立つのは止めましょう、③参拝者の顔は写さない、④三脚は参道では使用不可（広場のみ可、混雑時遠慮）、⑤神域での飲食喫煙禁止。
+特に名物が「赤福本店」。江戸時代から営業を続ける和菓子の老舗で、店内では出来立ての赤福餅とお茶を200円台でいただけます。ほかにも伊勢うどん、てこね寿司、地元の地酒、伊勢茶、松阪牛のコロッケなど、食べ歩きの楽しみが尽きません。
 
-【撮影ポイント】①宇治橋（朝日が橋を照らす早朝が美しい）、②五十鈴川御手洗場（清らかな川と緑）、③樹齢千年超の杉並木（縦構図、参道の奥行き）、④おかげ横丁の街並み（江戸〜明治の町並みを再現）、⑤夫婦岩（隣接、日の出と二見興玉神社）。
+人で賑わう町並みは、平日の朝早くか夕方が比較的落ち着きます。土産物店の閉店時間(17時頃)を過ぎると一気に静かになり、提灯が灯った参道を歩く時間も独特の趣。観光客が引いた直後の暮れ方は、町並みを楽しむ一番の時間帯かもしれません。
 
-【機材】標準ズーム（24-70mm）が万能。神域は深い杉に囲まれ薄暗いので、F2.8〜F4の明るいレンズが有利。手ブレ補正必須。PLフィルターで川面の反射、苔の発色を活かす。
+伊勢神宮そのものは神聖な場所で、参道や本殿の撮影には細かい決まりがあります(本殿は撮影禁止など)。一方おかげ横丁は気兼ねなく町並みを楽しめる場所なので、神宮参拝とセットで「神社の凛とした空気」と「門前町の賑わい」をそれぞれ味わうのがおすすめ。
 
-ヒント：①早朝（朝6時の開門）が最も静謐で人が少ない。②伊勢神宮は3度参拝すると願いが叶うとされる。③おかげ横丁の「赤福本店」の赤福餅、伊勢うどん、てこね寿司は伊勢の三大グルメ。`,
-    bodyEn: `Ise Jingu in Mie Prefecture is the most prestigious shrine in Japan, standing atop the country's 80,000+ Shinto shrines. It centers on two main shrines — the «Naiku» (Inner) enshrining Amaterasu Omikami, the imperial ancestral deity, and the «Geku» (Outer) enshrining Toyouke Omikami, deity of food, clothing, shelter, and industry — together with 125 affiliated shrines. The «Shikinen Sengu» tradition of rebuilding the entire main hall every 20 years remains alive — a world-rare practice.
+【アクセス】近鉄「宇治山田駅」「伊勢市駅」からバス15〜20分、内宮前下車すぐ。
+【ベスト時間帯】平日10時前か16時以降。土日祝は終日混雑。
+【関連】二見の夫婦岩、外宮(豊受大神宮)、徒歩で巡れる古市の街並み。`,
+    bodyEn: `Just before the torii gate of Ise Jingu's Inner Shrine in Mie Prefecture, an 800-meter stone-paved approach winds along the Isuzu River. This is Oharaimachi, with its inner cluster of shops known as Okage Yokocho. The lane preserves an Edo-period townscape, lined with wooden shopfronts. After paying respects at the shrine, stopping for something sweet, then choosing souvenirs to bring home — this remains the archetypal Japanese travel experience.
 
-【Proper visit order】Tradition dictates «Geku first.» (1) 7:30 — start at the Outer Shrine (Toyouke Daijingu) via the Kitamikadoguchi entrance, ~30–45 minutes to reach the main hall. (2) 9:00 — bus 20 minutes to Naiku (Kotai Jingu). Cross Uji Bridge, purify at the Isuzu River Mitarashi pavilion, ~45–60 minutes to the main hall. (3) 11:00 — head to Okage Yokocho and Oharaimachi for food and streetscape photography.
+As you walk, you notice the care put into the details: rows of tile roofs, lattice doors, the texture of fabric noren curtains, hand-painted shop signs. It's tourist-friendly, but it doesn't feel like a built-from-scratch theme park. Rather, it's an atmosphere that locals and visiting pilgrims have cultivated together over many years.
 
-【Etiquette is non-negotiable】(1) no photographs of the main halls (no shooting beyond the steps of Goshogu, including the white curtain); (2) don't have someone pose blocking the torii gate; (3) don't capture other worshippers' faces; (4) tripods are forbidden on the approach paths (allowed only in plazas, and best avoided when crowded); (5) no eating, drinking, or smoking in sacred areas.
+A signature stop is Akafuku Honten, an Edo-era confectioner still in operation. For a couple hundred yen you can have freshly made akafuku-mochi and green tea inside the shop. Beyond that — Ise udon, tekone-zushi, local sake, Ise green tea, Matsuzaka beef croquettes — the snacking options never run out.
 
-【Vantages】(1) Uji Bridge — gorgeous when morning sun strikes the bridge; (2) Isuzu River Mitarashi (pure river and greenery); (3) the 1000+ year-old cedar avenues (vertical compositions of approach depth); (4) Okage Yokocho streetscape (Edo-to-Meiji period reconstruction); (5) Meoto-iwa nearby (sunrise and Futami Okitama Shrine).
+The lane is busy through the day. Weekday mornings or late afternoons are calmest. After most souvenir shops close around 17:00, the place quiets dramatically, and walking the lantern-lit street takes on a particular charm. The hour just after the day-trippers leave may be the best time to truly enjoy the town.
 
-【Gear】Standard zoom (24–70 mm) is versatile. The grove is dim — fast f/2.8–f/4 lenses help. Image stabilization essential. CPL filter enhances river reflections and moss saturation.
+Ise Jingu itself is a sacred site with strict rules — no photography of the main halls, for example. Okage Yokocho, by contrast, welcomes you to wander and enjoy at your own pace. Pairing the two — the quiet dignity of the shrine and the warm liveliness of the town at its gate — is the classic way to spend a day in Ise.
 
-Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition holds that visiting Ise Jingu three times grants your wishes; (3) Okage Yokocho's Akafuku Honten (akafuku rice cakes), Ise udon, and tekone-zushi are the three Ise food classics.`,
+【Access】15–20 minutes by bus from Kintetsu Uji-Yamada or Iseshi Station. Get off at «Naiku-mae.»
+【Best time】Weekdays before 10:00 or after 16:00. Weekends are crowded all day.
+【Nearby】Meoto-iwa rocks at Futami, Geku (Outer Shrine), and the Furuichi old district within walking distance.`,
   },
   {
     slug: "miyakojima-blue",
@@ -503,102 +519,108 @@ Tips: (1) very early morning (6 a.m. opening) is most serene; (2) tradition hold
 【Access】1 hour by car from Takamatsu Airport; 15 minutes by taxi from JR Takuma Station. Parking is paid (¥500) and weekends fill 3 hours before sunset. During crowded periods, check nearby Ariake-hama or Tsuda no Matsubara on spring-tide days as alternates.`,
   },
   {
-    slug: "himeji-castle-spring",
-    date: "2024-04-05",
+    slug: "himeji-castle-autumn",
+    date: "2024-11-20",
     locs: ["姫路城"],
-    hero: "",
-    title: { ja: "姫路城 春 — 世界遺産・白鷺城と1000本の桜", en: "Himeji Castle in Spring: UNESCO White Heron Castle and 1,000 Cherry Trees" },
-    excerpt: { ja: "白漆喰の天守と桜のコントラスト。三の丸広場・西の丸からの王道構図と裏ビュー。", en: "White-plaster keep against pink blossoms. Classic compositions from Sannomaru and Nishinomaru, plus lesser-known angles." },
-    bodyJa: `兵庫県姫路市の姫路城は、白漆喰の優美な姿から「白鷺城（しらさぎじょう）」と呼ばれ、1993年に法隆寺と同時に日本初の世界文化遺産に登録された名城。日本最大級の現存天守で、桜の季節には城内に約1,000本のソメイヨシノが咲き、白い天守と桜のコントラストは日本で最も絵になる春景の一つです。
+    hero: "DSC07173_ogwql9",
+    title: { ja: "姫路城を秋に訪ねる — 世界遺産・白鷺城の静かな季節", en: "Himeji Castle in Autumn: A Quiet Season at the White Heron Castle" },
+    excerpt: { ja: "白漆喰の天守と紅葉と石垣。桜の季節と違って人が落ち着く、世界遺産を一番じっくり味わえる時期。", en: "White-plaster keep, autumn maples, and stone walls. With crowds thinner than cherry season, fall is when you can take the World Heritage castle in slowly." },
+    bodyJa: `兵庫県姫路市の姫路城は、白漆喰の優美な姿から「白鷺城(しらさぎじょう)」と呼ばれます。1993年に法隆寺とともに日本初の世界文化遺産に登録された、日本を代表する城のひとつ。1609年に現在の姿が整い、戦災や地震を奇跡的に免れて、約400年前の建築がほぼそのままの状態で残っています。
 
-【ベスト時期】4月初旬〜中旬。例年4月1日前後に開花、4月7日〜10日頃にピーク。標準木は三の丸広場のソメイヨシノで、姫路市公式が毎日開花情報を更新。日本さくら名所100選にも選定されています。
+桜のシーズン(4月初旬)が圧倒的に有名ですが、実は秋(11月中旬〜下旬)もとても良い季節です。お堀の周りで色づく楓や銀杏が、白い壁に静かなアクセントを与えます。観光客は春に比べてかなり落ち着いていて、世界遺産の建築をゆっくり眺められる時間が取れる——これは秋ならではの利点です。
 
-【撮影スポット5選】①三の丸広場：王道。広い芝生越しに白い天守と桜のフレーミング。②西の丸庭園：天守を見下ろす高所から桜越しの構図。③シロトピア記念公園（北側）：天守を北東から、人が少なめの穴場。④城見台公園（南東）：望遠レンズで天守と桜を圧縮、人混みなし。⑤男山配水池公園：標高高く、城下町と天守を俯瞰、夕日と桜の組み合わせがドラマチック。
+おすすめは三の丸広場と内堀沿い。広い芝生から見上げると、白い天守の手前に紅葉が立体的に重なり、青空との三色のコントラストが浮かび上がります。お堀の水面には城がそのまま反射し、冬枯れの始まる前の落ち着いた色合いが意外と絵になります。
 
-【時間帯】早朝6〜7時：観光客が少なく、東からの順光が天守を白く輝かせる。夕方17〜18時：西日が天守を金色に染め、桜が逆光で透ける。夜のライトアップ19〜21時：「観桜会」期間中、ぼんぼりに灯る桜と白い天守は別格。
+天守内部にも入れます。木造の急な階段、複雑な防衛のための構造、最上階から見下ろす姫路の街並み——映画のセットでなく実物の城に上ると、戦国時代の人々の感覚が少しだけ伝わってきます。城内拝観は所要1.5〜2時間ほど。
 
-【設定・機材】標準ズーム（24-70mm）+望遠（70-200mm）。三の丸では広角〜標準、城見台公園では望遠。PLフィルターで空の青を強調。手持ちでISO400・F8・1/250で安全。
+歩き疲れたら、城の南口から続く商店街でランチを。姫路は穴子料理や姫路おでんが地元グルメとして親しまれていて、駅近くの地元食堂が居心地よくおすすめです。
 
-【アクセス】JR姫路駅から徒歩15分。新大阪から新幹線50分、関西空港から特急90分でアクセス可。城内拝観料1,000円。土日は朝9時前到着しないと混雑必至です。`,
-    bodyEn: `Himeji Castle in Hyogo Prefecture is nicknamed «White Heron Castle» (Shirasagi-jo) for its elegant white-plaster form. In 1993 it became Japan's first UNESCO World Cultural Heritage site (alongside Horyu-ji). It is Japan's largest surviving castle keep, and in spring some 1,000 Yoshino cherry trees within the grounds bloom — making the white keep against pink blossoms one of Japan's most photogenic spring scenes.
+【アクセス】JR姫路駅から徒歩15分。新大阪から新幹線で50分、関西空港から特急90分。
+【ベストシーズン】春(4月上旬の桜)、秋(11月中旬〜下旬の紅葉)、冬の凛とした白壁も美しい。
+【入城料】大人1,000円(2024年現在)。所要1.5〜2時間。
+【近くで】好古園(隣接の日本庭園)、書写山圓教寺(ロープウェイ)、姫路市立美術館。`,
+    bodyEn: `Himeji Castle in Hyogo Prefecture is nicknamed «White Heron Castle» (Shirasagi-jo) for its elegant white-plaster form. In 1993 it became Japan's first UNESCO World Cultural Heritage site, listed alongside Horyu-ji. The current structure was completed in 1609 and miraculously survived war and earthquakes — roughly 400 years of architecture stands almost as it was.
 
-【Best timing】Early-to-mid April. Blooms typically start around April 1 and peak April 7–10. The reference tree is the Yoshino cherry on Sannomaru Plaza; Himeji City updates bloom status daily. The site is listed in Japan's «100 Best Sakura Spots.»
+Cherry blossom season (early April) is overwhelmingly famous, but autumn (mid-to-late November) is quietly excellent too. Maples and ginkgo around the moat add gentle color against the white walls. Crowds are noticeably calmer than in spring — meaning you actually get the time to take in the castle slowly. That's the autumn advantage.
 
-【Top 5 vantages】(1) Sannomaru Plaza: the classic — spacious lawn, white keep with cherry framing. (2) Nishinomaru Garden: elevated angle looking down at the keep through cherry blossoms. (3) Shirotopia Memorial Park (north): castle from the northeast, less crowded. (4) Shiromidai Park (southeast): telephoto compression of keep with cherry trees, no crowds. (5) Otokoyama Distribution Reservoir Park: highest elevation, panoramic of castle town and keep — sunset with cherry blossoms is dramatic.
+The best vantage is from Sannomaru Plaza and along the inner moat. Look up from the lawn and the layered scene comes together: autumn leaves in the foreground, the white keep rising behind, blue sky framing it all. The castle reflects in the moat's surface, and the muted pre-winter palette photographs surprisingly well.
 
-【Timing】Early morning (6–7): light tourists, eastern front-light makes the keep glow white. Late afternoon (17–18): western light bathes the keep in gold; backlit cherry blossoms become translucent. Night illumination (19–21): during the «cherry-viewing event,» lantern-lit blossoms with the floodlit keep are extraordinary.
+You can enter the keep itself. Steep wooden stairs, intricate defensive layouts, and from the top floor a sweeping view over Himeji's streets — this isn't a movie set, it's the real thing. Standing inside, you get a small but real sense of how people experienced the warring states period. Allow about 1.5–2 hours to walk through.
 
-【Settings & gear】Standard zoom (24–70 mm) plus telephoto (70–200 mm). Wide-to-standard at Sannomaru; telephoto at Shiromidai. CPL filter saturates the blue sky. Handheld at ISO 400, f/8, 1/250 s is safe.
+When your legs are tired, head south of the castle to the shopping street for lunch. Himeji is known for anago (sea eel) dishes and Himeji oden — local diners near the station are casual and welcoming.
 
-【Access】15 minutes on foot from JR Himeji Station. 50 minutes by Shinkansen from Shin-Osaka, 90 minutes by limited express from Kansai International Airport. Castle admission ¥1,000. On weekends, arrive before 9 a.m. to avoid heavy crowds.`,
+【Access】15 minutes on foot from JR Himeji Station. 50 minutes by Shinkansen from Shin-Osaka, 90 minutes by limited express from Kansai International Airport.
+【Best season】Spring (early-April cherry blossoms), autumn (mid-to-late November maples), and the crisp white walls in winter are all beautiful in their own ways.
+【Admission】¥1,000 adult (as of 2024). Allow 1.5–2 hours.
+【Nearby】Koko-en (the adjacent traditional garden), Engyo-ji on Mount Shosha (cable car), and the Himeji City Museum of Art.`,
   },
   {
-    slug: "otaru-canal-night",
+    slug: "otaru-coast-sunset",
     date: "2025-12-15",
     locs: ["小樽"],
     hero: "yh7e0rhvhnzzxj5esa5f",
-    title: { ja: "小樽運河の夜 — ガス灯が灯るノスタルジー", en: "Otaru Canal at Night: A Nostalgia Lit by Gas Lamps" },
-    excerpt: { ja: "石造倉庫とガス灯の温かい光。雪の運河、青の時間帯、長秒露光のテクニック。", en: "Stone warehouses and warm gaslight. The snowy canal, blue hour, and long-exposure techniques." },
-    bodyJa: `北海道小樽市の運河は、1923年に完成した全長1,140mの石造倉庫街。かつての海運の中心地で、現在は63基のガス灯が灯る観光スポットとして親しまれています。札幌から電車で約40分、ノスタルジックな港町の夜は、北海道屈指の撮影地です。
+    title: { ja: "小樽の海と夕陽 — 港町の静かな黄昏時", en: "Otaru's Coast at Sunset: Quiet Twilight in a Port Town" },
+    excerpt: { ja: "石造倉庫の運河で知られる小樽だが、本当の魅力は街を抜けた先の海岸線にある。岬と灯台、紫に染まる夕焼け空。", en: "Otaru is famous for its canal of stone warehouses — but the real reward is just past town, where the coastline opens to capes, lighthouses, and a violet evening sky." },
+    bodyJa: `札幌の北西、車で40分ほどの距離にある小樽は、石造の倉庫が並ぶ運河で広く知られています。観光客の多くは運河と寿司街、北一硝子だけ見て帰りますが、少し足を伸ばすと、まったく違う表情の海岸線が広がっています。
 
-【撮影シーズン】通年美しいですが、特に冬（12〜2月）が最高。雪が積もった運河、ガス灯の暖色光、雪の反射、すべてが一体になった景観は他に類を見ません。「小樽雪あかりの路」が2月上〜中旬に開催され、ろうそくの灯りが運河を照らす1週間限定の特別景観も。
+小樽の街を抜けて積丹方面へ向かう海岸沿いの道は、北海道らしい広い空と、岩礁が点在する日本海が続く爽快なドライブルート。途中、岬や灯台が現れるたびに車を停めたくなり、夕方の時間帯になると空がオレンジから紫へとゆっくり変わっていきます。
 
-【ベスト時間】日没後30〜40分の「ブルーアワー」が最も美しい。空が深い青を残しつつガス灯の暖色が映え、コントラストが最大化。完全に暗くなった21時以降は空が黒く沈み、ドラマチックさが減少します。
+おすすめは日和山岬や祝津パノラマ展望台周辺。海に突き出した小さな岬の先端に灯台が立ち、その向こうに積丹半島の影が霞みます。日没の30分前から、空が一気に色を変える短い時間帯——いわゆるマジックアワーは、見ている側もどこか神聖な気持ちになります。
 
-【撮影ポイント】①浅草橋（中央橋の南）：最も有名なアングル、運河と倉庫群と橋を1フレームに、長秒露光で水面を滑らかに。②中央橋：橋の北側から運河を見下ろす俯瞰、観光客が少なめ。③北運河（小樽倉庫の北、観光客少）：静かな水面と倉庫、知る人ぞ知る穴場。
+冬は厳しい風と雪で訪れにくいですが、5〜10月は穏やか。9月〜10月は観光客がぐっと減り、夕焼けの色がより深くなる季節でもあります。海岸沿いの食堂や喫茶店で温かい飲み物を飲みながら一日の終わりを待つ、そんな静かな旅にぴったりです。
 
-【長秒露光テクニック】三脚必須、ISO100、F8、SS10〜30秒。NDフィルターで日暮れ間際の光量調整。設定例：①ブルーアワー：F8・SS15秒・ISO100、②夜：F4〜5.6・SS30秒・ISO200、③雪降りの日：シャッタースピードを4〜8秒にして雪の流れを線で表現。
+帰り道に運河エリアに戻ると、ガス灯が灯り、また別の小樽の顔が見えてきます。海岸線+運河の二段構えで小樽を巡ると、よく知られた観光地が突然奥行きのある町に変わります。
 
-【冬装備】小樽の12〜2月は氷点下5〜10℃。雪上対応ブーツ、防水手袋、カイロ必携。三脚は雪に埋もれないようスパイク付きが安心。レンズ結露防止にジップロック密封必須。
+【アクセス】JR小樽駅からレンタカーまたはタクシー。海岸沿いはバスでもアクセス可だが本数が少ないため車が現実的。
+【ベストシーズン】5〜10月。日没時間が日々違うので、観光協会の日没時刻情報を確認。
+【近くで】小樽運河、北一硝子、堺町本通り、寿司屋通り。少し足を伸ばせば積丹半島の青い海。`,
+    bodyEn: `Otaru, about 40 minutes northwest of Sapporo by car, is widely known for its canal lined with stone warehouses. Most visitors see the canal, the sushi street, and Kitaichi Glass — and head home. But a short drive past town opens up an entirely different Otaru: a coastline of big skies and rocky shores.
 
-【アクセス】JR小樽駅から徒歩10分。札幌から快速エアポートで32分。日帰り可能ですが、夜景目当てなら小樽宿泊がおすすめ。`,
-    bodyEn: `The Otaru Canal in Otaru City, Hokkaido, is a 1,140 m stretch of stone warehouses completed in 1923. Once a hub of shipping commerce, it now welcomes visitors with 63 gas lamps illuminating the historic banks. About 40 minutes by train from Sapporo, this nostalgic port town is one of Hokkaido's premier night-photography spots.
+The coastal road from Otaru toward the Shakotan Peninsula is a clean, cheerful drive — the wide Hokkaido sky on one side, the Sea of Japan on the other, with rocky outcrops appearing here and there. Each cape and lighthouse begs you to pull over, and as evening approaches, the sky shifts slowly from orange to violet.
 
-【Best season】Beautiful year-round, but winter (December–February) is supreme. Snow-covered banks, warm gas-lamp glow, and snow's reflectivity merge into a singular landscape. The «Otaru Yuki Akari no Michi» candle festival in early-to-mid February adds a week-long special view as candles line the canal.
+A favorite stretch is around Cape Hiyori and the Shukutsu Panorama Lookout. A small lighthouse stands at the tip of a sea-jutting cape, with the silhouette of the Shakotan Peninsula fading in the distance. The half hour before sunset — that magic hour when the sky changes color rapidly — has a quietly sacred feeling, even from the side of the road.
 
-【Best time】The «blue hour» 30–40 minutes after sunset is most beautiful. Deep blue lingers in the sky while gas lamps' warm light pops — maximum color contrast. After 21:00 the sky goes fully black, reducing drama.
+Winter brings harsh winds and snow that make this drive less inviting, but May through October is gentle. September and October especially see tourist numbers drop and sunsets deepen in color. Sitting in a small coastal café with something warm to drink, watching the day fade — that's the kind of trip this stretch invites.
 
-【Vantages】(1) Asakusa Bridge (south of Chuo Bridge): the most famous shot — canal, warehouses, and bridge in one frame, with long exposures smoothing the water. (2) Chuo Bridge: looking down on the canal from the north side, less crowded. (3) North Canal (north of Otaru Warehouse, sparse visitors): still water and warehouses, a hidden gem.
+On the way back, return to the canal as the gas lamps come on, and Otaru shows you another face. Pairing the coast with the canal turns a familiar tourist town into something with real depth.
 
-【Long-exposure technique】Tripod essential, ISO 100, f/8, 10–30 s. ND filters help just before sunset. Examples: (1) blue hour: f/8, 15 s, ISO 100; (2) full night: f/4–5.6, 30 s, ISO 200; (3) snowy days: 4–8 s captures snowfall as gentle streaks.
-
-【Winter prep】Otaru in December–February runs −5 to −10 °C. Snow-rated boots, waterproof gloves, heat warmers essential. A spike-foot tripod stays stable in snow. Use ziplocks against lens condensation when re-entering warm spaces.
-
-【Access】10 minutes on foot from JR Otaru Station. 32 minutes from Sapporo on the Rapid Airport. Day trips are possible, but for night photography, staying overnight in Otaru is recommended.`,
+【Access】Rental car or taxi from JR Otaru Station. Buses cover the coast but run sparsely — driving is more practical.
+【Best season】May–October. Sunset times vary daily, so check the local tourism site for current times.
+【Nearby】Otaru Canal, Kitaichi Glass, the Sakaimachi shopping street, and Sushi-ya Dori. A short additional drive reaches the famously blue Shakotan coast.`,
   },
   {
-    slug: "noboribetsu-jigokudani",
-    date: "2025-10-15",
+    slug: "noboribetsu-spring-coast",
+    date: "2025-04-25",
     locs: ["登別"],
-    hero: "",
-    title: { ja: "登別 地獄谷 — 火山と湯けむりの撮影地", en: "Noboribetsu Jigokudani: A Volcanic, Steam-Veiled Photo Spot" },
-    excerpt: { ja: "硫黄の蒸気と紅葉、エメラルドの大湯沼。北海道随一の温泉郷で湯けむりを撮る。", en: "Sulfur steam, autumn foliage, and the emerald Oyunuma. Shooting steam in Hokkaido's premier onsen valley." },
-    bodyJa: `北海道登別市の地獄谷は、火山活動でできた直径450mの爆裂火口跡で、湯けむりが立ち上る地表は荒涼とした景観。1日1万トンの温泉が湧き出し、登別温泉街の源泉となっています。日本でも有数の「異世界感」が撮れる場所です。
+    hero: "ofe2ifgjpvsguty4udfh",
+    title: { ja: "登別の春 — 桜と海と温泉のまち", en: "Noboribetsu in Spring: Cherry Blossoms, the Sea, and a Hot-Spring Town" },
+    excerpt: { ja: "温泉と地獄谷で知られる登別だが、街を出ると太平洋の海岸線と春の桜が広がる。", en: "Noboribetsu is famous for its onsen and «Hell Valley,» but step outside town and a spring coastline of cherry blossoms unfolds along the Pacific." },
+    bodyJa: `北海道南西部の登別市は、湯けむり立ち上る地獄谷と、北海道屈指の温泉街で広く知られています。観光客のほとんどが温泉とその周辺だけを訪ねて帰りますが、市街を少し離れると、太平洋の海岸線と春の落ち着いた桜の風景が広がっています。
 
-【撮影シーズン】通年撮影可能ですが、ベストは秋（10月中〜下旬）。地獄谷を取り囲む山が紅葉に染まり、灰色の岩肌・白い湯けむり・赤や黄色の紅葉という三色のコントラストは絶景。冬は雪と湯けむりのモノトーン、春の新緑、夏の濃緑も撮影向き。
+桜の時期は本州より遅く、5月のゴールデンウィーク前後がピーク。北海道の桜は南国の人がイメージする「ピンク色のソメイヨシノ」とは少し違い、エゾヤマザクラの濃いピンクが多く、咲き方も控えめでこじんまり。空気がまだ冷たいなか、ぱらぱらと花びらが落ちる光景は、にぎやかな本州の花見とは印象が大きく違います。
 
-【撮影スポット】①地獄谷展望台：駐車場から徒歩5分、最も有名なメインアングル。湯気と火口を間近に。②大湯沼：地獄谷から徒歩15分、エメラルドグリーンの硫黄湯沼。③大湯沼川天然足湯：硫黄川を歩いて足湯、川と紅葉を撮影。④日和山展望台（無料）：地獄谷を俯瞰する高所、紅葉シーズンの全景はここから。
+海岸沿いを車で走ると、青く澄んだ太平洋とその向こうに浮かぶ室蘭の白鳥大橋が見えてきます。岬の高台から見下ろす海岸線は、北海道らしい開放感そのもの。漁港と街並みが一直線に続き、その先の岬まで視線が届きます。海風はまだ冷たいですが、春の日差しは穏やかで、立ち止まってのんびりするにはちょうどよい季節です。
 
-【時間帯】早朝7〜8時：観光客がほぼいない、湯気が朝日に金色に染まる。15〜17時の夕方：西日が湯気と紅葉を暖色に染める。霧雨や朝霧の日は湯気と霧が混じり幻想的。
+登別温泉そのものも、春は人が落ち着く季節で狙い目。露天風呂から眺める雪解け後の山の青々とした緑は、冬や夏とは違う柔らかさがあります。地獄谷へ続く遊歩道や大湯沼周辺の散策も、夏の混雑前の今が最も気持ちよく歩けます。
 
-【撮影テクニック】①湯気は風で形が変わるため連写、②露出は岩肌で測光（湯気で測ると暗くなる）、③望遠（70-200mm）で湯気と紅葉を圧縮、広角（16-35mm）で火口全景、④ND8〜16フィルターで湯気を流す長秒露光（1〜4秒）も◎。
+桜・海・温泉という3要素を1日で巡れるのが、春の登別の魅力。あえて冬や紅葉ではなく、「観光のオフピーク」を狙うことで、北海道の旅が一段と落ち着いたものになります。
 
-【注意・装備】①遊歩道から外れない（火傷の危険、ガス発生区域）、②硫黄臭でレンズ・カメラに付着すると劣化するためレンズフィルター推奨、③滑りやすい木道、滑りにくい靴。撮影後は登別温泉街の宿で温泉、第一滝本館や登別グランドホテルが有名。
+【アクセス】札幌から特急で約1時間20分、新千歳空港からバスで約70分。市内はレンタカーが便利。
+【ベストシーズン】5月上旬の桜、6〜9月の海岸ドライブ、10月下旬の紅葉、冬の温泉。一年を通じて表情豊か。
+【近くで】登別温泉郷、地獄谷、大湯沼、室蘭の白鳥大橋、登別マリンパークニクス(水族館)。`,
+    bodyEn: `Noboribetsu, on Hokkaido's southwestern coast, is widely known for its steaming Jigokudani («Hell Valley») and one of Japan's most popular onsen towns. Most visitors see the hot springs and head home — but a short drive outside town opens up a Pacific coastline and a quiet cherry-blossom landscape in spring.
 
-【アクセス】札幌から特急で1時間20分。新千歳空港からバスで70分。鉄道+徒歩なら登別駅からバス15分→温泉街→徒歩10分で地獄谷。`,
-    bodyEn: `Jigokudani («Hell Valley») in Noboribetsu, Hokkaido, is a 450 m crater formed by volcanic activity, where steam rises from a desolate gray landscape. Some 10,000 tons of hot-spring water gush forth daily, supplying the entire Noboribetsu onsen town. It's one of Japan's most «otherworldly» photo locations.
+Cherry blossom season here arrives later than on Honshu — usually around Japan's Golden Week (early May). Hokkaido's blossoms differ from the soft pink Yoshino cherries most associate with hanami; the local Ezo-yamazakura skews to a deeper pink, and trees grow more modestly. With air still cool and petals drifting down quietly, the experience contrasts noticeably with the lively Honshu cherry season.
 
-【Best season】Year-round, with autumn (mid-to-late October) supreme. The surrounding mountains turn crimson, and the three-color contrast — gray rocks, white steam, red-yellow foliage — is unforgettable. Winter brings monochrome of snow and steam; spring offers fresh greens; summer deep emerald.
+A short drive along the coast reveals the deep blue Pacific, with Muroran's Hakucho Bridge visible across the water. From the headland, you look down a sweeping shoreline — fishing harbors, small towns, and capes stretching into the distance. Sea winds are still cold in spring, but the sun is gentle. It's the kind of season made for stopping the car and sitting still for a while.
 
-【Vantages】(1) Jigokudani Observation Deck: 5 minutes from the parking lot, the famous main view of steam and crater up close. (2) Oyunuma: 15 minutes' walk from Jigokudani, an emerald-green sulfur pond. (3) Oyunuma River natural foot bath: stroll along the sulfur river to the foot-soak — shoot river and foliage together. (4) Hiyoriyama Observatory (free): elevated overlook of Jigokudani — the autumn panorama is from here.
+Noboribetsu Onsen itself is at its calmest in spring, making it a strategic time to visit. The view from outdoor baths — mountains turning fresh green after the snow melts — has a softness you won't find in winter or summer. The walking paths around Jigokudani and Oyunuma are also at their most pleasant before summer crowds arrive.
 
-【Timing】Early morning (7–8): nearly empty, steam turns gold in dawn light. Late afternoon (15–17): western light bathes steam and foliage in warm tones. Misty rain or morning fog days mix steam and mist into ethereal scenes.
+Cherry blossoms, the coast, and onsen — all three in a single day is what makes spring Noboribetsu rewarding. Skipping winter and autumn for the off-peak shoulder season turns Hokkaido travel into something quieter and more personal.
 
-【Techniques】(1) steam shifts with wind — burst shoot; (2) meter on the gray rock (steam fools the meter dark); (3) telephoto (70–200 mm) compresses steam with foliage; wide angle (16–35 mm) captures the entire crater; (4) ND 8–16 filters allow long exposures (1–4 s) that flow the steam into streams.
-
-【Cautions & gear】(1) stay on boardwalks (burn risk and gas zones); (2) sulfur fumes degrade lenses/cameras — use a UV filter as protection; (3) slippery boardwalks — wear non-slip shoes. After shooting, soak at any of Noboribetsu's classic onsen — Daiichi Takimotokan or Noboribetsu Grand Hotel are renowned.
-
-【Access】1 hour 20 minutes by limited express from Sapporo. 70 minutes by bus from New Chitose Airport. By rail: Noboribetsu Station, then 15-minute bus to onsen town, plus 10-minute walk to Jigokudani.`,
+【Access】About 1 hour 20 minutes by limited express from Sapporo, 70 minutes by bus from New Chitose Airport. A rental car helps for getting around the area.
+【Best season】Early-May cherry blossoms, June–September coastal drives, late-October autumn colors, year-round onsen. Each season has its own character.
+【Nearby】Noboribetsu Onsen, Jigokudani, Oyunuma, Muroran's Hakucho Bridge, and Noboribetsu Marine Park Nixe (aquarium).`,
   },
 ];
 
