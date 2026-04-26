@@ -1079,10 +1079,13 @@ export const LOCATION_CONTENT = {
       "金閣寺（鹿苑寺）建於1397年，整體貼金箔的三層樓閣倒映於鏡湖池。世界遺產。雪中的「雪金閣」一生難遇。池畔經典構圖是必拍鏡頭。",
       "긴카쿠지(로쿠온지)는 1397년 건립, 전면을 금박으로 덮은 3층 누각이 교코치 연못에 비치는 절경으로 유명. 세계유산. 눈 덮인 '설금각'은 일생에 한 번 볼까 말까 한 명장면. 연못 너머의 정석 구도는 반드시 찍어야 할 장면."
     ),
-    definition: lh(
-      "金閣寺(正式名称・鹿苑寺(ろくおんじ))は1397年に室町幕府3代将軍・足利義満が造営した山荘「北山殿」を起源とする臨済宗相国寺派の禅寺で、世界遺産「古都京都の文化財」の構成資産。三層の楼閣全面を金箔で覆った舎利殿が「金閣」と呼ばれ、寺院全体の通称になっています。鏡湖池(きょうこち)に映る逆さ金閣は世界中で最も有名な日本建築の構図の一つで、1950年放火事件により焼失後、1955年に再建、1987年と2003年に金箔の張り替えが行われました。",
-      "Kinkaku-ji (formally Rokuon-ji) is a Rinzai Zen temple of the Shokoku-ji branch, founded on the site of the Kitayama Villa established in 1397 by Ashikaga Yoshimitsu, third shogun of the Muromachi shogunate, and a constituent property of UNESCO's «Historic Monuments of Ancient Kyoto.» Its three-tier reliquary hall, completely covered in gold leaf, is known as the «Golden Pavilion» (Kinkaku) and gives the entire temple its popular name. The inverted reflection in Kyoko-chi pond is one of the world's most famous frames of Japanese architecture; the original burned in a 1950 arson and was rebuilt in 1955, with the gold leaf renewed in 1987 and 2003."
-    ),
+    definition: {
+      ja: "金閣寺(正式名称・鹿苑寺(ろくおんじ))は1397年に室町幕府3代将軍・足利義満が造営した山荘「北山殿」を起源とする臨済宗相国寺派の禅寺で、世界遺産「古都京都の文化財」の構成資産。三層の楼閣全面を金箔で覆った舎利殿が「金閣」と呼ばれ、寺院全体の通称になっています。鏡湖池(きょうこち)に映る逆さ金閣は世界中で最も有名な日本建築の構図の一つで、1950年放火事件により焼失後、1955年に再建、1987年と2003年に金箔の張り替えが行われました。",
+      en: "Kinkaku-ji (formally Rokuon-ji) is a Rinzai Zen temple of the Shokoku-ji branch, founded on the site of the Kitayama Villa established in 1397 by Ashikaga Yoshimitsu, third shogun of the Muromachi shogunate, and a constituent property of UNESCO's «Historic Monuments of Ancient Kyoto.» Its three-tier reliquary hall, completely covered in gold leaf, is known as the «Golden Pavilion» (Kinkaku) and gives the entire temple its popular name. The inverted reflection in Kyoko-chi pond is one of the world's most famous frames of Japanese architecture; the original burned in a 1950 arson and was rebuilt in 1955, with the gold leaf renewed in 1987 and 2003.",
+      zh: "金阁寺(正式名称·鹿苑寺)是1397年室町幕府3代将军足利义满建造的山庄「北山殿」为起源的临济宗相国寺派禅寺，世界遗产「古都京都的文化财」组成部分。三层楼阁全面贴金箔的舍利殿称作「金阁」，成为整个寺院的通称。镜湖池倒映的逆金阁是世界上最知名的日本建筑构图之一，1950年放火事件焼失后1955年重建，1987年与2003年进行金箔更换。",
+      "zh-tw": "金閣寺(正式名稱·鹿苑寺)是1397年室町幕府3代將軍足利義滿建造的山莊「北山殿」為起源的臨濟宗相國寺派禪寺，世界遺產「古都京都的文化財」組成部分。三層樓閣全面貼金箔的舍利殿稱作「金閣」，成為整個寺院的通稱。鏡湖池倒映的逆金閣是世界上最知名的日本建築構圖之一，1950年放火事件燒失後1955年重建，1987年與2003年進行金箔更換。",
+      ko: "긴카쿠지(정식명·로쿠온지)는 1397년 무로마치 막부 3대 쇼군 아시카가 요시미쓰가 조영한 산장 「기타야마덴」을 기원으로 하는 임제종 쇼코쿠지파의 선사로, 세계유산 「고도 교토의 문화재」 구성자산. 3층 누각 전면을 금박으로 덮은 사리전이 「긴카쿠(금각)」라 불리며, 사찰 전체의 통칭이 되고 있습니다. 교코치 연못에 비치는 역 긴카쿠는 세계에서 가장 유명한 일본 건축 구도 중 하나로, 1950년 방화 사건으로 소실된 후 1955년에 재건, 1987년과 2003년에 금박 교체가 이뤄졌습니다.",
+    },
     highlights: {
       ja: [
         "金閣(舎利殿) — 三層構造、上二層に金箔約20kg分、最上層は禅宗様、頂部に鳳凰像、鏡湖池への倒影が王道構図",
@@ -1097,6 +1100,27 @@ export const LOCATION_CONTENT = {
         "Rikushu Pine — said to have been planted by Yoshimitsu, this ~600-year-old pine is pruned to resemble a boat",
         "Sekkatei Tearoom — an Edo-period tea pavilion visited by Emperor Gomizunoo; its name evokes «watching the Golden Pavilion glow at sunset»",
         "Snow-capped Kinkaku — central Kyoto sees snow only a handful of times a year, making the snow-and-gold contrast a once-in-a-lifetime subject",
+      ],
+      zh: [
+        "金阁(舍利殿) — 三层结构，上二层贴金箔约20公斤，最上层禅宗式，顶部凤凰像，镜湖池倒影为王道构图",
+        "镜湖池 — 池中9岛与岩借景，无风时完美水镜，雨后更鲜明",
+        "陆舟之松 — 义满手植树龄约600年的松，剪成舟形的名木",
+        "夕佳亭 — 江户时代茶室，后水尾天皇行幸地，「眺望夕阳中辉映的金阁」之名由来",
+        "雪化金阁 — 京都市中心积雪每年仅数次，雪与金箔对比是「一生一次」的被摄体",
+      ],
+      "zh-tw": [
+        "金閣(舍利殿) — 三層結構，上二層貼金箔約20公斤，最上層禪宗式，頂部鳳凰像，鏡湖池倒影為王道構圖",
+        "鏡湖池 — 池中9島與岩借景，無風時完美水鏡，雨後更鮮明",
+        "陸舟之松 — 義滿手植樹齡約600年的松，剪成舟形的名木",
+        "夕佳亭 — 江戶時代茶室，後水尾天皇行幸地，「眺望夕陽中輝映的金閣」之名由來",
+        "雪化金閣 — 京都市中心積雪每年僅數次，雪與金箔對比是「一生一次」的被攝體",
+      ],
+      ko: [
+        "긴카쿠(사리전) — 3층 구조, 위 2층에 금박 약 20kg, 최상층은 선종양식, 정상에 봉황상, 교코치 연못으로의 반영이 정석 구도",
+        "교코치 연못 — 연못에 떠 있는 9개의 섬과 바위를 차경으로, 무풍 시에는 완벽한 수경, 비 온 후엔 더욱 선명",
+        "리쿠슈의 소나무 — 요시미쓰가 직접 심었다는 수령 약 600년의 소나무, 배 모양으로 다듬어진 명목",
+        "셋카테이 — 에도시대 다실, 고미즈오 천황 행행지, 「석양에 빛나는 긴카쿠를 바라보다」라는 이름의 유래",
+        "눈 화장한 긴카쿠 — 교토 중심부의 적설은 연 몇 회뿐, 눈과 금박의 콘트라스트는 「일생에 한 번」의 피사체",
       ],
     },
     quickAnswers: {
@@ -1115,6 +1139,30 @@ export const LOCATION_CONTENT = {
         { q: "Hours and admission?", a: "9:00–17:00 daily, year-round. Adults ¥500, elementary/middle school ¥300. Goshuin (shrine seal) ¥300 extra. To avoid crowds, visit 9:00–10:00 right at opening or 16:00–17:00 before closing. Spring and autumn (school trip seasons) are crowded even on weekdays after 10 AM." },
         { q: "How do I get there?", a: "From Kyoto Station, City Bus 101 or 205 to «Kinkakuji-michi» stop, then 3-min walk — 40 min total, ¥230. From Karasuma Subway Line «Kitaoji» Station, 12-min bus. Taxi from Kyoto Station ~20 min, ¥1,800. After visiting, the 10-min walk to Ryoan-ji (famous rock garden) is a classic pairing." },
         { q: "What about the 1950 fire and the current building?", a: "On July 2, 1950, a novice monk set the original (Kamakura-era) Kinkaku ablaze, destroying it. The current building was reconstructed in 1955, with gold leaf renewed in 1987 and 2003. Yukio Mishima's 1956 novel «Kinkaku-ji» fictionalized the event and remains a touchstone of modern Japanese literature." },
+      ],
+      zh: [
+        { q: "金阁寺是什么?", a: "1397年足利义满建造的山庄「北山殿」为起源的临济宗禅寺，正式名称鹿苑寺。三层楼阁全面贴金箔的舍利殿称作「金阁」，世界遗产「古都京都的文化财」组成部分。" },
+        { q: "拍摄金阁的技巧?", a: "上午9点开门后顺光(朝南)时段最佳。PL滤镜调整水面反光使倒影更鲜艳。雨后水镜也可拍。三脚架有禁区，须事先确认。" },
+        { q: "最佳季节?", a: "全年皆美，但3月末樱、5月新绿、11月中下旬红叶华丽。雪金阁仅12月下~2月数日。冬季清晨气温0℃以下池水清澈，水镜最佳。" },
+        { q: "参拜时间与门票?", a: "全年9:00~17:00开门，年中无休。大人500日元、中小学生300日元。御朱印另收300日元。避开拥挤建议开门直入9:00~10:00或闭门前16:00~17:00。修学旅行多的春秋平日10时后也拥挤。" },
+        { q: "怎么去?", a: "京都站乘市巴士101或205系统至「金阁寺道」下车步行3分钟·全程40分钟·230日元。地铁乌丸线「北大路站」搭巴士12分钟。出租车从京都站约20分钟·1,800日元。参观后步行10分钟可达龙安寺(石庭名所)，是定番组合。" },
+        { q: "1950年放火事件与现在建物的关系?", a: "1950年7月2日，见习僧侣放火使当时金阁(镰仓时代创建)焼失。1955年重建，1987年与2003年更换金箔，现存金阁为此重建物。三岛由纪夫小说《金阁寺》(1956年)以此事件为题材，是近代日本文学的代表作。" },
+      ],
+      "zh-tw": [
+        { q: "金閣寺是什麼?", a: "1397年足利義滿建造的山莊「北山殿」為起源的臨濟宗禪寺，正式名稱鹿苑寺。三層樓閣全面貼金箔的舍利殿稱作「金閣」，世界遺產「古都京都的文化財」組成部分。" },
+        { q: "拍攝金閣的技巧?", a: "上午9點開門後順光(朝南)時段最佳。PL濾鏡調整水面反光使倒影更鮮豔。雨後水鏡也可拍。三腳架有禁區，須事先確認。" },
+        { q: "最佳季節?", a: "全年皆美，但3月末櫻、5月新綠、11月中下旬紅葉華麗。雪金閣僅12月下~2月數日。冬季清晨氣溫0℃以下池水清澈，水鏡最佳。" },
+        { q: "參拜時間與門票?", a: "全年9:00~17:00開門，年中無休。大人500日圓、中小學生300日圓。御朱印另收300日圓。避開擁擠建議開門直入9:00~10:00或閉門前16:00~17:00。修學旅行多的春秋平日10時後也擁擠。" },
+        { q: "怎麼去?", a: "京都車站搭市巴士101或205系統至「金閣寺道」下車步行3分鐘·全程40分鐘·230日圓。地鐵烏丸線「北大路站」搭巴士12分鐘。計程車從京都站約20分鐘·1,800日圓。參觀後步行10分鐘可達龍安寺(石庭名所)，是定番組合。" },
+        { q: "1950年放火事件與現在建物的關係?", a: "1950年7月2日，見習僧侶放火使當時金閣(鎌倉時代創建)燒失。1955年重建，1987年與2003年更換金箔，現存金閣為此重建物。三島由紀夫小說《金閣寺》(1956年)以此事件為題材，是近代日本文學的代表作。" },
+      ],
+      ko: [
+        { q: "긴카쿠지란?", a: "1397년 아시카가 요시미쓰가 조영한 산장 「기타야마덴」을 기원으로 하는 임제종 선사로, 정식 명칭은 로쿠온지. 3층 누각의 전면을 금박으로 덮은 사리전이 「긴카쿠」라 불리며, 세계유산 「고도 교토의 문화재」 구성자산입니다." },
+        { q: "긴카쿠를 예쁘게 찍는 비결은?", a: "오전 9시 개문 직후 순광(남향) 시간대가 최고. PL 필터로 수면 반사를 조정하면 긴카쿠의 반영이 선명해진다. 비 온 뒤 수경도 노릴 수 있다. 삼각대는 금지 구역이 있으므로 사전 확인 필요." },
+        { q: "베스트 시즌은?", a: "연중 아름답지만 벚꽃의 3월 말, 신록의 5월, 단풍의 11월 중~하순이 화려. 눈 덮인 긴카쿠는 12월 하순~2월의 며칠뿐. 겨울 이른 아침은 기온 0℃ 이하로 연못 물이 맑아 최고의 수경이 나타난다." },
+        { q: "참배 시간과 요금은?", a: "연중 9:00~17:00 개문, 연중무휴. 어른 500엔, 초중학생 300엔. 고슈인은 별도 300엔. 혼잡 회피라면 개문 직후 9:00~10:00 또는 폐문 전 16:00~17:00. 수학여행이 많은 봄·가을은 평일에도 10시 이후 혼잡." },
+        { q: "가는 방법은?", a: "교토역에서 시 버스 101 또는 205계통으로 「긴카쿠지미치」하차 도보 3분·소요 40분·230엔. 지하철 가라스마선 「기타오지」역에서 버스 12분. 택시로 교토역에서 약 20분·1,800엔. 관람 후 도보 10분의 료안지(석정으로 유명)와의 조합 방문이 정석." },
+        { q: "1950년 방화 사건과 현재 건물의 관계는?", a: "1950년 7월 2일, 견습 승려의 방화로 당시 긴카쿠(가마쿠라시대 창건)는 소실. 1955년에 재건, 1987년과 2003년에 금박을 다시 발라 현존하는 긴카쿠는 이 재건물. 미시마 유키오의 소설 「긴카쿠지」(1956년)는 이 사건을 소재로 한 근대 일본 문학의 대표작입니다." },
       ],
     },
     faqs: [
@@ -3811,10 +3859,13 @@ export const LOCATION_CONTENT = {
       "諏訪湖位於長野縣中部，海拔759米的破火山口湖，是縣內最大湖泊。冬季冰面隆起的「御神渡」現象、夏季諏訪湖花火大會、環湖步道、對岸的「諏訪富士」與八岳連峰等四季表情豐富。亦是電影《你的名字。》湖泊原型。",
       "스와호는 나가노현 중부, 해발 759m의 칼데라호로 현내 최대. 겨울 결빙 시 얼음이 솟아오르는 「오미와타리」 현상, 여름의 스와호 불꽃놀이, 호반 산책로, 건너편 「스와 후지」와 야쓰가타케 연봉의 조망 등 사계절 다양한 표정. 영화 「너의 이름은.」의 호수 모델로도 알려져 있습니다."
     ),
-    definition: lh(
-      "諏訪湖(すわこ)は長野県中央部、諏訪市・岡谷市・諏訪郡下諏訪町にまたがる長野県内最大の湖で、面積13.3km²・周囲16km・最大水深7.6m・標高759m。約100万年前のフォッサマグナ運動で形成された地溝湖(構造湖)で、流入河川31本に対して流出河川は天竜川1本のみ、湖面の標高は富士山の北麓の山中湖(標高980m)に次ぐ日本第2位の高地湖。冬季の厳寒期(過去30年間で約10回)に湖面全体が結氷し、温度差で氷が膨張して亀裂部分がせり上がる「御神渡り(おみわたり)」現象で世界的に有名。約700年の歴史を持つ諏訪大社の神事として記録され、夏の諏訪湖花火大会(8月15日、4万発、日本最大級)、新海誠監督の映画『君の名は。』のモデル湖としても知られる長野県を代表する撮影地です。",
-      "Lake Suwa, in central Nagano Prefecture spanning Suwa City, Okaya City, and Shimo-Suwa Town, is the prefecture's largest lake at 13.3 km² with a 16 km perimeter, a maximum depth of 7.6 m, and a surface elevation of 759 m. Formed by Fossa Magna tectonic movement about a million years ago, it is a graben (structural) lake with 31 inflowing rivers and only one outflow — the Tenryu River. At 759 m elevation, it is Japan's second-highest highland lake (after Lake Yamanaka at 980 m at the northern foot of Mt. Fuji). When the entire surface freezes during severe winters (about 10 times in the past 30 years), thermal expansion produces cracks that rise into ridges — the famous «Omiwatari» phenomenon, recorded as a Suwa Taisha shrine ritual for some 700 years. The Lake Suwa Fireworks Festival (August 15, 40,000 shells — one of Japan's largest), the lake's role as inspiration for Makoto Shinkai's film «Your Name,» and its panoramic views all make it Nagano's representative photographic destination."
-    ),
+    definition: {
+      ja: "諏訪湖(すわこ)は長野県中央部、諏訪市・岡谷市・諏訪郡下諏訪町にまたがる長野県内最大の湖で、面積13.3km²・周囲16km・最大水深7.6m・標高759m。約100万年前のフォッサマグナ運動で形成された地溝湖(構造湖)で、流入河川31本に対して流出河川は天竜川1本のみ、湖面の標高は富士山の北麓の山中湖(標高980m)に次ぐ日本第2位の高地湖。冬季の厳寒期(過去30年間で約10回)に湖面全体が結氷し、温度差で氷が膨張して亀裂部分がせり上がる「御神渡り(おみわたり)」現象で世界的に有名。約700年の歴史を持つ諏訪大社の神事として記録され、夏の諏訪湖花火大会(8月15日、4万発、日本最大級)、新海誠監督の映画『君の名は。』のモデル湖としても知られる長野県を代表する撮影地です。",
+      en: "Lake Suwa, in central Nagano Prefecture spanning Suwa City, Okaya City, and Shimo-Suwa Town, is the prefecture's largest lake at 13.3 km² with a 16 km perimeter, a maximum depth of 7.6 m, and a surface elevation of 759 m. Formed by Fossa Magna tectonic movement about a million years ago, it is a graben (structural) lake with 31 inflowing rivers and only one outflow — the Tenryu River. At 759 m elevation, it is Japan's second-highest highland lake (after Lake Yamanaka at 980 m at the northern foot of Mt. Fuji). When the entire surface freezes during severe winters (about 10 times in the past 30 years), thermal expansion produces cracks that rise into ridges — the famous «Omiwatari» phenomenon, recorded as a Suwa Taisha shrine ritual for some 700 years. The Lake Suwa Fireworks Festival (August 15, 40,000 shells — one of Japan's largest), the lake's role as inspiration for Makoto Shinkai's film «Your Name,» and its panoramic views all make it Nagano's representative photographic destination.",
+      zh: "诹访湖位于长野县中部，跨诹访市·冈谷市·诹访郡下诹访町的长野县最大湖，面积13.3平方公里·周16公里·最大水深7.6米·海拔759米。约100万年前富萨玛格纳构造运动形成的地沟湖(构造湖)，31条河注入而流出仅天龙川1条，湖面海拔为富士山北麓山中湖(980米)之后的日本第2高地湖。冬季严寒期(过去30年约10次)湖面全冻，温差使冰膨胀于裂缝处隆起的「御神渡」现象世界闻名。约700年历史的诹访大社神事记录、夏季诹访湖花火大会(8月15日，4万发日本最大级)、新海诚导演电影《你的名字。》模型湖等，长野县代表性的撮影地。",
+      "zh-tw": "諏訪湖位於長野縣中部，跨諏訪市·岡谷市·諏訪郡下諏訪町的長野縣最大湖，面積13.3平方公里·周16公里·最大水深7.6米·海拔759米。約100萬年前富薩瑪格納構造運動形成的地溝湖(構造湖)，31條河注入而流出僅天龍川1條，湖面海拔為富士山北麓山中湖(980米)之後的日本第2高地湖。冬季嚴寒期(過去30年約10次)湖面全凍，溫差使冰膨脹於裂縫處隆起的「御神渡」現象世界聞名。約700年歷史的諏訪大社神事記錄、夏季諏訪湖花火大會(8月15日，4萬發日本最大級)、新海誠導演電影《你的名字。》模型湖等，長野縣代表性的撮影地。",
+      ko: "스와호는 나가노현 중앙부, 스와시·오카야시·스와군 시모스와마치에 걸친 나가노현 최대의 호수로, 면적 13.3km²·둘레 16km·최대 수심 7.6m·해발 759m. 약 100만 년 전 포사 마그나 운동으로 형성된 지구호(구조호)로, 유입 하천 31개에 대해 유출 하천은 덴류강 1개뿐. 호면 해발은 후지산 북록의 야마나카호(해발 980m)에 이은 일본 제2의 고지호. 겨울철 혹한기(과거 30년간 약 10회)에 호면 전체가 결빙해 온도차로 얼음이 팽창하여 균열 부분이 솟아오르는 「오미와타리」 현상으로 세계적으로 유명. 약 700년 역사의 스와 대사 신사로 기록되며, 여름의 스와호 불꽃대회(8월 15일, 4만 발, 일본 최대급), 신카이 마코토 감독의 영화 「너의 이름은.」의 모델 호수로도 알려진 나가노현을 대표하는 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "御神渡り(おみわたり) — 厳寒期の結氷時に氷が亀裂部分でせり上がる現象、約700年の歴史的神事",
@@ -3829,6 +3880,27 @@ export const LOCATION_CONTENT = {
         "Tateishi Park — a 934 m vantage; «Your Name» pilgrimage spot and treasure trove of nightscapes",
         "Yatsugatake as Backdrop — the Yatsugatake range seen from the east shore, with the ridges glowing at sunset",
         "Geyser Center — the symbol of Kami-Suwa Onsen; geyser and lake compositions, plus a hot-spring promenade along the lake",
+      ],
+      zh: [
+        "御神渡 — 严寒期湖面结冰时冰裂处隆起的现象，约700年历史的神事",
+        "诹访湖花火大会(8月15日) — 4万发日本最大级花火，湖面倒影震撼",
+        "立石公园 — 海拔934米绝景展望台，电影《你的名字。》圣地，夜景宝库",
+        "八岳借景 — 诹访湖东岸眺望八岳连峰，夕阳染稜线绝景",
+        "间歇泉中心 — 上诹访温泉象征，间歇泉与湖构图，温泉街与湖散步道",
+      ],
+      "zh-tw": [
+        "御神渡 — 嚴寒期湖面結冰時冰裂處隆起的現象，約700年歷史的神事",
+        "諏訪湖花火大會(8月15日) — 4萬發日本最大級花火，湖面倒影震撼",
+        "立石公園 — 海拔934米絕景展望台，電影《你的名字。》聖地，夜景寶庫",
+        "八岳借景 — 諏訪湖東岸眺望八岳連峰，夕陽染稜線絕景",
+        "間歇泉中心 — 上諏訪溫泉象徵，間歇泉與湖構圖，溫泉街與湖散步道",
+      ],
+      ko: [
+        "오미와타리 — 혹한기 결빙 시 얼음 균열 부분이 솟아오르는 현상, 약 700년의 역사적 신사",
+        "스와호 불꽃대회(8월 15일) — 4만 발의 일본 최대급 불꽃놀이, 호수면의 반영이 압권",
+        "다테이시 공원 — 해발 934m의 절경 전망대, 영화 「너의 이름은.」 성지, 야경의 보고",
+        "야쓰가타케의 차경 — 스와호 동쪽 기슭에서 바라보는 야쓰가타케 연봉, 석양에 물드는 능선이 절경",
+        "간헐천 센터 — 가미스와 온천의 상징, 간헐천과 호수의 구도, 온천가와 호수의 산책로",
       ],
     },
     quickAnswers: {
@@ -3847,6 +3919,30 @@ export const LOCATION_CONTENT = {
         { q: "What is the Omiwatari?", a: "When the lake fully freezes in extreme winters, ice ridges rise from cracks — a natural phenomenon recorded as a Suwa Taisha ritual for over 700 years. Tradition holds that the male god crosses to visit the goddess on the far shore. Required conditions: 10+ consecutive days below -15°C; warming has made it rare — about once every 5 years, making it a precious subject." },
         { q: "Photographing the Suwa Lake Fireworks?", a: "On August 15 (end-of-WWII anniversary), about 40,000 shells — one of Japan's largest displays. Reflections on the water are spectacular. Vantages: Tateishi Park (full panorama), the lakeshore (near launch sites for drama), and the Okaya side (lake reflection). Tripod essential, ISO 100, f/8, 5–15s bulb. Lakeside ryokan book up a year ahead." },
         { q: "Access?", a: "From Shinjuku, JR Chuo Line «Azusa» limited express to Kami-Suwa Station ~2 hr 20 min, ¥5,830. From Chuo Expressway Suwa or Okaya Interchange, 5–10 min by car. Lake circuit: 30 min by car, 4 hr on foot. Tateishi Park and other key spots are best by car or taxi — a rental car is recommended." },
+      ],
+      zh: [
+        { q: "诹访湖是什么?", a: "长野县中部最大湖，面积13.3平方公里·海拔759米·日本第2高地湖。御神渡现象、日本最大级诹访湖花火大会、电影《你的名字。》模型湖等，长野县代表性的撮影地。" },
+        { q: "诹访湖的撮影最佳点?", a: "立石公园(俯瞰)、诹访湖岸通(湖与街)、间歇泉中心周边(夕阳)、八岳映入的东岸为经典。御神渡为1~2月清晨，花火大会8月15日，需按时期撮影计划。" },
+        { q: "最佳季节?", a: "樱花4月、新绿5月、花火8月15日、红叶10月下旬、御神渡(冰封时)1~2月、冬日晨雾与立石公园夜景为冬限定绝景。《你的名字。》粉丝可于7~8月追体验。" },
+        { q: "御神渡是什么?", a: "湖完全冰封极寒期，冰裂隆起的自然现象。诹访大社神事记录700年以上，传说神跨湖访对岸女神。发生条件为气温-15℃以下连续10日以上，近年因暖化频度减少，约5年1次的珍贵被摄体。" },
+        { q: "诹访湖花火大会的撮影?", a: "8月15日(终战纪念日)夜，约40,000发日本最大级花火。湖面倒影震撼。撮影点立石公园(全景俯瞰)、湖岸通(打上场附近迫力)、对岸冈谷市(湖面倒影)。三脚架必备，ISO100·F8·5~15秒B门。湖畔旅馆需提前1年预约。" },
+        { q: "怎么去?", a: "东京新宿乘JR中央线特急「あずさ」至上诹访站约2小时20分·5,830日元。中央道诹访IC·冈谷IC驾车5~10分。环湖驾车30分·徒步4小时。立石公园等主要撮影地车·出租车便利，建议租车。" },
+      ],
+      "zh-tw": [
+        { q: "諏訪湖是什麼?", a: "長野縣中部最大湖，面積13.3平方公里·海拔759米·日本第2高地湖。御神渡現象、日本最大級諏訪湖花火大會、電影《你的名字。》模型湖等，長野縣代表性的撮影地。" },
+        { q: "諏訪湖的撮影最佳點?", a: "立石公園(俯瞰)、諏訪湖岸通(湖與街)、間歇泉中心周邊(夕陽)、八岳映入的東岸為經典。御神渡為1~2月清晨，花火大會8月15日，需按時期撮影計劃。" },
+        { q: "最佳季節?", a: "櫻花4月、新綠5月、花火8月15日、紅葉10月下旬、御神渡(冰封時)1~2月、冬日晨霧與立石公園夜景為冬限定絕景。《你的名字。》粉絲可於7~8月追體驗。" },
+        { q: "御神渡是什麼?", a: "湖完全冰封極寒期，冰裂隆起的自然現象。諏訪大社神事記錄700年以上，傳說神跨湖訪對岸女神。發生條件為氣溫-15℃以下連續10日以上，近年因暖化頻度減少，約5年1次的珍貴被攝體。" },
+        { q: "諏訪湖花火大會的撮影?", a: "8月15日(終戰紀念日)夜，約40,000發日本最大級花火。湖面倒影震撼。撮影點立石公園(全景俯瞰)、湖岸通(打上場附近迫力)、對岸岡谷市(湖面倒影)。三腳架必備，ISO100·F8·5~15秒B門。湖畔旅館需提前1年預約。" },
+        { q: "怎麼去?", a: "東京新宿搭JR中央線特急「あずさ」至上諏訪站約2小時20分·5,830日圓。中央道諏訪IC·岡谷IC駕車5~10分。環湖駕車30分·徒步4小時。立石公園等主要撮影地車·計程車便利，建議租車。" },
+      ],
+      ko: [
+        { q: "스와호란?", a: "나가노현 중앙부 현내 최대의 호수로, 면적 13.3km²·해발 759m·일본 제2의 고지호. 오미와타리 현상, 일본 최대급 스와호 불꽃대회, 영화 「너의 이름은.」 모델 호수로 알려진 나가노현을 대표하는 촬영지입니다." },
+        { q: "스와호의 촬영 베스트 스폿은?", a: "다테이시 공원(부감), 스와호반 거리(호수와 거리), 간헐천 센터 주변(석양), 야쓰가타케가 비치는 동쪽 호반이 정석. 오미와타리는 1~2월 이른 아침, 불꽃대회는 8월 15일, 각 시기에 맞춘 촬영 계획이 필요." },
+        { q: "베스트 시즌은?", a: "벚꽃의 4월, 신록의 5월, 불꽃의 8월 15일, 단풍의 10월 하순, 오미와타리(결빙 시)의 1~2월, 겨울 아침 안개와 다테이시 공원의 야경은 겨울 한정 절경. 「너의 이름은.」 팬은 7~8월에 영화에 등장한 장면의 추체험 가능." },
+        { q: "오미와타리란?", a: "호수가 완전히 결빙된 극한기에 얼음이 갈라져 솟아오르는 자연 현상. 스와 대사의 신사로 700년 이상 기록되어 있어 신이 건너편의 여신을 방문하는 「신의 건너기」로 전승. 발생 조건은 기온 -15℃ 이하가 연속 10일 이상, 최근 온난화로 발생 빈도가 감소, 5년에 1번 정도의 귀중한 피사체입니다." },
+        { q: "스와호 불꽃대회의 촬영은?", a: "8월 15일(종전 기념일) 밤, 약 40,000발의 일본 최대급 불꽃대회. 호수면에 비치는 불꽃이 압권. 촬영 포인트는 다테이시 공원(전경 부감), 호반 거리(쏘아 올림 장소 근처, 박력), 건너편 오카야시 측(호수면의 반영). 삼각대 필수, ISO100·F8·5~15초 벌브. 호반의 숙소는 1년 전부터 예약 필수." },
+        { q: "가는 방법은?", a: "도쿄 신주쿠에서 JR 주오선 특급 「아즈사」로 가미스와역까지 약 2시간 20분·5,830엔. 주오 자동차도 스와 IC·오카야 IC에서 차로 5~10분. 호수 일주는 차로 30분·도보로 4시간. 다테이시 공원 등 주요 촬영지는 차·택시가 편리, 렌터카 추천입니다." },
       ],
     },
     faqs: [
