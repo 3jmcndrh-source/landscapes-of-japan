@@ -123,19 +123,14 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           )}
         </header>
 
-        {/* A14: definition (○○とは?) */}
-        {definition && (
+        {/* 概要説明 (definition優先、なければ desc にフォールバック)
+            以前は両方表示していたが内容が重複するため一本化 (desc は SEO meta/schema で使用) */}
+        {(definition || desc) && (
           <div style={{ marginBottom: 32, padding: "20px 24px", background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 8, maxWidth: 820 }}>
             <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(232,228,223,.95)", margin: 0 }}>
-              {definition}
+              {definition || desc}
             </p>
           </div>
-        )}
-
-        {desc && (
-          <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 17, lineHeight: 1.85, color: "rgba(232,228,223,.9)", marginBottom: 32, maxWidth: 820 }}>
-            {desc}
-          </p>
         )}
 
         {/* A14: highlights (5項目) */}
@@ -235,28 +230,8 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           );
         })()}
 
-        {faqs && faqs.length > 0 && (
-          <section style={{ marginTop: 72 }}>
-            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-              {lang === "ja" ? "よくある質問" : "FAQ"}
-            </h2>
-            <div>
-              {faqs.map((f, i) => (
-                <details
-                  key={i}
-                  style={{ borderBottom: "1px solid rgba(220,190,100,.12)", padding: "16px 0", cursor: "pointer" }}
-                >
-                  <summary style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 16, fontWeight: 500, color: "#f2ece2", listStyle: "none" }}>
-                    {f.q}
-                  </summary>
-                  <div style={{ marginTop: 12, fontSize: 15, lineHeight: 1.75, color: "rgba(232,228,223,.8)", fontFamily: "var(--font-zen-kaku),sans-serif" }}>
-                    {f.a}
-                  </div>
-                </details>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* faqs はクイック情報と内容が重複するため UI から削除。
+            データは FAQPage JSON-LD schema 用にサーバ側で使用 */}
 
         {siblings.length > 0 && (
           <section style={{ marginTop: 72 }}>
