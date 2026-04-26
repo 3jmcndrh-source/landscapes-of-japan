@@ -1910,10 +1910,13 @@ export const LOCATION_CONTENT = {
       "白川鄉是世界遺產合掌造聚落。60度陡坡的茅草屋頂能承受雪重，支撐多代同住的大家族制度。冬季點燈限定期間需預約。",
       "시라카와고는 세계유산 갓쇼즈쿠리 마을. 60도 급경사 초가지붕이 눈의 무게를 견디는 독특한 건축으로, 한 세대 여러 세대가 함께 사는 대가족 제도를 지탱했습니다. 겨울 라이트업은 한정 기간 예약 필수."
     ),
-    definition: lh(
-      "白川郷(しらかわごう)は岐阜県大野郡白川村にある合掌造り集落で、1995年に五箇山(富山県)とともに「白川郷・五箇山の合掌造り集落」として世界文化遺産登録。中心の荻町(おぎまち)集落には114棟の合掌造り家屋が現存し、急勾配約60度の茅葺き屋根が手を合わせた形に似ることから「合掌造り(がっしょうづくり)」の名が付きました。世帯一族が3〜4世代同居する大家族制度を支えた独特の建築で、屋根裏では蚕の飼育が行われた歴史も。冬の積雪と夜のライトアップ(年6回程度の限定開催、要事前予約)は世界中の写真家が憧れる日本の原風景です。",
-      "Shirakawa-go is a settlement of gassho-zukuri farmhouses in Shirakawa Village, Ono District, Gifu Prefecture, registered in 1995 as a UNESCO World Cultural Heritage Site («Historic Villages of Shirakawa-go and Gokayama,» the latter in Toyama Prefecture). At its center, the Ogimachi village preserves 114 gassho farmhouses; their steeply pitched 60° thatched roofs resemble hands held in prayer — the source of the name «gassho-zukuri» (palms-together construction). The architecture supported large extended families across three or four generations, with attic spaces historically used for silkworm rearing. The winter snow and the limited evening illuminations (about six dates per year, advance reservations required) form the Japanese rural landscape of which photographers worldwide dream."
-    ),
+    definition: {
+      ja: "白川郷(しらかわごう)は岐阜県大野郡白川村にある合掌造り集落で、1995年に五箇山(富山県)とともに「白川郷・五箇山の合掌造り集落」として世界文化遺産登録。中心の荻町(おぎまち)集落には114棟の合掌造り家屋が現存し、急勾配約60度の茅葺き屋根が手を合わせた形に似ることから「合掌造り(がっしょうづくり)」の名が付きました。世帯一族が3〜4世代同居する大家族制度を支えた独特の建築で、屋根裏では蚕の飼育が行われた歴史も。冬の積雪と夜のライトアップ(年6回程度の限定開催、要事前予約)は世界中の写真家が憧れる日本の原風景です。",
+      en: "Shirakawa-go is a settlement of gassho-zukuri farmhouses in Shirakawa Village, Ono District, Gifu Prefecture, registered in 1995 as a UNESCO World Cultural Heritage Site («Historic Villages of Shirakawa-go and Gokayama,» the latter in Toyama Prefecture). At its center, the Ogimachi village preserves 114 gassho farmhouses; their steeply pitched 60° thatched roofs resemble hands held in prayer — the source of the name «gassho-zukuri» (palms-together construction). The architecture supported large extended families across three or four generations, with attic spaces historically used for silkworm rearing. The winter snow and the limited evening illuminations (about six dates per year, advance reservations required) form the Japanese rural landscape of which photographers worldwide dream.",
+      zh: "白川乡位于岐阜县大野郡白川村的合掌造聚落，1995年与五箇山(富山县)一同作为「白川乡·五箇山合掌造聚落」世界文化遗产登录。中心的荻町聚落现存114栋合掌造家屋，约60度陡坡的茅草屋顶形似双手合十而得名「合掌造」。这种独特建筑支撑3~4代同住的大家族制度，屋顶阁楼曾用于养蚕。冬季积雪与夜间灯光秀(每年约6次限定开办，需事先预约)是世界摄影师向往的日本原风景。",
+      "zh-tw": "白川鄉位於岐阜縣大野郡白川村的合掌造聚落，1995年與五箇山(富山縣)一同作為「白川鄉·五箇山合掌造聚落」世界文化遺產登錄。中心的荻町聚落現存114棟合掌造家屋，約60度陡坡的茅草屋頂形似雙手合十而得名「合掌造」。這種獨特建築支撐3~4代同住的大家族制度，屋頂閣樓曾用於養蠶。冬季積雪與夜間燈光秀(每年約6次限定開辦，需事先預約)是世界攝影師嚮往的日本原風景。",
+      ko: "시라카와고는 기후현 오노군 시라카와무라에 있는 갓쇼즈쿠리 마을로, 1995년 고카야마(도야마현)와 함께 「시라카와고·고카야마의 갓쇼즈쿠리 마을」로 세계문화유산에 등록되었습니다. 중심의 오기마치 마을에는 114채의 갓쇼즈쿠리 가옥이 현존하며, 약 60도의 급경사 초가지붕이 합장한 손 모양과 비슷하다 하여 「갓쇼즈쿠리(合掌造)」라 불립니다. 한 가문이 3~4대 동거하는 대가족 제도를 지탱한 독특한 건축으로, 지붕 다락에서는 누에 사육이 이루어진 역사도. 겨울 적설과 야간 라이트업(연 6회 정도의 한정 개최, 사전 예약 필수)은 전 세계 사진가가 동경하는 일본의 원풍경입니다.",
+    },
     highlights: {
       ja: [
         "荻町城跡展望台 — 集落全体を俯瞰できる定番ポイント、徒歩20分または送迎バス、雪化粧の朝が最高",
@@ -1928,6 +1931,27 @@ export const LOCATION_CONTENT = {
         "Myozen-ji — the village's only gassho-zukuri temple, with the 1827 main hall and a rare gassho bell tower",
         "Wada Family House — a nationally designated Important Cultural Property over 300 years old; interior tours reveal the gassho structure",
         "Winter illumination — held on about six dates each January–February; the snow-and-light scene is dreamlike and requires advance reservation",
+      ],
+      zh: [
+        "荻町城迹展望台 — 可俯瞰全村的定番点，步行20分钟或接驳巴士，雪覆的早晨最佳",
+        "合掌造民家园 — 移筑保存的26栋合掌造，可入内参观，阁楼养蚕空间也可体验",
+        "明善寺 — 聚落唯一的合掌造寺院，1827年本堂，钟楼也是合掌造极为罕见",
+        "和田家 — 国指定重要文化财，约300年历史，可入内参观，了解合掌造结构",
+        "冬季灯光秀 — 每年1~2月限定约6日，雪与灯光的幻想光景，需事先预约",
+      ],
+      "zh-tw": [
+        "荻町城跡展望台 — 可俯瞰全村的定番點，步行20分鐘或接駁巴士，雪覆的早晨最佳",
+        "合掌造民家園 — 移築保存的26棟合掌造，可入內參觀，閣樓養蠶空間也可體驗",
+        "明善寺 — 聚落唯一的合掌造寺院，1827年本堂，鐘樓也是合掌造極為罕見",
+        "和田家 — 國指定重要文化財，約300年歷史，可入內參觀，瞭解合掌造結構",
+        "冬季燈光秀 — 每年1~2月限定約6日，雪與燈光的幻想光景，需事先預約",
+      ],
+      ko: [
+        "오기마치 성터 전망대 — 마을 전체를 부감할 수 있는 정석 포인트, 도보 20분 또는 셔틀버스, 눈 화장한 아침이 최고",
+        "갓쇼즈쿠리 민가원 — 이축·보존된 26채의 갓쇼즈쿠리, 내부 견학 가능, 다락의 누에 사육 공간도 체험",
+        "묘젠지 — 마을 유일의 갓쇼즈쿠리 사찰, 1827년 본당, 종루도 갓쇼즈쿠리로 진귀",
+        "와다가 — 국가지정 중요문화재, 약 300년의 역사, 내부 견학 가능, 갓쇼즈쿠리의 구조를 학습 가능",
+        "겨울철 라이트업 — 매년 1~2월 한정 약 6일, 눈과 빛의 환상적 광경, 사전 예약 필수",
       ],
     },
     quickAnswers: {
@@ -1946,6 +1970,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "Highway bus is most practical. From Kanazawa Station: 1hr 15min, ¥2,000. From Toyama Station: 1hr 20min. From Takayama Station: 50 min. By car, snow tires are mandatory in winter; Seseragi Park lot at Shirakawa IC (¥1,000/day). In winter, expect 1–2 hour waits to park." },
         { q: "Can I stay overnight?", a: "About 20 gassho-zukuri minshuku run as inns; hugely popular with international visitors, often booked 6–12 months ahead. ¥10,000–20,000/night with two meals. Overnight guests get priority in the winter illumination lottery. No convenience stores in the village — bring what you need." },
         { q: "Photography etiquette?", a: "These are working homes where residents live. Never enter private property, never look into entrances or windows, never use drones. During illumination, don't monopolize the crowded observatory. If you see residents, don't photograph them." },
+      ],
+      zh: [
+        { q: "白川乡是什么?", a: "岐阜县白川村的合掌造聚落，1995年世界遗产登录。荻町聚落现存114栋合掌造家屋(60度茅草屋顶)，支撑3~4代同住的大家族制度，独特建筑是日本原风景。" },
+        { q: "展望台拍摄点?", a: "荻町城迹展望台俯瞰全村为定番。秋冬晨雾、1~2月雪景、5月新绿各出名作。步行20分钟或付费接驳巴士，有停车场。" },
+        { q: "灯光秀什么时候?", a: "每年1~2月限定日程(约6日)开办。展望台拍摄完全预约制(2024年起有偿化)，仅村内住宿者或抽签当选者可入场。需早做计划。" },
+        { q: "怎么去?", a: "高速巴士最便。金泽站1小时15分(2,000日元)，富山站1小时20分，高山站50分。自驾冬季须装雪胎，白川IC直通的潺潺公园停车场(1,000日元/日)。冬季有1~2小时停车等候。" },
+        { q: "可以住宿吗?", a: "合掌造民宿约20家，外国游客极受欢迎，半年~1年前需预约。1泊2食10,000~20,000日元。冬季灯光抽签住宿者有优先名额。村内无便利店，必备品请事先准备。" },
+        { q: "拍摄礼仪?", a: "民家是住民现役生活空间。绝对禁止入内、窥视玄关·窗户。不进入私有地，禁用无人机，灯光时三脚架在拥挤展望台不可长时间占据。即使看见住民也勿拍。" },
+      ],
+      "zh-tw": [
+        { q: "白川鄉是什麼?", a: "岐阜縣白川村的合掌造聚落，1995年世界遺產登錄。荻町聚落現存114棟合掌造家屋(60度茅草屋頂)，支撐3~4代同住的大家族制度，獨特建築是日本原風景。" },
+        { q: "展望台拍攝點?", a: "荻町城跡展望台俯瞰全村為定番。秋冬晨霧、1~2月雪景、5月新綠各出名作。步行20分鐘或付費接駁巴士，有停車場。" },
+        { q: "燈光秀什麼時候?", a: "每年1~2月限定日程(約6日)開辦。展望台拍攝完全預約制(2024年起有償化)，僅村內住宿者或抽籤當選者可入場。需早做計劃。" },
+        { q: "怎麼去?", a: "高速巴士最便。金澤站1小時15分(2,000日圓)，富山站1小時20分，高山站50分。自駕冬季須裝雪胎，白川IC直通的潺潺公園停車場(1,000日圓/日)。冬季有1~2小時停車等候。" },
+        { q: "可以住宿嗎?", a: "合掌造民宿約20家，外國遊客極受歡迎，半年~1年前需預約。1泊2食10,000~20,000日圓。冬季燈光抽籤住宿者有優先名額。村內無便利店，必備品請事先準備。" },
+        { q: "拍攝禮儀?", a: "民家是住民現役生活空間。絕對禁止入內、窺視玄關·窗戶。不進入私有地，禁用無人機，燈光時三腳架在擁擠展望台不可長時間佔據。即使看見住民也勿拍。" },
+      ],
+      ko: [
+        { q: "시라카와고란?", a: "기후현 시라카와무라의 갓쇼즈쿠리 마을로, 1995년 세계유산 등록. 오기마치 마을에는 114채의 갓쇼즈쿠리 가옥(60도 초가지붕)이 현존하며, 3~4대 동거의 대가족 제도를 지탱한 독특한 건축으로 일본의 원풍경입니다." },
+        { q: "전망대에서 촬영 포인트는?", a: "오기마치 성터 전망대에서 마을 전체를 부감하는 것이 정석. 아침 안개가 끼는 가을~겨울, 설경의 1~2월, 신록의 5월 각각 명작을 만들어. 도보 20분 또는 유료 셔틀버스, 주차장 있음." },
+        { q: "라이트업은 언제?", a: "매년 1~2월 한정 일정(매년 6일 정도)으로 개최. 전망대에서의 촬영은 완전 예약제(2024년부터 유료화), 마을 내 숙박자 또는 추첨 당선자만 입장 가능. 일찍 계획 필수입니다." },
+        { q: "가는 방법은?", a: "고속버스가 가장 편리. 가나자와역에서 1시간 15분(2,000엔), 도야마역에서 1시간 20분, 다카야마역에서 50분. 마이카는 겨울철 스터드리스 타이어 필수, 시라카와 IC 직결의 세세라기 공원 주차장(1,000엔/일). 겨울은 1~2시간의 주차 대기 있음." },
+        { q: "숙박 가능?", a: "갓쇼즈쿠리 민숙이 약 20채, 외국인 관광객에게 대인기로 반년~1년 전부터 예약 필수. 1박 2식 10,000~20,000엔. 겨울철 라이트업 추첨에도 숙박자 자리 있음. 마을 내 편의점 없으니 필요 물품은 사전 준비를." },
+        { q: "촬영 매너는?", a: "민가는 주민이 현역으로 생활하는 공간. 가옥 안·현관·실내를 들여다보는 것은 절대 금지. 사유지 출입 금지, 드론 금지, 라이트업 시 삼각대 촬영이 혼잡한 전망대에서 장시간 점거 불가. 주민이 보여도 촬영하지 않는 배려를." },
       ],
     },
     faqs: [
