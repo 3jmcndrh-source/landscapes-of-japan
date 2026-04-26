@@ -1576,10 +1576,13 @@ export const LOCATION_CONTENT = {
       "金澤是加賀百萬石城下町。兼六園（日本三大名園之一）、金澤城公園、東茶屋街、長町武家屋敷跡、近江町市場、金澤21世紀美術館等，江戶街景與當代藝術共存。夜茶屋街夢幻。",
       "가나자와는 가가 백만석의 성하도시. 겐로쿠엔(일본 3대 정원 중 하나), 가나자와성 공원, 히가시차야 거리, 나가마치 무가 저택지, 오미초 시장, 가나자와21세기미술관 등 에도 거리와 현대 미술이 공존. 밤의 차야 거리는 환상적입니다."
     ),
-    definition: lh(
-      "金沢(かなざわ)は石川県の県庁所在地で、人口約46万人の北陸最大の都市。1583年に前田利家が入城し、加賀百万石の城下町として明治維新まで約290年間繁栄、「加賀百万石文化」を花開かせました。1676年作庭の兼六園(日本三名園の一つ、特別名勝)、1583年築の金沢城、ひがし茶屋街・主計町・にし茶屋街の3つの茶屋街(重伝建)、武家屋敷跡・長町、日本三大市場の一つ近江町市場、金沢21世紀美術館まで、江戸の町並みと現代アート、伝統工芸(金箔・九谷焼・加賀友禅)が共存する日本でも稀有な城下町です。",
-      "Kanazawa, the capital of Ishikawa Prefecture and the largest city in the Hokuriku region with about 460,000 residents, became a Maeda-clan castle town in 1583 when Maeda Toshiie took residence. For about 290 years until the Meiji Restoration, it flourished as the seat of the Kaga domain's «one-million-koku» wealth, blooming into «Kaga Hyakumangoku» culture. With Kenrokuen (landscaped from 1676, one of Japan's Three Great Gardens and a Special Place of Scenic Beauty), Kanazawa Castle (1583), three preserved tea-house districts (Higashi Chaya, Kazuemachi, Nishi Chaya), the Nagamachi samurai houses, the Omicho Market (one of Japan's three great markets), and the 21st Century Museum, it remains a rare castle town where Edo-period streetscapes, contemporary art, and traditional crafts (gold leaf, Kutani pottery, Kaga Yuzen dyeing) coexist."
-    ),
+    definition: {
+      ja: "金沢(かなざわ)は石川県の県庁所在地で、人口約46万人の北陸最大の都市。1583年に前田利家が入城し、加賀百万石の城下町として明治維新まで約290年間繁栄、「加賀百万石文化」を花開かせました。1676年作庭の兼六園(日本三名園の一つ、特別名勝)、1583年築の金沢城、ひがし茶屋街・主計町・にし茶屋街の3つの茶屋街(重伝建)、武家屋敷跡・長町、日本三大市場の一つ近江町市場、金沢21世紀美術館まで、江戸の町並みと現代アート、伝統工芸(金箔・九谷焼・加賀友禅)が共存する日本でも稀有な城下町です。",
+      en: "Kanazawa, the capital of Ishikawa Prefecture and the largest city in the Hokuriku region with about 460,000 residents, became a Maeda-clan castle town in 1583 when Maeda Toshiie took residence. For about 290 years until the Meiji Restoration, it flourished as the seat of the Kaga domain's «one-million-koku» wealth, blooming into «Kaga Hyakumangoku» culture. With Kenrokuen (landscaped from 1676, one of Japan's Three Great Gardens and a Special Place of Scenic Beauty), Kanazawa Castle (1583), three preserved tea-house districts (Higashi Chaya, Kazuemachi, Nishi Chaya), the Nagamachi samurai houses, the Omicho Market (one of Japan's three great markets), and the 21st Century Museum, it remains a rare castle town where Edo-period streetscapes, contemporary art, and traditional crafts (gold leaf, Kutani pottery, Kaga Yuzen dyeing) coexist.",
+      zh: "金泽(かなざわ)是石川县县厅所在地，人口约46万人的北陆最大都市。1583年前田利家入城，作为加贺百万石城下町繁荣至明治维新约290年，绽放「加贺百万石文化」。1676年作庭兼六园(日本三大名园之一，特别名胜)、1583年建的金泽城、东茶屋街·主计町·西茶屋街的3处茶屋街(重要传统建造物群保存地区)、武家屋敷迹·长町、日本三大市场之一近江町市场、金泽21世纪美术馆等，江户街景与现代艺术、传统工艺(金箔·九谷烧·加贺友禅)共存的日本罕见城下町。",
+      "zh-tw": "金澤(かなざわ)是石川縣縣廳所在地，人口約46萬人的北陸最大都市。1583年前田利家入城，作為加賀百萬石城下町繁榮至明治維新約290年，綻放「加賀百萬石文化」。1676年作庭兼六園(日本三大名園之一，特別名勝)、1583年建的金澤城、東茶屋街·主計町·西茶屋街的3處茶屋街(重要傳統建造物群保存地區)、武家屋敷跡·長町、日本三大市場之一近江町市場、金澤21世紀美術館等，江戶街景與現代藝術、傳統工藝(金箔·九谷燒·加賀友禪)共存的日本罕見城下町。",
+      ko: "가나자와(かなざわ)는 이시카와현 현청 소재지로, 인구 약 46만 명의 호쿠리쿠 최대 도시. 1583년 마에다 도시이에가 입성하여 가가 백만석의 성하도시로 메이지 유신까지 약 290년간 번영, 「가가 백만석 문화」를 꽃피웠습니다. 1676년 작정의 겐로쿠엔(일본 3대 정원 중 하나, 특별 명승), 1583년 축조된 가나자와성, 히가시차야·가즈에마치·니시차야의 3개 차야 거리(중요 전통적 건조물군 보존 지구), 무가 저택지·나가마치, 일본 3대 시장 중 하나인 오미초 시장, 가나자와 21세기 미술관까지, 에도의 거리와 현대 미술, 전통 공예(금박·구타니야키·가가유젠)가 공존하는 일본에서도 보기 드문 성하도시입니다.",
+    },
     highlights: {
       ja: [
         "兼六園 — 1676年作庭、日本三名園の一つ、特別名勝、雪吊りの冬景色、霞ヶ池の徽軫(ことじ)灯籠が象徴",
@@ -1594,6 +1597,27 @@ export const LOCATION_CONTENT = {
         "Higashi Chaya District — established in 1820 as a major tea-house district, a Designated Important Preservation District, with red-lattice machiya and lanterns at dusk",
         "Kanazawa Station Tsuzumi Gate — opened 2005, fusing a 13.7 m traditional drum-shaped gate with a modern glass dome, beautifully lit at night",
         "21st Century Museum of Contemporary Art — opened 2004, designed by SANAA as a circular glass building, including Leandro Erlich's «Swimming Pool»",
+      ],
+      zh: [
+        "兼六园 — 1676年作庭，日本三大名园之一，特别名胜，雪吊冬景，霞之池徽轸(ことじ)灯笼为象征",
+        "金泽城公园 — 加贺百万石·前田家居城，白漆喰海鼠墙(なまこかべ)，夜间灯光秀",
+        "东茶屋街 — 1820年制定的最大级茶屋街，重伝建，红色格子町家，黄昏的提灯",
+        "金泽站·鼓门 — 2005年完工，高13.7米的传统门与现代玻璃穹顶融合，夜间灯光秀",
+        "金泽21世纪美术馆 — 2004年开馆，SANAA设计的圆形玻璃建筑，雷安德罗·埃尔利希「游泳池」",
+      ],
+      "zh-tw": [
+        "兼六園 — 1676年作庭，日本三大名園之一，特別名勝，雪吊冬景，霞之池徽軫(ことじ)燈籠為象徵",
+        "金澤城公園 — 加賀百萬石·前田家居城，白漆喰海鼠牆(なまこかべ)，夜間燈光秀",
+        "東茶屋街 — 1820年制定的最大級茶屋街，重伝建，紅色格子町家，黃昏的提燈",
+        "金澤站·鼓門 — 2005年完工，高13.7米的傳統門與現代玻璃穹頂融合，夜間燈光秀",
+        "金澤21世紀美術館 — 2004年開館，SANAA設計的圓形玻璃建築，雷安德羅·埃爾利希「游泳池」",
+      ],
+      ko: [
+        "겐로쿠엔 — 1676년 작정, 일본 3대 정원 중 하나, 특별 명승, 유키즈리의 겨울 풍경, 가스미가이케의 고토지 등롱이 상징",
+        "가나자와성 공원 — 가가 백만석·마에다 가문의 거성, 흰 회반죽의 나마코카베, 밤의 조명",
+        "히가시차야 거리 — 1820년 제정된 최대급 차야 거리, 중전건, 베니가라 격자의 마치야, 황혼의 등불",
+        "가나자와역·쓰즈미 문 — 2005년 완성된 높이 13.7m의 전통적인 문과 현대 유리 돔의 융합, 밤의 조명",
+        "가나자와 21세기 미술관 — 2004년 개관, SANAA 설계의 원형 유리 건축, 레안드로 에를리치 「수영장」",
       ],
     },
     quickAnswers: {
@@ -1612,6 +1636,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get to Kanazawa?", a: "From Tokyo, Hokuriku Shinkansen «Kagayaki» 2hr 30min, ¥14,180. From Osaka, Limited Express «Thunderbird» 2hr 30min, ¥8,000. The illuminated Tsuzumi Gate at Kanazawa Station's east exit is iconic at night — shoot it on arrival." },
         { q: "Where can I try gold-leaf crafts?", a: "Kanazawa produces 99% of Japan's gold leaf. Try gold-leaf application at Hakuichi (Higashi Chaya main shop), Kinpaku-ya Sakuda, or Kanazawa Katani — apply leaf to chopsticks or small items (30–60 min, ¥1,500–3,000). Popular as a souvenir." },
         { q: "Photography etiquette in Higashi Chaya?", a: "The chaya district has working shops where geisha still live. Never photograph interiors, entrances, or through windows — these are private spaces. Quiet hours are 7:00–9:00 AM. Rainy days make the cobblestones gleam beautifully." },
+      ],
+      zh: [
+        { q: "金泽是什么?", a: "石川县县厅所在地，人口约46万的北陆最大都市。1583年至1868年作为加贺百万石城下町繁荣，兼六园·金泽城·3处茶屋街·21世纪美术馆等，江户街景与现代艺术、传统工艺共存的罕见城市。" },
+        { q: "兼六园最佳撮影时期?", a: "冬雪吊(11月至3月)、春樱(4月)、秋红叶(11月中下旬)、初夏菖蒲(6月)。早晨开园(7时)直后人少光柔。冬雪吊与雪景为北陆象征构图。" },
+        { q: "1日游定番路线?", a: "晨一兼六园(光柔)→金泽城→东茶屋街(午后至黄昏)→近江町市场→金泽站鼓门夜景。徒步+城下町巴士(1日券500日元)可遍游。距离近的紧凑观光地。" },
+        { q: "如何前往金泽?", a: "东京乘北陆新干线「光辉号」2小时30分·14180日元。大阪乘特急雷鸟2小时30分·8000日元。金泽站东口鼓门夜间灯光秀为象征，抵达时务必撮影。" },
+        { q: "可以体验金箔的地方?", a: "金泽承担日本金箔生产99%。金箔工艺箔一(东茶屋街本店)·金箔屋作田·金泽片谷可体验金箔贴(贴于筷子·小物，所需30分钟至1小时，1500至3000日元)。亦为人气伴手礼。" },
+        { q: "东茶屋街撮影礼仪?", a: "茶屋街是现役店铺(芸妓居住)的街道。建筑内·玄关·窗户等私有空间撮影严禁。游客少的早晨7至9时为安静撮影时间。雨天石叠路面闪光生辉。" },
+      ],
+      "zh-tw": [
+        { q: "金澤是什麼?", a: "石川縣縣廳所在地，人口約46萬的北陸最大都市。1583年至1868年作為加賀百萬石城下町繁榮，兼六園·金澤城·3處茶屋街·21世紀美術館等，江戶街景與現代藝術、傳統工藝共存的罕見城市。" },
+        { q: "兼六園最佳撮影時期?", a: "冬雪吊(11月至3月)、春櫻(4月)、秋紅葉(11月中下旬)、初夏菖蒲(6月)。早晨開園(7時)直後人少光柔。冬雪吊與雪景為北陸象徵構圖。" },
+        { q: "1日遊定番路線?", a: "晨一兼六園(光柔)→金澤城→東茶屋街(午後至黃昏)→近江町市場→金澤站鼓門夜景。徒步+城下町巴士(1日券500日圓)可遍遊。距離近的緊湊觀光地。" },
+        { q: "如何前往金澤?", a: "東京搭北陸新幹線「光輝號」2小時30分·14180日圓。大阪搭特急雷鳥2小時30分·8000日圓。金澤站東口鼓門夜間燈光秀為象徵，抵達時務必撮影。" },
+        { q: "可以體驗金箔的地方?", a: "金澤承擔日本金箔生產99%。金箔工藝箔一(東茶屋街本店)·金箔屋作田·金澤片谷可體驗金箔貼(貼於筷子·小物，所需30分鐘至1小時，1500至3000日圓)。亦為人氣伴手禮。" },
+        { q: "東茶屋街撮影禮儀?", a: "茶屋街是現役店鋪(藝妓居住)的街道。建築內·玄關·窗戶等私有空間撮影嚴禁。遊客少的早晨7至9時為安靜撮影時間。雨天石疊路面閃光生輝。" },
+      ],
+      ko: [
+        { q: "가나자와란?", a: "이시카와현 현청 소재지로, 인구 약 46만 명의 호쿠리쿠 최대 도시. 1583년부터 1868년까지 가가 백만석의 성하도시로 번영하였으며, 겐로쿠엔·가나자와성·3개의 차야 거리·21세기 미술관 등 에도의 거리와 현대 미술, 전통 공예가 공존하는 보기 드문 도시입니다." },
+        { q: "겐로쿠엔의 베스트 촬영 시기는?", a: "겨울 유키즈리(11월~3월), 봄 벚꽃(4월), 가을 단풍(11월 중·하순), 초여름 제비붓꽃(6월). 이른 아침 개원(7시) 직후가 사람도 적고 빛도 부드러움. 겨울 유키즈리와 설경은 호쿠리쿠의 상징적 구도입니다." },
+        { q: "하루 만에 도는 정석 코스는?", a: "이른 아침 겐로쿠엔(빛이 부드러움) → 가나자와성 → 히가시차야 거리(오후~저녁) → 오미초 시장 → 가나자와역의 쓰즈미 문에서 야경, 도보+성하도시 버스(1일권 500엔)로 모두 둘러볼 수 있습니다. 거리가 가까운 콤팩트한 관광지입니다." },
+        { q: "가나자와 가는 방법은?", a: "도쿄에서 호쿠리쿠 신칸센 「가가야키」로 2시간 30분·14,180엔. 오사카에서 특급 선더버드로 2시간 30분·8,000엔. 가나자와역 동쪽 출구의 쓰즈미 문은 야간 조명이 상징적이므로 도착 시 반드시 촬영을." },
+        { q: "금박 체험을 할 수 있는 곳은?", a: "가나자와는 일본 금박 생산의 99%를 담당하는 도시. 금박 공예 하쿠이치(히가시차야 본점)·금박옥 사쿠다·가나자와 카타니에서 금박 붙이기 체험(젓가락·소품 등에 붙임, 소요 30분~1시간, 1,500~3,000엔). 기념품으로도 인기입니다." },
+        { q: "히가시차야 거리에서의 촬영 매너는?", a: "차야 거리는 현역 가게가 늘어선 거리(게이샤가 거주). 건물 안·현관·창문을 들여다보는 등 사적 공간의 촬영은 엄금. 관광객이 적은 아침 7~9시가 차분한 촬영 시간. 비 오는 날은 자갈길이 윤기 있게 빛나서 그림이 됩니다." },
       ],
     },
     faqs: [
@@ -2089,10 +2137,13 @@ export const LOCATION_CONTENT = {
       "別府溫泉以日本第一的湧出量和源泉數聞名。血池地獄、海地獄、灶地獄等七個「地獄」為大自然奇觀。湯煙展望台所見的街景世界獨一。",
       "벳푸 온천은 일본 최대 용수량과 원천 수를 자랑하는 온천 왕국. 피의못지옥, 바다지옥, 가마도지옥 등 7개의 '지옥' 원천은 자연의 경이. 유케무리 전망대에서 바라보는 거리 풍경은 세계에 둘도 없는 풍경."
     ),
-    definition: lh(
-      "別府(べっぷ)は大分県別府市の温泉地で、源泉数約2,288・湧出量1日約87,000kLと日本一を誇る世界有数の温泉郷。八つの温泉地(別府八湯)から成り、街全体から立ち上る湯けむりは「世界に二つとない」と称される独特の風景。観光地として「地獄めぐり」(海地獄、血の池地獄、龍巻地獄など7つの源泉、いずれも自然湧出する高温の水・蒸気・泥のスペクタクル)が代表的。鉄輪温泉(かんなわおんせん)の湯けむり展望台からは特に冬の朝に湯煙が街全体を包む幻想的な光景が見られます。",
-      "Beppu, in Beppu City, Oita Prefecture, is a world-class hot-spring resort with about 2,288 sources and 87,000 kL of daily output — both Japan's greatest. Comprising eight hot-spring districts known as «Beppu Hatto,» the citywide steam plumes form a landscape often described as «unmatched anywhere on earth.» Its signature attraction, the «Hells of Beppu» tour, includes seven naturally erupting sources — Sea Hell, Blood Pond Hell, Tatsumaki Geyser Hell, and others — each producing high-temperature water, steam, or mud spectacles. The Yukemuri Observatory at Kannawa Onsen offers especially mystical views on winter mornings, when steam wraps the entire town."
-    ),
+    definition: {
+      ja: "別府(べっぷ)は大分県別府市の温泉地で、源泉数約2,288・湧出量1日約87,000kLと日本一を誇る世界有数の温泉郷。八つの温泉地(別府八湯)から成り、街全体から立ち上る湯けむりは「世界に二つとない」と称される独特の風景。観光地として「地獄めぐり」(海地獄、血の池地獄、龍巻地獄など7つの源泉、いずれも自然湧出する高温の水・蒸気・泥のスペクタクル)が代表的。鉄輪温泉(かんなわおんせん)の湯けむり展望台からは特に冬の朝に湯煙が街全体を包む幻想的な光景が見られます。",
+      en: "Beppu, in Beppu City, Oita Prefecture, is a world-class hot-spring resort with about 2,288 sources and 87,000 kL of daily output — both Japan's greatest. Comprising eight hot-spring districts known as «Beppu Hatto,» the citywide steam plumes form a landscape often described as «unmatched anywhere on earth.» Its signature attraction, the «Hells of Beppu» tour, includes seven naturally erupting sources — Sea Hell, Blood Pond Hell, Tatsumaki Geyser Hell, and others — each producing high-temperature water, steam, or mud spectacles. The Yukemuri Observatory at Kannawa Onsen offers especially mystical views on winter mornings, when steam wraps the entire town.",
+      zh: "别府(べっぷ)是大分县别府市的温泉地，源泉数约2,288·涌出量1日约87,000千升日本第一，世界少有的温泉郷。由八个温泉地(别府八汤)组成，从全城腾起的汤烟被誉为「世界独一无二」的独特风景。观光名物「地狱巡游」(海地狱、血池地狱、龙卷地狱等7处源泉，皆为自然涌出的高温水·蒸气·泥的奇观)为代表。铁轮温泉(かんなわおんせん)的汤烟展望台，尤其冬天清晨可见汤烟笼罩全城的梦幻景象。",
+      "zh-tw": "別府(べっぷ)是大分縣別府市的溫泉地，源泉數約2,288·湧出量1日約87,000千升日本第一，世界少有的溫泉鄉。由八個溫泉地(別府八湯)組成，從全城騰起的湯煙被譽為「世界獨一無二」的獨特風景。觀光名物「地獄巡遊」(海地獄、血池地獄、龍卷地獄等7處源泉，皆為自然湧出的高溫水·蒸氣·泥的奇觀)為代表。鐵輪溫泉(かんなわおんせん)的湯煙展望台，尤其冬天清晨可見湯煙籠罩全城的夢幻景象。",
+      ko: "벳푸(べっぷ)는 오이타현 벳푸시의 온천지로, 원천 수 약 2,288·용출량 하루 약 87,000kL로 일본 제일을 자랑하는 세계 유수의 온천향. 여덟 개의 온천지(벳푸 8탕)로 이루어져 있으며, 거리 전체에서 피어오르는 유케무리(湯煙)는 「세계에 둘도 없는」으로 불리는 독특한 풍경. 관광지로서 「지옥 순례」(바다지옥, 피의못지옥, 다쓰마키 지옥 등 7개의 원천, 모두 자연 용출되는 고온의 물·증기·진흙의 스펙터클)가 대표적. 칸나와 온천(かんなわおんせん)의 유케무리 전망대에서는 특히 겨울 아침에 유케무리가 거리 전체를 감싸는 환상적인 광경을 볼 수 있습니다.",
+    },
     highlights: {
       ja: [
         "海地獄(うみじごく) — コバルトブルーの温泉、98℃の硫酸鉄含有泉、別府を象徴する一枚",
@@ -2107,6 +2158,27 @@ export const LOCATION_CONTENT = {
         "Tatsumaki Jigoku (Geyser Hell) — erupts every 30–40 minutes with 150 °C steam and water bursting upward",
         "Kannawa Yukemuri Observatory — panoramic city-wide steam plumes, densest on winter mornings",
         "The Beppu Eight Hot Springs — Beppu, Kannawa, Kankaiji, Myoban, Hamawaki, Horita, Kamegawa, and Shibaseki, each with distinct water quality and townscape",
+      ],
+      zh: [
+        "海地狱(うみじごく) — 钴蓝色温泉，98℃含硫酸铁泉，别府象征性一景",
+        "血池地狱(ちのいけじごく) — 因氧化铁染成赤褐色温泉，日本最古天然地狱",
+        "龙卷地狱 — 30~40分钟间隔喷出的间歇泉，喷出时150℃蒸气与热水腾起",
+        "铁轮温泉汤烟展望台 — 全城腾起的汤烟全景，冬天清晨最浓",
+        "别府八汤 — 别府·铁轮·观海寺·明矾·浜胁·堀田·龟川·柴石，各有不同泉质与街景",
+      ],
+      "zh-tw": [
+        "海地獄(うみじごく) — 鈷藍色溫泉，98℃含硫酸鐵泉，別府象徵性一景",
+        "血池地獄(ちのいけじごく) — 因氧化鐵染成赤褐色溫泉，日本最古天然地獄",
+        "龍卷地獄 — 30~40分鐘間隔噴出的間歇泉，噴出時150℃蒸氣與熱水騰起",
+        "鐵輪溫泉湯煙展望台 — 全城騰起的湯煙全景，冬天清晨最濃",
+        "別府八湯 — 別府·鐵輪·觀海寺·明礬·濱脅·堀田·龜川·柴石，各有不同泉質與街景",
+      ],
+      ko: [
+        "우미 지고쿠(바다지옥) — 코발트블루 온천, 98℃ 황산철 함유 천, 벳푸를 상징하는 한 장",
+        "치노이케 지고쿠(피의못지옥) — 산화철로 적갈색으로 물든 온천, 일본 최고(最古)의 천연 지옥",
+        "다쓰마키 지고쿠(소용돌이 지옥) — 30~40분 간격으로 분출하는 간헐천, 분출 시 150℃의 증기와 열탕이 솟구침",
+        "칸나와 온천 유케무리 전망대 — 거리 전체에서 피어오르는 유케무리의 파노라마, 겨울 아침에 가장 진함",
+        "벳푸 8탕 — 벳푸·칸나와·칸카이지·묘반·하마와키·호리타·카메가와·시바세키, 각기 다른 천질과 거리 풍경",
       ],
     },
     quickAnswers: {
@@ -2125,6 +2197,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From Oita Airport, the airliner bus takes about 45 min, ¥1,500. From Oita Station, JR Nippo Line is 12 min, ¥280. From Fukuoka, Limited Express «Sonic» 2 hr. The Hells (Kannawa) area is 20–30 min by bus from Beppu Station (¥340), or use the «Beppu Jigoku Meguri Combo Pass» (¥2,500)." },
         { q: "Are day-baths available?", a: "Over 100 spots offer day bathing. Key picks: «Takegawara Onsen» (100+ year wooden bathhouse, bath ¥300, sand bath ¥1,500), «Kannawa Mushiyu» (steam-bath experience, ~¥1,000), «Myoban Onsen Yu-no-Sato» (sulfuric milky waters). Towels — bring your own or rent for a fee." },
         { q: "Photography etiquette?", a: "Hells and onsen baths permit photography, but ensure bathers aren't in frame. Kannawa Yukemuri observatory has residents nearby — be quiet. Tripods OK in Hells grounds and observatories. Steam fogs gear easily — bring plenty of absorbent cloths and lens wipes." },
+      ],
+      zh: [
+        { q: "别府是什么?", a: "大分县别府市的温泉地，源泉数约2288·涌出量日本第一的世界少有温泉郷。8处温泉地(别府八汤)、海地狱·血池地狱等7处「地狱巡游」、世界独一无二的汤烟街景的独特撮影地。" },
+        { q: "地狱巡游所需时间?", a: "全7地狱2~3小时。共通票(地狱共通观览券，成人2200日元)划算。海地狱·血池地狱·龙卷地狱为最佳撮影三大名所，龙卷地狱需配合喷出时刻。" },
+        { q: "汤烟最浓时期?", a: "冬季(12~2月)清晨，尤其零下早晨外气与温泉温差使汤烟腾得最浓。铁轮温泉汤烟展望台日出前等待，街上初照的瞬间为黄金构图。" },
+        { q: "如何前往?", a: "大分机场乘空港利木津巴士约45分钟·1500日元。大分站乘JR日豊本线12分钟·280日元。福冈乘特急索尼克2小时。地狱巡游区(铁轮温泉)从别府站乘巴士20~30分钟·340日元，或「别府地狱巡游共通乘车券」(2500日元)便利。" },
+        { q: "可以日归入浴吗?", a: "别府温泉100余家可日归入浴。代表性「竹瓦温泉」(逾百年木造，入浴300日元·砂汤1500日元)、「铁轮蒸汤」(地狱蒸体验，约1000日元)、「明矾温泉汤之里」(白浊硫磺泉)等个性丰富。毛巾自备或付费租。" },
+        { q: "撮影礼仪?", a: "地狱与温泉浴场可撮影，但需避开入浴客入镜。铁轮温泉烟展望台清晨亦有居民，请安静。三脚架在地狱区·展望台均OK。蒸气易使器材结露，吸水布与镜头巾多备。" },
+      ],
+      "zh-tw": [
+        { q: "別府是什麼?", a: "大分縣別府市的溫泉地，源泉數約2288·湧出量日本第一的世界少有溫泉鄉。8處溫泉地(別府八湯)、海地獄·血池地獄等7處「地獄巡遊」、世界獨一無二的湯煙街景的獨特撮影地。" },
+        { q: "地獄巡遊所需時間?", a: "全7地獄2~3小時。共通票(地獄共通觀覽券，成人2200日圓)划算。海地獄·血池地獄·龍卷地獄為最佳撮影三大名所，龍卷地獄需配合噴出時刻。" },
+        { q: "湯煙最濃時期?", a: "冬季(12~2月)清晨，尤其零下早晨外氣與溫泉溫差使湯煙騰得最濃。鐵輪溫泉湯煙展望台日出前等待，街上初照的瞬間為黃金構圖。" },
+        { q: "如何前往?", a: "大分機場搭空港利木津巴士約45分鐘·1500日圓。大分站搭JR日豊本線12分鐘·280日圓。福岡搭特急索尼克2小時。地獄巡遊區(鐵輪溫泉)從別府站搭巴士20~30分鐘·340日圓，或「別府地獄巡遊共通乘車券」(2500日圓)便利。" },
+        { q: "可以日歸入浴嗎?", a: "別府溫泉100餘家可日歸入浴。代表性「竹瓦溫泉」(逾百年木造，入浴300日圓·砂湯1500日圓)、「鐵輪蒸湯」(地獄蒸體驗，約1000日圓)、「明礬溫泉湯之里」(白濁硫磺泉)等個性豐富。毛巾自備或付費租。" },
+        { q: "撮影禮儀?", a: "地獄與溫泉浴場可撮影，但需避開入浴客入鏡。鐵輪溫泉煙展望台清晨亦有居民，請安靜。三腳架在地獄區·展望台均OK。蒸氣易使器材結露，吸水布與鏡頭巾多備。" },
+      ],
+      ko: [
+        { q: "벳푸란?", a: "오이타현 벳푸시의 온천지로, 원천 수 약 2,288·용출량 일본 제일의 세계 유수의 온천향. 8개의 온천지(벳푸 8탕), 바다지옥·피의못지옥 등 7개의 「지옥 순례」, 세계에 둘도 없는 유케무리의 거리를 거느린 독특한 촬영지입니다." },
+        { q: "지옥 순례 소요 시간은?", a: "7지옥 모두 2~3시간. 공통권(지옥 공통 관람권, 성인 2,200엔)이 유리. 바다지옥·피의못지옥·다쓰마키 지옥이 사진이 잘 나오는 3대 명소이며, 다쓰마키 지옥은 분출 시각에 맞춰야 함." },
+        { q: "유케무리가 가장 진한 시기는?", a: "겨울(12~2월) 아침, 특히 영하의 이른 아침에 외기와 탕의 온도 차로 유케무리가 가장 진하게 피어오릅니다. 칸나와 온천 유케무리 전망대에서 일출 전부터 기다려, 거리에 빛이 비치는 순간이 황금 구도." },
+        { q: "가는 방법은?", a: "오이타 공항에서 에어라이너 버스로 약 45분·1,500엔. 오이타역에서 JR 닛포 본선으로 12분·280엔. 후쿠오카에서 특급 소닉으로 2시간. 지옥 순례 지역(칸나와 온천)은 벳푸역에서 버스로 20~30분·340엔, 또는 「벳푸 지옥 순례 공통 승차권」(2,500엔)이 편리합니다." },
+        { q: "당일치기 입욕은 가능?", a: "벳푸 온천 100여 곳에서 당일 입욕 가능. 대표적인 「다케가와라 온천」(100년 넘은 목조, 입욕 300엔·모래탕 1,500엔), 「칸나와 무시유」(지옥찜 체험, 약 1,000엔), 「묘반 온천 유노사토」(백탁 유황천) 등 개성이 풍부. 수건은 지참 또는 유료 대여." },
+        { q: "촬영 매너는?", a: "지옥과 온천 욕장은 촬영 OK이지만, 입욕객이 찍히지 않도록 배려. 칸나와 온천의 유케무리 전망대는 이른 아침에도 주민이 있으므로 조용히. 삼각대는 지옥 부지 내·전망대 모두 OK. 김으로 기재가 결로되기 쉬우니 흡수 천과 렌즈 닦이는 넉넉히 준비." },
       ],
     },
     faqs: [
