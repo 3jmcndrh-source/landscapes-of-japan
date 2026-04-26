@@ -87,8 +87,8 @@ export default async function BlogIndex({ params }) {
               <a key={c} href={`/${c}/blog`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
             ))}
           </div>
-          <TopNav lang={lang} t={TR[lang] || TR.en} />
         </div>
+        <TopNav lang={lang} t={TR[lang] || TR.en} />
 
         <main style={{ maxWidth: 1100, margin: "0 auto", padding: "100px 24px 80px" }}>
           <header style={{ marginBottom: 48 }}>

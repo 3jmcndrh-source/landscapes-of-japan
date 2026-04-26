@@ -35,8 +35,8 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
             </a>
           ))}
         </div>
-        <TopNav lang={lang} t={t} />
       </div>
+      <TopNav lang={lang} t={t} />
 
       <main style={{ maxWidth: 1400, margin: "0 auto", padding: "100px 16px 80px" }}>
         <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em", padding: "0 8px" }}>

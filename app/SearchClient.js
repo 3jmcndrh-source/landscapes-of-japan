@@ -203,8 +203,8 @@ export default function SearchClient({ lang }) {
             </a>
           ))}
         </div>
-        <TopNav lang={lang} t={t} />
       </div>
+      <TopNav lang={lang} t={t} />
       <Suspense fallback={<div style={{ minHeight: "calc(100vh - 80px)" }} />}>
         <SearchInner lang={lang} />
       </Suspense>

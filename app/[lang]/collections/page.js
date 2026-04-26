@@ -96,8 +96,8 @@ export default async function CollectionsIndex({ params }) {
               <a key={c} href={`/${c}/collections`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
             ))}
           </div>
-          <TopNav lang={lang} t={TR[lang] || TR.en} />
         </div>
+        <TopNav lang={lang} t={TR[lang] || TR.en} />
 
         <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
