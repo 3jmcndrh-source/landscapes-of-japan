@@ -1809,10 +1809,13 @@ export const LOCATION_CONTENT = {
       "姬路城建於1609年，世界遺產、國寶級名城。白漆喰外壁如白鷺般美麗而得名「白鷺城」，是現存日本最大級木造城堡。2009-2015年大修繕後潔白復活，氣勢磅礴。",
       "히메지성은 1609년 건축, 세계유산·국보 명성. 백회반 외벽이 백로처럼 아름답다 하여 '백로성'이라 불리며, 현존 일본 최대급 목조 성곽. 2009~2015년 대수리 후 순백으로 되살아난 모습은 압권."
     ),
-    definition: lh(
-      "姫路城(ひめじじょう)は兵庫県姫路市本町68番地に位置する平山城で、1346年に赤松貞範が築いた砦が起源、1601〜1609年に池田輝政が現在の大規模な大改築を行った日本最大級の木造城郭。1993年に法隆寺と並んで日本初の世界文化遺産として登録、現存12天守の中でも唯一の世界遺産であり国宝。白漆喰総塗籠の優美な姿が白鷺(しらさぎ)が羽を広げたようだとして「白鷺城(はくろじょう)」と称されます。2009〜2015年の「平成の大修理」で漆喰を塗り直し、純白の姿を取り戻した今、桜・新緑・雪との組合せは日本を代表する絵画的風景です。",
-      "Himeji Castle, located at 68 Honmachi, Himeji City, Hyogo Prefecture, is a flatland-mountain castle whose origins trace to a 1346 fort built by Akamatsu Sadanori, with Ikeda Terumasa carrying out the major reconstruction we see today between 1601 and 1609. One of Japan's largest wooden castles, it was registered in 1993 as Japan's first World Cultural Heritage site (alongside Horyu-ji), making it both the only UNESCO-listed castle among the 12 surviving original keeps and a National Treasure. Its white-stucco silhouette is likened to a white heron spreading its wings, earning the name «White Heron Castle» (Hakuro-jo). After the 2009–2015 «Heisei Restoration» renewed the plaster, its now-pristine white form combined with cherry blossoms, fresh greenery, or snow creates a portrait of Japan that few other places can match."
-    ),
+    definition: {
+      ja: "姫路城(ひめじじょう)は兵庫県姫路市本町68番地に位置する平山城で、1346年に赤松貞範が築いた砦が起源、1601〜1609年に池田輝政が現在の大規模な大改築を行った日本最大級の木造城郭。1993年に法隆寺と並んで日本初の世界文化遺産として登録、現存12天守の中でも唯一の世界遺産であり国宝。白漆喰総塗籠の優美な姿が白鷺(しらさぎ)が羽を広げたようだとして「白鷺城(はくろじょう)」と称されます。2009〜2015年の「平成の大修理」で漆喰を塗り直し、純白の姿を取り戻した今、桜・新緑・雪との組合せは日本を代表する絵画的風景です。",
+      en: "Himeji Castle, located at 68 Honmachi, Himeji City, Hyogo Prefecture, is a flatland-mountain castle whose origins trace to a 1346 fort built by Akamatsu Sadanori, with Ikeda Terumasa carrying out the major reconstruction we see today between 1601 and 1609. One of Japan's largest wooden castles, it was registered in 1993 as Japan's first World Cultural Heritage site (alongside Horyu-ji), making it both the only UNESCO-listed castle among the 12 surviving original keeps and a National Treasure. Its white-stucco silhouette is likened to a white heron spreading its wings, earning the name «White Heron Castle» (Hakuro-jo). After the 2009–2015 «Heisei Restoration» renewed the plaster, its now-pristine white form combined with cherry blossoms, fresh greenery, or snow creates a portrait of Japan that few other places can match.",
+      zh: "姬路城位于兵库县姬路市本町68号的平山城，1346年赤松贞范筑砦为始，1601~1609年池田辉政进行现在的大规模改建，是日本最大级的木造城郭。1993年与法隆寺一同作为日本首批世界文化遗产登录，是现存12天守中唯一的世界遗产、国宝。白漆喰整体涂笼的优美姿态如白鹭展翅，故称「白鹭城」。2009~2015年「平成大修缮」重新涂抹漆喰，恢复纯白姿态，与樱花、新绿、雪景的组合是日本代表性的画意风景。",
+      "zh-tw": "姬路城位於兵庫縣姬路市本町68號的平山城，1346年赤松貞範築砦為始，1601~1609年池田輝政進行現在的大規模改建，是日本最大級的木造城郭。1993年與法隆寺一同作為日本首批世界文化遺產登錄，是現存12天守中唯一的世界遺產、國寶。白漆喰整體塗籠的優美姿態如白鷺展翅，故稱「白鷺城」。2009~2015年「平成大修繕」重新塗抹漆喰，恢復純白姿態，與櫻花、新綠、雪景的組合是日本代表性的畫意風景。",
+      ko: "히메지성은 효고현 히메지시 혼마치 68번지에 위치한 평산성으로, 1346년 아카마쓰 사다노리가 쌓은 요새를 기원으로, 1601~1609년에 이케다 테루마사가 현재의 대규모 대개축을 진행한 일본 최대급 목조 성곽. 1993년 호류지와 함께 일본 최초의 세계문화유산으로 등록, 현존 12천수 중 유일한 세계유산이자 국보. 백회반 전체를 발라 만든 우아한 모습이 백로(시라사기)가 날개를 펼친 것 같다고 하여 「백로성(하쿠로조)」이라 불립니다. 2009~2015년 「헤이세이의 대수리」로 회반죽을 다시 발라 순백의 모습을 되찾은 지금, 벚꽃·신록·눈과의 조합은 일본을 대표하는 회화적 풍경입니다.",
+    },
     highlights: {
       ja: [
         "大天守 — 1601〜1609年池田輝政の大改修、五重六階地下一階の連立式天守、現存12天守の最大",
@@ -1827,6 +1830,27 @@ export const LOCATION_CONTENT = {
         "Nishi-no-Maru Garden — where Princess Sen (wife of Toyotomi Hideyori) lived; the Keshou Yagura turret with autumn colors and the keep's side profile",
         "Shirotopia Memorial Park — northeast of the castle, a less-crowded vantage with cherry blossoms and the keep from above",
         "Otoko-yama Park — a hilltop northwest of the castle offering a hidden frontal aerial view of Himeji Castle",
+      ],
+      zh: [
+        "大天守 — 1601~1609年池田辉政大改修，五重六阶地下一阶的连立式天守，现存12天守最大",
+        "三之丸广场与樱 — 4月上旬樱花高峰，约1,000棵染井吉野与白漆天守的王道构图",
+        "西之丸庭园 — 千姬(丰臣秀赖夫人)居住的化妆橹，红叶与天守侧面构图",
+        "白鹭纪念公园 — 城东北公园，樱花与天守俯瞰，游客少的穴场",
+        "男山配水池公园 — 城西北高台，从正面俯瞰姬路城的隐藏景点",
+      ],
+      "zh-tw": [
+        "大天守 — 1601~1609年池田輝政大改修，五重六階地下一階的連立式天守，現存12天守最大",
+        "三之丸廣場與櫻 — 4月上旬櫻花高峰，約1,000棵染井吉野與白漆天守的王道構圖",
+        "西之丸庭園 — 千姬(豐臣秀賴夫人)居住的化妝櫓，紅葉與天守側面構圖",
+        "白鷺紀念公園 — 城東北公園，櫻花與天守俯瞰，遊客少的穴場",
+        "男山配水池公園 — 城西北高台，從正面俯瞰姬路城的隱藏景點",
+      ],
+      ko: [
+        "대천수 — 1601~1609년 이케다 테루마사의 대개수, 5중 6계 지하 1계의 연립식 천수, 현존 12천수 중 최대",
+        "산노마루 광장과 벚꽃 — 매년 4월 상순 벚꽃 피크 시 약 1,000그루의 소메이요시노와 백회반 천수의 정석 구도",
+        "니시노마루 정원 — 센히메(도요토미 히데요리 부인)가 살았던 화장 야구라, 단풍과 천수의 측면 구도",
+        "시로토피아 기념공원 — 성 북동의 공원, 벚꽃과 천수의 부감, 관광객이 적은 비밀 스폿",
+        "오토코야마 배수지 공원 — 성 북서의 고대, 히메지성을 정면에서 부감할 수 있는 숨은 스폿",
       ],
     },
     quickAnswers: {
@@ -1845,6 +1869,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From JR Himeji Station's north exit, 15 min walk along Otemae-dori, or 5 min / ¥100 by Shinki Bus (Himeji Castle Loop Bus). Tokyo to Himeji on Nozomi shinkansen: 3hr 20min, ¥15,290. Shin-Osaka: 30 min, ¥3,400. The Otemae-dori approach itself shows the castle as you walk." },
         { q: "Can I use a tripod?", a: "Forbidden inside the castle and the keep. Outdoors at Sannomaru Plaza and Nishi-no-Maru Garden is fine — be considerate of crowds. Monopods also forbidden inside. Tourist crowds peak 10:00–15:00, so 6:00–9:00 AM or after 17:00 are recommended." },
         { q: "Can I enter the keep?", a: "Yes. Adults ¥1,000 (¥1,050 with Nishi-no-Maru combo). The keep features 7 ladder-like staircases up to the top floor with city views. Entry capped during busy seasons — weekday mornings are safest. Allow 1–2 hours total." },
+      ],
+      zh: [
+        { q: "姬路城是什么?", a: "兵库县姬路市的平山城，1601~1609年池田辉政大改建的日本最大级木造城郭。1993年日本首批世界文化遗产·国宝，是现存12天守中唯一的世界遗产，白漆优美姿态而被誉为「白鹭城」的名城。" },
+        { q: "拍樱花与姬路城的最佳时期?", a: "通常4月上旬，尤其3月末~4月第1周为高峰。三之丸广场、西之丸庭园、白鹭纪念公园、男山配水池公园4处为定番。清晨6时开门时人少光柔，夕阳下的白鹭城也是绝景。" },
+        { q: "最佳拍摄点?", a: "大手门前(正面)、三之丸广场(配樱)、西之丸庭园(侧面)、白鹭纪念公园(俯瞰)、男山配水池公园(正面俯瞰，知者寡的穴场)。一天巡游全方位拍摄气势磅礴。" },
+        { q: "怎么去?", a: "JR姬路站北口沿大手前通步行15分钟，或神姬巴士5分钟·100日元(姬路城环线巴士)。新干线「希望」从东京3小时20分·15,290日元，新大阪30分·3,400日元。从车站到城堡的大手前通路上也可见姬路城绝景。" },
+        { q: "可以使用三脚架吗?", a: "城内·天守内禁用三脚架。三之丸广场与西之丸庭园室外可，但拥挤时请配合。独脚架也禁入天守内。室外拍摄无问题，但10~15时游客多，建议6~9时或17时后拍摄。" },
+        { q: "可以进入天守吗?", a: "可。大人1,000日元(西之丸庭园联票1,050日元)。天守内需爬陡峭阶梯(7段梯状阶梯)至最上层展望，俯瞰姬路市区。拥挤期有入场限制，平日早晨确实。所需1~2小时。" },
+      ],
+      "zh-tw": [
+        { q: "姬路城是什麼?", a: "兵庫縣姬路市的平山城，1601~1609年池田輝政大改建的日本最大級木造城郭。1993年日本首批世界文化遺產·國寶，是現存12天守中唯一的世界遺產，白漆優美姿態而被譽為「白鷺城」的名城。" },
+        { q: "拍櫻花與姬路城的最佳時期?", a: "通常4月上旬，尤其3月末~4月第1週為高峰。三之丸廣場、西之丸庭園、白鷺紀念公園、男山配水池公園4處為定番。清晨6時開門時人少光柔，夕陽下的白鷺城也是絕景。" },
+        { q: "最佳拍攝點?", a: "大手門前(正面)、三之丸廣場(配櫻)、西之丸庭園(側面)、白鷺紀念公園(俯瞰)、男山配水池公園(正面俯瞰，知者寡的穴場)。一天巡遊全方位拍攝氣勢磅礴。" },
+        { q: "怎麼去?", a: "JR姬路站北口沿大手前通步行15分鐘，或神姬巴士5分鐘·100日圓(姬路城環線巴士)。新幹線「希望」從東京3小時20分·15,290日圓，新大阪30分·3,400日圓。從車站到城堡的大手前通路上也可見姬路城絕景。" },
+        { q: "可以使用三腳架嗎?", a: "城內·天守內禁用三腳架。三之丸廣場與西之丸庭園室外可，但擁擠時請配合。獨腳架也禁入天守內。室外拍攝無問題，但10~15時遊客多，建議6~9時或17時後拍攝。" },
+        { q: "可以進入天守嗎?", a: "可。大人1,000日圓(西之丸庭園聯票1,050日圓)。天守內需爬陡峭階梯(7段梯狀階梯)至最上層展望，俯瞰姬路市區。擁擠期有入場限制，平日早晨確實。所需1~2小時。" },
+      ],
+      ko: [
+        { q: "히메지성이란?", a: "효고현 히메지시의 평산성으로, 1601~1609년 이케다 테루마사가 대개축한 일본 최대급 목조 성곽. 1993년 일본 최초의 세계문화유산·국보, 현존 12천수 중 유일한 세계유산으로, 백회반의 우아한 모습에서 「백로성」이라 불리는 명성입니다." },
+        { q: "벚꽃과 히메지성을 찍는 베스트 시기는?", a: "매년 4월 상순, 특히 3월 말~4월 첫째 주가 절정. 산노마루 광장, 니시노마루 정원, 시로토피아 기념공원, 오토코야마 배수지 공원의 4곳이 정석. 이른 아침 6시 개문 시간이 인적이 적고 빛이 부드러우며, 석양의 백로성도 절경." },
+        { q: "촬영 베스트 포인트는?", a: "오테몬 앞(정면), 산노마루 광장(벚꽃과 함께), 니시노마루 정원(측면), 시로토피아 기념공원(부감), 오토코야마 배수지 공원(정면 부감, 아는 사람만 아는 비밀 스폿). 하루 종일 전방위로 촬영하면 압권입니다." },
+        { q: "가는 방법은?", a: "JR 히메지역 북쪽 출구에서 오테마에 도리를 따라 도보 15분 또는 신키 버스로 5분·100엔(히메지성 루프 버스). 신칸센 「노조미」로 도쿄에서 3시간 20분·15,290엔, 신오사카에서 30분·3,400엔. 역과 성을 잇는 오테마에 도리에서도 히메지성이 보이는 절경 어프로치입니다." },
+        { q: "삼각대 사용 가능?", a: "성내·천수 내는 삼각대 금지. 산노마루 광장과 니시노마루 정원은 옥외라 가능하지만 혼잡 시는 배려를. 일각대도 천수 내 금지. 옥외 촬영은 문제 없지만, 관광객 많은 10~15시는 피하고 아침 6~9시 또는 저녁 17시 이후의 촬영이 권장됩니다." },
+        { q: "천수에 들어갈 수 있나?", a: "가능. 어른 1,000엔(니시노마루 정원 공통권 1,050엔). 천수 내에는 가파른 계단(7단의 사다리 같은 계단)을 올라 최상층 전망 공간에서 히메지 시가지를 한눈에. 혼잡기는 입장 제한 있어 평일 이른 아침이 확실. 소요 시간은 약 1~2시간입니다." },
       ],
     },
     faqs: [
