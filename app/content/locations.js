@@ -2129,10 +2129,13 @@ export const LOCATION_CONTENT = {
       "高知城1611年築城、1747年重建，現存12天守之一。唯一保留完整本丸的城堡，本丸御殿與天守閣並存全國僅此一處。春櫻同框為經典。",
       "고치성은 1611년 축성, 1747년 재건된 현존 12천수 중 하나. 혼마루 전체가 남아 있는 유일한 성으로 혼마루 어전과 천수각이 함께 남아 있는 곳은 전국에 이곳뿐. 봄 벚꽃과 함께 담는 것이 정석."
     ),
-    definition: lh(
-      "高知城(こうちじょう)は高知県高知市丸ノ内にある平山城で、慶長6年(1611年)に山内一豊が築城を完成、現存12天守の一つで国の重要文化財。1727年の城下大火で天守を含む大半を焼失、寛延2年(1749年)に再建された天守(高さ18.5m)と本丸御殿が現存し、本丸内の天守と御殿が両方現存するのは日本でここ高知城のみという稀有な存在。15棟の重要文化財建造物を擁し、城内のソメイヨシノ約220本は「日本さくら名所100選」、夜のライトアップと相まって四国を代表する城撮影地です。山内氏は明治維新まで14代244年間、土佐藩主として高知を治めました。",
-      "Kochi Castle, in Marunouchi, Kochi City, Kochi Prefecture, is a flatland-mountain castle whose construction was completed by Yamauchi Kazutoyo in 1611 (Keicho 6); it is one of Japan's 12 surviving original tenshu and a designated Important Cultural Property. Most of the castle, including the keep, was lost in the 1727 great fire of the castle town; the surviving keep (18.5 m tall) and Honmaru Palace both date to a 1749 reconstruction. Kochi Castle is the only one in Japan where both the keep and the Honmaru Palace remain together within the inner bailey. With 15 Important Cultural Property structures and about 220 Yoshino cherry trees within the grounds (selected among Japan's «Top 100 Cherry Blossom Sites»), the castle — paired with its evening illumination — is Shikoku's foremost castle for photography. The Yamauchi clan ruled Tosa for 14 generations and 244 years until the Meiji Restoration."
-    ),
+    definition: {
+      ja: "高知城(こうちじょう)は高知県高知市丸ノ内にある平山城で、慶長6年(1611年)に山内一豊が築城を完成、現存12天守の一つで国の重要文化財。1727年の城下大火で天守を含む大半を焼失、寛延2年(1749年)に再建された天守(高さ18.5m)と本丸御殿が現存し、本丸内の天守と御殿が両方現存するのは日本でここ高知城のみという稀有な存在。15棟の重要文化財建造物を擁し、城内のソメイヨシノ約220本は「日本さくら名所100選」、夜のライトアップと相まって四国を代表する城撮影地です。山内氏は明治維新まで14代244年間、土佐藩主として高知を治めました。",
+      en: "Kochi Castle, in Marunouchi, Kochi City, Kochi Prefecture, is a flatland-mountain castle whose construction was completed by Yamauchi Kazutoyo in 1611 (Keicho 6); it is one of Japan's 12 surviving original tenshu and a designated Important Cultural Property. Most of the castle, including the keep, was lost in the 1727 great fire of the castle town; the surviving keep (18.5 m tall) and Honmaru Palace both date to a 1749 reconstruction. Kochi Castle is the only one in Japan where both the keep and the Honmaru Palace remain together within the inner bailey. With 15 Important Cultural Property structures and about 220 Yoshino cherry trees within the grounds (selected among Japan's «Top 100 Cherry Blossom Sites»), the castle — paired with its evening illumination — is Shikoku's foremost castle for photography. The Yamauchi clan ruled Tosa for 14 generations and 244 years until the Meiji Restoration.",
+      zh: "高知城(こうちじょう)位于高知县高知市丸之内的平山城，庆长6年(1611年)山内一丰完成筑城，现存12天守之一，国家重要文化财。1727年城下大火天守及大部分焼失，宽延2年(1749年)再建的天守(高18.5米)与本丸御殿现存，本丸内天守与御殿皆现存的全国唯有高知城，是稀有存在。拥有15栋重要文化财建造物，城内染井吉野约220株入选「日本樱花名所100选」，与夜间灯光秀相辉映，是四国代表性的城撮影地。山内氏至明治维新14代244年作为土佐藩主统治高知。",
+      "zh-tw": "高知城(こうちじょう)位於高知縣高知市丸之內的平山城，慶長6年(1611年)山內一豐完成築城，現存12天守之一，國家重要文化財。1727年城下大火天守及大部分燒失，寬延2年(1749年)再建的天守(高18.5米)與本丸御殿現存，本丸內天守與御殿皆現存的全國唯有高知城，是稀有存在。擁有15棟重要文化財建造物，城內染井吉野約220株入選「日本櫻花名所100選」，與夜間燈光秀相輝映，是四國代表性的城撮影地。山內氏至明治維新14代244年作為土佐藩主統治高知。",
+      ko: "고치성(こうちじょう)은 고치현 고치시 마루노우치에 있는 평산성으로, 게이초 6년(1611년)에 야마우치 가즈토요가 축성을 완성, 현존 12천수 중 하나이며 국가 중요문화재. 1727년 성 아래 대화재로 천수를 포함한 대부분이 소실, 간엔 2년(1749년)에 재건된 천수(높이 18.5m)와 혼마루 어전이 현존하며, 혼마루 안의 천수와 어전이 모두 현존하는 곳은 일본에서 이 고치성뿐이라는 희소한 존재. 15동의 중요문화재 건조물을 거느리고, 성내의 소메이요시노 약 220그루는 「일본 벚꽃 명소 100선」, 야간 조명과 더불어 시코쿠를 대표하는 성 촬영지입니다. 야마우치 가문은 메이지 유신까지 14대 244년간 도사 번주로 고치를 다스렸습니다.",
+    },
     highlights: {
       ja: [
         "本丸天守(高さ18.5m) — 1749年再建、現存12天守の一つ、入母屋造り、内部公開、市街パノラマ",
@@ -2147,6 +2150,27 @@ export const LOCATION_CONTENT = {
         "Otemon Gate — a designated Important Cultural Property rebuilt in 1801; during cherry-blossom season it frames the keep in the classic «sakura and castle» composition",
         "About 220 Yoshino cherry trees — selected among Japan's «Top 100 Cherry Blossom Sites,» in full bloom late March to early April with evening illumination",
         "Sugi-no-Dan stonework — robust black quartzite walls, especially distinctive when overgrown with moss",
+      ],
+      zh: [
+        "本丸天守(高18.5米) — 1749年再建，现存12天守之一，入母屋造，内部公开，市街全景",
+        "本丸御殿 — 高知城唯一保存的天守与御殿组合，书院造的华美空间，京间榻榻米",
+        "追手门(おうてもん) — 国指定重要文化财，1801年再建，樱花季节与天守的「樱与城」框景",
+        "染井吉野约220株 — 日本樱花名所100选，3月下旬至4月上旬满开，夜间灯光秀",
+        "杉之段石垣 — 多用黑色硅岩的坚固石垣，与苔藓相映独特景观",
+      ],
+      "zh-tw": [
+        "本丸天守(高18.5米) — 1749年再建，現存12天守之一，入母屋造，內部公開，市街全景",
+        "本丸御殿 — 高知城唯一保存的天守與御殿組合，書院造的華美空間，京間榻榻米",
+        "追手門(おうてもん) — 國指定重要文化財，1801年再建，櫻花季節與天守的「櫻與城」框景",
+        "染井吉野約220株 — 日本櫻花名所100選，3月下旬至4月上旬滿開，夜間燈光秀",
+        "杉之段石垣 — 多用黑色矽岩的堅固石垣，與苔蘚相映獨特景觀",
+      ],
+      ko: [
+        "혼마루 천수(높이 18.5m) — 1749년 재건, 현존 12천수 중 하나, 이리모야즈쿠리, 내부 공개, 시가지 파노라마",
+        "혼마루 어전 — 고치성에만 남은 천수와 어전 세트, 쇼인즈쿠리의 화려한 공간, 교마 다다미",
+        "오테몬(おうてもん) — 국 지정 중요문화재, 1801년 재건, 벚꽃 시즌은 천수와의 「벚꽃과 성」 프레임",
+        "소메이요시노 약 220그루 — 일본 벚꽃 명소 100선, 3월 하순~4월 상순 만개, 야간 조명",
+        "스기노단의 석축 — 검은 규암을 다용한 견고한 석축, 이끼와 어우러진 독특한 경관",
       ],
     },
     quickAnswers: {
@@ -2165,6 +2189,30 @@ export const LOCATION_CONTENT = {
         { q: "Keep admission and hours?", a: "Keep entry ¥420 (free for high school and younger). 9:00–17:00 (last entry 16:30); closed only at year-end. Honmaru plaza and Otemon are free and open 24/7 — night-time keep illumination can be photographed from outside. Evening illumination during cherry season (late March–early April)." },
         { q: "Access?", a: "From JR Kochi Station, the city tram («Kochi Castle Mae») takes 15 min, ¥210, then a 5-min walk. Tosa Den's tram is the most convenient sightseeing route. From the airport, 50 min by car (parking ¥360/hour). The castle district sits at the city center — Hirome Market and Harimaya Bridge are a 10-min walk away." },
         { q: "What is the Honmaru Palace?", a: "Kochi is the only castle in Japan where both the keep and the lord's palace survive together in the inner bailey. The palace recreates Edo-period daily life, with the upper-rank room (lord's private space) and «nando-gamae» (hidden rooms) showcasing samurai architecture. Photography allowed; flash forbidden to protect artifacts. Bring a fast lens and high-ISO body for the dim interior." },
+      ],
+      zh: [
+        { q: "高知城是什么?", a: "1611年山内一丰完成筑城，1749年再建的现存12天守之一，本丸天守与御殿皆现存全国唯此一处。日本樱花名所100选的220株樱、15栋重要文化财的四国代表城撮影地。" },
+        { q: "登城耗时?", a: "入口追手门至天守阶梯约15分钟。最先的追手门为樱花名框，天守俯瞰市区亦可拍。城内含天守见学约1至1.5小时，樱期拥挤建议6时开门时段。" },
+        { q: "撮影最佳季节?", a: "樱花3月下旬至4月上旬(夜间灯光秀)、红叶11月下旬、雪高知城为年中数次稀有构图。早晨追手门+天守构图为定番，夜天守灯光染金黄色绝景。" },
+        { q: "天守门票·营业时间?", a: "天守入场420日元(高中生以下免费)，9:00至17:00(末入馆16:30)，仅年末年始休馆。本丸广场·追手门免费24小时开放，夜天守灯光撮影外侧路线可。樱期(3月下旬至4月上旬)夜间灯光秀实施。" },
+        { q: "如何前往?", a: "JR高知站乘市内电车「高知城前」下车步行5分钟·所需15分钟·210日元。土佐电市电观光线最便利。空港乘车50分钟，停车场(360日元/小时)。城下街(高知公园)在市街中心，作为他观光地起点理想，至弘人市场·播磨屋桥步行10分钟。" },
+        { q: "本丸御殿是什么?", a: "高知城本丸天守与御殿(藩主居馆)皆现存为全国唯一之城。御殿内再现江户时代生活，上段之间(藩主专用)、纳戸构(隐藏房间)等武家建筑精髓可观。撮影内部OK但御物保护需禁闪光，暗故需明亮镜头+高ISO。" },
+      ],
+      "zh-tw": [
+        { q: "高知城是什麼?", a: "1611年山內一豐完成築城，1749年再建的現存12天守之一，本丸天守與御殿皆現存全國唯此一處。日本櫻花名所100選的220株櫻、15棟重要文化財的四國代表城撮影地。" },
+        { q: "登城耗時?", a: "入口追手門至天守階梯約15分鐘。最先的追手門為櫻花名框，天守俯瞰市區亦可拍。城內含天守見學約1至1.5小時，櫻期擁擠建議6時開門時段。" },
+        { q: "撮影最佳季節?", a: "櫻花3月下旬至4月上旬(夜間燈光秀)、紅葉11月下旬、雪高知城為年中數次稀有構圖。早晨追手門+天守構圖為定番，夜天守燈光染金黃色絕景。" },
+        { q: "天守門票·營業時間?", a: "天守入場420日圓(高中生以下免費)，9:00至17:00(末入館16:30)，僅年末年始休館。本丸廣場·追手門免費24小時開放，夜天守燈光撮影外側路線可。櫻期(3月下旬至4月上旬)夜間燈光秀實施。" },
+        { q: "如何前往?", a: "JR高知站搭市內電車「高知城前」下車步行5分鐘·所需15分鐘·210日圓。土佐電市電觀光線最便利。空港搭車50分鐘，停車場(360日圓/小時)。城下街(高知公園)在市街中心，作為他觀光地起點理想，至弘人市場·播磨屋橋步行10分鐘。" },
+        { q: "本丸御殿是什麼?", a: "高知城本丸天守與御殿(藩主居館)皆現存為全國唯一之城。御殿內再現江戶時代生活，上段之間(藩主專用)、納戶構(隱藏房間)等武家建築精髓可觀。撮影內部OK但御物保護需禁閃光，暗故需明亮鏡頭+高ISO。" },
+      ],
+      ko: [
+        { q: "고치성이란?", a: "1611년에 야마우치 가즈토요가 축성을 완성, 1749년 재건된 현존 12천수 중 하나로, 혼마루의 천수와 어전이 모두 현존하는 곳은 전국에서 이곳뿐. 일본 벚꽃 명소 100선의 벚꽃 220그루, 15동의 중요문화재를 거느린 시코쿠를 대표하는 성 촬영지입니다." },
+        { q: "성까지 오르는 시간은?", a: "입구의 오테몬에서 천수까지 계단으로 약 15분. 처음의 오테몬이 벚꽃의 명 프레임, 천수에서의 시가지 전망도 담고 싶음. 성내 소요 시간은 천수 견학 포함 1~1.5시간, 벚꽃 시기는 혼잡하므로 이른 아침 6시 개문 때가 좋음." },
+        { q: "촬영 베스트 시즌은?", a: "벚꽃의 3월 하순~4월 상순(야간 조명 있음), 단풍의 11월 하순, 눈 덮인 고치성은 연 수회의 희귀한 구도. 이른 아침의 오테몬+천수 구도가 정석, 밤은 천수 조명으로 황금빛으로 물드는 절경." },
+        { q: "천수 입장료·영업 시간은?", a: "천수 입장 420엔(고등학생 이하 무료), 9:00~17:00(최종 입관 16:30), 연말연시만 휴관. 혼마루 광장·오테몬은 무료로 24시간 개방, 야간 천수 조명 촬영은 외측에서 접근으로 가능. 벚꽃 시기(3월 하순~4월 상순)는 야간 조명 실시." },
+        { q: "가는 방법은?", a: "JR 고치역에서 시내 전차 「고치성 앞」 하차 도보 5분·소요 15분·210엔. 도사덴의 시영전차로 관광 루트 최편리. 공항에서 차로 50분, 주차장(360엔/시간). 성하 거리(고치 공원)는 시가지 중심지로 다른 관광지의 거점으로 이상적, 히로메 시장·하리마야 다리까지 도보 10분." },
+        { q: "혼마루 어전이란?", a: "고치성은 혼마루의 천수와 어전(번주의 거관)이 모두 현존하는 전국 유일의 성. 어전 내부는 에도 시대의 생활을 재현, 가미단노마(번주 전용), 난도 가마에(숨은 방) 등 무가 건축의 정수를 볼 수 있음. 촬영은 내부 OK이지만 어물 보호를 위해 플래시 금지, 어두우니 밝은 렌즈+고감도로 대응." },
       ],
     },
     faqs: [
@@ -3832,10 +3880,13 @@ export const LOCATION_CONTENT = {
       "高遠城址公園位於伊那市高遠町，武田氏舊城遺跡。約1500棵特有「高遠小彼岸櫻」於4月上中旬染成淡粉色，被譽為「天下第一櫻」。日本櫻花名所100選、三大櫻花勝地之一。夜間「櫻花祭」燈光秀夢幻，中央阿爾卑斯為背景的絕景令人沉醉。",
       "다카토 성지 공원은 이나시 다카토마치의 다케다씨 옛 성터. 고유종 「다카토 고히간자쿠라」 약 1500그루가 4월 상-중순 연분홍빛으로 물들어 「천하제일 벚꽃」이라 불립니다. 일본 벚꽃 명소 100선·3대 벚꽃 명소 중 하나. 밤의 「벚꽃 축제」 조명은 환상적이며, 중앙알프스를 배경으로 한 절경이 펼쳐집니다."
     ),
-    definition: lh(
-      "高遠城址公園(たかとうじょうしこうえん)は長野県伊那市高遠町、戦国時代の武田信玄ゆかりの古城・高遠城跡を整備した公園で、城跡指定面積14ヘクタール。1547年に武田信玄が築城、1582年武田勝頼の時代に織田信長の侵攻で落城した歴史を持ち、現在は約1,500本の固有種「タカトオコヒガンザクラ(高遠小彼岸桜)」が4月上〜中旬に淡紅色に染まり「天下第一の桜」と称されます。「日本さくら名所100選」、青森県弘前公園・奈良県吉野山と並ぶ「日本三大桜の名所」。夜のライトアップ「さくら祭り」は幻想的で、中央アルプスを背景にした絶景が広がる、長野県を代表する春の撮影地です。",
-      "Takato Castle Park, in Takato-machi, Ina City, Nagano Prefecture, occupies the 14-hectare ruins of Takato Castle — a Sengoku-era fortress with ties to warlord Takeda Shingen. Built by Shingen in 1547, it fell in 1582 during Oda Nobunaga's invasion under Takeda Katsuyori. Today, about 1,500 endemic Takato Kohigan cherry trees bloom soft pink in early to mid-April, earning the title «No.1 cherry blossoms under heaven.» The park is selected for Japan's «Top 100 Cherry Blossom Sites» and ranked alongside Hirosaki Park (Aomori) and Mt. Yoshino (Nara) as one of Japan's «Three Great Cherry Blossom Sites.» Evening illumination during the «Sakura Festival» is dreamlike, and with the Central Alps as backdrop, the park stands as Nagano's representative spring photography destination."
-    ),
+    definition: {
+      ja: "高遠城址公園(たかとうじょうしこうえん)は長野県伊那市高遠町、戦国時代の武田信玄ゆかりの古城・高遠城跡を整備した公園で、城跡指定面積14ヘクタール。1547年に武田信玄が築城、1582年武田勝頼の時代に織田信長の侵攻で落城した歴史を持ち、現在は約1,500本の固有種「タカトオコヒガンザクラ(高遠小彼岸桜)」が4月上〜中旬に淡紅色に染まり「天下第一の桜」と称されます。「日本さくら名所100選」、青森県弘前公園・奈良県吉野山と並ぶ「日本三大桜の名所」。夜のライトアップ「さくら祭り」は幻想的で、中央アルプスを背景にした絶景が広がる、長野県を代表する春の撮影地です。",
+      en: "Takato Castle Park, in Takato-machi, Ina City, Nagano Prefecture, occupies the 14-hectare ruins of Takato Castle — a Sengoku-era fortress with ties to warlord Takeda Shingen. Built by Shingen in 1547, it fell in 1582 during Oda Nobunaga's invasion under Takeda Katsuyori. Today, about 1,500 endemic Takato Kohigan cherry trees bloom soft pink in early to mid-April, earning the title «No.1 cherry blossoms under heaven.» The park is selected for Japan's «Top 100 Cherry Blossom Sites» and ranked alongside Hirosaki Park (Aomori) and Mt. Yoshino (Nara) as one of Japan's «Three Great Cherry Blossom Sites.» Evening illumination during the «Sakura Festival» is dreamlike, and with the Central Alps as backdrop, the park stands as Nagano's representative spring photography destination.",
+      zh: "高远城址公园(たかとうじょうしこうえん)位于长野县伊那市高远町，是战国时代武田信玄相关古城·高远城跡整备的公园，城跡指定面积14公顷。1547年武田信玄筑城，1582年武田胜赖时代因织田信长侵攻落城的历史，现在约1500株特有种「高远小彼岸樱」于4月上至中旬染成淡红色，被誉为「天下第一樱」。「日本樱花名所100选」、与青森县弘前公园·奈良县吉野山并称「日本三大樱花名所」之一。夜间「樱花祭」灯光秀梦幻，以中央阿尔卑斯为背景的绝景，是长野县代表性的春季撮影地。",
+      "zh-tw": "高遠城址公園(たかとうじょうしこうえん)位於長野縣伊那市高遠町，是戰國時代武田信玄相關古城·高遠城跡整備的公園，城跡指定面積14公頃。1547年武田信玄築城，1582年武田勝賴時代因織田信長侵攻落城的歷史，現在約1500株特有種「高遠小彼岸櫻」於4月上至中旬染成淡紅色，被譽為「天下第一櫻」。「日本櫻花名所100選」、與青森縣弘前公園·奈良縣吉野山並稱「日本三大櫻花名所」之一。夜間「櫻花祭」燈光秀夢幻，以中央阿爾卑斯為背景的絕景，是長野縣代表性的春季撮影地。",
+      ko: "다카토 성지 공원(たかとうじょうしこうえん)은 나가노현 이나시 다카토마치, 전국 시대 다케다 신겐 연고의 옛 성·다카토성 터를 정비한 공원으로, 성터 지정 면적 14헥타르. 1547년 다케다 신겐이 축성, 1582년 다케다 가쓰요리 시대에 오다 노부나가의 침공으로 함락된 역사를 가지며, 현재는 약 1,500그루의 고유종 「다카토 고히간자쿠라(다카토 고히간 벚꽃)」가 4월 상순~중순에 연분홍색으로 물들어 「천하 제일의 벚꽃」으로 불립니다. 「일본 벚꽃 명소 100선」, 아오모리현 히로사키 공원·나라현 요시노 산과 함께 「일본 3대 벚꽃 명소」. 밤의 조명 「벚꽃 축제」는 환상적이며, 중앙 알프스를 배경으로 한 절경이 펼쳐지는 나가노현을 대표하는 봄의 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "タカトオコヒガンザクラ — 高遠原産の固有種、約1,500本、淡紅色の小ぶりな花、満開時は雲のような姿",
@@ -3850,6 +3901,27 @@ export const LOCATION_CONTENT = {
         "Central Alps backdrop — the white ridges of Nishi-Komagatake (2,956 m) and Kiso-Komagatake; spectacular through the cherry blossoms",
         "Evening Illumination — during the Sakura Festival, about 1,000 warm-toned bonbori lanterns make the blue hour magical",
         "Koen-kaku — a 1936 two-story wooden rest house; the retro architecture pairs beautifully with the cherry blossoms",
+      ],
+      zh: [
+        "高远小彼岸樱 — 高远原产的特有种，约1500株，淡红色小花，满开时如云之姿",
+        "樱云桥(おううんきょう) — 公园象征红桥，樱花与桥的组合为撮影定番",
+        "中央阿尔卑斯借景 — 西驹岳(2956米)·木曾驹岳的白色山脊，越樱绝景",
+        "夜间灯光秀 — 樱花祭期间，1000盏雪洞的暖色光，蓝调时刻梦幻",
+        "高远阁(こうえんかく) — 1936年建木造2层休息所，怀旧建筑与樱花的组合",
+      ],
+      "zh-tw": [
+        "高遠小彼岸櫻 — 高遠原產的特有種，約1500株，淡紅色小花，滿開時如雲之姿",
+        "櫻雲橋(おううんきょう) — 公園象徵紅橋，櫻花與橋的組合為撮影定番",
+        "中央阿爾卑斯借景 — 西駒岳(2956米)·木曾駒岳的白色山脊，越櫻絕景",
+        "夜間燈光秀 — 櫻花祭期間，1000盞雪洞的暖色光，藍調時刻夢幻",
+        "高遠閣(こうえんかく) — 1936年建木造2層休息所，懷舊建築與櫻花的組合",
+      ],
+      ko: [
+        "다카토 고히간자쿠라 — 다카토 원산의 고유종, 약 1,500그루, 연분홍색의 작은 꽃, 만개 시에는 구름 같은 모습",
+        "오운교(おううんきょう) — 공원의 상징적인 붉은 다리, 벚꽃과 다리의 조합이 촬영의 정석",
+        "중앙 알프스의 차경 — 니시고마가타케(2,956m)·기소고마가타케의 흰 능선, 벚꽃 너머의 절경",
+        "야간 조명 — 벚꽃 축제 기간, 본보리 1,000개의 따뜻한 빛, 블루 아워가 환상적",
+        "고엔카쿠(こうえんかく) — 1936년 축조된 목조 2층 휴게소, 레트로 건축과 벚꽃의 조합",
       ],
     },
     quickAnswers: {
@@ -3868,6 +3940,30 @@ export const LOCATION_CONTENT = {
         { q: "Admission and hours?", a: "Paid only during the cherry-blossom festival (early–mid April): adults ¥500, elementary/middle school ¥250 (JAF and tourism-association discounts available). Free outside the festival, open at all hours. Festival hours 8:00–21:00 (illumination from 18:00). Local parking fills up — take buses or the festival shuttle." },
         { q: "Tripod use and etiquette?", a: "Tripods OK within the park but don't block paths during crowds. Commercial use requires permission. Never touch branches or enter restricted areas. Some areas are off-limits to flashlights pre-dawn — follow staff direction. Drones are entirely forbidden to protect the cherry trees." },
         { q: "Combined sightseeing route?", a: "①Takato Castle Park (early morning, cherry) ②Katsuma Yakushi-do (5 min by car, 400-year weeping cherry) ③Shinshu Takato Museum (5 min by car, local painters) ④Tsuetsuki Pass (30 min by car, Ina Valley panorama) ⑤Komatsunagi solitary cherry (1 hr by car, 400-year tree). A full day covers Ina Valley's cherry sites; ryokan in Takato (with onsen, from ¥15,000) provide lodging." },
+      ],
+      zh: [
+        { q: "高远城址公园是什么?", a: "长野县伊那市武田信玄相关古城跡公园，特有种「高远小彼岸樱」约1500株被誉为「天下第一樱」。日本樱花名所100选·三大樱花名所之一，以中央阿尔卑斯为背景的绝景是长野县代表性春季撮影地。" },
+        { q: "高远樱花最佳撮影时间?", a: "清晨6时前的蓝光与无人时段为王道。下午为灯光前的黄昏至蓝调时刻华丽，夜间灯笼暖光与樱花对比迷人。避开拥挤需平日早晨。" },
+        { q: "如何前往与最佳时期?", a: "JR伊那市站乘巴士25分钟，或高远站(JR高远站)步行15分钟。每年4月上至中旬为高峰，被誉为「天下第一樱」。清晨薄明至日出逆光柔和为佳，避开拥挤需平日早晨。" },
+        { q: "门票·营业时间?", a: "樱花祭期间(4月上至中旬)收费·成人500日元·小中学生250日元(JAF·观光协会有优惠)。期间外免费·常时开放。营业时间8:00至21:00(灯光秀18:00起)。拥挤期附近停车场满席，建议巴士，亦有接驳巴士运行。" },
+        { q: "三脚使用与撮影礼仪?", a: "公园内三脚架可，但拥挤时禁占用通路。商用使用需事前申请。触摸樱花树枝、进入禁止区域严禁。清晨6时前照明暗故有禁灯区，请遵从工作人员指示。无人机为保护樱花全面禁止。" },
+        { q: "周边连续观光?", a: "①高远城址公园(早晨~上午，樱花)②胜间药师堂(车5分钟，树龄400年枝垂樱)③信州高远美术馆(车5分钟，本地画家作品)④杖突峠(车30分钟，伊那谷俯瞰绝景)⑤驹拴樱(车1小时，树龄400年一本樱)。1日游可遍览伊那谷樱花名所，住宿高远町内旅馆(含温泉15000日元起)。" },
+      ],
+      "zh-tw": [
+        { q: "高遠城址公園是什麼?", a: "長野縣伊那市武田信玄相關古城跡公園，特有種「高遠小彼岸櫻」約1500株被譽為「天下第一櫻」。日本櫻花名所100選·三大櫻花名所之一，以中央阿爾卑斯為背景的絕景是長野縣代表性春季撮影地。" },
+        { q: "高遠櫻花最佳撮影時間?", a: "清晨6時前的藍光與無人時段為王道。下午為燈光前的黃昏至藍調時刻華麗，夜間燈籠暖光與櫻花對比迷人。避開擁擠需平日早晨。" },
+        { q: "如何前往與最佳時期?", a: "JR伊那市站搭巴士25分鐘，或高遠站(JR高遠站)步行15分鐘。每年4月上至中旬為高峰，被譽為「天下第一櫻」。清晨薄明至日出逆光柔和為佳，避開擁擠需平日早晨。" },
+        { q: "門票·營業時間?", a: "櫻花祭期間(4月上至中旬)收費·成人500日圓·小中學生250日圓(JAF·觀光協會有優惠)。期間外免費·常時開放。營業時間8:00至21:00(燈光秀18:00起)。擁擠期附近停車場滿席，建議巴士，亦有接駁巴士運行。" },
+        { q: "三腳使用與撮影禮儀?", a: "公園內三腳架可，但擁擠時禁占用通路。商用使用需事前申請。觸摸櫻花樹枝、進入禁止區域嚴禁。清晨6時前照明暗故有禁燈區，請遵從工作人員指示。無人機為保護櫻花全面禁止。" },
+        { q: "周邊連續觀光?", a: "①高遠城址公園(早晨~上午，櫻花)②勝間藥師堂(車5分鐘，樹齡400年枝垂櫻)③信州高遠美術館(車5分鐘，本地畫家作品)④杖突嶺(車30分鐘，伊那谷俯瞰絕景)⑤駒拴櫻(車1小時，樹齡400年一本櫻)。1日遊可遍覽伊那谷櫻花名所，住宿高遠町內旅館(含溫泉15000日圓起)。" },
+      ],
+      ko: [
+        { q: "다카토 성지 공원이란?", a: "나가노현 이나시의 다케다 신겐 연고의 옛 성터 공원으로, 고유종 「다카토 고히간자쿠라」 약 1,500그루가 「천하 제일의 벚꽃」으로 불립니다. 일본 벚꽃 명소 100선·3대 벚꽃 명소 중 하나로, 중앙 알프스를 배경으로 한 절경은 나가노현을 대표하는 봄의 촬영지입니다." },
+        { q: "다카토 벚꽃의 베스트 촬영 시간은?", a: "이른 아침 6시 전의 푸른빛과 사람이 없는 시간대가 정석. 오후는 조명 전의 황혼~블루 아워가 화려하고, 밤은 등불의 따뜻한 빛과 벚꽃의 대비가 아름다움. 혼잡 회피는 평일 이른 아침이 필수." },
+        { q: "가는 방법과 베스트 시기는?", a: "JR 이나시역에서 버스로 25분, 또는 다카토역(JR 다카토역)에서 도보 15분. 예년 4월 상순~중순이 절정으로 「천하 제일의 벚꽃」으로 불립니다. 이른 아침의 박명~일출이 역광이 부드러워 좋고, 혼잡 회피는 평일 이른 아침입니다." },
+        { q: "입장료·영업 시간은?", a: "벚꽃 축제 기간(4월 상순~중순)에만 유료·성인 500엔·초중학생 250엔(JAF·관광협회 할인 있음). 기간 외 무료·상시 개방. 영업 시간은 8:00~21:00(조명은 18:00~). 혼잡기는 인근 주차장이 만차가 되므로 버스 이용을 권장, 셔틀버스도 운행됩니다." },
+        { q: "삼각대 사용과 촬영 매너는?", a: "공원 내는 삼각대 OK이지만, 혼잡 시 통로 점유는 금지. 상업적 이용은 사전 신청. 벚꽃 가지에 닿거나 출입 금지 구역에 들어가는 것은 엄금. 이른 아침 6시 전은 조명이 어두우므로 라이트 촬영 금지 구역 있음, 안내원의 지시에 따를 것. 드론은 벚꽃 보호를 위해 전면 금지입니다." },
+        { q: "주변의 관광 연계는?", a: "①다카토 성지 공원(이른 아침~오전, 벚꽃) ②가쓰마 야쿠시도(차 5분, 수령 400년 시다레자쿠라) ③신슈 다카토 미술관(차 5분, 현지 화가의 작품) ④츠에쓰키 토게(차 30분, 이나 분지 부감 절경) ⑤고마쓰나기 벚꽃(차 1시간, 수령 400년의 외솔 벚꽃). 1일 코스로 이나 분지의 벚꽃 명소를 망라, 숙박은 다카토 마을 내의 료칸(온천 포함 15,000엔~)." },
       ],
     },
     faqs: [
