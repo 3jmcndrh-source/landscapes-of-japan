@@ -4,6 +4,8 @@ import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../../data.j
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc } from "../../../../content/descriptions.js";
+import { PHOTO_TAGS } from "../../../../photo-tags.js";
+import { TAGS, TAG_SLUGS, getTagName } from "../../../../tags.js";
 
 // 写真個別ページ ~10,320 通り。全ビルド時 SSG は Vercel deploy size 制限に
 // かかるため、build時 pre-render は 0、on-demand ISR で生成 → CDN キャッシュ。
@@ -82,6 +84,26 @@ export default async function Page({ params }) {
   const sameLoc = pf.photos.filter((p) => p.loc === locJp && p.id !== photoId);
   const related = sameLoc.slice(0, 6);
 
+  // A13: この写真のタグ + 同タグを持つ別 loc の写真 (最大 6 枚)
+  const photoTags = PHOTO_TAGS[photoId] || [];
+  const similarByTag = [];
+  if (photoTags.length > 0) {
+    for (const otherPf of PREFECTURES) {
+      for (const otherPhoto of otherPf.photos) {
+        if (otherPhoto.id === photoId) continue;
+        if (otherPhoto.loc === locJp) continue; // 同locは別セクションなのでスキップ
+        const otherTags = PHOTO_TAGS[otherPhoto.id] || [];
+        const sharedCount = otherTags.filter((tag) => photoTags.includes(tag)).length;
+        if (sharedCount > 0) {
+          similarByTag.push({ ...otherPhoto, pref: otherPf.pref, sharedCount });
+        }
+      }
+    }
+    // 共通タグ数が多い順でソートし、上位 6 件
+    similarByTag.sort((a, b) => b.sharedCount - a.sharedCount);
+  }
+  const similarPhotos = similarByTag.slice(0, 6);
+
   const photoUrl = cldUrl(photoId, 2400);
   const photoUrlLarge = cldUrl(photoId, 1200);
 
@@ -100,7 +122,7 @@ export default async function Page({ params }) {
         encodingFormat: "image/jpeg",
         width: { "@type": "QuantitativeValue", value: 2400, unitCode: "E37" },
         height: { "@type": "QuantitativeValue", value: 1600, unitCode: "E37" },
-        keywords: [getLocName(locJp, "en"), getPrefName(prefJp, "en"), "Japanese landscape", "landscape photography", "Japan", photo.year ? String(photo.year) : null].filter(Boolean).join(", "),
+        keywords: [getLocName(locJp, "en"), getPrefName(prefJp, "en"), "Japanese landscape", "landscape photography", "Japan", photo.year ? String(photo.year) : null, ...((PHOTO_TAGS[photoId] || []).map((tag) => TAGS[tag] ? getTagName(tag, "en") : tag))].filter(Boolean).join(", "),
         creator: {
           "@type": "Person",
           name: "Landscapes of Japan",
@@ -148,6 +170,8 @@ export default async function Page({ params }) {
         locJp={locJp}
         photo={photo}
         related={related}
+        photoTags={photoTags}
+        similarPhotos={similarPhotos}
       />
     </>
   );

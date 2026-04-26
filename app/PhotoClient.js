@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import TopNav from "./TopNav.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 
-export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
+export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [] }) {
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
   const locSlug = LOC_SLUGS[locJp];
@@ -78,6 +79,22 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
               <span style={{ marginLeft: 12, opacity: .55 }}>· {getLocName(locJp, "en")}</span>
             )}
           </div>
+
+          {/* A13: フォトタグ表示 (この写真の被写体属性) */}
+          {photoTags.length > 0 && (
+            <div style={{ marginTop: 18, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
+              <span style={{ fontSize: 11, color: "rgba(220,190,100,.5)", textTransform: "uppercase", letterSpacing: ".15em", marginRight: 4 }}>
+                {lang === "ja" ? "被写体" : lang === "ko" ? "피사체" : lang === "zh" ? "主题" : lang === "zh-tw" ? "主題" : "Subjects"}
+              </span>
+              {photoTags.map((tag) => (
+                TAGS[tag] ? (
+                  <a key={tag} href={`/${lang}/tags/${tag}`} style={{ background: "rgba(220,190,100,.10)", border: "1px solid rgba(220,190,100,.28)", borderRadius: 999, padding: "4px 12px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 11 }}>
+                    #{getTagName(tag, lang)}
+                  </a>
+                ) : null
+              ))}
+            </div>
+          )}
         </header>
 
         {related.length > 0 && (
@@ -120,7 +137,69 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related }) {
           </section>
         )}
 
-        {/* Related collections + tags + techniques (内部リンク強化 #18) */}
+        {/* A13: 同タグの別 loc 写真 ("Similar style") */}
+        {similarPhotos.length > 0 && (
+          <section style={{ marginTop: 56, padding: "0 8px" }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 20 }}>
+              {lang === "ja" ? "似た雰囲気の写真" : lang === "ko" ? "비슷한 분위기의 사진" : lang === "zh" ? "相似氛围的照片" : lang === "zh-tw" ? "相似氛圍的照片" : "Similar Style Photos"}
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
+              {similarPhotos.map((p) => {
+                const sLocSlug = LOC_SLUGS[p.loc];
+                const sPrefSlug = PREF_SLUGS[p.pref];
+                if (!sLocSlug || !sPrefSlug) return null;
+                return (
+                  <a
+                    key={p.id}
+                    href={`/${lang}/${sPrefSlug}/${sLocSlug}/${p.id}`}
+                    className="cin-hcard"
+                    onContextMenu={(e) => e.preventDefault()}
+                    style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111", display: "block", textDecoration: "none" }}
+                  >
+                    <img
+                      src={cldUrl(p.id, 600)}
+                      alt={`${getLocName(p.loc, lang)} - ${getPrefName(p.pref, lang)}`}
+                      loading="lazy"
+                      draggable="false"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                    <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 12px 8px", background: "linear-gradient(to top, rgba(0,0,0,.85), transparent)", color: "#f2ece2", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
+                      <div style={{ fontWeight: 500 }}>{getLocName(p.loc, lang)}</div>
+                      <div style={{ opacity: .65, fontSize: 11, marginTop: 2 }}>{getPrefName(p.pref, lang)}</div>
+                    </div>
+                    {p.year && (
+                      <div style={{ position: "absolute", top: 8, right: 8, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 8px", borderRadius: 3, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", zIndex: 3 }}>
+                        {p.year}
+                      </div>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* A13: 関連の撮影技法 (この loc に該当する techniques) */}
+        {(() => {
+          const locTechs = TECHNIQUE_SLUGS.filter((s) => TECHNIQUES[s].locs.includes(locJp));
+          if (locTechs.length === 0) return null;
+          return (
+            <section style={{ marginTop: 56, padding: "0 8px" }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 16 }}>
+                {lang === "ja" ? "撮影技法ガイド" : "Photography Techniques"}
+              </h2>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {locTechs.slice(0, 5).map((s) => (
+                  <a key={`tech-${s}`} href={`/${lang}/techniques/${s}`} style={{ background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.22)", borderRadius: 8, padding: "8px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}>
+                    ▸ {getTechniqueName(s, lang)}
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* Related collections + tags (内部リンク強化 #18) */}
         <section style={{ marginTop: 56, padding: "0 8px" }}>
           <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 16 }}>
             {lang === "ja" ? "関連カテゴリー" : "Related Categories"}
