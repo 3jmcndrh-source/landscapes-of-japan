@@ -512,6 +512,216 @@ export const PHOTO_TAGS = {
 
   // 小樽 5枚: 海岸も(運河だけでなく)
   "heugkwts7mna2tb7okh0": ["coastal"],
+
+  // ── 高島公園(諏訪市) 残り8 ──
+  // 諏訪城跡(高島城)の桜名所、castle/cherry 混在
+  "dlzyl3yborc12ny7pgj7": ["castle", "cherry"],
+  "enr5eflfsbfkxmk62z2f": ["cherry"],
+  "ub5ds8cw3v3m8nauhrbh": ["cherry"],
+  "udypqbnoasbsniyzqmdh": ["cherry"],
+  "gweuqgcwstcrgp59dy2i": ["cherry"],
+  "qh8ijx3ahxvfceqbod9q": ["castle", "cherry"],
+  "gedh17rb7jnkhoggpyvo": ["castle", "cherry"],
+  "ugte2cqljbd0jpiewxhq": ["castle", "cherry"],
+
+  // ── 城山公園(松本市) 残り7 ──
+  // 桜名所だが北アルプス雪山遠望・松本市街パノラマも混在
+  "dpr7n9mx0nvpum5agwz6": ["mountain"],
+  "q0ao1opqvlyybzh7kxze": ["cherry"],
+  "fcsv1vkctpknpmwub8za": ["urban"],
+  "intvpotngzos9ze2jvwk": ["mountain", "river"],
+  "rz53bjbwc2h2rbwitnix": ["cherry"],
+  "ly9zzeznntibrldoeuge": ["cherry"],
+  "rhk4iencv1010p62pzs5": ["cherry"],
+
+  // ── 安養寺 残り5 ──
+  // しだれ桜の名所
+  "xcgllidnf2ywtsmqresk": ["cherry"],
+  "nqrrvgoj5ck10qg7usmi": ["cherry"],
+  "u5zfmndwlh41wxujug95": ["cherry"],
+  "llnzgdasraciacen2knc": ["cherry", "temple"],
+  "vu5jfzw94firs2g8fn3u": ["cherry"],
+
+  // ── おはらい町・おかげ横丁 残り5 ──
+  // 伊勢神宮の門前町、古い町並み中心。和菓子写真は無タグ
+  "n0prvjjho2nf5ucrsoil": ["street"],
+  "queyyiuttwaei8kiznbc": ["street"],
+  "zq5o5jklm6eehcprk5w4": ["street"],
+  "vxpu71gd5qnd3g1ey91f": ["street"],
+  "emfqpctrgkvremxuzxvj": [],
+
+  // ── 松本城 残り4 ──
+  "u5izvsliyoqm6rr0xnzh": ["castle"],
+  "m2gdhydxlmqu3itlta9v": ["castle", "cherry"],
+  "wlcxf7dkoe8mkogxapjk": ["castle"],
+  "noxbyner9j5rk4c0iknk": ["castle"],
+
+  // ── 東福寺 残り4 ──
+  // 紅葉名所
+  "DSC07451_s1rhpd": ["temple", "autumn"],
+  "DSC07425_zsvfno": ["temple", "autumn"],
+  "DSC07417_dqlfwd": ["temple", "autumn"],
+  "DSC07408_qarh4p": ["temple", "autumn"],
+
+  // ── 河口湖 残り4 ──
+  // 富士山+湖+桜の代表構図
+  "jybdbusckxwnbjpxdz0f": ["lake", "mountain", "cherry"],
+  "cqbfdh0j6ogl1zgsvk7s": ["lake", "mountain", "cherry"],
+  "ygqe7593bqgt1ehxfxqa": ["lake", "mountain", "cherry"],
+  "ccwsm7nphfmfas43dep3": ["lake", "mountain"],
+
+  // ── 姫路城 残り4 ──
+  "DSC07173_ogwql9": ["castle", "autumn"],
+  "DSC07150_hlpfgz": ["castle"],
+  "DSC07139_h55edw": ["castle"],
+  "DSC07127_wo4ifg": ["castle", "autumn"],
+
+  // ── 小樽 残り4 ──
+  // 海岸線・夕景中心(運河ではない)
+  "yh7e0rhvhnzzxj5esa5f": ["coastal"],
+  "nk4jyu4dlzatzfgocyhr": ["coastal"],
+  "wqg1jgss7ruytfu6hxad": ["coastal"],
+  "yvecem5fnp26jy6ipjau": ["coastal"],
+
+  // ── 道後温泉 残り3 ──
+  "kbsiyecqjwzzyzurmddz": ["onsen", "night"],
+  "t4witz3if3ox7tl0vips": ["onsen", "street"],
+  "milp580j3b6uspkm7l8z": ["onsen"],
+
+  // ── 白川郷 4 ──
+  // 雪+合掌造り集落
+  "qvsgt1aw6o4iwewvhmdc": ["snow", "rural"],
+  "ake8ymyn7d0qnybyzihw": ["snow", "rural"],
+  "y4l6gy5xwtz8d3fvvjb0": ["snow", "rural"],
+  "vnvzv0ztfpwvvrvl5lfn": ["snow", "rural"],
+
+  // ── 洞爺湖 4 ──
+  // 湖中心、1枚は羊蹄山+草原
+  "zsstczmlufechxukd0at": ["lake"],
+  "zvcgkttawzj1drdzqhix": ["lake", "mountain"],
+  "k8gyiyw1hosgg5ksnyqg": ["lake"],
+  "lxw7vgube4hgznoacxvp": ["mountain", "rural"],
+
+  // ── 松山城 4 ──
+  // 1枚は松山市街パノラマ
+  "wibx41ebmy2hxovs8wv1": ["castle"],
+  "alukivsd5rv3gvo7c6sh": ["castle"],
+  "ghweftqojjonv5zb6elq": ["urban", "coastal"],
+  "pebdpfzj17kk1ssl62dc": ["castle"],
+
+  // ── 室蘭 4 ──
+  // 海岸+夕景+白鳥大橋
+  "iywyqspjifr0f0c1n9eq": ["coastal"],
+  "egmtecz5qmasffkjvxsr": ["coastal"],
+  "tabp9sbfbulnaybmlpss": ["coastal", "urban"],
+  "ta1vbaimv7ybmnjsnvcu": ["night", "coastal"],
+
+  // ── さっぽろ雪まつり 4 ──
+  // 雪像+祭り
+  "usvnljzznwmqu93sftg1": ["snow", "festival"],
+  "rqjb5xgid4vochyrrpie": ["snow", "festival"],
+  "cgazaabjctzmga9yojla": ["snow", "festival"],
+  "rj0whx4syklikykwjq6z": ["snow", "festival"],
+
+  // ── 横山展望台 3 ──
+  // 英虞湾のリアス海岸
+  "bb924wbc5x1ny5c8hxob": ["coastal"],
+  "ajf05ybnec7njy9ubaqi": ["coastal", "urban"],
+  "jdobpyucdfhouqrswhec": ["coastal"],
+
+  // ── 桂浜 3 ──
+  // 海岸+龍馬像
+  "x7zziur8nq5gx2vksgzr": ["coastal"],
+  "p0z0vmdnqz4ptqiwgtwl": ["coastal"],
+  "zxpnph1zw30vn5ce3hws": [],
+
+  // ── 摩周湖 3 ──
+  "hf5dr6ntuwcl9s9rawxe": ["lake", "mountain"],
+  "yzckpd6gdubpyhudubyl": ["lake", "mountain"],
+  "je8xkhzlsfbiqpryxdw5": ["lake", "mountain"],
+
+  // ── 品川 3 ──
+  // アクアスタジアムのイルカショー
+  "bemqqcwb710hhvrp5k1d": ["animal"],
+  "fzrsmhfr718rzcwptvws": ["animal"],
+  "zvioi0jy5xl3y85lw2sa": ["animal"],
+
+  // ── 金閣寺 2 ──
+  "DSC07313_akiagf": ["temple"],
+  "DSC07290_sz6x7s": ["temple", "autumn"],
+
+  // ── 美唄 2 ──
+  // 桜
+  "zxgxiqctoaz0zhmqgqx2": ["cherry"],
+  "pdatjgjwzr26f9bgdxmg": ["cherry"],
+
+  // ── 福岡 2 ──
+  "cherzayx1vksmmu12kfg": ["urban"],
+  "zuytsm5uieakyzlj8mqa": [],
+
+  // ── 登別 2 ──
+  "ofe2ifgjpvsguty4udfh": ["cherry"],
+  "qgcwoptede3vztwdxngv": ["coastal"],
+
+  // ── 父母ヶ浜 2 ──
+  // 日本のウユニ塩湖、夕景
+  "qsn9a5qfmcav4ufkwehz": ["coastal"],
+  "jpctlgps9n9yz7z2pefr": ["coastal"],
+
+  // ── 法隆寺 2 ──
+  "DSC07249_ijee7w": ["temple"],
+  "DSC07241_kxqtal": ["temple"],
+
+  // ── 梅林公園 2 ──
+  // 梅は cherry でも flower-field でもない
+  "ngy6lud2tgbztbyf4jke": [],
+  "urycxqz4g4k3vra6gzzw": [],
+
+  // ── 平等院鳳凰堂 2 ──
+  "DSC07504_yxpbtk": ["temple"],
+  "DSC07495_qorawr": ["temple"],
+
+  // ── 北竜町 2 ──
+  // 菜の花畑
+  "rnlyiorswvgfwgyvu6uj": ["flower-field"],
+  "jlgnjbrolezvatmiu38c": ["flower-field", "rural"],
+
+  // ── 三段滝公園 2 ──
+  // 1枚は川、1枚は滝
+  "rxrntpbpqfl9adcm09oc": ["river"],
+  "plljckjsj5zcuefw9pr8": ["waterfall"],
+
+  // ── 1枚 loc 15箇所 ──
+  // 鴨川シーワールド入口看板(シャチオブジェ): タグなし
+  "pwrg5vqnmt1uxmh07jhb": [],
+  // 駒つなぎの桜: 一本桜
+  "bykxlizpdzufezqttzca": ["cherry"],
+  // 長野県天空の楽園: 星空
+  "bxt5gtw3rnuqxrx46ppl": ["night"],
+  // 松本市新村: 雪山遠望+田園
+  "zho91jbc7j0igcmatqb2": ["rural", "mountain"],
+  // 中町通り(松本市): 商店街
+  "osimrafqhppzchakgcco": ["street"],
+  // 朝熊山展望台: 鳥羽湾+島々
+  "rc4ukzba1zlsefhsfbz3": ["coastal"],
+  // 夫婦岩: 注連縄+岩+夜
+  "pby91yxkkrxjdaflielh": ["coastal", "shrine", "night"],
+  // 清水寺周辺(産寧坂): 古い町並み夜景
+  "DSC07601_cocitq": ["street", "night"],
+  // 法隆寺 夢殿: 八角堂
+  "DSC07266_ii8otn": ["temple"],
+  // 鳴門海峡: 大橋+渦潮
+  "iy3ljfosdadc2xabf8ly": ["coastal"],
+  // 大鳴門橋
+  "psuhikljduldvl7jmox7": ["coastal"],
+  // 亀老山展望台: 来島海峡
+  "b3uqemt85nz8gcxz4mrs": ["coastal"],
+  // 来島海峡大橋
+  "e55oicb01uyyhukixdss": ["coastal"],
+  // にこ淵: 滝+エメラルドグリーンの淵
+  "opof4iv0ksb7hyyxwd0g": ["waterfall", "river"],
+  // 名越屋沈下橋: 仁淀川
+  "cpucwtmknaneef6uw8en": ["river"],
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
