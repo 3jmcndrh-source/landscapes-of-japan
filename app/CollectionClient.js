@@ -2,12 +2,38 @@
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionGuide } from "./collections.js";
 import TopNav from "./TopNav.js";
+
+// A8: ガイドセクションのラベル翻訳 (5 base langs + 15 langs は en fallback)
+const GUIDE_LABELS = {
+  ja: { title: "撮影ガイド", bestSeason: "最適な季節", bestTime: "最適な時間帯", technique: "撮影テクニック", equipment: "推奨機材", tips: "実践のヒント" },
+  en: { title: "Photography Guide", bestSeason: "Best Season", bestTime: "Best Time", technique: "Technique", equipment: "Equipment", tips: "Field Tips" },
+  zh: { title: "摄影指南", bestSeason: "最佳季节", bestTime: "最佳时间", technique: "摄影技巧", equipment: "推荐器材", tips: "实战建议" },
+  "zh-tw": { title: "攝影指南", bestSeason: "最佳季節", bestTime: "最佳時間", technique: "攝影技巧", equipment: "推薦器材", tips: "實戰建議" },
+  ko: { title: "촬영 가이드", bestSeason: "최적 시즌", bestTime: "최적 시간대", technique: "촬영 기법", equipment: "추천 장비", tips: "실전 팁" },
+  fr: { title: "Guide photographique", bestSeason: "Meilleure saison", bestTime: "Meilleur moment", technique: "Technique", equipment: "Équipement", tips: "Conseils pratiques" },
+  de: { title: "Fotoguide", bestSeason: "Beste Jahreszeit", bestTime: "Beste Zeit", technique: "Technik", equipment: "Ausrüstung", tips: "Praxistipps" },
+  es: { title: "Guía fotográfica", bestSeason: "Mejor temporada", bestTime: "Mejor momento", technique: "Técnica", equipment: "Equipo", tips: "Consejos prácticos" },
+  pt: { title: "Guia fotográfico", bestSeason: "Melhor estação", bestTime: "Melhor horário", technique: "Técnica", equipment: "Equipamento", tips: "Dicas práticas" },
+  it: { title: "Guida fotografica", bestSeason: "Migliore stagione", bestTime: "Miglior momento", technique: "Tecnica", equipment: "Attrezzatura", tips: "Consigli pratici" },
+  ru: { title: "Гид по фотосъёмке", bestSeason: "Лучший сезон", bestTime: "Лучшее время", technique: "Техника", equipment: "Оборудование", tips: "Практические советы" },
+  nl: { title: "Fotografiegids", bestSeason: "Beste seizoen", bestTime: "Beste tijd", technique: "Techniek", equipment: "Uitrusting", tips: "Praktijktips" },
+  pl: { title: "Przewodnik fotograficzny", bestSeason: "Najlepsza pora", bestTime: "Najlepszy czas", technique: "Technika", equipment: "Sprzęt", tips: "Wskazówki praktyczne" },
+  sv: { title: "Fotoguide", bestSeason: "Bästa säsong", bestTime: "Bästa tidpunkt", technique: "Teknik", equipment: "Utrustning", tips: "Praktiska tips" },
+  tr: { title: "Fotoğraf rehberi", bestSeason: "En iyi mevsim", bestTime: "En iyi zaman", technique: "Teknik", equipment: "Ekipman", tips: "Pratik ipuçları" },
+  id: { title: "Panduan Fotografi", bestSeason: "Musim terbaik", bestTime: "Waktu terbaik", technique: "Teknik", equipment: "Peralatan", tips: "Tips praktis" },
+  vi: { title: "Hướng dẫn nhiếp ảnh", bestSeason: "Mùa tốt nhất", bestTime: "Thời điểm tốt nhất", technique: "Kỹ thuật", equipment: "Thiết bị", tips: "Mẹo thực hành" },
+  th: { title: "คู่มือถ่ายภาพ", bestSeason: "ฤดูที่ดีที่สุด", bestTime: "เวลาที่ดีที่สุด", technique: "เทคนิค", equipment: "อุปกรณ์", tips: "คำแนะนำภาคสนาม" },
+  hi: { title: "फोटोग्राफी गाइड", bestSeason: "सबसे अच्छा मौसम", bestTime: "सबसे अच्छा समय", technique: "तकनीक", equipment: "उपकरण", tips: "व्यावहारिक सुझाव" },
+  ar: { title: "دليل التصوير", bestSeason: "أفضل موسم", bestTime: "أفضل وقت", technique: "تقنية", equipment: "المعدات", tips: "نصائح عملية" },
+};
 
 export default function CollectionClient({ lang, theme, photos, desc }) {
   const t = TR[lang] || TR.en;
   const name = getCollectionName(theme, lang);
+  const guide = getCollectionGuide(theme, lang);
+  const guideLabels = GUIDE_LABELS[lang] || GUIDE_LABELS.en;
 
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
@@ -98,6 +124,32 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
           <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 17, lineHeight: 1.85, color: "rgba(232,228,223,.9)", marginBottom: 48, maxWidth: 820 }}>
             {desc}
           </p>
+        )}
+
+        {guide && (
+          <section style={{ marginBottom: 56, maxWidth: 900 }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".22em", textTransform: "uppercase", color: "rgba(220,190,100,.8)", marginBottom: 24, fontWeight: 500 }}>
+              {guideLabels.title}
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 22 }}>
+              {[
+                ["bestSeason", guide.bestSeason],
+                ["bestTime", guide.bestTime],
+                ["technique", guide.technique],
+                ["equipment", guide.equipment],
+                ["tips", guide.tips],
+              ].filter(([_, v]) => v).map(([k, v]) => (
+                <div key={k} style={{ background: "rgba(255,255,255,.025)", border: "1px solid rgba(220,190,100,.14)", borderRadius: 10, padding: "20px 22px" }}>
+                  <h3 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, letterSpacing: ".18em", textTransform: "uppercase", color: "rgba(220,190,100,.85)", margin: 0, marginBottom: 10, fontWeight: 600 }}>
+                    {guideLabels[k]}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 15, lineHeight: 1.78, color: "rgba(232,228,223,.88)", margin: 0 }}>
+                    {v}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         )}
 
         <section>
