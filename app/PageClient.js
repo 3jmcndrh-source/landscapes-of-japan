@@ -988,7 +988,7 @@ export default function PageClient({ initialLang = "ja" }) {
                     return (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
-                        <img src={getUrl(photo, thumbW)} alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + getPrefName(pf.pref, lang) + " | Landscapes of Japan"} loading="lazy" draggable="false" />
+                        <img src={getUrl(photo, thumbW)} alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + getPrefName(pf.pref, lang) + " | Landscapes of Japan"} loading="lazy" decoding="async" draggable="false" />
                         {photo.loc && (
                           locSlug && prefSlug ? (
                             <a

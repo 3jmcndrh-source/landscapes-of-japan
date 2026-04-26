@@ -199,6 +199,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
                   src={getUrl(photo, imgSizes.thumbW)}
                   alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + prefLocal + " | Landscapes of Japan"}
                   loading="lazy"
+                  decoding="async"
                   draggable="false"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />

@@ -115,6 +115,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
                     src={cldUrl(p.id, 600)}
                     alt={`${locLocal} - ${prefLocal}`}
                     loading="lazy"
+                    decoding="async"
                     draggable="false"
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   />

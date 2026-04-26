@@ -183,6 +183,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
                   src={getUrl(photo, imgSizes.thumbW)}
                   alt={locLocal + " - " + prefLocal + " | Landscapes of Japan"}
                   loading="lazy"
+                  decoding="async"
                   draggable="false"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />

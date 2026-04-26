@@ -82,7 +82,8 @@ export default async function LangLayout({ children, params }) {
       </head>
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
         {/* Microsoft Clarity (#4): user behavior heatmap & session recording */}
-        <Script id="ms-clarity" strategy="afterInteractive">
+        {/* A10: lazyOnload で LCP/INP に影響しない (load イベント後に実行) */}
+        <Script id="ms-clarity" strategy="lazyOnload">
           {`(function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

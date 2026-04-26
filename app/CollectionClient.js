@@ -167,6 +167,7 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
                   src={cldUrl(photo.id, imgSizes.thumbW)}
                   alt={`${getLocName(photo.loc, lang)} - ${getPrefName(photo.pref, lang)} | ${name}`}
                   loading="lazy"
+                  decoding="async"
                   draggable="false"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
