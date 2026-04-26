@@ -125,18 +125,7 @@ function SearchInner({ lang }) {
   const placeholderLabel = lang === "ja" ? "撮影地、記事、タグを検索" : "Search locations, posts, tags…";
 
   return (
-    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-      <div className="top-bar scrolled">
-        <div className="top-langs">
-          {Object.entries(TR).map(([c]) => (
-            <a key={c} href={`/${c}/search${q ? `?q=${encodeURIComponent(q)}` : ""}`} className={"top-lang-btn" + (lang === c ? " active" : "")}>
-              {TR[c].name}
-            </a>
-          ))}
-        </div>
-        <TopNav lang={lang} t={t} />
-      </div>
-
+    <>
       <main style={{ maxWidth: 900, margin: "0 auto", padding: "100px 24px 80px" }}>
         <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(36px,5vw,56px)", margin: 0, color: "#f2ece2", lineHeight: 1, marginBottom: 24 }}>
           {searchLabel}
@@ -198,14 +187,27 @@ function SearchInner({ lang }) {
           </section>
         ))}
       </main>
-    </div>
+    </>
   );
 }
 
 export default function SearchClient({ lang }) {
+  const t = TR[lang] || TR.en;
   return (
-    <Suspense fallback={<div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh" }} />}>
-      <SearchInner lang={lang} />
-    </Suspense>
+    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+      <div className="top-bar scrolled">
+        <div className="top-langs">
+          {Object.entries(TR).map(([c]) => (
+            <a key={c} href={`/${c}/search`} className={"top-lang-btn" + (lang === c ? " active" : "")}>
+              {TR[c].name}
+            </a>
+          ))}
+        </div>
+        <TopNav lang={lang} t={t} />
+      </div>
+      <Suspense fallback={<div style={{ minHeight: "calc(100vh - 80px)" }} />}>
+        <SearchInner lang={lang} />
+      </Suspense>
+    </div>
   );
 }
