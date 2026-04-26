@@ -77,7 +77,7 @@ export default function Weather({ lat, lng, lang = "en" }) {
   const dailyMax = daily.temperature_2m_max || [];
   const dailyMin = daily.temperature_2m_min || [];
 
-  const labelStyle = { color: "rgba(220,190,100,.85)", fontSize: 11, fontWeight: 500, letterSpacing: ".05em", minWidth: 92 };
+  const labelStyle = { color: "rgba(220,190,100,.85)", fontSize: 11, fontWeight: 500, letterSpacing: ".05em", minWidth: 116 };
   const rowStyle = { display: "flex", alignItems: "center", gap: 12, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(232,228,223,.85)" };
   const emojiStyle = { fontSize: 18, fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" };
 
@@ -97,7 +97,7 @@ export default function Weather({ lat, lng, lang = "en" }) {
       {/* 明日 (daily index 1) */}
       {dailyCodes[1] !== undefined && (
         <div style={rowStyle}>
-          <span style={labelStyle}>{isJa ? "明日の天気" : "Tomorrow"}</span>
+          <span style={labelStyle}>{isJa ? "明日の現地の天気" : "Tomorrow (local)"}</span>
           <span style={emojiStyle}>{emoji(dailyCodes[1])}</span>
           <span>{wmo(dailyCodes[1], lang)}</span>
           <span style={{ color: "rgba(220,190,100,.85)", fontWeight: 500 }}>{Math.round(dailyMax[1])}° / {Math.round(dailyMin[1])}°</span>
@@ -107,7 +107,7 @@ export default function Weather({ lat, lng, lang = "en" }) {
       {/* 明後日 (daily index 2) */}
       {dailyCodes[2] !== undefined && (
         <div style={rowStyle}>
-          <span style={labelStyle}>{isJa ? "明後日の天気" : "Day after"}</span>
+          <span style={labelStyle}>{isJa ? "明後日の現地の天気" : "Day after (local)"}</span>
           <span style={emojiStyle}>{emoji(dailyCodes[2])}</span>
           <span>{wmo(dailyCodes[2], lang)}</span>
           <span style={{ color: "rgba(220,190,100,.85)", fontWeight: 500 }}>{Math.round(dailyMax[2])}° / {Math.round(dailyMin[2])}°</span>

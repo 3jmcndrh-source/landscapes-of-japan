@@ -4,6 +4,7 @@ import * as d3 from "d3";
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+import { REGIONS } from "./regions.js";
 import TopNav from "./TopNav.js";
 
 const VIEW_ALL = {
@@ -623,6 +624,7 @@ export default function PageClient({ initialLang = "ja" }) {
   const [loaded, setLoaded] = useState(false);
   const [hlPhoto, setHlPhoto] = useState(null);
   const [pastMap, setPastMap] = useState(false);
+  const [mapView, setMapView] = useState("map"); // "map" | "list"
   const cRef = useRef(null);
   const mapRef = useRef(null);
   const contactRef = useRef(null);
@@ -889,7 +891,76 @@ export default function PageClient({ initialLang = "ja" }) {
         <section className="cin-section">
           <div className="cin-map-wrap reveal" id="map" ref={mapRef}>
             <div className="cin-map-box">
-              <JapanMap lang={lang} photos={MAP_PINS} onPinClick={handlePin} hlId={hlPhoto} />
+              {/* マップ/一覧 切替トグル */}
+              <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 18, padding: "4px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 999, width: "fit-content", marginLeft: "auto", marginRight: "auto" }}>
+                {[
+                  { id: "map", labelJa: "マップ", labelEn: "Map" },
+                  { id: "list", labelJa: "一覧", labelEn: "List" },
+                ].map((opt) => {
+                  const active = mapView === opt.id;
+                  return (
+                    <button
+                      key={opt.id}
+                      onClick={() => setMapView(opt.id)}
+                      style={{
+                        background: active ? "rgba(220,190,100,.22)" : "transparent",
+                        border: "none",
+                        color: active ? "rgba(245,225,170,1)" : "rgba(232,228,223,.6)",
+                        fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif",
+                        fontSize: 12,
+                        fontWeight: 500,
+                        letterSpacing: ".1em",
+                        padding: "7px 22px",
+                        borderRadius: 999,
+                        cursor: "pointer",
+                        transition: "all .3s ease",
+                      }}
+                    >
+                      {lang === "ja" ? opt.labelJa : opt.labelEn}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {mapView === "map" ? (
+                <JapanMap lang={lang} photos={MAP_PINS} onPinClick={handlePin} hlId={hlPhoto} />
+              ) : (
+                <div style={{ padding: "8px 0" }}>
+                  {REGIONS.map((region) => {
+                    const regionPrefs = region.prefs
+                      .map((prefJp) => ({ prefJp, pf: PREFECTURES.find((p) => p.pref === prefJp), slug: PREF_SLUGS[prefJp] }))
+                      .filter((x) => x.pf && x.slug && x.pf.photos.length > 0);
+                    if (regionPrefs.length === 0) return null;
+                    return (
+                      <section key={region.id} style={{ marginBottom: 32 }}>
+                        <h3 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 14, paddingBottom: 8, borderBottom: "1px solid rgba(220,190,100,.15)" }}>
+                          {lang === "ja" ? region.nameJa : region.nameEn}
+                        </h3>
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 8 }}>
+                          {regionPrefs.map(({ prefJp, pf, slug }) => {
+                            const heroId = pf.photos[0]?.id;
+                            return (
+                              <a key={prefJp} href={`/${lang}/${slug}`} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8, textDecoration: "none", color: "#e8e4df" }}>
+                                {heroId && (
+                                  <img src={cldUrl(heroId, 100)} alt="" loading="lazy" style={{ width: 40, height: 40, objectFit: "cover", borderRadius: 4, flexShrink: 0 }} />
+                                )}
+                                <div style={{ minWidth: 0 }}>
+                                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "#f2ece2" }}>
+                                    {getPrefName(prefJp, lang)}
+                                  </div>
+                                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 11, color: "rgba(232,228,223,.5)" }}>
+                                    {pf.photos.length} {lang === "ja" ? "枚" : "photos"}
+                                  </div>
+                                </div>
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </section>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
           <div className="cin-gallery">

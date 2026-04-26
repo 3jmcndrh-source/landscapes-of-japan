@@ -346,6 +346,13 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
             </section>
           );
         })()}
+
+        {/* 47都道府県すべてを見るリンク (常に表示) */}
+        <div style={{ marginTop: 32 }}>
+          <a href={`/${lang}/all-prefectures`} style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none" }}>
+            {lang === "ja" ? "47都道府県すべてを見る →" : "View all 47 prefectures →"}
+          </a>
+        </div>
       </main>
 
       {lightbox !== null && cur && (
