@@ -579,10 +579,13 @@ export const LOCATION_CONTENT = {
       "伊勢神宮位居日本約8萬神社頂點，是最高聖地。由祭祀天照大神的內宮和祭祀豐受大神的外宮組成，每20年式年遷宮保持常新。五十鈴川清流、神宮杉巨木、靜謐參道充滿神聖氛圍。",
       "이세신궁은 전국 약 8만 신사의 정점에 위치한 일본 최고 성지. 아마테라스를 모시는 내궁과 도요우케를 모시는 외궁으로 구성되며, 20년마다 신궁을 재건축해 항상 신선함을 유지합니다. 이스즈강의 맑은 물, 거대 삼나무, 고요한 참배길이 신성한 공기를 자아냅니다."
     ),
-    definition: lh(
-      "伊勢神宮は三重県伊勢市にある日本神道の最高位の神社で、全国約8万社の神社の頂点に位置する天照大神(皇室の祖神)を祀る聖地。皇大神宮(内宮、ないくう)と豊受大神宮(外宮、げくう)の2つの正宮を中心に、計125の宮社から構成され、その総称が「神宮」または「伊勢神宮」。約2,000年の歴史を持ち、20年ごとに社殿・神宝・装束のすべてを造り替える「式年遷宮(しきねんせんぐう)」(西暦690年から続く、次回は2033年)により常に瑞々しさを保つ世界でも稀有な祭祀文化を継承しています。",
-      "Ise Jingu is the highest-ranking Shinto shrine in Japan, situated in Ise City, Mie Prefecture. As the head of approximately 80,000 shrines nationwide, it enshrines Amaterasu Omikami — the imperial ancestor deity. Centered on the two main sanctuaries — Naiku (Kotai Jingu) and Geku (Toyouke Daijingu) — it comprises 125 shrines in total, all known collectively as «Jingu» or «Ise Jingu.» With about 2,000 years of history, the shrine perpetuates the «Shikinen Sengu» — the rebuilding of every sanctuary, sacred treasure, and vestment every 20 years (a tradition unbroken since 690 AD; the next occurs in 2033) — preserving a ritual culture nearly without parallel in the world."
-    ),
+    definition: {
+      ja: "伊勢神宮は三重県伊勢市にある日本神道の最高位の神社で、全国約8万社の神社の頂点に位置する天照大神(皇室の祖神)を祀る聖地。皇大神宮(内宮、ないくう)と豊受大神宮(外宮、げくう)の2つの正宮を中心に、計125の宮社から構成され、その総称が「神宮」または「伊勢神宮」。約2,000年の歴史を持ち、20年ごとに社殿・神宝・装束のすべてを造り替える「式年遷宮(しきねんせんぐう)」(西暦690年から続く、次回は2033年)により常に瑞々しさを保つ世界でも稀有な祭祀文化を継承しています。",
+      en: "Ise Jingu is the highest-ranking Shinto shrine in Japan, situated in Ise City, Mie Prefecture. As the head of approximately 80,000 shrines nationwide, it enshrines Amaterasu Omikami — the imperial ancestor deity. Centered on the two main sanctuaries — Naiku (Kotai Jingu) and Geku (Toyouke Daijingu) — it comprises 125 shrines in total, all known collectively as «Jingu» or «Ise Jingu.» With about 2,000 years of history, the shrine perpetuates the «Shikinen Sengu» — the rebuilding of every sanctuary, sacred treasure, and vestment every 20 years (a tradition unbroken since 690 AD; the next occurs in 2033) — preserving a ritual culture nearly without parallel in the world.",
+      zh: "伊势神宫是位于三重县伊势市的日本神道最高位神社，居全国约8万神社之首，祭祀天照大神(皇室祖神)的圣地。以皇大神宫(内宫)与丰受大神宫(外宫)两正宫为中心，由125座宫社组成，统称「神宫」或「伊势神宫」。约2,000年历史，每20年重建社殿、神宝、装束的「式年迁宫」(始于公元690年，下次2033年)使其永葆新生，是世界罕见的祭祀文化传承。",
+      "zh-tw": "伊勢神宮是位於三重縣伊勢市的日本神道最高位神社，居全國約8萬神社之首，祭祀天照大神(皇室祖神)的聖地。以皇大神宮(內宮)與豐受大神宮(外宮)兩正宮為中心，由125座宮社組成，統稱「神宮」或「伊勢神宮」。約2,000年歷史，每20年重建社殿、神寶、裝束的「式年遷宮」(始於公元690年，下次2033年)使其永葆新生，是世界罕見的祭祀文化傳承。",
+      ko: "이세 신궁은 미에현 이세시에 있는 일본 신토의 최고위 신사로, 전국 약 8만 신사의 정점에 위치하며 아마테라스 오미카미(황실의 조신)를 모시는 성지. 황대신궁(내궁, 나이쿠)과 도요우케 대신궁(외궁, 게쿠) 두 정궁을 중심으로 총 125개의 궁사로 구성되며, 그 총칭이 「신궁」또는「이세 신궁」. 약 2,000년의 역사를 지니며, 20년마다 신전·신보·복식 모두를 새로 만드는 「시키넨 센구(식년천궁)」(서기 690년부터 이어짐, 다음은 2033년)에 의해 항상 신선함을 유지하는 세계적으로도 드문 제사 문화를 계승하고 있습니다.",
+    },
     highlights: {
       ja: [
         "内宮(皇大神宮) — 天照大神を祀る、宇治橋を渡り神苑・五十鈴川・正宮・荒祭宮の参道、最重要の聖地",
@@ -597,6 +600,27 @@ export const LOCATION_CONTENT = {
         "Uji Bridge — about 100 m of wooden bridge marking Naiku's entrance, rebuilt every 20 years; the Isuzu River framed through its rails is exquisite",
         "Isuzu River and shrine cedars — millennia-old cedars line the approach, with «Mitarashiba» a place to purify hands in the river",
         "Shikinen Sengu rituals — the «Okihiki» log-pulling ceremony and the once-in-20-years sacred rebuilding; the next occurs in 2033",
+      ],
+      zh: [
+        "内宫(皇大神宫) — 祭祀天照大神，过宇治桥进入神苑·五十铃川·正宫·荒祭宫的参道，最重要的圣地",
+        "外宫(丰受大神宫) — 祭祀掌管天照大神饮食的丰受大神，古来惯例先参外宫",
+        "宇治桥 — 内宫入口，长约100米的木桥，每20年重建，栏杆间望见的五十铃川极美",
+        "五十铃川与神宫杉 — 千年巨木林立的参道，河中净身的「御手洗场」",
+        "式年迁宫御用材 — 御木曳仪式与20年一度的神圣迁宫，下次2033年",
+      ],
+      "zh-tw": [
+        "內宮(皇大神宮) — 祭祀天照大神，過宇治橋進入神苑·五十鈴川·正宮·荒祭宮的參道，最重要的聖地",
+        "外宮(豐受大神宮) — 祭祀掌管天照大神飲食的豐受大神，古來慣例先參外宮",
+        "宇治橋 — 內宮入口，長約100米的木橋，每20年重建，欄杆間望見的五十鈴川極美",
+        "五十鈴川與神宮杉 — 千年巨木林立的參道，河中淨身的「御手洗場」",
+        "式年遷宮御用材 — 御木曳儀式與20年一度的神聖遷宮，下次2033年",
+      ],
+      ko: [
+        "내궁(황대신궁) — 아마테라스 오미카미를 모심, 우지바시를 건너 신원·이스즈강·정궁·아라마쓰리노미야의 참배길, 가장 중요한 성지",
+        "외궁(도요우케 대신궁) — 아마테라스의 식사를 담당하는 도요우케 대신을 모심, 옛부터 외궁부터 참배하는 것이 관습",
+        "우지바시 — 내궁의 입구, 길이 약 100m의 목조 다리, 20년마다 다시 놓음, 난간 너머의 이스즈강이 아름답다",
+        "이스즈강과 신궁 삼나무 — 수령 천년급 거목이 늘어선 참배길, 강에서 몸을 정화하는 「미타라시바」",
+        "시키넨 센구 어용재 — 오키히키 행사와 20년에 한 번의 신성한 천궁 의식, 다음은 2033년",
       ],
     },
     quickAnswers: {
@@ -615,6 +639,30 @@ export const LOCATION_CONTENT = {
         { q: "What is Shikinen Sengu?", a: "Every 20 years, the main halls of Naiku and Geku and 14 auxiliary shrines are completely rebuilt — the largest Shinto ritual. The 62nd was in 2013; the 63rd is set for 2033. Old timbers are reused at other shrines in a circular system. Preparations like the Uji Bridge replacement are already underway." },
         { q: "How do I get there?", a: "From Nagoya: Kintetsu Limited Express ~1hr 20min, ¥3,070. From Osaka ~1hr 40min. Geku is 5 min walk from Iseshi Station; Naiku is 15 min by bus from Geku. Allow a half-day to visit both. The 5 AM opening means an overnight stay in Ise the night before is recommended." },
         { q: "Goshuin and souvenirs?", a: "Goshuin (shrine seals) are issued separately at Naiku and Geku (¥300 each). At Okage Yokocho: Akafuku main shop (with the bonmaWashi morning gruel and takeaway sweets), Ise udon, and tekone-zushi are local specialties. Since photography is restricted inside the shrines, the Oharaimachi/Okage Yokocho streets become the main photo subjects." },
+      ],
+      zh: [
+        { q: "伊势神宫是什么?", a: "位于三重县伊势市的日本神道最高位神社，居全国约8万神社之首。以祭祀天照大神的内宫与丰受大神的外宫为中心，由125座宫社组成，约2,000年历史的日本精神中心。" },
+        { q: "内宫外宫先参拜哪个?", a: "古来惯例先外宫后内宫。两宫相距约5公里，巴士15分钟。清晨5时起开放参拜，人少的早晨6~8时也是拍摄最佳。两宫巡游需半日。" },
+        { q: "拍摄礼仪?", a: "正宫内禁止拍摄。鸟居以内须节制拍摄，不直接拍摄参拜者或神职为原则。三脚架使用需事先确认，内宫早5时开门最静且光线柔和。" },
+        { q: "式年迁宫是什么?", a: "每20年将内宫·外宫的正殿与14处别宫全部重建的神道最大祭祀。第62回为2013年，第63回为2033年。旧御用材在其他神社循环再利用。下次前的宇治桥重建等准备进行中。" },
+        { q: "怎么去?", a: "名古屋乘近铁特急约1小时20分、3,070日元；大阪约1小时40分。外宫距伊势市站步行5分钟，内宫距外宫巴士15分钟。巡两宫需半日，因晨5时开门，建议前夜伊势市内住宿。" },
+        { q: "御朱印·土产?", a: "御朱印内宫·外宫各300日元，分别可得。御荫横丁的赤福本店(本店限定盆回朝粥与外带)，伊势乌龙面、手捏寿司为名物。神宫内拍摄受限，主要在御袚町·御荫横丁拍街景。" },
+      ],
+      "zh-tw": [
+        { q: "伊勢神宮是什麼?", a: "位於三重縣伊勢市的日本神道最高位神社，居全國約8萬神社之首。以祭祀天照大神的內宮與豐受大神的外宮為中心，由125座宮社組成，約2,000年歷史的日本精神中心。" },
+        { q: "內宮外宮先參拜哪個?", a: "古來慣例先外宮後內宮。兩宮相距約5公里，巴士15分鐘。清晨5時起開放參拜，人少的早晨6~8時也是拍攝最佳。兩宮巡遊需半日。" },
+        { q: "拍攝禮儀?", a: "正宮內禁止拍攝。鳥居以內須節制拍攝，不直接拍攝參拜者或神職為原則。三腳架使用需事先確認，內宮早5時開門最靜且光線柔和。" },
+        { q: "式年遷宮是什麼?", a: "每20年將內宮·外宮的正殿與14處別宮全部重建的神道最大祭祀。第62回為2013年，第63回為2033年。舊御用材在其他神社循環再利用。下次前的宇治橋重建等準備進行中。" },
+        { q: "怎麼去?", a: "名古屋搭近鐵特急約1小時20分、3,070日圓；大阪約1小時40分。外宮距伊勢市站步行5分鐘，內宮距外宮巴士15分鐘。巡兩宮需半日，因晨5時開門，建議前夜伊勢市內住宿。" },
+        { q: "御朱印·土產?", a: "御朱印內宮·外宮各300日圓，分別可得。御蔭橫丁的赤福本店(本店限定盆迴朝粥與外帶)，伊勢烏龍麵、手捏壽司為名物。神宮內拍攝受限，主要在御祓町·御蔭橫丁拍街景。" },
+      ],
+      ko: [
+        { q: "이세 신궁이란?", a: "미에현 이세시에 있는 일본 신토의 최고위 신사로, 전국 약 8만 신사의 정점. 아마테라스를 모시는 내궁과 도요우케를 모시는 외궁을 중심으로 125개의 궁사로 구성, 약 2,000년 역사를 지닌 일본의 정신적 중심입니다." },
+        { q: "내궁과 외궁 어느 쪽부터?", a: "옛부터의 관습은 외궁→내궁 순. 두 궁은 약 5km 떨어져 있어 버스로 15분. 이른 아침 5시부터 참배 가능, 사람 적은 아침 6~8시가 촬영에도 최적입니다. 두 궁을 도는 데 반나절 정도 예상." },
+        { q: "촬영 매너는?", a: "정궁(어정궁) 내부는 촬영 금지. 도리이부터 안쪽은 절도 있는 촬영에 그치고, 참배객이나 신직을 직접 찍지 않는 것이 원칙. 삼각대 사용은 사전 확인, 내궁의 아침 5시 개문이 가장 고요하고 빛도 부드럽습니다." },
+        { q: "시키넨 센구란?", a: "20년에 한 번, 내궁·외궁의 정전과 14개 별궁을 모두 새로 건축하는 신토 최대의 제사. 제62회가 2013년, 제63회는 2033년. 옛 어용재는 다른 신사에서 재이용되는 순환 시스템. 다음을 위한 우지바시 재가설 등 준비 진행 중." },
+        { q: "가는 방법은?", a: "나고야에서 긴테쓰 특급으로 약 1시간 20분·3,070엔, 오사카에서 약 1시간 40분. 외궁은 이세시역에서 도보 5분, 내궁은 외궁에서 버스로 15분. 두 궁을 도는 데 반나절. 이른 아침 5시 개문이므로 전날 이세시 내 숙박 추천입니다." },
+        { q: "고슈인·기념품은?", a: "고슈인은 내궁·외궁에서 따로 받을 수 있다(각 300엔). 오카게요코초의 아카후쿠 본점(본점 한정 본마와시 아침 죽이나 포장), 이세 우동, 데코네스시가 명물. 신궁 내는 촬영 규제가 있으므로 오하라이마치·오카게요코초의 거리 풍경 촬영이 중심이 됩니다." },
       ],
     },
     faqs: [
