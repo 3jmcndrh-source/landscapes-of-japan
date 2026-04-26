@@ -1274,10 +1274,13 @@ export const LOCATION_CONTENT = {
       "平等院鳳凰堂創建於1053年，世界遺產，10日圓硬幣背面所繪日本代表建築。左右對稱的優雅身姿浮於阿字池，如將極樂淨土再現於地上。春紫藤、夏綠意、秋紅葉、冬靜寂皆入畫。",
       "뵤도인 호오도는 1053년 창건 세계유산, 10엔 주화 뒷면에 그려진 일본 대표 건축물. 아지 연못에 떠 있듯 좌우대칭으로 서 있는 우아한 자태는 극락정토를 지상에 옮긴 것. 봄 등나무, 여름 녹음, 가을 단풍, 겨울 정적 모두 그림이 됩니다."
     ),
-    definition: lh(
-      "平等院鳳凰堂(ほうおうどう)は京都府宇治市にある藤原氏ゆかりの天台宗・浄土宗の単立寺院・平等院の主要建築で、1053年に藤原頼通が父・道長から譲り受けた別荘を寺院に改めた際の阿弥陀堂。世界遺産「古都京都の文化財」の構成資産で国宝。屋根に一対の鳳凰像を戴く左右対称の優美な姿は10円硬貨の裏面に描かれ、日本人にとって最も馴染み深い古建築の一つ。阿字池(あじいけ)の対岸から望む正面構図は、平安貴族が憧れた「極楽浄土」を地上に再現した姿として、1000年を超えて愛され続けています。",
-      "Byodoin Phoenix Hall (Hoodo) is the central building of Byodoin Temple in Uji, Kyoto Prefecture — an independent temple of mixed Tendai and Jodo affiliations linked to the Fujiwara clan. Built in 1053 by Fujiwara no Yorimichi when he converted his father Michinaga's villa into a temple, it served as the Amida Hall and is both a constituent property of the UNESCO «Historic Monuments of Ancient Kyoto» and a National Treasure. With its symmetrical silhouette crowned by a pair of phoenix figures, it appears on the reverse of the ¥10 coin and is among the most familiar pieces of historic architecture for Japanese people. The frontal view from across Aji Pond — a Heian aristocrat's vision of the Pure Land made earthly — has been cherished for over a thousand years."
-    ),
+    definition: {
+      ja: "平等院鳳凰堂(ほうおうどう)は京都府宇治市にある藤原氏ゆかりの天台宗・浄土宗の単立寺院・平等院の主要建築で、1053年に藤原頼通が父・道長から譲り受けた別荘を寺院に改めた際の阿弥陀堂。世界遺産「古都京都の文化財」の構成資産で国宝。屋根に一対の鳳凰像を戴く左右対称の優美な姿は10円硬貨の裏面に描かれ、日本人にとって最も馴染み深い古建築の一つ。阿字池(あじいけ)の対岸から望む正面構図は、平安貴族が憧れた「極楽浄土」を地上に再現した姿として、1000年を超えて愛され続けています。",
+      en: "Byodoin Phoenix Hall (Hoodo) is the central building of Byodoin Temple in Uji, Kyoto Prefecture — an independent temple of mixed Tendai and Jodo affiliations linked to the Fujiwara clan. Built in 1053 by Fujiwara no Yorimichi when he converted his father Michinaga's villa into a temple, it served as the Amida Hall and is both a constituent property of the UNESCO «Historic Monuments of Ancient Kyoto» and a National Treasure. With its symmetrical silhouette crowned by a pair of phoenix figures, it appears on the reverse of the ¥10 coin and is among the most familiar pieces of historic architecture for Japanese people. The frontal view from across Aji Pond — a Heian aristocrat's vision of the Pure Land made earthly — has been cherished for over a thousand years.",
+      zh: "平等院凤凰堂(凤凰堂)是京都府宇治市的藤原氏相关天台宗·净土宗单立寺院·平等院的主要建筑，1053年藤原赖通将父亲道长所赠别墅改为寺院时的阿弥陀堂。世界遗产「古都京都的文化财」构成资产，国宝。屋顶顶一对凤凰像的左右对称优美身姿描绘于10日元硬币背面，是日本人最熟悉的古建筑之一。阿字池(あじいけ)对岸所望的正面构图，作为平安贵族向往的「极乐净土」于地上再现的姿态，1000多年来持续被深爱。",
+      "zh-tw": "平等院鳳凰堂(鳳凰堂)是京都府宇治市的藤原氏相關天台宗·淨土宗單立寺院·平等院的主要建築，1053年藤原賴通將父親道長所贈別墅改為寺院時的阿彌陀堂。世界遺產「古都京都的文化財」構成資產，國寶。屋頂頂一對鳳凰像的左右對稱優美身姿描繪於10日圓硬幣背面，是日本人最熟悉的古建築之一。阿字池(あじいけ)對岸所望的正面構圖，作為平安貴族嚮往的「極樂淨土」於地上再現的姿態，1000多年來持續被深愛。",
+      ko: "뵤도인 호오도(봉황당)는 교토부 우지시에 있는 후지와라 가문 연고의 천태종·정토종 단립 사원·뵤도인의 주요 건축물로, 1053년 후지와라노 요리미치가 아버지 미치나가로부터 물려받은 별장을 사원으로 개조했을 때의 아미타당. 세계유산 「고도 교토의 문화재」 구성 자산이며 국보. 지붕에 한 쌍의 봉황상을 얹은 좌우대칭의 우아한 모습은 10엔 주화 뒷면에 그려져, 일본인에게 가장 친숙한 고건축 중 하나. 아지 연못(아지이케) 건너편에서 바라보는 정면 구도는, 헤이안 귀족이 동경한 「극락정토」를 지상에 재현한 모습으로 1000년 넘게 사랑받고 있습니다.",
+    },
     highlights: {
       ja: [
         "鳳凰堂(国宝) — 阿字池に向かう左右対称の翼廊、屋根の一対の鳳凰像、10円硬貨の裏面の構図",
@@ -1292,6 +1295,27 @@ export const LOCATION_CONTENT = {
         "Hosho-kan Museum — displays the National Treasure Amida Buddha statue and 26 «Cloud-borne Bodhisattvas,» peak masterpieces of Heian art",
         "Wisteria — over 280 years old, blooming in late April to early May; the purple wisteria with the vermilion Phoenix Hall is otherworldly",
         "Evening Illumination — held in limited spring and autumn periods; the vermilion-and-gold hall floating in darkness reflects across the pond",
+      ],
+      zh: [
+        "凤凰堂(国宝) — 朝向阿字池的左右对称翼廊，屋顶一对凤凰像，10日元硬币背面所绘构图",
+        "阿字池(あじいけ) — 凤凰堂前展开的池塘，无风清晨成完美水镜，红叶与樱花为借景",
+        "凤翔馆(博物馆) — 展示国宝阿弥陀如来坐像与云中供养菩萨像26尊，平安美术最高杰作",
+        "紫藤 — 凤凰堂前树龄280年以上的紫藤，4月下旬至5月上旬花期，紫藤与朱凤凰堂梦幻交织",
+        "夜间灯光秀 — 春秋限定期间举办，黑暗中浮现的朱与金凤凰堂映入水面之景",
+      ],
+      "zh-tw": [
+        "鳳凰堂(國寶) — 朝向阿字池的左右對稱翼廊，屋頂一對鳳凰像，10日圓硬幣背面所繪構圖",
+        "阿字池(あじいけ) — 鳳凰堂前展開的池塘，無風清晨成完美水鏡，紅葉與櫻花為借景",
+        "鳳翔館(博物館) — 展示國寶阿彌陀如來坐像與雲中供養菩薩像26尊，平安美術最高傑作",
+        "紫藤 — 鳳凰堂前樹齡280年以上的紫藤，4月下旬至5月上旬花期，紫藤與朱鳳凰堂夢幻交織",
+        "夜間燈光秀 — 春秋限定期間舉辦，黑暗中浮現的朱與金鳳凰堂映入水面之景",
+      ],
+      ko: [
+        "봉황당(국보) — 아지 연못을 향한 좌우대칭의 익랑, 지붕의 한 쌍의 봉황상, 10엔 주화 뒷면에 그려진 구도",
+        "아지 연못(아지이케) — 봉황당 앞에 펼쳐진 연못, 무풍 새벽에는 완벽한 수경, 단풍과 벚꽃이 차경",
+        "호쇼칸(박물관) — 국보 아미타여래 좌상과 운중공양보살상 26구 전시, 헤이안 미술의 최고 걸작",
+        "등나무 — 봉황당 앞 수령 280년 이상의 등나무, 4월 하순~5월 상순 꽃 시기에는 자주색 등나무와 주홍 봉황당이 환상적",
+        "야간 조명 — 봄·가을 한정 기간 개최, 어둠 속에 떠오르는 주홍과 금빛 봉황당이 수면에 비치는 경관",
       ],
     },
     quickAnswers: {
@@ -1311,6 +1335,30 @@ export const LOCATION_CONTENT = {
         { q: "About the Phoenix Hall interior tour?", a: "Reservation-only, multiple times daily, 50 people per slot, ¥300 extra. Inside sit the National Treasure Amida statue (by Jocho, 1053) and 52 «Cloud-borne Bodhisattva» figures (also National Treasure). Photography forbidden inside, but the Hosho-kan Museum displays interior replicas, the original phoenix figures, and the temple bell — photographable." },
         { q: "Other attractions in Uji?", a: "①Ujigami Shrine (UNESCO, oldest extant Heian-period shrine architecture) ②Uji River cormorant fishing (summer evenings July–September) ③Tea-leaf picking experience at Tea Industry Heritage Park (May) ④Murasaki Shikibu's «Tale of Genji» Uji Ten Chapters' setting. All within a 5-min walk or drive of Byodoin — half a day covers two World Heritage sites and Genji's world." },
       ],
+      zh: [
+        { q: "平等院凤凰堂是什么?", a: "1053年藤原赖通建立的京都府宇治市世界遗产。浮于阿字池的左右对称优美身姿描绘于10日元硬币背面，是平安贵族向往的极乐净土于地上再现的日本古建筑最高峰之一。" },
+        { q: "最佳拍摄位置是?", a: "阿字池对岸(朝南)顺光正面构图为王道。早上一开门(8:30)池水镜面最静最美。4月下旬紫藤、11月下旬红叶、冬季雪景皆为特别拍摄主题。" },
+        { q: "门票与所需时间?", a: "庭园+凤翔馆成人600日元，凤凰堂内部参观另需300日元(时间预约制，限50名)。撮影中心仅庭园约2小时，含内部约3小时较从容。" },
+        { q: "如何前往?", a: "京都站乘JR奈良线「宇治站」下车步行10分钟·所需18分钟·250日元。京阪电车「宇治站」也步行10分钟。宇治站至平等院参道有宇治茶老店(中村藤吉本店、辻利)，撮影前后散步亦最佳。京都市内当日往返可行。" },
+        { q: "凤凰堂内部参观如何?", a: "预约制每日数十回，每回限50名另需300日元。内堂安置阿弥陀如来坐像(国宝，定朝作1053年)与52尊云中供养菩萨像(国宝)。内部禁止撮影，但博物馆凤翔馆可近距离看堂内复制品、真品凤凰像、梵钟，可拍摄。" },
+        { q: "宇治其他看点?", a: "①宇治上神社(世界遗产，平安时代神社建筑最古例)②宇治川鸬鹚捕鱼(夏期7~9月夜间)③茶业历史公园采茶体验(5月)④紫式部「源氏物语」宇治十帖舞台。距平等院步行至车5分钟内，半日至一日可巡两处世界遗产+源氏物语世界。" },
+      ],
+      "zh-tw": [
+        { q: "平等院鳳凰堂是什麼?", a: "1053年藤原賴通建立的京都府宇治市世界遺產。浮於阿字池的左右對稱優美身姿描繪於10日圓硬幣背面，是平安貴族嚮往的極樂淨土於地上再現的日本古建築最高峰之一。" },
+        { q: "最佳拍攝位置是?", a: "阿字池對岸(朝南)順光正面構圖為王道。早上一開門(8:30)池水鏡面最靜最美。4月下旬紫藤、11月下旬紅葉、冬季雪景皆為特別拍攝主題。" },
+        { q: "門票與所需時間?", a: "庭園+鳳翔館成人600日圓，鳳凰堂內部參觀另需300日圓(時間預約制，限50名)。撮影中心僅庭園約2小時，含內部約3小時較從容。" },
+        { q: "如何前往?", a: "京都站搭JR奈良線「宇治站」下車步行10分鐘·所需18分鐘·250日圓。京阪電車「宇治站」也步行10分鐘。宇治站至平等院參道有宇治茶老店(中村藤吉本店、辻利)，撮影前後散步亦最佳。京都市內當日往返可行。" },
+        { q: "鳳凰堂內部參觀如何?", a: "預約制每日數十回，每回限50名另需300日圓。內堂安置阿彌陀如來坐像(國寶，定朝作1053年)與52尊雲中供養菩薩像(國寶)。內部禁止撮影，但博物館鳳翔館可近距離看堂內複製品、真品鳳凰像、梵鐘，可拍攝。" },
+        { q: "宇治其他看點?", a: "①宇治上神社(世界遺產，平安時代神社建築最古例)②宇治川鸕鶿捕魚(夏期7~9月夜間)③茶業歷史公園採茶體驗(5月)④紫式部「源氏物語」宇治十帖舞台。距平等院步行至車5分鐘內，半日至一日可巡兩處世界遺產+源氏物語世界。" },
+      ],
+      ko: [
+        { q: "뵤도인 호오도란?", a: "1053년 후지와라노 요리미치가 건립한 교토부 우지시의 세계유산. 아지 연못에 떠오른 좌우대칭의 우아한 모습은 10엔 주화 뒷면에 그려져, 헤이안 귀족이 동경한 극락정토를 지상에 재현한 일본 고건축의 최고봉 중 하나입니다." },
+        { q: "베스트 촬영 포지션은?", a: "아지 연못 건너편(남향)에서 순광으로 정면 구도가 왕도. 아침 첫 시간(8시 30분 개문)은 연못 수경이 잔잔해 가장 아름다움. 등나무의 4월 하순, 단풍의 11월 하순, 눈의 겨울은 특별한 피사체가 됩니다." },
+        { q: "관람료와 소요 시간은?", a: "정원+호쇼칸은 성인 600엔, 호오도 내부 참배는 별도 300엔(시간 예약제, 정원 50명). 촬영 중심이라면 정원만 2시간, 내부 포함 시 3시간 정도 보면 여유롭습니다." },
+        { q: "가는 방법은?", a: "교토역에서 JR 나라선 「우지역」 하차 도보 10분·소요 18분·250엔. 게이한 전철 「우지역」에서도 도보 10분. 우지역에서 뵤도인까지의 참배길에는 우지차 노포(나카무라 토키치 본점, 츠지리)가 늘어서 촬영 전후 산책에도 최적. 교토 시내에서 당일 왕복 가능합니다." },
+        { q: "호오도 내부 참배는?", a: "예약제로 1일 수십 회 개최, 회당 50명 한정 별도 300엔. 내진에 아미타여래 좌상(국보, 조초 작 1053년)과 52체의 운중공양보살상(국보)이 안치. 내부는 촬영 금지지만, 박물관 호쇼칸에서 당내 복제품과 진품 봉황상, 범종을 가까이 볼 수 있고 촬영도 가능합니다." },
+        { q: "우지의 다른 볼거리는?", a: "①우지카미 신사(세계유산, 헤이안 시대 신사 건축의 최고(最古)례) ②우지가와 가마우지 낚시(여름 7~9월 야간) ③다업 역사공원에서 찻잎 따기 체험(5월) ④무라사키 시키부 「겐지 모노가타리」 우지 십첩의 무대. 뵤도인에서 도보~차로 5분 권내에 모여 반나절~1일에 세계유산 2곳+겐지 모노가타리 세계를 둘러볼 수 있습니다." },
+      ],
     },
     faqs: [
       { q: d("ベスト撮影ポジションは？","Best photo position?","最佳拍摄位置？","最佳拍攝位置？","최고 촬영 위치는?"),
@@ -1325,10 +1373,13 @@ export const LOCATION_CONTENT = {
       "東福寺創建於1236年，臨濟宗大本山。紅葉名所，從「通天橋」眺望的景色為京都首屈一指。2000株楓葉構成的深紅之海象徵日本之秋。初夏新綠亦清爽。",
       "도후쿠지는 1236년 창건 임제종 대본산. 단풍 명소로 '쓰텐쿄' 다리에서 바라보는 경관은 교토 최고. 2,000그루 단풍이 그리는 붉은 바다는 일본 가을을 상징하는 절경. 초여름 신록도 상쾌합니다."
     ),
-    definition: lh(
-      "東福寺は京都府京都市東山区にある臨済宗東福寺派の大本山で、1236年に九条道家が奈良の東大寺と興福寺から一字ずつ取って命名した京都最大級の禅寺。三門(国宝、1425年再建、現存最古最大の禅寺三門)、本堂、方丈、開山堂など25の塔頭と広大な伽藍を有し、特に「通天橋(つうてんきょう)」から望む洗玉澗(せんぎょくかん)の渓谷は約2,000本のカエデが織りなす紅葉の絶景として日本随一。重森三玲(しげもりみれい)作の方丈庭園は近代日本庭園の最高傑作の一つです。",
-      "Tofuku-ji is the head temple of the Tofuku-ji school of Rinzai Zen Buddhism in Kyoto's Higashiyama Ward. Founded in 1236 by Kujo Michiie — who took one character each from Nara's Todai-ji and Kofuku-ji to name it — it is one of Kyoto's largest Zen temples. Its Sanmon Gate (a National Treasure rebuilt in 1425) is the oldest and largest surviving Zen temple gate. With 25 sub-temples and a vast precinct, it is most famous for the «Tsuten-kyo Bridge» overlooking the Sengyokukan ravine, a sea of about 2,000 maple trees that form Japan's premier autumn foliage view. The hojo (abbot's quarters) garden, designed by Mirei Shigemori, is among the great masterpieces of modern Japanese garden art."
-    ),
+    definition: {
+      ja: "東福寺は京都府京都市東山区にある臨済宗東福寺派の大本山で、1236年に九条道家が奈良の東大寺と興福寺から一字ずつ取って命名した京都最大級の禅寺。三門(国宝、1425年再建、現存最古最大の禅寺三門)、本堂、方丈、開山堂など25の塔頭と広大な伽藍を有し、特に「通天橋(つうてんきょう)」から望む洗玉澗(せんぎょくかん)の渓谷は約2,000本のカエデが織りなす紅葉の絶景として日本随一。重森三玲(しげもりみれい)作の方丈庭園は近代日本庭園の最高傑作の一つです。",
+      en: "Tofuku-ji is the head temple of the Tofuku-ji school of Rinzai Zen Buddhism in Kyoto's Higashiyama Ward. Founded in 1236 by Kujo Michiie — who took one character each from Nara's Todai-ji and Kofuku-ji to name it — it is one of Kyoto's largest Zen temples. Its Sanmon Gate (a National Treasure rebuilt in 1425) is the oldest and largest surviving Zen temple gate. With 25 sub-temples and a vast precinct, it is most famous for the «Tsuten-kyo Bridge» overlooking the Sengyokukan ravine, a sea of about 2,000 maple trees that form Japan's premier autumn foliage view. The hojo (abbot's quarters) garden, designed by Mirei Shigemori, is among the great masterpieces of modern Japanese garden art.",
+      zh: "东福寺是京都府京都市东山区的临济宗东福寺派大本山，1236年九条道家从奈良东大寺与兴福寺各取一字命名的京都最大级禅寺。三门(国宝，1425年再建，现存最古最大禅寺三门)、本堂、方丈、开山堂等25座塔头与广大伽蓝，尤其从「通天桥(つうてんきょう)」眺望的洗玉涧(せんぎょくかん)溪谷是约2000株枫叶织就的红叶绝景，日本第一。重森三玲(しげもりみれい)作方丈庭园是近代日本庭园最高杰作之一。",
+      "zh-tw": "東福寺是京都府京都市東山區的臨濟宗東福寺派大本山，1236年九條道家從奈良東大寺與興福寺各取一字命名的京都最大級禪寺。三門(國寶，1425年再建，現存最古最大禪寺三門)、本堂、方丈、開山堂等25座塔頭與廣大伽藍，尤其從「通天橋(つうてんきょう)」眺望的洗玉澗(せんぎょくかん)溪谷是約2000株楓葉織就的紅葉絕景，日本第一。重森三玲(しげもりみれい)作方丈庭園是近代日本庭園最高傑作之一。",
+      ko: "도후쿠지는 교토부 교토시 히가시야마구에 있는 임제종 도후쿠지파의 대본산으로, 1236년 구조 미치이에가 나라의 도다이지와 고후쿠지에서 한 글자씩 따 이름 붙인 교토 최대급 선사. 산몬(국보, 1425년 재건, 현존 최고(最古)·최대 선사 산몬), 본당, 방장, 개산당 등 25개의 탑두와 광대한 가람을 보유하며, 특히 「쓰텐쿄(つうてんきょう)」에서 바라보는 센교쿠칸(せんぎょくかん) 계곡은 약 2,000그루의 단풍나무가 짜내는 단풍 절경으로 일본 제일. 시게모리 미레이(しげもりみれい) 작 방장 정원은 근대 일본 정원의 최고 걸작 중 하나입니다.",
+    },
     highlights: {
       ja: [
         "通天橋(つうてんきょう) — 全長100mの渡り廊下橋、洗玉澗を渡り開山堂へ、紅葉の海に浮かぶ構図",
@@ -1343,6 +1394,27 @@ export const LOCATION_CONTENT = {
         "Hojo Garden by Mirei Shigemori — four gardens (north, south, west, east) blending modern and classical motifs, a masterpiece of modern Japanese garden design",
         "Main Hall and Butsuden — Showa-era reconstruction (1934) with Domoto Insho's overwhelming «Sōryū-zu» (Azure Dragon) ceiling painting",
         "Sub-temples — 25 in total; Komyo-in's «Hashin no Niwa,» Shorin-ji, and Funda-in are insider autumn foliage destinations",
+      ],
+      zh: [
+        "通天桥(つうてんきょう) — 全长100米的廊桥，跨越洗玉涧通往开山堂，浮于红叶之海的构图",
+        "三门(国宝) — 1425年再建，现存最古最大禅寺三门，高22米，仅特别公开时可参观楼上",
+        "方丈庭园(重森三玲作) — 北·南·西·东4庭组成，现代与古典融合的近代日本庭园最高杰作",
+        "本堂与佛殿 — 1934年再建昭和大伽蓝，天井堂本印象作「苍龙图」震撼",
+        "塔头 — 25座塔头分布，尤光明院「波心之庭」、胜林寺、芬陀院为知音红叶名所",
+      ],
+      "zh-tw": [
+        "通天橋(つうてんきょう) — 全長100米的廊橋，跨越洗玉澗通往開山堂，浮於紅葉之海的構圖",
+        "三門(國寶) — 1425年再建，現存最古最大禪寺三門，高22米，僅特別公開時可參觀樓上",
+        "方丈庭園(重森三玲作) — 北·南·西·東4庭組成，現代與古典融合的近代日本庭園最高傑作",
+        "本堂與佛殿 — 1934年再建昭和大伽藍，天井堂本印象作「蒼龍圖」震撼",
+        "塔頭 — 25座塔頭分布，尤光明院「波心之庭」、勝林寺、芬陀院為知音紅葉名所",
+      ],
+      ko: [
+        "쓰텐쿄(つうてんきょう) — 전장 100m의 회랑교, 센교쿠칸을 건너 개산당으로, 단풍 바다에 떠오르는 구도",
+        "산몬(국보) — 1425년 재건, 현존 최고·최대 선사 산몬, 높이 22m, 특별 공개 시에만 누상 참배 가능",
+        "방장 정원(시게모리 미레이 작) — 북·남·서·동의 4정으로 구성, 현대와 고전이 융합된 근대 일본 정원의 최고 걸작",
+        "본당과 불전 — 1934년 재건된 쇼와 대가람, 천정의 도모토 인쇼 작 「소류즈(蒼龍圖)」는 압권",
+        "탑두 — 25개의 탑두가 점재, 특히 고묘인 「하신노 니와」, 쇼린지, 훈다인은 아는 사람만 아는 단풍 명소",
       ],
     },
     quickAnswers: {
@@ -1361,6 +1433,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From JR Nara Line or Keihan «Tofuku-ji» Station, 10-min walk. From Kyoto Station, JR Nara Line is one stop, 3 min, ¥150 — exceptionally convenient. During autumn (November), JR runs additional rapid services and shuttle buses to the temple. You can also walk to Sennyu-ji or Sanjusangen-do afterwards." },
         { q: "Current Tsuten-kyo restrictions?", a: "Recently, during peak weeks (~Nov 20 to early Dec), photography on Tsuten-kyo Bridge is forbidden — no stopping, no rail-side photography, no selfie sticks. Walk through only. Shoot from the free Garyukyo Bridge before, or look back at Tsuten-kyo from the Founder's Hall side instead." },
         { q: "Hidden foliage spots besides Tsuten-kyo?", a: "①Komyo-in's «Hashin no Niwa» (free entry, wave-pattern moss garden, beautiful even in summer green) ②Ryogin-an (National Treasure abbot's quarters, special openings only) ③Funda-in (crane-and-tortoise garden attributed to Sesshu) ④Shorin-ji (special opening of Bishamonten, less crowded). Visit sub-temples to escape the main-hall crush." },
+      ],
+      zh: [
+        { q: "东福寺是什么?", a: "1236年创建，京都府京都市东山区临济宗东福寺派大本山。京都最大级禅寺，拥有国宝三门、通天桥红叶之海、重森三玲方丈庭园、25座塔头的京都顶级名刹。" },
+        { q: "红叶最佳时期是?", a: "每年11月下旬至12月上旬为高峰。通天桥11月拥挤期有撮影禁止时段(防拥堵)。早晨开门后(8:30~)人少为最佳时机。气温骤降时一齐变色。" },
+        { q: "门票与所需时间?", a: "通天桥·开山堂400日元，方丈庭园400日元，共通券约1000日元。含塔头巡游约2~3小时。拥挤期有特别交通管制与入场限制，事前确认必要。" },
+        { q: "如何前往?", a: "JR奈良线·京阪电车「东福寺站」步行10分钟。京都站乘JR奈良线1站·所需3分钟·150日元，非常便利。红叶期(11月)JR有临时急行运行，站到东福寺有临时巴士。可步行至泉涌寺·三十三间堂方面。" },
+        { q: "通天桥撮影现状限制?", a: "近年红叶高峰(11月20日~12月初)通天桥上撮影禁止(禁止站立)、栏杆撮影禁止、自拍杆禁止。仅过桥通行。防拥堵之故。改从桥前卧云桥(免费区)，或开山堂方面眺望桥的构图。" },
+        { q: "通天桥外的隐藏红叶点?", a: "①光明院「波心之庭」(免费，波纹苔石庭，青枫叶亦美)②龙吟庵(国宝方丈，仅特别公开)③芬陀院(传雪舟作鹤龟之庭)④胜林寺(秘佛毘沙门天特别公开，红叶少而宁静)。避开拥挤的本堂区，塔头巡游可独占红叶。" },
+      ],
+      "zh-tw": [
+        { q: "東福寺是什麼?", a: "1236年創建，京都府京都市東山區臨濟宗東福寺派大本山。京都最大級禪寺，擁有國寶三門、通天橋紅葉之海、重森三玲方丈庭園、25座塔頭的京都頂級名剎。" },
+        { q: "紅葉最佳時期是?", a: "每年11月下旬至12月上旬為高峰。通天橋11月擁擠期有撮影禁止時段(防擁堵)。早晨開門後(8:30~)人少為最佳時機。氣溫驟降時一齊變色。" },
+        { q: "門票與所需時間?", a: "通天橋·開山堂400日圓，方丈庭園400日圓，共通券約1000日圓。含塔頭巡遊約2~3小時。擁擠期有特別交通管制與入場限制，事前確認必要。" },
+        { q: "如何前往?", a: "JR奈良線·京阪電車「東福寺站」步行10分鐘。京都站搭JR奈良線1站·所需3分鐘·150日圓，非常便利。紅葉期(11月)JR有臨時急行運行，站到東福寺有臨時巴士。可步行至泉涌寺·三十三間堂方面。" },
+        { q: "通天橋撮影現狀限制?", a: "近年紅葉高峰(11月20日~12月初)通天橋上撮影禁止(禁止站立)、欄杆撮影禁止、自拍桿禁止。僅過橋通行。防擁堵之故。改從橋前臥雲橋(免費區)，或開山堂方面眺望橋的構圖。" },
+        { q: "通天橋外的隱藏紅葉點?", a: "①光明院「波心之庭」(免費，波紋苔石庭，青楓葉亦美)②龍吟庵(國寶方丈，僅特別公開)③芬陀院(傳雪舟作鶴龜之庭)④勝林寺(秘佛毘沙門天特別公開，紅葉少而寧靜)。避開擁擠的本堂區，塔頭巡遊可獨占紅葉。" },
+      ],
+      ko: [
+        { q: "도후쿠지란?", a: "1236년 창건, 교토부 교토시 히가시야마구의 임제종 도후쿠지파 대본산. 교토 최대급 선사로, 국보의 산몬, 쓰텐쿄에서 바라보는 단풍 바다, 시게모리 미레이 작 방장 정원, 25개의 탑두를 거느린 교토 최고의 명찰입니다." },
+        { q: "단풍 베스트 시기는?", a: "매년 11월 하순~12월 상순이 절정. 쓰텐쿄는 11월 혼잡기에 촬영 금지 시기 있음(혼잡 완화 위함). 이른 아침 개문 직후(8:30~)가 사람이 적어 노릴 만함. 일제히 물들기 위해 기온의 급강하를 노립니다." },
+        { q: "관람료와 소요 시간은?", a: "쓰텐쿄·개산당 400엔, 방장 정원 400엔, 공통권은 1000엔 정도. 탑두 순례도 포함하면 2~3시간. 혼잡기에는 특별한 교통 규제와 입장 제한이 있어 사전 확인 필수입니다." },
+        { q: "가는 방법은?", a: "JR 나라선·게이한 전철 「도후쿠지역」에서 도보 10분. 교토역에서 JR 나라선으로 1역·소요 3분·150엔으로 매우 편리. 단풍기(11월)에는 JR 임시 급행 운행, 역에서 도후쿠지까지 임시 버스도 있음. 걸어서 센뉴지·산주산겐도 방면으로 빠지는 것도 가능." },
+        { q: "쓰텐쿄 촬영 현재 제한은?", a: "최근에는 단풍 절정기(11월 20일~12월 초)에 쓰텐쿄 위 촬영 금지(서서 보기 금지), 난간 촬영 금지, 셀카봉 금지가 시행. 다리를 걷는 순로 통행만 가능. 혼잡 완화를 위함. 촬영은 다리 앞의 가류쿄(무료 구역)에서, 또는 개산당 방면에서 다리를 바라보는 구도로 전환해야 합니다." },
+        { q: "쓰텐쿄 외의 숨은 단풍 스팟은?", a: "①고묘인 「하신노 니와」(무료, 물결무늬 이끼석 정원, 푸른 단풍도 아름다움) ②료긴안(국보 방장, 특별 공개 시에만) ③훈다인(셋슈 작품으로 전해지는 학과 거북의 정원) ④쇼린지(비불 비샤몬텐 특별 공개, 단풍이 적어 차분). 혼잡한 본당 구역을 피해 탑두 순례로 단풍을 독점할 수 있습니다." },
       ],
     },
     faqs: [
