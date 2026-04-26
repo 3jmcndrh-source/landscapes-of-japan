@@ -3725,10 +3725,13 @@ export const LOCATION_CONTENT = {
       "新倉山淺間公園位於富士吉田市山腰，是櫻花名所。登398級台階後的觀景台可將忠靈塔（五重塔）、櫻花與富士山三段同框，是吸引全球攝影師的日本象徵性景觀。4月中旬櫻花與雪富士的對比尤為震撼。",
       "아라쿠라야마 센겐 공원은 후지요시다시 산 중턱의 벚꽃 명소. 398계단을 오르면 추레이토(5층탑)·벚꽃·후지산이 한 프레임에 담기는 3단 구도가 세계 사진가들을 매료시키는 일본의 상징적 풍경. 4월 중순 벚꽃과 설관 후지의 대비는 압권."
     ),
-    definition: lh(
-      "新倉山浅間公園(あらくらやませんげんこうえん)は山梨県富士吉田市の新倉山(標高約650m)中腹にある公園で、705年創建の新倉富士浅間神社の境内地に整備された桜の名所。中心となる「忠霊塔(ちゅうれいとう)」は1962年に第一次・第二次世界大戦戦没者慰霊のために建立された朱塗りの五重塔(高さ19.5m)で、神社境内から398段の急な階段を上った先の展望デッキから、忠霊塔・約650本のソメイヨシノ・富士山を一枚に収める「三段構図」は世界中の写真家とインバウンド観光客が憧れる日本を象徴する撮影地。海外で「富士山と桜と五重塔の写真」と言えば必ずこの場所、台湾・タイ・欧米のSNSで爆発的に拡散されました。",
-      "Arakurayama Sengen Park stands on the mid-slope of Mt. Arakura (about 650 m) in Fujiyoshida City, Yamanashi Prefecture, on the precincts of the Niikura Fuji Sengen Shrine, founded in 705. The centerpiece is the «Chureito Pagoda» — a 19.5 m vermilion five-story tower built in 1962 to honor the war dead of World Wars I and II. From the shrine grounds, climbing 398 steep steps brings you to the viewing deck, where the pagoda, about 650 Yoshino cherry trees, and Mt. Fuji align in the world-famous «three-tier composition.» When the phrase «Mt. Fuji with cherry blossoms and a pagoda» appears anywhere in international media, it almost always points to this spot — explosively shared across social media in Taiwan, Thailand, and the West, drawing global photographers and inbound visitors."
-    ),
+    definition: {
+      ja: "新倉山浅間公園(あらくらやませんげんこうえん)は山梨県富士吉田市の新倉山(標高約650m)中腹にある公園で、705年創建の新倉富士浅間神社の境内地に整備された桜の名所。中心となる「忠霊塔(ちゅうれいとう)」は1962年に第一次・第二次世界大戦戦没者慰霊のために建立された朱塗りの五重塔(高さ19.5m)で、神社境内から398段の急な階段を上った先の展望デッキから、忠霊塔・約650本のソメイヨシノ・富士山を一枚に収める「三段構図」は世界中の写真家とインバウンド観光客が憧れる日本を象徴する撮影地。海外で「富士山と桜と五重塔の写真」と言えば必ずこの場所、台湾・タイ・欧米のSNSで爆発的に拡散されました。",
+      en: "Arakurayama Sengen Park stands on the mid-slope of Mt. Arakura (about 650 m) in Fujiyoshida City, Yamanashi Prefecture, on the precincts of the Niikura Fuji Sengen Shrine, founded in 705. The centerpiece is the «Chureito Pagoda» — a 19.5 m vermilion five-story tower built in 1962 to honor the war dead of World Wars I and II. From the shrine grounds, climbing 398 steep steps brings you to the viewing deck, where the pagoda, about 650 Yoshino cherry trees, and Mt. Fuji align in the world-famous «three-tier composition.» When the phrase «Mt. Fuji with cherry blossoms and a pagoda» appears anywhere in international media, it almost always points to this spot — explosively shared across social media in Taiwan, Thailand, and the West, drawing global photographers and inbound visitors.",
+      zh: "新仓山浅间公园(あらくらやませんげんこうえん)位于山梨县富士吉田市新仓山(海拔约650米)山腰，是705年创建的新仓富士浅间神社境内整备的樱花名所。中心「忠灵塔(ちゅうれいとう)」是1962年为一战·二战阵亡将士慰灵所建朱漆五重塔(高19.5米)，神社境内登398级急阶梯后的展望台，可将忠灵塔·约650株染井吉野·富士山三者同框的「三段构图」，是吸引世界摄影家与外国观光客憧憬的日本象征性撮影地。海外提到「富士山与樱花与五重塔的照片」必为此地，在台湾·泰国·欧美SNS上爆发性传播。",
+      "zh-tw": "新倉山淺間公園(あらくらやませんげんこうえん)位於山梨縣富士吉田市新倉山(海拔約650米)山腰，是705年創建的新倉富士淺間神社境內整備的櫻花名所。中心「忠靈塔(ちゅうれいとう)」是1962年為一戰·二戰陣亡將士慰靈所建朱漆五重塔(高19.5米)，神社境內登398級急階梯後的展望台，可將忠靈塔·約650株染井吉野·富士山三者同框的「三段構圖」，是吸引世界攝影家與外國觀光客憧憬的日本象徵性撮影地。海外提到「富士山與櫻花與五重塔的照片」必為此地，在台灣·泰國·歐美SNS上爆發性傳播。",
+      ko: "아라쿠라야마 센겐 공원(あらくらやませんげんこうえん)은 야마나시현 후지요시다시의 아라쿠라야마(해발 약 650m) 산 중턱에 있는 공원으로, 705년 창건된 니이쿠라 후지 센겐 신사의 경내지에 정비된 벚꽃의 명소. 중심이 되는 「추레이토(ちゅうれいとう)」는 1962년에 제1차·제2차 세계대전 전사자 위령을 위해 건립된 주홍색 5층탑(높이 19.5m)으로, 신사 경내에서 398계단의 가파른 계단을 오른 끝의 전망 데크에서 추레이토·약 650그루의 소메이요시노·후지산을 한 프레임에 담는 「3단 구도」는 전 세계 사진가와 인바운드 관광객이 동경하는 일본을 상징하는 촬영지. 해외에서 「후지산과 벚꽃과 5층탑의 사진」이라 하면 반드시 이곳, 대만·태국·구미의 SNS에서 폭발적으로 확산되었습니다.",
+    },
     highlights: {
       ja: [
         "三段構図(忠霊塔・桜・富士山) — 4月中旬桜満開時、忠霊塔と約650本のソメイヨシノと冠雪富士が一枚に",
@@ -3743,6 +3746,27 @@ export const LOCATION_CONTENT = {
         "The 398 steps — a steep climb from the shrine grounds to the viewing deck; expect queues during peak season, with a gentler slope path also available",
         "Pre-dawn pink-purple Fuji — the magic hour 30 minutes before sunrise turns the sky purple to orange; April mornings are cold but unforgettable",
         "Niikura Fuji Sengen Shrine — founded in 705, a sacred site of Fuji worship; the view of Mt. Fuji from before the main hall is itself spectacular",
+      ],
+      zh: [
+        "三段构图(忠灵塔·樱花·富士山) — 4月中旬樱满开时，忠灵塔与约650株染井吉野与雪富士同框",
+        "忠灵塔(五重塔) — 1962年建立的朱漆五重塔(高19.5米)，一战·二战阵亡将士慰灵塔",
+        "398级阶梯 — 神社境内至展望台的急阶梯，拥挤期需排队等候，亦有迂回坡道",
+        "黎明朝霞富士 — 日出前30分钟魔幻时刻，天空由紫至橙的绝景，4月清晨严寒",
+        "新仓富士浅间神社 — 705年创建古社，富士信仰圣地，本殿前望富士山亦绝景",
+      ],
+      "zh-tw": [
+        "三段構圖(忠靈塔·櫻花·富士山) — 4月中旬櫻滿開時，忠靈塔與約650株染井吉野與雪富士同框",
+        "忠靈塔(五重塔) — 1962年建立的朱漆五重塔(高19.5米)，一戰·二戰陣亡將士慰靈塔",
+        "398級階梯 — 神社境內至展望台的急階梯，擁擠期需排隊等候，亦有迂迴坡道",
+        "黎明朝霞富士 — 日出前30分鐘魔幻時刻，天空由紫至橙的絕景，4月清晨嚴寒",
+        "新倉富士淺間神社 — 705年創建古社，富士信仰聖地，本殿前望富士山亦絕景",
+      ],
+      ko: [
+        "3단 구도(추레이토·벚꽃·후지산) — 4월 중순 벚꽃 만개 시, 추레이토와 약 650그루의 소메이요시노와 설관 후지가 한 프레임에",
+        "추레이토(5층탑) — 1962년 건립된 주홍색 5층탑(높이 19.5m), 제1차·제2차 세계대전 전사자 위령탑",
+        "398계단 — 신사 경내에서 전망 데크로 가는 가파른 계단, 혼잡기는 오르는 순서 대기, 우회 비탈길도 있음",
+        "새벽 아침놀 후지 — 일출 전 30분 매직 아워, 하늘이 자주~주황으로 물드는 절경, 4월의 이른 아침은 추움",
+        "니이쿠라 후지 센겐 신사 — 705년 창건된 고사, 후지 신앙의 성지, 본전 앞에서 바라보는 후지산도 절경",
       ],
     },
     quickAnswers: {
@@ -3762,6 +3786,30 @@ export const LOCATION_CONTENT = {
         { q: "Are tripods allowed?", a: "Tripods are sometimes restricted on the viewing deck during crowds, especially cherry season. Compositions from the steps' platform partway up or from the shrine grounds are fine. Spots fill up well before dawn — arrive before 5 AM to be sure. Avoid using tripod spikes near tree roots." },
         { q: "Combined sightseeing route?", a: "①Arakurayama Sengen Park (early morning, cherry+Fuji) ②Oshino Hakkai (30 min by car, springs+Fuji) ③Lake Kawaguchi (20 min by car, inverted Fuji) ④Fuji 5th Station (1 hr by car, summer only) ⑤Yoshida udon shop tour. A full-day route covers Fuji's classic vistas. During cherry season, leave early to beat Chuo Expressway traffic." },
       ],
+      zh: [
+        { q: "新仓山浅间公园是什么?", a: "山梨县富士吉田市新仓山山腰的樱花名所，忠灵塔(1962年建立，高19.5米朱漆五重塔)·约650株樱·富士山同框的「三段构图」深受世界摄影家钟爱，日本象征性撮影地。" },
+        { q: "樱花最佳时期?", a: "每年4月上至中旬为高峰，尤其4月10至15日前后满开为王道。寒返或春暖差可使年度延后2周。富士吉田市官网开花信息为准，黎明后朝霞富士最佳。" },
+        { q: "如何到展望台?", a: "富士急行线「下吉田站」步行约10分钟。从神社境内登398级阶梯(老年向有迂回坡道)。拥挤期阶梯下长队，清晨5至6时抵达必须。新宿乘特急约2小时。" },
+        { q: "樱花外的最佳季节?", a: "雪富士+忠灵塔在12至2月冬期，人少富士存在感最大。秋(11月)红叶与忠灵塔，黄昏时段橙色富士+塔亦美。新绿(5月)柔和绿色与忠灵塔朱色对比。富士山四季皆美。" },
+        { q: "三脚使用?", a: "展望台拥挤时禁止三脚架，樱期尤需注意。展望台前阶梯踊场或神社境内构图OK。占位早晨黑暗时段开始，5时前抵达确实。三脚架插钉为防伤樱花根，树木附近避免。" },
+        { q: "周边连续观光?", a: "①新仓山浅间公园(早晨·樱+富士)②忍野八海(车30分，涌水与富士)③河口湖(车20分，逆富士)④富士山五合目(车1时，夏期限)⑤吉田乌冬本店巡(本地美食)。1日游可遍览富士周边绝景，樱期建议清晨出发避中央道堵车。" },
+      ],
+      "zh-tw": [
+        { q: "新倉山淺間公園是什麼?", a: "山梨縣富士吉田市新倉山山腰的櫻花名所，忠靈塔(1962年建立，高19.5米朱漆五重塔)·約650株櫻·富士山同框的「三段構圖」深受世界攝影家鍾愛，日本象徵性撮影地。" },
+        { q: "櫻花最佳時期?", a: "每年4月上至中旬為高峰，尤其4月10至15日前後滿開為王道。寒返或春暖差可使年度延後2週。富士吉田市官網開花信息為準，黎明後朝霞富士最佳。" },
+        { q: "如何到展望台?", a: "富士急行線「下吉田站」步行約10分鐘。從神社境內登398級階梯(老年向有迂迴坡道)。擁擠期階梯下長隊，清晨5至6時抵達必須。新宿搭特急約2小時。" },
+        { q: "櫻花外的最佳季節?", a: "雪富士+忠靈塔在12至2月冬期，人少富士存在感最大。秋(11月)紅葉與忠靈塔，黃昏時段橙色富士+塔亦美。新綠(5月)柔和綠色與忠靈塔朱色對比。富士山四季皆美。" },
+        { q: "三腳使用?", a: "展望台擁擠時禁止三腳架，櫻期尤需注意。展望台前階梯踊場或神社境內構圖OK。占位早晨黑暗時段開始，5時前抵達確實。三腳架插釘為防傷櫻花根，樹木附近避免。" },
+        { q: "周邊連續觀光?", a: "①新倉山淺間公園(早晨·櫻+富士)②忍野八海(車30分，湧水與富士)③河口湖(車20分，逆富士)④富士山五合目(車1時，夏期限)⑤吉田烏冬本店巡(本地美食)。1日遊可遍覽富士周邊絕景，櫻期建議清晨出發避中央道堵車。" },
+      ],
+      ko: [
+        { q: "아라쿠라야마 센겐 공원이란?", a: "야마나시현 후지요시다시의 아라쿠라야마 산 중턱의 벚꽃 명소로, 추레이토(1962년 건립, 높이 19.5m의 주홍색 5층탑)·약 650그루의 벚꽃·후지산이 한 프레임에 담기는 「3단 구도」가 전 세계 사진가들에게 사랑받는 일본을 상징하는 촬영지입니다." },
+        { q: "벚꽃의 베스트 시기는?", a: "예년 4월 상순~중순이 절정, 특히 4월 10~15일 무렵의 만개 시가 정석. 꽃샘추위나 봄 온도 차로 해에 따라 2주 어긋나기도. 후지요시다시 공식 사이트의 개화 정보를 확인, 동트기 직후의 아침놀 후지가 이상적." },
+        { q: "전망 데크로 가는 길은?", a: "후지큐코선 「시모요시다역」에서 도보 약 10분. 신사 경내에서 398계단을 오름(고령자용 우회 비탈길도 있음). 혼잡기는 계단 아래 긴 행렬, 이른 아침 5~6시 도착이 필수. 신주쿠에서 특급으로 약 2시간." },
+        { q: "벚꽃 외의 베스트 시즌은?", a: "눈 화장한 후지산+추레이토는 12~2월 겨울철, 벚꽃보다 적은 인파라도 후지의 존재감은 최대. 가을(11월)은 단풍과 추레이토, 황혼 시의 주홍 후지+탑도 아름다움. 신록(5월)도 부드러운 녹색이 추레이토의 주홍과 대비. 후지산은 사계의 아름다움이 각기 있음." },
+        { q: "삼각대 사용은?", a: "전망 데크는 혼잡 시 삼각대 금지인 경우 있음, 벚꽃기는 특히 주의. 데크 앞 계단 도중의 답도장이나 신사 경내에서의 구도는 OK. 자리잡기는 이른 아침 어두운 시간대부터 이루어짐, 5시 전 도착이 확실. 삼각대 스파이크는 벚꽃 뿌리를 손상시키지 않도록 수목 부근에서는 사용 회피." },
+        { q: "주변의 연속 관광은?", a: "①아라쿠라야마 센겐 공원(이른 아침·벚꽃+후지) ②오시노 핫카이(차 30분, 용수와 후지) ③가와구치코(차 20분, 거꾸로 후지) ④후지산 5합목(차 1시간, 여름철만) ⑤요시다 우동 본점 순례(현지 미식). 1일 코스로 후지 주변의 절경을 망라, 벚꽃기는 추오자동차도 정체 회피를 위해 이른 아침 출발 추천." },
+      ],
     },
     faqs: [
       { q: d("展望デッキへの行き方は？","How do I reach the viewing deck?","观景台怎么去？","觀景台怎麼去？","전망 데크 가는 법은?"),
@@ -3776,10 +3824,13 @@ export const LOCATION_CONTENT = {
       "河口湖是富士五湖之一，位於富士山北麓。以湖面倒映的「逆富士」聞名於世，春有產屋崎與八木崎公園櫻花、夏有花火大會、秋有紅葉迴廊、冬有雪冠富士，四季皆美。湖畔住宿、溫泉、咖啡館齊全。",
       "가와구치호는 후지 5호의 하나로 후지산 북쪽 기슭에 펼쳐진 호수. 호수면에 비친 「역 후지」 촬영지로 가장 유명하며, 봄에는 우부야가사키·야기사키 공원의 벚꽃, 여름에는 불꽃놀이, 가을에는 단풍 회랑, 겨울에는 설관 후지로 사계절 모두 아름답습니다. 호반은 숙박·온천·카페가 충실."
     ),
-    definition: lh(
-      "河口湖(かわぐちこ)は山梨県南都留郡富士河口湖町、富士山の北麓に広がる富士五湖の一つで、面積5.7km²・最大水深15m・湖面標高833mの堰止湖。約1,200万年前の富士山(1707年最後の噴火)の溶岩流によって形成された湖で、湖の中央に「鵜の島」(うのしま、富士五湖唯一の島)が浮かびます。湖面に映る「逆さ富士」の代表的な撮影地として世界的に有名で、特に湖北岸の大石公園・産屋ヶ崎・八木崎公園からの構図は世界中で複製される日本の象徴的風景。春の桜、夏の紅葉花火大会(8月)、秋の紅葉回廊、冬の冠雪富士と四季を通じて表情豊か、富士急行河口湖駅周辺は宿泊・温泉・カフェも充実しています。",
-      "Lake Kawaguchi is a barrier lake at the northern foot of Mt. Fuji in Fujikawaguchiko Town, Yamanashi Prefecture — one of the Fuji Five Lakes (5.7 km², up to 15 m deep, surface 833 m above sea level). Formed by lava flows from Mt. Fuji's eruptions over the last 12 million years (the most recent in 1707), it is the only one of the Five Lakes to host an island, Uno-shima, at its center. As the most famous spot for the «inverted Fuji» mirror reflection, the views from Oishi Park, Ubuyagasaki, and Yagisaki Park on the northern shore have been replicated worldwide as iconic Japanese imagery. With spring cherry blossoms, the Kojo Festival fireworks of August, an autumn maple corridor, and snow-capped Fuji in winter, it changes with the seasons; the Fujikyu Kawaguchiko Station area offers ample lodging, hot springs, and cafés."
-    ),
+    definition: {
+      ja: "河口湖(かわぐちこ)は山梨県南都留郡富士河口湖町、富士山の北麓に広がる富士五湖の一つで、面積5.7km²・最大水深15m・湖面標高833mの堰止湖。約1,200万年前の富士山(1707年最後の噴火)の溶岩流によって形成された湖で、湖の中央に「鵜の島」(うのしま、富士五湖唯一の島)が浮かびます。湖面に映る「逆さ富士」の代表的な撮影地として世界的に有名で、特に湖北岸の大石公園・産屋ヶ崎・八木崎公園からの構図は世界中で複製される日本の象徴的風景。春の桜、夏の紅葉花火大会(8月)、秋の紅葉回廊、冬の冠雪富士と四季を通じて表情豊か、富士急行河口湖駅周辺は宿泊・温泉・カフェも充実しています。",
+      en: "Lake Kawaguchi is a barrier lake at the northern foot of Mt. Fuji in Fujikawaguchiko Town, Yamanashi Prefecture — one of the Fuji Five Lakes (5.7 km², up to 15 m deep, surface 833 m above sea level). Formed by lava flows from Mt. Fuji's eruptions over the last 12 million years (the most recent in 1707), it is the only one of the Five Lakes to host an island, Uno-shima, at its center. As the most famous spot for the «inverted Fuji» mirror reflection, the views from Oishi Park, Ubuyagasaki, and Yagisaki Park on the northern shore have been replicated worldwide as iconic Japanese imagery. With spring cherry blossoms, the Kojo Festival fireworks of August, an autumn maple corridor, and snow-capped Fuji in winter, it changes with the seasons; the Fujikyu Kawaguchiko Station area offers ample lodging, hot springs, and cafés.",
+      zh: "河口湖(かわぐちこ)位于山梨县南都留郡富士河口湖町，富士山北麓富士五湖之一，面积5.7平方公里·最大水深15米·湖面海拔833米的堰塞湖。约1200万年前富士山(1707年最后喷发)熔岩流形成的湖泊，湖中央漂浮「鹈之岛」(うのしま，富士五湖唯一岛屿)。作为湖面倒映「逆富士」的代表性撮影地世界闻名，尤其湖北岸大石公园·产屋崎·八木崎公园的构图被世界各地复制，是日本象征性风景。春樱、夏8月红叶花火大会、秋红叶回廊、冬雪富士四季皆有表情，富士急行河口湖站周边住宿·温泉·咖啡馆充实。",
+      "zh-tw": "河口湖(かわぐちこ)位於山梨縣南都留郡富士河口湖町，富士山北麓富士五湖之一，面積5.7平方公里·最大水深15米·湖面海拔833米的堰塞湖。約1200萬年前富士山(1707年最後噴發)熔岩流形成的湖泊，湖中央漂浮「鵜之島」(うのしま，富士五湖唯一島嶼)。作為湖面倒映「逆富士」的代表性撮影地世界聞名，尤其湖北岸大石公園·產屋崎·八木崎公園的構圖被世界各地複製，是日本象徵性風景。春櫻、夏8月紅葉花火大會、秋紅葉迴廊、冬雪富士四季皆有表情，富士急行河口湖站周邊住宿·溫泉·咖啡館充實。",
+      ko: "가와구치호(かわぐちこ)는 야마나시현 미나미쓰루군 후지카와구치코마치, 후지산 북쪽 기슭에 펼쳐진 후지 5호의 하나로, 면적 5.7km²·최대 수심 15m·호수면 해발 833m의 언지호. 약 1,200만 년 전 후지산(1707년 마지막 분화)의 용암류에 의해 형성된 호수로, 호수 중앙에 「우노시마(鵜の島)」(우노시마, 후지 5호 유일의 섬)가 떠 있습니다. 호수면에 비치는 「거꾸로 후지」의 대표적인 촬영지로 세계적으로 유명하며, 특히 호수 북쪽 기슭의 오이시 공원·우부야가사키·야기사키 공원에서의 구도는 전 세계에서 복제되는 일본의 상징적 풍경. 봄의 벚꽃, 여름의 코우조 마쓰리 불꽃놀이(8월), 가을의 단풍 회랑, 겨울의 설관 후지와 사계절 표정이 풍부, 후지큐코 가와구치코역 주변은 숙박·온천·카페도 충실합니다.",
+    },
     highlights: {
       ja: [
         "逆さ富士 — 風がない朝6〜8時の鏡面状態が条件、湖北の大石公園・産屋ヶ崎が定番",
@@ -3794,6 +3845,27 @@ export const LOCATION_CONTENT = {
         "Momiji Corridor (November) — the autumn maple tunnel on the north shore; evening illumination paired with snow-capped Fuji",
         "Cherry-Lined North Shore (April) — Ubuyagasaki and Yagisaki Park, with blossoms framing Mt. Fuji",
         "Snow-Capped Fuji in Winter — December–February, with the clearest air at dawn and peak lake transparency",
+      ],
+      zh: [
+        "逆富士 — 无风的清晨6至8时镜面状态为条件，湖北大石公园·产屋崎为定番",
+        "大石公园 — 北岸人气撮影地，薰衣草(7月)·扫帚草(秋红)与富士山的组合",
+        "红叶回廊(11月) — 北岸红叶隧道，夜间灯光秀与雪富士绝景",
+        "湖北樱花并木(4月) — 产屋崎·八木崎公园，樱花与富士山三段构图",
+        "冬雪富士 — 12至2月，空气清澈的早晨，湖面透明度最高",
+      ],
+      "zh-tw": [
+        "逆富士 — 無風的清晨6至8時鏡面狀態為條件，湖北大石公園·產屋崎為定番",
+        "大石公園 — 北岸人氣撮影地，薰衣草(7月)·掃帚草(秋紅)與富士山的組合",
+        "紅葉迴廊(11月) — 北岸紅葉隧道，夜間燈光秀與雪富士絕景",
+        "湖北櫻花並木(4月) — 產屋崎·八木崎公園，櫻花與富士山三段構圖",
+        "冬雪富士 — 12至2月，空氣清澈的早晨，湖面透明度最高",
+      ],
+      ko: [
+        "거꾸로 후지 — 바람 없는 아침 6~8시의 거울면 상태가 조건, 호수 북쪽의 오이시 공원·우부야가사키가 정석",
+        "오이시 공원 — 북쪽 기슭의 인기 촬영지, 라벤더(7월)·코키아(가을 단풍)와 후지산의 조합",
+        "단풍 회랑(11월) — 북쪽 기슭의 단풍 터널, 밤의 조명과 설관 후지의 절경",
+        "호수 북쪽의 벚꽃 가로수(4월) — 우부야가사키·야기사키 공원, 벚꽃과 후지산의 3단 구도",
+        "겨울의 설관 후지 — 12~2월, 공기가 맑은 이른 아침, 호수면의 투명도도 최고",
       ],
     },
     quickAnswers: {
@@ -3813,6 +3885,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended lodging?", a: "High-end: Fuji View Hotel (lakeside, from ¥25,000/night, indoor open-air bath with Fuji), Shuhokaku Kogetsu (all rooms with Fuji view). Mid-range: Sunny Day Village, Korakuen Onyado Fujiginkei (~¥20,000). Budget: Hotel Mt. Fuji, Best Western (from ¥8,000). For best photography access, stay around Oishi Park." },
         { q: "Lake activities?", a: "①Sightseeing boat «Ansoleil» (20 min, ¥1,000, Fuji from the water) ②Mt. Tenjo Ropeway (top-of-mountain inverted Fuji + townscape) ③Kayaking/SUP (summer, 360° Fuji from lake center) ④Smelt fishing (winter, from a houseboat). Combine with photography for a full day." },
       ],
+      zh: [
+        { q: "河口湖是什么?", a: "山梨县富士五湖之一，富士山北麓面积5.7平方公里的堰塞湖。湖面倒映「逆富士」的代表性撮影地世界闻名，春樱·夏花火·秋红叶·冬雪富士四季皆有表情，是富士山景观的圣地。" },
+        { q: "拍逆富士最佳点?", a: "湖北大石公园·产屋崎为定番。无风的清晨6至8时镜面状态为目标。冬季空气澄清透明度最高，月数日的绝佳条件。富士急行河口湖站至大石公园开车15分钟，建议租车。" },
+        { q: "最佳季节?", a: "樱与富士4月上旬，新绿5月，薰衣草与富士7月，红叶与富士11月，雪富士12至2月。逆富士在风平的冬至春最易成功，新月冬季夜空与富士的组合为绝景。" },
+        { q: "如何前往?", a: "新宿巴士总站乘高速巴士至河口湖站约2小时·2200日元。电车经JR大月站换乘富士急行线，约3小时·3500日元。租车(富士急行河口湖站前可租)对湖周机动性最佳。周末中央道堵车，尤其红叶期(11月)·樱期(4月)需清晨出发。" },
+        { q: "推荐住宿?", a: "高级:「富士景观酒店」(湖畔·1宿25000日元起，馆内露天风吕望富士)、「秀峰阁湖月」(全室富士山景)。中价:「Sunnyday Village」「湖乐御宿富士吟景」(均约20000日元)。经济:「Hotel Mt. Fuji」「Best Western」(8000日元起)。撮影地最佳近便者推荐大石公园周边。" },
+        { q: "湖上活动?", a: "①游览船「Ansoleil」(20分钟，1000日元，湖上望富士)②天上山公园缆车(山顶可见逆富士+市街)③皮划艇·SUP(夏期，湖中央360度富士)④冬期公鱼钓鱼(屋形船)。可与撮影组合一日尽享。" },
+      ],
+      "zh-tw": [
+        { q: "河口湖是什麼?", a: "山梨縣富士五湖之一，富士山北麓面積5.7平方公里的堰塞湖。湖面倒映「逆富士」的代表性撮影地世界聞名，春櫻·夏花火·秋紅葉·冬雪富士四季皆有表情，是富士山景觀的聖地。" },
+        { q: "拍逆富士最佳點?", a: "湖北大石公園·產屋崎為定番。無風的清晨6至8時鏡面狀態為目標。冬季空氣澄清透明度最高，月數日的絕佳條件。富士急行河口湖站至大石公園開車15分鐘，建議租車。" },
+        { q: "最佳季節?", a: "櫻與富士4月上旬，新綠5月，薰衣草與富士7月，紅葉與富士11月，雪富士12至2月。逆富士在風平的冬至春最易成功，新月冬季夜空與富士的組合為絕景。" },
+        { q: "如何前往?", a: "新宿巴士總站搭高速巴士至河口湖站約2小時·2200日圓。電車經JR大月站換乘富士急行線，約3小時·3500日圓。租車(富士急行河口湖站前可租)對湖周機動性最佳。週末中央道堵車，尤其紅葉期(11月)·櫻期(4月)需清晨出發。" },
+        { q: "推薦住宿?", a: "高級:「富士景觀酒店」(湖畔·1宿25000日圓起，館內露天風呂望富士)、「秀峰閣湖月」(全室富士山景)。中價:「Sunnyday Village」「湖樂御宿富士吟景」(均約20000日圓)。經濟:「Hotel Mt. Fuji」「Best Western」(8000日圓起)。撮影地最佳近便者推薦大石公園周邊。" },
+        { q: "湖上活動?", a: "①遊覽船「Ansoleil」(20分鐘，1000日圓，湖上望富士)②天上山公園纜車(山頂可見逆富士+市街)③皮划艇·SUP(夏期，湖中央360度富士)④冬期公魚釣魚(屋形船)。可與撮影組合一日盡享。" },
+      ],
+      ko: [
+        { q: "가와구치호란?", a: "야마나시현의 후지 5호 중 하나로, 후지산 북쪽 기슭에 펼쳐진 면적 5.7km²의 언지호. 호수면에 비치는 「거꾸로 후지」의 대표적 촬영지로 세계적으로 유명, 봄의 벚꽃, 여름의 불꽃놀이, 가을의 단풍, 겨울의 설관 후지로 사계절 표정이 풍부하며, 후지산 뷰의 성지입니다." },
+        { q: "거꾸로 후지를 찍는 베스트 포인트는?", a: "호수 북쪽의 오이시 공원·우부야가사키가 정석. 바람 없는 아침 6~8시의 거울면 상태를 노릴 것. 겨울은 공기가 맑아 투명도가 최고, 월 수일의 최적 조건. 후지큐코 가와구치코역에서 오이시 공원까지 차로 15분, 렌터카 추천." },
+        { q: "베스트 시즌은?", a: "벚꽃과 후지의 4월 상순, 신록의 5월, 라벤더와 후지의 7월, 단풍과 후지의 11월, 설관 후지의 12~2월. 거꾸로 후지는 바람이 잔잔한 겨울~봄이 가장 성공률 높음, 밤의 별하늘과 후지의 조합은 신월의 겨울이 절경." },
+        { q: "가는 방법은?", a: "신주쿠 버스타에서 고속버스로 가와구치코역까지 약 2시간·2,200엔. 전차는 JR 오쓰키역에서 후지큐코선으로 환승, 약 3시간·3,500엔. 렌터카(후지큐코 가와구치코역 앞에서 빌릴 수 있음)가 호수 주변의 기동성에 최적. 주말 추오 자동차도는 정체, 특히 단풍기(11월)·벚꽃기(4월)는 이른 아침 출발을." },
+        { q: "추천 숙박 시설은?", a: "하이클래스: 「후지 뷰 호텔」(호반·1박 25,000엔~, 관내 노천탕에서 후지), 「슈호카쿠 코게쓰」(전실 후지산 뷰). 중가격대: 「Sunny Day Village」, 「코라쿠 온야도 후지긴케이」(양쪽 20,000엔 정도). 합리적: 「Hotel Mt. Fuji」, 「Best Western」(8,000엔~). 촬영지 베스트 액세스 중시라면 오이시 공원 주변." },
+        { q: "호수에서의 액티비티는?", a: "①유람선 「앙솔레유호」(20분, 1,000엔, 호수에서 후지를 바라봄) ②로프웨이 「덴조산 공원」(산 정상에서 거꾸로 후지+시가지) ③카약·SUP(여름철, 호수 중앙에서 360도 후지) ④빙어 낚시(겨울철, 야카타부네에서). 촬영과 조합하여 하루 종일 즐길 수 있습니다." },
+      ],
     },
     faqs: [
       { q: d("逆さ富士を撮るベストポイントは？","Best spot for the inverted Fuji reflection?","拍逆富士最佳点？","拍逆富士最佳點？","역 후지 촬영 최고 포인트는?"),
@@ -3829,10 +3925,13 @@ export const LOCATION_CONTENT = {
       "松本城位於長野縣松本市，國寶、現存12天守之一。漆黑牆壁讓其也被稱為「烏城」。五重六階天守再現戰國時代雄姿。背靠北阿爾卑斯雪嶺，內護城河水鏡與櫻花、新綠、紅葉、雪景四季各異。",
       "마쓰모토성은 나가노현 마쓰모토시의 국보·현존 12천수 중 하나. 칠흑의 벽에서 「까마귀성」이라고도 불립니다. 5중 6층 천수는 센고쿠 시대의 위용을 전합니다. 뒤쪽으로 우뚝 솟은 북알프스의 흰 능선, 내해자의 거울 같은 수면, 벚꽃·신록·단풍·눈 등 사계절 모두 아름답습니다."
     ),
-    definition: lh(
-      "松本城(まつもとじょう)は長野県松本市丸の内4-1にある平城で、現存12天守の中で最も古い1593〜1594年(文禄2〜3年)に石川数正・康長親子が建造した五重六階の大天守を持つ国宝。2015年の解体修理を経た現在も創建当時の姿を留め、漆黒の下見板張りと白漆喰のコントラストから「烏城(からすじょう)」とも呼ばれます(姫路城の「白鷺城」と対比)。日本の城で天守が国宝に指定されているのは姫路城・松本城・犬山城・彦根城・松江城の5城のみ。背後にそびえる北アルプスの白い稜線、内堀の水鏡、桜(4月中旬)・新緑・紅葉・雪と四季それぞれの表情が、松本市の象徴として愛されています。",
-      "Matsumoto Castle, located at 4-1 Marunouchi, Matsumoto City, Nagano Prefecture, is a flatland castle whose great keep — built in 1593–1594 (Bunroku 2–3) by Ishikawa Kazumasa and his son Yasunaga — is the oldest of Japan's 12 surviving original tenshu and a National Treasure. Even after the 2015 restoration, it retains its founding form. Its black lacquered weatherboards and white plaster create the contrast that earned it the nickname «Crow Castle» (in opposition to Himeji's «White Heron Castle»). Only five Japanese castle keeps are designated National Treasures — Himeji, Matsumoto, Inuyama, Hikone, and Matsue — and Matsumoto's combination with the white ridges of the Northern Alps behind it, the mirror-still inner moat, and four-season changes (cherry blossoms in mid-April, fresh greens, autumn leaves, and snow) makes it the city's beloved symbol."
-    ),
+    definition: {
+      ja: "松本城(まつもとじょう)は長野県松本市丸の内4-1にある平城で、現存12天守の中で最も古い1593〜1594年(文禄2〜3年)に石川数正・康長親子が建造した五重六階の大天守を持つ国宝。2015年の解体修理を経た現在も創建当時の姿を留め、漆黒の下見板張りと白漆喰のコントラストから「烏城(からすじょう)」とも呼ばれます(姫路城の「白鷺城」と対比)。日本の城で天守が国宝に指定されているのは姫路城・松本城・犬山城・彦根城・松江城の5城のみ。背後にそびえる北アルプスの白い稜線、内堀の水鏡、桜(4月中旬)・新緑・紅葉・雪と四季それぞれの表情が、松本市の象徴として愛されています。",
+      en: "Matsumoto Castle, located at 4-1 Marunouchi, Matsumoto City, Nagano Prefecture, is a flatland castle whose great keep — built in 1593–1594 (Bunroku 2–3) by Ishikawa Kazumasa and his son Yasunaga — is the oldest of Japan's 12 surviving original tenshu and a National Treasure. Even after the 2015 restoration, it retains its founding form. Its black lacquered weatherboards and white plaster create the contrast that earned it the nickname «Crow Castle» (in opposition to Himeji's «White Heron Castle»). Only five Japanese castle keeps are designated National Treasures — Himeji, Matsumoto, Inuyama, Hikone, and Matsue — and Matsumoto's combination with the white ridges of the Northern Alps behind it, the mirror-still inner moat, and four-season changes (cherry blossoms in mid-April, fresh greens, autumn leaves, and snow) makes it the city's beloved symbol.",
+      zh: "松本城(まつもとじょう)位于长野县松本市丸之内4-1的平城，是现存12天守中最古老、1593至1594年(文禄2至3年)石川数正·康长父子建造的五重六阶大天守，国宝。经2015年解体修缮，至今仍保留创建时的姿态，从漆黑的下见板与白漆喰对比被誉为「乌城(からすじょう)」(与姫路城的「白鹭城」相对)。日本城天守国宝指定仅姫路城·松本城·犬山城·彦根城·松江城5城。背后北阿尔卑斯白色山脊、内护城河水镜、樱花(4月中旬)·新绿·红叶·雪四季表情，作为松本市象征深受喜爱。",
+      "zh-tw": "松本城(まつもとじょう)位於長野縣松本市丸之內4-1的平城，是現存12天守中最古老、1593至1594年(文祿2至3年)石川數正·康長父子建造的五重六階大天守，國寶。經2015年解體修繕，至今仍保留創建時的姿態，從漆黑的下見板與白漆喰對比被譽為「烏城(からすじょう)」(與姫路城的「白鷺城」相對)。日本城天守國寶指定僅姫路城·松本城·犬山城·彥根城·松江城5城。背後北阿爾卑斯白色山脊、內護城河水鏡、櫻花(4月中旬)·新綠·紅葉·雪四季表情，作為松本市象徵深受喜愛。",
+      ko: "마쓰모토성(まつもとじょう)은 나가노현 마쓰모토시 마루노우치 4-1에 있는 평성으로, 현존 12천수 중 가장 오래된 1593~1594년(분로쿠 2~3년)에 이시카와 가즈마사·야스나가 부자가 건조한 5중 6층 대천수를 가진 국보. 2015년의 해체 수리를 거친 현재도 창건 당시의 모습을 간직하고 있으며, 칠흑의 시타미이타바리(下見板張り)와 흰 회반죽의 대비에서 「가라스조(까마귀성)」라고도 불립니다(히메지성의 「시라사기조(백로성)」와 대비). 일본의 성에서 천수가 국보로 지정된 것은 히메지성·마쓰모토성·이누야마성·히코네성·마쓰에성의 5성뿐. 뒤쪽으로 우뚝 솟은 북알프스의 흰 능선, 내해자의 수경, 벚꽃(4월 중순)·신록·단풍·눈 등 사계절의 표정이 마쓰모토시의 상징으로 사랑받고 있습니다.",
+    },
     highlights: {
       ja: [
         "国宝大天守 — 1593〜94年築、現存12天守の最古、五重六階、漆黒の壁が特徴の「烏城」",
@@ -3847,6 +3946,27 @@ export const LOCATION_CONTENT = {
         "Northern Alps Borrowed Backdrop — the white ridges behind the keep, especially stunning paired with cherry blossoms in April",
         "Evening Illumination — year-round from sunset to 22:00; the blue hour against the black keep is striking",
         "Honmaru Garden — seasonal flowers (peonies, wisteria, lotus) within the castle tour route",
+      ],
+      zh: [
+        "国宝大天守 — 1593至94年建，现存12天守最古，五重六阶，漆黑墙壁特征的「乌城」",
+        "内护城河与埋桥(うずみばし) — 西北侧朱色桥与天守构图，4月中旬樱花为王道",
+        "北阿尔卑斯借景 — 天守后方白色山脊，尤4月雪冠与樱织就的绝景",
+        "夜间灯光秀 — 全年实施(日落至22时)，蓝调时刻与黑天守的对比",
+        "本丸庭园 — 牡丹·紫藤·莲等季节花卉，城内见学路线的庭园美",
+      ],
+      "zh-tw": [
+        "國寶大天守 — 1593至94年建，現存12天守最古，五重六階，漆黑牆壁特徵的「烏城」",
+        "內護城河與埋橋(うずみばし) — 西北側朱色橋與天守構圖，4月中旬櫻花為王道",
+        "北阿爾卑斯借景 — 天守後方白色山脊，尤4月雪冠與櫻織就的絕景",
+        "夜間燈光秀 — 全年實施(日落至22時)，藍調時刻與黑天守的對比",
+        "本丸庭園 — 牡丹·紫藤·蓮等季節花卉，城內見學路線的庭園美",
+      ],
+      ko: [
+        "국보 대천수 — 1593~94년 축조, 현존 12천수 중 최고(最古), 5중 6층, 칠흑의 벽이 특징인 「가라스조」",
+        "내해자와 우즈미바시 — 북서쪽의 주홍색 다리와 천수의 구도, 벚꽃의 4월 중순이 왕도",
+        "북알프스의 차경 — 천수 뒤편의 흰 능선, 특히 4월의 설관과 벚꽃이 짜내는 절경",
+        "야간 조명 — 연중 실시(일몰~22시), 블루 아워와 검은 천수의 대비",
+        "혼마루 정원 — 모란·등나무·연꽃 등 계절의 꽃, 성내 견학 코스의 정원미",
       ],
     },
     quickAnswers: {
@@ -3865,6 +3985,30 @@ export const LOCATION_CONTENT = {
         { q: "Keep admission and hours?", a: "Keep entry ¥700 (¥300 elementary/middle school). 9:00–17:00 (until 18:00 in August). Closed only at year-end. Honmaru plaza and the park are free and open 24/7 — night illumination is shot from outside. During peak seasons (cherry, summer), entry waits run 1–2 hours — arrive before opening." },
         { q: "Combined sightseeing?", a: "①Matsumoto Castle (early morning) ②Nakamachi-dori and Nawate-dori (old kura-style storehouses and shopping streets, 10-min walk) ③Matsumoto City Museum of Art (Yayoi Kusama works) ④Old Kaichi School (Meiji-era Western-style building) ⑤Kamikochi/Norikura Plateau (1–2 hr by car). A full day covers National Treasure, townscape, and art; pair with Kamikochi for Northern Alps panoramas too." },
         { q: "Night photography tips?", a: "Keep illumination runs sunset–22:00 year-round. Shoot from across the inner moat (east side) for front light, or from near Uzumi Bridge for side composition. Tripod essential; ISO 400, f/8, 10–30s. Winter brings sub-zero temps — bring condensation prevention (plastic bag), warm clothes, spare batteries. Honmaru plaza closes at night; only park-area shooting." },
+      ],
+      zh: [
+        { q: "松本城是什么?", a: "长野县松本市的平城，1593至94年建的现存12天守最古。漆黑下见板与白漆喰对比被誉「乌城」，国宝。日本5座国宝天守之一，以北阿尔卑斯为借景四季各异的撮影地。" },
+        { q: "如何同框天守·樱花·北阿尔卑斯?", a: "内护城河西北侧的埋桥(うずみばし)周边为最佳。长焦压缩天守与雪岭，4月中旬樱花作前景虚化。早晨逆光柔和，夜间灯光秀的黑天守与天空对比梦幻。" },
+        { q: "如何前往与最佳季节?", a: "JR松本站步行15分钟或周游巴士5分钟。樱花4月中旬、新绿5月、红叶10月下旬至11月中旬、雪松本城为年中数次稀有构图。早晨6时开门时人少光柔，夜间灯光秀至22时。" },
+        { q: "天守内部门票·营业时间?", a: "天守入场700日元(小中学生300日元)，9:00至17:00(8月延至18:00)。仅年末年始休馆。本丸广场·公园内免费·24小时开放，夜间灯光秀撮影外侧路线。拥挤期(樱·夏期)入场等候1至2小时，早晨开门前抵达确实。" },
+        { q: "周边观光连续?", a: "①松本城(早晨~上午)②中町通·绳手通(古旧仓造与商店街，步行10分钟)③松本市美术馆(草间弥生作品)④旧开智学校(明治洋馆)⑤上高地·乘鞍高原(车1至2小时)。1日游可遍览国宝·街景·艺术，与上高地组合可览北阿尔卑斯绝景。" },
+        { q: "夜景撮影秘诀?", a: "天守灯光秀日落至22时全年实施。撮影内护城河对岸(东侧)顺光，或埋桥近旁天守侧面构图为定番。三脚架必备，ISO400·F8·10至30秒。冬季零下，相机防雾(塑料袋)·防寒具·备用电池必备。本丸广场夜间禁入，仅公园内可。" },
+      ],
+      "zh-tw": [
+        { q: "松本城是什麼?", a: "長野縣松本市的平城，1593至94年建的現存12天守最古。漆黑下見板與白漆喰對比被譽「烏城」，國寶。日本5座國寶天守之一，以北阿爾卑斯為借景四季各異的撮影地。" },
+        { q: "如何同框天守·櫻花·北阿爾卑斯?", a: "內護城河西北側的埋橋(うずみばし)周邊為最佳。長焦壓縮天守與雪嶺，4月中旬櫻花作前景虛化。早晨逆光柔和，夜間燈光秀的黑天守與天空對比夢幻。" },
+        { q: "如何前往與最佳季節?", a: "JR松本站步行15分鐘或周遊巴士5分鐘。櫻花4月中旬、新綠5月、紅葉10月下旬至11月中旬、雪松本城為年中數次稀有構圖。早晨6時開門時人少光柔，夜間燈光秀至22時。" },
+        { q: "天守內部門票·營業時間?", a: "天守入場700日圓(小中學生300日圓)，9:00至17:00(8月延至18:00)。僅年末年始休館。本丸廣場·公園內免費·24小時開放，夜間燈光秀撮影外側路線。擁擠期(櫻·夏期)入場等候1至2小時，早晨開門前抵達確實。" },
+        { q: "周邊觀光連續?", a: "①松本城(早晨~上午)②中町通·繩手通(古舊倉造與商店街，步行10分鐘)③松本市美術館(草間彌生作品)④舊開智學校(明治洋館)⑤上高地·乘鞍高原(車1至2小時)。1日遊可遍覽國寶·街景·藝術，與上高地組合可覽北阿爾卑斯絕景。" },
+        { q: "夜景撮影秘訣?", a: "天守燈光秀日落至22時全年實施。撮影內護城河對岸(東側)順光，或埋橋近旁天守側面構圖為定番。三腳架必備，ISO400·F8·10至30秒。冬季零下，相機防霧(塑料袋)·防寒具·備用電池必備。本丸廣場夜間禁入，僅公園內可。" },
+      ],
+      ko: [
+        { q: "마쓰모토성이란?", a: "나가노현 마쓰모토시의 평성으로, 1593~94년 축조된 현존 12천수 중 가장 오래됨. 칠흑의 시타미이타바리와 흰 회반죽의 대비에서 「가라스조」로 불리며 국보. 일본에서 천수가 국보인 5성 중 하나, 북알프스를 차경으로 사계절 절경을 보여주는 촬영지입니다." },
+        { q: "천수와 벚꽃·북알프스를 한 프레임에 담으려면?", a: "내해자 북서쪽의 우즈미바시(埋橋) 주변이 베스트. 망원으로 천수와 능선을 압축, 벚꽃(4월 중순)을 전경 보케로. 이른 아침은 역광이 부드러움, 밤의 조명은 검은 천수와 하늘의 대비가 환상적." },
+        { q: "가는 방법과 베스트 시즌은?", a: "JR 마쓰모토역에서 도보 15분 또는 주유 버스로 5분. 벚꽃의 4월 중순, 신록의 5월, 단풍의 10월 하순~11월 중순, 눈 덮인 마쓰모토성은 연 수회의 희귀한 구도. 이른 아침 6시 개문 때가 사람이 적고 빛이 부드러움, 밤의 조명은 22시까지." },
+        { q: "천수 내부 입장료·영업 시간은?", a: "천수 입장 700엔(초중학생 300엔), 9:00~17:00(8월만 18:00까지). 연말연시만 휴관. 혼마루 광장·공원 내는 무료·24시간 개방, 야간 조명 촬영은 외측에서 접근. 혼잡기(벚꽃·여름기)는 입장 대기 1~2시간 있음, 이른 아침 개문 전 도착이 확실합니다." },
+        { q: "주변의 관광 연계는?", a: "①마쓰모토성(이른 아침~오전) ②나카마치도리·나와테도리(오래된 쿠라즈쿠리와 상점가, 도보 10분) ③마쓰모토 시립 미술관(쿠사마 야요이 작품) ④구 가이치 학교(메이지 양관) ⑤가미코치·노리쿠라 고원(차로 1~2시간). 1일 코스로 국보·거리·예술을 둘러보는 외에, 가미코치와 조합하면 북알프스 절경까지 망라 가능합니다." },
+        { q: "야경 촬영의 비결은?", a: "천수 조명은 일몰~22시 연중 실시. 촬영은 내해자 건너편(동쪽)에서의 순광, 또는 우즈미바시 가까이에서 천수 측면 구도가 정석. 삼각대 필수, ISO 400·F8·10~30초. 겨울은 영하가 되므로 카메라의 결로 대책(비닐봉지)·방한구·예비 배터리 필수. 혼마루 광장은 야간 출입 금지이므로 공원 내만." },
       ],
     },
     faqs: [
