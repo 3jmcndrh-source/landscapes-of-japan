@@ -1629,10 +1629,13 @@ export const LOCATION_CONTENT = {
       "道後溫泉是日本最古老溫泉之一，已有3000年歷史。1894年建造的木造三層「道後溫泉本館」為國家重要文化財，是《千與千尋》湯屋原型之一。夜間燈飾夢幻。",
       "도고 온천은 3000년 역사를 가진 일본 최고(最古)급 온천. 1894년 건축된 목조 3층 '도고 온천 본관'은 중요문화재이며 '센과 치히로의 행방불명' 목욕탕 모델 중 하나. 야간 조명은 환상적입니다."
     ),
-    definition: lh(
-      "道後温泉(どうごおんせん)は愛媛県松山市にある約3,000年の歴史を持つ日本最古級の温泉で、『日本書紀』『万葉集』にも登場する古来の名湯。中心となる「道後温泉本館」は1894年に建築された木造三層の重要文化財で、夏目漱石の小説『坊っちゃん』の舞台、宮崎駿『千と千尋の神隠し』の油屋のモデルの一つともされます。アルカリ性単純温泉(肌に優しい)、本館・椿の湯・飛鳥乃湯泉の3公衆浴場と道後温泉駅周辺の温泉旅館街が作る情緒は、四国の温泉文化の象徴です。",
-      "Dogo Onsen, in Matsuyama City, Ehime Prefecture, is one of Japan's oldest hot springs with about 3,000 years of history — appearing in the «Nihon Shoki» and «Manyoshu.» Its centerpiece, Dogo Onsen Honkan, is a wooden three-story Important Cultural Property built in 1894, the setting of Soseki's novel «Botchan» and considered one of the inspirations for the bathhouse in Hayao Miyazaki's «Spirited Away.» With alkaline simple spring water (gentle on skin) and three public bathhouses — Honkan, Tsubaki-no-Yu, and Asuka-no-Yu Spring — plus the surrounding ryokan-lined district, it embodies the hot-spring culture of Shikoku."
-    ),
+    definition: {
+      ja: "道後温泉(どうごおんせん)は愛媛県松山市にある約3,000年の歴史を持つ日本最古級の温泉で、『日本書紀』『万葉集』にも登場する古来の名湯。中心となる「道後温泉本館」は1894年に建築された木造三層の重要文化財で、夏目漱石の小説『坊っちゃん』の舞台、宮崎駿『千と千尋の神隠し』の油屋のモデルの一つともされます。アルカリ性単純温泉(肌に優しい)、本館・椿の湯・飛鳥乃湯泉の3公衆浴場と道後温泉駅周辺の温泉旅館街が作る情緒は、四国の温泉文化の象徴です。",
+      en: "Dogo Onsen, in Matsuyama City, Ehime Prefecture, is one of Japan's oldest hot springs with about 3,000 years of history — appearing in the «Nihon Shoki» and «Manyoshu.» Its centerpiece, Dogo Onsen Honkan, is a wooden three-story Important Cultural Property built in 1894, the setting of Soseki's novel «Botchan» and considered one of the inspirations for the bathhouse in Hayao Miyazaki's «Spirited Away.» With alkaline simple spring water (gentle on skin) and three public bathhouses — Honkan, Tsubaki-no-Yu, and Asuka-no-Yu Spring — plus the surrounding ryokan-lined district, it embodies the hot-spring culture of Shikoku.",
+      zh: "道后温泉(どうごおんせん)是位于爱媛县松山市约3000年历史的日本最古老级温泉，《日本书纪》《万叶集》中也有记载的古来名汤。中心的「道后温泉本馆」是1894年建造的木造三层重要文化财，夏目漱石小说《少爷》的舞台，也是宫崎骏《千与千寻》油屋原型之一。碱性单纯温泉(亲肤)，本馆·椿之汤·飞鸟乃汤泉3处公众浴场与道后温泉站周围温泉旅馆街形成的情致，是四国温泉文化的象征。",
+      "zh-tw": "道後溫泉(どうごおんせん)是位於愛媛縣松山市約3000年歷史的日本最古老級溫泉，《日本書紀》《萬葉集》中也有記載的古來名湯。中心的「道後溫泉本館」是1894年建造的木造三層重要文化財，夏目漱石小說《少爺》的舞台，也是宮崎駿《千與千尋》油屋原型之一。鹼性單純溫泉(親膚)，本館·椿之湯·飛鳥乃湯泉3處公眾浴場與道後溫泉站周圍溫泉旅館街形成的情致，是四國溫泉文化的象徵。",
+      ko: "도고 온천(どうごおんせん)은 에히메현 마쓰야마시에 있는 약 3,000년의 역사를 지닌 일본 최고(最古)급 온천으로, 『일본서기』·『만요슈』에도 등장하는 고래의 명탕. 중심이 되는 「도고 온천 본관」은 1894년에 건축된 목조 3층의 중요문화재로, 나쓰메 소세키 소설 『도련님』의 무대이자 미야자키 하야오 『센과 치히로의 행방불명』의 유야 모델 중 하나로도 여겨집니다. 알칼리성 단순 온천(피부에 부드러움), 본관·쓰바키노유·아스카노유센 3개의 공중욕장과 도고 온천역 주변의 온천 료칸 거리가 만드는 정취는 시코쿠의 온천 문화의 상징입니다.",
+    },
     highlights: {
       ja: [
         "道後温泉本館 — 1894年築、重要文化財、唐破風と千鳥破風が織りなす木造三層、夜のライトアップは幻想的",
@@ -1647,6 +1650,27 @@ export const LOCATION_CONTENT = {
         "Dogo Onsen Station — 1895 terminus of the Botchan Train, with a retro station house and tramway",
         "Yu Shrine and Isaniwa Shrine — old shrines watching over Dogo Onsen; Isaniwa's vermilion main hall (1667) is an Important Cultural Property",
         "Yuzuki Castle Ruins Park — the medieval mountain castle behind the onsen; cherry blossom site offering an overhead view including the Honkan",
+      ],
+      zh: [
+        "道后温泉本馆 — 1894年建，重要文化财，唐破风与千鸟破风交织的木造三层，夜间灯光梦幻",
+        "椿之汤·飞鸟乃汤泉 — 别馆公众浴场，较本馆空闲易入浴，撮影限外观",
+        "道后温泉站 — 1895年开业的少爷列车终点站，怀旧站舍与路面电车",
+        "汤神社·伊佐尔波神社 — 守护道后温泉的古社，伊佐尔波神社朱漆本殿是1667年建的重要文化财",
+        "汤筑城迹公园 — 道后温泉后方的中世山城迹，赏樱名所，可俯瞰含本馆的街景",
+      ],
+      "zh-tw": [
+        "道後溫泉本館 — 1894年建，重要文化財，唐破風與千鳥破風交織的木造三層，夜間燈光夢幻",
+        "椿之湯·飛鳥乃湯泉 — 別館公眾浴場，較本館空閒易入浴，撮影限外觀",
+        "道後溫泉站 — 1895年開業的少爺列車終點站，懷舊站舍與路面電車",
+        "湯神社·伊佐爾波神社 — 守護道後溫泉的古社，伊佐爾波神社朱漆本殿是1667年建的重要文化財",
+        "湯築城跡公園 — 道後溫泉後方的中世山城跡，賞櫻名所，可俯瞰含本館的街景",
+      ],
+      ko: [
+        "도고 온천 본관 — 1894년 건축, 중요문화재, 카라하후와 치도리하후가 교차하는 목조 3층, 밤의 조명은 환상적",
+        "쓰바키노유·아스카노유센 — 별관 공중욕장, 본관보다 한산해 입욕이 쉬움, 촬영은 외관만",
+        "도고 온천역 — 1895년 개업한 봇짱 열차의 종착역, 레트로한 역사와 노면전차",
+        "유 신사·이사니와 신사 — 도고 온천을 지키는 고사, 이사니와 신사의 주홍 본전은 1667년 축조 중요문화재",
+        "유즈키 성터 공원 — 도고 온천 뒤편의 중세 산성터, 벚꽃 명소, 본관을 포함한 거리 풍경을 부감",
       ],
     },
     quickAnswers: {
@@ -1665,6 +1689,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From Matsuyama Airport, the limousine bus takes ~45 min, ¥780. From JR Matsuyama Station, Iyotetsu tram line 5 to «Dogo Onsen» Station, ~30 min, ¥170. 15 min by car from Matsuyama Castle and the Saka no Ue no Kumo Museum. The Botchan Train (a historic Iyotetsu railcar, a few daily) terminates at Dogo Onsen Station for a memorable arrival." },
         { q: "Lodging and bath fees?", a: "Honkan bathing fees range from ¥460 (Kami-no-Yu basic) to ¥1,690 (Tama-no-Yu private 3rd-floor room). Day-bath open 6:00–23:00. Dogo Onsen has 30+ ryokan including Tsubakikan, Yamatoya Honten, and Dogokan (¥15,000–45,000/night with two meals). Free building-tour areas are also available." },
         { q: "What other sights are nearby?", a: "①Dogo Onsen Honkan (shoot both early morning and evening) ②Dogo Haikara-dori (Meiji-retro shopping street) ③Yu Shrine and Isaniwa Shrine (the onsen's guardian shrines; steep stone stairs offer overhead views of the Honkan) ④Matsuyama Castle (15 min by car or tram, one of 12 originals) ⑤Saka no Ue no Kumo Museum (5 min by car). A walk-and-tram day plan covers the center of Matsuyama tourism." },
+      ],
+      zh: [
+        { q: "道后温泉是什么?", a: "爱媛县松山市3000年历史的日本最古老级温泉。重要文化财道后温泉本馆(1894年建)是《少爷》舞台，《千与千寻》油屋原型之一，四国温泉文化象征。" },
+        { q: "本馆现在可以入浴吗?", a: "2019年起大规模保存修缮中，2024年12月预计全馆完全重开。施工期间部分楼层可入浴·参观。撮影外观·夜景两皆推荐，尤其黄昏至夜间木造三层灯光秀震撼。" },
+        { q: "撮影最佳时段与礼仪?", a: "外观早晨(人少)与黄昏至夜间灯光为两大最佳。建筑后方小巷构图推荐。馆内出于入浴者隐私考虑设有撮影禁止区，需注意。" },
+        { q: "如何前往?", a: "松山机场乘机场利木津巴士约45分钟·780日元。JR松山站乘伊予铁路面电车5号线「道后温泉站」下车，所需约30分钟·170日元。距松山城·坂上之云博物馆乘车15分钟。少爷列车(伊予铁历史车辆，1日数班)可抵道后温泉站，体验绝佳。" },
+        { q: "住宿与入浴费?", a: "本馆入浴费(神之汤460日元至灵之汤3楼个室1690日元)。日归入浴朝6:00至23:00开馆。道后温泉郷有30余家温泉旅馆，椿馆·大和屋本店·道后馆为代表(1宿2食15000至45000日元)。仅参观建筑亦有免费区。" },
+        { q: "周边连续观光?", a: "①道后温泉本馆(早晨·夜间均撮影)②道后哈伊卡拉通(明治怀旧商店街)③汤神社·伊佐尔波神社(温泉守护神社，陡石阶可俯瞰本馆)④松山城(乘车·市电15分，现存12天守)⑤坂上之云博物馆(车5分)。徒步+市电可组1日行程的松山观光中心。" },
+      ],
+      "zh-tw": [
+        { q: "道後溫泉是什麼?", a: "愛媛縣松山市3000年歷史的日本最古老級溫泉。重要文化財道後溫泉本館(1894年建)是《少爺》舞台，《千與千尋》油屋原型之一，四國溫泉文化象徵。" },
+        { q: "本館現在可以入浴嗎?", a: "2019年起大規模保存修繕中，2024年12月預計全館完全重開。施工期間部分樓層可入浴·參觀。撮影外觀·夜景兩皆推薦，尤其黃昏至夜間木造三層燈光秀震撼。" },
+        { q: "撮影最佳時段與禮儀?", a: "外觀早晨(人少)與黃昏至夜間燈光為兩大最佳。建築後方小巷構圖推薦。館內出於入浴者隱私考慮設有撮影禁止區，需注意。" },
+        { q: "如何前往?", a: "松山機場搭機場利木津巴士約45分鐘·780日圓。JR松山站搭伊予鐵路面電車5號線「道後溫泉站」下車，所需約30分鐘·170日圓。距松山城·坂上之雲博物館搭車15分鐘。少爺列車(伊予鐵歷史車輛，1日數班)可抵道後溫泉站，體驗絕佳。" },
+        { q: "住宿與入浴費?", a: "本館入浴費(神之湯460日圓至靈之湯3樓個室1690日圓)。日歸入浴朝6:00至23:00開館。道後溫泉鄉有30餘家溫泉旅館，椿館·大和屋本店·道後館為代表(1宿2食15000至45000日圓)。僅參觀建築亦有免費區。" },
+        { q: "周邊連續觀光?", a: "①道後溫泉本館(早晨·夜間均撮影)②道後哈伊卡拉通(明治懷舊商店街)③湯神社·伊佐爾波神社(溫泉守護神社，陡石階可俯瞰本館)④松山城(搭車·市電15分，現存12天守)⑤坂上之雲博物館(車5分)。徒步+市電可組1日行程的松山觀光中心。" },
+      ],
+      ko: [
+        { q: "도고 온천이란?", a: "에히메현 마쓰야마시의 3,000년 역사를 지닌 일본 최고(最古)급 온천. 중요문화재인 도고 온천 본관(1894년 축조)은 『도련님』의 무대이자, 『센과 치히로의 행방불명』 유야의 모델 중 하나로, 시코쿠 온천 문화의 상징입니다." },
+        { q: "본관은 지금 입욕 가능한가?", a: "2019년부터 대규모 보존 수리 중으로, 2024년 12월에 전관 완전 재개 예정. 공사 중에도 일부 층은 입욕·견학 가능. 촬영은 외관·야경 모두 추천, 특히 저녁~밤의 목조 3층 조명이 압권입니다." },
+        { q: "촬영 베스트 타임과 매너는?", a: "외관은 이른 아침(사람 적음)과 저녁~밤 조명이 양대 베스트. 건물 뒤편 골목 너머 구도 추천. 관내는 입욕객 프라이버시 배려로 촬영 금지 구역이 있으니 주의." },
+        { q: "가는 방법은?", a: "마쓰야마 공항에서 공항 리무진 버스로 약 45분·780엔. JR 마쓰야마역에서 이요테쓰 노면전차 5계통 「도고 온천역」 하차, 소요 약 30분·170엔. 마쓰야마성·언덕 위의 구름 박물관에서 차로 15분. 봇짱 열차(이요테쓰의 역사적 차량, 1일 수 편 운행)로 도고 온천역에 도착하는 체험도." },
+        { q: "숙박과 입욕료는?", a: "본관 입욕료(가미노유 코스 460엔~타마노유 3층 개별실 1,690엔). 당일치기 입욕은 아침 6:00~23:00 개관. 도고 온천향에는 30곳 이상의 온천 료칸, 츠바키칸·야마토야 혼텐·도고칸 등이 대표(1박 2식 포함 15,000~45,000엔). 건물 견학만이라면 무료 구역도 있음." },
+        { q: "주변 연속 관광은?", a: "①도고 온천 본관(이른 아침·밤 모두 촬영) ②도고 하이카라도리(메이지 레트로 상점가) ③유 신사·이사니와 신사(온천 수호 신사, 가파른 돌계단에서 본관을 부감) ④마쓰야마성(차·시영전차로 15분, 현존 12천수) ⑤언덕 위의 구름 박물관(차 5분). 도보+시영전차로 1일 코스 가능한 마쓰야마 관광의 중심지입니다." },
       ],
     },
     faqs: [
@@ -4150,10 +4198,13 @@ export const LOCATION_CONTENT = {
       "立石公園位於諏訪湖之上的海拔934米高地，眼下諏訪湖、對岸八岳與富士山盡收眼底。夜晚諏訪市夜景如寶盒。是電影《你的名字。》聖地，櫻花、新綠、夕陽、夜景、星空皆入畫，是長野頂級觀景點。",
       "다테이시 공원은 스와호를 한눈에 내려다보는 해발 934m 고대 공원. 발 아래 스와호와 건너편 야쓰가타케·후지산까지 이어지는 대 파노라마, 밤에는 보석함 같은 스와시 야경이 펼쳐집니다. 영화 「너의 이름은.」 성지로도 유명하며, 벚꽃·신록·노을·야경·별하늘 등 모든 시간대에 그림이 되는 나가노 굴지의 뷰포인트."
     ),
-    definition: lh(
-      "立石公園(たていしこうえん)は長野県諏訪市上諏訪角間沢、諏訪湖を一望する標高934mの高台に位置する都市公園で、諏訪市民の憩いの場であり長野県屈指の絶景ビューポイント。眼下に広がる諏訪湖(面積13.3km²)、対岸の八ヶ岳連峰(2,899m赤岳)、晴れた日には富士山(150km先)まで望める大パノラマで、夜は諏訪市・岡谷市・茅野市の街明かりが宝石箱のように輝く諏訪盆地の夜景の聖地。新海誠監督の映画『君の名は。』(2016年公開、興行収入250億円)で糸守湖のモデルとしてベンチマークされたシーンの聖地巡礼地として、世界中から映画ファンが訪れます。展望デッキ、駐車場、トイレが整備され、夜間も自由に立ち入り可能(マナー遵守)、桜・新緑・夕焼け・夜景・星空とすべての時間帯で絵になる撮影地です。",
-      "Tateishi Park, located at 934 m elevation in Kakuma-zawa, Kami-Suwa, Suwa City, Nagano Prefecture, is a municipal park overlooking Lake Suwa — a recreational space for Suwa's citizens and one of Nagano's premier scenic vantages. The sweeping panorama takes in Lake Suwa below (13.3 km²), the Yatsugatake Range (Mt. Akadake, 2,899 m) opposite, and on clear days even Mt. Fuji 150 km away. By night, the lights of Suwa, Okaya, and Chino Cities sparkle like a jewel box, making the park a sacred ground for Suwa Basin nightscapes. After being featured as the model for Lake Itomori in Makoto Shinkai's «Your Name» (released 2016, ¥25 billion box office), it has become an international pilgrimage site for film fans. With a viewing deck, parking, and restrooms — and 24-hour access (with appropriate etiquette) — it photographs beautifully at every hour: cherry blossoms, fresh greens, sunsets, night views, and starscapes."
-    ),
+    definition: {
+      ja: "立石公園(たていしこうえん)は長野県諏訪市上諏訪角間沢、諏訪湖を一望する標高934mの高台に位置する都市公園で、諏訪市民の憩いの場であり長野県屈指の絶景ビューポイント。眼下に広がる諏訪湖(面積13.3km²)、対岸の八ヶ岳連峰(2,899m赤岳)、晴れた日には富士山(150km先)まで望める大パノラマで、夜は諏訪市・岡谷市・茅野市の街明かりが宝石箱のように輝く諏訪盆地の夜景の聖地。新海誠監督の映画『君の名は。』(2016年公開、興行収入250億円)で糸守湖のモデルとしてベンチマークされたシーンの聖地巡礼地として、世界中から映画ファンが訪れます。展望デッキ、駐車場、トイレが整備され、夜間も自由に立ち入り可能(マナー遵守)、桜・新緑・夕焼け・夜景・星空とすべての時間帯で絵になる撮影地です。",
+      en: "Tateishi Park, located at 934 m elevation in Kakuma-zawa, Kami-Suwa, Suwa City, Nagano Prefecture, is a municipal park overlooking Lake Suwa — a recreational space for Suwa's citizens and one of Nagano's premier scenic vantages. The sweeping panorama takes in Lake Suwa below (13.3 km²), the Yatsugatake Range (Mt. Akadake, 2,899 m) opposite, and on clear days even Mt. Fuji 150 km away. By night, the lights of Suwa, Okaya, and Chino Cities sparkle like a jewel box, making the park a sacred ground for Suwa Basin nightscapes. After being featured as the model for Lake Itomori in Makoto Shinkai's «Your Name» (released 2016, ¥25 billion box office), it has become an international pilgrimage site for film fans. With a viewing deck, parking, and restrooms — and 24-hour access (with appropriate etiquette) — it photographs beautifully at every hour: cherry blossoms, fresh greens, sunsets, night views, and starscapes.",
+      zh: "立石公园(たていしこうえん)位于长野县诹访市上诹访角间泽，是俯瞰诹访湖的海拔934米高地都市公园，诹访市民休憩之地，长野县顶级绝景观景点。眼下展开的诹访湖(面积13.3平方公里)、对岸八岳连峰(2899米赤岳)、晴朗日还可远眺富士山(150公里外)的大全景，夜晚诹访市·冈谷市·茅野市的灯光如宝盒般闪耀，是诹访盆地夜景圣地。新海诚导演电影《你的名字。》(2016年公开，票房250亿日元)中糸守湖原型场景圣地巡礼地，世界各地影迷前来。设有观景台、停车场、洗手间，夜间也可自由入内(遵守礼仪)，樱花·新绿·夕阳·夜景·星空全时段皆入画的撮影地。",
+      "zh-tw": "立石公園(たていしこうえん)位於長野縣諏訪市上諏訪角間澤，是俯瞰諏訪湖的海拔934米高地都市公園，諏訪市民休憩之地，長野縣頂級絕景觀景點。眼下展開的諏訪湖(面積13.3平方公里)、對岸八岳連峰(2899米赤岳)、晴朗日還可遠眺富士山(150公里外)的大全景，夜晚諏訪市·岡谷市·茅野市的燈光如寶盒般閃耀，是諏訪盆地夜景聖地。新海誠導演電影《你的名字。》(2016年公開，票房250億日圓)中糸守湖原型場景聖地巡禮地，世界各地影迷前來。設有觀景台、停車場、洗手間，夜間也可自由入內(遵守禮儀)，櫻花·新綠·夕陽·夜景·星空全時段皆入畫的撮影地。",
+      ko: "다테이시 공원(たていしこうえん)은 나가노현 스와시 가미스와 가쿠마자와에 있으며, 스와호를 한눈에 내려다보는 해발 934m 고대에 위치한 도시공원으로, 스와 시민의 휴식처이자 나가노현 굴지의 절경 뷰포인트. 발 아래 펼쳐지는 스와호(면적 13.3km²), 건너편 야쓰가타케 연봉(2,899m 아카다케), 맑은 날에는 후지산(150km 너머)까지 바라볼 수 있는 대 파노라마로, 밤에는 스와시·오카야시·치노시의 거리 불빛이 보석함처럼 빛나는 스와 분지 야경의 성지. 신카이 마코토 감독의 영화 「너의 이름은.」(2016년 개봉, 흥행 수입 250억 엔)에서 이토모리호의 모델로 벤치마크된 장면의 성지 순례지로, 전 세계에서 영화 팬이 찾아옵니다. 전망 데크, 주차장, 화장실이 정비되어 있고 야간에도 자유롭게 출입 가능(매너 준수), 벚꽃·신록·노을·야경·별하늘 등 모든 시간대에 그림이 되는 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "諏訪湖の俯瞰 — 標高934mから諏訪湖と諏訪盆地を一望、八ヶ岳・富士山まで見える",
@@ -4168,6 +4219,27 @@ export const LOCATION_CONTENT = {
         "«Your Name» Pilgrimage Site — internationally famous as the model for Lake Itomori, drawing film fans worldwide",
         "Cherry Blossoms with Lake Suwa — mid-April blossoms with the lake below; fresh greens and autumn colors round out the seasons",
         "Stars — at 934 m elevation, despite some city light, new-moon nights surprisingly reveal stars",
+      ],
+      zh: [
+        "诹访湖俯瞰 — 从海拔934米一览诹访湖与诹访盆地，远眺八岳·富士山",
+        "夜景 — 诹访市·冈谷市·茅野市的灯光如宝盒般景观，蓝调时刻为至极",
+        "电影《你的名字。》圣地 — 作为糸守湖原型世界闻名，圣地巡礼者众多",
+        "樱花与诹访湖 — 4月中旬樱花与眼下诹访湖，新绿与红叶亦四季皆景",
+        "星空 — 海拔934米虽有街灯，新月期意外可见星辰",
+      ],
+      "zh-tw": [
+        "諏訪湖俯瞰 — 從海拔934米一覽諏訪湖與諏訪盆地，遠眺八岳·富士山",
+        "夜景 — 諏訪市·岡谷市·茅野市的燈光如寶盒般景觀，藍調時刻為至極",
+        "電影《你的名字。》聖地 — 作為糸守湖原型世界聞名，聖地巡禮者眾多",
+        "櫻花與諏訪湖 — 4月中旬櫻花與眼下諏訪湖，新綠與紅葉亦四季皆景",
+        "星空 — 海拔934米雖有街燈，新月期意外可見星辰",
+      ],
+      ko: [
+        "스와호 부감 — 해발 934m에서 스와호와 스와 분지를 한눈에, 야쓰가타케·후지산까지 보임",
+        "야경 — 스와시·오카야시·치노시의 거리 불빛이 보석함 같은 광경, 블루 아워가 지고",
+        "영화 「너의 이름은.」 성지 — 이토모리호의 모델로 세계적으로 유명, 성지 순례자가 많음",
+        "벚꽃과 스와호 — 4월 중순의 벚꽃과 발 아래 스와호, 신록과 단풍도 사계의 피사체",
+        "별하늘 — 해발 934m에서 거리 불빛이 있지만, 신월기에는 의외로 별도 보임",
       ],
     },
     quickAnswers: {
@@ -4186,6 +4258,30 @@ export const LOCATION_CONTENT = {
         { q: "Why is it a «Your Name» pilgrimage site?", a: "Director Makoto Shinkai stated Lake Suwa was the model for Lake Itomori. The view from Tateishi Park is the backdrop where Mitsuha watches the comet fall. Pilgrims arrive from around the world; July–August dusk (matching the film's hours) is the most crowded. Comparing your composition to the film deepens the experience." },
         { q: "Recommended camera gear?", a: "①Wide angle (16–35mm) for the lake and full city view ②Telephoto (70–200mm) for lake-surface detail and far-shore mountains ③Standard zoom for the trail and gazebo. Tripod placement should not block paths during crowds. Vloggers often bring smartphone rigs. Winter night shots get sub-zero — bring condensation prevention and spare batteries." },
         { q: "Combined sightseeing route?", a: "①Tateishi Park (evening to night, night view + stars) ②Suwa Taisha (20 min by car, Kamisha Honmiya and Shimosha Akimiya) ③Takashima Park (15 min by car, cherry + reflection) ④Suwa Lake Fireworks (Aug 15, pre-plan required) ⑤Kami-Suwa Onsen (overnight ryokan). A 1–2 night plan covers Suwa's «Your Name» sites, history, vistas, and onsen." },
+      ],
+      zh: [
+        { q: "立石公园是什么?", a: "长野县诹访市海拔934米俯瞰诹访湖的都市公园，长野县顶级绝景观景点。新海诚导演电影《你的名字。》(2016年)糸守湖原型世界闻名，夜景·樱花·夕阳·星空全时段皆入画的撮影地。" },
+        { q: "夜景·星空撮影秘诀?", a: "三脚架必备。夜景ISO200·F8·10~30秒，星空ISO3200·F2.8·15秒前后。日落后20~30分钟魔幻时刻街灯与天空渐变最美。冬空气澄清可见富士山，夏花火大会期(8/15)拥挤必至。" },
+        { q: "如何前往与礼仪?", a: "JR上诹访站乘车约15分钟或步行约30分钟(陡坡)。停车场免费，24小时可入内。深夜请顾及邻居住民，禁止大声·大音量，关闭引擎静默撮影。冬季道路结冰注意，建议4WD。" },
+        { q: "《你的名字。》圣地的魅力?", a: "新海诚导演公开表示「以诹访湖为糸守湖原型」，尤其三叶凝视彗星坠落的场景背景为立石公园俯瞰。世界各地圣地巡礼者前来，特别7~8月夕暮时段(与电影同时间带)最热门。撮影时与剧中场景对照构图感动倍增。" },
+        { q: "撮影器材建议?", a: "①广角(16-35mm)拍诹访湖与街全景②长焦(70-200mm)拍湖面细节·对岸山脉③标准变焦拍步道与亭子。三脚架置于不妨碍通行处。Vlog撮影者多带智能手机配件。冬夜零下，镜头防雾与备用电池必备。" },
+        { q: "推荐组合行程?", a: "①立石公园(傍晚~夜，夜景·星空)②诹访大社(车20分，上社本宫·下社秋宫)③高岛公园(车15分，樱与水镜)④诹访湖花火大会(8/15，需事前计划)⑤上诹访温泉(湖畔旅馆1宿)。1~2宿可遍览诹访区《你的名字。》圣地·历史·绝景·温泉。" },
+      ],
+      "zh-tw": [
+        { q: "立石公園是什麼?", a: "長野縣諏訪市海拔934米俯瞰諏訪湖的都市公園，長野縣頂級絕景觀景點。新海誠導演電影《你的名字。》(2016年)糸守湖原型世界聞名，夜景·櫻花·夕陽·星空全時段皆入畫的撮影地。" },
+        { q: "夜景·星空撮影秘訣?", a: "三腳架必備。夜景ISO200·F8·10~30秒，星空ISO3200·F2.8·15秒前後。日落後20~30分鐘魔幻時刻街燈與天空漸變最美。冬空氣澄清可見富士山，夏花火大會期(8/15)擁擠必至。" },
+        { q: "如何前往與禮儀?", a: "JR上諏訪站搭車約15分鐘或步行約30分鐘(陡坡)。停車場免費，24小時可入內。深夜請顧及鄰居住民，禁止大聲·大音量，關閉引擎靜默撮影。冬季道路結冰注意，建議4WD。" },
+        { q: "《你的名字。》聖地的魅力?", a: "新海誠導演公開表示「以諏訪湖為糸守湖原型」，尤其三葉凝視彗星墜落的場景背景為立石公園俯瞰。世界各地聖地巡禮者前來，特別7~8月夕暮時段(與電影同時間帶)最熱門。撮影時與劇中場景對照構圖感動倍增。" },
+        { q: "撮影器材建議?", a: "①廣角(16-35mm)拍諏訪湖與街全景②長焦(70-200mm)拍湖面細節·對岸山脈③標準變焦拍步道與亭子。三腳架置於不妨礙通行處。Vlog撮影者多帶智能手機配件。冬夜零下，鏡頭防霧與備用電池必備。" },
+        { q: "推薦組合行程?", a: "①立石公園(傍晚~夜，夜景·星空)②諏訪大社(車20分，上社本宮·下社秋宮)③高島公園(車15分，櫻與水鏡)④諏訪湖花火大會(8/15，需事前計劃)⑤上諏訪溫泉(湖畔旅館1宿)。1~2宿可遍覽諏訪區《你的名字。》聖地·歷史·絕景·溫泉。" },
+      ],
+      ko: [
+        { q: "다테이시 공원이란?", a: "나가노현 스와시 해발 934m에서 스와호를 한눈에 내려다보는 도시공원으로, 나가노현 굴지의 절경 뷰포인트. 신카이 마코토 감독의 영화 「너의 이름은.」(2016년)의 이토모리호 모델로 세계적으로 유명, 야경·벚꽃·노을·별하늘 등 모든 시간대에 그림이 되는 촬영지입니다." },
+        { q: "야경·별하늘 촬영 팁은?", a: "삼각대 필수. 야경은 ISO200·F8·10~30초, 별은 ISO3200·F2.8·15초 전후. 일몰 후 20~30분의 매직 아워가 가로등과 하늘 그라데이션으로 가장 아름다움. 겨울은 공기가 맑아 후지산도 보이고, 여름 불꽃놀이 시기(8/15)는 혼잡 필연." },
+        { q: "가는 방법과 매너는?", a: "JR 가미스와역에서 차로 약 15분 또는 도보 약 30분(가파른 언덕). 주차장 무료, 24시간 출입 가능. 심야는 인근 주민 배려로 큰 소리·큰 음량 NG, 엔진 끄고 조용히 촬영해주세요. 겨울철 도로 결빙 주의, 4WD 추천." },
+        { q: "「너의 이름은.」 성지로서의 매력은?", a: "신카이 마코토 감독이 「스와호를 이토모리호의 모델로 했다」고 공언, 특히 미츠하가 혜성 낙하를 응시하는 장면의 배경은 다테이시 공원 부감. 세계 각지에서 성지 순례자가 찾으며, 특히 7~8월 황혼 시간대(영화와 같은 시간대)가 가장 인기. 촬영은 극중 장면과 비교하면서 구도를 정하면 감동이 깊어집니다." },
+        { q: "촬영 기재 추천은?", a: "①광각(16-35mm)으로 스와호와 거리 전경 ②망원(70-200mm)으로 호면 디테일·건너편 산들 ③표준 줌으로 산책로와 정자. 삼각대는 혼잡 시 통행 방해되지 않는 위치. Vlog 촬영자용으로 스마트폰 어태치먼트 지참자도 많음. 겨울 야경은 영하, 렌즈의 결로 대책과 예비 배터리 필수." },
+        { q: "추천 조합 방문은?", a: "①다테이시 공원(저녁~밤, 야경·별하늘) ②스와 다이샤(차 20분, 가미샤 혼미야·시모샤 아키미야) ③다카시마 공원(차 15분, 벚꽃과 수경) ④스와호 불꽃놀이 대회(8/15, 사전 계획 필요) ⑤가미스와 온천(호반 숙소에서 1박). 1~2박으로 스와 지역의 「너의 이름은.」 성지·역사·절경·온천을 모두 촬영할 수 있습니다." },
       ],
     },
     faqs: [
