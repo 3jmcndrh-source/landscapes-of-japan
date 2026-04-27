@@ -4203,10 +4203,13 @@ export const LOCATION_CONTENT = {
       "三段瀑公園位於蘆別市溪流畔，15米寬的三段瀑布為亮點。5-6月新綠、10月紅葉、冬季冰瀑四季表情各異。停車場步行3分鐘即可抵達。",
       "산단 폭포 공원은 아시베쓰시의 계류 옆에 위치, 폭 15m에 펼쳐진 3단 폭포가 볼거리. 5~6월 신록, 10월 단풍, 겨울 빙폭 등 사계절 완전히 다른 표정. 주차장에서 폭포까지 도보 3분으로 편리합니다."
     ),
-    definition: lh(
-      "三段滝公園(さんだんたきこうえん)は北海道芦別市西芦別の芦別川支流・三段ノ沢沿いに整備された自然公園で、3段に流れ落ちる幅約15m・落差合計約26mの三段滝が見どころ。1段目・2段目・3段目と段階的に流れ落ちる構造で、上部からの水流が中段で岩盤に当たり水しぶきを上げる迫力ある光景。新緑の5〜6月、紅葉の10月、結氷する1〜2月と四季ごとに完全に異なる表情を見せる撮影地で、駐車場から滝の正面まで徒歩3分という手軽さも魅力です。芦別市は1万人規模の小さな町だが、空知地方の隠れた自然撮影地として写真愛好家に支持されています。",
-      "Sandan Falls Park is a natural park in Nishi-Ashibetsu, Ashibetsu City, Hokkaido, set along the Sandan-no-Sawa tributary of the Ashibetsu River. Its highlight is a three-tiered waterfall about 15 m wide with a total drop of about 26 m, falling in three stages. Water from the upper tier strikes bedrock at the middle level, throwing up dramatic spray. Fresh greens in May–June, foliage in October, and freezing in January–February give the falls four entirely different faces, and the 3-minute walk from the parking lot makes it remarkably accessible. Although Ashibetsu is a small city of about 10,000, the falls have become a cherished hidden photography destination in the Sorachi region."
-    ),
+    definition: {
+      ja: "三段滝公園(さんだんたきこうえん)は北海道芦別市西芦別の芦別川支流・三段ノ沢沿いに整備された自然公園で、3段に流れ落ちる幅約15m・落差合計約26mの三段滝が見どころ。1段目・2段目・3段目と段階的に流れ落ちる構造で、上部からの水流が中段で岩盤に当たり水しぶきを上げる迫力ある光景。新緑の5〜6月、紅葉の10月、結氷する1〜2月と四季ごとに完全に異なる表情を見せる撮影地で、駐車場から滝の正面まで徒歩3分という手軽さも魅力です。芦別市は1万人規模の小さな町だが、空知地方の隠れた自然撮影地として写真愛好家に支持されています。",
+      en: "Sandan Falls Park is a natural park in Nishi-Ashibetsu, Ashibetsu City, Hokkaido, set along the Sandan-no-Sawa tributary of the Ashibetsu River. Its highlight is a three-tiered waterfall about 15 m wide with a total drop of about 26 m, falling in three stages. Water from the upper tier strikes bedrock at the middle level, throwing up dramatic spray. Fresh greens in May–June, foliage in October, and freezing in January–February give the falls four entirely different faces, and the 3-minute walk from the parking lot makes it remarkably accessible. Although Ashibetsu is a small city of about 10,000, the falls have become a cherished hidden photography destination in the Sorachi region.",
+      zh: "三段瀑公园(さんだんたきこうえん)位于北海道芦别市西芦别的芦别川支流·三段沢沿岸整备的自然公园，3段流落幅约15米·落差合计约26米的三段瀑布为亮点。1段·2段·3段阶段性流落结构，上部水流在中段撞岩盘溅起水花的迫力光景。新绿5至6月、红叶10月、结冰1至2月四季完全不同表情的撮影地，停车场至瀑布正面步行3分便利亦为魅力。芦别市虽1万人规模小镇，但作为空知地方隐藏自然撮影地深受摄影爱好者支持。",
+      "zh-tw": "三段瀑公園(さんだんたきこうえん)位於北海道蘆別市西蘆別的蘆別川支流·三段澤沿岸整備的自然公園，3段流落幅約15米·落差合計約26米的三段瀑布為亮點。1段·2段·3段階段性流落結構，上部水流在中段撞岩盤濺起水花的迫力光景。新綠5至6月、紅葉10月、結冰1至2月四季完全不同表情的撮影地，停車場至瀑布正面步行3分便利亦為魅力。蘆別市雖1萬人規模小鎮，但作為空知地方隱藏自然撮影地深受攝影愛好者支持。",
+      ko: "산단 폭포 공원(さんだんたきこうえん)은 홋카이도 아시베쓰시 니시아시베쓰의 아시베쓰강 지류·산단노사와 옆에 정비된 자연 공원으로, 3단으로 흘러떨어지는 폭 약 15m·낙차 합계 약 26m의 산단 폭포가 볼거리. 1단·2단·3단으로 단계적으로 흘러떨어지는 구조로, 상부에서의 수류가 중단에서 암반에 부딪쳐 물보라를 일으키는 박력 있는 광경. 신록의 5~6월, 단풍의 10월, 결빙되는 1~2월로 사계절마다 완전히 다른 표정을 보여주는 촬영지로, 주차장에서 폭포 정면까지 도보 3분이라는 편리함도 매력입니다. 아시베쓰시는 1만 명 규모의 작은 마을이지만, 소라치 지방의 숨은 자연 촬영지로 사진 애호가들에게 지지받고 있습니다.",
+    },
     highlights: {
       ja: [
         "三段の滝(幅15m・落差26m) — 3段に流れ落ちる構造、中段で水しぶきを上げる迫力ある光景",
@@ -4221,6 +4224,27 @@ export const LOCATION_CONTENT = {
         "Autumn (mid-to-late October) — yellow, red, and orange tri-color foliage with the falls, a hidden gem among Hokkaido's autumn destinations",
         "Frozen winter (January–February) — fully frozen, the falls become a bluish-white ice sculpture; winter gear required",
         "Three minutes' walk from the parking lot — exceptionally accessible, with a viewing bridge crossing to the front of the falls",
+      ],
+      zh: [
+        "三段瀑(幅15米·落差26米) — 3段流落结构，中段溅起水花的迫力光景",
+        "新绿(5至6月) — 周围水楢·枫的绿与瀑布白的爽快对比",
+        "红叶(10月中下旬) — 黄·红·橙三色红叶与瀑布，北海道屈指隐藏红叶名所",
+        "冬结冰(1至2月) — 完全结冰时如蓝白冰雕的梦幻姿态，需冬装备",
+        "停车场步行3分 — 便利前往，观瀑桥可至瀑布正面",
+      ],
+      "zh-tw": [
+        "三段瀑(幅15米·落差26米) — 3段流落結構，中段濺起水花的迫力光景",
+        "新綠(5至6月) — 周圍水楢·楓的綠與瀑布白的爽快對比",
+        "紅葉(10月中下旬) — 黃·紅·橙三色紅葉與瀑布，北海道屈指隱藏紅葉名所",
+        "冬結冰(1至2月) — 完全結冰時如藍白冰雕的夢幻姿態，需冬裝備",
+        "停車場步行3分 — 便利前往，觀瀑橋可至瀑布正面",
+      ],
+      ko: [
+        "산단 폭포(폭 15m·낙차 26m) — 3단으로 흘러떨어지는 구조, 중단에서 물보라를 일으키는 박력 있는 광경",
+        "신록(5~6월) — 주위의 물참나무·단풍나무의 녹색과 폭포의 흰색이 상쾌한 대비",
+        "단풍(10월 중순~하순) — 노랑·빨강·주황의 삼색 단풍과 폭포, 홋카이도 굴지의 숨은 단풍 명소",
+        "결빙의 겨울(1~2월) — 완전 결빙되면 청백의 얼음 조각 같은 환상적인 모습, 겨울 장비 필수",
+        "주차장에서 도보 3분 — 편리한 액세스, 폭포 정면까지 관폭교로 건널 수 있음",
       ],
     },
     quickAnswers: {
@@ -4240,6 +4264,30 @@ export const LOCATION_CONTENT = {
         { q: "Nearby attractions?", a: "Akabira's former coal-mine facilities (mineshaft frame and winch hall, industrial heritage), Ashibetsu's «Hoshi-no-Furusato Centennial Hall,» and Yubari's «Yellow Handkerchief of Happiness Square» (Ken Takakura film) make for nostalgic mining-town pairings. Sandan Falls → former mines → Yubari fills a single day." },
         { q: "Nearby lodging?", a: "Lodging is sparse near the park itself. «Hoshi-no-Furusato Ashibetsu Hotel Gosenjaku» in town (with onsen, from ¥8,000/night) is the standard pick. Furano is 1 hour by car, making a base in Furano practical for touring central Hokkaido. Day-baths at Ashibetsu Onsen «Starlight Hotel» (¥800) are open to non-guests." },
       ],
+      zh: [
+        { q: "三段瀑公园是什么?", a: "北海道芦别市三段沢沿岸自然公园，幅15米·落差26米的3段瀑布为亮点。新绿·红叶·结冰四季完全不同表情，空知地方隐藏自然撮影地深受摄影爱好者支持。" },
+        { q: "冬冰瀑何时见?", a: "1月中旬至2月下旬严寒期。完全结冰时如蓝白冰雕梦幻姿态。气温-15℃以下连续日为结冰目安，需冬装备(防寒·防滑)，停车场有除雪。" },
+        { q: "如何前往?", a: "JR芦别站开车约20分，札幌开车约2小时。停车场(免费)至瀑布步行3分游步道整备，观瀑桥可正面眺望瀑布。冬季道路结冰需注意，建议4WD。" },
+        { q: "撮影器材推荐?", a: "三脚必备(ND8至64长曝拍丝绸般瀑布)。广角(16-35mm)拍瀑布全体，中焦(70-200mm)拍水花细节。CPL滤镜抑岩反射与红叶发色强化。雨后岩·苔彩度UP最佳，防雨罩勿忘。" },
+        { q: "周边看点?", a: "芦别邻町赤平市旧炭矿设施(立坑橹与卷扬机室，产业遗产)、芦别市营「星之降里百年纪念馆」、夕张市幸福黄手帕思出广场(高仓健电影)等，怀旧炭矿街组合撮影旅程可组。三段瀑→旧炭矿→夕张为1日游。" },
+        { q: "近邻住宿?", a: "公园周边住宿稀少，芦别市内「星之降里芦别酒店五千尺」(温泉付·1宿8000日元起)为定番。富良野开车约1小时，与富良野温泉组合作据点便北海道中央部周游。日归入浴芦别温泉「Starlight Hotel」(800日元)亦可。" },
+      ],
+      "zh-tw": [
+        { q: "三段瀑公園是什麼?", a: "北海道蘆別市三段澤沿岸自然公園，幅15米·落差26米的3段瀑布為亮點。新綠·紅葉·結冰四季完全不同表情，空知地方隱藏自然撮影地深受攝影愛好者支持。" },
+        { q: "冬冰瀑何時見?", a: "1月中旬至2月下旬嚴寒期。完全結冰時如藍白冰雕夢幻姿態。氣溫-15℃以下連續日為結冰目安，需冬裝備(防寒·防滑)，停車場有除雪。" },
+        { q: "如何前往?", a: "JR蘆別站開車約20分，札幌開車約2小時。停車場(免費)至瀑布步行3分遊步道整備，觀瀑橋可正面眺望瀑布。冬季道路結冰需注意，建議4WD。" },
+        { q: "撮影器材推薦?", a: "三腳必備(ND8至64長曝拍絲綢般瀑布)。廣角(16-35mm)拍瀑布全體，中焦(70-200mm)拍水花細節。CPL濾鏡抑岩反射與紅葉發色強化。雨後岩·苔彩度UP最佳，防雨罩勿忘。" },
+        { q: "周邊看點?", a: "蘆別鄰町赤平市舊炭礦設施(立坑櫓與捲揚機室，產業遺產)、蘆別市營「星之降里百年紀念館」、夕張市幸福黃手帕思出廣場(高倉健電影)等，懷舊炭礦街組合撮影旅程可組。三段瀑→舊炭礦→夕張為1日遊。" },
+        { q: "近鄰住宿?", a: "公園周邊住宿稀少，蘆別市內「星之降里蘆別酒店五千尺」(溫泉付·1宿8000日圓起)為定番。富良野開車約1小時，與富良野溫泉組合作據點便北海道中央部周遊。日歸入浴蘆別溫泉「Starlight Hotel」(800日圓)亦可。" },
+      ],
+      ko: [
+        { q: "산단 폭포 공원이란?", a: "홋카이도 아시베쓰시의 산단노사와 옆의 자연 공원으로, 폭 15m·낙차 26m의 3단 폭포가 볼거리. 신록·단풍·결빙으로 사계절이 완전히 다른 표정을 보여주는, 소라치 지방의 숨은 자연 촬영지로 사진 애호가들에게 지지받고 있습니다." },
+        { q: "겨울 빙폭은 언제 볼 수 있나?", a: "1월 중순~2월 하순, 혹한기에만. 완전 결빙되면 청백의 얼음 조각 같은 환상적인 모습이 됨. 기온 -15℃ 이하가 연속되는 날이 결빙의 기준, 겨울 장비(방한·미끄럼 방지) 필수, 주차장까지 제설되어 있음." },
+        { q: "가는 방법은?", a: "JR 아시베쓰역에서 차로 약 20분, 삿포로에서 차로 약 2시간. 주차장(무료)에서 폭포까지 도보 3분의 산책로 정비, 관폭교에서 폭포를 정면으로 바라볼 수 있음. 겨울철은 도로 결빙 주의, 4WD 추천." },
+        { q: "촬영 기재 추천은?", a: "삼각대 필수(ND 8~64로 장노출, 폭포의 실키한 표현). 광각(16-35mm)으로 폭포 전체, 중망원(70-200mm)으로 물보라의 디테일. CPL 필터로 바위 반사 억제와 단풍의 발색 강조. 비 온 후는 바위·이끼의 채도가 올라가므로 최적, 레인 커버도 잊지 말 것." },
+        { q: "주변의 볼거리는?", a: "아시베쓰의 이웃 마을 아카비라시의 구 탄광 시설(립갱 망루와 권양기실, 산업 유산), 아시베쓰 시영 「호시노후루사토 백년 기념관」, 유바리시의 행복의 노란 손수건 추억의 광장(다카쿠라 켄 영화) 등, 레트로한 탄광 거리와 조합한 촬영 여정이 가능. 산단 폭포→구 탄광→유바리는 1일 코스." },
+        { q: "인근의 숙박 시설은?", a: "공원 주변에 숙박 시설은 적고, 아시베쓰 시내의 「호시노후루사토 아시베쓰 호텔 고센자쿠」(온천 포함·1박 8,000엔~)가 정석. 후라노까지 차로 약 1시간으로, 후라노 온천과 조합하여 거점으로 삼으면 홋카이도 중앙부의 순회가 편리. 당일 입욕은 아시베쓰 온천 「스타라이트 호텔」(800엔)이 이용 가능." },
+      ],
     },
     faqs: [
       { q: d("冬の氷瀑はいつ見られる？","When to see winter ice falls?","冰瀑何时出现？","冰瀑何時出現？","겨울 빙폭은 언제?"),
@@ -4254,10 +4302,13 @@ export const LOCATION_CONTENT = {
       "室蘭市是北海道南部工業港口城市。「室蘭工廠夜景」被認定為日本夜景遺產。白鳥大橋、地球岬絕景、測量山眺望等，海與工業的對比激發創作欲。",
       "무로란시는 홋카이도 남부의 공업 항만 도시. '무로란 공장 야경'은 일본 야경 유산으로 지정되었으며, 하쿠초 대교, 지큐미사키, 소쿠료산 조망 등 바다와 공업의 대비가 촬영 욕구를 자극합니다."
     ),
-    definition: lh(
-      "室蘭(むろらん)は北海道南西部、太平洋に突き出た絵鞆(えとも)半島に位置する人口約7.5万人の港湾工業都市。明治期に石炭積出港として発展、戦後は鉄鋼業(日本製鉄室蘭製鉄所、現存)を中心とする重工業都市として知られ、その夜景は「日本五大工場夜景」(室蘭・北九州・川崎・周南・四日市)の一つに2012年認定。地球岬(チキウみさき)の140mの断崖、白鳥大橋(全長1,380m、北海道一の吊橋、1998年完成)、測量山(標高200m)からの全景、絵鞆半島の入江と工場群が織りなす独特の景観で、海と工業のコントラストが写真家を魅了する道南屈指の撮影地です。",
-      "Muroran is a port-and-industrial city of about 75,000 residents on the Etomo Peninsula jutting into the Pacific in southwestern Hokkaido. It grew during the Meiji era as a coal-export port, and remains known after the war as a heavy-industrial city centered on steel (Nippon Steel's Muroran Plant still operates). Its industrial nightscape was certified in 2012 as one of «Japan's Five Great Factory Nightscapes» (alongside Kitakyushu, Kawasaki, Shunan, and Yokkaichi). The 140 m cliffs of Cape Chikyu, the 1,380 m Hakucho Bridge (Hokkaido's longest suspension bridge, completed 1998), the panorama from Mt. Sokuryo (200 m), and the inlets and factory complexes of the Etomo Peninsula combine to make Muroran a leading southern Hokkaido subject for photographers fascinated by the contrast of sea and industry."
-    ),
+    definition: {
+      ja: "室蘭(むろらん)は北海道南西部、太平洋に突き出た絵鞆(えとも)半島に位置する人口約7.5万人の港湾工業都市。明治期に石炭積出港として発展、戦後は鉄鋼業(日本製鉄室蘭製鉄所、現存)を中心とする重工業都市として知られ、その夜景は「日本五大工場夜景」(室蘭・北九州・川崎・周南・四日市)の一つに2012年認定。地球岬(チキウみさき)の140mの断崖、白鳥大橋(全長1,380m、北海道一の吊橋、1998年完成)、測量山(標高200m)からの全景、絵鞆半島の入江と工場群が織りなす独特の景観で、海と工業のコントラストが写真家を魅了する道南屈指の撮影地です。",
+      en: "Muroran is a port-and-industrial city of about 75,000 residents on the Etomo Peninsula jutting into the Pacific in southwestern Hokkaido. It grew during the Meiji era as a coal-export port, and remains known after the war as a heavy-industrial city centered on steel (Nippon Steel's Muroran Plant still operates). Its industrial nightscape was certified in 2012 as one of «Japan's Five Great Factory Nightscapes» (alongside Kitakyushu, Kawasaki, Shunan, and Yokkaichi). The 140 m cliffs of Cape Chikyu, the 1,380 m Hakucho Bridge (Hokkaido's longest suspension bridge, completed 1998), the panorama from Mt. Sokuryo (200 m), and the inlets and factory complexes of the Etomo Peninsula combine to make Muroran a leading southern Hokkaido subject for photographers fascinated by the contrast of sea and industry.",
+      zh: "室兰(むろらん)位于北海道西南部太平洋突出的绘鞆(えとも)半岛，人口约7.5万人的港湾工业都市。明治期作为煤炭出口港发展，战后以钢铁业(日本制铁室兰制铁所，现存)为主的重工业都市闻名，其夜景为「日本五大工厂夜景」(室兰·北九州·川崎·周南·四日市)之一，2012年认定。地球岬(チキウみさき)140米断崖、白鸟大桥(全长1380米，北海道第一吊桥，1998年完工)、测量山(海拔200米)全景、绘鞆半岛入江与工厂群织就的独特景观，海与工业的对比令摄影师着迷的道南屈指撮影地。",
+      "zh-tw": "室蘭(むろらん)位於北海道西南部太平洋突出的繪鞆(えとも)半島，人口約7.5萬人的港灣工業都市。明治期作為煤炭出口港發展，戰後以鋼鐵業(日本製鐵室蘭製鐵所，現存)為主的重工業都市聞名，其夜景為「日本五大工廠夜景」(室蘭·北九州·川崎·周南·四日市)之一，2012年認定。地球岬(チキウみさき)140米斷崖、白鳥大橋(全長1380米，北海道第一吊橋，1998年完工)、測量山(海拔200米)全景、繪鞆半島入江與工廠群織就的獨特景觀，海與工業的對比令攝影師著迷的道南屈指撮影地。",
+      ko: "무로란(むろらん)은 홋카이도 남서부, 태평양에 튀어나온 에토모(えとも) 반도에 위치한 인구 약 7.5만 명의 항만 공업 도시. 메이지 시대에 석탄 적출항으로 발전, 전후에는 철강업(니혼 세이테쓰 무로란 제철소, 현존)을 중심으로 한 중공업 도시로 알려져 있으며, 그 야경은 「일본 5대 공장 야경」(무로란·기타큐슈·가와사키·슈난·욧카이치)의 하나로 2012년 인정. 지큐미사키의 140m 단애, 하쿠초 대교(전장 1,380m, 홋카이도 제일의 현수교, 1998년 완공), 소쿠료산(해발 200m)에서의 전경, 에토모 반도의 만과 공장군이 짜내는 독특한 경관으로, 바다와 공업의 대비가 사진가를 매료시키는 도남 굴지의 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "工場夜景 — 日本五大工場夜景の一つ、祝津展望台・測量山展望台・白鳥大橋からの撮影が定番",
@@ -4272,6 +4323,27 @@ export const LOCATION_CONTENT = {
         "Cape Chikyu — 140 m cliffs over the Pacific, ranked first among «Japan's New 100 Tourist Destinations»",
         "Mt. Sokuryo Observatory (200 m) — overlooks the Muroran cityscape, port, Hakucho Bridge, and the Pacific; an iconic night-view location",
         "Dolphin and Whale Watching — May to October, Minke whales, dolphins, and orcas appear in the Pacific waters",
+      ],
+      zh: [
+        "工厂夜景 — 日本五大工厂夜景之一，祝津展望台·测量山展望台·白鸟大桥撮影定番",
+        "白鸟大桥 — 全长1380米的北海道第一吊桥，夜灯光7色变换，连结绘鞆半岛与本土",
+        "地球岬(チキウみさき) — 140米断崖，眺太平洋的新日本观光地100选第1位绝景",
+        "测量山展望台(海拔200米) — 室兰街与港·白鸟大桥·太平洋一望，夜景名所",
+        "海豚·鲸观察 — 5至10月太平洋可遇小须鲸·海豚·虎鲸",
+      ],
+      "zh-tw": [
+        "工廠夜景 — 日本五大工廠夜景之一，祝津展望台·測量山展望台·白鳥大橋撮影定番",
+        "白鳥大橋 — 全長1380米的北海道第一吊橋，夜燈光7色變換，連結繪鞆半島與本土",
+        "地球岬(チキウみさき) — 140米斷崖，眺太平洋的新日本觀光地100選第1位絕景",
+        "測量山展望台(海拔200米) — 室蘭街與港·白鳥大橋·太平洋一望，夜景名所",
+        "海豚·鯨觀察 — 5至10月太平洋可遇小鬚鯨·海豚·虎鯨",
+      ],
+      ko: [
+        "공장 야경 — 일본 5대 공장 야경 중 하나, 이와이즈미 전망대·소쿠료산 전망대·하쿠초 대교에서의 촬영이 정석",
+        "하쿠초 대교 — 전장 1,380m의 홋카이도 제일의 현수교, 밤의 조명은 7색으로 변화, 에토모 반도와 본토를 연결",
+        "지큐미사키(チキウみさき) — 140m의 단애, 태평양을 바라보는 신 일본 관광지 100선 1위의 절경",
+        "소쿠료산 전망대(해발 200m) — 무로란 시가지와 항구, 하쿠초 대교, 태평양까지 한눈에, 야경의 명소",
+        "돌고래·고래 관찰 — 5~10월의 태평양에서 밍크고래·돌고래·범고래와 조우",
       ],
     },
     quickAnswers: {
@@ -4290,6 +4362,30 @@ export const LOCATION_CONTENT = {
         { q: "Photographing Cape Chikyu?", a: "From 140 m cliffs over the Pacific. The Chikyu Cape Lighthouse (one of Japan's Top 50 Lighthouses) framed with the horizon (visible 200 km out on clear days), starfields on new-moon nights, and winter drift-ice (rare) are the prime shots. From the parking lot, a 5-minute walk to the deck — shootable year-round." },
         { q: "What about the factory night cruise?", a: "The Muroran Factory Night Cruise (vessel «Kaifu-go,» April–October, ¥4,500 / 90 min) sails from sunset into the night. Looking up at factories from the water gives drama no shore observatory can match. Reservations required; cancelled in bad weather. No tripods on board — bring a high-ISO body and a fast lens." },
         { q: "When to shoot?", a: "Factory nightscapes work year-round, but clear-air winter (Dec–Feb) is sharpest. Cape Chikyu's horizon is calm May–October; winter brings dramatic surf. Autumn (Sept–Nov) offers dolphin and whale watching (cruises available, ¥6,000 / 3 hr) — nature and industry in one day." },
+      ],
+      zh: [
+        { q: "室兰是什么?", a: "北海道西南部港湾工业都市，人口约7.5万人。被认定日本五大工厂夜景之一的工场夜景、北海道第一吊桥白鸟大桥、地球岬140米断崖、测量山绝景全景，海与工业对比令摄影师着迷的撮影地。" },
+        { q: "工厂夜景最佳点?", a: "祝津展望台·测量山展望台·白鸟大桥3处定番。蓝调时刻(日落后30分)同时收白鸟大桥(7色灯)与工厂烟囱光的构图为王道。三脚架必备，冬防寒。" },
+        { q: "如何前往?", a: "新千岁机场开车约1小时20分，JR东室兰站至各展望台开车·巴士15至30分。札幌乘特急约1.5小时。市内主要观光地开车便利，建议租车。" },
+        { q: "地球岬撮影?", a: "海拔140米断崖望太平洋绝景。「日本灯塔50选」的Chikiu岬灯塔与构图，尤晴天海平线(200公里远)、新月期星空、冬期流冰接近(罕)为看点。停车场至展望台步行5分，全年可撮影。" },
+        { q: "工场夜景巡游?", a: "「室兰工场夜景巡游」(海风号，4至10月运航，4500日元·90分)日落前至夜运航。海上仰望工厂的构图陆地展望台无可比迫力。需事前预约，天气恶劣中止。船上禁三脚，需高ISO相机与明亮镜头对应。" },
+        { q: "撮影季节?", a: "工场夜景全年可拍但空气清的冬(12至2月)最锐。地球岬海平线5至10月平静，冬荒波迫力。秋(9至11月)海豚·鲸观察(巡游船有，6000日元·3小时)为目标，自然与工业1日两拍可。" },
+      ],
+      "zh-tw": [
+        { q: "室蘭是什麼?", a: "北海道西南部港灣工業都市，人口約7.5萬人。被認定日本五大工廠夜景之一的工場夜景、北海道第一吊橋白鳥大橋、地球岬140米斷崖、測量山絕景全景，海與工業對比令攝影師著迷的撮影地。" },
+        { q: "工廠夜景最佳點?", a: "祝津展望台·測量山展望台·白鳥大橋3處定番。藍調時刻(日落後30分)同時收白鳥大橋(7色燈)與工廠煙囪光的構圖為王道。三腳架必備，冬防寒。" },
+        { q: "如何前往?", a: "新千歲機場開車約1小時20分，JR東室蘭站至各展望台開車·巴士15至30分。札幌搭特急約1.5小時。市內主要觀光地開車便利，建議租車。" },
+        { q: "地球岬撮影?", a: "海拔140米斷崖望太平洋絕景。「日本燈塔50選」的Chikiu岬燈塔與構圖，尤晴天海平線(200公里遠)、新月期星空、冬期流冰接近(罕)為看點。停車場至展望台步行5分，全年可撮影。" },
+        { q: "工場夜景巡遊?", a: "「室蘭工場夜景巡遊」(海風號，4至10月運航，4500日圓·90分)日落前至夜運航。海上仰望工廠的構圖陸地展望台無可比迫力。需事前預約，天氣惡劣中止。船上禁三腳，需高ISO相機與明亮鏡頭對應。" },
+        { q: "撮影季節?", a: "工場夜景全年可拍但空氣清的冬(12至2月)最銳。地球岬海平線5至10月平靜，冬荒波迫力。秋(9至11月)海豚·鯨觀察(巡遊船有，6000日圓·3小時)為目標，自然與工業1日兩拍可。" },
+      ],
+      ko: [
+        { q: "무로란이란?", a: "홋카이도 남서부의 항만 공업 도시로, 인구 약 7.5만 명. 일본 5대 공장 야경 중 하나로 인정받은 공장 야경, 홋카이도 제일의 현수교 하쿠초 대교, 지큐미사키의 140m 단애, 소쿠료산에서의 절경 파노라마로, 바다와 공업의 대비가 사진가를 매료시키는 촬영지입니다." },
+        { q: "공장 야경의 베스트 포인트는?", a: "이와이즈미 전망대, 소쿠료산 전망대, 하쿠초 대교의 3곳이 정석. 블루 아워(일몰 후 30분)에 하쿠초 대교(7색 라이트)와 공장의 굴뚝 빛을 동시에 담는 구도가 왕도. 삼각대 필수, 겨울은 방한 대책." },
+        { q: "가는 방법은?", a: "신치토세 공항에서 차로 약 1시간 20분, JR 히가시무로란역에서 각 전망대까지 차·버스로 15~30분. 삿포로에서 특급으로 약 1시간 반. 시내 주요 관광지는 차량 이동이 편리, 렌터카 추천입니다." },
+        { q: "지큐미사키 촬영은?", a: "해발 140m 단애에서 태평양을 바라보는 절경. 「일본 등대 50선」의 치큐 곶 등대와 조합한 구도, 특히 맑은 날의 수평선(200km 너머까지), 신월기의 별하늘, 겨울철 유빙 접근 시(드물게)가 볼거리. 주차장에서 전망대까지 도보 5분, 촬영은 연중 가능." },
+        { q: "공장 야경 크루즈는?", a: "「무로란 공장 야경 크루즈」(우미카제호, 4~10월 운항, 4,500엔·90분)가 일몰 전부터 밤까지 운항. 해상에서 공장을 올려다보는 구도는 육상 전망대에서는 찍을 수 없는 박력. 사전 예약 필수, 악천후 시는 중지. 삼각대는 선상 불가, 고ISO 카메라와 밝은 렌즈로 대응." },
+        { q: "촬영 시즌은?", a: "공장 야경은 연중 촬영 가능하지만, 공기가 맑은 겨울(12~2월)이 가장 샤프. 지큐미사키의 수평선은 5~10월이 잔잔, 겨울은 거친 파도의 박력. 가을(9~11월)은 돌고래·고래 관찰(크루즈선 있음, 6,000엔·3시간)이 노릴 만, 자연과 공업의 양쪽을 1일에 찍을 수 있음." },
       ],
     },
     faqs: [
