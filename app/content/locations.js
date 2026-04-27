@@ -4401,10 +4401,13 @@ export const LOCATION_CONTENT = {
       "美唄市位於石狩平原田園地帶。遼闊田園、阿爾泰皮亞扎美唄（雕塑家安田侃戶外美術館）、安格斯牧場野花、雪中穀倉等，呈現北海道牧歌風光。",
       "비바이시는 이시카리 평야의 전원 지대. 광활한 논밭, 알테피아차 비바이(조각가 야스다 칸의 야외 미술관), 앵거스 목장의 야생화, 설경의 사일로 등 목가적인 홋카이도다운 풍경이 펼쳐집니다."
     ),
-    definition: lh(
-      "美唄(びばい)は北海道空知総合振興局管内、石狩平野中央部に広がる人口約2万人の都市で、かつて炭鉱で栄えた歴史を持ち、現在は広大な田園地帯と独特のアート文化が共存。中心施設のアルテピアッツァ美唄(1992年開園)は世界的彫刻家・安田侃(やすだかん)が故郷美唄に開設した野外美術館で、廃校となった旧栄小学校の校舎を活用、白大理石の彫刻作品約40点が雪原や草原に点在する世界でも稀な空間。日本で唯一のラベンダー園以外の安田侃作品鑑賞地として、また石狩平野の田園・サイロ・牛・冬の雪景色など北海道らしい牧歌的な風景が楽しめる撮影地です。",
-      "Bibai is a city of about 20,000 residents in the central Ishikari Plain, within the Sorachi General Subprefectural Bureau of Hokkaido. Once thriving on coal mining, today it pairs vast farmland with a distinctive art culture. Its centerpiece, Arte Piazza Bibai (opened 1992), is an outdoor sculpture park created by world-renowned Italian-Japanese sculptor Kan Yasuda in his hometown — repurposing the former Sakae Elementary School, with about 40 white-marble works scattered across grasslands and snow fields. As one of the few places to see Yasuda's work outside lavender gardens, and with the Ishikari Plain's farmland, silos, cattle, and winter snow making for archetypal Hokkaido pastoral scenery, Bibai is a beloved photographic destination."
-    ),
+    definition: {
+      ja: "美唄(びばい)は北海道空知総合振興局管内、石狩平野中央部に広がる人口約2万人の都市で、かつて炭鉱で栄えた歴史を持ち、現在は広大な田園地帯と独特のアート文化が共存。中心施設のアルテピアッツァ美唄(1992年開園)は世界的彫刻家・安田侃(やすだかん)が故郷美唄に開設した野外美術館で、廃校となった旧栄小学校の校舎を活用、白大理石の彫刻作品約40点が雪原や草原に点在する世界でも稀な空間。日本で唯一のラベンダー園以外の安田侃作品鑑賞地として、また石狩平野の田園・サイロ・牛・冬の雪景色など北海道らしい牧歌的な風景が楽しめる撮影地です。",
+      en: "Bibai is a city of about 20,000 residents in the central Ishikari Plain, within the Sorachi General Subprefectural Bureau of Hokkaido. Once thriving on coal mining, today it pairs vast farmland with a distinctive art culture. Its centerpiece, Arte Piazza Bibai (opened 1992), is an outdoor sculpture park created by world-renowned Italian-Japanese sculptor Kan Yasuda in his hometown — repurposing the former Sakae Elementary School, with about 40 white-marble works scattered across grasslands and snow fields. As one of the few places to see Yasuda's work outside lavender gardens, and with the Ishikari Plain's farmland, silos, cattle, and winter snow making for archetypal Hokkaido pastoral scenery, Bibai is a beloved photographic destination.",
+      zh: "美唄(びばい)位于北海道空知综合振兴局管内，石狩平原中央部展开人口约2万人的都市，曾以炭矿繁荣的历史，现广大田园地带与独特艺术文化共存。中心设施Arte Piazza美唄(1992年开园)是世界级雕塑家安田侃(やすだかん)在故乡美唄开设的户外美术馆，活用废校的旧荣小学校校舍，白大理石雕塑作品约40点散布雪原与草原的世界稀有空间。作为日本除薰衣草园外唯一的安田侃作品鉴赏地，与石狩平原田园·谷仓·牛·冬雪景等北海道牧歌风景同享的撮影地。",
+      "zh-tw": "美唄(びばい)位於北海道空知綜合振興局管內，石狩平原中央部展開人口約2萬人的都市，曾以炭礦繁榮的歷史，現廣大田園地帶與獨特藝術文化共存。中心設施Arte Piazza美唄(1992年開園)是世界級雕塑家安田侃(やすだかん)在故鄉美唄開設的戶外美術館，活用廢校的舊榮小學校校舍，白大理石雕塑作品約40點散布雪原與草原的世界稀有空間。作為日本除薰衣草園外唯一的安田侃作品鑑賞地，與石狩平原田園·穀倉·牛·冬雪景等北海道牧歌風景同享的撮影地。",
+      ko: "비바이(びばい)는 홋카이도 소라치 종합진흥국 관내, 이시카리 평야 중앙부에 펼쳐진 인구 약 2만 명의 도시로, 한때 탄광으로 번영한 역사를 지니며, 현재는 광대한 전원 지대와 독특한 아트 문화가 공존. 중심 시설인 알테피아차 비바이(1992년 개원)는 세계적 조각가 야스다 칸(やすだかん)이 고향 비바이에 개설한 야외 미술관으로, 폐교가 된 구 사카에 초등학교 교사를 활용, 백대리석 조각 작품 약 40점이 설원이나 초원에 점재하는 세계에서도 보기 드문 공간. 일본에서 유일하게 라벤더 원 외의 야스다 칸 작품 감상지로서, 또한 이시카리 평야의 전원·사일로·소·겨울 설경 등 홋카이도다운 목가적인 풍경을 즐길 수 있는 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "アルテピアッツァ美唄 — 1992年開園、安田侃の野外美術館、白大理石の彫刻約40点、入場無料",
@@ -4419,6 +4422,27 @@ export const LOCATION_CONTENT = {
         "Snow Field with Sculptures — January–March, when white marble meets white snow in an otherworldly composition, with stargazing possible",
         "Ishikari Plain farmland — vast paddies, silos, cattle, and archetypal Hokkaido pastoral scenes; summer thunderclouds enhance the frame",
         "Bibai Yakitori — birthplace of nationally known «Bibai Yakitori,» with about 30 famous shops across town",
+      ],
+      zh: [
+        "Arte Piazza美唄 — 1992年开园，安田侃户外美术馆，白大理石雕塑约40点，入场免费",
+        "旧荣小学校校舍 — 1981年闭校的木造校舍活用，怀旧木造建筑与现代雕塑融合",
+        "雪原与雕塑 — 1至3月雪景，白大理石与白雪的组合如别世界，可观星",
+        "石狩平原田园 — 广阔水田·谷仓·牛·北海道牧歌风景，夏积雨云映入",
+        "美唄烤鸡 — 全国闻名「美唄烤鸡」发祥地，市内约30家名店",
+      ],
+      "zh-tw": [
+        "Arte Piazza美唄 — 1992年開園，安田侃戶外美術館，白大理石雕塑約40點，入場免費",
+        "舊榮小學校校舍 — 1981年閉校的木造校舍活用，懷舊木造建築與現代雕塑融合",
+        "雪原與雕塑 — 1至3月雪景，白大理石與白雪的組合如別世界，可觀星",
+        "石狩平原田園 — 廣闊水田·穀倉·牛·北海道牧歌風景，夏積雨雲映入",
+        "美唄烤雞 — 全國聞名「美唄烤雞」發祥地，市內約30家名店",
+      ],
+      ko: [
+        "알테피아차 비바이 — 1992년 개원, 야스다 칸의 야외 미술관, 백대리석 조각 약 40점, 입원 무료",
+        "구 사카에 초등학교 교사 — 1981년 폐교된 목조 교사를 활용, 노스탤직한 목조 건축과 현대 조각의 융합",
+        "설원과 조각 — 1~3월의 설경, 백대리석과 흰 눈의 조합은 별세계, 별 관찰도 가능",
+        "이시카리 평야의 전원 — 광대한 논, 사일로, 소, 홋카이도다운 목가적 풍경, 여름의 적란운이 잘 살아남",
+        "비바이 야키토리 — 전국에 알려진 「비바이 야키토리」 발상지, 약 30곳의 명점이 시내에",
       ],
     },
     quickAnswers: {
@@ -4437,6 +4461,30 @@ export const LOCATION_CONTENT = {
         { q: "Photography etiquette?", a: "Arte Piazza is free, with personal photography allowed. Tripods OK with consideration during crowds — selfie sticks and drones forbidden. Don't touch, sit on, or climb the sculptures. Commercial use requires pre-approval. To capture pristine snow before footprints, head to «Piacenza Plaza» first thing in the morning." },
         { q: "Best season?", a: "Winter (Jan–Feb), when white marble meets white snow against blue sky, is the most painterly. May–June fresh greens and October foliage offer different appeals. Summer pairs sculpture with green meadows and sunset skies. Post-rain stone texture is also distinctive — endless compositions across times and seasons." },
         { q: "Best Bibai Yakitori shops?", a: "«Fukuyoshi,» «Mifune,» and «Bibai Yakitori Honten» are famed. Bibai-style alternates meat and offal on each skewer («animal-plant-animal-plant»), with a signature salt sauce. From ¥1,000/person; the evening shop atmosphere photographs beautifully. Pairs naturally with dinner after Arte Piazza shooting." },
+      ],
+      zh: [
+        { q: "美唄是什么?", a: "北海道空知地方，石狩平原中央部人口约2万人的都市。曾炭矿繁荣，现Arte Piazza美唄(安田侃户外美术馆)与广大田园地带共存独特之街，北海道牧歌风景同享的撮影地。" },
+        { q: "Arte Piazza魅力?", a: "1992年开园入场免费的户外雕塑美术馆。世界级雕塑家安田侃白大理石作品约40点与废校旧木造校舍·雪景的组合如画。冬雪原与白大理石雕塑的构图世界仅此一处的撮影地。" },
+        { q: "如何前往?", a: "JR美唄站开车15分，或季节运行接驳巴士。札幌开车1小时。Arte Piazza全年开园，冬雪景·夏绿草原多样表情。所需2至3小时。" },
+        { q: "撮影礼仪?", a: "Arte Piazza免费·撮影自由(个人利用)。三脚拥挤时顾及，自拍杆·无人机禁。雕塑触·坐·爬NG。商用使用事前申请。雪原欲拍新雪足迹则「Piacenza广场」周边一番手为目标。" },
+        { q: "最佳季节?", a: "冬(1至2月)雪与白大理石雕塑组合最画意，加晴天蓝空神圣。新绿5至6月、红叶10月亦别魅力。夏绿草原与雕塑、夕阳空可组合。雨后石质感独特，访问时季组合无限构图。" },
+        { q: "美唄烤鸡店推荐?", a: "「福吉」「三船」「美唄烤鸡本店」闻名。美唄烤鸡1串肉与内脏交替刺独特(「动·植·动·植」)，秘传盐酱。1人1000日元起，夜店内氛围撮影映入。Arte Piazza撮影后晚餐组合满足度高。" },
+      ],
+      "zh-tw": [
+        { q: "美唄是什麼?", a: "北海道空知地方，石狩平原中央部人口約2萬人的都市。曾炭礦繁榮，現Arte Piazza美唄(安田侃戶外美術館)與廣大田園地帶共存獨特之街，北海道牧歌風景同享的撮影地。" },
+        { q: "Arte Piazza魅力?", a: "1992年開園入場免費的戶外雕塑美術館。世界級雕塑家安田侃白大理石作品約40點與廢校舊木造校舍·雪景的組合如畫。冬雪原與白大理石雕塑的構圖世界僅此一處的撮影地。" },
+        { q: "如何前往?", a: "JR美唄站開車15分，或季節運行接駁巴士。札幌開車1小時。Arte Piazza全年開園，冬雪景·夏綠草原多樣表情。所需2至3小時。" },
+        { q: "撮影禮儀?", a: "Arte Piazza免費·撮影自由(個人利用)。三腳擁擠時顧及，自拍桿·無人機禁。雕塑觸·坐·爬NG。商用使用事前申請。雪原欲拍新雪足跡則「Piacenza廣場」周邊一番手為目標。" },
+        { q: "最佳季節?", a: "冬(1至2月)雪與白大理石雕塑組合最畫意，加晴天藍空神聖。新綠5至6月、紅葉10月亦別魅力。夏綠草原與雕塑、夕陽空可組合。雨後石質感獨特，訪問時季組合無限構圖。" },
+        { q: "美唄烤雞店推薦?", a: "「福吉」「三船」「美唄烤雞本店」聞名。美唄烤雞1串肉與內臟交替刺獨特(「動·植·動·植」)，秘傳鹽醬。1人1000日圓起，夜店內氛圍撮影映入。Arte Piazza撮影後晚餐組合滿足度高。" },
+      ],
+      ko: [
+        { q: "비바이란?", a: "홋카이도 소라치 지방, 이시카리 평야 중앙부의 인구 약 2만 명의 도시. 한때 탄광으로 번영했으며, 현재는 알테피아차 비바이(야스다 칸의 야외 미술관)와 광대한 전원 지대가 공존하는 독특한 마을, 홋카이도다운 목가적 풍경을 즐길 수 있는 촬영지입니다." },
+        { q: "알테피아차의 매력은?", a: "1992년 개원한 입원 무료의 야외 조각 미술관. 세계적 조각가 야스다 칸의 백대리석 작품 약 40점과 폐교가 된 구 목조 교사, 설경의 조합이 회화적. 겨울의 설원과 백대리석 조각의 구도는 세계에서 이곳뿐인 촬영지입니다." },
+        { q: "가는 방법은?", a: "JR 비바이역에서 차로 15분, 또는 계절 운행하는 셔틀버스. 삿포로에서 차로 1시간. 알테피아차는 연중 개원, 겨울철은 설경, 여름은 녹색 초원과 다양한 표정. 소요 시간 2~3시간." },
+        { q: "촬영 매너는?", a: "알테피아차는 입원 무료·촬영 자유(개인 이용). 삼각대는 혼잡 시 배려를, 셀카봉·드론은 금지. 조각에 닿거나, 앉거나, 오르는 것은 NG. 상업적 이용은 사전 신청. 설원에 새 눈 그대로의 발자국을 남기고 싶을 경우는 「피아첸차 광장」 주변을 첫 번째로 노릴 것." },
+        { q: "베스트 시즌은?", a: "겨울(1~2월)의 눈과 백대리석 조각의 조합이 가장 회화적, 맑은 푸른 하늘이 더해지면 신성. 신록의 5~6월, 단풍의 10월도 별개의 매력. 여름은 녹색 초원과 조각, 노을의 하늘과 조합 가능. 비 온 후의 돌의 질감도 독특, 방문의 시간과 계절의 조합으로 무한한 구도." },
+        { q: "비바이 야키토리 가게 추천은?", a: "「후쿠요시」 「미후네」 「비바이 야키토리 본점」이 유명. 비바이 야키토리는 1꼬치에 고기와 내장이 교대로 꽂히는 독특한 스타일(「동·식·동·식」), 소스는 비전의 소금. 1인분 1,000엔~, 밤의 가게 내부 분위기는 촬영에 잘 살아남. 알테피아차 촬영 후 저녁식사로 조합하면 만족도 높음." },
       ],
     },
     faqs: [
@@ -4551,10 +4599,13 @@ export const LOCATION_CONTENT = {
       "北龍町位於北海道空知郡，23萬株向日葵田「向日葵之里」聞名。7月下旬至8月中旬花期時，金色海洋延展至山腳，日本最大級向日葵田。",
       "호쿠류초는 홋카이도 소라치군, 23만 송이 해바라기 밭 '해바라기의 마을'로 유명. 7월 하순~8월 중순 개화기에는 온통 황금빛이 산기슭까지 펼쳐지는 일본 최대급 해바라기 밭으로 압도적 경관."
     ),
-    definition: lh(
-      "北竜町(ほくりゅうちょう)は北海道空知総合振興局管内、雨竜郡北竜町にある人口約1,700人の小さな町で、日本最大級のひまわり畑「ひまわりの里」(東京ドーム約5個分・約23ヘクタール)で知られます。1987年(昭和62年)、町おこしの一環としてヨーロッパ視察で見たひまわり畑から着想を得てスタート、現在は約23万本のひまわり(品種数12種類以上)が植えられ、毎年7月中旬〜8月下旬の「北竜町ひまわりまつり」期間中に100万人以上が訪れる北海道の夏の風物詩。一面の黄金色が山裾まで広がる景観は日本でも稀有で、満開期はひまわりの絨毯を上空から眺めるパラグライダー体験も人気です。",
-      "Hokuryu Town, in the Sorachi General Subprefectural Bureau of Hokkaido (Uryu District), has a population of about 1,700 — and is known for «Himawari no Sato,» one of Japan's largest sunflower fields (about 23 hectares, equivalent to roughly five Tokyo Domes). Inspired by sunflower fields seen on a European study tour in 1987 (Showa 62) as a town-revitalization project, the field today contains about 230,000 sunflowers across more than 12 varieties. During the «Hokuryu Sunflower Festival» from mid-July to late August, over a million visitors arrive, making it Hokkaido's quintessential summer scene. The sea of gold extending to the foothills is rare even by Japanese standards, and during peak bloom paragliding tours offer aerial views of the flower carpet."
-    ),
+    definition: {
+      ja: "北竜町(ほくりゅうちょう)は北海道空知総合振興局管内、雨竜郡北竜町にある人口約1,700人の小さな町で、日本最大級のひまわり畑「ひまわりの里」(東京ドーム約5個分・約23ヘクタール)で知られます。1987年(昭和62年)、町おこしの一環としてヨーロッパ視察で見たひまわり畑から着想を得てスタート、現在は約23万本のひまわり(品種数12種類以上)が植えられ、毎年7月中旬〜8月下旬の「北竜町ひまわりまつり」期間中に100万人以上が訪れる北海道の夏の風物詩。一面の黄金色が山裾まで広がる景観は日本でも稀有で、満開期はひまわりの絨毯を上空から眺めるパラグライダー体験も人気です。",
+      en: "Hokuryu Town, in the Sorachi General Subprefectural Bureau of Hokkaido (Uryu District), has a population of about 1,700 — and is known for «Himawari no Sato,» one of Japan's largest sunflower fields (about 23 hectares, equivalent to roughly five Tokyo Domes). Inspired by sunflower fields seen on a European study tour in 1987 (Showa 62) as a town-revitalization project, the field today contains about 230,000 sunflowers across more than 12 varieties. During the «Hokuryu Sunflower Festival» from mid-July to late August, over a million visitors arrive, making it Hokkaido's quintessential summer scene. The sea of gold extending to the foothills is rare even by Japanese standards, and during peak bloom paragliding tours offer aerial views of the flower carpet.",
+      zh: "北龙町(ほくりゅうちょう)位于北海道空知综合振兴局管内雨龙郡北龙町，人口约1700人的小镇，以日本最大级向日葵田「向日葵之里」(东京巨蛋约5个·约23公顷)闻名。1987年(昭和62年)作为町兴起活动，受欧洲视察所见向日葵田启发开始，现植约23万株向日葵(品种12种以上)，每年7月中旬至8月下旬「北龙町向日葵祭」期间100万人以上来访的北海道夏日风物诗。一面金黄至山脚的景观日本罕见，满开期可乘滑翔伞从空中俯瞰向日葵地毯的体验亦人气。",
+      "zh-tw": "北龍町(ほくりゅうちょう)位於北海道空知綜合振興局管內雨龍郡北龍町，人口約1700人的小鎮，以日本最大級向日葵田「向日葵之里」(東京巨蛋約5個·約23公頃)聞名。1987年(昭和62年)作為町興起活動，受歐洲視察所見向日葵田啟發開始，現植約23萬株向日葵(品種12種以上)，每年7月中旬至8月下旬「北龍町向日葵祭」期間100萬人以上來訪的北海道夏日風物詩。一面金黃至山腳的景觀日本罕見，滿開期可搭滑翔傘從空中俯瞰向日葵地毯的體驗亦人氣。",
+      ko: "호쿠류초(ほくりゅうちょう)는 홋카이도 소라치 종합진흥국 관내 우류군 호쿠류초에 있는 인구 약 1,700명의 작은 마을로, 일본 최대급의 해바라기 밭 「해바라기의 마을」(도쿄돔 약 5개분·약 23헥타르)로 알려져 있습니다. 1987년(쇼와 62년), 마을 활성화 일환으로 유럽 시찰에서 본 해바라기 밭에서 착상을 얻어 시작, 현재는 약 23만 송이의 해바라기(품종 수 12종 이상)가 심어져 있으며, 매년 7월 중순~8월 하순의 「호쿠류초 해바라기 축제」 기간 중 100만 명 이상이 찾는 홋카이도의 여름 풍물시. 온 들이 황금빛으로 산기슭까지 펼쳐지는 경관은 일본에서도 보기 드물며, 만개기에는 해바라기 융단을 상공에서 바라보는 패러글라이더 체험도 인기입니다.",
+    },
     highlights: {
       ja: [
         "ひまわりの里(23ヘクタール) — 約23万本のひまわり、東京ドーム5個分、日本最大級",
@@ -4569,6 +4620,27 @@ export const LOCATION_CONTENT = {
         "More than 12 sunflower varieties — beyond yellow, lemon-yellow, red-tinged, and multicolor varieties, with a guide to each",
         "Observatory and Sunflower Maze — overhead shots from the platform, with the maze popular among families",
         "Paragliding — aerial views of the sunflower field, available only in summer",
+      ],
+      zh: [
+        "向日葵之里(23公顷) — 约23万株向日葵，东京巨蛋5个分，日本最大级",
+        "8月第1周至10日左右盛开期 — 向日葵祭开催，迷宫·伴手礼·美食齐全",
+        "12种以上向日葵品种 — 黄外含柠檬色·红系·多彩，附品种指南",
+        "展望台·向日葵迷宫 — 高处可拍全景，迷宫亲子人气",
+        "滑翔伞体验 — 上空俯瞰向日葵田，夏季限定特别体验",
+      ],
+      "zh-tw": [
+        "向日葵之里(23公頃) — 約23萬株向日葵，東京巨蛋5個分，日本最大級",
+        "8月第1週至10日左右盛開期 — 向日葵祭開催，迷宮·伴手禮·美食齊全",
+        "12種以上向日葵品種 — 黃外含檸檬色·紅系·多彩，附品種指南",
+        "展望台·向日葵迷宮 — 高處可拍全景，迷宮親子人氣",
+        "滑翔傘體驗 — 上空俯瞰向日葵田，夏季限定特別體驗",
+      ],
+      ko: [
+        "해바라기의 마을(23헥타르) — 약 23만 송이의 해바라기, 도쿄돔 5개분, 일본 최대급",
+        "8월 첫째 주~10일경의 만개기 — 해바라기 축제 개최, 미로·기념품·음식도 갖춤",
+        "12종 이상의 해바라기 품종 — 노란색뿐 아니라 레몬색·빨간색 계열·멀티 컬러도, 품종 가이드 포함",
+        "전망대·해바라기 미로 — 높은 곳에서 전경 촬영 가능, 미로는 가족 동반에 인기",
+        "패러글라이더 체험 — 상공에서 해바라기 밭을 부감, 여름철 한정의 특별 체험",
       ],
     },
     quickAnswers: {
@@ -4587,6 +4659,30 @@ export const LOCATION_CONTENT = {
         { q: "Photography techniques?", a: "①Full-field panorama from the observatory (wide 16–35mm) ②Include people for scale (medium-tele 70–200mm) ③Morning side-light gives floral depth ④Single-flower closeups against sky from below (macro 90mm) ⑤Aerial above the sunflower maze (drone, permit required). Post-rain sunny days produce the richest color." },
         { q: "What is the Sunflower Festival?", a: "Held about a month from mid-July to August 20. Free entry; parking ¥500. Stalls, sunflower maze (free for under 16, ¥300 adults), Sunflower Princess contest, and limited-day evening illuminations. August 7–8 is the festival peak — arrive early to beat the crowds." },
         { q: "Combine with other shoots?", a: "Pair with Uryunuma Wetland (30 min by car, Ramsar-registered, alpine flora June–September), Takikawa rapeseed fields (May), or Rumoi coast (1 hr by car). The standard 2-day loop departs Sapporo via Asahikawa and Furano. A double-flower itinerary — lavender (July) + sunflowers (August) — is also popular." },
+      ],
+      zh: [
+        { q: "北龙町是什么?", a: "北海道空知地方人口约1700人的小镇，以日本最大级向日葵田「向日葵之里」(23公顷，约23万株)闻名。1987年从町兴起活动开始，每年7至8月向日葵祭100万人以上来访的北海道夏日风物诗。" },
+        { q: "盛开期?", a: "每年8月第1周至10日左右。展望台拍全景为定番。上午顺光黄色最艳，与蓝空组合为王道。年差1周可有故公式网站开花信息确认。" },
+        { q: "如何前往?", a: "JR札幌站乘特急约1小时20分，深川站换乘留萌本线「碧水站」→开车5分。札幌开车约2小时。停车场免费，祭期拥挤建议清晨6至8时抵达。" },
+        { q: "撮影技巧?", a: "①展望台全景全景图(广角16-35mm)②含人显规模感(中焦70-200mm)③向日葵立体感为朝斜光④下方含天空一花特写(微距90mm)⑤向日葵迷宫上空无人机(申请要)。雨后晴天色最艳。" },
+        { q: "向日葵祭是什么?", a: "每年7月中旬至8月20日左右约1月开催。入场免费，停车场500日元。期间含屋台·向日葵迷宫(高中生以下免费，成人300日元)·向日葵公主竞赛·夜灯光秀(限定日)等。8月7至8日主活动期拥挤需清晨。" },
+        { q: "周边连续撮影计划?", a: "雨龙沼湿原(车30分·拉姆萨尔条约登录，6至9月高山植物)、滝川市菜花田(5月)、留萌市海(车1小时)等道北自然撮影地组合可。札幌经旭川·富良野访问的1宿2日周游路线定番，薰衣草(7月)+向日葵(8月)的W花田撮影旅程亦可。" },
+      ],
+      "zh-tw": [
+        { q: "北龍町是什麼?", a: "北海道空知地方人口約1700人的小鎮，以日本最大級向日葵田「向日葵之里」(23公頃，約23萬株)聞名。1987年從町興起活動開始，每年7至8月向日葵祭100萬人以上來訪的北海道夏日風物詩。" },
+        { q: "盛開期?", a: "每年8月第1週至10日左右。展望台拍全景為定番。上午順光黃色最豔，與藍空組合為王道。年差1週可有故公式網站開花信息確認。" },
+        { q: "如何前往?", a: "JR札幌站搭特急約1小時20分，深川站換乘留萌本線「碧水站」→開車5分。札幌開車約2小時。停車場免費，祭期擁擠建議清晨6至8時抵達。" },
+        { q: "撮影技巧?", a: "①展望台全景全景圖(廣角16-35mm)②含人顯規模感(中焦70-200mm)③向日葵立體感為朝斜光④下方含天空一花特寫(微距90mm)⑤向日葵迷宮上空無人機(申請要)。雨後晴天色最豔。" },
+        { q: "向日葵祭是什麼?", a: "每年7月中旬至8月20日左右約1月開催。入場免費，停車場500日圓。期間含屋台·向日葵迷宮(高中生以下免費，成人300日圓)·向日葵公主競賽·夜燈光秀(限定日)等。8月7至8日主活動期擁擠需清晨。" },
+        { q: "周邊連續撮影計劃?", a: "雨龍沼濕原(車30分·拉姆薩爾條約登錄，6至9月高山植物)、瀧川市菜花田(5月)、留萌市海(車1小時)等道北自然撮影地組合可。札幌經旭川·富良野訪問的1宿2日周遊路線定番，薰衣草(7月)+向日葵(8月)的W花田撮影旅程亦可。" },
+      ],
+      ko: [
+        { q: "호쿠류초란?", a: "홋카이도 소라치 지방의 인구 약 1,700명의 작은 마을로, 일본 최대급의 해바라기 밭 「해바라기의 마을」(23헥타르, 약 23만 송이)로 유명. 1987년부터 마을 활성화 활동으로 시작, 매년 7~8월의 해바라기 축제에 100만 명 이상이 찾는 홋카이도의 여름 풍물시입니다." },
+        { q: "개화의 절정기는?", a: "예년 8월 첫째 주~10일경. 전망대에서 전경 촬영이 정석. 오전의 순광이 가장 노랑이 선명, 푸른 하늘과의 조합이 왕도. 해에 따라 1주일 어긋날 수 있으므로 공식 사이트의 개화 정보 확인을." },
+        { q: "가는 방법은?", a: "JR 삿포로역에서 특급으로 약 1시간 20분, 후카가와역에서 환승 루모이 본선 「헤키수이역」→차로 5분. 삿포로에서 차로는 약 2시간. 주차장(무료) 있음, 축제 기간 중에는 혼잡하므로 이른 아침 6~8시 도착이 추천입니다." },
+        { q: "촬영 테크닉은?", a: "①전망대에서 전경 파노라마(광각 16-35mm) ②인물을 넣어 규모감(중망원 70-200mm) ③해바라기의 입체감은 아침의 사선광 ④아래에서 하늘을 넣은 한 송이 클로즈업(매크로 90mm) ⑤해바라기 미로의 상공에서 드론(신청 필요). 비 온 후 맑은 날은 색이 가장 선명." },
+        { q: "해바라기 축제란?", a: "매년 7월 중순~8월 20일경의 약 1개월 개최. 입장 무료, 주차장 500엔. 기간 중에는 포장마차, 해바라기 미로(고등학생 이하 무료, 성인 300엔), 해바라기 공주 콘테스트, 야간 조명(한정일) 등 이벤트 풍부. 8월 7~8일 메인 이벤트기는 혼잡하므로 이른 아침이 확실." },
+        { q: "주변과 연속 촬영 플랜은?", a: "우류누마 습원(차로 30분·람사르 조약 등록, 6~9월 고산식물), 다키카와시 유채꽃 밭(5월), 루모이시 바다(차로 1시간) 등 도호쿠의 자연 촬영지와 조합 가능. 삿포로에서 아사히카와·후라노 경유로 방문하는 1박 2일 순회 코스가 정석, 라벤더(7월)+해바라기(8월)의 W 꽃밭 촬영 여정도." },
       ],
     },
     faqs: [
