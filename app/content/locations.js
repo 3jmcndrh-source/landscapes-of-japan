@@ -5902,10 +5902,13 @@ export const LOCATION_CONTENT = {
       "長野縣阿智村被環境省認證為「日本第一星空」，是全國頂級觀星地。星之村阿智「天空樂園夜遊」乘纜車登海拔1400米富士見台高原，山頂無光害，群星滿天。新月期銀河與冬季星座尤為震撼。",
       "나가노현 아치 마을은 환경성이 「일본 제일의 별하늘」로 인정한 일본 굴지의 별 관측지. 스타빌리지 아치 「천공의 낙원 나이트 투어」는 곤돌라로 해발 1400m 후지미다이 고원까지 올라가 가로등 없는 산정에서 만점 별하늘에 둘러싸입니다. 신월기 은하수와 겨울 별자리가 압권."
     ),
-    definition: lh(
-      "長野県天空の楽園(てんくうのらくえん)は長野県下伊那郡阿智村智里、ヘブンスそのはらスキー場が運営する標高1,400m富士見台高原の星空観賞ツアーの愛称で、2006年に環境省「全国星空継続観察」で「日本一星空が綺麗な場所」に認定された日本屈指のスターウォッチング聖地。ゴンドラで約15分、夜の山頂に上がると周囲は街灯ゼロの完全な暗闇となり、満点の星空に360度包まれます。新月期の天の川、夏の夏の大三角形、冬のオリオン座と冬の大六角形まで、肉眼でも見える星の数は季節により6,000〜10,000個。年間来場者は約14万人、日本のアストロツーリズムを牽引する代表的存在です。",
-      "«Tenku no Rakuen» (Paradise in the Sky) is the brand name for stargazing tours at Fujimidai Highlands (1,400 m) operated by Heavens Sonohara ski resort in Chisato, Achi Village, Shimoina District, Nagano Prefecture. In 2006, the area was certified by Japan's Ministry of the Environment as having the «most beautiful starry sky in Japan» (under the National Star-Sky Continuous Observation program). After about a 15-minute gondola ride, visitors reach the summit, where light pollution is eliminated and a 360° panorama of stars surrounds them. Depending on season, 6,000 to 10,000 stars are visible to the naked eye — the Milky Way at new moon, the Summer Triangle, Orion in winter, and the Winter Hexagon. Drawing about 140,000 visitors annually, it leads Japanese astrotourism."
-    ),
+    definition: {
+      ja: "長野県天空の楽園(てんくうのらくえん)は長野県下伊那郡阿智村智里、ヘブンスそのはらスキー場が運営する標高1,400m富士見台高原の星空観賞ツアーの愛称で、2006年に環境省「全国星空継続観察」で「日本一星空が綺麗な場所」に認定された日本屈指のスターウォッチング聖地。ゴンドラで約15分、夜の山頂に上がると周囲は街灯ゼロの完全な暗闇となり、満点の星空に360度包まれます。新月期の天の川、夏の夏の大三角形、冬のオリオン座と冬の大六角形まで、肉眼でも見える星の数は季節により6,000〜10,000個。年間来場者は約14万人、日本のアストロツーリズムを牽引する代表的存在です。",
+      en: "«Tenku no Rakuen» (Paradise in the Sky) is the brand name for stargazing tours at Fujimidai Highlands (1,400 m) operated by Heavens Sonohara ski resort in Chisato, Achi Village, Shimoina District, Nagano Prefecture. In 2006, the area was certified by Japan's Ministry of the Environment as having the «most beautiful starry sky in Japan» (under the National Star-Sky Continuous Observation program). After about a 15-minute gondola ride, visitors reach the summit, where light pollution is eliminated and a 360° panorama of stars surrounds them. Depending on season, 6,000 to 10,000 stars are visible to the naked eye — the Milky Way at new moon, the Summer Triangle, Orion in winter, and the Winter Hexagon. Drawing about 140,000 visitors annually, it leads Japanese astrotourism.",
+      zh: "长野县天空乐园(てんくうのらくえん)是长野县下伊那郡阿智村智里，Heavens Sonohara滑雪场运营的海拔1400米富士见台高原星空观赏tour的爱称，2006年环境省「全国星空继续观察」中认定为「日本第一星空美丽之地」的日本屈指观星圣地。乘缆车约15分钟，夜山顶周围零路灯的完全黑暗，满天星空360度包围。新月期银河、夏的夏大三角形、冬的猎户座与冬大六角形，肉眼可见星数随季节6000至10000颗。年来场约14万人，引领日本天文旅游的代表性存在。",
+      "zh-tw": "長野縣天空樂園(てんくうのらくえん)是長野縣下伊那郡阿智村智里，Heavens Sonohara滑雪場運營的海拔1400米富士見台高原星空觀賞tour的愛稱，2006年環境省「全國星空繼續觀察」中認定為「日本第一星空美麗之地」的日本屈指觀星聖地。搭纜車約15分鐘，夜山頂周圍零路燈的完全黑暗，滿天星空360度包圍。新月期銀河、夏的夏大三角形、冬的獵戶座與冬大六角形，肉眼可見星數隨季節6000至10000顆。年來場約14萬人，引領日本天文旅遊的代表性存在。",
+      ko: "나가노현 천공의 낙원(てんくうのらくえん)은 나가노현 시모이나군 아치 마을 치사토, 헤븐스 소노하라 스키장이 운영하는 해발 1,400m 후지미다이 고원의 별하늘 관상 투어의 애칭으로, 2006년에 환경성 「전국 별하늘 계속 관찰」에서 「일본 제일 별하늘이 아름다운 장소」로 인정된 일본 굴지의 스타워칭 성지. 곤돌라로 약 15분, 밤의 산정에 오르면 주위는 가로등 제로의 완전한 어둠이 되어, 만점의 별하늘에 360도로 둘러싸입니다. 신월기의 은하수, 여름의 여름의 대삼각형, 겨울의 오리온좌와 겨울의 대육각형까지, 육안으로도 보이는 별의 수는 계절에 따라 6,000~10,000개. 연간 내장객은 약 14만 명, 일본의 아스트로 투어리즘을 견인하는 대표적 존재입니다.",
+    },
     highlights: {
       ja: [
         "ナイトツアー — ゴンドラで15分、標高1,400mの星空観賞、年間約14万人来場",
@@ -5920,6 +5923,27 @@ export const LOCATION_CONTENT = {
         "Perseid Meteor Shower (August) — Japan's busiest meteor shower, the best stargazing timing of the year",
         "Winter Constellations (November–February) — Orion, the Winter Hexagon, with the clearest air and exceptional transparency",
         "Heavens Sonohara Ski Resort — ski runs in winter, star tours at night, mountain biking in summer — varied year-round",
+      ],
+      zh: [
+        "夜游 — 缆车15分钟，海拔1400米星空观赏，年约14万人来场",
+        "新月期银河 — 4至10月新月前后，夏银河中心肉眼可见如云",
+        "英仙座流星雨(8月) — 年间最多流星雨，星空观赏最佳时机",
+        "冬星座(11至2月) — 猎户座、冬大六角形，空气清澈透明度极高",
+        "Heavens Sonohara滑雪场 — 冬滑雪，夜星空游，夏山地车多彩",
+      ],
+      "zh-tw": [
+        "夜遊 — 纜車15分鐘，海拔1400米星空觀賞，年約14萬人來場",
+        "新月期銀河 — 4至10月新月前後，夏銀河中心肉眼可見如雲",
+        "英仙座流星雨(8月) — 年間最多流星雨，星空觀賞最佳時機",
+        "冬星座(11至2月) — 獵戶座、冬大六角形，空氣清澈透明度極高",
+        "Heavens Sonohara滑雪場 — 冬滑雪，夜星空遊，夏山地車多彩",
+      ],
+      ko: [
+        "나이트 투어 — 곤돌라로 15분, 해발 1,400m의 별하늘 관상, 연간 약 14만 명 내장",
+        "신월기의 은하수 — 4~10월의 신월 전후, 여름 은하수의 중심부가 육안으로도 구름처럼 보임",
+        "페르세우스자리 유성군(8월) — 연간 최다의 유성군, 별 관측에는 최고의 타이밍",
+        "겨울의 별자리(11~2월) — 오리온좌, 겨울의 대육각형, 공기가 맑아 투명도가 극히 높음",
+        "헤븐스 소노하라 스키장 — 겨울철은 스키장, 밤은 별하늘 투어, 여름은 마운틴 바이크 등 다채",
       ],
     },
     quickAnswers: {
@@ -5938,6 +5962,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended camera gear?", a: "①Fast wide-angle lens (f/2.8 or faster, 14–24mm) ②High-ISO-tolerant body (clean ISO 3200–6400) ③Sturdy tripod ④Remote shutter (for 30+ second exposures) ⑤2–3 spare batteries (cold drains them fast) ⑥Red LED headlamp (preserves dark-adapted vision). For higher quality, a portable equatorial mount is excellent." },
         { q: "What does the tour include?", a: "Mountain-base station to the summit station via the «Tenku Yuran Gondola» (about 15 min). Roughly 2-hour summit stay with a stargazing guide (planetarium-style narration), laser-pointer constellation tour, and a «lights-off moment» (5 minutes of complete darkness to see the stars). In winter, a «Winter Night Tour» substitutes snowfield illumination." },
         { q: "Cold-weather wear?", a: "At 1,400 m, summer night temps run 10–15°C; winter drops below -10°C. Bring down jacket, thick fleece, waterproof boots, gloves, hat, and ear muffs. The summit is outdoor seated viewing — bring a blanket and warm drinks. Winter (Dec–Mar) requires snow boots; free blanket loans are available." },
+      ],
+      zh: [
+        { q: "长野县天空乐园是什么?", a: "长野县阿智村Heavens Sonohara滑雪场运营海拔1400米富士见台高原星空观赏tour。2006年环境省「日本第一星空美丽之地」认定，年约14万人来访的日本屈指天文旅游圣地。" },
+        { q: "星空撮影最佳时期?", a: "新月前后·空气清的冬(11月至2月)银河淡但星锐利最高。夏天河中心(7至8月新月前后高峰)。英仙座流星雨(8月12至13日)年间最大，夜游需预约必须。" },
+        { q: "前往与tour预约?", a: "JR饭田站开车约25分，中央自动车道园原IC开车5分。夜游需公式网站预约必须(成人2500日元)，运行4至10月特定日。雨天·浓雾时中止，有改期服务。" },
+        { q: "撮影器材推荐?", a: "①明亮广角镜头(F2.8以下，14至24mm)②高感耐性相机(ISO3200至6400常用可)③稳固三脚架④遥控快门(30秒以上长曝)⑤备用电池2至3个(冬冷气消耗快)⑥红色LED灯(护暗适眼)。星景需便携赤道仪可更高质。" },
+        { q: "tour内容?", a: "山麓站乘「天空遊覽缆车」约15分至山顶站。山顶约2小时滞留，星空向导解说(如行星馆叙述)、激光指示器星座介绍、熄灯时段(完全黑暗5分钟)。冬替星空为「冬夜游」(雪上灯光秀)。" },
+        { q: "防寒·服装?", a: "海拔1400米夏夜亦10至15℃，冬-10℃以下。羽绒·厚抓绒·防水鞋·手套·帽·耳罩必备。山顶户外坐观赏，毯子·暖饮亦携。冬期(12至3月)雪靴必须，免费毯子借出亦有。" },
+      ],
+      "zh-tw": [
+        { q: "長野縣天空樂園是什麼?", a: "長野縣阿智村Heavens Sonohara滑雪場運營海拔1400米富士見台高原星空觀賞tour。2006年環境省「日本第一星空美麗之地」認定，年約14萬人來訪的日本屈指天文旅遊聖地。" },
+        { q: "星空撮影最佳時期?", a: "新月前後·空氣清的冬(11月至2月)銀河淡但星銳利最高。夏天河中心(7至8月新月前後高峰)。英仙座流星雨(8月12至13日)年間最大，夜遊需預約必須。" },
+        { q: "前往與tour預約?", a: "JR飯田站開車約25分，中央自動車道園原IC開車5分。夜遊需公式網站預約必須(成人2500日圓)，運行4至10月特定日。雨天·濃霧時中止，有改期服務。" },
+        { q: "撮影器材推薦?", a: "①明亮廣角鏡頭(F2.8以下，14至24mm)②高感耐性相機(ISO3200至6400常用可)③穩固三腳架④遙控快門(30秒以上長曝)⑤備用電池2至3個(冬冷氣消耗快)⑥紅色LED燈(護暗適眼)。星景需便攜赤道儀可更高質。" },
+        { q: "tour內容?", a: "山麓站搭「天空遊覽纜車」約15分至山頂站。山頂約2小時滯留，星空嚮導解說(如行星館敘述)、激光指示器星座介紹、熄燈時段(完全黑暗5分鐘)。冬替星空為「冬夜遊」(雪上燈光秀)。" },
+        { q: "防寒·服裝?", a: "海拔1400米夏夜亦10至15℃，冬-10℃以下。羽絨·厚抓絨·防水鞋·手套·帽·耳罩必備。山頂戶外坐觀賞，毯子·暖飲亦攜。冬期(12至3月)雪靴必須，免費毯子借出亦有。" },
+      ],
+      ko: [
+        { q: "나가노현 천공의 낙원이란?", a: "나가노현 아치 마을의 헤븐스 소노하라 스키장이 운영하는 해발 1,400m 후지미다이 고원의 별하늘 관상 투어. 2006년 환경성 「일본 제일 별하늘이 아름다운 장소」 인정, 연간 약 14만 명이 찾는 일본 굴지의 아스트로 투어리즘의 성지입니다." },
+        { q: "별 촬영의 최적 시기는?", a: "신월 전후·공기가 맑은 겨울(11월~2월)은 은하수는 약해지지만 별의 예리함은 최고. 여름은 은하수가 중심(7~8월의 신월 전후가 절정). 페르세우스자리 유성군(8월 12~13일)은 연간 최대, 나이트 투어는 예약 필수입니다." },
+        { q: "가는 방법과 투어 예약은?", a: "JR 이이다역에서 차로 약 25분, 추오 자동차도 소노하라 IC에서 차로 5분. 나이트 투어는 공식 사이트에서 예약 필수(성인 2,500엔), 운행은 4~10월의 특정일. 우천·짙은 안개 시는 중지, 일정 변경 서비스 있음." },
+        { q: "촬영 기재 추천은?", a: "①밝은 광각 렌즈(F2.8 이하, 14~24mm) ②고감도 내성 카메라(ISO 3200~6400 상용 가능) ③견고한 삼각대 ④릴리즈 셔터(30초 이상의 장노출) ⑤예비 배터리 2~3개(겨울은 냉기로 소모 빠름) ⑥빨간 LED 라이트(어둠에 적응한 눈을 보호). 별경 사진이라면 휴대용 적도의가 있으면 더 고품질." },
+        { q: "투어 내용은?", a: "산기슭역에서 「천공의 유람 곤돌라」로 약 15분에 걸쳐 산정역으로. 산정에서 약 2시간 체류, 별하늘 가이드 해설(플라네타리움식 내레이션), 레이저 포인터로의 별자리 소개, 소등 타임(완전 어둠으로 별하늘을 보는 5분간). 겨울은 별하늘 대신 「겨울의 나이트 투어」(눈 위 조명) 실시." },
+        { q: "방한·복장은?", a: "해발 1,400m로 여름에도 야간 기온 10~15℃, 겨울은 -10℃ 이하. 다운·두꺼운 플리스·방수 부츠·장갑·모자·귀마개 필휴. 산정은 야외, 앉아서 관상하므로 담요·추위 대책의 핫 드링크도 지참. 겨울철(12~3월)은 스노우 부츠 필수, 무료 담요 대여도 있음." },
       ],
     },
     faqs: [
