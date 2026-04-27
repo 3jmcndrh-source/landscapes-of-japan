@@ -114,10 +114,13 @@ export const LOCATION_CONTENT = {
       "札幌是北海道中心城市。大通公園、薄野、札幌時計台、北海道廳舊本廳舍（紅磚）等現代都市與雪國風情並存。藻岩山山頂夜景為日本新三大夜景之一。",
       "삿포로는 홋카이도의 중심 도시. 오도리 공원, 스스키노, 삿포로 시계탑, 홋카이도청 구본청사(빨간 벽돌) 등 현대 도시와 설국 정서가 공존. 모이와산 정상의 야경은 일본 신 3대 야경 중 하나."
     ),
-    definition: lh(
-      "札幌(さっぽろ)は北海道の道庁所在地で、人口約197万人の北海道最大の都市、政令指定都市。アイヌ語「サッ・ポロ・ペッ(乾いた大きな川)」由来、1869年(明治2年)に開拓使が置かれ計画的な碁盤の目状の都市設計で発展した若い都市。象徴的なランドマークとして大通公園(全長1.5km)、札幌時計台(1878年築、現存最古の時計台)、北海道庁旧本庁舎「赤れんが」(1888年築)、藻岩山(531m、新日本三大夜景)、すすきの歓楽街、JRタワー展望室など、雪国の都市景観と近代建築が共存する、日本でも稀有な都市撮影地です。",
-      "Sapporo, the capital of Hokkaido and Japan's fifth-largest city with about 1.97 million residents, is a designated «government ordinance city.» The name comes from the Ainu «Sat-Poro-Pet» («the dry large river»). Established in 1869 (Meiji 2) as the seat of the Hokkaido Development Commission, it grew on a planned grid pattern as one of Japan's youngest major cities. Iconic landmarks include the 1.5 km Odori Park, the Sapporo Clock Tower (built 1878, Japan's oldest surviving clock tower), the Red Brick Former Hokkaido Government Building (1888), Mt. Moiwa (531 m, one of Japan's New Three Great Night Views), the Susukino entertainment district, and the JR Tower observatory — a rare combination of snow-country urban landscape and modern architecture."
-    ),
+    definition: {
+      ja: "札幌(さっぽろ)は北海道の道庁所在地で、人口約197万人の北海道最大の都市、政令指定都市。アイヌ語「サッ・ポロ・ペッ(乾いた大きな川)」由来、1869年(明治2年)に開拓使が置かれ計画的な碁盤の目状の都市設計で発展した若い都市。象徴的なランドマークとして大通公園(全長1.5km)、札幌時計台(1878年築、現存最古の時計台)、北海道庁旧本庁舎「赤れんが」(1888年築)、藻岩山(531m、新日本三大夜景)、すすきの歓楽街、JRタワー展望室など、雪国の都市景観と近代建築が共存する、日本でも稀有な都市撮影地です。",
+      en: "Sapporo, the capital of Hokkaido and Japan's fifth-largest city with about 1.97 million residents, is a designated «government ordinance city.» The name comes from the Ainu «Sat-Poro-Pet» («the dry large river»). Established in 1869 (Meiji 2) as the seat of the Hokkaido Development Commission, it grew on a planned grid pattern as one of Japan's youngest major cities. Iconic landmarks include the 1.5 km Odori Park, the Sapporo Clock Tower (built 1878, Japan's oldest surviving clock tower), the Red Brick Former Hokkaido Government Building (1888), Mt. Moiwa (531 m, one of Japan's New Three Great Night Views), the Susukino entertainment district, and the JR Tower observatory — a rare combination of snow-country urban landscape and modern architecture.",
+      zh: "札幌(さっぽろ)是北海道道厅所在地，人口约197万人的北海道最大都市，政令指定都市。源自爱努语「Sat-Poro-Pet(干涸的大河)」，1869年(明治2年)开拓使设置，棋盘格状计划都市设计发展的年轻城市。象征性地标含大通公园(全长1.5公里)、札幌时计台(1878年建，现存最古时计台)、北海道厅旧本厅舍「赤砖」(1888年建)、藻岩山(531米，新日本三大夜景)、薄野欢乐街、JR Tower展望室等，是雪国都市景观与近代建筑共存的日本稀有都市撮影地。",
+      "zh-tw": "札幌(さっぽろ)是北海道道廳所在地，人口約197萬人的北海道最大都市，政令指定都市。源自愛努語「Sat-Poro-Pet(乾涸的大河)」，1869年(明治2年)開拓使設置，棋盤格狀計劃都市設計發展的年輕城市。象徵性地標含大通公園(全長1.5公里)、札幌時計台(1878年建，現存最古時計台)、北海道廳舊本廳舍「紅磚」(1888年建)、藻岩山(531米，新日本三大夜景)、薄野歡樂街、JR Tower展望室等，是雪國都市景觀與近代建築共存的日本稀有都市撮影地。",
+      ko: "삿포로(さっぽろ)는 홋카이도 도청 소재지로, 인구 약 197만 명의 홋카이도 최대 도시, 정령 지정 도시. 아이누어 「삿·포로·페쓰(마른 큰 강)」 유래, 1869년(메이지 2년)에 개척사가 설치되어 계획적인 바둑판 모양의 도시 설계로 발전한 젊은 도시. 상징적 랜드마크로 오도리 공원(전장 1.5km), 삿포로 시계탑(1878년 축조, 현존 최고(最古)의 시계탑), 홋카이도청 구본청사 「아카렌가」(1888년 축조), 모이와산(531m, 신 일본 3대 야경), 스스키노 환락가, JR타워 전망실 등 설국의 도시 경관과 근대 건축이 공존하는 일본에서도 보기 드문 도시 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "藻岩山(もいわやま) — 531m、新日本三大夜景の一つ、ロープウェイで山頂、ハート型の街灯と札幌全景",
@@ -132,6 +135,27 @@ export const LOCATION_CONTENT = {
         "Sapporo Clock Tower — built 1878, Japan's oldest surviving clock tower; the American-made pendulum still keeps time, embodying Meiji Western architecture",
         "Red Brick Former Hokkaido Government Building — built 1888 in Neo-Baroque style; pairs beautifully with the autumn ginkgo avenue",
         "JR Tower Observatory T38 — 160 m above ground, Hokkaido's highest observation deck, 360° panoramic nightscape",
+      ],
+      zh: [
+        "藻岩山(もいわやま) — 531米，新日本三大夜景之一，缆车至山顶，心形街灯与札幌全景",
+        "大通公园 — 全长1.5公里带状公园，2月雪祭、5月紫丁香祭、12月白色灯饰",
+        "札幌时计台 — 1878年建，日本最古时计台，美制机械摆钟，明治洋风建筑",
+        "北海道厅旧本厅舍(赤砖厅舍) — 1888年建，新巴洛克样式，与红叶银杏并道组合",
+        "JR Tower展望室T38 — 地上160米，北海道最高展望台，360度全景夜景",
+      ],
+      "zh-tw": [
+        "藻岩山(もいわやま) — 531米，新日本三大夜景之一，纜車至山頂，心形街燈與札幌全景",
+        "大通公園 — 全長1.5公里帶狀公園，2月雪祭、5月紫丁香祭、12月白色燈飾",
+        "札幌時計台 — 1878年建，日本最古時計台，美製機械擺鐘，明治洋風建築",
+        "北海道廳舊本廳舍(紅磚廳舍) — 1888年建，新巴洛克樣式，與紅葉銀杏並道組合",
+        "JR Tower展望室T38 — 地上160米，北海道最高展望台，360度全景夜景",
+      ],
+      ko: [
+        "모이와산(もいわやま) — 531m, 신 일본 3대 야경 중 하나, 로프웨이로 산정, 하트 모양의 가로등과 삿포로 전경",
+        "오도리 공원 — 전장 1.5km의 띠 모양 공원, 2월 눈축제, 5월 라일락 축제, 12월 화이트 일루미네이션",
+        "삿포로 시계탑 — 1878년 축조, 일본 최고(最古)의 시계탑, 미국제 기계식 진자 시계, 메이지 양풍 건축",
+        "홋카이도청 구본청사(아카렌가 청사) — 1888년 축조, 네오바로크 양식, 단풍 은행 가로수와의 조합",
+        "JR타워 전망실 T38 — 지상 160m, 홋카이도 최고의 전망대, 360도 파노라마 야경",
       ],
     },
     quickAnswers: {
@@ -151,6 +175,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I reach Mt. Moiwa?", a: "Ropeway + mini-cable car round trip ¥2,100 (20-min intervals). Last service 21:30, so plan a 20:00 ascent for night photography. Reach the base by car or taxi in 5 min; summer offers a 1-hour hiking trail. The summit has both indoor and outdoor decks — comfortable even in deep winter." },
         { q: "How should I dress for winter in Sapporo?", a: "December–February typical highs are -3 to 0°C, with lows below -15°C on some days. Down jackets and waterproof boots are essential. The underground passages (Pole Town, Aurora Town) minimize outdoor time. Prevent camera condensation by sealing in a plastic bag before entering warm spaces. Tripod metal gets too cold — bring gloves." },
       ],
+      zh: [
+        { q: "札幌是什么?", a: "北海道道厅所在地，人口约197万的北海道最大都市。1869年开拓使设置的年轻计划都市，藻岩山新日本三大夜景、大通公园、札幌时计台、赤砖厅舍等雪国都市与近代建筑共存的撮影地。" },
+        { q: "札幌市内观光最佳时期?", a: "2月札幌雪祭、6月紫丁香祭、10月红叶、12月白色灯饰，全年表情各异。冬空气澄清夜景更清晰，夏绿意盎然。" },
+        { q: "夜景撮影最佳点?", a: "藻岩山(新日本三大夜景，缆车至山顶，心形街灯)、JR Tower展望室T38(160米最高)、电视塔、旭山纪念公园(穴场)。日落后30分钟蓝调时刻天空与街灯平衡最佳。" },
+        { q: "如何前往札幌?", a: "新千岁机场乘快速Airport 37分钟·1150日元。羽田至新千岁约1小时30分钟·直行多。札幌站为地铁南北线·东西线·东豊线交叉点市内移动便利。雪祭期间住宿半年前预订满故需早期确保。" },
+        { q: "如何登藻岩山?", a: "缆车+迷你索道往返2100日元(20分间隔)。21:30末班故夜景撮影建议20:00登山。汽车·出租至山麓5分，夏期登山道(约1小时)亦可。山顶展望台室内外皆有，极寒冬期亦安心。" },
+        { q: "札幌冬防寒对策?", a: "12至2月最高气温-3℃至0℃，最低-15℃以下日。羽绒·防水靴必备，地下街(Pole Town·Aurora Town)活用最小化室外时间。相机防结露用塑料袋密封后入室内。三脚架金属过冷需手套必备。" },
+      ],
+      "zh-tw": [
+        { q: "札幌是什麼?", a: "北海道道廳所在地，人口約197萬的北海道最大都市。1869年開拓使設置的年輕計劃都市，藻岩山新日本三大夜景、大通公園、札幌時計台、紅磚廳舍等雪國都市與近代建築共存的撮影地。" },
+        { q: "札幌市內觀光最佳時期?", a: "2月札幌雪祭、6月紫丁香祭、10月紅葉、12月白色燈飾，全年表情各異。冬空氣澄清夜景更清晰，夏綠意盎然。" },
+        { q: "夜景撮影最佳點?", a: "藻岩山(新日本三大夜景，纜車至山頂，心形街燈)、JR Tower展望室T38(160米最高)、電視塔、旭山紀念公園(穴場)。日落後30分鐘藍調時刻天空與街燈平衡最佳。" },
+        { q: "如何前往札幌?", a: "新千歲機場搭快速Airport 37分鐘·1150日圓。羽田至新千歲約1小時30分鐘·直行多。札幌站為地鐵南北線·東西線·東豊線交叉點市內移動便利。雪祭期間住宿半年前預訂滿故需早期確保。" },
+        { q: "如何登藻岩山?", a: "纜車+迷你索道往返2100日圓(20分間隔)。21:30末班故夜景撮影建議20:00登山。汽車·出租至山麓5分，夏期登山道(約1小時)亦可。山頂展望台室內外皆有，極寒冬期亦安心。" },
+        { q: "札幌冬防寒對策?", a: "12至2月最高氣溫-3℃至0℃，最低-15℃以下日。羽絨·防水靴必備，地下街(Pole Town·Aurora Town)活用最小化室外時間。相機防結露用塑料袋密封後入室內。三腳架金屬過冷需手套必備。" },
+      ],
+      ko: [
+        { q: "삿포로란?", a: "홋카이도 도청 소재지, 인구 약 197만 명의 홋카이도 최대 도시. 1869년 개척사가 설치된 젊은 계획 도시로, 모이와산의 신 일본 3대 야경, 오도리 공원, 삿포로 시계탑, 아카렌가 청사 등 설국 도시와 근대 건축이 공존하는 촬영지입니다." },
+        { q: "삿포로 시내 관광 최적 시기는?", a: "2월 삿포로 눈축제, 6월 라일락 축제, 10월 단풍, 12월 화이트 일루미네이션, 연중 표정이 변화. 겨울이 공기가 맑아 야경이 더 선명, 여름은 녹음이 아름답습니다." },
+        { q: "야경 촬영 베스트 포인트는?", a: "모이와산(신 일본 3대 야경, 로프웨이로 산정, 하트 모양의 가로등), JR타워 전망실 T38(160m 최고), TV타워, 아사히야마 기념 공원(숨은 명소). 일몰 후 30분의 블루 아워가 하늘과 거리 빛의 균형이 베스트." },
+        { q: "삿포로 가는 방법은?", a: "신치토세 공항에서 쾌속 에어포트로 37분·1,150엔. 하네다에서 신치토세까지 약 1시간 30분·직항편 다수. 삿포로역은 지하철 난보쿠선·도자이선·도호선의 교차점으로 시내 이동도 편리. 눈축제 기간은 숙박 예약이 반년 전부터 차므로 조기 확보를." },
+        { q: "모이와산 오르는 법은?", a: "로프웨이+미니 케이블카로 왕복 2,100엔(20분 간격 운행). 21:30 최종 운행이므로 야경 촬영은 20:00 무렵 등산 권장. 차·택시로 산기슭까지 5분, 여름철은 하이킹 코스(약 1시간)도. 산정 전망대는 실내외 있음, 극한의 겨울철도 안심." },
+        { q: "삿포로의 겨울 방한 대책은?", a: "12~2월은 최고 기온 -3℃~0℃, 최저 -15℃ 이하인 날도. 다운·방수 부츠 필수, 지하상가(폴타운·오로라타운)를 활용하면 야외 시간 최소화 가능. 카메라는 결로 방지를 위해 비닐봉지로 밀봉한 후 실내로. 삼각대도 금속이 너무 차가우므로 장갑 필휴." },
+      ],
     },
     faqs: [
       { q: d("札幌市内観光に最適な時期は？","Best time to visit central Sapporo?","札幌市内观光最佳时期？","札幌市內觀光最佳時期？","삿포로 시내 관광 최적기는?"),
@@ -165,10 +213,13 @@ export const LOCATION_CONTENT = {
       "每年2月上旬在大通公園舉辦的日本最大級雪像盛會。超過15米的巨型雪像、市民雪像、冰雕、夜間燈光秀是亮點。每年吸引超過200萬遊客。",
       "매년 2월 초 오도리 공원을 중심으로 개최되는 일본 최대급 눈 축제. 15m를 넘는 거대 눈조각, 시민 조각, 얼음 조각, 야간 조명이 볼거리. 200만 명 이상이 방문합니다."
     ),
-    definition: lh(
-      "さっぽろ雪まつり(さっぽろゆきまつり)は毎年2月初旬の約1週間、北海道札幌市中央区の大通公園・すすきの会場・つどーむ会場の3会場で開催される日本最大規模の冬のイベントで、1950年地元の中・高校生6人が大通公園に6基の雪像を作ったことから始まりました。現在は国内外から200万人以上が訪れる世界的祭典で、自衛隊が制作する高さ15m超の巨大雪像、市民雪像、国際雪像コンクール、氷彫刻、夜のプロジェクションマッピング、つどーむのスノーアクティビティまで、北の都市が一週間「雪の芸術都市」に変身します。",
-      "The Sapporo Snow Festival is held over about a week in early February each year across three Sapporo venues — Odori Park, Susukino, and Tsudome — and is Japan's largest winter event. It began in 1950 when six local middle and high school students built six snow sculptures in Odori Park; today it draws over 2 million visitors from around the world. Highlights include massive snow sculptures over 15 m built by the Japan Self-Defense Forces, citizen-made sculptures, the International Snow Sculpture Contest, ice carvings, evening projection mapping, and the snow activities at the Tsudome venue, transforming northern Sapporo into a «city of snow art» for one full week."
-    ),
+    definition: {
+      ja: "さっぽろ雪まつり(さっぽろゆきまつり)は毎年2月初旬の約1週間、北海道札幌市中央区の大通公園・すすきの会場・つどーむ会場の3会場で開催される日本最大規模の冬のイベントで、1950年地元の中・高校生6人が大通公園に6基の雪像を作ったことから始まりました。現在は国内外から200万人以上が訪れる世界的祭典で、自衛隊が制作する高さ15m超の巨大雪像、市民雪像、国際雪像コンクール、氷彫刻、夜のプロジェクションマッピング、つどーむのスノーアクティビティまで、北の都市が一週間「雪の芸術都市」に変身します。",
+      en: "The Sapporo Snow Festival is held over about a week in early February each year across three Sapporo venues — Odori Park, Susukino, and Tsudome — and is Japan's largest winter event. It began in 1950 when six local middle and high school students built six snow sculptures in Odori Park; today it draws over 2 million visitors from around the world. Highlights include massive snow sculptures over 15 m built by the Japan Self-Defense Forces, citizen-made sculptures, the International Snow Sculpture Contest, ice carvings, evening projection mapping, and the snow activities at the Tsudome venue, transforming northern Sapporo into a «city of snow art» for one full week.",
+      zh: "札幌雪祭(さっぽろゆきまつり)是每年2月初约1周，于北海道札幌市中央区大通公园·薄野会场·Tsudome会场3处举办的日本最大规模冬日盛会，1950年当地6名中·高中学生在大通公园造6座雪像而起。现今国内外200万人以上来访的世界级祭典，自卫队制作的高15米以上巨型雪像、市民雪像、国际雪像比赛、冰雕、夜间投影映射、Tsudome雪上活动等，北方都市1周变身「雪的艺术都市」。",
+      "zh-tw": "札幌雪祭(さっぽろゆきまつり)是每年2月初約1週，於北海道札幌市中央區大通公園·薄野會場·Tsudome會場3處舉辦的日本最大規模冬日盛會，1950年當地6名中·高中學生在大通公園造6座雪像而起。現今國內外200萬人以上來訪的世界級祭典，自衛隊製作的高15米以上巨型雪像、市民雪像、國際雪像比賽、冰雕、夜間投影映射、Tsudome雪上活動等，北方都市1週變身「雪的藝術都市」。",
+      ko: "삿포로 눈축제(さっぽろゆきまつり)는 매년 2월 초의 약 1주일간, 홋카이도 삿포로시 주오구의 오도리 공원·스스키노 회장·쓰도무 회장의 3개 회장에서 개최되는 일본 최대 규모의 겨울 이벤트로, 1950년 현지 중·고교생 6명이 오도리 공원에 6기의 눈조각을 만든 것에서 시작되었습니다. 현재는 국내외에서 200만 명 이상이 찾는 세계적 축제로, 자위대가 제작하는 높이 15m 넘는 거대 눈조각, 시민 눈조각, 국제 눈조각 콘테스트, 얼음 조각, 밤의 프로젝션 매핑, 쓰도무의 스노우 액티비티까지, 북녘의 도시가 일주일간 「눈의 예술 도시」로 변모합니다.",
+    },
     highlights: {
       ja: [
         "大通会場(自衛隊大雪像) — 高さ15m級、隊員が約1か月かけて制作、国内外の名所がモチーフ",
@@ -183,6 +234,27 @@ export const LOCATION_CONTENT = {
         "Evening Projection Mapping — 18:00–22:00, with dynamic light and music projected onto the giant sculptures",
         "Tsudome Venue — interactive snow festival with slides and blizzard experiences, popular with families",
         "Susukino Ice Festival — finely crafted ice sculptures by international artists, magically illuminated at night",
+      ],
+      zh: [
+        "大通会场(自卫队大雪像) — 15米级，队员约1个月制作，国内外名所为主题",
+        "国际雪像比赛 — 11国·地区参加，3日内完成雪像的工匠技艺",
+        "夜间投影映射 — 18时至22时，巨型雪像上动感光与音乐",
+        "Tsudome会场 — 体验型雪祭，雪滑道、暴风雪体验，亲子人气",
+        "薄野冰雪祭 — 国际冰雕家精巧冰像，夜灯光梦幻",
+      ],
+      "zh-tw": [
+        "大通會場(自衛隊大雪像) — 15米級，隊員約1個月製作，國內外名所為主題",
+        "國際雪像比賽 — 11國·地區參加，3日內完成雪像的工匠技藝",
+        "夜間投影映射 — 18時至22時，巨型雪像上動感光與音樂",
+        "Tsudome會場 — 體驗型雪祭，雪滑道、暴風雪體驗，親子人氣",
+        "薄野冰雪祭 — 國際冰雕家精巧冰像，夜燈光夢幻",
+      ],
+      ko: [
+        "오도리 회장(자위대 대설상) — 높이 15m급, 대원이 약 1개월간 제작, 국내외 명소가 모티프",
+        "국제 눈조각 콘테스트 — 11개국·지역이 참가, 3일 만에 눈조각을 완성시키는 장인의 기술",
+        "야간 프로젝션 매핑 — 18시~22시, 거대 눈조각에 다이내믹한 빛과 음악",
+        "쓰도무 회장 — 체험형 눈축제, 눈 미끄럼틀, 눈보라 체험, 가족 동반에 인기",
+        "스스키노 얼음 축제 — 국제적인 얼음 조각가에 의한 정교한 얼음상, 밤의 조명이 환상적",
       ],
     },
     quickAnswers: {
@@ -202,6 +274,30 @@ export const LOCATION_CONTENT = {
         { q: "Can I use a tripod?", a: "Some areas at the Odori venue are tripod-restricted during peak crowds — follow staff direction. The Susukino ice-sculpture site allows tripods if you don't block walkways. Sculpture areas are off-limits late-night to early-morning, so that window isn't available. Bring a fast lens and high-ISO camera for handheld work." },
         { q: "What should I wear for the cold?", a: "Sapporo's February average lows are -7°C, with night temps below -15°C. Outdoor stays should stay 1–2 hours. Heat-tech base + sweater + down + waterproof shell, plus scarf, ear muffs, and waterproof gloves are essential. Phones drain fast — keep spare batteries and power banks in inner pockets." },
       ],
+      zh: [
+        { q: "札幌雪祭是什么?", a: "每年2月初约1周，札幌市大通公园·薄野·Tsudome 3会场举办的日本最大冬日盛会。1950年学生6人发起，今200万人以上来访的世界级祭典，15米以上巨型雪像与灯光秀为亮点。" },
+        { q: "撮影最佳时段?", a: "日落后至21时灯光时段最美。三脚架+低ISO保留雪质感。白天蓝天背景构图亦佳。22时熄灯后无人雪像独占撮影的隐藏时段。" },
+        { q: "举办期间与场所?", a: "每年2月初约1周(2025年2月4至11日)。大通公园(西1丁目至西12丁目)、薄野、Tsudome(东区)3会场。大通会场为中心，最近车站为札幌站·大通站。日落前后拥挤最大。" },
+        { q: "门票?", a: "全会场免费入场。仅Tsudome会场有偿活动(雪滑道等)另收费。投影映射与冰雕活动亦免费观览。可通过捐款或购买雪像支援商品支援运营。" },
+        { q: "可以使用三脚架吗?", a: "大通会场拥挤时禁三脚架区域有，请遵从工作人员指示。薄野会场(冰雕)不妨碍行人范围内可。早晨开场时间外(深夜至清晨)雪像区禁入故时段难。手持亦可拍的明亮镜头与高ISO相机推荐。" },
+        { q: "防寒对策?", a: "札幌2月最低气温平均-7℃，夜间-15℃以下。室外滞留1至2小时为限。Heattech+毛衣+羽绒+防水外套，围巾·耳罩·防水手套必备。手机电池消耗快，备用电池或行动电源需内袋保温。" },
+      ],
+      "zh-tw": [
+        { q: "札幌雪祭是什麼?", a: "每年2月初約1週，札幌市大通公園·薄野·Tsudome 3會場舉辦的日本最大冬日盛會。1950年學生6人發起，今200萬人以上來訪的世界級祭典，15米以上巨型雪像與燈光秀為亮點。" },
+        { q: "撮影最佳時段?", a: "日落後至21時燈光時段最美。三腳架+低ISO保留雪質感。白天藍天背景構圖亦佳。22時熄燈後無人雪像獨占撮影的隱藏時段。" },
+        { q: "舉辦期間與場所?", a: "每年2月初約1週(2025年2月4至11日)。大通公園(西1丁目至西12丁目)、薄野、Tsudome(東區)3會場。大通會場為中心，最近車站為札幌站·大通站。日落前後擁擠最大。" },
+        { q: "門票?", a: "全會場免費入場。僅Tsudome會場有償活動(雪滑道等)另收費。投影映射與冰雕活動亦免費觀覽。可通過捐款或購買雪像支援商品支援運營。" },
+        { q: "可以使用三腳架嗎?", a: "大通會場擁擠時禁三腳架區域有，請遵從工作人員指示。薄野會場(冰雕)不妨礙行人範圍內可。早晨開場時間外(深夜至清晨)雪像區禁入故時段難。手持亦可拍的明亮鏡頭與高ISO相機推薦。" },
+        { q: "防寒對策?", a: "札幌2月最低氣溫平均-7℃，夜間-15℃以下。室外滯留1至2小時為限。Heattech+毛衣+羽絨+防水外套，圍巾·耳罩·防水手套必備。手機電池消耗快，備用電池或行動電源需內袋保溫。" },
+      ],
+      ko: [
+        { q: "삿포로 눈축제란?", a: "매년 2월 초의 약 1주일간, 삿포로시의 오도리 공원·스스키노·쓰도무의 3개 회장에서 개최되는 일본 최대의 겨울 이벤트. 1950년에 학생 6명으로 시작, 지금은 200만 명 이상이 찾는 세계적 축제로, 15m 넘는 거대 눈조각과 조명이 볼거리입니다." },
+        { q: "촬영의 베스트 시간대는?", a: "일몰 후~21시의 조명 시간대가 가장 아름다움. 삼각대+저ISO로 눈의 질감을 살림. 낮에는 파란 하늘 배경의 구도도 잘 나옴. 22시의 소등 후에는 사람이 없는 눈조각을 독점 촬영할 수 있는 숨은 타임." },
+        { q: "개최 기간과 장소는?", a: "매년 2월 초의 약 1주일(2025년은 2월 4~11일). 오도리 공원(서 1초메~서 12초메), 스스키노, 쓰도무(히가시구)의 3개 회장. 오도리 회장이 중심이며, 최근역은 삿포로역·오도리역. 일몰 전후의 혼잡은 최대급입니다." },
+        { q: "입장료는?", a: "전 회장 모두 입장 무료. 쓰도무 회장의 유료 액티비티(눈 미끄럼틀 등)만 별도 요금. 프로젝션 매핑이나 얼음 조각 이벤트도 무료로 관람 가능. 기부나 눈조각 지원 굿즈 구매로 운영 지원 가능합니다." },
+        { q: "삼각대 사용 가능?", a: "오도리 회장은 혼잡 시 삼각대 금지 구역 있음, 안내원의 지시에 따를 것. 스스키노 회장(얼음 조각)은 행인 방해되지 않는 범위에서 OK. 이른 아침 개장 시간 외(심야~이른 아침)는 눈조각 구역 출입 금지이므로 그 시간대 노리기는 불가. 손으로도 충분히 찍히는 밝은 렌즈와 고ISO 카메라 추천." },
+        { q: "방한 대책은?", a: "삿포로 2월의 최저 기온은 평균 -7℃, 야간 -15℃ 이하가 되기도. 야외 체류는 1~2시간이 한도. 히트텍+스웨터+다운+방수 아우터, 머플러·귀마개·방수 장갑이 필수. 스마트폰도 배터리 소모가 빨라, 예비 배터리나 모바일 배터리를 안주머니에서 보온." },
+      ],
     },
     faqs: [
       { q: d("撮影のベスト時間帯は？","Best time to shoot the festival?","拍摄最佳时段？","拍攝最佳時段？","촬영 최적 시간대는?"),
@@ -216,10 +312,13 @@ export const LOCATION_CONTENT = {
       "小樽運河與石造倉庫群是懷舊港城象徵。煤氣燈下的夜間運河、雪景倉庫、玻璃工藝街區都極具畫面感。距札幌40分鐘電車車程。",
       "오타루 운하와 석조 창고군은 노스탤직한 항구 도시의 상징. 가스등이 밝혀진 야간 운하, 설경의 창고, 유리 공예 거리가 그림 같습니다. 삿포로에서 전철 40분."
     ),
-    definition: lh(
-      "小樽(おたる)は北海道後志総合振興局管内の市で、人口約11万人の港湾都市。明治・大正期に北海道の物流拠点として栄え、銀行・商社が立ち並ぶ「北のウォール街」と称されました。中心の小樽運河(全長1,140m、1923年完成)は、海上輸送と倉庫を結ぶために造られたが、1986年から散策路として整備、石造倉庫群と63基のガス灯がノスタルジックな夜景を生み出します。札幌から快速で約30分の至近距離で、ガラス工芸(北一硝子)、オルゴール堂、寿司・海鮮グルメ、にしん御殿、天狗山ロープウェイの夜景まで、半日〜1日で巡れる港町撮影地です。",
-      "Otaru, in the Shiribeshi General Subprefectural Bureau of Hokkaido, is a port city of about 110,000 residents. It flourished as Hokkaido's logistics hub during the Meiji and Taisho eras, lined with banks and trading houses to the point of being called «the Wall Street of the North.» The 1,140 m Otaru Canal (completed 1923) was built to link sea transport and warehousing, but since 1986 has been redeveloped as a promenade where stone warehouses and 63 gas lamps create a nostalgic night view. About 30 minutes by rapid train from Sapporo, it offers glasswork (Kitaichi Glass), the Music Box Museum, sushi and seafood, the Nishin Goten herring mansion, and the night view from the Mt. Tengu ropeway — all within a half- to full-day photographic itinerary."
-    ),
+    definition: {
+      ja: "小樽(おたる)は北海道後志総合振興局管内の市で、人口約11万人の港湾都市。明治・大正期に北海道の物流拠点として栄え、銀行・商社が立ち並ぶ「北のウォール街」と称されました。中心の小樽運河(全長1,140m、1923年完成)は、海上輸送と倉庫を結ぶために造られたが、1986年から散策路として整備、石造倉庫群と63基のガス灯がノスタルジックな夜景を生み出します。札幌から快速で約30分の至近距離で、ガラス工芸(北一硝子)、オルゴール堂、寿司・海鮮グルメ、にしん御殿、天狗山ロープウェイの夜景まで、半日〜1日で巡れる港町撮影地です。",
+      en: "Otaru, in the Shiribeshi General Subprefectural Bureau of Hokkaido, is a port city of about 110,000 residents. It flourished as Hokkaido's logistics hub during the Meiji and Taisho eras, lined with banks and trading houses to the point of being called «the Wall Street of the North.» The 1,140 m Otaru Canal (completed 1923) was built to link sea transport and warehousing, but since 1986 has been redeveloped as a promenade where stone warehouses and 63 gas lamps create a nostalgic night view. About 30 minutes by rapid train from Sapporo, it offers glasswork (Kitaichi Glass), the Music Box Museum, sushi and seafood, the Nishin Goten herring mansion, and the night view from the Mt. Tengu ropeway — all within a half- to full-day photographic itinerary.",
+      zh: "小樽(おたる)是北海道后志综合振兴局管内之市，人口约11万人的港湾都市。明治·大正期作为北海道物流据点繁荣，银行·商社林立被称为「北方华尔街」。中心小樽运河(全长1140米，1923年完工)原为连结海上运输与仓库而建，1986年起整备为散步路，石造仓库群与63座煤气灯织就怀旧夜景。距札幌乘快速约30分钟近距，含玻璃工艺(北一硝子)、音乐盒堂、寿司·海鲜美食、鲱鱼御殿、天狗山缆车夜景，半日至1日可游的港城撮影地。",
+      "zh-tw": "小樽(おたる)是北海道後志綜合振興局管內之市，人口約11萬人的港灣都市。明治·大正期作為北海道物流據點繁榮，銀行·商社林立被稱為「北方華爾街」。中心小樽運河(全長1140米，1923年完工)原為連結海上運輸與倉庫而建，1986年起整備為散步路，石造倉庫群與63座煤氣燈織就懷舊夜景。距札幌搭快速約30分鐘近距，含玻璃工藝(北一硝子)、音樂盒堂、壽司·海鮮美食、鯡魚御殿、天狗山纜車夜景，半日至1日可遊的港城撮影地。",
+      ko: "오타루(おたる)는 홋카이도 시리베시 종합진흥국 관내의 시로, 인구 약 11만 명의 항만 도시. 메이지·다이쇼기에 홋카이도의 물류 거점으로 번영, 은행·상사가 늘어선 「북녘의 월스트리트」로 불렸습니다. 중심의 오타루 운하(전장 1,140m, 1923년 완공)는 해상 운송과 창고를 연결하기 위해 만들어졌으나, 1986년부터 산책로로 정비되어 석조 창고군과 63기의 가스등이 노스탤직한 야경을 만들어냅니다. 삿포로에서 쾌속으로 약 30분의 근거리로, 유리 공예(기타이치 글라스), 오르골당, 스시·해산물 미식, 니신 고텐, 덴구산 로프웨이의 야경까지, 반나절~1일에 둘러볼 수 있는 항구 도시 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "小樽運河 — 全長1,140m、1923年完成、63基のガス灯と石造倉庫群、青の時間帯〜夜景の聖地",
@@ -234,6 +333,27 @@ export const LOCATION_CONTENT = {
         "Mt. Tengu Ropeway — 532 m elevation, with the night view of Otaru and Ishikari Bay rivaling Japan's New Three Great Night Views",
         "Sakaimachi Street — former banks of the «Wall Street of the North,» plus sushi, seafood, and glasswork; magical to walk in falling snow",
         "Shukutsu Peninsula — the Nishin Goten herring mansion, the Blue Cave tour, lighthouses, and dramatic coastlines",
+      ],
+      zh: [
+        "小樽运河 — 全长1140米，1923年完工，63座煤气灯与石造仓库群，蓝调时刻至夜景的圣地",
+        "童话十字路口 — 蒸汽时钟、北一硝子、音乐盒堂林立的观光中心，雪降冬日如别世界",
+        "天狗山缆车 — 海拔532米，小樽与石狩湾夜景，新日本三大夜景候选级",
+        "堺町通商店街 — 北方华尔街的旧银行群，寿司·海鲜美食·玻璃工艺，雪中漫步乐趣",
+        "祝津(しゅくつ)半岛 — 鲱鱼御殿、青之洞窟tour、灯塔、海岸线绝景",
+      ],
+      "zh-tw": [
+        "小樽運河 — 全長1140米，1923年完工，63座煤氣燈與石造倉庫群，藍調時刻至夜景的聖地",
+        "童話十字路口 — 蒸汽時鐘、北一硝子、音樂盒堂林立的觀光中心，雪降冬日如別世界",
+        "天狗山纜車 — 海拔532米，小樽與石狩灣夜景，新日本三大夜景候選級",
+        "堺町通商店街 — 北方華爾街的舊銀行群，壽司·海鮮美食·玻璃工藝，雪中漫步樂趣",
+        "祝津(しゅくつ)半島 — 鯡魚御殿、青之洞窟tour、燈塔、海岸線絕景",
+      ],
+      ko: [
+        "오타루 운하 — 전장 1,140m, 1923년 완공, 63기의 가스등과 석조 창고군, 블루 아워~야경의 성지",
+        "메르헨 교차로 — 증기시계, 기타이치 글라스, 오르골당이 늘어선 관광 중심지, 눈 내리는 겨울은 별세계",
+        "덴구산 로프웨이 — 해발 532m, 오타루와 이시카리만의 야경, 신 일본 3대 야경 후보급",
+        "사카이마치 거리 상점가 — 북녘의 월스트리트의 옛 은행군, 스시·해산물 미식·유리 공예, 눈길 산책이 즐거움",
+        "슈쿠쓰(しゅくつ) 반도 — 니신 고텐, 푸른 동굴 투어, 등대, 해안선의 절경",
       ],
     },
     quickAnswers: {
@@ -252,6 +372,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I get there?", a: "From Sapporo Station, JR Hakodate Line Rapid Airport takes 32 min, ¥640. From New Chitose Airport, the same Rapid Airport takes ~75 min to Otaru, ¥1,910. From Otaru Station to the canal is a 10-min walk. Taxis or buses reach Mt. Tengu ropeway and Shukutsu within 30 min. Rental cars require care for winter snow and ice." },
         { q: "When is the «Yuki Akari no Michi» festival?", a: "10 days each mid-February. About 300,000 candles and snow candles light the canal and old Temiya rail path — a magical event 17:00–21:00 daily. It often overlaps with the Sapporo Snow Festival, making a Sapporo+Otaru multi-day photography itinerary practical." },
         { q: "Where are the seafood and gourmet photo spots?", a: "Sankaku Market (in front of the station, sea urchin and crab bowls), Sakaimachi street (20+ sushi restaurants), and North 1 Hall in Kitaichi Glass House #3 (a café lit by 167 oil lamps — atmospheric interiors). The 120-year-old Nishin Goten in Shukutsu shows Taisho-era life. In winter, indoor steam against outdoor snow makes great frames." },
+      ],
+      zh: [
+        { q: "小樽是什么?", a: "北海道港湾都市，明治·大正期被誉「北方华尔街」的物流据点。小樽运河与63座煤气灯、石造仓库群织就怀旧夜景、玻璃工艺、北方海鲜美食，距札幌30分钟的人气撮影地。" },
+        { q: "运河撮影最佳点?", a: "浅草桥与中央桥中间地点。仓库·运河·煤气灯一帧的构图可。黄昏至夜蓝调时刻(日落后30分)为理想，雪降冬夜景为世界稀有被摄体。" },
+        { q: "最佳季节?", a: "1至2月雪化运河为世界闻名构图，6月绣球、10月红叶，玻璃工艺街景全年。冬蜡烛夜(2月)运河浮起小灯火的梦幻活动。" },
+        { q: "如何前往?", a: "札幌站乘JR函馆本线快速Airport 32分·640日元。新千岁机场乘快速Airport至小樽站约75分·1910日元。小樽站至运河步行10分。出租车或巴士至天狗山缆车·祝津方向30分以内，租车需注意冬季积雪·结冰。" },
+        { q: "雪明之路何时?", a: "每年2月中旬10日限定。运河沿岸与旧手宫线迹地约30万个蜡烛·雪烛点亮的梦幻活动。17:00至21:00点灯。常与雪祭期重叠，札幌+小樽连泊撮影旅程易组。" },
+        { q: "海鲜·美食撮影点?", a: "三角市场(站前，海胆·蟹丼)、堺町通(寿司屋通20家以上)、北一硝子三号馆的北一Hall(167盏石油灯下咖啡撮影)。建造逾120年的鲱鱼御殿(祝津)可窥大正时代生活。冬店内蒸汽与外雪对比成画。" },
+      ],
+      "zh-tw": [
+        { q: "小樽是什麼?", a: "北海道港灣都市，明治·大正期被譽「北方華爾街」的物流據點。小樽運河與63座煤氣燈、石造倉庫群織就懷舊夜景、玻璃工藝、北方海鮮美食，距札幌30分鐘的人氣撮影地。" },
+        { q: "運河撮影最佳點?", a: "淺草橋與中央橋中間地點。倉庫·運河·煤氣燈一幀的構圖可。黃昏至夜藍調時刻(日落後30分)為理想，雪降冬夜景為世界稀有被攝體。" },
+        { q: "最佳季節?", a: "1至2月雪化運河為世界聞名構圖，6月繡球、10月紅葉，玻璃工藝街景全年。冬蠟燭夜(2月)運河浮起小燈火的夢幻活動。" },
+        { q: "如何前往?", a: "札幌站搭JR函館本線快速Airport 32分·640日圓。新千歲機場搭快速Airport至小樽站約75分·1910日圓。小樽站至運河步行10分。出租車或巴士至天狗山纜車·祝津方向30分以內，租車需注意冬季積雪·結冰。" },
+        { q: "雪明之路何時?", a: "每年2月中旬10日限定。運河沿岸與舊手宮線跡地約30萬個蠟燭·雪燭點亮的夢幻活動。17:00至21:00點燈。常與雪祭期重疊，札幌+小樽連泊撮影旅程易組。" },
+        { q: "海鮮·美食撮影點?", a: "三角市場(站前，海膽·蟹丼)、堺町通(壽司屋通20家以上)、北一硝子三號館的北一Hall(167盞石油燈下咖啡撮影)。建造逾120年的鯡魚御殿(祝津)可窺大正時代生活。冬店內蒸氣與外雪對比成畫。" },
+      ],
+      ko: [
+        { q: "오타루란?", a: "홋카이도의 항만 도시로, 메이지·다이쇼기에 「북녘의 월스트리트」로 불린 물류 거점. 오타루 운하와 63기의 가스등, 석조 창고군이 짜내는 노스탤직한 야경, 유리 공예, 북녘의 해산물 미식으로 삿포로에서 30분의 인기 촬영지입니다." },
+        { q: "운하의 베스트 촬영 스팟은?", a: "아사쿠사바시와 주오바시의 중간 지점. 창고·운하·가스등이 한 장에 담기는 구도 가능. 황혼~밤의 푸른 시간대(일몰 후 30분)가 이상적, 눈이 내리는 겨울 야경은 세계적으로도 보기 드문 피사체." },
+        { q: "베스트 시즌은?", a: "1~2월의 눈 화장한 운하는 세계적으로 유명한 구도, 6월의 수국, 10월의 단풍, 유리 공예 거리는 연중. 겨울의 캔들 나이트(2월)는 운하에 작은 불빛이 떠오르는 환상적인 이벤트." },
+        { q: "가는 방법은?", a: "삿포로역에서 JR 하코다테 본선 쾌속 에어포트로 32분·640엔. 신치토세 공항에서는 쾌속 에어포트로 오타루역까지 약 75분·1,910엔. 오타루역에서 운하는 도보 10분. 택시나 버스로 덴구산 로프웨이·슈쿠쓰 방면으로 30분 이내, 렌터카는 겨울의 적설·결빙에 주의." },
+        { q: "유키아카리노미치는 언제?", a: "매년 2월 중순의 10일간 한정. 운하 변과 구 데미야선 터에서 약 30만 개의 양초·스노우 캔들이 켜지는 환상적인 이벤트. 17:00~21:00 점등. 눈축제 기간과 겹치는 일도 많아, 삿포로+오타루의 연박 촬영 여정을 짜기 쉬움." },
+        { q: "해산물·미식 촬영 스팟은?", a: "산카쿠 시장(역 앞, 우니·게동), 사카이마치 거리(스시야 거리 20곳 이상), 기타이치 글라스 3호관의 기타이치 홀(167개의 석유 램프 빛으로 카페 촬영). 120년 넘은 니신 고텐(슈쿠쓰)에서는 다이쇼 시대의 생활을 엿볼 수 있음. 겨울은 가게 안의 김과 바깥의 눈의 대비가 그림이 됨." },
       ],
     },
     faqs: [
