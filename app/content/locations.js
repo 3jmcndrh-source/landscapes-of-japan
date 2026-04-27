@@ -3706,10 +3706,13 @@ export const LOCATION_CONTENT = {
       "鴨川海洋世界位於千葉縣鴨川市。日本少數展示虎鯨的水族館，震撼表演為其名物。海豚、白鯨表演也豐富。以太平洋為背景的表演場十分上鏡。",
       "가모가와 시월드는 지바현 가모가와시의 수족관. 일본에서 드물게 범고래를 사육·전시하는 곳으로 박력 있는 공연이 명물. 돌고래, 벨루가 공연도 풍부. 태평양을 배경으로 한 공연장은 촬영 명소."
     ),
-    definition: lh(
-      "鴨川シーワールド(かもがわシーワールド)は千葉県鴨川市東町1464-18にある総合海洋テーマパークで、1970年(昭和45年)開業の老舗水族館。約11,000匹800種類の海洋生物を飼育・展示し、特に日本では現在2施設のみ(名古屋港水族館と当館)というシャチ(オルカ)の飼育・パフォーマンスで知られます。シャチショーは2,000席のメインプール「オーシャンスタジアム」で1日3〜4回開催され、太平洋を背景にした圧巻のスケール。ベルーガ(シロイルカ)、バンドウイルカ、アシカ、ペンギンなどのショーも充実、東京から特急で約2時間という近さで家族連れや写真愛好家が訪れる海洋撮影の名所です。",
-      "Kamogawa Sea World, located at 1464-18 Higashi-machi, Kamogawa City, Chiba Prefecture, is a comprehensive marine theme park and one of Japan's longest-running aquariums, opened in 1970 (Showa 45). Housing about 11,000 marine creatures across 800 species, it is one of only two Japanese facilities currently keeping orcas (the other being the Port of Nagoya Public Aquarium) and is renowned for its orca performances. Three to four times a day, the orca show is held in the «Ocean Stadium» main pool with 2,000 seats, set against the Pacific Ocean for spectacular scale. With strong beluga, bottlenose dolphin, sea lion, and penguin shows, and just 2 hours from Tokyo by limited express, it is a favorite of families and photographers."
-    ),
+    definition: {
+      ja: "鴨川シーワールド(かもがわシーワールド)は千葉県鴨川市東町1464-18にある総合海洋テーマパークで、1970年(昭和45年)開業の老舗水族館。約11,000匹800種類の海洋生物を飼育・展示し、特に日本では現在2施設のみ(名古屋港水族館と当館)というシャチ(オルカ)の飼育・パフォーマンスで知られます。シャチショーは2,000席のメインプール「オーシャンスタジアム」で1日3〜4回開催され、太平洋を背景にした圧巻のスケール。ベルーガ(シロイルカ)、バンドウイルカ、アシカ、ペンギンなどのショーも充実、東京から特急で約2時間という近さで家族連れや写真愛好家が訪れる海洋撮影の名所です。",
+      en: "Kamogawa Sea World, located at 1464-18 Higashi-machi, Kamogawa City, Chiba Prefecture, is a comprehensive marine theme park and one of Japan's longest-running aquariums, opened in 1970 (Showa 45). Housing about 11,000 marine creatures across 800 species, it is one of only two Japanese facilities currently keeping orcas (the other being the Port of Nagoya Public Aquarium) and is renowned for its orca performances. Three to four times a day, the orca show is held in the «Ocean Stadium» main pool with 2,000 seats, set against the Pacific Ocean for spectacular scale. With strong beluga, bottlenose dolphin, sea lion, and penguin shows, and just 2 hours from Tokyo by limited express, it is a favorite of families and photographers.",
+      zh: "鸭川海洋世界(かもがわシーワールド)位于千叶县鸭川市东町1464-18，1970年(昭和45年)开业的老牌水族馆综合海洋主题公园。饲养·展示约11000只800种类海洋生物，尤以日本现仅2处(名古屋港水族馆与本馆)的虎鲸(逆戟鲸)饲养·表演闻名。虎鲸秀在2000席主泳池「Ocean Stadium」1日3至4回开催，太平洋为背景的震撼规模。白鲸·宽吻海豚·海狮·企鹅等表演亦丰富，东京乘特急约2小时近便，家庭与摄影爱好者来访的海洋撮影名所。",
+      "zh-tw": "鴨川海洋世界(かもがわシーワールド)位於千葉縣鴨川市東町1464-18，1970年(昭和45年)開業的老牌水族館綜合海洋主題公園。飼養·展示約11000隻800種類海洋生物，尤以日本現僅2處(名古屋港水族館與本館)的虎鯨(逆戟鯨)飼養·表演聞名。虎鯨秀在2000席主泳池「Ocean Stadium」1日3至4回開催，太平洋為背景的震撼規模。白鯨·寬吻海豚·海獅·企鵝等表演亦豐富，東京搭特急約2小時近便，家庭與攝影愛好者來訪的海洋撮影名所。",
+      ko: "가모가와 시월드(かもがわシーワールド)는 지바현 가모가와시 히가시마치 1464-18에 있는 종합 해양 테마파크로, 1970년(쇼와 45년) 개업한 노포 수족관. 약 11,000마리 800종류의 해양 생물을 사육·전시하며, 특히 일본에서 현재 2개 시설만(나고야 항구 수족관과 본 시설) 있는 범고래(오르카)의 사육·퍼포먼스로 알려져 있습니다. 범고래 쇼는 2,000석 메인 풀 「오션 스타디움」에서 하루 3~4회 개최되며, 태평양을 배경으로 한 압권의 스케일. 벨루가(흰돌고래)·큰돌고래·바다사자·펭귄 등의 쇼도 풍부, 도쿄에서 특급으로 약 2시간이라는 근접성으로 가족 동반과 사진 애호가가 찾는 해양 촬영의 명소입니다.",
+    },
     highlights: {
       ja: [
         "シャチショー(オーシャンスタジアム) — 2,000席、太平洋を背景に1日3〜4回、迫力満点の演技",
@@ -3724,6 +3727,27 @@ export const LOCATION_CONTENT = {
         "Bottlenose Dolphin Show — the moment of a great leap, with the Pacific behind; freeze splashes at 1/1000s+ shutter",
         "Rocky World (Sea Lions and Penguins) — recreates the polar ecosystem, with natural light making the perfect photographic space",
         "Pacific View — the city's coastal setting means the Ocean Stadium's backdrop is the real Pacific",
+      ],
+      zh: [
+        "虎鲸秀(Ocean Stadium) — 2000席，太平洋为背景1日3至4回，迫力满分演技",
+        "白鲸秀 — 仅次虎鲸的人气，白身与蓝水对比梦幻",
+        "宽吻海豚秀 — 大跳跃瞬间，太平洋与海豚，SS1/1000以上凝固水花",
+        "Rocky World(海狮·企鹅) — 北极生态系再现，自然光入的撮影最佳空间",
+        "太平洋视野 — 鸭川市海岸线立地，表演场背景为真实太平洋",
+      ],
+      "zh-tw": [
+        "虎鯨秀(Ocean Stadium) — 2000席，太平洋為背景1日3至4回，迫力滿分演技",
+        "白鯨秀 — 僅次虎鯨的人氣，白身與藍水對比夢幻",
+        "寬吻海豚秀 — 大跳躍瞬間，太平洋與海豚，SS1/1000以上凝固水花",
+        "Rocky World(海獅·企鵝) — 北極生態系再現，自然光入的撮影最佳空間",
+        "太平洋視野 — 鴨川市海岸線立地，表演場背景為真實太平洋",
+      ],
+      ko: [
+        "범고래 쇼(오션 스타디움) — 2,000석, 태평양을 배경으로 1일 3~4회, 박력 만점의 연기",
+        "벨루가(흰돌고래) 쇼 — 범고래에 이은 인기, 흰 몸과 푸른 물의 대비가 환상적",
+        "큰돌고래 쇼 — 큰 점프의 순간, 태평양과 돌고래, SS 1/1000 이상으로 물보라 동결",
+        "록키 월드(바다사자·펭귄) — 북극권의 생태계를 재현, 자연광이 드는 촬영에 최적의 공간",
+        "태평양 뷰 — 가모가와시의 해안선에 입지, 쇼 스타디움의 배경은 진짜 태평양",
       ],
     },
     quickAnswers: {
@@ -3742,6 +3766,30 @@ export const LOCATION_CONTENT = {
         { q: "Admission and time required?", a: "Adults (high-school and up) ¥3,300, children (elementary/middle) ¥2,000, kids (4+) ¥1,300. Open year-round, 9:00–17:00 (seasonal variation). Allow half a day to a full day to see all shows and exhibits. Annual passes (from ¥7,800) are great for repeat visits." },
         { q: "Recommended camera gear?", a: "①Telephoto zoom 70–300mm or 100–400mm (to crop orca/dolphin jumps) ②Weatherproof camera or rain cover (front rows get wet) ③High-ISO-tolerant body (for dim indoor tanks). Tripods can block paths — a monopod is preferred. Flash is forbidden to protect the animals." },
         { q: "Behind-the-scenes orca experience?", a: "Beyond the twice-daily free Orca Performance (reservation required), the paid «Meet the Orcas» tour (¥3,000) goes backstage with hands-on encounters and trainer commentary. Photography OK; very popular with families — book about a week ahead." },
+      ],
+      zh: [
+        { q: "鸭川海洋世界是什么?", a: "千叶县鸭川市1970年开业综合海洋主题公园。拥有约11000只800种海洋生物，日本仅2处的虎鲸饲养·表演著名。太平洋为背景的表演场为家庭与摄影爱好者超人气撮影地。" },
+        { q: "虎鲸撮影秘诀?", a: "SS1/1000以上凝固水花，连拍模式必备。最前列会湿故座位选择需注意(防水必备)。跳跃瞬间预测撮影，玻璃隔不如开放水面映入。" },
+        { q: "前往与最佳时机?", a: "东京特急若潮号约2小时，JR安房鸭川站免费接驳巴士10分。表演1日3至4回，上午照明柔和适撮影。避拥挤平日朝第一表演为目标。" },
+        { q: "门票与所需时间?", a: "成人(高中生以上)3300日元，儿童(小中学生)2000日元，幼儿(4岁以上)1300日元。全年无休，9:00至17:00(季节变动)。表演与展示全看半日至1日。年票(7800日元起)亦有，回头客超划算。" },
+        { q: "推荐撮影器材?", a: "①长焦变焦70-300mm或100-400mm(切虎鲸·海豚跳跃)②防水相机或防雨罩(前列会湿)③高ISO耐性机身(室内水槽暗对应)。三脚妨通行故建议单脚架，闪光为保护动物禁。" },
+        { q: "虎鲸表演幕后体验?", a: "1日2回的「虎鲸表演」(免费需预约)外，付费「与虎鲸相会!」之旅(3000日元)可后台触摸与训练员讲解。撮影OK，家庭超人气预约1周前为目安。" },
+      ],
+      "zh-tw": [
+        { q: "鴨川海洋世界是什麼?", a: "千葉縣鴨川市1970年開業綜合海洋主題公園。擁有約11000隻800種海洋生物，日本僅2處的虎鯨飼養·表演著名。太平洋為背景的表演場為家庭與攝影愛好者超人氣撮影地。" },
+        { q: "虎鯨撮影秘訣?", a: "SS1/1000以上凝固水花，連拍模式必備。最前列會濕故座位選擇需注意(防水必備)。跳躍瞬間預測撮影，玻璃隔不如開放水面映入。" },
+        { q: "前往與最佳時機?", a: "東京特急若潮號約2小時，JR安房鴨川站免費接駁巴士10分。表演1日3至4回，上午照明柔和適撮影。避擁擠平日朝第一表演為目標。" },
+        { q: "門票與所需時間?", a: "成人(高中生以上)3300日圓，兒童(小中學生)2000日圓，幼兒(4歲以上)1300日圓。全年無休，9:00至17:00(季節變動)。表演與展示全看半日至1日。年票(7800日圓起)亦有，回頭客超划算。" },
+        { q: "推薦撮影器材?", a: "①長焦變焦70-300mm或100-400mm(切虎鯨·海豚跳躍)②防水相機或防雨罩(前列會濕)③高ISO耐性機身(室內水槽暗對應)。三腳妨通行故建議單腳架，閃光為保護動物禁。" },
+        { q: "虎鯨表演幕後體驗?", a: "1日2回的「虎鯨表演」(免費需預約)外，付費「與虎鯨相會!」之旅(3000日圓)可後台觸摸與訓練員講解。撮影OK，家庭超人氣預約1週前為目安。" },
+      ],
+      ko: [
+        { q: "가모가와 시월드란?", a: "지바현 가모가와시의 1970년 개업한 종합 해양 테마파크. 약 11,000마리 800종류의 해양 생물을 거느리며, 일본에서 2개 시설뿐인 범고래 사육·퍼포먼스로 유명. 태평양을 배경으로 한 쇼 스타디움은 가족 동반·사진 애호가에게 큰 인기의 촬영지입니다." },
+        { q: "범고래 촬영 팁은?", a: "SS 1/1000 이상으로 물보라 동결, 연사 모드 필수. 맨 앞줄은 젖으니 좌석 선택에 주의(방수 대책 필수). 점프의 순간은 예측 촬영, 유리 너머보다 오픈 수면 쪽이 잘 살아남." },
+        { q: "가는 방법과 베스트 타이밍은?", a: "도쿄에서 특급 와카시오호로 약 2시간, JR 아와카모가와역에서 무료 셔틀버스로 10분. 쇼는 하루 3~4회, 오전이 조명이 부드러워 촬영에 적합. 혼잡 회피는 평일 아침의 첫 쇼가 노릴 만." },
+        { q: "입장료와 소요 시간은?", a: "성인(고등학생 이상) 3,300엔, 어린이(초·중학생) 2,000엔, 유아(4세 이상) 1,300엔. 연중무휴, 9:00~17:00(계절 변동). 쇼와 전시 모두 보면 반나절~1일. 연간 패스포트(7,800엔~)도 있어, 재방문자에게 단연 유리." },
+        { q: "추천 촬영 기재는?", a: "①망원 줌 70-300mm 또는 100-400mm(범고래·돌고래의 점프를 잘라냄) ②방수 카메라 또는 레인 커버(앞줄은 젖음) ③고ISO 내성 바디(실내 수조의 어둠 대응). 삼각대는 통행 방해가 되므로 일각대 추천, 플래시는 동물 보호로 금지입니다." },
+        { q: "범고래 퍼포먼스의 비하인드 체험은?", a: "하루 2회 개최되는 「범고래 퍼포먼스」(무료, 사전 예약 필요) 외에, 유료의 「범고래를 만나러 가자!」 투어(3,000엔)에서는 백스테이지에서 만지기와 트레이너의 해설을 들을 수 있음. 촬영도 OK, 가족 동반에 큰 인기로 예약은 1주일 전이 기준입니다." },
       ],
     },
     faqs: [
@@ -4460,10 +4508,13 @@ export const LOCATION_CONTENT = {
       "品川源自江戶時代東海道53次第一宿場町，現為東京交通樞紐。高層樓群與新幹線、山手線站台為拍攝題材。早晚通勤、夜間站前燈光、運河與倉庫對比為都市攝影佳作。",
       "시나가와는 에도시대 도카이도 53차의 제1 역참 마을에서 유래한 도쿄의 교통 허브. 고층빌딩군과 신칸센·야마노테선이 달리는 플랫폼이 촬영 소재. 아침저녁 출퇴근 러시, 밤의 역 빌딩 조명, 운하와 창고 거리의 대비가 도시 사진으로 뛰어남."
     ),
-    definition: lh(
-      "品川(しながわ)は東京都港区南部から品川区北部にかけてのエリアで、JR東日本の主要ターミナル駅「品川駅」を中心とする東京の交通ハブ。1872年(明治5年)日本最初の鉄道として新橋〜横浜間に開業した時の中継駅で、150年以上の歴史を持つ重要拠点。現在は東海道新幹線・JR山手線・京浜東北線・東海道線・横須賀線・京急本線が乗り入れ、1日約36万人が利用、東京駅・新宿駅に次ぐ重要ターミナル。江戸時代の東海道53次の第1宿場町「品川宿」から発展した歴史と、品川インターシティ(157m)、KDDI大手町ビル、グランドプリンスホテル新高輪などの超高層ビル群、運河と倉庫街、天王洲アイルのウォーターフロントなど、近代都市・歴史・水辺が共存する都市撮影地です。",
-      "Shinagawa covers the southern part of Minato Ward and northern Shinagawa Ward in central Tokyo, anchored by the major JR East terminal of Shinagawa Station. As a midway station of Japan's first railway, opened between Shinbashi and Yokohama in 1872 (Meiji 5), it has 150+ years of history and serves about 360,000 passengers a day across the Tokaido Shinkansen, JR Yamanote Line, Keihin-Tohoku Line, Tokaido Line, Yokosuka Line, and the Keikyu Main Line — Tokyo's third-busiest hub after Tokyo and Shinjuku Stations. Originating as «Shinagawa-juku,» the first post station on the Edo-period Tokaido road, the area now combines that history with the skyscrapers of Shinagawa Intercity (157 m), the KDDI Otemachi Building, and Grand Prince Hotel New Takanawa, alongside canals, warehouses, and the Tennozu Isle waterfront — a multi-layered urban photographic destination."
-    ),
+    definition: {
+      ja: "品川(しながわ)は東京都港区南部から品川区北部にかけてのエリアで、JR東日本の主要ターミナル駅「品川駅」を中心とする東京の交通ハブ。1872年(明治5年)日本最初の鉄道として新橋〜横浜間に開業した時の中継駅で、150年以上の歴史を持つ重要拠点。現在は東海道新幹線・JR山手線・京浜東北線・東海道線・横須賀線・京急本線が乗り入れ、1日約36万人が利用、東京駅・新宿駅に次ぐ重要ターミナル。江戸時代の東海道53次の第1宿場町「品川宿」から発展した歴史と、品川インターシティ(157m)、KDDI大手町ビル、グランドプリンスホテル新高輪などの超高層ビル群、運河と倉庫街、天王洲アイルのウォーターフロントなど、近代都市・歴史・水辺が共存する都市撮影地です。",
+      en: "Shinagawa covers the southern part of Minato Ward and northern Shinagawa Ward in central Tokyo, anchored by the major JR East terminal of Shinagawa Station. As a midway station of Japan's first railway, opened between Shinbashi and Yokohama in 1872 (Meiji 5), it has 150+ years of history and serves about 360,000 passengers a day across the Tokaido Shinkansen, JR Yamanote Line, Keihin-Tohoku Line, Tokaido Line, Yokosuka Line, and the Keikyu Main Line — Tokyo's third-busiest hub after Tokyo and Shinjuku Stations. Originating as «Shinagawa-juku,» the first post station on the Edo-period Tokaido road, the area now combines that history with the skyscrapers of Shinagawa Intercity (157 m), the KDDI Otemachi Building, and Grand Prince Hotel New Takanawa, alongside canals, warehouses, and the Tennozu Isle waterfront — a multi-layered urban photographic destination.",
+      zh: "品川(しながわ)是东京都港区南部至品川区北部一带，以JR东日本主要总站「品川站」为中心的东京交通枢纽。1872年(明治5年)日本最早铁路新桥至横滨间开业时的中继站，150年以上历史的重要据点。现东海道新干线·JR山手线·京浜东北线·东海道线·横须贺线·京急本线乘入，日约36万人利用，东京站·新宿站次的重要总站。江户时代东海道53次第1宿场町「品川宿」发展的历史，与品川Intercity(157米)、KDDI大手町大厦、Grand Prince Hotel新高轮等超高层楼群、运河与仓库街、天王洲岛滨水区等，近代都市·历史·水边共存的都市撮影地。",
+      "zh-tw": "品川(しながわ)是東京都港區南部至品川區北部一帶，以JR東日本主要總站「品川站」為中心的東京交通樞紐。1872年(明治5年)日本最早鐵路新橋至橫濱間開業時的中繼站，150年以上歷史的重要據點。現東海道新幹線·JR山手線·京濱東北線·東海道線·橫須賀線·京急本線乘入，日約36萬人利用，東京站·新宿站次的重要總站。江戶時代東海道53次第1宿場町「品川宿」發展的歷史，與品川Intercity(157米)、KDDI大手町大廈、Grand Prince Hotel新高輪等超高層樓群、運河與倉庫街、天王洲島濱水區等，近代都市·歷史·水邊共存的都市撮影地。",
+      ko: "시나가와(しながわ)는 도쿄도 미나토구 남부에서 시나가와구 북부에 걸친 지역으로, JR 동일본의 주요 터미널역 「시나가와역」을 중심으로 한 도쿄의 교통 허브. 1872년(메이지 5년) 일본 최초의 철도로 신바시~요코하마 간 개업 당시의 중계역으로, 150년 이상의 역사를 지닌 중요 거점. 현재는 도카이도 신칸센·JR 야마노테선·게이힌 도호쿠선·도카이도선·요코스카선·게이큐 본선이 들어와, 1일 약 36만 명이 이용, 도쿄역·신주쿠역에 이은 중요 터미널. 에도 시대 도카이도 53차의 제1 역참 마을 「시나가와슈쿠」에서 발전한 역사와, 시나가와 인터시티(157m), KDDI 오테마치 빌딩, 그랜드 프린스 호텔 신타카나와 등의 초고층 빌딩군, 운하와 창고 거리, 덴노즈 아일의 워터프론트 등, 근대 도시·역사·물가가 공존하는 도시 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "品川駅高輪口・港南口 — 東海道新幹線の発着、新幹線と高層ビルの組合せ、夕方の通勤ラッシュ",
@@ -4478,6 +4529,27 @@ export const LOCATION_CONTENT = {
         "Tennozu Isle — a waterfront where Tokyo Bay meets office towers; the canal nightscape is otherworldly",
         "Shinagawa Intercity — glass corridors and skyscraper clusters; geometric compositions of contemporary architecture",
         "Tokyo Bay-side and Oi Wharf — the logistics landscape of a container terminal, with sunset against gantry cranes",
+      ],
+      zh: [
+        "品川站高轮口·港南口 — 东海道新干线发抵，新干线与高楼组合，傍晚通勤拥挤",
+        "新干线俯瞰 — 高轮口天桥捕捉东海道新干线高速通过，快门速度胜负",
+        "天王洲岛 — 东京湾与办公楼融合的滨水区，运河夜景梦幻",
+        "品川Intercity — 玻璃回廊与高楼群，现代建筑几何构图",
+        "东京湾岸·大井埠头 — 集装箱码头物流景观，夕阳与港湾起重机对比",
+      ],
+      "zh-tw": [
+        "品川站高輪口·港南口 — 東海道新幹線發抵，新幹線與高樓組合，傍晚通勤擁擠",
+        "新幹線俯瞰 — 高輪口天橋捕捉東海道新幹線高速通過，快門速度勝負",
+        "天王洲島 — 東京灣與辦公樓融合的濱水區，運河夜景夢幻",
+        "品川Intercity — 玻璃迴廊與高樓群，現代建築幾何構圖",
+        "東京灣岸·大井埠頭 — 集裝箱碼頭物流景觀，夕陽與港灣起重機對比",
+      ],
+      ko: [
+        "시나가와역 다카나와 출구·고난 출구 — 도카이도 신칸센의 발착, 신칸센과 고층빌딩의 조합, 저녁의 출퇴근 러시",
+        "신칸센 부감 — 다카나와 출구 보도교에서 도카이도 신칸센의 고속 통과를 포착, 셔터 스피드 승부",
+        "덴노즈 아일 — 도쿄만과 오피스 빌딩이 융합되는 워터프론트, 운하의 야경이 환상적",
+        "시나가와 인터시티 — 유리 회랑과 고층빌딩군, 현대 건축의 기하학적 구도",
+        "도쿄 만안·오이 부두 — 컨테이너 부두의 물류 경관, 일몰과 항만 크레인의 대비",
       ],
     },
     quickAnswers: {
@@ -4496,6 +4568,30 @@ export const LOCATION_CONTENT = {
         { q: "Shinkansen photography techniques?", a: "From the Takanawa pedestrian bridge, use a 70–200mm to crop high-speed bullet trains. Shutter 1/1000s+ to freeze, 1/30–1/60s for panning (motion). Daytime sees a Shinkansen pass every ~5 min — Tokaido Nozomi, Hikari, and Kodama in succession. Early morning around first runs and evening rush capture the most variety." },
         { q: "Access?", a: "From Tokyo Station, JR Yamanote Line takes ~7 min, ¥170, or Tokaido Line ~5 min. From Haneda Airport, Keikyu Line ~12 min, ¥380. Shinkansen «Nozomi» from Osaka takes ~2 hr 20 min — Shinagawa is a major Tokaido Shinkansen stop. Taxis are crowded; subway + walking is the easy choice." },
         { q: "Tennozu Isle nightscape?", a: "Two stops from Shinagawa on the Tokyo Monorail (3 min, ¥170); Yurikamome also reaches it. The canalside boardwalk is the main photo spot — restaurant lights reflecting on water are gorgeous. Blue hour 30 min after sunset is best; tripods OK but be considerate of pedestrians. Compositions with Rainbow Bridge as backdrop are also possible." },
+      ],
+      zh: [
+        { q: "品川是什么?", a: "东京都港区南部至品川区北部一带，东海道新干线·JR山手线等乘入的东京交通枢纽。江户时代东海道53次第1宿场町「品川宿」发展，现含超高层楼群与运河·仓库街·滨水区共存的都市撮影地。" },
+        { q: "品川站周边撮影点?", a: "高轮口天桥的新干线俯瞰、港南口楼群、品川Intercity玻璃回廊、天王洲岛运河夜景。日落前后蓝调时刻天空与街灯平衡最佳。" },
+        { q: "撮影礼仪?", a: "站内·月台禁三脚架·大型器材，JR规定遵守必须。天桥·公道基本可，人物撮影需许可。深夜撮影向警卫打招呼避免不审。" },
+        { q: "新干线撮影技巧?", a: "高轮口天桥用长焦70-200mm切新干线高速行驶。快门1/1000秒以上凝固，1/30至1/60秒甩拍(动感)。日中通过频度5分1班，东海道新干线「希望号」「光号」「回声号」次第通过。早晨始发前后与傍晚拥挤可拍最多彩车型。" },
+        { q: "如何前往?", a: "东京站乘JR山手线约7分·170日元，或东海道线5分。羽田机场乘京急线约12分·380日元。新干线「希望号」从大阪约2小时20分，品川站为东海道新干线主要停车站。出租车拥挤，地铁+步行压倒性便利。" },
+        { q: "天王洲岛夜景?", a: "品川站乘东京单轨2站·3分·170日元，海鸥线亦可。运河沿木栈道「Boardwalk」为主撮影点，餐厅灯光与运河反射映入。日落后30分蓝调时刻最佳，三脚架OK但需顾及行人通行。亦可拍彩虹桥为背景的构图。" },
+      ],
+      "zh-tw": [
+        { q: "品川是什麼?", a: "東京都港區南部至品川區北部一帶，東海道新幹線·JR山手線等乘入的東京交通樞紐。江戶時代東海道53次第1宿場町「品川宿」發展，現含超高層樓群與運河·倉庫街·濱水區共存的都市撮影地。" },
+        { q: "品川站周邊撮影點?", a: "高輪口天橋的新幹線俯瞰、港南口樓群、品川Intercity玻璃迴廊、天王洲島運河夜景。日落前後藍調時刻天空與街燈平衡最佳。" },
+        { q: "撮影禮儀?", a: "站內·月台禁三腳架·大型器材，JR規定遵守必須。天橋·公道基本可，人物撮影需許可。深夜撮影向警衛打招呼避免不審。" },
+        { q: "新幹線撮影技巧?", a: "高輪口天橋用長焦70-200mm切新幹線高速行駛。快門1/1000秒以上凝固，1/30至1/60秒甩拍(動感)。日中通過頻度5分1班，東海道新幹線「希望號」「光號」「迴聲號」次第通過。早晨始發前後與傍晚擁擠可拍最多彩車型。" },
+        { q: "如何前往?", a: "東京站搭JR山手線約7分·170日圓，或東海道線5分。羽田機場搭京急線約12分·380日圓。新幹線「希望號」從大阪約2小時20分，品川站為東海道新幹線主要停車站。出租車擁擠，地鐵+步行壓倒性便利。" },
+        { q: "天王洲島夜景?", a: "品川站搭東京單軌2站·3分·170日圓，海鷗線亦可。運河沿木棧道「Boardwalk」為主撮影點，餐廳燈光與運河反射映入。日落後30分藍調時刻最佳，三腳架OK但需顧及行人通行。亦可拍彩虹橋為背景的構圖。" },
+      ],
+      ko: [
+        { q: "시나가와란?", a: "도쿄도 미나토구 남부에서 시나가와구 북부의 지역으로, 도카이도 신칸센·JR 야마노테선 등이 들어오는 도쿄의 교통 허브. 에도 시대의 도카이도 53차 제1 역참 마을 「시나가와슈쿠」에서 발전, 현재는 초고층 빌딩군과 운하·창고 거리, 워터프론트가 공존하는 도시 촬영지입니다." },
+        { q: "시나가와역 주변 촬영 포인트는?", a: "다카나와 출구 보도교에서 신칸센 부감, 고난 출구의 빌딩군, 시나가와 인터시티의 유리 회랑, 덴노즈 아일의 운하 야경. 일몰 전후의 블루 아워가 하늘과 거리 빛의 균형이 베스트입니다." },
+        { q: "촬영 매너는?", a: "역 구내·플랫폼에서는 삼각대·대형 기재 금지, JR 규정 준수 필수. 보도교·공도는 기본 가능, 인물 촬영은 허가 필요. 심야 촬영은 경비원에게 인사하고, 의심스러운 행동으로 보이지 않도록 주의." },
+        { q: "신칸센 촬영의 테크닉은?", a: "다카나와 출구 보도교에서 망원 70-200mm로 신칸센의 고속 주행을 잘라냄. 셔터 스피드 1/1000초 이상으로 동결, 1/30~1/60초로 패닝(동감). 한낮의 통과 빈도는 5분에 1대 정도, 도카이도 신칸센 「노조미」 「히카리」 「코다마」가 차례로 통과. 이른 아침의 시발 전후와 저녁 러시가 가장 다채로운 차량을 찍을 수 있음." },
+        { q: "가는 방법은?", a: "도쿄역에서 JR 야마노테선으로 약 7분·170엔, 또는 도카이도선으로 5분. 하네다 공항에서 게이큐선으로 약 12분·380엔. 신칸센 「노조미」로 오사카에서 약 2시간 20분, 시나가와역은 도카이도 신칸센의 주요 정차역. 택시는 혼잡, 지하철+도보가 압도적으로 편리합니다." },
+        { q: "덴노즈 아일의 야경은?", a: "시나가와역에서 도쿄 모노레일로 2역·3분·170엔, 유리카모메선으로도 액세스 가능. 운하 변의 우드 데크 「보드워크」가 메인 촬영 스팟, 레스토랑의 불빛과 운하의 반사가 잘 살아남. 일몰 후 30분의 블루 아워가 최고, 삼각대 OK이지만 보행자 통행에 배려를. 레인보우 브리지를 배경으로 하는 구도도 노릴 수 있습니다." },
       ],
     },
     faqs: [
