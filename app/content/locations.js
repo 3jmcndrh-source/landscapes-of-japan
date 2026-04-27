@@ -6199,10 +6199,13 @@ export const LOCATION_CONTENT = {
       "松本市新村位於松本西部田園區。阿爾皮可交通上高地線穿行，稻田、果園、水渠與北阿爾卑斯山脊構成質樸里山風景。春季櫻花路、初夏青田、秋季稻穗與雪嶺的搭配可拍下日本原風景。",
       "마쓰모토시 니이무라는 마쓰모토시 서부의 농촌 지역. 알피코 교통 가미코치선이 지나가고 논·과수원·수로와 북알프스 능선이 어우러지는 소박한 시골 풍경이 남아 있습니다. 봄에는 벚꽃길, 초여름에는 푸른 논, 가을에는 벼 이삭과 설관 알프스 등 일본의 원풍경을 촬영할 수 있습니다."
     ),
-    definition: lh(
-      "松本市新村(まつもとしにいむら)は長野県松本市西部の田園地域で、JR松本駅から西に約4kmの場所に位置し、アルピコ交通上高地線(松本電気鉄道)の小さな新村駅(にいむらえき)を中心とする旧新村地区。1954年(昭和29年)に松本市と合併する以前は東筑摩郡新村村として独立した農村で、現在もリンゴ園・水田・果樹園・石州瓦の蔵が残る素朴な里の風景が松本市街中心部とは対照的な日本の原風景を形成。北アルプス連峰(乗鞍岳・常念岳・穂高連峰)を借景に、上高地線のレトロな2両編成電車が田園を走り抜ける情景は、鉄道写真と田園風景の両方を愛する写真家に支持される松本市西郊の隠れた撮影地です。",
-      "Matsumoto City Niimura is a rural area in western Matsumoto City, Nagano Prefecture, about 4 km west of JR Matsumoto Station, centered on the small Niimura Station of the Alpico Kotsu Kamikochi Line (the former Matsumoto Electric Railway). Until merging with Matsumoto City in 1954, it was the independent farming village of Niimura in Higashi-Chikuma District. Today, apple orchards, paddy fields, fruit groves, and Sekishu-tile-roofed kura storehouses preserve the simple village landscape that contrasts with the city center, embodying classic rural Japan. With the Northern Alps — Mt. Norikura, Mt. Jonen, the Hotaka Range — as borrowed scenery, the retro two-car Kamikochi Line train threading through the paddies is beloved by photographers who appreciate both railway and pastoral imagery — a hidden gem in Matsumoto's western suburbs."
-    ),
+    definition: {
+      ja: "松本市新村(まつもとしにいむら)は長野県松本市西部の田園地域で、JR松本駅から西に約4kmの場所に位置し、アルピコ交通上高地線(松本電気鉄道)の小さな新村駅(にいむらえき)を中心とする旧新村地区。1954年(昭和29年)に松本市と合併する以前は東筑摩郡新村村として独立した農村で、現在もリンゴ園・水田・果樹園・石州瓦の蔵が残る素朴な里の風景が松本市街中心部とは対照的な日本の原風景を形成。北アルプス連峰(乗鞍岳・常念岳・穂高連峰)を借景に、上高地線のレトロな2両編成電車が田園を走り抜ける情景は、鉄道写真と田園風景の両方を愛する写真家に支持される松本市西郊の隠れた撮影地です。",
+      en: "Matsumoto City Niimura is a rural area in western Matsumoto City, Nagano Prefecture, about 4 km west of JR Matsumoto Station, centered on the small Niimura Station of the Alpico Kotsu Kamikochi Line (the former Matsumoto Electric Railway). Until merging with Matsumoto City in 1954, it was the independent farming village of Niimura in Higashi-Chikuma District. Today, apple orchards, paddy fields, fruit groves, and Sekishu-tile-roofed kura storehouses preserve the simple village landscape that contrasts with the city center, embodying classic rural Japan. With the Northern Alps — Mt. Norikura, Mt. Jonen, the Hotaka Range — as borrowed scenery, the retro two-car Kamikochi Line train threading through the paddies is beloved by photographers who appreciate both railway and pastoral imagery — a hidden gem in Matsumoto's western suburbs.",
+      zh: "松本市新村(まつもとしにいむら)位于长野县松本市西部田园地域，JR松本站西约4公里，以阿尔皮可交通上高地线(松本电气铁道)的小新村站(にいむらえき)为中心的旧新村地区。1954年(昭和29年)与松本市合并前为东筑摩郡新村村独立农村，今仍残苹果园·水田·果树园·石州瓦仓的素朴里山风景，与松本市街中心形成对照的日本原风景。北阿尔卑斯连峰(乘鞍岳·常念岳·穗高连峰)借景，上高地线怀旧2辆编电车穿田园之景，深受爱铁道写真与田园风景两者的摄影家支持的松本市西郊隐藏撮影地。",
+      "zh-tw": "松本市新村(まつもとしにいむら)位於長野縣松本市西部田園地域，JR松本站西約4公里，以阿爾皮可交通上高地線(松本電氣鐵道)的小新村站(にいむらえき)為中心的舊新村地區。1954年(昭和29年)與松本市合併前為東筑摩郡新村村獨立農村，今仍殘蘋果園·水田·果樹園·石州瓦倉的素樸里山風景，與松本市街中心形成對照的日本原風景。北阿爾卑斯連峰(乘鞍岳·常念岳·穗高連峰)借景，上高地線懷舊2輛編電車穿田園之景，深受愛鐵道寫真與田園風景兩者的攝影家支持的松本市西郊隱藏撮影地。",
+      ko: "마쓰모토시 니이무라(まつもとしにいむら)는 나가노현 마쓰모토시 서부의 전원 지역으로, JR 마쓰모토역에서 서쪽으로 약 4km의 장소에 위치, 알피코 교통 가미코치선(마쓰모토 전기철도)의 작은 니이무라역(にいむらえき)을 중심으로 한 구 니이무라 지구. 1954년(쇼와 29년)에 마쓰모토시와 합병되기 이전은 히가시치쿠마군 니이무라무라로 독립한 농촌으로, 현재도 사과 과수원·논·과수원·세키슈 기와의 쿠라가 남아 있는 소박한 시골 풍경이 마쓰모토 시가지 중심부와는 대조적인 일본의 원풍경을 형성. 북알프스 연봉(노리쿠라다케·조넨다케·호타카 연봉)을 차경으로, 가미코치선의 레트로한 2량 편성 전차가 전원을 달려 지나가는 정경은, 철도 사진과 전원 풍경의 양쪽을 사랑하는 사진가들에게 지지받는 마쓰모토시 서쪽 교외의 숨은 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "上高地線の田園風景 — 2両編成のレトロ電車と北アルプス、鉄道写真の聖地",
@@ -6217,6 +6220,27 @@ export const LOCATION_CONTENT = {
         "Green Paddies (June–August) — flooded paddies after planting; setting sun and rice form vibrant green landscapes",
         "Ripe Rice (September–October) — golden ears against the white ridges of the Northern Alps",
         "Former Mitsumizo Station — a small wooden station and disused line, a nostalgic architectural subject",
+      ],
+      zh: [
+        "上高地线田园风景 — 2辆编怀旧电车与北阿尔卑斯，铁道写真圣地",
+        "樱花路(4月) — 新村站周边樱，电车与樱花合作，本地密接春景",
+        "青田(6至8月) — 田植后水田，夕阳与稻织绿田园",
+        "稻穗(9至10月) — 黄金稻，与北阿尔卑斯白山脊对比",
+        "旧三沟站舍 — 木造小站，废线跡，怀旧建筑被摄体",
+      ],
+      "zh-tw": [
+        "上高地線田園風景 — 2輛編懷舊電車與北阿爾卑斯，鐵道寫真聖地",
+        "櫻花路(4月) — 新村站周邊櫻，電車與櫻花合作，本地密接春景",
+        "青田(6至8月) — 田植後水田，夕陽與稻織綠田園",
+        "稻穗(9至10月) — 黃金稻，與北阿爾卑斯白山脊對比",
+        "舊三溝站舍 — 木造小站，廢線跡，懷舊建築被攝體",
+      ],
+      ko: [
+        "가미코치선의 전원 풍경 — 2량 편성의 레트로 전차와 북알프스, 철도 사진의 성지",
+        "벚꽃 가로수(4월) — 니이무라역 주변의 벚꽃, 전차와 벚꽃의 콜라보, 현지 밀착의 봄 풍경",
+        "푸른 논(6~8월) — 모내기 후의 논, 노을과 벼가 짜내는 녹색의 전원",
+        "벼이삭(9~10월) — 황금색 벼, 북알프스의 흰 능선과의 대비",
+        "구 미쓰미조 역사 — 목조의 작은 역, 폐선 흔적, 노스탤직한 건축 피사체",
       ],
     },
     quickAnswers: {
@@ -6236,6 +6260,30 @@ export const LOCATION_CONTENT = {
         { q: "About the Kamikochi Line train?", a: "Alpico's Kamikochi Line connects Matsumoto Station with Shin-Shimashima Station — a local line with high-decker cars and nostalgic 2-car retro consists. Popular among rail fans; with the right angle, it's been called «Japan's shortest line offering the Alps as backdrop.» The train + paddies pairing also appeals to landscape photographers." },
         { q: "Choosing photo spots?", a: "①Paddies 10 min on foot from Niimura Station (level-crossing grand vistas) ②Around former Mitsumizo Station (wooden depot + train) ③Cherry-lined paths near Shimojima Station (April) ④Azusa River paddies (autumn). It's also residents' daily life — never enter private land or interfere with farm work. Observe rail photography etiquette (no track trespass)." },
       ],
+      zh: [
+        { q: "松本市新村是什么?", a: "长野县松本市西部田园地域，阿尔皮可交通上高地线新村站为中心的旧新村地区。苹果园·水田·果树园与北阿尔卑斯组合的日本原风景，怀旧上高地线电车穿行的铁道写真圣地。" },
+        { q: "新村站周边看点?", a: "旧三沟站木造站舍·田园与阿尔卑斯·樱花路·稻穗期晨雾。铁道与风景皆享的隐藏撮影地。事前确认怀旧电车通过时刻表，列车班次1小时1至2班。" },
+        { q: "最佳时期与撮影技巧?", a: "樱4月中旬·青田6至8月·稻穗与雪阿尔卑斯9至10月·雪景1至2月，四季皆被摄体丰富。长焦压缩电车与山，广角拍田园与天空。早晨晨雾秋至冬特别被摄体。" },
+        { q: "如何前往?", a: "JR松本站乘阿尔皮可交通上高地线至新村站约20分·340日元。租车从松本站约15分。新村站周边步行或自行车便利，田园地带广域移动建议车。撮影地步行10至30分，季节景点多处巡游可。" },
+        { q: "上高地线电车信息?", a: "阿尔皮可交通上高地线连松本站至新岛岛站的本地线，高顶或怀旧2辆编电车跑。铁道粉人气，依角度可称「日本最短可拍阿尔卑斯背景的线路」。电车与田园组合景观摄影者亦推荐。" },
+        { q: "撮影点选法?", a: "①新村站步行10分田园(含平交大景)②旧三沟站周边(木造站舍+电车)③下岛站近樱花路(4月)④梓川沿稻田(秋)。本地居民生活区故私有地禁入·农作业妨碍严禁。铁道撮影礼仪遵守(线路禁入)。" },
+      ],
+      "zh-tw": [
+        { q: "松本市新村是什麼?", a: "長野縣松本市西部田園地域，阿爾皮可交通上高地線新村站為中心的舊新村地區。蘋果園·水田·果樹園與北阿爾卑斯組合的日本原風景，懷舊上高地線電車穿行的鐵道寫真聖地。" },
+        { q: "新村站周邊看點?", a: "舊三溝站木造站舍·田園與阿爾卑斯·櫻花路·稻穗期晨霧。鐵道與風景皆享的隱藏撮影地。事前確認懷舊電車通過時刻表，列車班次1小時1至2班。" },
+        { q: "最佳時期與撮影技巧?", a: "櫻4月中旬·青田6至8月·稻穗與雪阿爾卑斯9至10月·雪景1至2月，四季皆被攝體豐富。長焦壓縮電車與山，廣角拍田園與天空。早晨晨霧秋至冬特別被攝體。" },
+        { q: "如何前往?", a: "JR松本站搭阿爾皮可交通上高地線至新村站約20分·340日圓。租車從松本站約15分。新村站周邊步行或自行車便利，田園地帶廣域移動建議車。撮影地步行10至30分，季節景點多處巡遊可。" },
+        { q: "上高地線電車信息?", a: "阿爾皮可交通上高地線連松本站至新島島站的本地線，高頂或懷舊2輛編電車跑。鐵道粉人氣，依角度可稱「日本最短可拍阿爾卑斯背景的線路」。電車與田園組合景觀攝影者亦推薦。" },
+        { q: "撮影點選法?", a: "①新村站步行10分田園(含平交大景)②舊三溝站周邊(木造站舍+電車)③下島站近櫻花路(4月)④梓川沿稻田(秋)。本地居民生活區故私有地禁入·農作業妨礙嚴禁。鐵道撮影禮儀遵守(線路禁入)。" },
+      ],
+      ko: [
+        { q: "마쓰모토시 니이무라란?", a: "나가노현 마쓰모토시 서부의 전원 지역으로, 알피코 교통 가미코치선의 니이무라역을 중심으로 한 구 니이무라 지구. 사과 과수원·논·과수원과 북알프스의 조합이 일본의 원풍경을 형성, 레트로한 가미코치선 전차가 달려 지나가는 철도 사진의 성지입니다." },
+        { q: "니이무라역 주변의 볼거리는?", a: "구 미쓰미조역의 목조 역사, 전원과 알프스, 벚꽃 가로수, 벼이삭기의 새벽 안개. 철도 사진과 풍경 양쪽을 즐길 수 있는 숨은 촬영지. 레트로한 전차의 통과 시각표를 사전 확인, 열차 편수는 1시간에 1~2편." },
+        { q: "베스트 시기와 촬영 테크닉은?", a: "벚꽃의 4월 중순, 푸른 논의 6~8월, 벼이삭과 설관 알프스의 9~10월, 설경의 1~2월, 사계 각자 피사체 풍부. 망원 렌즈로 전차와 산을 압축, 광각으로 전원과 하늘의 조합. 이른 아침의 새벽 안개는 가을~겨울의 특별한 피사체입니다." },
+        { q: "가는 방법은?", a: "JR 마쓰모토역에서 알피코 교통 가미코치선으로 니이무라역까지 약 20분·340엔. 렌터카로 마쓰모토역에서 약 15분. 니이무라역 주변은 도보나 자전거가 편리, 전원 지대이므로 광역 이동에는 차 추천. 촬영지까지 도보 10~30분, 계절의 볼거리로 복수의 촬영 스팟을 둘러볼 수 있음." },
+        { q: "가미코치선 전차 정보는?", a: "알피코 교통 가미코치선은 마쓰모토역~신시마시마역을 잇는 로컬선으로, 하이덱커나 노스탤직한 2량 편성 전차가 달림. 철도 팬에게 인기, 앵글에 따라서는 「일본에서 가장 짧은 구간에서 알프스를 배경으로 찍을 수 있는 노선」으로도. 전차와 전원의 조합은 풍경 사진가에게도 추천." },
+        { q: "촬영 스팟 선택법은?", a: "①니이무라역에서 도보 10분의 전원 지대(건널목 포함의 대경) ②구 미쓰미조역 주변(목조 역사+전차) ③시모지마역 근처의 벚꽃 가로수(4월) ④아즈사가와 변의 벼논(가을). 현지 주민의 생활 지역이기도 하므로 사유지 출입 금지·농작업 방해 엄금. 철도 촬영 매너도 준수(선로 출입 금지)." },
+      ],
     },
     faqs: [
       { q: d("新村駅周辺の見どころは？","What's near Niimura Station?","新村站附近看点？","新村站附近看點？","니이무라역 주변 볼거리는?"),
@@ -6250,10 +6298,13 @@ export const LOCATION_CONTENT = {
       "松本市城山公園海拔約650米，是市內頂級賞櫻名所，入選「日本櫻花名所100選」。約400棵櫻花盛放，展望廣場可遠眺松本市區、北阿爾卑斯山脈與乘鞍岳。春櫻與雪嶺組合是松本獨有的春景。",
       "마쓰모토시의 조야마 공원은 해발 약 650m, 시내 최고 벚꽃 명소로 「일본 벚꽃 명소 100선」에 선정. 약 400그루 벚꽃이 만개하며, 전망 광장에서는 마쓰모토 시가지·북알프스 연봉·노리쿠라다케까지 대 파노라마가 펼쳐집니다. 봄 벚꽃과 설관 알프스의 조합은 마쓰모토만의 봄 풍경."
     ),
-    definition: lh(
-      "城山公園(じょうやまこうえん)は長野県松本市蟻ケ崎の標高約650mの城山(じょうやま)山頂部に整備された松本市の総合公園で、戦国時代に小笠原氏の出城(林大城)が置かれた歴史を持つ場所。「日本さくら名所100選」に選定された松本市屈指の桜名所で、約400本のソメイヨシノと約30本のしだれ桜が4月中旬に咲き誇ります。標高があるため平地より数日遅れて満開になるのが特徴。展望広場からは松本市街・北アルプス連峰(乗鞍岳・穂高連峰・常念岳)・乗鞍岳までの大パノラマが広がり、桜と冠雪の北アルプスを一枚に収める春の構図は松本ならではの絶景。市民憩いの公園で、桜・新緑・紅葉・雪と四季それぞれの表情が楽しめます。",
-      "Joyama Park is a comprehensive municipal park atop the 650 m Mt. Joyama in Arigasaki, Matsumoto City, Nagano Prefecture. The site once held a Sengoku-era branch castle (Hayashi Daijo) of the Ogasawara clan. Listed among Japan's «Top 100 Cherry Blossom Sites,» the park is one of Matsumoto's premier cherry-blossom destinations, with about 400 Yoshino cherries and about 30 weeping cherries blooming in mid-April; due to its elevation, peak comes a few days later than on the plain. The observation plaza commands a sweeping panorama of downtown Matsumoto, the Northern Alps (Mt. Norikura, the Hotaka Range, Mt. Jonen), and Mt. Norikura itself. Combining cherry blossoms with the snow-capped Alps in a single frame yields a uniquely Matsumoto spring scene. A beloved municipal park, it offers different faces across the four seasons — cherry blossoms, fresh greens, autumn colors, and snow."
-    ),
+    definition: {
+      ja: "城山公園(じょうやまこうえん)は長野県松本市蟻ケ崎の標高約650mの城山(じょうやま)山頂部に整備された松本市の総合公園で、戦国時代に小笠原氏の出城(林大城)が置かれた歴史を持つ場所。「日本さくら名所100選」に選定された松本市屈指の桜名所で、約400本のソメイヨシノと約30本のしだれ桜が4月中旬に咲き誇ります。標高があるため平地より数日遅れて満開になるのが特徴。展望広場からは松本市街・北アルプス連峰(乗鞍岳・穂高連峰・常念岳)・乗鞍岳までの大パノラマが広がり、桜と冠雪の北アルプスを一枚に収める春の構図は松本ならではの絶景。市民憩いの公園で、桜・新緑・紅葉・雪と四季それぞれの表情が楽しめます。",
+      en: "Joyama Park is a comprehensive municipal park atop the 650 m Mt. Joyama in Arigasaki, Matsumoto City, Nagano Prefecture. The site once held a Sengoku-era branch castle (Hayashi Daijo) of the Ogasawara clan. Listed among Japan's «Top 100 Cherry Blossom Sites,» the park is one of Matsumoto's premier cherry-blossom destinations, with about 400 Yoshino cherries and about 30 weeping cherries blooming in mid-April; due to its elevation, peak comes a few days later than on the plain. The observation plaza commands a sweeping panorama of downtown Matsumoto, the Northern Alps (Mt. Norikura, the Hotaka Range, Mt. Jonen), and Mt. Norikura itself. Combining cherry blossoms with the snow-capped Alps in a single frame yields a uniquely Matsumoto spring scene. A beloved municipal park, it offers different faces across the four seasons — cherry blossoms, fresh greens, autumn colors, and snow.",
+      zh: "城山公园(じょうやまこうえん)位于长野县松本市蚁崎海拔约650米城山(じょうやま)山顶部整备的松本市综合公园，战国时代小笠原氏出城(林大城)所设的历史。入选「日本樱花名所100选」的松本市屈指樱名所，约400株染井吉野与约30株垂枝樱4月中旬满开。海拔高故比平地数日后满开为特征。展望广场可一望松本市街·北阿尔卑斯连峰(乘鞍岳·穗高连峰·常念岳)·乘鞍岳的大全景，樱与雪北阿尔卑斯一帧收的春景松本独有绝景。市民憩息公园，樱·新绿·红叶·雪四季皆有表情可享。",
+      "zh-tw": "城山公園(じょうやまこうえん)位於長野縣松本市蟻崎海拔約650米城山(じょうやま)山頂部整備的松本市綜合公園，戰國時代小笠原氏出城(林大城)所設的歷史。入選「日本櫻花名所100選」的松本市屈指櫻名所，約400株染井吉野與約30株垂枝櫻4月中旬滿開。海拔高故比平地數日後滿開為特徵。展望廣場可一望松本市街·北阿爾卑斯連峰(乘鞍岳·穗高連峰·常念岳)·乘鞍岳的大全景，櫻與雪北阿爾卑斯一幀收的春景松本獨有絕景。市民憩息公園，櫻·新綠·紅葉·雪四季皆有表情可享。",
+      ko: "조야마 공원(じょうやまこうえん)은 나가노현 마쓰모토시 아리가사키 해발 약 650m의 조야마(じょうやま) 산정부에 정비된 마쓰모토시의 종합 공원으로, 전국 시대에 오가사와라 가문의 출성(하야시 다이조)이 있었던 역사를 지닌 장소. 「일본 벚꽃 명소 100선」에 선정된 마쓰모토시 굴지의 벚꽃 명소로, 약 400그루의 소메이요시노와 약 30그루의 시다레자쿠라가 4월 중순에 만개합니다. 표고가 있기 때문에 평지보다 며칠 늦게 만개하는 것이 특징. 전망 광장에서는 마쓰모토 시가지·북알프스 연봉(노리쿠라다케·호타카 연봉·조넨다케)·노리쿠라다케까지 대 파노라마가 펼쳐지며, 벚꽃과 설관의 북알프스를 한 장에 담는 봄의 구도는 마쓰모토만의 절경. 시민의 휴식 공원으로, 벚꽃·신록·단풍·눈 등 사계절의 표정을 즐길 수 있습니다.",
+    },
     highlights: {
       ja: [
         "桜の名所(約430本) — 日本さくら名所100選、ソメイヨシノとしだれ桜の混植、4月中旬満開",
@@ -6268,6 +6319,27 @@ export const LOCATION_CONTENT = {
         "Morning Alpenglow — at sunrise the Alps blush red; combined with cherry blossoms, the absolute peak",
         "Cherry Tunnel — about 2 km of cherry-lined road, a roadside tunnel of blossoms",
         "Evening Cherry-Blossom Illumination — only during cherry season; warm bonbori-lantern light against the blossoms",
+      ],
+      zh: [
+        "樱名所(约430株) — 日本樱花名所100选，染井吉野与垂枝樱混植，4月中旬满开",
+        "展望广场大全景 — 松本市街·北阿尔卑斯·乘鞍岳一望，樱与山组合王道",
+        "朝霞Morgenrot — 日出时北阿尔卑斯染红，与樱组合最高峰",
+        "樱花隧道 — 约2公里樱花并道，车道沿樱花隧道震撼",
+        "夜樱灯光秀 — 樱季限定，雪洞暖色光与樱",
+      ],
+      "zh-tw": [
+        "櫻名所(約430株) — 日本櫻花名所100選，染井吉野與垂枝櫻混植，4月中旬滿開",
+        "展望廣場大全景 — 松本市街·北阿爾卑斯·乘鞍岳一望，櫻與山組合王道",
+        "朝霞Morgenrot — 日出時北阿爾卑斯染紅，與櫻組合最高峰",
+        "櫻花隧道 — 約2公里櫻花並道，車道沿櫻花隧道震撼",
+        "夜櫻燈光秀 — 櫻季限定，雪洞暖色光與櫻",
+      ],
+      ko: [
+        "벚꽃 명소(약 430그루) — 일본 벚꽃 명소 100선, 소메이요시노와 시다레자쿠라의 혼식, 4월 중순 만개",
+        "전망 광장의 대 파노라마 — 마쓰모토 시가지·북알프스·노리쿠라다케까지 한눈에, 벚꽃과 산의 조합이 왕도",
+        "아침놀의 모르겐로트 — 일출 시 북알프스가 붉게 물듦, 벚꽃과 조합 최고봉",
+        "벚꽃 터널 — 약 2km의 벚꽃 가로수, 차도 변의 벚꽃 터널이 압권",
+        "야간 벚꽃 조명 — 벚꽃 시즌 한정, 본보리의 따뜻한 빛과 벚꽃",
       ],
     },
     quickAnswers: {
@@ -6287,6 +6359,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended camera gear?", a: "①Wide angle (16–35mm) for cherry + Northern Alps grand vista ②Telephoto (70–200mm) compressing snow ridges and cherry ③Standard zoom for cherry-tunnel paths. CPL filter deepens sky blue and crisps the white cherry tones. For dawn alpenglow, bring spare batteries (cold drain) and warm clothing." },
         { q: "Other seasonal attractions?", a: "Fresh greenery (May), hydrangeas (June), autumn colors (November), winter snow (Jan–Feb) — every season offers something. Year-round, the summit plaza commands a panorama of Matsumoto city, the Northern Alps, and Mt. Norikura, with city night views in the evening. Birdwatching (blue-and-white flycatcher in summer, tits in winter) for enthusiasts." },
       ],
+      zh: [
+        { q: "城山公园(松本市)是什么?", a: "长野县松本市海拔约650米城山山顶综合公园，战国时代出城迹。入选日本樱花名所100选，约430株樱与北阿尔卑斯大全景可享，松本市屈指春景撮影地。" },
+        { q: "展望广场最佳构图?", a: "樱前景虚化与北阿尔卑斯山脊的纵构图为王道。早晨Morgenrot(朝霞红雪山)与樱组合最高潮。长焦拉山，樱前景虚化表现景深。" },
+        { q: "前往与最佳时期?", a: "JR松本站开车约15分或上高地线「西松本站」步行30分。每年4月中旬樱满开，比平地市街数日后开故错过亦可重狙。夜樱灯光秀仅樱花祭期。" },
+        { q: "夜樱灯光秀时间?", a: "每年4月上至中旬樱花祭期限定，18:00至21:00左右。约100盏雪洞提灯点灯，暖色光与樱对比梦幻。三脚必备，ISO400·F8·10至30秒。拥挤期19时后人潮多，18时前或20时后较空。" },
+        { q: "撮影器材推荐?", a: "①广角(16-35mm)拍樱与北阿尔卑斯大景②长焦(70-200mm)阿尔卑斯雪山山脊与樱压缩③标准变焦樱花隧道散步路。CPL滤镜强调蓝空·樱花白色显著。早晨Morgenrot狙备用电池(冷气消耗)与防寒装备必备。" },
+        { q: "樱外的看点?", a: "新绿(5月)·绣球(6月)·红叶(11月)·雪景(1至2月)，四季皆有表情。山顶展望广场全年松本市街·北阿尔卑斯·乘鞍岳大全景，夜亦松本市街夜景。野鸟观察(夏蓝靛鹟·冬山雀等)亦发烧友被摄体。" },
+      ],
+      "zh-tw": [
+        { q: "城山公園(松本市)是什麼?", a: "長野縣松本市海拔約650米城山山頂綜合公園，戰國時代出城跡。入選日本櫻花名所100選，約430株櫻與北阿爾卑斯大全景可享，松本市屈指春景撮影地。" },
+        { q: "展望廣場最佳構圖?", a: "櫻前景虛化與北阿爾卑斯山脊的縱構圖為王道。早晨Morgenrot(朝霞紅雪山)與櫻組合最高潮。長焦拉山，櫻前景虛化表現景深。" },
+        { q: "前往與最佳時期?", a: "JR松本站開車約15分或上高地線「西松本站」步行30分。每年4月中旬櫻滿開，比平地市街數日後開故錯過亦可重狙。夜櫻燈光秀僅櫻花祭期。" },
+        { q: "夜櫻燈光秀時間?", a: "每年4月上至中旬櫻花祭期限定，18:00至21:00左右。約100盞雪洞提燈點燈，暖色光與櫻對比夢幻。三腳必備，ISO400·F8·10至30秒。擁擠期19時後人潮多，18時前或20時後較空。" },
+        { q: "撮影器材推薦?", a: "①廣角(16-35mm)拍櫻與北阿爾卑斯大景②長焦(70-200mm)阿爾卑斯雪山山脊與櫻壓縮③標準變焦櫻花隧道散步路。CPL濾鏡強調藍空·櫻花白色顯著。早晨Morgenrot狙備用電池(冷氣消耗)與防寒裝備必備。" },
+        { q: "櫻外的看點?", a: "新綠(5月)·繡球(6月)·紅葉(11月)·雪景(1至2月)，四季皆有表情。山頂展望廣場全年松本市街·北阿爾卑斯·乘鞍岳大全景，夜亦松本市街夜景。野鳥觀察(夏藍靛鶲·冬山雀等)亦發燒友被攝體。" },
+      ],
+      ko: [
+        { q: "조야마 공원(마쓰모토시)이란?", a: "나가노현 마쓰모토시의 해발 약 650m 조야마 산정의 종합 공원으로, 전국 시대의 출성 터. 일본 벚꽃 명소 100선에 선정, 약 430그루의 벚꽃과 북알프스의 대 파노라마를 즐길 수 있는, 마쓰모토시 굴지의 봄 촬영지입니다." },
+        { q: "전망 광장에서의 베스트 구도는?", a: "벚꽃을 전경 보케로 북알프스의 능선을 넣는 세로 구도가 왕도. 이른 아침의 모르겐로트(아침놀로 붉게 물드는 설산)와 벚꽃의 조합이 최고조. 망원으로 산을 가까이 끌어당기고, 벚꽃의 전경 보케로 깊이 표현." },
+        { q: "가는 방법과 베스트 시기는?", a: "JR 마쓰모토역에서 차로 약 15분 또는 가미코치선 「니시마쓰모토역」에서 도보 30분. 예년 4월 중순의 벚꽃이 만개, 평지의 시가지보다 며칠 늦게 피기 때문에 놓쳐도 다시 노릴 수 있음. 야간 벚꽃 조명은 벚꽃 축제 기간만." },
+        { q: "야간 벚꽃 조명 시간은?", a: "매년 4월 상순~중순의 벚꽃 축제 기간 한정, 18:00~21:00 무렵. 약 100기의 본보리 등이 점등되어, 따뜻한 빛과 벚꽃의 대비가 환상적. 삼각대 필수, ISO 400·F8·10~30초. 혼잡기는 19시 이후는 인파 많으므로, 18시 전이나 20시 이후가 비교적 한산." },
+        { q: "촬영 기재 추천은?", a: "①광각(16-35mm)으로 벚꽃과 북알프스의 대경 ②망원(70-200mm)으로 알프스 설산 능선과 벚꽃 압축 ③표준 줌으로 벚꽃 터널 산책로. CPL 필터로 하늘의 푸름 강조·벚꽃의 흰색을 돋보이게. 이른 아침의 모르겐로트 노림은 예비 배터리(냉기로 소모)와 방한구 필휴." },
+        { q: "벚꽃 외의 볼거리는?", a: "신록(5월)·수국(6월)·단풍(11월)·설경(1~2월), 사계 각자의 표정. 산정 전망 광장에서는 연중 마쓰모토 시가지·북알프스·노리쿠라다케의 대 파노라마, 밤은 마쓰모토 시가지의 야경도. 야생 조류 관찰(여름의 큰유리새, 겨울의 박새 등)도 마니아용 피사체." },
+      ],
     },
     faqs: [
       { q: d("展望広場でのベスト構図は？","Best framing from the observation plaza?","展望广场最佳构图？","展望廣場最佳構圖？","전망 광장 최고 구도?"),
@@ -6301,10 +6397,13 @@ export const LOCATION_CONTENT = {
       "中町通保留松本舊城下町的藏造老街。白漆與黑海鼠牆的土藏並列，江戶末至明治風情濃厚。改造土藏開設的咖啡館、工藝店、畫廊林立，是難得的生活與觀光共存的歷史街區，適合漫步抓拍。",
       "나카마치 거리는 마쓰모토시 옛 성하 마을에 남은 창고(쿠라) 건축의 거리. 흰 회벽과 검은 나마코 무늬 토창이 늘어서 있으며, 에도 말기-메이지 시대의 정취가 짙게 남아 있습니다. 개조된 창고에 카페·공예점·갤러리가 자리해, 생활과 관광이 공존하는 보기 드문 역사 지구로 산책하며 스냅하기 좋습니다."
     ),
-    definition: lh(
-      "中町通り(なかまちどおり)は長野県松本市中央2丁目の旧城下町・善光寺街道沿いに約400m続く蔵造りの町並みで、江戸末期から明治時代の白漆喰と黒なまこ壁の土蔵が連なる景観が松本市の歴史地区を象徴。1888年(明治21年)の松本大火で大半の建物が焼失したのち、防火対策として土蔵造りの建物が建てられ、現在もその姿を留めています。約20軒の蔵を改装したカフェ・工芸店・ギャラリー・蕎麦店・地酒屋が並び、生活と観光が共存する稀有な歴史地区。松本市は商都・酒どころとしての歴史を持ち、中町は商家の集まる商業中心地でした。「中町・蔵シック館」(明治時代の蔵を改装した観光案内所兼資料館)も訪問必須で、江戸の風情を残す散策・スナップ撮影に最適です。",
-      "Nakamachi Street is a roughly 400 m stretch along the former Zenkoji Kaido road in 2-chome Chuo, Matsumoto City, Nagano Prefecture, lined with «kura» storehouse-style buildings. Their white plaster walls and black «namako» tile patterns (late-Edo to Meiji-era) define Matsumoto's historic district. After most of the area burned in the Great Matsumoto Fire of 1888 (Meiji 21), buildings were rebuilt as fireproof storehouses, and that streetscape survives today. About 20 renovated kura now host cafés, craft shops, galleries, soba restaurants, and local sake stores — a rare historic district where daily life and tourism coexist. As a city with deep merchant and brewing traditions, Nakamachi was Matsumoto's commercial heart, with «Nakamachi Kurashic-kan» (a Meiji-era kura converted into a tourist office and museum) a must-visit. It is ideal for strolling and snapping photographs amid Edo-period atmosphere."
-    ),
+    definition: {
+      ja: "中町通り(なかまちどおり)は長野県松本市中央2丁目の旧城下町・善光寺街道沿いに約400m続く蔵造りの町並みで、江戸末期から明治時代の白漆喰と黒なまこ壁の土蔵が連なる景観が松本市の歴史地区を象徴。1888年(明治21年)の松本大火で大半の建物が焼失したのち、防火対策として土蔵造りの建物が建てられ、現在もその姿を留めています。約20軒の蔵を改装したカフェ・工芸店・ギャラリー・蕎麦店・地酒屋が並び、生活と観光が共存する稀有な歴史地区。松本市は商都・酒どころとしての歴史を持ち、中町は商家の集まる商業中心地でした。「中町・蔵シック館」(明治時代の蔵を改装した観光案内所兼資料館)も訪問必須で、江戸の風情を残す散策・スナップ撮影に最適です。",
+      en: "Nakamachi Street is a roughly 400 m stretch along the former Zenkoji Kaido road in 2-chome Chuo, Matsumoto City, Nagano Prefecture, lined with «kura» storehouse-style buildings. Their white plaster walls and black «namako» tile patterns (late-Edo to Meiji-era) define Matsumoto's historic district. After most of the area burned in the Great Matsumoto Fire of 1888 (Meiji 21), buildings were rebuilt as fireproof storehouses, and that streetscape survives today. About 20 renovated kura now host cafés, craft shops, galleries, soba restaurants, and local sake stores — a rare historic district where daily life and tourism coexist. As a city with deep merchant and brewing traditions, Nakamachi was Matsumoto's commercial heart, with «Nakamachi Kurashic-kan» (a Meiji-era kura converted into a tourist office and museum) a must-visit. It is ideal for strolling and snapping photographs amid Edo-period atmosphere.",
+      zh: "中町通(なかまちどおり)位于长野县松本市中央2丁目的旧城下町·善光寺街道沿约400米续的藏造街景，江户末期至明治时代白漆喰与黑海鼠墙土仓连绵的景观象征松本市历史地区。1888年(明治21年)松本大火大半建筑烧失后，作为防火对策建造土仓造建筑，今仍留其姿。约20家改装土仓的咖啡馆·工艺店·画廊·荞麦店·地酒屋林立，生活与观光共存的罕见历史地区。松本市作为商都·酒地的历史，中町为商家集中商业中心。「中町·藏Chic馆」(明治时代藏改装的观光案内所兼资料馆)亦必访，残江户风情的散步·快照撮影最佳。",
+      "zh-tw": "中町通(なかまちどおり)位於長野縣松本市中央2丁目的舊城下町·善光寺街道沿約400米續的藏造街景，江戶末期至明治時代白漆喰與黑海鼠牆土倉連綿的景觀象徵松本市歷史地區。1888年(明治21年)松本大火大半建築燒失後，作為防火對策建造土倉造建築，今仍留其姿。約20家改裝土倉的咖啡館·工藝店·畫廊·蕎麥店·地酒屋林立，生活與觀光共存的罕見歷史地區。松本市作為商都·酒地的歷史，中町為商家集中商業中心。「中町·藏Chic館」(明治時代藏改裝的觀光案內所兼資料館)亦必訪，殘江戶風情的散步·快照撮影最佳。",
+      ko: "나카마치 거리(なかまちどおり)는 나가노현 마쓰모토시 주오 2초메의 구 성하도시·젠코지 가도 변에 약 400m 이어지는 쿠라즈쿠리의 거리로, 에도 말기부터 메이지 시대의 흰 회반죽과 검은 나마코카베의 토창이 연이은 경관이 마쓰모토시의 역사 지구를 상징. 1888년(메이지 21년)의 마쓰모토 대화재로 대부분의 건물이 소실된 후, 방화 대책으로 토창 구조의 건물이 세워졌고, 현재도 그 모습을 간직하고 있습니다. 약 20곳의 쿠라를 개조한 카페·공예점·갤러리·소바점·지자케 가게가 늘어서, 생활과 관광이 공존하는 보기 드문 역사 지구. 마쓰모토시는 상도·사케의 본고장으로서의 역사를 지녔고, 나카마치는 상가가 모이는 상업 중심지였습니다. 「나카마치·쿠라식관」(메이지 시대의 쿠라를 개조한 관광 안내소 겸 자료관)도 방문 필수이며, 에도의 정취를 남긴 산책·스냅 촬영에 최적입니다.",
+    },
     highlights: {
       ja: [
         "白壁・黒なまこ壁の蔵 — 約20軒、江戸末期〜明治の防火建築、整然と続く蔵の連なり",
@@ -6319,6 +6418,27 @@ export const LOCATION_CONTENT = {
         "Kura Cafés and Craft Shops — set in renovated storehouses serving coffee, glass, woodwork, and Matsumoto folk crafts",
         "Evening Streetlights with Kura — warm lighting bathes the kura in gold, with a nostalgic atmosphere",
         "Stone Paving in Rain — wet stones reflect the kura walls, a special early-morning subject when the streets are empty",
+      ],
+      zh: [
+        "白壁·黑海鼠墙土仓 — 约20家，江户末至明治防火建筑，整齐土仓连绵",
+        "中町·藏Chic馆 — 明治藏改装的观光案内所兼资料馆，内部见学免费",
+        "藏咖啡·工艺店 — 改装土仓营业，咖啡·玻璃·木工·松本民艺扱",
+        "傍晚街灯与土仓 — 暖色灯光土仓染金黄色，怀旧氛围",
+        "雨日石板 — 雨湿石板与土仓壁反射，无人朝特别被摄体",
+      ],
+      "zh-tw": [
+        "白壁·黑海鼠牆土倉 — 約20家，江戶末至明治防火建築，整齊土倉連綿",
+        "中町·藏Chic館 — 明治藏改裝的觀光案內所兼資料館，內部見學免費",
+        "藏咖啡·工藝店 — 改裝土倉營業，咖啡·玻璃·木工·松本民藝扱",
+        "傍晚街燈與土倉 — 暖色燈光土倉染金黃色，懷舊氛圍",
+        "雨日石板 — 雨濕石板與土倉壁反射，無人朝特別被攝體",
+      ],
+      ko: [
+        "흰 벽·검은 나마코카베의 쿠라 — 약 20곳, 에도 말기~메이지의 방화 건축, 정연하게 이어지는 쿠라의 연쇄",
+        "나카마치·쿠라식관 — 메이지의 쿠라를 개조한 관광 안내소 겸 자료관, 내부 견학 무료",
+        "쿠라 카페·공예점 — 개조된 토창에서 영업, 커피·유리·목공·마쓰모토 민예를 다룸",
+        "저녁의 가로등과 쿠라 — 따뜻한 색의 조명으로 쿠라가 황금빛으로 물듦, 노스탤직한 분위기",
+        "비 오는 날의 돌길 — 비에 젖은 돌길과 쿠라 벽의 반사, 사람이 없는 아침의 특별한 피사체",
       ],
     },
     quickAnswers: {
@@ -6338,6 +6458,30 @@ export const LOCATION_CONTENT = {
         { q: "Crafts and souvenirs?", a: "About 30 craft shops cluster around Kurashic-kan. Matsumoto Mingei Furniture (descended from Yanagi Soetsu's folk-craft movement; furniture and woodwork), Glass Shop Kobo (blown-glass studio + shop), Kyushuya (Shinshu soba dry noodles, local sake), and Matsumoto Temari (traditional crafts). Product shots are usually OK with a quick ask." },
         { q: "Photographing Nakamachi at night?", a: "After 20:00 most shops close — virtually no foot traffic, ideal for long exposures revealing the white kura walls. Winter (Nov–Feb) intensifies the contrast of warm streetlight and cold air; snow-clad kura is a rare frame appearing only a few days a year. Tripods OK; cars still pass occasionally late at night." },
       ],
+      zh: [
+        { q: "中町通是什么?", a: "长野县松本市旧城下町残约400米藏造街景。1888年松本大火后防火对策建造的白漆喰与黑海鼠墙土仓约20家连绵，今活用为咖啡馆·工艺店·画廊的松本市历史地区象征撮影地。" },
+        { q: "撮影最佳时段?", a: "清晨6至8时人潮少可拍整齐土仓壁。傍晚街灯亮起时段怀旧，白壁染暖色。雨天石板亦优秀被摄体，平日朝压倒性推荐。" },
+        { q: "如何前往?", a: "JR松本站步行10分，松本城步行5分。中町通与绳手通(松本城下女鸟羽川南岸路)同游可完攻松本城下町。所需通全体30分至1小时，含咖啡停留则2至3小时。" },
+        { q: "藏咖啡推荐?", a: "①「珈琲Marumo」(120年藏改装，调和咖啡650日元，爵士BGM)②松本Hotel花月Lounge(明治期旧家活用，抹茶套1200日元)③「藏Chic馆」(明治藏改装观光案内所兼画廊，免费)④「Galette Café Le Patio」(藏中庭面露台席)。撮影与餐组合半日游最佳。" },
+        { q: "工艺店·伴手礼?", a: "「中町·藏Chic馆」周边工艺店约30家。「松本民艺家具」(柳宗悦民艺运动派生，家具·木工)、「Glass Shop Kobo」(吹玻璃工坊+店)、「九州屋」(信州荞麦干面·地酒)、「松本手鞠」(传统工艺)等。商品撮影一句话告知店主大致OK。" },
+        { q: "夜中町通撮影?", a: "20时后店铺闭店通行人几无，长曝可浮土仓白壁。冬期(11至2月)街灯与冷气组合暖·寒色对比强，雪化土仓为年中数次稀有构图。三脚OK，车道深夜亦偶通行需注意。" },
+      ],
+      "zh-tw": [
+        { q: "中町通是什麼?", a: "長野縣松本市舊城下町殘約400米藏造街景。1888年松本大火後防火對策建造的白漆喰與黑海鼠牆土倉約20家連綿，今活用為咖啡館·工藝店·畫廊的松本市歷史地區象徵撮影地。" },
+        { q: "撮影最佳時段?", a: "清晨6至8時人潮少可拍整齊土倉壁。傍晚街燈亮起時段懷舊，白壁染暖色。雨天石板亦優秀被攝體，平日朝壓倒性推薦。" },
+        { q: "如何前往?", a: "JR松本站步行10分，松本城步行5分。中町通與繩手通(松本城下女鳥羽川南岸路)同遊可完攻松本城下町。所需通全體30分至1小時，含咖啡停留則2至3小時。" },
+        { q: "藏咖啡推薦?", a: "①「珈琲Marumo」(120年藏改裝，調和咖啡650日圓，爵士BGM)②松本Hotel花月Lounge(明治期舊家活用，抹茶套1200日圓)③「藏Chic館」(明治藏改裝觀光案內所兼畫廊，免費)④「Galette Café Le Patio」(藏中庭面露台席)。撮影與餐組合半日遊最佳。" },
+        { q: "工藝店·伴手禮?", a: "「中町·藏Chic館」周邊工藝店約30家。「松本民藝家具」(柳宗悅民藝運動派生，家具·木工)、「Glass Shop Kobo」(吹玻璃工坊+店)、「九州屋」(信州蕎麥乾麵·地酒)、「松本手鞠」(傳統工藝)等。商品撮影一句話告知店主大致OK。" },
+        { q: "夜中町通撮影?", a: "20時後店鋪閉店通行人幾無，長曝可浮土倉白壁。冬期(11至2月)街燈與冷氣組合暖·寒色對比強，雪化土倉為年中數次稀有構圖。三腳OK，車道深夜亦偶通行需注意。" },
+      ],
+      ko: [
+        { q: "나카마치 거리란?", a: "나가노현 마쓰모토시의 구 성하도시에 남은 약 400m의 쿠라즈쿠리의 거리. 1888년의 마쓰모토 대화재 후 방화 대책으로 세워진 흰 회반죽과 검은 나마코카베의 토창 약 20곳이 이어지며, 현재는 카페·공예점·갤러리로 활용되는 마쓰모토시의 역사 지구를 상징하는 촬영지입니다." },
+        { q: "촬영에 최적인 시간대는?", a: "이른 아침 6~8시는 인적이 적고 정연한 쿠라 벽을 찍을 수 있음. 저녁의 가로등이 켜지는 시간대는 노스탤직하며, 흰 벽이 따뜻한 색으로 물듦. 우천의 돌길도 피사체로 훌륭, 관광객이 적은 평일 아침이 압도적으로 추천." },
+        { q: "가는 방법은?", a: "JR 마쓰모토역에서 도보 10분, 마쓰모토성에서 도보 5분. 나카마치 거리는 나와테 거리(마쓰모토성 아래 메토바가와 남쪽 강변의 길)와 세트로 걸으면 마쓰모토 성하도시 완전 제패. 소요 시간은 거리 전체 30분~1시간, 카페 들름 포함이면 2~3시간." },
+        { q: "쿠라 카페 추천은?", a: "①「커피 마루모」(120년 쿠라 개조, 블렌드 커피 650엔, 재즈 BGM) ②마쓰모토 호텔 카게쓰 라운지(메이지기 구가 활용, 말차 세트 1,200엔) ③「쿠라식관」(메이지기의 쿠라를 개조한 관광 안내소 겸 갤러리, 무료) ④「갈레트 카페 르 파티오」(쿠라의 중정에 면한 테라스석). 촬영과 식사를 조합한 반나절 코스에 최적." },
+        { q: "공예점·기념품은?", a: "「나카마치·쿠라식관」 주변에 공예점 약 30곳. 「마쓰모토 민예 가구」(야나기 무네요시의 민예 운동에서 파생, 가구·목공), 「유리숍 코보」(불기 유리 공방+숍), 「큐슈야」(신슈 소바 건면·지자케), 「마쓰모토 테마리」(전통 공예품) 등. 상품 촬영은 점주에게 한마디 건네면 대체로 OK." },
+        { q: "밤의 나카마치 거리 촬영은?", a: "20시 이후는 점포가 폐점하므로 통행인이 거의 없음, 장노출로 쿠라의 흰 벽을 떠오르게 하는 촬영 가능. 겨울철(11~2월)은 가로등과 냉기의 조합으로 따뜻한 색·차가운 색의 대비가 강하고, 눈 화장한 쿠라는 연 수회의 희귀한 구도. 삼각대 OK, 차도는 심야도 가끔 통행 있으니 주의." },
+      ],
     },
     faqs: [
       { q: d("撮影に最適な時間帯は？","Best time of day to photograph?","拍摄最佳时段？","拍攝最佳時段？","촬영 최적 시간대는?"),
@@ -6352,10 +6496,13 @@ export const LOCATION_CONTENT = {
       "高島公園位於諏訪市，由諏訪藩居城高島城遺址整治而成。曾被稱為「諏訪浮城」，重建天守再現昔日風貌，護城河四周約100棵櫻花4月中旬盛放。水中倒影天守與櫻花是諏訪代表春景。冬季燈光、夏季蓮花亦為看點。",
       "다카시마 공원은 스와시·스와번의 거성이었던 다카시마성 터를 정비한 공원. 「스와의 떠 있는 성」이라 불렸던 옛 모습을 재건된 천수가 전합니다. 해자 주변 약 100그루 벚꽃이 4월 중순 만개. 해자에 비친 천수와 벚꽃은 스와의 대표 봄 풍경. 겨울 조명, 여름 연꽃도 볼거리."
     ),
-    definition: lh(
-      "高島公園(たかしまこうえん)は長野県諏訪市高島にある諏訪藩・諏訪氏の居城だった高島城跡を整備した都市公園で、面積約4ヘクタール、長野県の指定史跡。高島城は1592〜1598年に日根野織部正高吉によって築城された平城で、当時は諏訪湖の水を引き入れた堀に囲まれた水城だったため「諏訪の浮城(うきしろ)」と称され、日本三大湖城の一つに数えられた名城。現在の天守(三層三階)は1970年に外観復元、内部は諏訪藩関連の歴史博物館。堀の周囲約100本の桜(ソメイヨシノ)が4月中旬に咲き乱れ、堀の水鏡に映る桜と天守の構図は諏訪を代表する春景。冬は氷結した堀のライトアップ、夏は蓮の花、秋は紅葉と四季それぞれ被写体として優れた撮影地です。",
-      "Takashima Park, in Takashima, Suwa City, Nagano Prefecture, is a roughly 4-hectare municipal park developed on the ruins of Takashima Castle — the seat of the Suwa clan and Suwa domain. Designated a Nagano Prefecture Historic Site, the castle was a flatland fortress built between 1592 and 1598 by Hineno Oribe-no-kami Takayoshi. Originally surrounded by moats fed by Lake Suwa's waters, it was known as «Suwa's Floating Castle» and counted among Japan's three great «lake castles.» The current keep (three stories, three tiers) was reconstructed in 1970 (exterior only); the interior houses a Suwa-domain history museum. About 100 Yoshino cherry trees around the moat bloom in mid-April, and the keep mirrored in the moat with cherry blossoms is one of Suwa's signature spring scenes. Winter brings illumination over the frozen moat, summer the lotus, and autumn the foliage — making the park a year-round photography destination."
-    ),
+    definition: {
+      ja: "高島公園(たかしまこうえん)は長野県諏訪市高島にある諏訪藩・諏訪氏の居城だった高島城跡を整備した都市公園で、面積約4ヘクタール、長野県の指定史跡。高島城は1592〜1598年に日根野織部正高吉によって築城された平城で、当時は諏訪湖の水を引き入れた堀に囲まれた水城だったため「諏訪の浮城(うきしろ)」と称され、日本三大湖城の一つに数えられた名城。現在の天守(三層三階)は1970年に外観復元、内部は諏訪藩関連の歴史博物館。堀の周囲約100本の桜(ソメイヨシノ)が4月中旬に咲き乱れ、堀の水鏡に映る桜と天守の構図は諏訪を代表する春景。冬は氷結した堀のライトアップ、夏は蓮の花、秋は紅葉と四季それぞれ被写体として優れた撮影地です。",
+      en: "Takashima Park, in Takashima, Suwa City, Nagano Prefecture, is a roughly 4-hectare municipal park developed on the ruins of Takashima Castle — the seat of the Suwa clan and Suwa domain. Designated a Nagano Prefecture Historic Site, the castle was a flatland fortress built between 1592 and 1598 by Hineno Oribe-no-kami Takayoshi. Originally surrounded by moats fed by Lake Suwa's waters, it was known as «Suwa's Floating Castle» and counted among Japan's three great «lake castles.» The current keep (three stories, three tiers) was reconstructed in 1970 (exterior only); the interior houses a Suwa-domain history museum. About 100 Yoshino cherry trees around the moat bloom in mid-April, and the keep mirrored in the moat with cherry blossoms is one of Suwa's signature spring scenes. Winter brings illumination over the frozen moat, summer the lotus, and autumn the foliage — making the park a year-round photography destination.",
+      zh: "高岛公园(たかしまこうえん)位于长野县诹访市高岛，是诹访藩·诹访氏居城的高岛城跡整备的都市公园，面积约4公顷，长野县指定史迹。高岛城是1592至1598年日根野织部正高吉所筑的平城，当时引入诹访湖水的护城河围绕的水城被誉「诹访浮城(うきしろ)」，日本三大湖城之一的名城。现天守(三层三阶)1970年外观复原，内部为诹访藩相关历史博物馆。护城河周围约100株樱(染井吉野)4月中旬满开，水鏡映樱与天守的构图为诹访代表春景。冬结冰护城河灯光秀，夏蓮花，秋红叶四季皆有被摄体优秀的撮影地。",
+      "zh-tw": "高島公園(たかしまこうえん)位於長野縣諏訪市高島，是諏訪藩·諏訪氏居城的高島城跡整備的都市公園，面積約4公頃，長野縣指定史蹟。高島城是1592至1598年日根野織部正高吉所築的平城，當時引入諏訪湖水的護城河圍繞的水城被譽「諏訪浮城(うきしろ)」，日本三大湖城之一的名城。現天守(三層三階)1970年外觀復原，內部為諏訪藩相關歷史博物館。護城河周圍約100株櫻(染井吉野)4月中旬滿開，水鏡映櫻與天守的構圖為諏訪代表春景。冬結冰護城河燈光秀，夏蓮花，秋紅葉四季皆有被攝體優秀的撮影地。",
+      ko: "다카시마 공원(たかしまこうえん)은 나가노현 스와시 다카시마에 있는 스와번·스와씨의 거성이었던 다카시마성 터를 정비한 도시 공원으로, 면적 약 4헥타르, 나가노현 지정 사적. 다카시마성은 1592~1598년에 히네노 오리베노카미 다카요시에 의해 축성된 평성으로, 당시는 스와호의 물을 끌어들인 해자에 둘러싸인 수성이었기 때문에 「스와의 우키시로(浮城)」로 불리며 일본 3대 호수성 중 하나로 꼽힌 명성. 현재의 천수(3층 3층)는 1970년에 외관 복원, 내부는 스와번 관련 역사 박물관. 해자 주변 약 100그루의 벚꽃(소메이요시노)이 4월 중순에 만개하며, 해자의 수경에 비치는 벚꽃과 천수의 구도는 스와를 대표하는 봄 풍경. 겨울은 동결된 해자의 조명, 여름은 연꽃, 가을은 단풍으로 사계절마다 피사체로서 뛰어난 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "再建天守と堀 — 1970年外観復元の三層天守と堀の組合せ、水鏡が美しい",
@@ -6370,6 +6517,27 @@ export const LOCATION_CONTENT = {
         "Lotus Flowers (July–August) — pink and white lotus blossoms on the moat against the keep, fantastically dreamlike",
         "Autumn Foliage (November) — Japanese maples reflected on the moat with the keep behind",
         "Winter Illumination — illuminated over the frozen moat; blue hour is most magical",
+      ],
+      zh: [
+        "再建天守与护城河 — 1970年外观复原的三层天守与护城河组合，水鏡之美",
+        "樱与水鏡(4月中旬) — 约100株樱与映护城河天守，诹访代表春景",
+        "莲花(7至8月) — 护城河莲，粉与白莲与天守的组合梦幻",
+        "红叶(11月) — 红叶·枫与天守，映护城河红叶之美",
+        "冬灯光秀 — 结冰护城河灯光秀，蓝调时刻梦幻",
+      ],
+      "zh-tw": [
+        "再建天守與護城河 — 1970年外觀復原的三層天守與護城河組合，水鏡之美",
+        "櫻與水鏡(4月中旬) — 約100株櫻與映護城河天守，諏訪代表春景",
+        "蓮花(7至8月) — 護城河蓮，粉與白蓮與天守的組合夢幻",
+        "紅葉(11月) — 紅葉·楓與天守，映護城河紅葉之美",
+        "冬燈光秀 — 結冰護城河燈光秀，藍調時刻夢幻",
+      ],
+      ko: [
+        "재건된 천수와 해자 — 1970년 외관 복원의 3층 천수와 해자의 조합, 수경이 아름다움",
+        "벚꽃과 수경(4월 중순) — 약 100그루의 벚꽃과 해자에 비치는 천수, 스와의 대표적 봄 풍경",
+        "연꽃(7~8월) — 해자의 연꽃, 분홍과 흰 연꽃과 천수의 조합이 환상적",
+        "단풍(11월) — 단풍나무·카에데의 단풍과 천수, 해자에 비치는 단풍이 아름다움",
+        "겨울의 조명 — 결빙된 해자의 조명, 푸른 시간대가 환상적",
       ],
     },
     quickAnswers: {
@@ -6388,6 +6556,30 @@ export const LOCATION_CONTENT = {
         { q: "Keep admission and hours?", a: "Keep entry ¥310 (¥150 elementary/middle school). 9:00–17:30 (until 16:30 Oct–Mar). Closed Mondays. Floors 1–3 hold the Suwa Domain Museum; the 3rd-floor observation deck commands views of Lake Suwa, Yatsugatake, and Suwa City. The 1970 reconstruction is reinforced concrete on the inside; interior photography is fine." },
         { q: "History of «Suwa's Floating Castle»?", a: "Built 1592–98 by Hineno Oribe-no-kami Takayoshi as a water castle. Lake Suwa's waters fed the surrounding moat, earning the nickname «Floating Castle.» One of Japan's «Three Great Water Castles» (Takashima, Matsue, Shimabara), it served as the Suwa domain's administrative seat through the Meiji Restoration. A Nagano Prefecture Historic Site; parts of the original moat structure survive — archaeologically significant." },
         { q: "Combined sightseeing route?", a: "①Takashima Park (morning, cherry + reflection) ②Kami-Suwa Onsen (5 min by car, Katakurakan's «1,000-person bath» in Western architecture) ③Suwa Taisha Kamisha Honmiya (15 min by car, Onbashira Festival's sacred ground) ④Lake Suwa (lakeside jog, 16 km loop) ⑤Tateishi Park (15 min by car, night view). Full-day Suwa circuit; Kami-Suwa Onsen makes a convenient overnight base." },
+      ],
+      zh: [
+        { q: "高岛公园(诹访市)是什么?", a: "长野县诹访市诹访藩·诹访氏居城高岛城跡公园。「诹访浮城」之称的水城传统再建天守与护城河、约100株樱与水鏡的绝景为诹访代表春景的撮影地。" },
+        { q: "水鏡狙最佳点?", a: "天守南侧护城河岸用长焦压缩天守与樱。无风的早晨夕方鏡面为理想。夜灯光秀蓝调时刻(日落后30分)梦幻，樱季尤拥挤需清晨5至6时抵达必须。" },
+        { q: "前往与最佳时期?", a: "JR上诹访站步行10分或开车5分。樱4月中旬高峰，夏蓮(7至8月)、红叶11月、冬灯光秀(2月御神渡偶开)四季可访问，所需1小时。" },
+        { q: "天守门票·营业时间?", a: "天守入场310日元(小中学生150日元)，9:00至17:30(10至3月至16:30)，周一定休。1至3楼诹访藩历史资料馆，3楼展望室一望诹访湖·八岳·诹访市街。1970年外观复原故内部钢筋混凝土，天守内撮影OK。" },
+        { q: "「诹访浮城」的历史?", a: "1592至98年日根野织部正高吉所筑水城，引诹访湖水的护城河围绕被称「浮城」。日本三大水城(高岛·松江·岛原)之一，诹访藩藩厅明治维新前诹访氏居城。长野县史迹。筑城当时护城河结构一部现存，考古学上重要。" },
+        { q: "周边连续观光?", a: "①高岛公园(午前，樱+水鏡)②上诹访温泉(车5分，片仓馆千人风吕，洋馆建筑)③诹访大社·上社本宫(车15分，御柱祭圣地)④诹访湖(湖畔慢跑，湖一周16公里)⑤立石公园(车15分，夜景)。1日游可巡诹访历史·温泉·绝景，住宿上诹访温泉便利。" },
+      ],
+      "zh-tw": [
+        { q: "高島公園(諏訪市)是什麼?", a: "長野縣諏訪市諏訪藩·諏訪氏居城高島城跡公園。「諏訪浮城」之稱的水城傳統再建天守與護城河、約100株櫻與水鏡的絕景為諏訪代表春景的撮影地。" },
+        { q: "水鏡狙最佳點?", a: "天守南側護城河岸用長焦壓縮天守與櫻。無風的早晨夕方鏡面為理想。夜燈光秀藍調時刻(日落後30分)夢幻，櫻季尤擁擠需清晨5至6時抵達必須。" },
+        { q: "前往與最佳時期?", a: "JR上諏訪站步行10分或開車5分。櫻4月中旬高峰，夏蓮(7至8月)、紅葉11月、冬燈光秀(2月御神渡偶開)四季可訪問，所需1小時。" },
+        { q: "天守門票·營業時間?", a: "天守入場310日圓(小中學生150日圓)，9:00至17:30(10至3月至16:30)，週一定休。1至3樓諏訪藩歷史資料館，3樓展望室一望諏訪湖·八岳·諏訪市街。1970年外觀復原故內部鋼筋混凝土，天守內撮影OK。" },
+        { q: "「諏訪浮城」的歷史?", a: "1592至98年日根野織部正高吉所築水城，引諏訪湖水的護城河圍繞被稱「浮城」。日本三大水城(高島·松江·島原)之一，諏訪藩藩廳明治維新前諏訪氏居城。長野縣史蹟。築城當時護城河結構一部現存，考古學上重要。" },
+        { q: "周邊連續觀光?", a: "①高島公園(午前，櫻+水鏡)②上諏訪溫泉(車5分，片倉館千人風呂，洋館建築)③諏訪大社·上社本宮(車15分，御柱祭聖地)④諏訪湖(湖畔慢跑，湖一周16公里)⑤立石公園(車15分，夜景)。1日遊可巡諏訪歷史·溫泉·絕景，住宿上諏訪溫泉便利。" },
+      ],
+      ko: [
+        { q: "다카시마 공원(스와시)이란?", a: "나가노현 스와시의 스와번·스와씨의 거성이었던 다카시마성 터 공원. 「스와의 우키시로」로 불린 수성의 전통을 잇는 재건 천수와 해자, 약 100그루의 벚꽃과 수경의 절경은 스와를 대표하는 봄 풍경의 촬영지입니다." },
+        { q: "수경을 노리는 베스트 포인트는?", a: "천수 남쪽의 해자 가에서 망원으로 천수와 벚꽃을 압축. 바람 없는 아침저녁의 거울면이 이상적. 밤의 조명 시는 푸른 시간대(일몰 후 30분)가 환상적, 벚꽃 시즌은 특히 혼잡하므로 이른 아침 5~6시 도착이 필수입니다." },
+        { q: "가는 방법과 베스트 시기는?", a: "JR 가미스와역에서 도보 10분 또는 차로 5분. 벚꽃의 4월 중순이 절정, 여름의 연꽃(7~8월), 단풍의 11월, 겨울의 조명(2월의 오미와타리에 맞춰 가끔 개최)과 사계절을 통해 방문 가능, 소요 시간 1시간." },
+        { q: "천수 입장료·영업 시간은?", a: "천수 입장 310엔(초중학생 150엔), 9:00~17:30(10~3월은 16:30까지), 월요일 정휴. 1층~3층은 스와번 역사자료관, 3층은 전망실로 스와호·야쓰가타케·스와 시가지를 한눈에. 1970년 외관 복원이라 내부는 철근 콘크리트 구조, 천수 내 촬영은 OK." },
+        { q: "「스와의 우키시로」의 역사는?", a: "1592~98년에 히네노 오리베노카미 다카요시가 축성한 수성으로, 스와호의 물을 끌어들인 해자에 둘러싸여 있었기 때문에 「우키시로」로 불렸음. 일본 3대 수성(다카시마성·마쓰에성·시마바라성) 중 하나, 스와번의 번청으로 메이지 유신까지 스와씨가 거성. 나가노현 사적. 축성 당시의 해자 구조의 일부가 현존하여, 고고학적으로도 중요합니다." },
+        { q: "주변의 연계 관광은?", a: "①다카시마 공원(오전, 벚꽃+수경) ②가미스와 온천(차로 5분, 카타쿠라칸의 1000인 풍로, 양관 건축) ③스와 다이샤·가미샤 혼미야(차로 15분, 온바시라 마쓰리의 성지) ④스와호(호반 조깅, 호수 일주 16km) ⑤다테이시 공원(차로 15분, 야경). 1일 코스로 스와의 역사·온천·절경을 둘러보고, 숙박은 가미스와 온천이 편리." },
       ],
     },
     faqs: [
