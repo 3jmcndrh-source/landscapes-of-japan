@@ -1573,10 +1573,13 @@ export const LOCATION_CONTENT = {
       "東京中心（丸之內、銀座、新宿、澀谷、六本木等）是拍攝題材寶庫。東京站丸之內站舍、晴空塔、東京塔、皇居周邊、澀谷十字路口等，現代與傳統都市景觀無數。",
       "도쿄 중심부(마루노우치, 긴자, 신주쿠, 시부야, 롯폰기 등)는 촬영 소재의 보고. 도쿄역 마루노우치 역사, 스카이트리, 도쿄타워, 고쿄 주변, 시부야 스크램블 교차로 등 근대와 전통이 어우러진 도시 경관이 무수히 많습니다."
     ),
-    definition: lh(
-      "東京(中心部)は東京都の23区の中央部、千代田区・中央区・港区・新宿区・渋谷区など主要オフィス・商業地区を含む撮影対象地で、丸の内のレンガ駅舎(東京駅、1914年開業、2012年復原)、東京タワー(333m、1958年完成、戦後復興のシンボル)、東京スカイツリー(634m、世界第3位の電波塔、2012年開業)、皇居の四季、銀座・新宿・渋谷の繁華街、お台場のレインボーブリッジまで、世界最大級メガシティの近代建築・夜景・文化が集約。年間訪日外国人観光客の約7割が東京を訪れる、日本最大の都市撮影地です。",
-      "Tokyo's central area covers the heart of the 23 wards — including Chiyoda, Chuo, Minato, Shinjuku, and Shibuya — encompassing the city's main business and shopping districts. Subjects span the Marunouchi brick station of Tokyo Station (opened 1914, restored 2012), Tokyo Tower (333 m, completed 1958, a symbol of postwar reconstruction), Tokyo Skytree (634 m, the world's third-tallest broadcasting tower, opened 2012), the four seasons of the Imperial Palace, the entertainment districts of Ginza, Shinjuku, and Shibuya, and Odaiba's Rainbow Bridge. About 70% of international visitors to Japan come to Tokyo, making it the country's largest urban photographic destination."
-    ),
+    definition: {
+      ja: "東京(中心部)は東京都の23区の中央部、千代田区・中央区・港区・新宿区・渋谷区など主要オフィス・商業地区を含む撮影対象地で、丸の内のレンガ駅舎(東京駅、1914年開業、2012年復原)、東京タワー(333m、1958年完成、戦後復興のシンボル)、東京スカイツリー(634m、世界第3位の電波塔、2012年開業)、皇居の四季、銀座・新宿・渋谷の繁華街、お台場のレインボーブリッジまで、世界最大級メガシティの近代建築・夜景・文化が集約。年間訪日外国人観光客の約7割が東京を訪れる、日本最大の都市撮影地です。",
+      en: "Tokyo's central area covers the heart of the 23 wards — including Chiyoda, Chuo, Minato, Shinjuku, and Shibuya — encompassing the city's main business and shopping districts. Subjects span the Marunouchi brick station of Tokyo Station (opened 1914, restored 2012), Tokyo Tower (333 m, completed 1958, a symbol of postwar reconstruction), Tokyo Skytree (634 m, the world's third-tallest broadcasting tower, opened 2012), the four seasons of the Imperial Palace, the entertainment districts of Ginza, Shinjuku, and Shibuya, and Odaiba's Rainbow Bridge. About 70% of international visitors to Japan come to Tokyo, making it the country's largest urban photographic destination.",
+      zh: "东京(中心部)是东京都23区中央部，含千代田区·中央区·港区·新宿区·涩谷区等主要办公·商业区的撮影对象地，丸之内红砖站舍(东京站，1914年开业，2012年复原)、东京塔(333米，1958年完工，战后复兴象征)、东京晴空塔(634米，世界第3位电波塔，2012年开业)、皇居四季、银座·新宿·涩谷繁华街、台场彩虹桥等，集世界最大级超大都市的近代建筑·夜景·文化于一体。年访日外国游客约7成访问东京，是日本最大的都市撮影地。",
+      "zh-tw": "東京(中心部)是東京都23區中央部，含千代田區·中央區·港區·新宿區·澀谷區等主要辦公·商業區的撮影對象地，丸之內紅磚站舍(東京站，1914年開業，2012年復原)、東京塔(333米，1958年完工，戰後復興象徵)、東京晴空塔(634米，世界第3位電波塔，2012年開業)、皇居四季、銀座·新宿·澀谷繁華街、台場彩虹橋等，集世界最大級超大都市的近代建築·夜景·文化於一體。年訪日外國遊客約7成訪問東京，是日本最大的都市撮影地。",
+      ko: "도쿄(중심부)는 도쿄도 23구의 중앙부로, 지요다구·주오구·미나토구·신주쿠구·시부야구 등 주요 오피스·상업 지구를 포함하는 촬영 대상지로, 마루노우치의 벽돌 역사(도쿄역, 1914년 개업, 2012년 복원), 도쿄타워(333m, 1958년 완공, 전후 부흥의 상징), 도쿄 스카이트리(634m, 세계 제3위 전파탑, 2012년 개업), 고쿄의 사계, 긴자·신주쿠·시부야 번화가, 오다이바의 레인보우 브리지까지, 세계 최대급 메가시티의 근대 건축·야경·문화가 집약되어 있습니다. 연간 방일 외국인 관광객의 약 7할이 도쿄를 방문하는 일본 최대의 도시 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "東京駅丸の内駅舎 — 1914年開業の赤レンガ駅舎、2012年に大正期の姿に復原、夜のライトアップは丸ビル・KITTE屋上から撮影",
@@ -1591,6 +1594,27 @@ export const LOCATION_CONTENT = {
         "Tokyo Skytree — opened 2012 at 634 m, the world's third-tallest broadcasting tower, with seasonal color illuminations at night",
         "Shibuya Scramble Crossing — half a million people cross daily, the world's busiest intersection; capture the bird's-eye view from SHIBUYA SKY",
         "Imperial Palace and Chidorigafuchi — green oasis on the Edo Castle site, with cherry blossoms, fresh green, autumn colors; includes the Imperial Plaza and Niju-bashi Bridge",
+      ],
+      zh: [
+        "东京站丸之内站舍 — 1914年开业的红砖站舍，2012年复原大正时期姿态，夜间灯光从丸大楼·KITTE屋顶撮影",
+        "东京塔 — 1958年完工，333米，曾比埃菲尔铁塔更高的世界最高自立铁塔，战后复兴象征",
+        "东京晴空塔 — 2012年开业，634米，世界第3位电波塔，夜间不同颜色灯光秀",
+        "涩谷十字路口 — 一日累计50万人交错，世界最繁忙交叉路口，SHIBUYA SKY俯瞰",
+        "皇居·千鸟渊 — 江户城迹的绿色绿洲，樱·新绿·红叶四季，皇居前广场与二重桥",
+      ],
+      "zh-tw": [
+        "東京站丸之內站舍 — 1914年開業的紅磚站舍，2012年復原大正時期姿態，夜間燈光從丸大樓·KITTE屋頂撮影",
+        "東京塔 — 1958年完工，333米，曾比艾菲爾鐵塔更高的世界最高自立鐵塔，戰後復興象徵",
+        "東京晴空塔 — 2012年開業，634米，世界第3位電波塔，夜間不同顏色燈光秀",
+        "澀谷十字路口 — 一日累計50萬人交錯，世界最繁忙交叉路口，SHIBUYA SKY俯瞰",
+        "皇居·千鳥淵 — 江戶城跡的綠色綠洲，櫻·新綠·紅葉四季，皇居前廣場與二重橋",
+      ],
+      ko: [
+        "도쿄역 마루노우치 역사 — 1914년 개업한 적벽돌 역사, 2012년 다이쇼 시기의 모습으로 복원, 밤의 조명은 마루빌딩·KITTE 옥상에서 촬영",
+        "도쿄타워 — 1958년 완공, 333m, 에펠탑보다 높았던 세계 최고 자립 철탑이었던 전후 부흥의 상징",
+        "도쿄 스카이트리 — 2012년 개업, 634m, 세계 제3위 전파탑, 밤에는 색이 다른 라이팅",
+        "시부야 스크램블 교차로 — 1일 누계 50만 명이 교차, 세계 제일 분주한 교차로, SHIBUYA SKY에서 부감",
+        "고쿄·치도리가후치 — 에도성 터의 녹색 오아시스, 벚꽃·신록·단풍의 사계, 고쿄 앞 광장과 니주바시",
       ],
     },
     quickAnswers: {
@@ -1609,6 +1633,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended observatories?", a: "①SHIBUYA SKY (229 m, rooftop, ¥2,500, sacred for sunset to night views) ②Tokyo City View (Roppongi Hills, 238 m, ¥2,500) ③Tokyo Skytree (634 m, ¥3,500) ④Tokyo Tower (333 m, ¥1,500) ⑤Tokyo Metropolitan Government Bldg North/South (202 m, free, until 22:30). Peak times need reservations; weekday evening to night is the secret window." },
         { q: "Best cherry blossom photo spots?", a: "①Chidorigafuchi (west of the Imperial Palace, ~260 Yoshino trees, night illumination, late March) ②Ueno Park (~1,200 trees, largest hanami gathering) ③Meguro River (~800 cherry-lined trees, night view) ④Shinjuku Gyoen (multiple varieties bloom over a long period) ⑤Around Roppongi Hills (urban + cherry). Arrive 6–8 AM to beat crowds." },
         { q: "Access and useful passes?", a: "From Narita to Tokyo Station, Narita Express ~60 min, ¥3,070. From Haneda to central Tokyo, subway ~30 min, ¥480. Useful passes: Tokyo Metro 24-hour pass ¥800 (multi-line), JR Tokunai Pass ¥760, Suica/IC card (¥2,000+). Subway + walking is far more efficient than driving for sightseeing." },
+      ],
+      zh: [
+        { q: "东京(中心部)是什么?", a: "东京都23区中央部的主要办公·商业区，东京站·东京塔(333米)·晴空塔(634米)·皇居·银座·新宿·涩谷·台场等，世界最大级超大都市的近代建筑·夜景·文化集中的日本最大都市撮影地。" },
+        { q: "东京一日撮影路线?", a: "晨:皇居→东京站→丸之内，午:浅草雷门·晴空塔，夕:涩谷十字→六本木之丘夜景为王道。地铁一日券800日元可遍游。早晨皇居·浅草人最少光最柔。" },
+        { q: "东京夜景撮影秘诀?", a: "三脚架+低ISO+长曝为基础。蓝调时刻(日落后30分钟)天空与街灯平衡最佳。展望台关馆时间需注意，屋顶需防风寒。SHIBUYA SKY(229米)·东京城市景观(238米)·汐留Caretta是穴场。" },
+        { q: "推荐展望台?", a: "①SHIBUYA SKY(229米，屋顶开放，2500日元，夕景至夜景圣地)②东京城市景观(六本木之丘，238米，2500日元)③东京晴空塔(634米，3500日元)④东京塔(333米，1500日元)⑤都厅北·南展望台(202米，免费，至22:30)。拥挤期需事前预约，平日傍晚至夜为穴场。" },
+        { q: "樱花最佳撮影点?", a: "①千鸟渊(皇居西侧，约260株染井吉野，夜灯光，3月下旬)②上野恩赐公园(约1200株，最大宴会场)③目黑川(约800株樱花并木，夜景)④新宿御苑(多品种长期可赏)⑤六本木之丘周边(都市与樱)。早晨6至8时抵达必避拥挤。" },
+        { q: "如何前往与优惠票?", a: "成田机场至东京站乘成田特快约60分钟·3070日元，羽田至都心地铁约30分钟·480日元。地铁一日券800日元(东京Metro 24小时券，多线路对应)、JR都区内Pass 760日元、Suica/IC卡(2000日元起)便利。观光地铁+步行远比开车高效。" },
+      ],
+      "zh-tw": [
+        { q: "東京(中心部)是什麼?", a: "東京都23區中央部的主要辦公·商業區，東京站·東京塔(333米)·晴空塔(634米)·皇居·銀座·新宿·澀谷·台場等，世界最大級超大都市的近代建築·夜景·文化集中的日本最大都市撮影地。" },
+        { q: "東京一日撮影路線?", a: "晨:皇居→東京站→丸之內，午:淺草雷門·晴空塔，夕:澀谷十字→六本木之丘夜景為王道。地鐵一日券800日圓可遍遊。早晨皇居·淺草人最少光最柔。" },
+        { q: "東京夜景撮影秘訣?", a: "三腳架+低ISO+長曝為基礎。藍調時刻(日落後30分鐘)天空與街燈平衡最佳。展望台關館時間需注意，屋頂需防風寒。SHIBUYA SKY(229米)·東京城市景觀(238米)·汐留Caretta是穴場。" },
+        { q: "推薦展望台?", a: "①SHIBUYA SKY(229米，屋頂開放，2500日圓，夕景至夜景聖地)②東京城市景觀(六本木之丘，238米，2500日圓)③東京晴空塔(634米，3500日圓)④東京塔(333米，1500日圓)⑤都廳北·南展望台(202米，免費，至22:30)。擁擠期需事前預約，平日傍晚至夜為穴場。" },
+        { q: "櫻花最佳撮影點?", a: "①千鳥淵(皇居西側，約260株染井吉野，夜燈光，3月下旬)②上野恩賜公園(約1200株，最大宴會場)③目黑川(約800株櫻花並木，夜景)④新宿御苑(多品種長期可賞)�⑤六本木之丘周邊(都市與櫻)。早晨6至8時抵達必避擁擠。" },
+        { q: "如何前往與優惠票?", a: "成田機場至東京站搭成田特快約60分鐘·3070日圓，羽田至都心地鐵約30分鐘·480日圓。地鐵一日券800日圓(東京Metro 24小時券，多線路對應)、JR都區內Pass 760日圓、Suica/IC卡(2000日圓起)便利。觀光地鐵+步行遠比開車高效。" },
+      ],
+      ko: [
+        { q: "도쿄(중심부)란?", a: "도쿄도 23구의 중앙부의 주요 오피스·상업 지구로, 도쿄역·도쿄타워(333m)·스카이트리(634m)·고쿄·긴자·신주쿠·시부야·오다이바 등, 세계 최대급 메가시티의 근대 건축·야경·문화가 집약된 일본 최대의 도시 촬영지입니다." },
+        { q: "도쿄에서 하루 촬영 루트는?", a: "아침: 고쿄→도쿄역→마루노우치, 점심: 아사쿠사 가미나리몬·스카이트리, 저녁: 시부야 스크램블→롯폰기힐즈 야경이 정석. 지하철 1일권 800엔으로 모두 돌 수 있음. 이른 아침의 고쿄·아사쿠사가 가장 한산하고 빛이 부드러움." },
+        { q: "도쿄의 야경 촬영 비결은?", a: "삼각대+저ISO+장노출이 기본. 블루 아워(일몰 후 30분)가 하늘과 거리 빛의 균형이 최고. 전망대는 폐관 시간 주의, 옥상은 바람과 추위 대책 필수. SHIBUYA SKY(229m)·도쿄 시티뷰(238m)·시오도메 카레타가 숨은 명소." },
+        { q: "추천 전망대는?", a: "①SHIBUYA SKY(229m, 옥상 개방, 2,500엔, 석경~야경의 성지) ②도쿄 시티뷰(롯폰기힐즈, 238m, 2,500엔) ③도쿄 스카이트리(634m, 3,500엔) ④도쿄타워(333m, 1,500엔) ⑤도청 북·남 전망대(202m, 무료, 22:30까지). 혼잡기는 사전 예약 필수, 평일 저녁~밤이 숨은 명소입니다." },
+        { q: "벚꽃 촬영 베스트 스팟은?", a: "①치도리가후치(고쿄 서쪽, 약 260그루의 소메이요시노, 야간 조명, 3월 하순) ②우에노 온시 공원(약 1,200그루, 가장 큰 규모의 연회장) ③메구로가와(약 800그루의 벚꽃 가로수, 야경) ④신주쿠 교엔(다양한 품종이 장기간 즐길 수 있음) ⑤롯폰기힐즈 주변(도시와 벚꽃). 이른 아침 6~8시 도착이 혼잡 회피에 필수." },
+        { q: "가는 방법과 알뜰 티켓은?", a: "나리타 공항에서 도쿄역까지 나리타 익스프레스로 약 60분·3,070엔, 하네다에서 도심까지 지하철로 약 30분·480엔. 지하철 1일권 800엔(도쿄 메트로 24시간권, 복수 노선 대응), JR 도쿠나이 패스 760엔, Suica/IC 카드(2,000엔~)가 편리. 관광은 차보다 지하철+도보가 압도적으로 효율적입니다." },
       ],
     },
     faqs: [
@@ -3672,10 +3720,13 @@ export const LOCATION_CONTENT = {
       "福岡市是九州最大都市。博多、天神、中洲商圈，博多拉麵與烏龍屋台文化，博多灣與福岡塔，大濠公園櫻花，絲島半島沙灘等，現代都市與自然近距共存。",
       "후쿠오카시는 규슈 최대 도시. 하카타·덴진·나카스 번화가, 하카타 라멘과 우동의 포장마차 문화, 하카타만과 후쿠오카 타워, 오호리 공원의 벚꽃, 이토시마 반도의 해변 등 현대 도시와 자연이 가까이 공존하는 독특한 도시."
     ),
-    definition: lh(
-      "福岡(ふくおか)は九州北部・福岡県の県庁所在地で、人口約164万人の九州最大の政令指定都市。古来「博多(はかた)」と呼ばれた商業の地と、1601年に福岡藩主黒田長政が築いた「福岡」の城下町が合併して現在の福岡市となった、博多と福岡という二つの顔を持つ街。福岡空港から市街地まで地下鉄5分という日本一のアクセス、博多どんたく(5月、220万人動員の日本最大級祭り)、博多祇園山笠(7月)、中洲川端の屋台街(全国の約4割、約100軒)、太宰府天満宮、糸島半島など、コンパクトに観光資源が凝縮した九州の玄関口です。",
-      "Fukuoka, capital of Fukuoka Prefecture in northern Kyushu, is the region's largest designated «government ordinance city» with about 1.64 million residents. The city formed when «Hakata» — the historic merchant district — merged with «Fukuoka,» the castle town built by feudal lord Kuroda Nagamasa in 1601, leaving the city with two distinct identities. Notable for Japan's quickest airport-to-city transit (5 minutes by subway from Fukuoka Airport), it hosts the Hakata Dontaku festival in May (drawing 2.2 million attendees, one of Japan's largest), the Hakata Gion Yamakasa in July, the Nakasu-Kawabata food-stall district (about 100 yatai — roughly 40% of all Japan's stalls), Dazaifu Tenmangu, and the Itoshima Peninsula — the gateway to Kyushu, packing tourism into a compact city."
-    ),
+    definition: {
+      ja: "福岡(ふくおか)は九州北部・福岡県の県庁所在地で、人口約164万人の九州最大の政令指定都市。古来「博多(はかた)」と呼ばれた商業の地と、1601年に福岡藩主黒田長政が築いた「福岡」の城下町が合併して現在の福岡市となった、博多と福岡という二つの顔を持つ街。福岡空港から市街地まで地下鉄5分という日本一のアクセス、博多どんたく(5月、220万人動員の日本最大級祭り)、博多祇園山笠(7月)、中洲川端の屋台街(全国の約4割、約100軒)、太宰府天満宮、糸島半島など、コンパクトに観光資源が凝縮した九州の玄関口です。",
+      en: "Fukuoka, capital of Fukuoka Prefecture in northern Kyushu, is the region's largest designated «government ordinance city» with about 1.64 million residents. The city formed when «Hakata» — the historic merchant district — merged with «Fukuoka,» the castle town built by feudal lord Kuroda Nagamasa in 1601, leaving the city with two distinct identities. Notable for Japan's quickest airport-to-city transit (5 minutes by subway from Fukuoka Airport), it hosts the Hakata Dontaku festival in May (drawing 2.2 million attendees, one of Japan's largest), the Hakata Gion Yamakasa in July, the Nakasu-Kawabata food-stall district (about 100 yatai — roughly 40% of all Japan's stalls), Dazaifu Tenmangu, and the Itoshima Peninsula — the gateway to Kyushu, packing tourism into a compact city.",
+      zh: "福冈(ふくおか)是九州北部·福冈县的县厅所在地，人口约164万人的九州最大政令指定都市。古来「博多(はかた)」之名的商业之地，与1601年福冈藩主黑田长政建造的「福冈」城下町合并而成现在的福冈市，是「博多」与「福冈」两副面孔的城市。福冈机场至市街区地铁5分钟为日本第一的近便，博多祇园山笠(7月)、博多DONTAKU(5月，220万人动员的日本最大级祭典)、中洲川端屋台街(全国约4成，约100家)、太宰府天满宫、糸岛半岛等，观光资源紧凑集中的九州玄关。",
+      "zh-tw": "福岡(ふくおか)是九州北部·福岡縣的縣廳所在地，人口約164萬人的九州最大政令指定都市。古來「博多(はかた)」之名的商業之地，與1601年福岡藩主黑田長政建造的「福岡」城下町合併而成現在的福岡市，是「博多」與「福岡」兩副面孔的城市。福岡機場至市街區地鐵5分鐘為日本第一的近便，博多祇園山笠(7月)、博多DONTAKU(5月，220萬人動員的日本最大級祭典)、中洲川端屋台街(全國約4成，約100家)、太宰府天滿宮、糸島半島等，觀光資源緊湊集中的九州玄關。",
+      ko: "후쿠오카(ふくおか)는 규슈 북부·후쿠오카현의 현청 소재지로, 인구 약 164만 명의 규슈 최대 정령 지정 도시. 예로부터 「하카타(はかた)」로 불린 상업의 땅과, 1601년 후쿠오카 번주 구로다 나가마사가 건설한 「후쿠오카」 성하도시가 합병되어 지금의 후쿠오카시가 된, 하카타와 후쿠오카라는 두 얼굴을 가진 도시. 후쿠오카 공항에서 시내까지 지하철 5분이라는 일본 제일의 액세스, 하카타 돈타쿠(5월, 220만 명 동원의 일본 최대급 축제), 하카타 기온 야마카사(7월), 나카스카와바타의 포장마차 거리(전국의 약 40%, 약 100곳), 다자이후 텐만구, 이토시마 반도 등, 콤팩트하게 관광 자원이 응축된 규슈의 관문입니다.",
+    },
     highlights: {
       ja: [
         "中洲屋台街 — 全国の屋台の約4割、約100軒、夜の煙と提灯の灯りは九州の象徴",
@@ -3690,6 +3741,27 @@ export const LOCATION_CONTENT = {
         "Fukuoka Tower (234 m) and Momochi Beach — panorama of Hakata Bay and Seaside Momochi; renowned for sunsets and nightscapes",
         "Ohori Park — opened 1929 as an urban oasis, with cherry blossoms in early April and skyscrapers reflected upside-down on the pond",
         "Hakata Dontaku (May) and Hakata Gion Yamakasa (July) — among Japan's largest festivals by attendance, energetic subjects to photograph",
+      ],
+      zh: [
+        "中洲屋台街 — 全国屋台约4成，约100家，夜的烟与提灯灯光是九州象征",
+        "太宰府天满宫 — 祀学问之神菅原道真，年间1000万人参拜，参道梅花与本殿朱色",
+        "福冈塔(234米)·百道滨 — 博多湾与海边百道全景，夕景至夜景名所",
+        "大濠公园 — 1929年开园的都市绿洲，4月上旬樱满开，池中倒映摩天楼",
+        "博多DONTAKU(5月)·博多祇园山笠(7月) — 动员数日本最大级祭典，气势磅礴的被摄体",
+      ],
+      "zh-tw": [
+        "中洲屋台街 — 全國屋台約4成，約100家，夜的煙與提燈燈光是九州象徵",
+        "太宰府天滿宮 — 祀學問之神菅原道真，年間1000萬人參拜，參道梅花與本殿朱色",
+        "福岡塔(234米)·百道濱 — 博多灣與海邊百道全景，夕景至夜景名所",
+        "大濠公園 — 1929年開園的都市綠洲，4月上旬櫻滿開，池中倒映摩天樓",
+        "博多DONTAKU(5月)·博多祇園山笠(7月) — 動員數日本最大級祭典，氣勢磅礴的被攝體",
+      ],
+      ko: [
+        "나카스 포장마차 거리 — 전국 포장마차의 약 40%, 약 100곳, 밤의 연기와 등불의 빛은 규슈의 상징",
+        "다자이후 텐만구 — 학문의 신 스가와라노 미치자네를 모심, 연 1,000만 명 참배, 참배길의 매화와 본전의 주홍색",
+        "후쿠오카 타워(234m)·모모치하마 — 하카타만과 시사이드 모모치의 파노라마, 석양~야경의 명소",
+        "오호리 공원 — 1929년 개원한 도시의 오아시스, 4월 상순 만개의 벚꽃, 호수에 비치는 거꾸로 빌딩",
+        "하카타 돈타쿠(5월)·하카타 기온 야마카사(7월) — 동원 수 일본 최대급의 축제, 기세 있는 피사체",
       ],
     },
     quickAnswers: {
@@ -3708,6 +3780,30 @@ export const LOCATION_CONTENT = {
         { q: "Access?", a: "From Fukuoka Airport to Hakata Station takes 5 min on the Kuko Subway Line, ¥260 — Japan's quickest airport-to-city access. Shinkansen «Nozomi» from Tokyo ~4 hr 50 min, ¥23,150; from Osaka 2.5 hr, ¥14,750. Reserve lodging 6 months ahead during Hakata Dontaku and Yamakasa. The ¥900 subway day pass and ¥900 Nishitetsu bus day pass are useful." },
         { q: "Best seasons?", a: "Cherry blossoms late March–early April (Maizuru Park, Ohori Park); Hakata Dontaku (May 3–4); Hakata Gion Yamakasa (July 1–15, especially the dawn «Oiyama» on the 15th); autumn colors in November (Komyo Zenji, Maizuru Park); Itoshima year-round. Winter brings Dazaifu plums (February) and city illuminations — Fukuoka offers diverse subjects in every season." },
         { q: "Best night photography spots?", a: "①Fukuoka Tower 234 m (premier nightscape, Seaside Momochi and Hakata Bay) ②Seaside Momochi Beach (sunset to blue hour with the tower in frame) ③Nakasu-Kawabata yatai district (canal and lanterns) ④Hakata Station illuminations (December–February) ⑤Ohori Park (streetlights and pond). Tripods OK but be considerate of pedestrians; bring salt-air protection near the sea." },
+      ],
+      zh: [
+        { q: "福冈是什么?", a: "九州北部县厅所在地人口约164万的九州最大政令指定都市。商业地「博多」与城下町「福冈」合并的两副面孔之街。博多DONTAKU·山笠、屋台街、太宰府、糸岛半岛等观光资源紧凑的九州玄关。" },
+        { q: "屋台撮影礼仪?", a: "店员·客人许可为基础。用餐者或厨房特写需打招呼。外观与街景可自由撮影。中洲川端·天神·长滨3区为屋台街，夜的风物诗20至23时最具活力。" },
+        { q: "1日撮影示范路线?", a: "晨:大濠公园樱或池晨景。午:太宰府天满宫参道。夕:福冈塔(展望台)→百道滨夕景。夜:中洲川端屋台街。1日基本可遍览，地铁一日券700日元便利。" },
+        { q: "如何前往?", a: "福冈机场至博多站乘地铁机场线5分钟·260日元(日本第一都心近便)。新干线「希望号」从东京约4小时50分钟·23150日元，从大阪2.5小时·14750日元。博多DONTAKU·山笠期间住宿难订需半年前确保。地铁一日券900日元·西铁巴士一日券900日元便利。" },
+        { q: "最佳季节?", a: "樱花3月下旬至4月上旬(舞鹤公园·大濠公园)、博多DONTAKU(5/3-4)、博多祇园山笠(7/1-15，尤15日早晨「追山」最高潮)、红叶11月(光明禅寺·舞鹤公园)、糸岛半岛全年。冬太宰府梅花(2月)与灯饰，1年皆可撮影的丰富区域。" },
+        { q: "夜景撮影点?", a: "①福冈塔234米(夜景特等席，海边百道与博多湾)②海边百道滨(夕景至蓝调时刻，含福冈塔构图)③中洲川端屋台街(运河与提灯)④博多站前灯饰(冬期12月至2月)⑤大濠公园(街灯与池)。三脚架可但需顾及行人通行，海近防盐害。" },
+      ],
+      "zh-tw": [
+        { q: "福岡是什麼?", a: "九州北部縣廳所在地人口約164萬的九州最大政令指定都市。商業地「博多」與城下町「福岡」合併的兩副面孔之街。博多DONTAKU·山笠、屋台街、太宰府、糸島半島等觀光資源緊湊的九州玄關。" },
+        { q: "屋台撮影禮儀?", a: "店員·客人許可為基礎。用餐者或廚房特寫需打招呼。外觀與街景可自由撮影。中洲川端·天神·長濱3區為屋台街，夜的風物詩20至23時最具活力。" },
+        { q: "1日撮影示範路線?", a: "晨:大濠公園櫻或池晨景。午:太宰府天滿宮參道。夕:福岡塔(展望台)→百道濱夕景。夜:中洲川端屋台街。1日基本可遍覽，地鐵一日券700日圓便利。" },
+        { q: "如何前往?", a: "福岡機場至博多站搭地鐵機場線5分鐘·260日圓(日本第一都心近便)。新幹線「希望號」從東京約4小時50分鐘·23150日圓，從大阪2.5小時·14750日圓。博多DONTAKU·山笠期間住宿難訂需半年前確保。地鐵一日券900日圓·西鐵巴士一日券900日圓便利。" },
+        { q: "最佳季節?", a: "櫻花3月下旬至4月上旬(舞鶴公園·大濠公園)、博多DONTAKU(5/3-4)、博多祇園山笠(7/1-15，尤15日早晨「追山」最高潮)、紅葉11月(光明禪寺·舞鶴公園)、糸島半島全年。冬太宰府梅花(2月)與燈飾，1年皆可撮影的豐富區域。" },
+        { q: "夜景撮影點?", a: "①福岡塔234米(夜景特等席，海邊百道與博多灣)②海邊百道濱(夕景至藍調時刻，含福岡塔構圖)③中洲川端屋台街(運河與提燈)④博多站前燈飾(冬期12月至2月)⑤大濠公園(街燈與池)。三腳架可但需顧及行人通行，海近防鹽害。" },
+      ],
+      ko: [
+        { q: "후쿠오카란?", a: "규슈 북부의 현청 소재지로 인구 약 164만 명의 규슈 최대 정령 지정 도시. 상업의 땅 「하카타」와 성하도시 「후쿠오카」가 합병된 두 얼굴의 도시. 하카타 돈타쿠·야마카사, 포장마차 거리, 다자이후, 이토시마 반도까지 관광 자원이 응축된 규슈의 관문입니다." },
+        { q: "포장마차 촬영 매너는?", a: "직원·손님에게 허락이 기본. 식사 중인 사람이나 조리장 클로즈업은 한마디 건넨 후. 외관과 거리는 자유롭게 촬영 가능. 나카스카와바타·덴진·나가하마의 3구역이 포장마차 거리, 밤의 풍물시를 찍으려면 20~23시 무렵이 가장 활기차다." },
+        { q: "하루 촬영 모델 코스는?", a: "아침: 오호리 공원에서 벚꽃이나 호수 새벽 풍경. 점심: 다자이후 텐만구 참배길. 저녁: 후쿠오카 타워(전망대)→모모치하마에서 석양. 밤: 나카스카와바타 포장마차 거리. 하루에 거의 망라할 수 있고, 지하철 1일권 700엔이 편리합니다." },
+        { q: "가는 방법은?", a: "후쿠오카 공항에서 하카타역까지 지하철 공항선으로 5분·260엔(일본 제일의 도심 액세스). 신칸센 「노조미」로 도쿄에서 약 4시간 50분·23,150엔, 오사카에서 2시간 반·14,750엔. 하카타 돈타쿠·야마카사 기간은 숙박 예약이 어려우므로 반년 전부터 확보를. 지하철 1일권 900엔·니시테쓰 버스 1일권 900엔이 관광에 편리." },
+        { q: "베스트 시즌은?", a: "벚꽃의 3월 하순~4월 상순(마이즈루 공원·오호리 공원), 하카타 돈타쿠(5/3~4), 하카타 기온 야마카사(7/1~15, 특히 15일 이른 아침의 「오이야마」가 최고조), 단풍의 11월(고묘젠지·마이즈루 공원), 이토시마 반도는 연중. 겨울은 다자이후의 매화(2월)와 일루미네이션이 볼거리, 1년 내내 촬영 가능한 풍부한 피사체의 지역입니다." },
+        { q: "야경 촬영 스팟은?", a: "①후쿠오카 타워 234m(야경 특등석, 시사이드 모모치와 하카타만) ②시사이드 모모치 해변(석양~블루 아워, 후쿠오카 타워를 넣은 구도) ③나카스카와바타 포장마차 거리(운하와 등불) ④하카타역 앞 일루미네이션(겨울철 12월~2월) ⑤오호리 공원(가로등과 호수). 삼각대 OK이지만 보행자 통행에 배려, 염해 대책(바다 근처)도 필요합니다." },
       ],
     },
     faqs: [
