@@ -3570,10 +3570,13 @@ export const LOCATION_CONTENT = {
       "美幌峠海拔525米，位於國道243號，俯瞰屈斜路湖。火山口湖的壯麗全景是北海道絕景之一。雲海、晨霧、夕陽四季變化。",
       "비호로 고개는 해발 525m, 굿샤로 호수를 한눈에 담는 국도 243호의 고개. 칼데라호의 웅장한 파노라마는 홋카이도 최고 수준의 절경. 운해, 아침 안개, 노을이 사계절 표정을 바꿉니다."
     ),
-    definition: lh(
-      "美幌峠(びほろとうげ)は北海道美幌町と弟子屈町の境界、国道243号線上に位置する標高525mの峠で、阿寒摩周国立公園の中核展望地。眼下にカルデラ湖の屈斜路湖(全周57km、北海道最大の湖、日本最大のカルデラ湖)、その向こうに摩周岳(857m)・斜里岳(1,547m)、晴天時には知床連山まで望める北海道屈指の絶景パノラマスポット。9〜11月の早朝、晴天で気温差が大きく無風の日には、屈斜路湖から立ち上る雲海が峠下まで広がり、その上に頭を出す摩周岳の姿は「天空の楽園」と称される幻想的な光景です。展望台はバリアフリー、道の駅ぐるっとパノラマ美幌峠も併設。",
-      "Bihoro Pass, on Route 243 at the boundary between Bihoro and Teshikaga in Hokkaido, sits at 525 m elevation as the central viewpoint of Akan-Mashu National Park. Below lies the caldera lake Kussharo (57 km in circumference, Hokkaido's largest lake and Japan's largest caldera lake), with Mt. Mashu (857 m) and Mt. Shari (1,547 m) beyond, and on clear days even the Shiretoko Range — making this one of Hokkaido's most spectacular panoramic spots. From September to November on clear, windless mornings with a big temperature differential, a sea of clouds rises from Lake Kussharo and spreads beneath the pass, with Mt. Mashu's peak emerging above — a phenomenon often called «paradise in the sky.» The barrier-free observatory adjoins Michi-no-Eki «Gurutto Panorama Bihoro-toge.»"
-    ),
+    definition: {
+      ja: "美幌峠(びほろとうげ)は北海道美幌町と弟子屈町の境界、国道243号線上に位置する標高525mの峠で、阿寒摩周国立公園の中核展望地。眼下にカルデラ湖の屈斜路湖(全周57km、北海道最大の湖、日本最大のカルデラ湖)、その向こうに摩周岳(857m)・斜里岳(1,547m)、晴天時には知床連山まで望める北海道屈指の絶景パノラマスポット。9〜11月の早朝、晴天で気温差が大きく無風の日には、屈斜路湖から立ち上る雲海が峠下まで広がり、その上に頭を出す摩周岳の姿は「天空の楽園」と称される幻想的な光景です。展望台はバリアフリー、道の駅ぐるっとパノラマ美幌峠も併設。",
+      en: "Bihoro Pass, on Route 243 at the boundary between Bihoro and Teshikaga in Hokkaido, sits at 525 m elevation as the central viewpoint of Akan-Mashu National Park. Below lies the caldera lake Kussharo (57 km in circumference, Hokkaido's largest lake and Japan's largest caldera lake), with Mt. Mashu (857 m) and Mt. Shari (1,547 m) beyond, and on clear days even the Shiretoko Range — making this one of Hokkaido's most spectacular panoramic spots. From September to November on clear, windless mornings with a big temperature differential, a sea of clouds rises from Lake Kussharo and spreads beneath the pass, with Mt. Mashu's peak emerging above — a phenomenon often called «paradise in the sky.» The barrier-free observatory adjoins Michi-no-Eki «Gurutto Panorama Bihoro-toge.»",
+      zh: "美幌峠(びほろとうげ)位于北海道美幌町与弟子屈町交界，国道243号线上海拔525米的峠，是阿寒摩周国立公园核心展望地。眼下破火山口湖屈斜路湖(全周57公里，北海道最大湖，日本最大破火山口湖)，对岸摩周岳(857米)·斜里岳(1547米)，晴天时知床连山可望的北海道屈指绝景全景点。9至11月清晨，晴天气温差大无风之日，屈斜路湖升起的云海弥漫至峠下，云上探出头的摩周岳被誉为「天空的乐园」的梦幻光景。展望台无障碍，道之站「环顾全景美幌峠」并设。",
+      "zh-tw": "美幌峠(びほろとうげ)位於北海道美幌町與弟子屈町交界，國道243號線上海拔525米的峠，是阿寒摩周國立公園核心展望地。眼下破火山口湖屈斜路湖(全周57公里，北海道最大湖，日本最大破火山口湖)，對岸摩周岳(857米)·斜里岳(1547米)，晴天時知床連山可望的北海道屈指絕景全景點。9至11月清晨，晴天氣溫差大無風之日，屈斜路湖升起的雲海瀰漫至峠下，雲上探出頭的摩周岳被譽為「天空的樂園」的夢幻光景。展望台無障礙，道之站「環顧全景美幌峠」並設。",
+      ko: "비호로 고개(びほろとうげ)는 홋카이도 비호로초와 데시카가초의 경계, 국도 243호선 상에 위치한 해발 525m의 고개로, 아칸 마슈 국립공원의 핵심 전망지. 발 아래로 칼데라호인 굿샤로호(전주 57km, 홋카이도 최대의 호수, 일본 최대의 칼데라호), 그 너머에 마슈다케(857m)·샤리다케(1,547m), 맑은 날에는 시레토코 연산까지 바라볼 수 있는 홋카이도 굴지의 절경 파노라마 스팟. 9~11월의 이른 아침, 맑은 날씨에 기온차가 크고 바람 없는 날에는 굿샤로호에서 피어오르는 운해가 고개 아래까지 펼쳐지고, 그 위로 머리를 내미는 마슈다케의 모습은 「하늘의 낙원」으로 불리는 환상적인 광경입니다. 전망대는 배리어프리, 미치노에키 「구룻토 파노라마 비호로토게」도 병설.",
+    },
     highlights: {
       ja: [
         "屈斜路湖の俯瞰 — 全周57km・日本最大のカルデラ湖、520段階段の上にある展望台",
@@ -3588,6 +3591,27 @@ export const LOCATION_CONTENT = {
         "Mt. Mashu at sunset — the western sun gilds the peak, contrasting with Lake Kussharo for a stunning composition",
         "Mt. Atosanupuri (Mt. Iou) — an active volcano emitting plumes, on the opposite shore of Lake Kussharo",
         "Michi-no-Eki Gurutto Panorama Bihoro-toge — restaurant, shop, and free observation deck; famous «Age-imo» fried potato dumplings",
+      ],
+      zh: [
+        "屈斜路湖俯瞰 — 全周57公里·日本最大破火山口湖，520级阶梯上的展望台",
+        "云海(9至11月) — 早晨晴天·气温差·无风3条件出现，摩周岳浮于云海之上",
+        "夕阳摩周岳 — 西阳染摩周岳金黄色，与屈斜路湖对比绝景",
+        "Atosanupuri(硫磺山) — 噴烟升起的活火山，屈斜路湖对岸火山地形",
+        "道之站环顾全景美幌峠 — 餐厅·商店·免费展望台，名物「炸薯」",
+      ],
+      "zh-tw": [
+        "屈斜路湖俯瞰 — 全周57公里·日本最大破火山口湖，520級階梯上的展望台",
+        "雲海(9至11月) — 早晨晴天·氣溫差·無風3條件出現，摩周岳浮於雲海之上",
+        "夕陽摩周岳 — 西陽染摩周岳金黃色，與屈斜路湖對比絕景",
+        "Atosanupuri(硫磺山) — 噴煙升起的活火山，屈斜路湖對岸火山地形",
+        "道之站環顧全景美幌峠 — 餐廳·商店·免費展望台，名物「炸薯」",
+      ],
+      ko: [
+        "굿샤로호의 부감 — 전주 57km·일본 최대의 칼데라호, 520계단 위의 전망대",
+        "운해(9~11월) — 이른 아침, 맑은 날·기온차·무풍의 3조건으로 출현, 마슈다케가 운해 위에 떠오름",
+        "노을의 마슈다케 — 서쪽 햇빛이 마슈다케를 황금색으로 물들임, 굿샤로호와의 대비가 절경",
+        "아토사누푸리(이오잔) — 분연이 솟구치는 활화산, 굿샤로호 건너편의 화산 지형",
+        "미치노에키 구룻토 파노라마 비호로토게 — 레스토랑·매점·무료 전망 데크, 명과 「아게이모」",
       ],
     },
     quickAnswers: {
@@ -3607,6 +3631,30 @@ export const LOCATION_CONTENT = {
         { q: "What is «age-imo»?", a: "The signature dish of Michi-no-Eki Gurutto Panorama Bihoro-toge. Whole Hokkaido potatoes wrapped in batter and deep-fried on a skewer (3 pieces, ¥350). Half a century of history, with 500,000 sticks sold per year. Served with butter and cinnamon sauce — perfect fuel before or after shooting in the cold." },
         { q: "Stargazing photography?", a: "Light pollution is nearly absent; on clear new-moon nights the Milky Way is visible to the naked eye. Compositions with starfield reflected on Lake Kussharo are rare and stunning. Winter offers air clarity (-15°C nights) ideal for astrophotography — bring full cold-weather gear and condensation prevention." },
       ],
+      zh: [
+        { q: "美幌峠是什么?", a: "北海道阿寒摩周国立公园核心展望地，海拔525米的峠。眼下日本最大破火山口湖屈斜路湖，对岸摩周岳·斜里岳·知床连山可望的北海道屈指绝景全景点。" },
+        { q: "云海何时出现?", a: "9至11月早晨晴天无风、温差大日。日出前30分钟左右最盛。摩周湖雾概率高而美幌峠云海概率高，相互补充的撮影地。" },
+        { q: "如何前往?", a: "女满别机场开车1小时，JR北见站·网走站开车40分。冬季雪道结冰需注意，租车建议4WD。札幌开车5小时远，与阿寒·知床组合周游为现实。" },
+        { q: "冬季可通行?", a: "国道243号线冬期亦通行(有除雪)，但需注意吹雪·白色障·结冰。展望台停车场除雪但易滑。冬屈斜路湖结冰+「御神渡」可见之年，仅雪上撮影者足迹的构图迷人。" },
+        { q: "炸薯是什么?", a: "道之站环顾全景美幌峠的名物。北海道产马铃薯整颗包衣油炸的串团子(3个·350日元)。50年以上历史，年销50万串。配奶油与肉桂酱，撮影前后能量补给最佳。寒冷之身受用。" },
+        { q: "夜星空撮影?", a: "周边几无光害，晴天新月期天河肉眼可见。屈斜路湖前景拍星空倒影构图稀有。冬-15℃以下严寒但空气澄清天体撮影最佳，防寒装备与相机防露彻底。" },
+      ],
+      "zh-tw": [
+        { q: "美幌峠是什麼?", a: "北海道阿寒摩周國立公園核心展望地，海拔525米的峠。眼下日本最大破火山口湖屈斜路湖，對岸摩周岳·斜里岳·知床連山可望的北海道屈指絕景全景點。" },
+        { q: "雲海何時出現?", a: "9至11月早晨晴天無風、溫差大日。日出前30分鐘左右最盛。摩周湖霧概率高而美幌峠雲海概率高，相互補充的撮影地。" },
+        { q: "如何前往?", a: "女滿別機場開車1小時，JR北見站·網走站開車40分。冬季雪道結冰需注意，租車建議4WD。札幌開車5小時遠，與阿寒·知床組合周遊為現實。" },
+        { q: "冬季可通行?", a: "國道243號線冬期亦通行(有除雪)，但需注意吹雪·白色障·結冰。展望台停車場除雪但易滑。冬屈斜路湖結冰+「御神渡」可見之年，僅雪上撮影者足跡的構圖迷人。" },
+        { q: "炸薯是什麼?", a: "道之站環顧全景美幌峠的名物。北海道產馬鈴薯整顆包衣油炸的串糰子(3個·350日圓)。50年以上歷史，年銷50萬串。配奶油與肉桂醬，撮影前後能量補給最佳。寒冷之身受用。" },
+        { q: "夜星空撮影?", a: "周邊幾無光害，晴天新月期天河肉眼可見。屈斜路湖前景拍星空倒影構圖稀有。冬-15℃以下嚴寒但空氣澄清天體撮影最佳，防寒裝備與相機防露徹底。" },
+      ],
+      ko: [
+        { q: "비호로 고개란?", a: "홋카이도 아칸 마슈 국립공원의 핵심 전망지로, 해발 525m의 고개. 발 아래로 일본 최대의 칼데라호 굿샤로호, 그 너머에 마슈다케·샤리다케·시레토코 연산까지 바라볼 수 있는 홋카이도 굴지의 절경 파노라마 스팟입니다." },
+        { q: "운해는 언제 볼 수 있나?", a: "9~11월의 아침, 맑은 날씨에 무풍, 기온차가 큰 날. 일출 전부터 30분 정도가 최절정. 마슈호는 안개 확률이 높지만 비호로 고개는 운해 확률이 높음, 상호 보완적인 촬영지입니다." },
+        { q: "가는 방법은?", a: "메만베쓰 공항에서 차로 1시간, JR 키타미역·아바시리역에서 차로 40분. 겨울철은 눈길로 결빙 주의, 렌터카는 4WD 추천. 삿포로에서는 차로 5시간 멀어, 아칸·시레토코와 조합한 순회가 현실적." },
+        { q: "겨울철 통행 가능?", a: "국도 243호선은 겨울철에도 통행 가능(제설 있음)하지만, 눈보라·화이트아웃·결빙 주의. 전망대 주차장은 제설되지만 미끄러움. 겨울의 굿샤로호는 결빙+「오미와타리」가 보이는 해도 있어, 눈 위에 서 있는 촬영자의 발자국만 있는 구도가 잘 살아남." },
+        { q: "아게이모란?", a: "미치노에키 구룻토 파노라마 비호로토게의 명물. 홋카이도산 감자를 통째로 옷에 싸서 튀긴 꼬치 경단(3개·350엔). 50년 이상의 역사로 연 50만 개 팔림. 버터와 시나몬 소스가 곁들여져, 촬영 전후 에너지 보급에 최적. 추위로 차가워진 몸에 스며듦." },
+        { q: "밤의 별하늘 촬영은?", a: "주변에 광해가 거의 없고, 맑은 날씨의 신월기는 은하수가 육안으로 또렷이 보임. 굿샤로호를 전경으로 별하늘의 반영을 찍으면 보기 드문 구도를 얻을 수 있음. 겨울은 기온 -15℃ 이하의 극한이지만 공기가 맑아 천체 촬영에는 최적, 방한 장비와 카메라의 결로 대책 철저히." },
+      ],
     },
     faqs: [
       { q: d("雲海はいつ見られる？","When do sea-of-clouds occur?","云海何时出现？","雲海何時出現？","운해는 언제 볼 수 있나요?"),
@@ -3621,10 +3669,13 @@ export const LOCATION_CONTENT = {
       "摩周湖是世界級透明度的火山口湖，有「霧之摩周湖」之稱。霧籠湖面的景象神秘。晴天鈷藍稱「摩周藍」，展望台俯瞰最佳。",
       "마슈호는 세계 최고 수준 투명도의 칼데라호. '안개의 마슈호'로 알려져 호수면을 덮는 안개가 신비롭습니다. 맑은 날 코발트블루는 '마슈 블루'라 불리며 전망대에서 부감할 수 있습니다."
     ),
-    definition: lh(
-      "摩周湖(ましゅうこ)は北海道川上郡弟子屈町の阿寒摩周国立公園内、約7,000年前の巨大噴火によって形成された二重カルデラ湖で、面積19.6km²・最大水深211m、湖周囲は20kmの双子のカルデラ湖。流出河川がない独立した湖で、流入する水が透明度を損なわないため、1931年の調査で透明度41.6mを記録、当時世界一(現在も世界第2位、ロシアのバイカル湖に次ぐ)。湖を取り囲む高さ200m級の急峻な外輪山(カムイヌプリ・摩周岳857m等)、その底に湛えられたコバルトブルーの湖面は「摩周ブルー」と称され、晴天時の青さは他の追随を許しません。霧が湖面を覆うことが多く「霧の摩周湖」の別名でも知られ、1965年布施明の歌で全国的に有名になりました。",
-      "Lake Mashu lies within Akan-Mashu National Park in Teshikaga, Kawakami District, Hokkaido — a double caldera lake formed by a massive eruption about 7,000 years ago, with an area of 19.6 km², a maximum depth of 211 m, and a 20 km perimeter. With no outflowing river, the lake's transparency goes undisturbed; in a 1931 survey it recorded 41.6 m of clarity, then the world's deepest reading (still second only to Lake Baikal). The 200 m-high outer rim — Mt. Kamuinupuri, Mt. Mashu (857 m), and others — surrounds a cobalt-blue water known as «Mashu Blue» that, on clear days, no other lake can match. Often shrouded in mist, it is also called «Misty Mashu,» and became nationally famous in 1965 through the song by Akira Fuse."
-    ),
+    definition: {
+      ja: "摩周湖(ましゅうこ)は北海道川上郡弟子屈町の阿寒摩周国立公園内、約7,000年前の巨大噴火によって形成された二重カルデラ湖で、面積19.6km²・最大水深211m、湖周囲は20kmの双子のカルデラ湖。流出河川がない独立した湖で、流入する水が透明度を損なわないため、1931年の調査で透明度41.6mを記録、当時世界一(現在も世界第2位、ロシアのバイカル湖に次ぐ)。湖を取り囲む高さ200m級の急峻な外輪山(カムイヌプリ・摩周岳857m等)、その底に湛えられたコバルトブルーの湖面は「摩周ブルー」と称され、晴天時の青さは他の追随を許しません。霧が湖面を覆うことが多く「霧の摩周湖」の別名でも知られ、1965年布施明の歌で全国的に有名になりました。",
+      en: "Lake Mashu lies within Akan-Mashu National Park in Teshikaga, Kawakami District, Hokkaido — a double caldera lake formed by a massive eruption about 7,000 years ago, with an area of 19.6 km², a maximum depth of 211 m, and a 20 km perimeter. With no outflowing river, the lake's transparency goes undisturbed; in a 1931 survey it recorded 41.6 m of clarity, then the world's deepest reading (still second only to Lake Baikal). The 200 m-high outer rim — Mt. Kamuinupuri, Mt. Mashu (857 m), and others — surrounds a cobalt-blue water known as «Mashu Blue» that, on clear days, no other lake can match. Often shrouded in mist, it is also called «Misty Mashu,» and became nationally famous in 1965 through the song by Akira Fuse.",
+      zh: "摩周湖(ましゅうこ)位于北海道川上郡弟子屈町阿寒摩周国立公园内，约7000年前巨大喷发形成的双重破火山口湖，面积19.6平方公里·最大水深211米，湖周20公里的双胞胎破火山口湖。无流出河流的独立湖，流入水不损透明度，1931年调查透明度41.6米，当时世界第一(现仍世界第2位，仅次俄罗斯贝加尔湖)。围绕湖的高度200米级急峻外轮山(神威岳·摩周岳857米等)，底部钴蓝湖面被誉「摩周蓝」，晴天的蓝无可匹敌。雾常覆湖面别名「雾之摩周湖」，1965年布施明歌曲全国闻名。",
+      "zh-tw": "摩周湖(ましゅうこ)位於北海道川上郡弟子屈町阿寒摩周國立公園內，約7000年前巨大噴發形成的雙重破火山口湖，面積19.6平方公里·最大水深211米，湖周20公里的雙胞胎破火山口湖。無流出河流的獨立湖，流入水不損透明度，1931年調查透明度41.6米，當時世界第一(現仍世界第2位，僅次俄羅斯貝加爾湖)。圍繞湖的高度200米級急峻外輪山(神威岳·摩周岳857米等)，底部鈷藍湖面被譽「摩周藍」，晴天的藍無可匹敵。霧常覆湖面別名「霧之摩周湖」，1965年布施明歌曲全國聞名。",
+      ko: "마슈호(ましゅうこ)는 홋카이도 가와카미군 데시카가초의 아칸 마슈 국립공원 내, 약 7,000년 전 거대 분화로 형성된 이중 칼데라호로, 면적 19.6km²·최대 수심 211m, 호수 둘레 20km의 쌍둥이 칼데라호. 유출 하천이 없는 독립한 호수로, 유입되는 물이 투명도를 손상시키지 않기 때문에 1931년 조사에서 투명도 41.6m를 기록, 당시 세계 1위(현재도 세계 2위, 러시아 바이칼호 다음). 호수를 둘러싸는 높이 200m급의 가파른 외륜산(가무이누푸리·마슈다케 857m 등), 그 바닥에 담긴 코발트블루 수면은 「마슈 블루」로 불리며, 맑은 날의 푸름은 다른 추종을 불허합니다. 안개가 호수면을 덮는 일이 많아 「안개의 마슈호」라는 별명으로도 알려져 있으며, 1965년 후세 아키라의 노래로 전국적으로 유명해졌습니다.",
+    },
     highlights: {
       ja: [
         "摩周湖第一展望台 — 標高670m、湖を見下ろす定番展望台、駐車場とレストハウス併設",
@@ -3639,6 +3690,27 @@ export const LOCATION_CONTENT = {
         "Mashu Blue — the cobalt-blue water on clear days, especially around midday when the sun is highest",
         "«Misty Mashu» — the mystical sight of mist covering the surface, present about 70% of the year (with only 30% clear viewing)",
         "Mt. Mashu (857 m) — the outer caldera rim, climbable (4-hour round trip) for a unique angle looking down on the lake",
+      ],
+      zh: [
+        "摩周湖第一展望台 — 海拔670米，俯瞰湖的定番展望台，停车场与休息所并设",
+        "摩周湖第三展望台 — 海拔800米，比第一更高，冬季闭锁，可望屈斜路湖",
+        "摩周蓝 — 晴天钴蓝色，尤正午前后太阳高度高时段",
+        "雾之摩周湖 — 雾覆湖面神秘光景，年70%雾，可见约30%稀有度",
+        "摩周岳(857米) — 破火山口外轮山，可登山(往返4小时)，俯瞰湖的独特角度",
+      ],
+      "zh-tw": [
+        "摩周湖第一展望台 — 海拔670米，俯瞰湖的定番展望台，停車場與休息所並設",
+        "摩周湖第三展望台 — 海拔800米，比第一更高，冬季閉鎖，可望屈斜路湖",
+        "摩周藍 — 晴天鈷藍色，尤正午前後太陽高度高時段",
+        "霧之摩周湖 — 霧覆湖面神秘光景，年70%霧，可見約30%稀有度",
+        "摩周岳(857米) — 破火山口外輪山，可登山(往返4小時)，俯瞰湖的獨特角度",
+      ],
+      ko: [
+        "마슈호 제1전망대 — 해발 670m, 호수를 내려다보는 정석 전망대, 주차장과 레스트하우스 병설",
+        "마슈호 제3전망대 — 해발 800m, 제1보다 높은 곳, 겨울철 폐쇄, 굿샤로호까지 바라봄",
+        "마슈 블루 — 맑은 날의 코발트블루, 특히 정오 전후 태양 고도가 높은 시간대",
+        "안개의 마슈호 — 호수면을 안개가 덮는 신비로운 광경, 연간 70%가 안개, 보이는 것이 약 30%의 희소도",
+        "마슈다케(857m) — 칼데라 외륜산, 등산 가능(왕복 4시간), 호수를 내려다보는 독특한 각도",
       ],
     },
     quickAnswers: {
@@ -3658,6 +3730,30 @@ export const LOCATION_CONTENT = {
         { q: "Can I walk down to the lakeshore?", a: "Access is strictly restricted. The entire perimeter is a Special Protection Zone — no legitimate route to the water exists. As a sacred lake to the Ainu people, used for ancient rituals, only views from the observatories are possible." },
         { q: "Onsen nearby?", a: "Kawayu Onsen (15 min by car, strong acid sulfur, steam-rising town), Wakoto and Sunayu on Lake Kussharo (free wild baths welling up from the lakebed, anyone can enter), and Mashuko Onsen (the only onsen near the lake). In winter, snow-bath views are dreamlike, with steam and snow in stunning contrast." },
       ],
+      zh: [
+        { q: "摩周湖是什么?", a: "北海道阿寒摩周国立公园双重破火山口湖，面积19.6平方公里·最大水深211米。1931年透明度41.6米创世界第一记录的湖，晴天「摩周蓝」与雾覆「雾之摩周湖」交替出现的神秘撮影地。" },
+        { q: "可见概率?", a: "年间晴率约30%。夏多雾日，冬至春较晴。不放弃巡游第一·第三·里摩周3处展望台可提高概率。早晨不如正午前后。" },
+        { q: "如何前往?", a: "女满别机场开车1.5小时，JR摩周站开车30分。冬季第三展望台闭锁，仅第一展望台。海拔800米第三展望台可望屈斜路湖的绝景，夏季限定特别体验。" },
+        { q: "3处展望台差异?", a: "第一展望台(海拔670米，停车场500日元，含休息所·商店，全年开放)，第三展望台(海拔800米，免费停车场，可望屈斜路湖绝景，冬期闭锁)，里摩周展望台(海拔585米，北侧眺望，雾发生概率低)。3处巡游捕捉摩周湖为定石。" },
+        { q: "可下湖畔?", a: "湖畔进入严格限制。摩周湖周围全域为「特别保护地区」原则禁入，无下湖正规路线。爱努民族视为神圣湖古来神事场的历史背景，展望台撮影为唯一方式。" },
+        { q: "周边温泉?", a: "川汤温泉(车15分，强酸性硫磺泉，蒸汽腾腾温泉街)、屈斜路湖畔的和琴·砂汤(湖底涌出温泉，谁皆可入的免费露天)、摩周湖温泉(湖近唯一温泉)。冬季雪见露天梦幻，蒸汽与雪对比迷人。" },
+      ],
+      "zh-tw": [
+        { q: "摩周湖是什麼?", a: "北海道阿寒摩周國立公園雙重破火山口湖，面積19.6平方公里·最大水深211米。1931年透明度41.6米創世界第一記錄的湖，晴天「摩周藍」與霧覆「霧之摩周湖」交替出現的神秘撮影地。" },
+        { q: "可見概率?", a: "年間晴率約30%。夏多霧日，冬至春較晴。不放棄巡遊第一·第三·裡摩周3處展望台可提高概率。早晨不如正午前後。" },
+        { q: "如何前往?", a: "女滿別機場開車1.5小時，JR摩周站開車30分。冬季第三展望台閉鎖，僅第一展望台。海拔800米第三展望台可望屈斜路湖的絕景，夏季限定特別體驗。" },
+        { q: "3處展望台差異?", a: "第一展望台(海拔670米，停車場500日圓，含休息所·商店，全年開放)，第三展望台(海拔800米，免費停車場，可望屈斜路湖絕景，冬期閉鎖)，裡摩周展望台(海拔585米，北側眺望，霧發生概率低)。3處巡遊捕捉摩周湖為定石。" },
+        { q: "可下湖畔?", a: "湖畔進入嚴格限制。摩周湖周圍全域為「特別保護地區」原則禁入，無下湖正規路線。愛努民族視為神聖湖古來神事場的歷史背景，展望台撮影為唯一方式。" },
+        { q: "周邊溫泉?", a: "川湯溫泉(車15分，強酸性硫磺泉，蒸汽騰騰溫泉街)、屈斜路湖畔的和琴·砂湯(湖底湧出溫泉，誰皆可入的免費露天)、摩周湖溫泉(湖近唯一溫泉)。冬季雪見露天夢幻，蒸汽與雪對比迷人。" },
+      ],
+      ko: [
+        { q: "마슈호란?", a: "홋카이도 아칸 마슈 국립공원의 이중 칼데라호로, 면적 19.6km²·최대 수심 211m. 1931년에 투명도 41.6m로 세계 1위를 기록한 호수로, 맑은 날의 「마슈 블루」와 안개로 덮인 「안개의 마슈호」가 번갈아 나타나는 신비로운 촬영지입니다." },
+        { q: "보일 확률은?", a: "연간 맑은 날 확률은 약 30%. 특히 여름은 안개의 날이 많고, 겨울~봄이 비교적 맑기 쉬움. 포기하지 않고 제1·제3·우라마슈 전망대의 3곳을 돌면 보일 확률이 올라감. 이른 아침보다 정오 전후가 베스트." },
+        { q: "가는 방법은?", a: "메만베쓰 공항에서 차로 1시간 반, JR 마슈역에서 차로 30분. 겨울철은 제3전망대 폐쇄, 제1전망대만. 해발 800m의 제3전망대는 굿샤로호도 바라볼 수 있는 절경, 여름철 한정의 특별한 체험입니다." },
+        { q: "3개 전망대의 차이는?", a: "제1전망대(해발 670m, 주차장 500엔, 레스트하우스·매점 있음, 연중 개방), 제3전망대(해발 800m, 무료 주차장, 굿샤로호도 바라보는 절경, 겨울철 폐쇄), 우라마슈 전망대(해발 585m, 북쪽에서의 전망, 안개 발생 확률이 낮음). 3곳을 돌아 마슈호를 포착하는 것이 정석." },
+        { q: "호반에 내려갈 수 있나?", a: "호반 액세스는 엄격히 제한. 마슈호는 주위 전역이 「특별 보호 지구」로 원칙 출입 금지, 호수면에 내려가는 정규 루트는 존재하지 않음. 아이누 민족은 신성한 호수로 예로부터 신사의 장으로 한 역사적 배경도 있어, 전망대에서의 촬영이 유일한 방법입니다." },
+        { q: "주변의 온천은?", a: "가와유 온천(차로 15분, 강산성 유황천, 김이 솟는 온천 거리), 굿샤로호반의 와코토·스나유(호수 바닥에서 온천 용출, 누구나 들어갈 수 있는 무료 노천), 마슈코 온천(호수 가까이의 유일한 온천). 겨울철은 설견 노천이 환상적, 김과 눈의 대비가 잘 살아남." },
+      ],
     },
     faqs: [
       { q: d("見える確率は？","What are the odds of seeing the lake?","能看到湖面的概率？","能看到湖面的概率？","호수면을 볼 확률은?"),
@@ -3672,10 +3768,13 @@ export const LOCATION_CONTENT = {
       "阿寒湖是火山口湖，以毬藻（特別天然紀念物）棲息地著名。湖畔阿寒湖溫泉、阿伊努村傳統文化、夏季毬藻祭、冬季湖面結冰與觀星等四季可拍。",
       "아칸호는 마리모(특별천연기념물) 서식지로 알려진 칼데라호. 호반의 아칸코 온천, 아이누 코탄에서의 전통 문화, 여름 마리모 축제, 겨울 결빙과 천체 관측 등 사계절을 통한 촬영지."
     ),
-    definition: lh(
-      "阿寒湖(あかんこ)は北海道釧路市阿寒町の阿寒摩周国立公園内、雄阿寒岳(1,371m)と雌阿寒岳(1,499m)の間にある面積13.3km²・最大水深45mのカルデラ湖。湖底に生息する球状の藻「マリモ(毬藻)」は阿寒湖でしか天然に見られない世界で唯一の生態系で、1921年に天然記念物、1952年に特別天然記念物に指定された日本独自の貴重な種。湖畔の阿寒湖温泉街は北海道最大級のアイヌコタン(集落)を擁し、アイヌ古式舞踊(国指定重要無形民俗文化財)や木彫り工芸が継承されています。冬期はワカサギ釣り、湖面結氷、夜の星空観察、夏期はマリモ祭り(10月)と、四季を通じて自然と文化の撮影地です。",
-      "Lake Akan, in Akan-cho, Kushiro City, Hokkaido, lies within Akan-Mashu National Park between Mt. Oakan (1,371 m) and Mt. Meakan (1,499 m) — a caldera lake of 13.3 km² with a maximum depth of 45 m. The spherical algae «marimo» found at its bottom occur naturally nowhere else in the world; designated a Natural Monument in 1921 and a Special Natural Monument in 1952, marimo are uniquely Japanese. The lakeside Akanko Onsen hosts one of Hokkaido's largest Ainu Kotan (settlements), where Ainu Old-Style Dance (a designated Important Intangible Folk Cultural Property) and wood carving are still practiced. Winter brings smelt fishing, an ice-covered lake, and stargazing, while summer offers the October Marimo Festival — the lake is a year-round destination for nature and culture photography."
-    ),
+    definition: {
+      ja: "阿寒湖(あかんこ)は北海道釧路市阿寒町の阿寒摩周国立公園内、雄阿寒岳(1,371m)と雌阿寒岳(1,499m)の間にある面積13.3km²・最大水深45mのカルデラ湖。湖底に生息する球状の藻「マリモ(毬藻)」は阿寒湖でしか天然に見られない世界で唯一の生態系で、1921年に天然記念物、1952年に特別天然記念物に指定された日本独自の貴重な種。湖畔の阿寒湖温泉街は北海道最大級のアイヌコタン(集落)を擁し、アイヌ古式舞踊(国指定重要無形民俗文化財)や木彫り工芸が継承されています。冬期はワカサギ釣り、湖面結氷、夜の星空観察、夏期はマリモ祭り(10月)と、四季を通じて自然と文化の撮影地です。",
+      en: "Lake Akan, in Akan-cho, Kushiro City, Hokkaido, lies within Akan-Mashu National Park between Mt. Oakan (1,371 m) and Mt. Meakan (1,499 m) — a caldera lake of 13.3 km² with a maximum depth of 45 m. The spherical algae «marimo» found at its bottom occur naturally nowhere else in the world; designated a Natural Monument in 1921 and a Special Natural Monument in 1952, marimo are uniquely Japanese. The lakeside Akanko Onsen hosts one of Hokkaido's largest Ainu Kotan (settlements), where Ainu Old-Style Dance (a designated Important Intangible Folk Cultural Property) and wood carving are still practiced. Winter brings smelt fishing, an ice-covered lake, and stargazing, while summer offers the October Marimo Festival — the lake is a year-round destination for nature and culture photography.",
+      zh: "阿寒湖(あかんこ)位于北海道钏路市阿寒町阿寒摩周国立公园内，雄阿寒岳(1371米)与雌阿寒岳(1499米)之间，面积13.3平方公里·最大水深45米的破火山口湖。湖底栖息的球状藻「毬藻(マリモ)」仅阿寒湖天然可见，世界唯一生态系，1921年指定天然纪念物，1952年特别天然纪念物，日本独特珍稀种。湖畔阿寒湖温泉街拥有北海道最大级阿伊努村落，阿伊努古式舞蹈(国家指定重要无形民俗文化财)与木雕工艺传承。冬期公鱼钓·湖面结冰·夜星空观察，夏期毬藻祭(10月)，四季可摄自然与文化的撮影地。",
+      "zh-tw": "阿寒湖(あかんこ)位於北海道釧路市阿寒町阿寒摩周國立公園內，雄阿寒岳(1371米)與雌阿寒岳(1499米)之間，面積13.3平方公里·最大水深45米的破火山口湖。湖底棲息的球狀藻「毬藻(マリモ)」僅阿寒湖天然可見，世界唯一生態系，1921年指定天然紀念物，1952年特別天然紀念物，日本獨特珍稀種。湖畔阿寒湖溫泉街擁有北海道最大級阿伊努村落，阿伊努古式舞蹈(國家指定重要無形民俗文化財)與木雕工藝傳承。冬期公魚釣·湖面結冰·夜星空觀察，夏期毬藻祭(10月)，四季可攝自然與文化的撮影地。",
+      ko: "아칸호(あかんこ)는 홋카이도 구시로시 아칸초의 아칸 마슈 국립공원 내, 오아칸다케(1,371m)와 메아칸다케(1,499m) 사이에 있는 면적 13.3km²·최대 수심 45m의 칼데라호. 호수 바닥에 서식하는 구상의 조류 「마리모(毬藻)」는 아칸호에서만 천연으로 볼 수 있는 세계에서 유일한 생태계로, 1921년에 천연기념물, 1952년에 특별천연기념물로 지정된 일본 독자적이고 귀중한 종. 호반의 아칸코 온천 거리는 홋카이도 최대급의 아이누 코탄(집락)을 거느리며, 아이누 고식 무용(국 지정 중요무형민속문화재)과 목조 공예가 계승되고 있습니다. 겨울철은 빙어 낚시, 호수면 결빙, 밤의 별하늘 관찰, 여름철은 마리모 축제(10월)로, 사계절 자연과 문화의 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "マリモ展示観察センター(チュウルイ島) — 遊覧船で渡る、特別天然記念物の球状の藻を間近で観察",
@@ -3690,6 +3789,27 @@ export const LOCATION_CONTENT = {
         "Lakeside Promenade — a walking path past «Bokke» mud volcanoes, contrasting the lake surface with volcanic terrain",
         "Winter Ice Festival (January–March) — smelt fishing, snow sports, fireworks, and skies full of stars",
         "Marimo Festival (October) — an Ainu ritual returning marimo to the lake, a mystical subject for photography",
+      ],
+      zh: [
+        "毬藻展示观察中心(中鲽岛) — 乘游船渡过，特别天然纪念物球状藻近距观察",
+        "阿伊努村落 — 北海道最大级阿伊努集落，古式舞蹈鉴赏，木雕工艺店，传统文化传承",
+        "阿寒湖畔步道 — 巡游Bokke(泥火山)的湖畔散步，湖面与火山地形对比",
+        "冬阿寒湖冰上节 — 1至3月，公鱼钓·雪上运动·花火·满天星空",
+        "毬藻祭(10月) — 与阿伊努仪式同将毬藻返湖的传统活动，神秘被摄体",
+      ],
+      "zh-tw": [
+        "毬藻展示觀察中心(中鰈島) — 搭遊船渡過，特別天然紀念物球狀藻近距觀察",
+        "阿伊努村落 — 北海道最大級阿伊努集落，古式舞蹈鑑賞，木雕工藝店，傳統文化傳承",
+        "阿寒湖畔步道 — 巡遊Bokke(泥火山)的湖畔散步，湖面與火山地形對比",
+        "冬阿寒湖冰上節 — 1至3月，公魚釣·雪上運動·花火·滿天星空",
+        "毬藻祭(10月) — 與阿伊努儀式同將毬藻返湖的傳統活動，神秘被攝體",
+      ],
+      ko: [
+        "마리모 전시 관찰 센터(추루이섬) — 유람선으로 건너감, 특별천연기념물 구상 조류를 가까이서 관찰",
+        "아이누 코탄 — 홋카이도 최대급의 아이누 집락, 고식 무용 감상, 목조 공예점, 전통 문화의 계승",
+        "아칸 호반 산책로 — 봇케(진흙 화산)를 도는 호반 산책, 호수면과 화산 지형의 대비",
+        "겨울 아칸호 빙상 페스티벌 — 1~3월, 빙어 낚시, 설상 스포츠, 불꽃놀이, 만천의 별하늘",
+        "마리모 축제(10월) — 아이누의 의식과 함께 마리모를 호수에 돌려보내는 전통 행사, 신비로운 피사체",
       ],
     },
     quickAnswers: {
@@ -3708,6 +3828,30 @@ export const LOCATION_CONTENT = {
         { q: "Photography etiquette in Ainu Kotan?", a: "It is a living Ainu community — never photograph homes or people without permission. The Old-Style «Kamuy Yukar» dance (evening, ¥1,200 admission) allows photography inside the venue (no flash or tripods in most cases). Ask the artisan before shooting wood-carving works. Ainu cuisine (ohau soup, ruibe frozen fish) makes distinctive subjects." },
         { q: "Access and lodging?", a: "1 hour by car from Kushiro Airport, 2 hours by Akan Bus from Kushiro Station (¥2,750), or about 4 hours from Sapporo by limited express plus bus. Akanko Onsen has ~30 ryokan including Tsuruga and Akan Yuku-no-Sato (from ¥15,000/night with two meals). Snowmobile and ice-fishing tours are easiest as ryokan package plans." },
         { q: "What is the Ice Festival?", a: "Late January to mid-March, on the frozen Lake Akan. Smelt fishing (rod rental ¥1,000), banana boats, snowmobiles, and 20:30 fireworks (weekends and high season) are highlights. Fireworks-on-ice are rare even for Hokkaido — the trio of fireworks reflected on the lake plus the star-filled sky creates a unique composition." },
+      ],
+      zh: [
+        { q: "阿寒湖是什么?", a: "北海道钏路市阿寒摩周国立公园内破火山口湖，世界唯一毬藻天然栖息湖。拥有北海道最大级阿伊努村落，自然与文化双方可摄的罕见撮影地。" },
+        { q: "可以看到毬藻吗?", a: "阿寒湖畔毬藻展示观察中心(中鲽岛)可观察。需乘游船渡过，所需时间约1小时20分(船+岛内见学)，运营4至11月。冬湖面结冰停运。" },
+        { q: "最佳季节?", a: "新绿5至6月、红叶10月(毬藻祭)、冬冰上节(1至3月)三大季节。冬满天星空与冻结湖面梦幻，夜极光观测会偶尔开催。" },
+        { q: "阿伊努村落撮影礼仪?", a: "阿伊努人生活空间，无许可撮影房屋·人物严禁。古式舞蹈「卡姆伊由卡拉」(夜公演，入场1200日元)会场内可撮影(多禁闪光·三脚)。木雕工艺店作品撮影需店主确认。阿伊努料理(Ohau·Ruibe)亦独特被摄体。" },
+        { q: "如何前往与住宿?", a: "钏路机场开车1小时，钏路站乘巴士(阿寒巴士)2小时·2750日元，札幌乘特急+巴士约4小时。阿寒湖温泉街有鹤雅·阿寒悠久之里等30家温泉宿，1宿2食15000日元起。雪地摩托·公鱼钓体验宿套餐方便。" },
+        { q: "冰上节是什么?", a: "1月下旬至3月中旬，结冰阿寒湖开催的冬日活动。公鱼钓(竿付贷出1000日元)、香蕉船、雪地摩托、20:30至花火大会(周末·旺季)为亮点。冰上花火北海道亦少见，湖面映花火与星空三重奏唯一构图。" },
+      ],
+      "zh-tw": [
+        { q: "阿寒湖是什麼?", a: "北海道釧路市阿寒摩周國立公園內破火山口湖，世界唯一毬藻天然棲息湖。擁有北海道最大級阿伊努村落，自然與文化雙方可攝的罕見撮影地。" },
+        { q: "可以看到毬藻嗎?", a: "阿寒湖畔毬藻展示觀察中心(中鰈島)可觀察。需搭遊船渡過，所需時間約1小時20分(船+島內見學)，運營4至11月。冬湖面結冰停運。" },
+        { q: "最佳季節?", a: "新綠5至6月、紅葉10月(毬藻祭)、冬冰上節(1至3月)三大季節。冬滿天星空與凍結湖面夢幻，夜極光觀測會偶爾開催。" },
+        { q: "阿伊努村落撮影禮儀?", a: "阿伊努人生活空間，無許可撮影房屋·人物嚴禁。古式舞蹈「卡姆伊由卡拉」(夜公演，入場1200日圓)會場內可撮影(多禁閃光·三腳)。木雕工藝店作品撮影需店主確認。阿伊努料理(Ohau·Ruibe)亦獨特被攝體。" },
+        { q: "如何前往與住宿?", a: "釧路機場開車1小時，釧路站搭巴士(阿寒巴士)2小時·2750日圓，札幌搭特急+巴士約4小時。阿寒湖溫泉街有鶴雅·阿寒悠久之里等30家溫泉宿，1宿2食15000日圓起。雪地摩托·公魚釣體驗宿套餐方便。" },
+        { q: "冰上節是什麼?", a: "1月下旬至3月中旬，結冰阿寒湖開催的冬日活動。公魚釣(竿付貸出1000日圓)、香蕉船、雪地摩托、20:30至花火大會(週末·旺季)為亮點。冰上花火北海道亦少見，湖面映花火與星空三重奏唯一構圖。" },
+      ],
+      ko: [
+        { q: "아칸호란?", a: "홋카이도 구시로시의 아칸 마슈 국립공원 내의 칼데라호로, 세계에서 유일하게 마리모가 천연으로 서식하는 호수. 홋카이도 최대급의 아이누 코탄도 거느리고 있어, 자연과 문화의 양쪽을 촬영할 수 있는 보기 드문 촬영지입니다." },
+        { q: "마리모를 볼 수 있나?", a: "아칸 호반의 마리모 전시 관찰 센터(추루이섬)에서 관찰 가능. 유람선으로 건너야 함, 소요 시간은 약 1시간 20분(배+섬 내 견학), 운항 기간은 4~11월. 겨울은 호수면이 결빙되므로 운휴입니다." },
+        { q: "베스트 시즌은?", a: "신록의 5~6월, 단풍의 10월(마리모 축제), 겨울의 빙상 페스티벌(1~3월)이 3대 시즌. 겨울은 만천의 별하늘과 동결 호수면이 환상적, 밤의 오로라 관측회도 가끔 개최됩니다." },
+        { q: "아이누 코탄의 촬영 매너는?", a: "아이누 분들의 생활 공간이기도 하므로, 가옥·인물의 무단 촬영은 엄금. 고식 무용 「카무이 유카라」(밤 공연, 입장료 1,200엔)는 회장 내 촬영 OK(플래시·삼각대는 금지가 많음). 목조 공예점의 작품 촬영은 점주에게 확인을. 아이누 요리(오하우·루이베)도 독특한 피사체." },
+        { q: "가는 방법과 숙박은?", a: "구시로 공항에서 차로 1시간, 구시로역에서 버스(아칸 버스)로 2시간·2,750엔, 삿포로에서 특급+버스로 약 4시간. 아칸코 온천 거리에는 츠루가·아칸 유쿠노사토 등 30곳의 온천 숙소, 1박 2식 포함 15,000엔~. 스노우모빌·빙어 낚시 체험은 숙소의 패키지 플랜 이용이 편리." },
+        { q: "빙상 페스티벌이란?", a: "1월 하순~3월 중순, 결빙된 아칸호에서 개최되는 겨울 이벤트. 빙어 낚시(낚싯대 대여 1,000엔), 바나나 보트, 스노우모빌, 20:30~의 불꽃놀이 대회(주말·하이시즌)가 볼거리. 빙상 불꽃놀이는 홋카이도에서도 보기 드물어, 호수면에 비치는 불꽃놀이와 별하늘의 삼중주는 유일무이한 구도입니다." },
       ],
     },
     faqs: [
@@ -3876,10 +4020,13 @@ export const LOCATION_CONTENT = {
       "登別溫泉擁有9種泉質，是「溫泉百貨店」。登別地獄谷是火山活動形成的大型火口，有步道。蒸汽升騰的峽谷、奧之湯、大湯沼川天然足湯等溫泉景觀震撼。",
       "노보리베쓰 온천은 9종 수질을 가진 '온천의 백화점'. 노보리베쓰 지고쿠다니는 화산 활동으로 생긴 산책로 있는 거대 화구. 수증기 피어오르는 계곡, 오쿠노유, 오유누마강 천연 족욕탕 등 다이내믹한 온천 풍경."
     ),
-    definition: lh(
-      "登別(のぼりべつ)は北海道胆振総合振興局管内の登別市にある日本屈指の温泉郷で、9種類の異なる泉質の源泉が湧き出ることから「温泉のデパート」と称される温泉地。湯量は1日約10,000トン(東京ドーム約1.5杯分)、自然湧出量は世界トップクラス。中心となる登別地獄谷(じごくだに)は約1万年前の倶多楽火山の噴火で形成された直径約450m・面積11ヘクタールの火口跡で、現在も水蒸気・火山ガス・温泉水が噴出する活火山地帯。鉄分を含む湯が川となって流れる大湯沼川天然足湯、奥の湯(7,000m²の硫黄泉湖)、湯気立ち上る渓谷の遊歩道、夜の鬼花火(7〜8月)など、ダイナミックな温泉風景が楽しめます。",
-      "Noboribetsu, in Noboribetsu City within the Iburi General Subprefectural Bureau of Hokkaido, is one of Japan's premier hot spring towns — earning the nickname «department store of hot springs» because of its nine distinct water types. Producing about 10,000 tonnes of hot spring water daily (roughly 1.5 Tokyo Domes), its natural outflow ranks among the world's largest. The main landmark, Noboribetsu Jigokudani («Hell Valley»), is a roughly 450 m-wide, 11-hectare crater formed by the eruption of Mt. Kuttara about 10,000 years ago — an active volcanic zone where steam, volcanic gas, and hot spring water continue to vent. With the natural footbath of Oyunuma River (where iron-rich water flows like a stream), Oku-no-Yu (a 7,000 m² sulfur-spring lake), walking paths through steaming valleys, and the «Oni Hanabi» fireworks of July–August, it offers dynamic onsen photography."
-    ),
+    definition: {
+      ja: "登別(のぼりべつ)は北海道胆振総合振興局管内の登別市にある日本屈指の温泉郷で、9種類の異なる泉質の源泉が湧き出ることから「温泉のデパート」と称される温泉地。湯量は1日約10,000トン(東京ドーム約1.5杯分)、自然湧出量は世界トップクラス。中心となる登別地獄谷(じごくだに)は約1万年前の倶多楽火山の噴火で形成された直径約450m・面積11ヘクタールの火口跡で、現在も水蒸気・火山ガス・温泉水が噴出する活火山地帯。鉄分を含む湯が川となって流れる大湯沼川天然足湯、奥の湯(7,000m²の硫黄泉湖)、湯気立ち上る渓谷の遊歩道、夜の鬼花火(7〜8月)など、ダイナミックな温泉風景が楽しめます。",
+      en: "Noboribetsu, in Noboribetsu City within the Iburi General Subprefectural Bureau of Hokkaido, is one of Japan's premier hot spring towns — earning the nickname «department store of hot springs» because of its nine distinct water types. Producing about 10,000 tonnes of hot spring water daily (roughly 1.5 Tokyo Domes), its natural outflow ranks among the world's largest. The main landmark, Noboribetsu Jigokudani («Hell Valley»), is a roughly 450 m-wide, 11-hectare crater formed by the eruption of Mt. Kuttara about 10,000 years ago — an active volcanic zone where steam, volcanic gas, and hot spring water continue to vent. With the natural footbath of Oyunuma River (where iron-rich water flows like a stream), Oku-no-Yu (a 7,000 m² sulfur-spring lake), walking paths through steaming valleys, and the «Oni Hanabi» fireworks of July–August, it offers dynamic onsen photography.",
+      zh: "登别(のぼりべつ)是北海道胆振综合振兴局管内登别市的日本屈指温泉郷，9种不同泉质源泉涌出被誉「温泉百货店」的温泉地。日汤量约10000吨(东京巨蛋约1.5杯)，自然涌出量世界顶级。中心登别地狱谷(じごくだに)是约1万年前倶多乐火山喷发形成的直径约450米·面积11公顷火口迹，现仍喷出蒸汽·火山气·温泉水的活火山地带。含铁分汤流成川的大汤沼川天然足汤、奥之汤(7000平方米硫磺泉湖)、蒸汽腾腾峡谷步道、夜鬼花火(7至8月)等，可享动感温泉风景。",
+      "zh-tw": "登別(のぼりべつ)是北海道膽振綜合振興局管內登別市的日本屈指溫泉鄉，9種不同泉質源泉湧出被譽「溫泉百貨店」的溫泉地。日湯量約10000噸(東京巨蛋約1.5杯)，自然湧出量世界頂級。中心登別地獄谷(じごくだに)是約1萬年前倶多樂火山噴發形成的直徑約450米·面積11公頃火口跡，現仍噴出蒸汽·火山氣·溫泉水的活火山地帶。含鐵分湯流成川的大湯沼川天然足湯、奧之湯(7000平方米硫磺泉湖)、蒸汽騰騰峽谷步道、夜鬼花火(7至8月)等，可享動感溫泉風景。",
+      ko: "노보리베쓰(のぼりべつ)는 홋카이도 이부리 종합진흥국 관내 노보리베쓰시에 있는 일본 굴지의 온천향으로, 9종류의 서로 다른 천질의 원천이 솟아나기 때문에 「온천의 백화점」으로 불리는 온천지. 탕량은 하루 약 10,000톤(도쿄돔 약 1.5잔분), 자연 용출량은 세계 톱 클래스. 중심이 되는 노보리베쓰 지고쿠다니(じごくだに)는 약 1만 년 전 구타라 화산의 분화로 형성된 지름 약 450m·면적 11헥타르의 화구 자국으로, 현재도 수증기·화산 가스·온천수가 분출하는 활화산 지대. 철분을 포함한 탕이 강이 되어 흐르는 오유누마강 천연 족욕탕, 오쿠노유(7,000m²의 유황천호), 김이 피어오르는 계곡의 산책로, 밤의 오니 하나비(7~8월) 등, 다이내믹한 온천 풍경을 즐길 수 있습니다.",
+    },
     highlights: {
       ja: [
         "登別地獄谷 — 直径450m・11ヘクタールの火口跡、湯気立ち上る渓谷、遊歩道で巡れる",
@@ -3894,6 +4041,27 @@ export const LOCATION_CONTENT = {
         "Oyunuma River Natural Footbath — a hot spring stream flowing from Oyunuma, free to enjoy as a forest footbath",
         "Oku-no-Yu — adjacent to Oyunuma, an ash-gray pond extending the Jigokudani's otherworldly landscape",
         "Evening Illumination and Oni Hanabi (July–August) — the Jigokudani path is illuminated at night, with the «demon fireworks» festival in summer",
+      ],
+      zh: [
+        "登别地狱谷 — 直径450米·11公顷火口迹，蒸汽腾腾峡谷，步道可巡",
+        "大汤沼(おおゆぬま) — 周围1公里·面积7000平方米硫磺泉湖，表面温度40至50℃，青白神秘",
+        "大汤沼川天然足汤 — 大汤沼流出温泉川，免费足汤，森中天然温泉体验",
+        "奥之汤 — 大汤沼邻接的灰黑色湖，地狱谷深处别世界景观",
+        "夜间灯光秀·鬼花火(7至8月) — 地狱谷步道灯光秀，7至8月鬼花火大会",
+      ],
+      "zh-tw": [
+        "登別地獄谷 — 直徑450米·11公頃火口跡，蒸汽騰騰峽谷，步道可巡",
+        "大湯沼(おおゆぬま) — 周圍1公里·面積7000平方米硫磺泉湖，表面溫度40至50℃，青白神秘",
+        "大湯沼川天然足湯 — 大湯沼流出溫泉川，免費足湯，森中天然溫泉體驗",
+        "奧之湯 — 大湯沼鄰接的灰黑色湖，地獄谷深處別世界景觀",
+        "夜間燈光秀·鬼花火(7至8月) — 地獄谷步道燈光秀，7至8月鬼花火大會",
+      ],
+      ko: [
+        "노보리베쓰 지고쿠다니 — 지름 450m·11헥타르의 화구 자국, 김이 피어오르는 계곡, 산책로로 둘러볼 수 있음",
+        "오유누마(おおゆぬま) — 둘레 1km·면적 7,000m²의 유황천호, 표면 온도 40~50℃, 푸르고 흰빛으로 신비로움",
+        "오유누마강 천연 족욕탕 — 오유누마에서 흐르는 온천 강, 무료로 족욕, 숲 속의 천연 온천 체험",
+        "오쿠노유 — 오유누마에 인접한 회흑색 호수, 지고쿠다니의 깊숙한 곳에 펼쳐진 별세계 경관",
+        "야간 조명·오니 하나비(7~8월) — 지고쿠다니 산책로의 조명, 7~8월은 오니 불꽃놀이 대회",
       ],
     },
     quickAnswers: {
@@ -3912,6 +4080,30 @@ export const LOCATION_CONTENT = {
         { q: "What are the nine water types?", a: "Sulfur (cloudy white, skin), saline (warming), Glauber's (cuts), alum (skin beauty), iron sulfate (blood-forming), radium (women's health), iron (anemia), acidic (sterilizing), and bicarbonate (skin beauty). It is rare worldwide to have all nine in one resort. Each ryokan features different waters — visit several." },
         { q: "Recommended ryokan?", a: "Dai-ichi Takimotokan (founded 1858, the historic landmark with 35 baths), Noboribetsu Grand Hotel (near Jigokudani, Japanese-Western fusion), Takinoya (luxury Japanese, top cuisine), Noboribetsu Manseikaku (good value). ¥15,000–35,000/night with two meals. Day-bath access ¥1,500–2,000 — visiting 3–4 ryokan as a «bath crawl» is the standard." },
         { q: "Nearby attractions?", a: "①Jigokudani + Oyunuma trail (2 hr walk) ②Lake Kuttara (caldera lake rivaling Mashu's clarity, 15 min by car) ③Noboribetsu Bear Park (~100 brown bears, ropeway access) ④Noboribetsu Marine Park Nixe (aquarium with retro Danish-castle architecture). A 2-day stay covers onsen photography and sightseeing." },
+      ],
+      zh: [
+        { q: "登别是什么?", a: "北海道胆振地方温泉郷，9种不同泉质的「温泉百货店」。日约10000吨汤量世界顶级，登别地狱谷火口迹·大汤沼·大汤沼川天然足汤等火山地形与温泉织就的动感撮影地。" },
+        { q: "地狱谷撮影时段?", a: "晨至上午光柔且蒸汽出。夜间灯光秀(5至10月)亦梦幻，尤冬晨蒸汽最浓寒暖差强调升起蒸汽。三脚长曝可见蒸汽流。" },
+        { q: "如何前往?", a: "新千岁机场开车约1小时，JR登别站乘巴士15分。札幌开车1.5小时，特急巴士·JR亦便利。地狱谷至大汤沼步行30分步道，含奥之汤2至3小时散步路线。" },
+        { q: "9种泉质是什么?", a: "硫磺泉(白浊·美肌)、食盐泉(保温)、芒硝泉(切伤)、明矾泉(美肌)、绿矾泉(造血)、镭泉(妇女病)、铁泉(贫血)、酸性泉(杀菌)、重曹泉(美肌)9种皆可在登别温泉郷享受的世界稀有特征。各旅馆泉质不同，多家湯巡乐。" },
+        { q: "推荐宿?", a: "「第一滝本馆」(1858年创业登别老铺，35浴池)、「登别格兰酒店」(地狱谷至近，和洋折衷)、「滝乃家」(高级和风，料理评高)、「登别万世阁」(性价比好)等。1宿2食15000至35000日元。日归入浴1500至2000日元亦可，3至4家湯巡为定番。" },
+        { q: "周边观光?", a: "①登别地狱谷+大汤沼步道(步行2小时)②倶多乐湖(与摩周湖并列透明度·破火山口湖，车15分)③登别熊牧场(棕熊约100头，缆车)④登别海洋公园Nixe(水族馆，丹麦城怀旧建筑)。1宿2日温泉撮影与观光两立。" },
+      ],
+      "zh-tw": [
+        { q: "登別是什麼?", a: "北海道膽振地方溫泉鄉，9種不同泉質的「溫泉百貨店」。日約10000噸湯量世界頂級，登別地獄谷火口跡·大湯沼·大湯沼川天然足湯等火山地形與溫泉織就的動感撮影地。" },
+        { q: "地獄谷撮影時段?", a: "晨至上午光柔且蒸汽出。夜間燈光秀(5至10月)亦夢幻，尤冬晨蒸汽最濃寒暖差強調升起蒸汽。三腳長曝可見蒸汽流。" },
+        { q: "如何前往?", a: "新千歲機場開車約1小時，JR登別站搭巴士15分。札幌開車1.5小時，特急巴士·JR亦便利。地獄谷至大湯沼步行30分步道，含奧之湯2至3小時散步路線。" },
+        { q: "9種泉質是什麼?", a: "硫磺泉(白濁·美肌)、食鹽泉(保溫)、芒硝泉(切傷)、明礬泉(美肌)、綠礬泉(造血)、鐳泉(婦女病)、鐵泉(貧血)、酸性泉(殺菌)、重曹泉(美肌)9種皆可在登別溫泉鄉享受的世界稀有特徵。各旅館泉質不同，多家湯巡樂。" },
+        { q: "推薦宿?", a: "「第一瀧本館」(1858年創業登別老鋪，35浴池)、「登別格蘭酒店」(地獄谷至近，和洋折衷)、「瀧乃家」(高級和風，料理評高)、「登別萬世閣」(性價比好)等。1宿2食15000至35000日圓。日歸入浴1500至2000日圓亦可，3至4家湯巡為定番。" },
+        { q: "周邊觀光?", a: "①登別地獄谷+大湯沼步道(步行2小時)②倶多樂湖(與摩周湖並列透明度·破火山口湖，車15分)③登別熊牧場(棕熊約100頭，纜車)④登別海洋公園Nixe(水族館，丹麥城懷舊建築)。1宿2日溫泉撮影與觀光兩立。" },
+      ],
+      ko: [
+        { q: "노보리베쓰란?", a: "홋카이도 이부리 지방의 온천향으로, 9종류의 다른 천질을 가진 「온천의 백화점」. 하루 약 10,000톤의 탕량은 세계 톱 클래스, 노보리베쓰 지고쿠다니의 화구 자국, 오유누마, 오유누마강 천연 족욕탕 등 화산 지형과 온천이 짜내는 다이내믹한 촬영지입니다." },
+        { q: "지고쿠다니 촬영 시간대는?", a: "아침~오전이 빛이 부드럽고 김도 잘 보임. 야간 조명(5~10월)도 환상적, 특히 겨울 아침의 김이 가장 진하고 한란차로 솟아오르는 김을 강조합니다. 삼각대로 장노출하면 김의 흐름이 보입니다." },
+        { q: "가는 방법은?", a: "신치토세 공항에서 차로 약 1시간, JR 노보리베쓰역에서 버스로 15분. 삿포로에서 차로 1시간 반, 특급 버스·JR도 편리. 지고쿠다니에서 오유누마까지 도보 30분의 산책로, 오쿠노유까지 포함해서 2~3시간의 산책 코스." },
+        { q: "9종류의 천질이란?", a: "유황천(흰 흐림, 피부에 좋음), 식염천(보온), 망초천(베인 상처), 명반천(미백), 녹반천(조혈), 라듐천(부인병), 철천(빈혈), 산성천(살균), 중조천(미백)의 9종이 노보리베쓰 온천향에서 즐길 수 있는 세계적으로 드문 특징. 각 료칸마다 천질이 달라 여러 숙소에서 탕 순례가 즐거움." },
+        { q: "추천 숙소는?", a: "「다이이치 다키모토칸」(1858년 창업의 노보리베쓰 노포, 35개의 욕조), 「노보리베쓰 그랜드 호텔」(지고쿠다니 지근, 화양 절충), 「다키노야」(고급 일본식, 요리 평가 높음), 「노보리베쓰 만세이카쿠」(가성비 좋음) 등. 1박 2식 포함 15,000~35,000엔. 당일 입욕 1,500~2,000엔도 가능, 3~4곳을 도는 탕 순례가 정석." },
+        { q: "주변의 관광은?", a: "①노보리베쓰 지고쿠다니+오유누마 산책로(도보 2시간) ②구타라호(마슈호와 어깨를 나란히 하는 투명도·칼데라호, 차로 15분) ③노보리베쓰 곰 목장(불곰 약 100마리, 로프웨이) ④노보리베쓰 마린파크 닉스(수족관, 덴마크 성의 레트로 건축). 1박 2일로 온천 촬영과 관광이 양립." },
       ],
     },
     faqs: [
