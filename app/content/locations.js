@@ -411,10 +411,13 @@ export const LOCATION_CONTENT = {
       "洞爺湖是支笏洞爺國立公園的破火山口湖。湖畔眺望羊蹄山、2000年有珠山噴發遺跡、中島自然、每晚煙火（4-10月）等。推薦從溫泉街與湖畔步道拍攝。",
       "도야호는 시코쓰도야 국립공원의 칼데라호. 호반에서 요테이산을 바라보고, 2000년 우스산 분화 흔적, 나카지마의 자연, 매일 밤 불꽃놀이(4-10월)가 인기. 온천가와 호반 산책로에서 촬영 추천."
     ),
-    definition: lh(
-      "洞爺湖(とうやこ)は北海道虻田郡洞爺湖町・壮瞥町にまたがるカルデラ湖で、面積70.7km²、最大水深180mの日本第3位の透明度を誇る湖。約11万年前の巨大噴火で形成され、湖の中央には4つの島(中島)が浮かびます。隣接する有珠山(737m)と昭和新山(398m)は今も活動を続ける活火山で、湖+山+温泉が一帯となった支笏洞爺国立公園の中核。2008年G8北海道洞爺湖サミット開催地としても知られ、4〜10月の毎晩開催される洞爺湖ロングラン花火大会(450発)は湖面に映る花火の絶景で日本でも屈指です。",
-      "Lake Toya is a caldera lake spanning Toyako and Sobetsu in Abuta District, Hokkaido — 70.7 km² in area, 180 m at its deepest, with Japan's third-highest water clarity. Formed about 110,000 years ago by a massive eruption, four islands (Nakajima) float at the center of the lake. The neighboring Mt. Usu (737 m) and Showa-Shinzan (398 m) remain active, and the lake-mountain-onsen ensemble forms the heart of Shikotsu-Toya National Park. Known as the host of the 2008 G8 Hokkaido Toya Lake Summit, it also features the «Long-Run Fireworks» — 450 shots fired every night from April to October — whose reflection on the lake's surface ranks among Japan's finest spectacles."
-    ),
+    definition: {
+      ja: "洞爺湖(とうやこ)は北海道虻田郡洞爺湖町・壮瞥町にまたがるカルデラ湖で、面積70.7km²、最大水深180mの日本第3位の透明度を誇る湖。約11万年前の巨大噴火で形成され、湖の中央には4つの島(中島)が浮かびます。隣接する有珠山(737m)と昭和新山(398m)は今も活動を続ける活火山で、湖+山+温泉が一帯となった支笏洞爺国立公園の中核。2008年G8北海道洞爺湖サミット開催地としても知られ、4〜10月の毎晩開催される洞爺湖ロングラン花火大会(450発)は湖面に映る花火の絶景で日本でも屈指です。",
+      en: "Lake Toya is a caldera lake spanning Toyako and Sobetsu in Abuta District, Hokkaido — 70.7 km² in area, 180 m at its deepest, with Japan's third-highest water clarity. Formed about 110,000 years ago by a massive eruption, four islands (Nakajima) float at the center of the lake. The neighboring Mt. Usu (737 m) and Showa-Shinzan (398 m) remain active, and the lake-mountain-onsen ensemble forms the heart of Shikotsu-Toya National Park. Known as the host of the 2008 G8 Hokkaido Toya Lake Summit, it also features the «Long-Run Fireworks» — 450 shots fired every night from April to October — whose reflection on the lake's surface ranks among Japan's finest spectacles.",
+      zh: "洞爷湖(とうやこ)是横跨北海道虻田郡洞爷湖町·壮瞥町的破火山口湖，面积70.7平方公里，最大水深180米，日本第3位透明度的湖。约11万年前巨大喷发形成，湖中央4座岛(中岛)漂浮。邻接有珠山(737米)与昭和新山(398米)仍为活动中的活火山，湖+山+温泉一带的支笏洞爷国立公园的核心。2008年G8北海道洞爷湖峰会开催地知名，4至10月每晚开催的洞爷湖Long-run花火大会(450发)的湖面倒映花火绝景为日本屈指。",
+      "zh-tw": "洞爺湖(とうやこ)是橫跨北海道虻田郡洞爺湖町·壯瞥町的破火山口湖，面積70.7平方公里，最大水深180米，日本第3位透明度的湖。約11萬年前巨大噴發形成，湖中央4座島(中島)漂浮。鄰接有珠山(737米)與昭和新山(398米)仍為活動中的活火山，湖+山+溫泉一帶的支笏洞爺國立公園的核心。2008年G8北海道洞爺湖峰會開催地知名，4至10月每晚開催的洞爺湖Long-run花火大會(450發)的湖面倒映花火絕景為日本屈指。",
+      ko: "도야호(とうやこ)는 홋카이도 아부타군 도야코초·소베쓰초에 걸친 칼데라호로, 면적 70.7km², 최대 수심 180m의 일본 3위의 투명도를 자랑하는 호수. 약 11만 년 전 거대 분화로 형성되어, 호수 중앙에 4개의 섬(나카지마)이 떠 있습니다. 인접한 우스산(737m)과 쇼와신잔(398m)은 지금도 활동을 계속하는 활화산으로, 호수+산+온천이 일대가 된 시코쓰도야 국립공원의 핵심. 2008년 G8 홋카이도 도야호 정상회담 개최지로도 알려져 있으며, 4~10월의 매일 밤 개최되는 도야호 롱런 불꽃놀이 대회(450발)는 호수면에 비치는 불꽃의 절경으로 일본에서도 굴지입니다.",
+    },
     highlights: {
       ja: [
         "洞爺湖サミット記念展望台 — シレンビ岬山頂、湖と中島と羊蹄山(蝦夷富士)を一枚に俯瞰",
@@ -429,6 +432,27 @@ export const LOCATION_CONTENT = {
         "Mt. Usu — a 737 m active volcano; a ropeway leads to the summit, offering grand views over Lake Toya and Uchiura Bay",
         "Showa-Shinzan — a 398 m «new mountain» that emerged in the 1944–45 eruption; its red-brown slopes are striking and globally rare",
         "Nakajima — four islands at the lake's center reachable by ferry, with primeval forest and Hokkaido sika deer",
+      ],
+      zh: [
+        "洞爷湖峰会纪念展望台 — 西连备岬山顶，湖与中岛与羊蹄山(虾夷富士)一帧俯瞰",
+        "每晚花火(4至10月) — 20:45至21:05，450发，世界最长期花火大会，湖面倒影必拍",
+        "有珠山(うすざん) — 海拔737米活火山，缆车至山顶，洞爷湖与内浦湾壮观全景",
+        "昭和新山 — 1944至45年喷发出现的398米新山，赤茶色山肌印象深，世界罕见",
+        "中岛(なかじま) — 湖中央4座岛，渡轮登陆，原生林与虾夷鹿生息地",
+      ],
+      "zh-tw": [
+        "洞爺湖峰會紀念展望台 — 西連備岬山頂，湖與中島與羊蹄山(蝦夷富士)一幀俯瞰",
+        "每晚花火(4至10月) — 20:45至21:05，450發，世界最長期花火大會，湖面倒影必拍",
+        "有珠山(うすざん) — 海拔737米活火山，纜車至山頂，洞爺湖與內浦灣壯觀全景",
+        "昭和新山 — 1944至45年噴發出現的398米新山，赤茶色山肌印象深，世界罕見",
+        "中島(なかじま) — 湖中央4座島，渡輪登陸，原生林與蝦夷鹿生息地",
+      ],
+      ko: [
+        "도야호 서밋 기념 전망대 — 시렌비미사키 산정, 호수와 나카지마와 요테이산(에조 후지)을 한 장에 부감",
+        "매일 밤 불꽃놀이(4~10월) — 20:45~21:05, 450발, 세계 제일 장기간의 불꽃놀이 대회, 호수면의 반영이 필촬",
+        "우스산(うすざん) — 해발 737m의 활화산, 로프웨이로 산정, 도야호와 우치우라만의 장대한 파노라마",
+        "쇼와신잔 — 1944~45년의 분화로 출현한 398m의 신산, 적갈색의 산허리가 인상적, 세계적으로도 드뭄",
+        "나카지마(なかじま) — 호수 중앙의 4개 섬, 페리로 상륙, 원생림과 에조시카의 서식지",
       ],
     },
     quickAnswers: {
@@ -448,6 +472,30 @@ export const LOCATION_CONTENT = {
         { q: "Mt. Usu Ropeway?", a: "6-minute ride to the 737 m summit station; round trip ¥1,800. From the top, 360° panoramas of Lake Toya, Uchiura Bay, and Funka Bay. The 2000-eruption craters are visible up close. Closed in winter (Nov–Apr); summer hours 8:30–18:00." },
         { q: "Best onsen lodging?", a: "The Windsor Hotel Toya Resort & Spa (G8 venue, luxury views over the lake), Toya Sun Palace (lakeside with outdoor pool and fireworks-view seats), Northern Quay (good value), and others. The combination of lakeside open-air baths and fireworks is uniquely Toya. Many ryokan offer day-bath access ¥500–¥1,500." },
       ],
+      zh: [
+        { q: "洞爷湖是什么?", a: "北海道破火山口湖，面积70.7平方公里，日本第3位透明度。11万年前巨大喷发形成，活火山有珠山·昭和新山一体的支笏洞爷国立公园核心，2008年G8峰会开催地，4至10月每晚花火大会名物。" },
+        { q: "花火撮影秘诀?", a: "三脚架必备。ISO100·F8·快门4至8秒B门。湖面倒影花火可拍的湖畔展望台为最佳。20:45开始，约20分450发。无风日湖面倒影完美。" },
+        { q: "如何前往与最佳季节?", a: "札幌开车约2小时，JR洞爷站乘巴士20分。新千岁机场开车约2小时。最佳为4至10月花火期，尤夏至秋湖面平稳期。冬雪化湖与火山亦独特之美。" },
+        { q: "峰会纪念展望台是什么?", a: "西连备岬山顶(海拔625米)，可一览洞爷湖·中岛·羊蹄山(虾夷富士)·有珠山的绝景点。2008年G8峰会会场Windsor Hotel背后，24小时进出可，免费。云海日朝雾日(秋)尤绝景。" },
+        { q: "有珠山缆车?", a: "至海拔737米有珠山山顶站6分·往返1800日元。山顶可见洞爷湖·内浦湾·喷火湾360度全景。2000年喷发痕迹(火口)亦近观。冬期(11至4月)停运，夏期8:30至18:00运行。" },
+        { q: "温泉宿推荐?", a: "「Windsor Hotel洞爷度假&Spa」(峰会会场，俯瞰湖最高级)、「洞爷Sun Palace」(湖畔，户外池+花火席)、「Northern Quay」(性价比好)等。湖畔露天风吕+花火鉴赏为洞爷独特。日归入浴500至1500日元，多家可。" },
+      ],
+      "zh-tw": [
+        { q: "洞爺湖是什麼?", a: "北海道破火山口湖，面積70.7平方公里，日本第3位透明度。11萬年前巨大噴發形成，活火山有珠山·昭和新山一體的支笏洞爺國立公園核心，2008年G8峰會開催地，4至10月每晚花火大會名物。" },
+        { q: "花火撮影秘訣?", a: "三腳架必備。ISO100·F8·快門4至8秒B門。湖面倒影花火可拍的湖畔展望台為最佳。20:45開始，約20分450發。無風日湖面倒影完美。" },
+        { q: "如何前往與最佳季節?", a: "札幌開車約2小時，JR洞爺站搭巴士20分。新千歲機場開車約2小時。最佳為4至10月花火期，尤夏至秋湖面平穩期。冬雪化湖與火山亦獨特之美。" },
+        { q: "峰會紀念展望台是什麼?", a: "西連備岬山頂(海拔625米)，可一覽洞爺湖·中島·羊蹄山(蝦夷富士)·有珠山的絕景點。2008年G8峰會會場Windsor Hotel背後，24小時進出可，免費。雲海日朝霧日(秋)尤絕景。" },
+        { q: "有珠山纜車?", a: "至海拔737米有珠山山頂站6分·往返1800日圓。山頂可見洞爺湖·內浦灣·噴火灣360度全景。2000年噴發痕跡(火口)亦近觀。冬期(11至4月)停運，夏期8:30至18:00運行。" },
+        { q: "溫泉宿推薦?", a: "「Windsor Hotel洞爺度假&Spa」(峰會會場，俯瞰湖最高級)、「洞爺Sun Palace」(湖畔，戶外池+花火席)、「Northern Quay」(性價比好)等。湖畔露天風呂+花火鑑賞為洞爺獨特。日歸入浴500至1500日圓，多家可。" },
+      ],
+      ko: [
+        { q: "도야호란?", a: "홋카이도의 칼데라호로 면적 70.7km², 일본 3위의 투명도. 11만 년 전 거대 분화로 형성, 활화산의 우스산·쇼와신잔과 일체의 시코쓰도야 국립공원의 핵심, 2008년 G8 정상회담 개최지로, 4~10월의 매일 밤 불꽃놀이 대회가 명물입니다." },
+        { q: "불꽃놀이 촬영 팁은?", a: "삼각대 필수. ISO 100·F8·셔터 4~8초 벌브. 호수에 비치는 불꽃놀이도 노릴 수 있는 호반의 전망대가 베스트. 20:45 시작, 약 20분간 450발. 바람이 없는 날은 호수면의 반영이 완벽하게 비칩니다." },
+        { q: "가는 방법과 베스트 시즌은?", a: "삿포로에서 차로 약 2시간, JR 도야역에서 버스로 20분. 신치토세 공항에서 차로 약 2시간. 베스트는 4~10월의 불꽃놀이 시기, 특히 여름~가을의 호수면이 잔잔한 시기. 겨울의 눈 화장한 호수와 화산도 독특한 아름다움." },
+        { q: "서밋 기념 전망대란?", a: "시렌비미사키 산정(해발 625m)에 위치, 도야호·나카지마·요테이산(에조 후지)·우스산을 한눈에 볼 수 있는 절경 포인트. 2008년 G8 정상회담 회장 더 윈저 호텔의 뒤편으로, 24시간 액세스 가능, 무료. 운해가 나오는 새벽 안개의 날(가을)은 특히 절경." },
+        { q: "우스산 로프웨이는?", a: "해발 737m의 우스산 산정역까지 6분·왕복 1,800엔. 산정에서는 도야호·우치우라만·후카만의 360도 파노라마. 2000년 분화 흔적(화구)도 가까이서 볼 수 있음. 겨울철(11~4월)은 운휴, 여름철 8:30~18:00 운행." },
+        { q: "온천 숙소 추천은?", a: "「더 윈저 호텔 도야 리조트&스파」(정상회담 회장, 호수를 내려다보는 최고급), 「도야 선 팰리스」(호반, 야외 수영장+불꽃놀이 관람석), 「노던 키」(가성비 좋음) 등. 호반 노천탕+불꽃놀이 관람은 도야만의 특색. 당일 입욕 500~1,500엔으로 대응 숙소 다수." },
+      ],
     },
     faqs: [
       { q: d("花火撮影のコツは？","Tips for shooting fireworks?","烟火拍摄技巧？","煙火拍攝技巧？","불꽃놀이 촬영 팁은?"),
@@ -462,10 +510,13 @@ export const LOCATION_CONTENT = {
       "富良野位於北海道中部，以富田農場為中心的薰衣草田而聞名。7月中下旬為盛花期，紫色花毯與藍天的對比堪稱日本代表風景。8月至秋季有其他香草與花卉接力開放。",
       "후라노는 홋카이도 중앙부, 팜 도미타를 중심으로 한 라벤더 밭으로 유명합니다. 7월 중순~하순이 절정으로 보라색 융단과 파란 하늘의 대비는 일본 최고의 회화적 풍경. 8월~가을에는 다른 허브와 꽃들이 이어서 핍니다."
     ),
-    definition: lh(
-      "富良野(ふらの)は北海道のほぼ中央、十勝岳連峰の西麓に広がる人口約2万人の盆地都市で、隣接する美瑛(びえい)とともに「丘のまち」として知られる日本屈指の田園風景の聖地。1958年に富田忠雄氏が始めた「ファーム富田」のラベンダー栽培が、1976年JR国鉄カレンダーの表紙を飾ったことで全国的に有名となり、現在は7月のラベンダー満開期に約100万人が訪れます。ラベンダーのほか、彩りの畑(虹色のパッチワーク)、ひまわり畑、秋の紅葉、冬の樹氷とパウダースノーまで四季それぞれに代表的な日本の田園風景を提供する撮影地です。",
-      "Furano lies in the heart of Hokkaido at the western foot of the Tokachi Range — a basin city of about 20,000 residents that, together with neighboring Biei, is known as the «town of hills,» a sacred ground of Japan's finest pastoral landscapes. Tadao Tomita started lavender cultivation at «Farm Tomita» in 1958, and when it appeared on the cover of the 1976 Japanese National Railways calendar, the area gained nationwide fame; today, about a million visitors arrive at peak lavender bloom in July. Beyond lavender, the «Rainbow Patchwork Fields,» sunflower fields, autumn colors, and winter rime ice with powder snow each offer iconic Japanese rural landscapes across the seasons."
-    ),
+    definition: {
+      ja: "富良野(ふらの)は北海道のほぼ中央、十勝岳連峰の西麓に広がる人口約2万人の盆地都市で、隣接する美瑛(びえい)とともに「丘のまち」として知られる日本屈指の田園風景の聖地。1958年に富田忠雄氏が始めた「ファーム富田」のラベンダー栽培が、1976年JR国鉄カレンダーの表紙を飾ったことで全国的に有名となり、現在は7月のラベンダー満開期に約100万人が訪れます。ラベンダーのほか、彩りの畑(虹色のパッチワーク)、ひまわり畑、秋の紅葉、冬の樹氷とパウダースノーまで四季それぞれに代表的な日本の田園風景を提供する撮影地です。",
+      en: "Furano lies in the heart of Hokkaido at the western foot of the Tokachi Range — a basin city of about 20,000 residents that, together with neighboring Biei, is known as the «town of hills,» a sacred ground of Japan's finest pastoral landscapes. Tadao Tomita started lavender cultivation at «Farm Tomita» in 1958, and when it appeared on the cover of the 1976 Japanese National Railways calendar, the area gained nationwide fame; today, about a million visitors arrive at peak lavender bloom in July. Beyond lavender, the «Rainbow Patchwork Fields,» sunflower fields, autumn colors, and winter rime ice with powder snow each offer iconic Japanese rural landscapes across the seasons.",
+      zh: "富良野(ふらの)位于北海道几乎中央，十胜岳连峰西麓展开人口约2万人的盆地都市，与邻接的美瑛(びえい)同被称「丘之町」的日本屈指田园风景圣地。1958年富田忠雄氏开始的「富田农场」薰衣草栽培，1976年JR国铁日历封面而全国闻名，现今7月薰衣草满开期约100万人来访。薰衣草外，彩色畑(虹色拼布)、向日葵畑、秋红叶、冬树冰与粉雪等四季皆有日本代表田园风景的撮影地。",
+      "zh-tw": "富良野(ふらの)位於北海道幾乎中央，十勝岳連峰西麓展開人口約2萬人的盆地都市，與鄰接的美瑛(びえい)同被稱「丘之町」的日本屈指田園風景聖地。1958年富田忠雄氏開始的「富田農場」薰衣草栽培，1976年JR國鐵日曆封面而全國聞名，現今7月薰衣草滿開期約100萬人來訪。薰衣草外，彩色畑(虹色拼布)、向日葵畑、秋紅葉、冬樹冰與粉雪等四季皆有日本代表田園風景的撮影地。",
+      ko: "후라노(ふらの)는 홋카이도의 거의 중앙, 토카치다케 연봉의 서쪽 기슭에 펼쳐진 인구 약 2만 명의 분지 도시로, 인접한 비에이(びえい)와 함께 「언덕의 마을」로 알려진 일본 굴지의 전원 풍경의 성지. 1958년 도미타 다다오 씨가 시작한 「팜 토미타」의 라벤더 재배가, 1976년 JR 국철 캘린더의 표지를 장식한 것으로 전국적으로 유명해져, 현재는 7월의 라벤더 만개기에 약 100만 명이 찾습니다. 라벤더 외에, 색채의 밭(무지개색 패치워크), 해바라기 밭, 가을 단풍, 겨울 수빙과 파우더 스노우까지 사계절 각자의 대표적인 일본의 전원 풍경을 제공하는 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "ファーム富田 — 1958年創業、12種類のラベンダーと「彩りの畑」、7月中旬〜下旬がピーク",
@@ -480,6 +531,27 @@ export const LOCATION_CONTENT = {
         "Biei Blue Pond — dead birches and blue water, a byproduct of Hokkaido Electric's sediment dams, used as Apple's MacBook Pro wallpaper",
         "Shikisai-no-Oka — 150,000 m² of flower fields in Biei, with continuous summer–autumn blooms; tractor tours available",
         "Shin-ei Hills and Patchwork Road — iconic Biei hill landscapes, including the «Ken & Mary Tree» and «Seven Star Tree»",
+      ],
+      zh: [
+        "富田农场 — 1958年创业，12种薰衣草与「彩色畑」，7月中下旬高峰",
+        "彩色畑(拼布) — 7色花卉虹色条纹排列，世界罕见构图",
+        "美瑛蓝色之池 — 立枯白桦与蓝色水面，北电沙防坝副产物，Apple MacBook Pro壁纸",
+        "四季彩之丘 — 美瑛町，15万平方米花畑，夏至秋连续开花，可乘拖拉机散步",
+        "新荣之丘·拼布之路 — 美瑛代表丘风景，「健与玛丽之树」「7-Stars之树」",
+      ],
+      "zh-tw": [
+        "富田農場 — 1958年創業，12種薰衣草與「彩色畑」，7月中下旬高峰",
+        "彩色畑(拼布) — 7色花卉虹色條紋排列，世界罕見構圖",
+        "美瑛藍色之池 — 立枯白樺與藍色水面，北電沙防壩副產物，Apple MacBook Pro壁紙",
+        "四季彩之丘 — 美瑛町，15萬平方米花畑，夏至秋連續開花，可搭拖拉機散步",
+        "新榮之丘·拼布之路 — 美瑛代表丘風景，「健與瑪麗之樹」「7-Stars之樹」",
+      ],
+      ko: [
+        "팜 토미타 — 1958년 창업, 12종류의 라벤더와 「색채의 밭」, 7월 중순~하순이 절정",
+        "색채의 밭(패치워크) — 7색의 꽃이 무지개색 줄무늬로 늘어선, 세계적으로도 보기 드문 구도",
+        "비에이의 푸른 못 — 죽은 자작나무와 푸른 수면, 홋카이도 전력의 사방댐의 부산물, Apple MacBook Pro의 배경화면",
+        "시키사이노오카 — 비에이마치, 15만㎡의 꽃밭, 여름~가을의 연속 개화, 트랙터 산책 가능",
+        "신에이의 언덕·패치워크의 길 — 비에이의 대표적 언덕 풍경, 「겐과 메리의 나무」 「세븐스타 나무」",
       ],
     },
     quickAnswers: {
@@ -498,6 +570,30 @@ export const LOCATION_CONTENT = {
         { q: "What are Farm Tomita's hours and fees?", a: "Free admission, free parking, open daily. 8:30–17:30 (until 18:00 in summer, shorter in winter). Try lavender soft-serve (¥450), potpourri and perfume (¥800–3,000), and the limited distillation experience. Arrive at 8:30–9:30 to beat the crowds — tour buses arrive after 10:00." },
         { q: "What blooms beyond lavender?", a: "May tulips, June peonies, July lavender, August sunflowers and cosmos, September salvia, October foliage, December–February rime ice and powder snow. The Tokachi Range from the Furano ropeway is grand year-round — every season rewards a visit." },
         { q: "Can I get there without a car?", a: "From JR Furano Line «Naka-Furano» Station, Farm Tomita is a 25-minute walk. In summer (Jun–Oct), the seasonal Norokko Train stops at «Lavender Field» Station (7-min walk). Day-tour buses run from Sapporo (¥8,000–12,000). Furano Bus loops connect major sites." },
+      ],
+      zh: [
+        { q: "富良野是什么?", a: "北海道中央部，与美瑛并称「丘之町」代表，1958年创业富田农场的薰衣草畑世界闻名。7月紫色花毯、虹色拼布畑、美瑛蓝色之池等日本屈指田园风景圣地。" },
+        { q: "薰衣草最佳撮影时期?", a: "7月15至25日左右满开高峰。早晨光斜立体感出。晴天上午色彩最浓。周末拥挤故平日早晨6至8时为目标。" },
+        { q: "可以与美瑛同游吗?", a: "可，富良野与美瑛车约30分，富田农场→四季彩之丘→蓝色之池→拼布之路环游路线为定番。1日游建议租车，JR亦可但班次少。" },
+        { q: "富田农场入场料·营业时间?", a: "入场免费·停车场免费，全年无休。8:30至17:30(夏季18:00，冬季短缩)。薰衣草霜淇淋(450日元)、香草·香水(800至3000日元)、限定蒸馏体验。避拥挤建议开园即8:30至9:30。观光巴士10时后多。" },
+        { q: "薰衣草外的最佳时期?", a: "5月郁金香、6月芍药、7月薰衣草、8月向日葵·秋英、9月鼠尾草、10月红叶、12至2月树冰与粉雪依次。富良野缆车望十胜岳连峰全年雄大，无论何季皆有访问价值。" },
+        { q: "无车也可前往吗?", a: "JR富良野线「中富良野」站步行25分至富田农场。夏期(6至10月)Norokko号(临时列车)至「Lavender畑」站(步行7分)便利。札幌出发巴士tour多(日归8000至12000日元)。富良野巴士路线巡回多个主要景点。" },
+      ],
+      "zh-tw": [
+        { q: "富良野是什麼?", a: "北海道中央部，與美瑛並稱「丘之町」代表，1958年創業富田農場的薰衣草畑世界聞名。7月紫色花毯、虹色拼布畑、美瑛藍色之池等日本屈指田園風景聖地。" },
+        { q: "薰衣草最佳撮影時期?", a: "7月15至25日左右滿開高峰。早晨光斜立體感出。晴天上午色彩最濃。週末擁擠故平日早晨6至8時為目標。" },
+        { q: "可以與美瑛同遊嗎?", a: "可，富良野與美瑛車約30分，富田農場→四季彩之丘→藍色之池→拼布之路環遊路線為定番。1日遊建議租車，JR亦可但班次少。" },
+        { q: "富田農場入場料·營業時間?", a: "入場免費·停車場免費，全年無休。8:30至17:30(夏季18:00，冬季短縮)。薰衣草霜淇淋(450日圓)、香草·香水(800至3000日圓)、限定蒸餾體驗。避擁擠建議開園即8:30至9:30。觀光巴士10時後多。" },
+        { q: "薰衣草外的最佳時期?", a: "5月鬱金香、6月芍藥、7月薰衣草、8月向日葵·秋英、9月鼠尾草、10月紅葉、12至2月樹冰與粉雪依次。富良野纜車望十勝岳連峰全年雄大，無論何季皆有訪問價值。" },
+        { q: "無車也可前往嗎?", a: "JR富良野線「中富良野」站步行25分至富田農場。夏期(6至10月)Norokko號(臨時列車)至「Lavender畑」站(步行7分)便利。札幌出發巴士tour多(日歸8000至12000日圓)。富良野巴士路線巡迴多個主要景點。" },
+      ],
+      ko: [
+        { q: "후라노란?", a: "홋카이도 중앙부, 비에이와 어깨를 나란히 하는 「언덕의 마을」의 대표로, 1958년 창업한 팜 토미타의 라벤더 밭으로 세계적으로 유명. 7월의 보랏빛 융단, 무지개색 패치워크 밭, 비에이의 푸른 못까지, 일본 굴지의 전원 풍경의 성지입니다." },
+        { q: "라벤더의 베스트 촬영 시기는?", a: "7월 15~25일경이 만개의 절정. 이른 아침은 빛이 사선이라 꽃의 입체감이 나옴. 맑은 날 오전이 가장 색이 선명. 주말은 혼잡하므로 평일 이른 아침 6~8시가 노릴 만." },
+        { q: "비에이와 세트로 둘러볼 수 있나?", a: "가능, 후라노와 비에이는 차로 약 30분, 팜 토미타→시키사이노오카→푸른 못→패치워크의 길의 순회 코스가 정석. 하루에 둘러보려면 렌터카 추천, JR도 이용 가능하지만 편수가 적음." },
+        { q: "팜 토미타의 입장료·영업 시간은?", a: "입장 무료·주차장 무료, 연중무휴. 8:30~17:30(여름철은 18:00, 겨울철 단축). 라벤더 소프트아이스크림(450엔), 포푸리·향수(800~3,000엔), 한정 증류 체험 있음. 혼잡 회피라면 개원 직후 8:30~9:30이 확실. 관광버스는 10시 이후 도착이 많음." },
+        { q: "라벤더 외의 견 시기는?", a: "5월 튤립, 6월 작약, 7월 라벤더, 8월 해바라기·코스모스, 9월 살비아, 10월 단풍, 12~2월 수빙과 파우더 스노우가 차례로 견 시기. 후라노 로프웨이에서 바라보는 토카치다케 연봉은 연중 웅대, 계절을 불문하고 방문 가치 있음." },
+        { q: "차 없이도 갈 수 있나?", a: "JR 후라노선 「나카후라노」역에서 도보 25분으로 팜 토미타. 여름철(6~10월)은 노록코호(임시 열차)로 「라벤더 밭」역(도보 7분)이 편리. 삿포로에서 투어 버스도 다수(당일 8,000~12,000엔). 후라노 버스 코스는 복수의 주요 스팟을 순회." },
       ],
     },
     faqs: [
@@ -3375,10 +3471,13 @@ export const LOCATION_CONTENT = {
       "旭山動物園是旭川市立動物園。「行動展示」手法讓動物展現本能行為，展館設計革新。企鵝散步、北極熊跳水、海豹圓筒水槽等都適合動物攝影。",
       "아사히야마 동물원은 아사히카와 시립 동물원. '행동 전시' 기법으로 동물 본래의 생태·능력을 볼 수 있는 혁신적 전시 설계. 펭귄 산책, 북극곰 다이빙, 바다표범 원통 수조 등 동물 사진에 최적."
     ),
-    definition: lh(
-      "旭山動物園(あさひやまどうぶつえん)は北海道旭川市東旭川町倉沼にある日本最北の動物園で、1967年(昭和42年)開園。1990年代に経営危機に陥り廃園寸前まで追い込まれましたが、1997年から飼育員主導で「行動展示(こうどうてんじ)」という独創的な展示手法を導入。動物を見せ物にするのではなく、動物本来の生態・運動能力を引き出す展示設計が革新的と評価され、2004年には上野動物園を抜き月間入園者数日本一に。ペンギンの散歩(冬季)、ホッキョクグマの飛び込み、アザラシの円筒水槽「マリンウェイ」など、動物の自然な動きを至近距離で撮影できる「日本の動物園のあり方」を変えた施設です。",
-      "Asahiyama Zoo, in Higashi-Asahikawa-cho Kuranuma, Asahikawa City, Hokkaido, is Japan's northernmost zoo, opened in 1967 (Showa 42). Driven to the brink of closure in the 1990s, it pioneered «behavioral display» from 1997 — an innovative approach designed not to exhibit animals as spectacles but to draw out their natural behavior and abilities. By 2004, monthly attendance had surpassed Tokyo's Ueno Zoo, making it Japan's most visited. Penguin walks in winter, polar bear dives, and the «Marine Way» seal cylinder tank let visitors photograph animals in natural motion at close range — a facility that transformed the concept of the Japanese zoo."
-    ),
+    definition: {
+      ja: "旭山動物園(あさひやまどうぶつえん)は北海道旭川市東旭川町倉沼にある日本最北の動物園で、1967年(昭和42年)開園。1990年代に経営危機に陥り廃園寸前まで追い込まれましたが、1997年から飼育員主導で「行動展示(こうどうてんじ)」という独創的な展示手法を導入。動物を見せ物にするのではなく、動物本来の生態・運動能力を引き出す展示設計が革新的と評価され、2004年には上野動物園を抜き月間入園者数日本一に。ペンギンの散歩(冬季)、ホッキョクグマの飛び込み、アザラシの円筒水槽「マリンウェイ」など、動物の自然な動きを至近距離で撮影できる「日本の動物園のあり方」を変えた施設です。",
+      en: "Asahiyama Zoo, in Higashi-Asahikawa-cho Kuranuma, Asahikawa City, Hokkaido, is Japan's northernmost zoo, opened in 1967 (Showa 42). Driven to the brink of closure in the 1990s, it pioneered «behavioral display» from 1997 — an innovative approach designed not to exhibit animals as spectacles but to draw out their natural behavior and abilities. By 2004, monthly attendance had surpassed Tokyo's Ueno Zoo, making it Japan's most visited. Penguin walks in winter, polar bear dives, and the «Marine Way» seal cylinder tank let visitors photograph animals in natural motion at close range — a facility that transformed the concept of the Japanese zoo.",
+      zh: "旭山动物园(あさひやまどうぶつえん)位于北海道旭川市东旭川町仓沼，是日本最北动物园，1967年(昭和42年)开园。1990年代陷入经营危机濒临废园，1997年起饲养员主导导入「行动展示(こうどうてんじ)」独创展示手法。非将动物作为展品，而是引出动物本来生态·运动能力的展示设计被评为革新，2004年超越上野动物园成为月入园者数日本第一。企鹅散步(冬季)、北极熊跳水、海豹圆筒水槽「Marine Way」等，可近距离撮影动物自然动作的「改变日本动物园之道」的设施。",
+      "zh-tw": "旭山動物園(あさひやまどうぶつえん)位於北海道旭川市東旭川町倉沼，是日本最北動物園，1967年(昭和42年)開園。1990年代陷入經營危機瀕臨廢園，1997年起飼養員主導導入「行動展示(こうどうてんじ)」獨創展示手法。非將動物作為展品，而是引出動物本來生態·運動能力的展示設計被評為革新，2004年超越上野動物園成為月入園者數日本第一。企鵝散步(冬季)、北極熊跳水、海豹圓筒水槽「Marine Way」等，可近距離撮影動物自然動作的「改變日本動物園之道」的設施。",
+      ko: "아사히야마 동물원(あさひやまどうぶつえん)은 홋카이도 아사히카와시 히가시아사히카와초 쿠라누마에 있는 일본 최북단의 동물원으로, 1967년(쇼와 42년) 개원. 1990년대에 경영 위기에 빠져 폐원 직전까지 몰렸으나, 1997년부터 사육사 주도로 「행동 전시(こうどうてんじ)」라는 독창적인 전시 기법을 도입. 동물을 구경거리로 하는 것이 아니라, 동물 본래의 생태·운동 능력을 끌어내는 전시 설계가 혁신적이라 평가받아, 2004년에는 우에노 동물원을 제치고 월간 입원자 수 일본 1위에. 펭귄 산책(겨울철), 북극곰의 다이빙, 바다표범의 원통 수조 「마린 웨이」 등, 동물의 자연스러운 움직임을 가까이서 촬영할 수 있는 「일본 동물원의 본보기」를 바꾼 시설입니다.",
+    },
     highlights: {
       ja: [
         "ペンギンの散歩(冬季限定) — 12月中旬〜3月、雪上の一列行進、キングペンギンが圧倒的に人気",
@@ -3393,6 +3492,27 @@ export const LOCATION_CONTENT = {
         "Seal Hall «Marine Way» — seals shuttling through cylinder-shaped tanks, a world-first innovation in display",
         "Penguin Hall — 360° underwater observation; penguins appear to «fly» as they swim, beautifully lit by natural light",
         "Mogu-mogu (feeding) Time — keepers explain animal behavior during feedings, offering rich photo opportunities",
+      ],
+      zh: [
+        "企鹅散步(冬季限定) — 12月中旬至3月，雪上一列行进，帝企鹅压倒性人气",
+        "北极熊馆 — 跳水池，头上游泳姿态可见的胶囊型观察穹顶",
+        "海豹馆「Marine Way」 — 圆筒型水槽中往来的海豹，世界首创革新展示",
+        "企鹅馆 — 360度水下观察，如飞翔游泳的姿态，自然光美",
+        "Mogu-mogu Time — 饲养员解说生态时投食，快门时机宝库",
+      ],
+      "zh-tw": [
+        "企鵝散步(冬季限定) — 12月中旬至3月，雪上一列行進，帝企鵝壓倒性人氣",
+        "北極熊館 — 跳水池，頭上游泳姿態可見的膠囊型觀察穹頂",
+        "海豹館「Marine Way」 — 圓筒型水槽中往來的海豹，世界首創革新展示",
+        "企鵝館 — 360度水下觀察，如飛翔游泳的姿態，自然光美",
+        "Mogu-mogu Time — 飼養員解說生態時投食，快門時機寶庫",
+      ],
+      ko: [
+        "펭귄 산책(겨울철 한정) — 12월 중순~3월, 눈 위의 일렬 행진, 킹펭귄이 압도적으로 인기",
+        "북극곰 관 — 다이빙 풀, 머리 위를 헤엄치는 모습이 보이는 캡슐형 관찰 돔",
+        "바다표범 관 「마린 웨이」 — 원통형 수조를 오가는 바다표범, 세계 최초의 혁신적 전시",
+        "펭귄 관 — 360도 수중 관찰, 하늘을 나는 듯 헤엄치는 모습, 자연광이 아름다움",
+        "모구모구 타임 — 사육사가 동물의 생태를 해설하면서 먹이주기, 셔터 찬스의 보고",
       ],
     },
     quickAnswers: {
@@ -3411,6 +3531,30 @@ export const LOCATION_CONTENT = {
         { q: "Admission and hours?", a: "Adults ¥1,000, children under elementary age free. Summer (Apr 29–Nov 3): 9:30–17:15. Winter (Nov 11–Apr 7): 10:30–15:30. The night zoo extends to 21:00 (August only). The zoo closes for cleaning four times a year — check the official site. Avoid the noon crowd; the first and last hour are best for shooting." },
         { q: "Are there restrictions on equipment?", a: "Personal photography is allowed; commercial use, tripods, and selfie sticks require advance permission. Flash is forbidden to protect the animals. A telephoto (70–300mm or longer) is essential. Glass-tank reflections are common — bring a lens hood or wear dark clothes. Bring rain covers for snow shooting." },
         { q: "Best photo spots inside?", a: "①Penguin Hall underwater tunnel (penguins «fly» overhead) ②Polar Bear Hall's seal-eye dome (bears swim above you) ③Orangutan enclosure's 17 m aerial rope ④Mogu-mogu (feeding) time — animals are most active during keeper talks. The winter-only penguin walk is essential." },
+      ],
+      zh: [
+        { q: "旭山动物园是什么?", a: "北海道旭川市的日本最北动物园，1967年开园。1997年起导入「行动展示」，引出动物本来生态·能力的展示2004年月入园者数日本第一。企鹅散步、北极熊馆等可近距撮影动物自然动作的革新设施。" },
+        { q: "企鹅散步何时?", a: "12月中旬至3月雪积冬季限定，1日2回。帝企鹅一列行走是冬之风物诗世界闻名。早晨第一回散步(11时左右)拥挤前撮影最佳，白雪与黑白企鹅对比迷人。" },
+        { q: "如何前往?", a: "JR旭川站乘巴士约40分，旭川机场开车35分。札幌乘特急约1小时20分+巴士。冬季雪道驾驶需注意，租车不如JR·巴士安全。所需时间半日至1日。" },
+        { q: "门票·营业时间?", a: "成人1000日元·小学生未满免费。夏期(4/29至11/3)9:30至17:15，冬期(11/11至4/7)10:30至15:30，夜动物园(8月限)21:00延长。年4回休园期，公式网站需确认。避正午前后拥挤，开园后或闭园前1小时为撮影目标。" },
+        { q: "撮影器材限制?", a: "业余撮影OK，商用·三脚架·自拍杆需事前申请。闪光为防影响动物原则禁。长焦镜头(70-300mm等)必备，多隔玻璃撮影故反射对策(遮光罩、黑衣)有效。雪上撮影需防水罩。" },
+        { q: "推荐撮影点?", a: "①企鹅馆水下隧道(企鹅头上「飞翔」)②北极熊馆海豹眼(熊游泳真下)③猩猩舍17米空中绳走④Mogu-mogu Time(饲养员动物解说，被摄体动作活跃)。冬限定企鹅散步必拍。" },
+      ],
+      "zh-tw": [
+        { q: "旭山動物園是什麼?", a: "北海道旭川市的日本最北動物園，1967年開園。1997年起導入「行動展示」，引出動物本來生態·能力的展示2004年月入園者數日本第一。企鵝散步、北極熊館等可近距撮影動物自然動作的革新設施。" },
+        { q: "企鵝散步何時?", a: "12月中旬至3月雪積冬季限定，1日2回。帝企鵝一列行走是冬之風物詩世界聞名。早晨第一回散步(11時左右)擁擠前撮影最佳，白雪與黑白企鵝對比迷人。" },
+        { q: "如何前往?", a: "JR旭川站搭巴士約40分，旭川機場開車35分。札幌搭特急約1小時20分+巴士。冬季雪道駕駛需注意，租車不如JR·巴士安全。所需時間半日至1日。" },
+        { q: "門票·營業時間?", a: "成人1000日圓·小學生未滿免費。夏期(4/29至11/3)9:30至17:15，冬期(11/11至4/7)10:30至15:30，夜動物園(8月限)21:00延長。年4回休園期，公式網站需確認。避正午前後擁擠，開園後或閉園前1小時為撮影目標。" },
+        { q: "撮影器材限制?", a: "業餘撮影OK，商用·三腳架·自拍桿需事前申請。閃光為防影響動物原則禁。長焦鏡頭(70-300mm等)必備，多隔玻璃撮影故反射對策(遮光罩、黑衣)有效。雪上撮影需防水罩。" },
+        { q: "推薦撮影點?", a: "①企鵝館水下隧道(企鵝頭上「飛翔」)②北極熊館海豹眼(熊游泳真下)③猩猩舍17米空中繩走④Mogu-mogu Time(飼養員動物解說，被攝體動作活躍)。冬限定企鵝散步必拍。" },
+      ],
+      ko: [
+        { q: "아사히야마 동물원이란?", a: "홋카이도 아사히카와시의 일본 최북단 동물원으로, 1967년 개원. 1997년부터 「행동 전시」를 도입, 동물 본래의 생태·능력을 끌어내는 전시로 2004년에 월간 입원자 수 일본 1위 달성. 펭귄 산책, 북극곰 관 등 동물의 자연스러운 움직임을 가까이서 촬영할 수 있는 혁신적 시설입니다." },
+        { q: "펭귄 산책은?", a: "12월 중순~3월, 눈이 쌓이는 겨울철 한정으로 하루 2회 개최. 킹펭귄의 일렬 걷기는 겨울의 풍물시로 세계적으로 유명. 이른 아침 첫 산책(11시 무렵)이 혼잡 전 촬영에 최적, 흰 눈과 흑백 펭귄의 대비가 잘 살아남." },
+        { q: "가는 방법은?", a: "JR 아사히카와역에서 버스로 약 40분, 아사히카와 공항에서 차로 35분. 삿포로에서 특급으로 약 1시간 20분+버스. 겨울철은 눈길 운전에 주의, 렌터카보다 JR·버스가 안전합니다. 소요 시간은 반나절~1일." },
+        { q: "입원료·영업 시간은?", a: "성인 1,000엔·초등학생 미만 무료. 여름철(4/29~11/3) 9:30~17:15, 겨울철(11/11~4/7) 10:30~15:30, 밤의 동물원(8월만) 21:00까지 연장. 연 4회 휴원 기간 있음, 공식 사이트에서 확인 요. 혼잡한 정오 전후를 피하고, 개원 직후 또는 폐원 전 1시간이 촬영 노릴 만." },
+        { q: "촬영 기재 제한은?", a: "아마추어 촬영은 OK, 상업적 이용이나 삼각대·셀카봉은 사전 신청 필요. 플래시는 동물에 영향을 피하기 위해 금지가 원칙. 망원 렌즈(70-300mm 등)는 필휴, 유리 너머 촬영이 많아 반사 대책(렌즈 후드, 검은 옷)이 유효. 눈 위에서의 촬영은 방수 커버도." },
+        { q: "추천 촬영 스팟은?", a: "①펭귄 관의 수중 터널(펭귄이 머리 위를 「난다」) ②북극곰 관의 시얼즈 아이(곰이 헤엄치는 모습을 바로 아래에서) ③오랑우탄 사의 17m 공중 줄타기 ④모구모구 타임(사육사의 동물 해설, 피사체의 움직임이 활발). 겨울 한정의 펭귄 산책은 필촬." },
       ],
     },
     faqs: [
