@@ -5803,10 +5803,13 @@ export const LOCATION_CONTENT = {
       "駒繫櫻花是阿智村智里深山中樹齡超過400年的江戶彼岸櫻。相傳源義經赴奧州時曾在此繫馬，故得此名。孤立於山田畔，氣概如老武士。4月中下旬盛花期，倒映在棚田水面的逆櫻與星空同框是長野代表性的一本櫻絕景。",
       "고마쓰나기 벚꽃은 아치 마을 치사토의 산속에 우뚝 선 수령 400년이 넘는 에도히간자쿠라. 미나모토노 요시쓰네가 오슈로 향할 때 말을 매어 두었다는 전설에서 이름이 붙었습니다. 산 논두렁에 홀로 서 있는 모습은 노무사 같은 풍격. 4월 중-하순 만개 시 다랑논에 비친 역 벚꽃과 별하늘이 어우러지는 풍경은 나가노를 대표하는 한 그루 벚꽃 절경입니다."
     ),
-    definition: lh(
-      "駒つなぎの桜(こまつなぎのさくら)は長野県下伊那郡阿智村智里(あちむらちさと)の標高約950mの山あいにそびえる、樹齢約400年(推定)・樹高約20m・幹周約3.5mのエドヒガンザクラの一本桜。1189年に源義経が奥州へ下向する際、ここで馬を繋いだという伝説から「駒つなぎ」の名が付き、長野県の天然記念物に指定されています。山の棚田の畔にぽつんと立つ姿は古武士のような風格を漂わせ、4月中旬〜下旬の満開期には、田植え時期の水を張った棚田に映る逆さ桜と、阿智村の「日本一の星空」を組み合わせた構図が長野県を代表する一本桜の絶景。撮影マナー(畔の踏み荒らし禁止・三脚位置等)が整備されており、早朝の人がいない時間帯が狙い目です。",
-      "The Komatsunagi Cherry Tree, in mountainous Chisato of Achi Village, Shimoina District, Nagano Prefecture, stands at about 950 m elevation — an Edohigan cherry estimated to be about 400 years old, around 20 m tall, with a trunk circumference of 3.5 m. According to legend, in 1189 Minamoto no Yoshitsune tied his horse to it on his journey to Oshu, giving the tree its name («Horse-Tying Cherry»). It is a designated Nagano Prefecture Natural Monument. Standing alone beside terraced rice fields with the dignity of an old warrior, in mid- to late April it pairs at full bloom with the surrounding paddies — flooded for planting — to mirror the cherry tree, often combined with Achi Village's «No.1 starry sky in Japan» for one of Nagano's signature single-tree compositions. Photography etiquette (no trampling paddy ridges, designated tripod positions) is in place; early morning before the crowds is the prime window."
-    ),
+    definition: {
+      ja: "駒つなぎの桜(こまつなぎのさくら)は長野県下伊那郡阿智村智里(あちむらちさと)の標高約950mの山あいにそびえる、樹齢約400年(推定)・樹高約20m・幹周約3.5mのエドヒガンザクラの一本桜。1189年に源義経が奥州へ下向する際、ここで馬を繋いだという伝説から「駒つなぎ」の名が付き、長野県の天然記念物に指定されています。山の棚田の畔にぽつんと立つ姿は古武士のような風格を漂わせ、4月中旬〜下旬の満開期には、田植え時期の水を張った棚田に映る逆さ桜と、阿智村の「日本一の星空」を組み合わせた構図が長野県を代表する一本桜の絶景。撮影マナー(畔の踏み荒らし禁止・三脚位置等)が整備されており、早朝の人がいない時間帯が狙い目です。",
+      en: "The Komatsunagi Cherry Tree, in mountainous Chisato of Achi Village, Shimoina District, Nagano Prefecture, stands at about 950 m elevation — an Edohigan cherry estimated to be about 400 years old, around 20 m tall, with a trunk circumference of 3.5 m. According to legend, in 1189 Minamoto no Yoshitsune tied his horse to it on his journey to Oshu, giving the tree its name («Horse-Tying Cherry»). It is a designated Nagano Prefecture Natural Monument. Standing alone beside terraced rice fields with the dignity of an old warrior, in mid- to late April it pairs at full bloom with the surrounding paddies — flooded for planting — to mirror the cherry tree, often combined with Achi Village's «No.1 starry sky in Japan» for one of Nagano's signature single-tree compositions. Photography etiquette (no trampling paddy ridges, designated tripod positions) is in place; early morning before the crowds is the prime window.",
+      zh: "驹系樱花(こまつなぎのさくら)位于长野县下伊那郡阿智村智里(あちむらちさと)海拔约950米山间，树龄约400年(推定)·树高约20米·幹周约3.5米的江户彼岸樱一本樱。1189年源义经赴奥州途中在此系马的传说得名「驹系」，长野县天然纪念物指定。山棚田畔孤立之姿带古武士风格，4月中旬至下旬盛开期，田植期水满棚田映逆樱与阿智村「日本第一星空」组合构图为长野县代表一本樱绝景。撮影礼仪(畔禁踏·三脚位置等)整备，早晨无人时段为目标。",
+      "zh-tw": "駒繫櫻花(こまつなぎのさくら)位於長野縣下伊那郡阿智村智里(あちむらちさと)海拔約950米山間，樹齡約400年(推定)·樹高約20米·幹周約3.5米的江戶彼岸櫻一本櫻。1189年源義經赴奧州途中在此繫馬的傳說得名「駒繫」，長野縣天然紀念物指定。山棚田畔孤立之姿帶古武士風格，4月中旬至下旬盛開期，田植期水滿棚田映逆櫻與阿智村「日本第一星空」組合構圖為長野縣代表一本櫻絕景。撮影禮儀(畔禁踏·三腳位置等)整備，早晨無人時段為目標。",
+      ko: "고마쓰나기 벚꽃(こまつなぎのさくら)은 나가노현 시모이나군 아치무라 치사토(あちむらちさと)의 해발 약 950m의 산간에 우뚝 선, 수령 약 400년(추정)·수고 약 20m·간주 약 3.5m의 에도히간자쿠라 외솔 벚꽃. 1189년에 미나모토노 요시쓰네가 오슈로 갈 때 여기서 말을 매었다는 전설에서 「고마쓰나기」의 이름이 붙어, 나가노현의 천연기념물로 지정되어 있습니다. 산의 다랑논 두렁에 외로이 서 있는 모습은 노무사 같은 풍격을 풍기며, 4월 중순~하순의 만개기에는 모내기 시기 물을 채운 다랑논에 비친 역 벚꽃과 아치 마을의 「일본 제일의 별하늘」을 조합한 구도가 나가노현을 대표하는 외솔 벚꽃의 절경. 촬영 매너(논두렁 짓밟기 금지·삼각대 위치 등)가 정비되어 있으며, 이른 아침 사람이 없는 시간대가 노릴 만합니다.",
+    },
     highlights: {
       ja: [
         "樹齢約400年のエドヒガンザクラ — 樹高約20m、長野県天然記念物、源義経伝説の歴史",
@@ -5821,6 +5824,27 @@ export const LOCATION_CONTENT = {
         "Stars and Cherry at Night — Achi Village holds Japan's «No.1 starry sky» certification; the Milky Way at new moon paired with cherry blossoms is unforgettable",
         "Pre-Dawn Twilight — the blue hour before sunrise, when crowds are absent and the cherry's silhouette is most beautiful",
         "Nearby Trails — beyond Komatsunagi, Achi Village offers other cherry spots like Kurahaku Falls Cherry and the Namiai Checkpoint ruins",
+      ],
+      zh: [
+        "树龄约400年江户彼岸樱 — 树高约20米，长野县天然纪念物，源义经传说历史",
+        "棚田水鏡 — 4月中下旬田植期，逆樱在水面完美映入",
+        "夜星空与樱 — 阿智村「日本第一星空」，新月期银河与樱组合绝景",
+        "早晨薄明 — 日出前蓝调时刻，人少樱剪影美",
+        "周边步道 — 驹系樱外阿智村樱花名所多(暮白瀑樱·浪合关所跡)",
+      ],
+      "zh-tw": [
+        "樹齡約400年江戶彼岸櫻 — 樹高約20米，長野縣天然紀念物，源義經傳說歷史",
+        "棚田水鏡 — 4月中下旬田植期，逆櫻在水面完美映入",
+        "夜星空與櫻 — 阿智村「日本第一星空」，新月期銀河與櫻組合絕景",
+        "早晨薄明 — 日出前藍調時刻，人少櫻剪影美",
+        "周邊步道 — 駒繫櫻外阿智村櫻花名所多(暮白瀑櫻·浪合關所跡)",
+      ],
+      ko: [
+        "수령 약 400년의 에도히간자쿠라 — 수고 약 20m, 나가노현 천연기념물, 미나모토노 요시쓰네 전설의 역사",
+        "다랑논의 수경 — 4월 중하순의 모내기 시기, 역 벚꽃이 수면에 완벽하게 비침",
+        "밤의 별하늘과 벚꽃 — 아치 마을은 「일본 제일의 별하늘」, 신월기의 은하수와 벚꽃의 조합이 절경",
+        "이른 아침의 박명 — 일출 전의 푸른 시간대, 사람이 적고 벚꽃의 실루엣이 아름다움",
+        "주변의 산책로 — 고마쓰나기 벚꽃 외에도 아치 마을에는 벚꽃 명소 다수(쿠레하쿠 폭포 벚꽃·나미아이 관문 터)",
       ],
     },
     quickAnswers: {
@@ -5839,6 +5863,30 @@ export const LOCATION_CONTENT = {
         { q: "What is the Yoshitsune legend?", a: "In 1189, Minamoto no Yoshitsune — pursued by his brother Yoritomo — paused on the mountain trail through Achi to tie his horse to this cherry on his journey to the Northern Fujiwara, giving the tree the name «Horse-Tying.» Yoshitsune's turbulent life and the lone tree resonate; locals call it «Yoshitsune Cherry,» and it has long inspired songs and paintings. Photographing it with this story in mind deepens its presence." },
         { q: "Detailed photography etiquette?", a: "①Don't step onto paddy ridges ②Tripods only at designated local positions ③Don't monopolize a spot — rotate with other photographers ④Commercial shots require pre-approval ⑤Turn off car headlights early in the morning (so others can shoot stars) ⑥Drones forbidden entirely. The local landscape exists because villagers maintain the paddies — photograph respectfully and quietly." },
         { q: "Nearby cherry sites?", a: "①Kurahaku Falls Cherry (same Achi Village, 300+ years) ②Namiai Checkpoint ruins (Nakasendo waki-shuku) ③Takato Castle Park (1 hr by car) ④Omi-no-Sato Butai Cherry in Iida (next to the station, 250 years) ⑤Tenryukyo Gorge (boat ride + valley cherry). A 1–2 night itinerary covers Achi/Ina/Tenryukyo cherry-and-star scenes." },
+      ],
+      zh: [
+        { q: "驹系樱花是什么?", a: "长野县阿智村智里海拔950米山间树龄约400年江户彼岸樱。源义经赴奥州时系马传说得名，长野县天然纪念物。4月中下旬棚田水鏡与逆樱·星空组合的绝景一本樱。" },
+        { q: "水鏡撮影必备条件?", a: "4月中下旬田植期水满，无风的早晨至薄明必须。三脚架与广角至标准镜头，星与樱则建议高感耐性机身。撮影礼仪遵守(畔禁踏·三脚位置守)必须。" },
+        { q: "如何前往?", a: "JR饭田站开车约1小时，中央自动车道饭田山本IC开车30分。需车一选，停车场限故清晨5时抵达必须。星与樱撮影仅4月中下旬新月特定夜，年中数日稀有时机。" },
+        { q: "源义经传说?", a: "1189年，被兄·赖朝追的源义经赴奥州藤原氏途中，阿智村山道在此樱系马休息的传承为「驹系」由来。义经波澜生涯与一本樱孤独之姿重叠，本地古来称「义经樱」诗画题材。撮影时思此故事，樱风格更深。" },
+        { q: "撮影礼仪详细?", a: "①棚田畔(田埂)勿入②三脚位置仅本地设定点内③长时间占用禁(与他撮影者交替)④商用撮影事前申请⑤车头灯早晨熄灯(防他撮影者星空撮影妨害)⑥无人机全面禁。本地农地维持因而可撮影的景观，请敬意静默撮影。" },
+        { q: "近邻樱花名所?", a: "①暮白瀑樱(同阿智村，树龄300年级)②浪合关所跡(中山道脇宿，樱与历史)③伊那市高远城址公园(车1小时)④饭田市麻绩之里舞台樱(站近，树龄250年)⑤天龙峡(船下体验+溪谷樱)。1至2宿可组阿智村至伊那谷至天龙峡的樱与星空撮影旅程。" },
+      ],
+      "zh-tw": [
+        { q: "駒繫櫻花是什麼?", a: "長野縣阿智村智里海拔950米山間樹齡約400年江戶彼岸櫻。源義經赴奧州時繫馬傳說得名，長野縣天然紀念物。4月中下旬棚田水鏡與逆櫻·星空組合的絕景一本櫻。" },
+        { q: "水鏡撮影必備條件?", a: "4月中下旬田植期水滿，無風的早晨至薄明必須。三腳架與廣角至標準鏡頭，星與櫻則建議高感耐性機身。撮影禮儀遵守(畔禁踏·三腳位置守)必須。" },
+        { q: "如何前往?", a: "JR飯田站開車約1小時，中央自動車道飯田山本IC開車30分。需車一選，停車場限故清晨5時抵達必須。星與櫻撮影僅4月中下旬新月特定夜，年中數日稀有時機。" },
+        { q: "源義經傳說?", a: "1189年，被兄·賴朝追的源義經赴奧州藤原氏途中，阿智村山道在此櫻繫馬休息的傳承為「駒繫」由來。義經波瀾生涯與一本櫻孤獨之姿重疊，本地古來稱「義經櫻」詩畫題材。撮影時思此故事，櫻風格更深。" },
+        { q: "撮影禮儀詳細?", a: "①棚田畔(田埂)勿入②三腳位置僅本地設定點內③長時間占用禁(與他撮影者交替)④商用撮影事前申請⑤車頭燈早晨熄燈(防他撮影者星空撮影妨害)⑥無人機全面禁。本地農地維持因而可撮影的景觀，請敬意靜默撮影。" },
+        { q: "近鄰櫻花名所?", a: "①暮白瀑櫻(同阿智村，樹齡300年級)②浪合關所跡(中山道脇宿，櫻與歷史)③伊那市高遠城址公園(車1小時)④飯田市麻績之里舞台櫻(站近，樹齡250年)⑤天龍峽(船下體驗+溪谷櫻)。1至2宿可組阿智村至伊那谷至天龍峽的櫻與星空撮影旅程。" },
+      ],
+      ko: [
+        { q: "고마쓰나기 벚꽃이란?", a: "나가노현 아치 마을 치사토의 해발 950m의 산간에 우뚝 선 수령 약 400년의 에도히간자쿠라. 미나모토노 요시쓰네가 오슈로 갈 때 말을 매었다는 전설에서 이름이 붙어, 나가노현 천연기념물. 4월 중하순의 다랑논의 수경과 역 벚꽃, 별하늘과의 조합이 절경인 외솔 벚꽃입니다." },
+        { q: "수경 촬영에 필요한 조건은?", a: "4월 중하순의 모내기 시기로 물이 채워지고, 바람 없는 이른 아침~박명이 필수. 삼각대와 광각~표준 렌즈, 별과 벚꽃이라면 고감도 내성이 있는 바디가 추천. 촬영 매너 준수(논두렁 짓밟기 금지·삼각대 위치 지키기)가 필수입니다." },
+        { q: "가는 방법은?", a: "JR 이이다역에서 차로 약 1시간, 추오 자동차도 이이다 야마모토 IC에서 차로 30분. 차 한 선택, 주차장은 한정되므로 이른 아침 5시 도착이 필수. 별과 벚꽃의 촬영은 신월기의 4월 중하순 특정 밤만, 연 수일의 희귀한 타이밍입니다." },
+        { q: "미나모토노 요시쓰네 전설이란?", a: "1189년, 형 요리토모에게 쫓긴 미나모토노 요시쓰네가 오슈 후지와라 가문에 의탁하러 가는 도중, 아치 마을의 산길에서 이 벚꽃에 말을 매고 쉬었다는 전승이 「고마쓰나기」의 유래. 요시쓰네의 파란 많은 생애와 외솔 벚꽃의 고독한 모습이 겹쳐, 현지에서는 예로부터 「요시쓰네 벚꽃」으로도 불리며 시와 회화의 소재가 되었습니다. 촬영 시 이 이야기에 마음을 담으면 벚꽃의 풍격이 한층 깊게 느껴집니다." },
+        { q: "촬영 매너의 상세는?", a: "①다랑논의 두렁(아제미치)에 들어가지 말 것 ②삼각대 위치는 현지 설정 스팟 내에서만 ③장시간 점유 금지(다른 촬영자와 교대) ④상업적 촬영은 사전 신청 ⑤차의 헤드라이트는 이른 아침 소등(다른 촬영자의 별하늘 촬영 방해 방지) ⑥드론 전면 금지. 현지 주민이 농지를 유지하기 때문에 촬영할 수 있는 경관, 경의를 가지고 조용히 촬영해주세요." },
+        { q: "인근의 벚꽃 명소는?", a: "①쿠레하쿠 폭포 벚꽃(같은 아치 마을, 수령 300년 급) ②나미아이 관문 터(나카센도 와키슈쿠, 벚꽃과 역사) ③이나시의 다카토 성지 공원(차로 1시간) ④이이다시의 오미노사토 부타이 벚꽃(역 바로, 수령 250년) ⑤덴류쿄(뱃놀이 체험+계곡 벚꽃). 1~2박으로 아치 마을~이나 분지~덴류쿄까지 벚꽃과 별하늘의 촬영 여정을 짤 수 있습니다." },
       ],
     },
     faqs: [
