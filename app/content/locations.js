@@ -1906,10 +1906,13 @@ export const LOCATION_CONTENT = {
       "東山動物園1937年開園的名古屋動物園。西部低地大猩猩「夏巴尼」因「太帥」走紅全國。自然光設計的展館與寬闊展示區適合動物攝影。可與東山植物園同遊。",
       "히가시야마 동물원은 1937년 개원 나고야의 동물원. 서부로랜드고릴라 '샤바니'가 '너무 잘생겼다'며 전국적 인기. 자연광이 드는 수조 설계와 넓은 전시장이 동물 사진에 최적. 인접한 히가시야마 식물원과 함께 즐기는 것도 좋습니다."
     ),
-    definition: lh(
-      "東山動植物園(ひがしやまどうしょくぶつえん)は愛知県名古屋市千種区東山元町3-70にある総合動植物園で、1937年(昭和12年)開園、面積約60ヘクタール、年間来園者数約240万人と日本トップクラス。動物園は約500種類17,000点超の生物を飼育する日本有数の規模で、ニシゴリラのオス「シャバーニ」が「世界で最もイケメンなゴリラ」として2015年に世界的話題に、年間入園者数を急増させた立役者として有名。コアラ館、アジアゾウ舎、自然動物園など飼育環境にこだわった展示で動物写真に最適、隣接する植物園は日本最大級5,000種を栽培しています。",
-      "Higashiyama Zoo and Botanical Gardens, located at 3-70 Higashiyama-Motomachi, Chikusa-ku, Nagoya City, Aichi Prefecture, opened in 1937 (Showa 12) and covers about 60 hectares — drawing roughly 2.4 million visitors a year, among Japan's top-tier zoos. The zoo houses over 17,000 individuals across about 500 species, with the male western lowland gorilla «Shabani» becoming a global sensation in 2015 as «the world's most handsome gorilla,» credited with the surge in visitor numbers. With dedicated environments like the Koala House, Asian Elephant Zone, and Natural Zoo, it is ideal for wildlife photography; the adjoining Botanical Gardens cultivates about 5,000 plant species — among Japan's largest collections."
-    ),
+    definition: {
+      ja: "東山動植物園(ひがしやまどうしょくぶつえん)は愛知県名古屋市千種区東山元町3-70にある総合動植物園で、1937年(昭和12年)開園、面積約60ヘクタール、年間来園者数約240万人と日本トップクラス。動物園は約500種類17,000点超の生物を飼育する日本有数の規模で、ニシゴリラのオス「シャバーニ」が「世界で最もイケメンなゴリラ」として2015年に世界的話題に、年間入園者数を急増させた立役者として有名。コアラ館、アジアゾウ舎、自然動物園など飼育環境にこだわった展示で動物写真に最適、隣接する植物園は日本最大級5,000種を栽培しています。",
+      en: "Higashiyama Zoo and Botanical Gardens, located at 3-70 Higashiyama-Motomachi, Chikusa-ku, Nagoya City, Aichi Prefecture, opened in 1937 (Showa 12) and covers about 60 hectares — drawing roughly 2.4 million visitors a year, among Japan's top-tier zoos. The zoo houses over 17,000 individuals across about 500 species, with the male western lowland gorilla «Shabani» becoming a global sensation in 2015 as «the world's most handsome gorilla,» credited with the surge in visitor numbers. With dedicated environments like the Koala House, Asian Elephant Zone, and Natural Zoo, it is ideal for wildlife photography; the adjoining Botanical Gardens cultivates about 5,000 plant species — among Japan's largest collections.",
+      zh: "东山动植物园(ひがしやまどうしょくぶつえん)位于爱知县名古屋市千种区东山元町3-70的综合动植物园，1937年(昭和12年)开园，面积约60公顷，年来园者数约240万人，日本顶级。动物园饲养约500种17000点以上生物，日本数一数二规模，西部低地大猩猩雄性「夏巴尼」2015年作为「世界最帅大猩猩」掀起世界话题，年入园者数急增的功臣闻名。考拉馆、亚洲象舍、自然动物园等讲究饲养环境的展示对动物撮影最佳，邻接植物园栽培日本最大级5000种。",
+      "zh-tw": "東山動植物園(ひがしやまどうしょくぶつえん)位於愛知縣名古屋市千種區東山元町3-70的綜合動植物園，1937年(昭和12年)開園，面積約60公頃，年來園者數約240萬人，日本頂級。動物園飼養約500種17000點以上生物，日本數一數二規模，西部低地大猩猩雄性「夏巴尼」2015年作為「世界最帥大猩猩」掀起世界話題，年入園者數急增的功臣聞名。無尾熊館、亞洲象舍、自然動物園等講究飼養環境的展示對動物撮影最佳，鄰接植物園栽培日本最大級5000種。",
+      ko: "히가시야마 동식물원(ひがしやまどうしょくぶつえん)은 아이치현 나고야시 치쿠사구 히가시야마모토마치 3-70에 있는 종합 동식물원으로, 1937년(쇼와 12년) 개원, 면적 약 60헥타르, 연간 입원자 수 약 240만 명으로 일본 톱 클래스. 동물원은 약 500종 17,000점 이상의 생물을 사육하는 일본 유수의 규모로, 서부로랜드고릴라 수컷 「샤바니」가 「세계에서 가장 잘생긴 고릴라」로 2015년에 세계적 화제, 연간 입원자 수를 급증시킨 주역으로 유명. 코알라 관, 아시아 코끼리 사, 자연 동물원 등 사육 환경에 신경 쓴 전시로 동물 사진에 최적, 인접한 식물원은 일본 최대급 5,000종을 재배하고 있습니다.",
+    },
     highlights: {
       ja: [
         "ニシゴリラ「シャバーニ」 — 2015年「世界で最もイケメンなゴリラ」として世界的話題、ガラス越し撮影",
@@ -1924,6 +1927,27 @@ export const LOCATION_CONTENT = {
         "Asian Elephant Zone and Natural Zoo — open enclosures showing herd behavior; weekday mornings are most active",
         "Higashiyama Botanical Garden — about 5,000 cultivated species, one of Japan's largest, with cherry blossoms, dogwood, and hydrangeas across the seasons",
         "Higashiyama Sky Tower (134 m) — overlooks the Nagoya cityscape and the gardens; renowned for sunset and night views",
+      ],
+      zh: [
+        "西部低地大猩猩「夏巴尼」 — 2015年「世界最帅大猩猩」掀起世界话题，隔玻璃撮影",
+        "考拉馆 — 8只考拉，桉树饲料，傍晚活跃时段为最佳撮影时间",
+        "亚洲象舍·自然动物园 — 开放式展示，可拍群体行动，平日朝活泼",
+        "东山植物园 — 栽培5000种的日本最大级植物园，樱·四照花·绣球四季",
+        "东山天空塔(134米) — 眺望名古屋市街与动植物园，夕景至夜景名所",
+      ],
+      "zh-tw": [
+        "西部低地大猩猩「夏巴尼」 — 2015年「世界最帥大猩猩」掀起世界話題，隔玻璃撮影",
+        "無尾熊館 — 8隻無尾熊，桉樹飼料，傍晚活躍時段為最佳撮影時間",
+        "亞洲象舍·自然動物園 — 開放式展示，可拍群體行動，平日朝活潑",
+        "東山植物園 — 栽培5000種的日本最大級植物園，櫻·四照花·繡球四季",
+        "東山天空塔(134米) — 眺望名古屋市街與動植物園，夕景至夜景名所",
+      ],
+      ko: [
+        "서부로랜드고릴라 「샤바니」 — 2015년 「세계에서 가장 잘생긴 고릴라」로 세계적 화제, 유리 너머 촬영",
+        "코알라 관 — 8마리의 코알라, 먹이의 유칼립투스, 저녁의 활동적인 시간이 베스트 촬영 타임",
+        "아시아 코끼리 사·자연 동물원 — 개방적 전시, 무리 행동을 찍을 수 있음, 평일 아침이 활발",
+        "히가시야마 식물원 — 5,000종을 재배하는 일본 최대급의 식물원, 벚꽃·산딸나무·수국의 사계",
+        "히가시야마 스카이타워(134m) — 나고야 시가지와 동식물원을 한눈에, 석양~야경의 명소",
       ],
     },
     quickAnswers: {
@@ -1942,6 +1966,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended camera gear?", a: "①Fast prime (50mm f/1.8) for background bokeh and dim interiors ②Telephoto zoom (70–300mm) for distant animals and koalas ③Standard zoom (24–105mm) for wide views and the botanical garden. Glass-tank shooting is common — bring a lens hood. Flash is harmful to animals and forbidden; ISO 1600–3200 freezes motion." },
         { q: "Higashiyama Sky Tower at night?", a: "At 134 m tall (100 m observation deck), the tower commands a panorama of Nagoya and the zoo grounds — sunset and blue hour are spectacular. Admission ¥500 (¥700 zoo combo), open 9:00–21:30. Weekday evenings are best for avoiding crowds. Tripods OK; bring dark clothes or a hood to cut glass reflection." },
         { q: "Recommended seasons?", a: "Cherry blossoms late March–April, fresh greenery in May, roses in late May, hydrangeas in June, autumn colors in November, winter snow January–February — each season offers something. Koalas are most active 9:30–11:30 AM. Mogu-mogu (feeding) time brings out keeper talks and active subjects. The ¥2,000 annual pass enables seasonal repeat visits." },
+      ],
+      zh: [
+        { q: "东山动物园是什么?", a: "1937年开园的名古屋市综合动植物园，面积约60公顷，年来园者数约240万人。动物约500种17000点·植物约5000种，含世界话题大猩猩「夏巴尼」的日本顶级动植物园。" },
+        { q: "如何见到夏巴尼?", a: "大猩猩·黑猩猩舍平日上午最活跃。隔玻璃撮影故镜头贴玻璃压反射，明亮定焦(50mm f/1.8等)拍背景虚化构图佳。周末拥挤激烈，平日朝一时段推荐。" },
+        { q: "如何前往与所需时间?", a: "地铁东山线「东山公园站」3号出口步行3分。入园500日元，年票2000日元(2回回本)。动物园+植物园+天空塔全看半日至1日。闭园16:30(夏季17时)。" },
+        { q: "撮影器材推荐?", a: "①明亮定焦(50mm F1.8)拍背景虚化·暗室内②长焦变焦(70-300mm)拍远方动物·考拉③标准变焦(24-105mm)拍全景·植物园。多隔玻璃故遮光罩防眩光。闪光对动物有害全面禁，ISO1600至3200止动。" },
+        { q: "东山天空塔夜景?", a: "高134米·地上100米展望室一览名古屋市街与动植物园，尤夕景至蓝调时刻绝景。入场500日元(动物园共通券700日元)，9:00至21:30营业。避拥挤平日夜确实。三脚OK，玻璃反射对策黑衣或暗幕活用。" },
+        { q: "推荐访问时期?", a: "樱3月下旬至4月、新绿5月、玫瑰5月下旬、绣球6月、红叶11月、雪景1至2月四季皆有。考拉活跃时间朝9:30至11:30，Mogu-mogu Time饲养员动物解说被摄体活泼。年票2000日元可多次访问，季节撮影最佳。" },
+      ],
+      "zh-tw": [
+        { q: "東山動物園是什麼?", a: "1937年開園的名古屋市綜合動植物園，面積約60公頃，年來園者數約240萬人。動物約500種17000點·植物約5000種，含世界話題大猩猩「夏巴尼」的日本頂級動植物園。" },
+        { q: "如何見到夏巴尼?", a: "大猩猩·黑猩猩舍平日上午最活躍。隔玻璃撮影故鏡頭貼玻璃壓反射，明亮定焦(50mm f/1.8等)拍背景虛化構圖佳。週末擁擠激烈，平日朝一時段推薦。" },
+        { q: "如何前往與所需時間?", a: "地鐵東山線「東山公園站」3號出口步行3分。入園500日圓，年票2000日圓(2回回本)。動物園+植物園+天空塔全看半日至1日。閉園16:30(夏季17時)。" },
+        { q: "撮影器材推薦?", a: "①明亮定焦(50mm F1.8)拍背景虛化·暗室內②長焦變焦(70-300mm)拍遠方動物·無尾熊③標準變焦(24-105mm)拍全景·植物園。多隔玻璃故遮光罩防眩光。閃光對動物有害全面禁，ISO1600至3200止動。" },
+        { q: "東山天空塔夜景?", a: "高134米·地上100米展望室一覽名古屋市街與動植物園，尤夕景至藍調時刻絕景。入場500日圓(動物園共通券700日圓)，9:00至21:30營業。避擁擠平日夜確實。三腳OK，玻璃反射對策黑衣或暗幕活用。" },
+        { q: "推薦訪問時期?", a: "櫻3月下旬至4月、新綠5月、玫瑰5月下旬、繡球6月、紅葉11月、雪景1至2月四季皆有。無尾熊活躍時間朝9:30至11:30，Mogu-mogu Time飼養員動物解說被攝體活潑。年票2000日圓可多次訪問，季節撮影最佳。" },
+      ],
+      ko: [
+        { q: "히가시야마 동물원이란?", a: "1937년 개원한 나고야시의 종합 동식물원으로, 면적 약 60헥타르, 연간 입원자 수 약 240만 명. 동물 약 500종 17,000점, 식물 약 5,000종을 거느리며, 세계적으로 화제가 된 고릴라 「샤바니」를 거느린 일본 톱 클래스의 동식물원입니다." },
+        { q: "샤바니를 보려면?", a: "고릴라·침팬지 사에서 평일 오전 중이 가장 활발. 유리 너머의 촬영이므로 렌즈를 가까이 대고 반사를 억제, 밝은 단초점(50mm f/1.8 등)으로 배경 보케를 살리면 좋은 구도. 주말은 혼잡이 심하므로 평일 아침 일찍이 추천입니다." },
+        { q: "가는 방법과 소요 시간은?", a: "지하철 히가시야마선 「히가시야마 공원역」 3번 출구에서 도보 3분. 입원료 500엔, 연간 패스 2,000엔(2회면 본전). 동물원+식물원+스카이타워 전부 보면 반나절~1일. 폐원 16:30(여름철 17시)." },
+        { q: "촬영 기재 추천은?", a: "①밝은 단초점(50mm F1.8)으로 배경 보케·어두운 실내 ②망원 줌(70-300mm)으로 멀리 있는 동물·코알라 ③표준 줌(24-105mm)으로 전경·식물원. 유리 너머의 촬영이 많으므로 렌즈 후드로 플레어 경감. 플래시는 동물에 유해하여 전면 금지, ISO 1600~3200으로 움직임을 멈춤." },
+        { q: "히가시야마 스카이타워의 야경은?", a: "높이 134m·지상 100m의 전망실에서 나고야 시가지와 동식물원을 한눈에, 특히 석양~블루 아워는 절경. 입장 500엔(동물원 공통권 700엔), 9:00~21:30 영업. 혼잡 회피는 평일 밤이 확실. 삼각대 OK, 유리 반사 대책으로 검은 옷이나 암막 활용." },
+        { q: "추천 방문 시기는?", a: "벚꽃의 3월 하순~4월, 신록의 5월, 장미의 5월 하순, 수국의 6월, 단풍의 11월, 설경의 1~2월로 사계가 각자. 코알라의 활동적인 시간은 아침 9:30~11:30, 모구모구 타임은 사육사의 동물 해설로 피사체가 활발. 연간 패스 2,000엔으로 여러 번 방문 가능, 계절별 촬영에 최적." },
       ],
     },
     faqs: [
