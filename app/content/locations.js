@@ -6001,10 +6001,13 @@ export const LOCATION_CONTENT = {
       "弘法山古墳位於松本市，是東日本最古老的前方後方墳之一（3世紀末建造）。位於海拔650米弘法山頂，約4000棵櫻花4月中旬盛放。山頂可俯瞰松本市區與北阿爾卑斯絕景，櫻花之間殘雪峰巒的構圖是松本春景代表。",
       "고보산 고분은 마쓰모토시에 있는 동일본 최고급 전방후방분(3세기 말 축조). 해발 650m 고보산 정상에 위치하며 약 4000그루의 벚꽃이 4월 중순 만개합니다. 정상에서는 마쓰모토 시가지와 북알프스의 절경이 펼쳐지고, 벚꽃 너머 잔설의 봉우리들을 바라보는 구도는 마쓰모토 봄의 대표 풍경입니다."
     ),
-    definition: lh(
-      "弘法山古墳(こうぼうやまこふん)は長野県松本市並柳の標高約650mの弘法山(こうぼうやま)山頂部に築造された全長約66mの東日本最古級の前方後方墳(ぜんぽうこうほうふん)で、3世紀末築造と推定される国の史跡。1974年(昭和49年)に長野県・松本市の発掘調査で「弘法山古墳出土品」(三角縁神獣鏡など)が確認され、4世紀代の畿内文化が早期に北信地方に伝わった証拠として古代史学的に重要。山頂周辺には約4,000本のソメイヨシノ・ヤマザクラが植えられ、4月中旬の満開期には松本市街と北アルプス連峰(乗鞍岳・穂高連峰・常念岳など)が一望できる絶景が広がります。桜越しに残雪のアルプスの稜線を望む構図は松本随一の春の風景として全国的に知られています。",
-      "Kobo-yama Tumulus, atop the 650 m Mt. Kobo in Namiyanagi, Matsumoto City, Nagano Prefecture, is a roughly 66 m «zenpo-koho-fun» — a square-front, square-back keyhole-style tomb — and one of eastern Japan's oldest, estimated to date from the late 3rd century. Designated a National Historic Site, the tumulus yielded Triangular-Rim Mythical-Beast Mirrors and other artifacts during a 1974 excavation by Nagano and Matsumoto, providing crucial evidence that 4th-century Kinai culture had reached the northern Shinano region remarkably early. About 4,000 Yoshino and yamazakura cherry trees encircle the summit; in mid-April at peak bloom, sweeping views unfold of downtown Matsumoto and the Northern Alps — Mt. Norikura, the Hotaka Range, Mt. Jonen — making the snow-capped peaks framed by cherry blossoms one of Matsumoto's most celebrated spring scenes nationally."
-    ),
+    definition: {
+      ja: "弘法山古墳(こうぼうやまこふん)は長野県松本市並柳の標高約650mの弘法山(こうぼうやま)山頂部に築造された全長約66mの東日本最古級の前方後方墳(ぜんぽうこうほうふん)で、3世紀末築造と推定される国の史跡。1974年(昭和49年)に長野県・松本市の発掘調査で「弘法山古墳出土品」(三角縁神獣鏡など)が確認され、4世紀代の畿内文化が早期に北信地方に伝わった証拠として古代史学的に重要。山頂周辺には約4,000本のソメイヨシノ・ヤマザクラが植えられ、4月中旬の満開期には松本市街と北アルプス連峰(乗鞍岳・穂高連峰・常念岳など)が一望できる絶景が広がります。桜越しに残雪のアルプスの稜線を望む構図は松本随一の春の風景として全国的に知られています。",
+      en: "Kobo-yama Tumulus, atop the 650 m Mt. Kobo in Namiyanagi, Matsumoto City, Nagano Prefecture, is a roughly 66 m «zenpo-koho-fun» — a square-front, square-back keyhole-style tomb — and one of eastern Japan's oldest, estimated to date from the late 3rd century. Designated a National Historic Site, the tumulus yielded Triangular-Rim Mythical-Beast Mirrors and other artifacts during a 1974 excavation by Nagano and Matsumoto, providing crucial evidence that 4th-century Kinai culture had reached the northern Shinano region remarkably early. About 4,000 Yoshino and yamazakura cherry trees encircle the summit; in mid-April at peak bloom, sweeping views unfold of downtown Matsumoto and the Northern Alps — Mt. Norikura, the Hotaka Range, Mt. Jonen — making the snow-capped peaks framed by cherry blossoms one of Matsumoto's most celebrated spring scenes nationally.",
+      zh: "弘法山古坟(こうぼうやまこふん)位于长野县松本市并柳海拔约650米弘法山(こうぼうやま)山顶部建造的全长约66米东日本最古级前方后方坟(ぜんぽうこうほうふん)，3世纪末建造推定的国指定史迹。1974年(昭和49年)长野县·松本市发掘调查确认「弘法山古坟出土品」(三角缘神兽镜等)，作为4世纪畿内文化早期传至北信地方的证据古代史学上重要。山顶周边植约4000株染井吉野·山樱，4月中旬满开期可一望松本市街与北阿尔卑斯连峰(乘鞍岳·穗高连峰·常念岳等)的绝景。樱花越的残雪阿尔卑斯山脊构图为松本第一春景全国闻名。",
+      "zh-tw": "弘法山古墳(こうぼうやまこふん)位於長野縣松本市並柳海拔約650米弘法山(こうぼうやま)山頂部建造的全長約66米東日本最古級前方後方墳(ぜんぽうこうほうふん)，3世紀末建造推定的國指定史蹟。1974年(昭和49年)長野縣·松本市發掘調查確認「弘法山古墳出土品」(三角緣神獸鏡等)，作為4世紀畿內文化早期傳至北信地方的證據古代史學上重要。山頂周邊植約4000株染井吉野·山櫻，4月中旬滿開期可一望松本市街與北阿爾卑斯連峰(乘鞍岳·穗高連峰·常念岳等)的絕景。櫻花越的殘雪阿爾卑斯山脊構圖為松本第一春景全國聞名。",
+      ko: "고보야마 고분(こうぼうやまこふん)은 나가노현 마쓰모토시 나미야나기 해발 약 650m의 고보야마(こうぼうやま) 산정부에 축조된 전장 약 66m의 동일본 최고급 전방후방분(ぜんぽうこうほうふん)으로, 3세기 말 축조로 추정되는 국가 사적. 1974년(쇼와 49년)에 나가노현·마쓰모토시의 발굴 조사로 「고보야마 고분 출토품」(삼각연 신수경 등)이 확인되어, 4세기대의 키나이 문화가 조기에 호쿠신 지방에 전해진 증거로 고대 사학적으로 중요. 산정 주변에는 약 4,000그루의 소메이요시노·야마자쿠라가 심어져 있으며, 4월 중순의 만개기에는 마쓰모토 시가지와 북알프스 연봉(노리쿠라다케·호타카 연봉·조넨다케 등)을 한눈에 볼 수 있는 절경이 펼쳐집니다. 벚꽃 너머 잔설의 알프스 능선을 바라보는 구도는 마쓰모토 제일의 봄 풍경으로 전국적으로 알려져 있습니다.",
+    },
     highlights: {
       ja: [
         "東日本最古級の前方後方墳 — 全長66m、3世紀末築造、国指定史跡、古代史の重要遺跡",
@@ -6019,6 +6022,27 @@ export const LOCATION_CONTENT = {
         "Northern Alps Panorama — the ridges of Mt. Norikura, the Hotaka Range, and Mt. Jonen; the canonical shot frames them through cherry blossoms",
         "Morning «Alpenglow» — at sunrise the Alps blush pink; combined with cherry blossoms, the peak photographic moment",
         "Trail (15–20 min) — from the bus stop on foot via a maintained trail, accessible even for families",
+      ],
+      zh: [
+        "东日本最古级前方后方坟 — 全长66米，3世纪末建造，国指定史迹，古代史重要遗迹",
+        "山顶樱(约4000株) — 染井吉野与山樱，4月中旬满开，俯瞰松本市街",
+        "北阿尔卑斯大全景 — 乘鞍岳·穗高连峰·常念岳的山脊，越樱构图为王道",
+        "朝霞Morgenrot — 日出时北阿尔卑斯染成粉色，与樱组合最高峰",
+        "登山道(15至20分) — 巴士站步行，整备山道，亲子可轻松登",
+      ],
+      "zh-tw": [
+        "東日本最古級前方後方墳 — 全長66米，3世紀末建造，國指定史蹟，古代史重要遺跡",
+        "山頂櫻(約4000株) — 染井吉野與山櫻，4月中旬滿開，俯瞰松本市街",
+        "北阿爾卑斯大全景 — 乘鞍岳·穗高連峰·常念岳的山脊，越櫻構圖為王道",
+        "朝霞Morgenrot — 日出時北阿爾卑斯染成粉色，與櫻組合最高峰",
+        "登山道(15至20分) — 巴士站步行，整備山道，親子可輕鬆登",
+      ],
+      ko: [
+        "동일본 최고급의 전방후방분 — 전장 66m, 3세기 말 축조, 국 지정 사적, 고대사의 중요 유적",
+        "산정의 벚꽃(약 4,000그루) — 소메이요시노와 야마자쿠라, 4월 중순 만개, 마쓰모토 시가지를 내려다봄",
+        "북알프스의 대 파노라마 — 노리쿠라다케·호타카 연봉·조넨다케의 능선, 벚꽃 너머의 구도가 왕도",
+        "아침놀의 모르겐로트 — 일출 시 북알프스가 분홍색으로 물듦, 벚꽃과의 조합 최고봉",
+        "등산로(15~20분) — 버스 정류장에서 도보, 정비된 산길, 가족 동반도 부담 없이 등반 가능",
       ],
     },
     quickAnswers: {
@@ -6038,6 +6062,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended camera gear?", a: "①Wide angle (16–35mm) for cherry+Alps grand vista ②Telephoto (70–200mm) compressing snow ridges and cherry ③Standard zoom for summit-trail cherry detail. Tripods OK (mind crowds). For dawn alpenglow, bring spare batteries and warm clothing — at 650 m even April mornings can drop below 5°C." },
         { q: "Combined sightseeing route?", a: "①Kobo-yama (early morning, cherry + Alps) ②Matsumoto Castle (15 min by car, oldest of 12 originals) ③Nakamachi-dori (20 min, old kura townscape) ④Joyama Park (20 min, cherry + city panorama) ⑤Utsukushigahara Highlands (1 hr, summer drive). A full-day Matsumoto cherry circuit; evenings can include shinshu soba and local sake on Nakamachi-dori." },
       ],
+      zh: [
+        { q: "弘法山古坟是什么?", a: "长野县松本市海拔650米弘法山山顶3世纪末建造的前方后方坟(全长66米)，东日本最古级·国指定史迹。山顶周围约4000株樱与北阿尔卑斯绝景织就松本第一春景撮影地。" },
+        { q: "弘法山古坟前往与撮影点?", a: "松本站乘巴士约20分·步行约20分至登山口。山顶坡道15至20分。早晨薄明至日出逆光柔和北阿尔卑斯映入，避拥挤亦有效。朝霞Morgenrot(雪山染粉)为最高峰时机。" },
+        { q: "樱花最佳时期?", a: "每年4月中旬高峰。松本市街地比高故平地数日后满开。高峰早晨薄雾·樱·北阿尔卑斯3要素齐的奇迹时间，摄影爱好者集结。" },
+        { q: "古坟历史意义?", a: "3世纪末前方后方坟为东日本最古级，1974年发掘出土三角缘神兽镜等以「畿内文化早期传至北信地方的证据」为古代史学上重要。国指定史迹。古坟说明牌学文化背景后撮影更深表现可，考古爱好者亦感兴趣。" },
+        { q: "撮影器材推荐?", a: "①广角(16-35mm)拍樱与北阿尔卑斯大景②长焦(70-200mm)雪山山脊与樱压缩③标准变焦山顶散步路与樱细节。三脚OK(拥挤时顾及)。早晨Morgenrot狙备用电池与防寒装备必备，4月海拔650米气温5℃以下亦有。" },
+        { q: "周边连续观光?", a: "①弘法山古坟(早晨，樱+北阿尔卑斯)②松本城(车15分，现存12天守最古)③中町通(车20分，仓造旧街)④城山公园(车20分，樱与松本市街俯瞰)⑤美原高原(车1小时，夏期高原兜风)。1日游可巡松本市内樱花名所，夜中町通信州荞麦·地酒晚餐。" },
+      ],
+      "zh-tw": [
+        { q: "弘法山古墳是什麼?", a: "長野縣松本市海拔650米弘法山山頂3世紀末建造的前方後方墳(全長66米)，東日本最古級·國指定史蹟。山頂周圍約4000株櫻與北阿爾卑斯絕景織就松本第一春景撮影地。" },
+        { q: "弘法山古墳前往與撮影點?", a: "松本站搭巴士約20分·步行約20分至登山口。山頂坡道15至20分。早晨薄明至日出逆光柔和北阿爾卑斯映入，避擁擠亦有效。朝霞Morgenrot(雪山染粉)為最高峰時機。" },
+        { q: "櫻花最佳時期?", a: "每年4月中旬高峰。松本市街地比高故平地數日後滿開。高峰早晨薄霧·櫻·北阿爾卑斯3要素齊的奇蹟時間，攝影愛好者集結。" },
+        { q: "古墳歷史意義?", a: "3世紀末前方後方墳為東日本最古級，1974年發掘出土三角緣神獸鏡等以「畿內文化早期傳至北信地方的證據」為古代史學上重要。國指定史蹟。古墳說明牌學文化背景後撮影更深表現可，考古愛好者亦感興趣。" },
+        { q: "撮影器材推薦?", a: "①廣角(16-35mm)拍櫻與北阿爾卑斯大景②長焦(70-200mm)雪山山脊與櫻壓縮③標準變焦山頂散步路與櫻細節。三腳OK(擁擠時顧及)。早晨Morgenrot狙備用電池與防寒裝備必備，4月海拔650米氣溫5℃以下亦有。" },
+        { q: "周邊連續觀光?", a: "①弘法山古墳(早晨，櫻+北阿爾卑斯)②松本城(車15分，現存12天守最古)③中町通(車20分，倉造舊街)④城山公園(車20分，櫻與松本市街俯瞰)⑤美原高原(車1小時，夏期高原兜風)。1日遊可巡松本市內櫻花名所，夜中町通信州蕎麥·地酒晚餐。" },
+      ],
+      ko: [
+        { q: "고보야마 고분이란?", a: "나가노현 마쓰모토시 해발 650m 고보야마 산정의 3세기 말 축조의 전방후방분(전장 66m)으로, 동일본 최고급·국 지정 사적. 산정 주변의 약 4,000그루의 벚꽃과 북알프스의 절경이 짜내는 마쓰모토 제일의 봄 풍경 촬영지입니다." },
+        { q: "고보야마 고분 액세스와 촬영 포인트는?", a: "마쓰모토역에서 버스 약 20분·도보 약 20분으로 등산로 입구. 산정까지는 비탈길 15~20분. 이른 아침의 박명~일출이 역광이 부드럽고 북알프스가 잘 살아남, 혼잡 회피에도 유효. 아침놀의 모르겐로트(설산이 분홍으로 물듦)가 최고봉의 타이밍입니다." },
+        { q: "벚꽃의 베스트 시기는?", a: "예년 4월 중순이 절정. 마쓰모토 시가지보다 표고가 높기 때문에 평지보다 며칠 늦게 만개. 절정 시의 이른 아침은 박무와 벚꽃과 북알프스의 3요소가 갖춰지는 기적의 시간, 사진 애호가가 모입니다." },
+        { q: "고분의 역사적 의의는?", a: "3세기 말의 전방후방분으로는 동일본 최고급으로, 1974년의 발굴 조사로 출토된 삼각연 신수경 등에서 「키나이 문화가 조기에 호쿠신 지방에 전해진 증거」로 고대 사학적으로 중요. 국 지정 사적. 고분 설명판으로 문화적 배경을 배우고 나서 촬영하면 더 깊은 표현이 가능, 고고학 애호가에게도 흥미로운 장소입니다." },
+        { q: "촬영 기재 추천은?", a: "①광각(16-35mm)으로 벚꽃과 북알프스의 대경 ②망원(70-200mm)으로 설산 능선과 벚꽃 압축 ③표준 줌으로 산정의 산책로와 벚꽃의 디테일. 삼각대 OK(혼잡 시 배려). 이른 아침의 모르겐로트 노림은 예비 배터리와 방한구 필휴, 4월에도 해발 650m는 기온 5℃ 이하가 되기도." },
+        { q: "주변의 연계 관광은?", a: "①고보야마(이른 아침, 벚꽃+알프스) ②마쓰모토성(차로 15분, 현존 12천수의 최고) ③나카마치도리(차로 20분, 쿠라즈쿠리의 오래된 거리) ④조야마 공원(차로 20분, 벚꽃과 마쓰모토 시가지 부감) ⑤우츠쿠시가하라 고원(차로 1시간, 여름철 고원 드라이브). 1일 코스로 마쓰모토 시내의 벚꽃 명소를 둘러보고, 밤은 나카마치도리에서 신슈 소바·지자케의 식사도." },
+      ],
     },
     faqs: [
       { q: d("弘法山古墳のアクセスと撮影ポイントは？","How to access and where to shoot?","怎么去？最佳拍摄点？","怎麼去？最佳拍攝點？","접근 방법과 촬영 포인트?"),
@@ -6052,10 +6100,13 @@ export const LOCATION_CONTENT = {
       "安養寺位於松本市，是真宗大谷派古剎。境內百年以上垂枝櫻4月中旬粉花垂地，蔚為壯觀。本堂、鐘樓的沉穩木造建築與櫻花的對比如畫，是當地人喜愛的靜謐賞櫻名所。",
       "안요지는 마쓰모토시의 진종 오타니파 고찰. 경내의 수양벚나무는 수령 100년이 넘으며 4월 중순 연분홍 꽃송이가 땅까지 늘어지는 모습이 압권. 본당과 종루의 차분한 목조 건축과 벚꽃의 대비는 회화적이며, 현지인이 사랑하는 조용한 벚꽃 명소입니다."
     ),
-    definition: lh(
-      "安養寺(あんようじ)は長野県松本市島内にある真宗大谷派の寺院で、創建年代は不詳ながら松本城下町の歴史を伝える古刹。境内に立つ樹齢約100年のしだれ桜は、4月中旬に淡紅色の花房を地面まで垂らす圧巻の姿で、地元では「安養寺のしだれ桜」として静かに愛され続けています。境内に面した本堂と鐘楼の落ち着いた木造建築と、優美な滝のように咲き誇るしだれ桜のコントラストは絵画的。観光地化されていない隠れた桜名所として、人混みを避けたい写真愛好家に支持される松本市の春の撮影地です。",
-      "Anyo-ji is a Jodo Shinshu Otani-ha temple in Shimauchi, Matsumoto City, Nagano Prefecture; though its founding date is unrecorded, it preserves the heritage of Matsumoto's castle-town history. Within its grounds, an approximately 100-year-old weeping cherry tree drapes pale-pink blossoms to the ground in mid-April — a breathtaking sight known affectionately as «Anyo-ji's weeping cherry.» The contrast of the serene wooden Main Hall and bell tower with the cherry tree blooming like an elegant cascade creates a painterly scene. Untouched by mass tourism, it is a hidden cherry-blossom destination cherished by photographers seeking calmer alternatives to Matsumoto's busier sites."
-    ),
+    definition: {
+      ja: "安養寺(あんようじ)は長野県松本市島内にある真宗大谷派の寺院で、創建年代は不詳ながら松本城下町の歴史を伝える古刹。境内に立つ樹齢約100年のしだれ桜は、4月中旬に淡紅色の花房を地面まで垂らす圧巻の姿で、地元では「安養寺のしだれ桜」として静かに愛され続けています。境内に面した本堂と鐘楼の落ち着いた木造建築と、優美な滝のように咲き誇るしだれ桜のコントラストは絵画的。観光地化されていない隠れた桜名所として、人混みを避けたい写真愛好家に支持される松本市の春の撮影地です。",
+      en: "Anyo-ji is a Jodo Shinshu Otani-ha temple in Shimauchi, Matsumoto City, Nagano Prefecture; though its founding date is unrecorded, it preserves the heritage of Matsumoto's castle-town history. Within its grounds, an approximately 100-year-old weeping cherry tree drapes pale-pink blossoms to the ground in mid-April — a breathtaking sight known affectionately as «Anyo-ji's weeping cherry.» The contrast of the serene wooden Main Hall and bell tower with the cherry tree blooming like an elegant cascade creates a painterly scene. Untouched by mass tourism, it is a hidden cherry-blossom destination cherished by photographers seeking calmer alternatives to Matsumoto's busier sites.",
+      zh: "安养寺(あんようじ)位于长野县松本市岛内的真宗大谷派寺院，创建年代不详但传松本城下町历史的古刹。境内立树龄约100年的垂枝樱，4月中旬粉花房垂地的震撼之姿，本地为「安养寺垂枝樱」静静被深爱。境内面向本堂与钟楼的沉稳木造建筑与如优雅瀑布般盛开的垂枝樱对比如画。未观光地化的隐藏樱花名所，深受希望避人潮的摄影爱好者支持的松本市春景撮影地。",
+      "zh-tw": "安養寺(あんようじ)位於長野縣松本市島內的真宗大谷派寺院，創建年代不詳但傳松本城下町歷史的古剎。境內立樹齡約100年的垂枝櫻，4月中旬粉花房垂地的震撼之姿，本地為「安養寺垂枝櫻」靜靜被深愛。境內面向本堂與鐘樓的沉穩木造建築與如優雅瀑布般盛開的垂枝櫻對比如畫。未觀光地化的隱藏櫻花名所，深受希望避人潮的攝影愛好者支持的松本市春景撮影地。",
+      ko: "안요지(あんようじ)는 나가노현 마쓰모토시 시마우치에 있는 진종 오타니파의 사찰로, 창건 연대는 불명이지만 마쓰모토 성하도시의 역사를 전하는 고찰. 경내에 서 있는 수령 약 100년의 시다레자쿠라는 4월 중순에 연분홍색 꽃송이를 땅까지 늘어뜨리는 압권의 모습으로, 현지에서는 「안요지의 시다레자쿠라」로 조용히 사랑받고 있습니다. 경내에 면한 본당과 종루의 차분한 목조 건축과, 우아한 폭포처럼 만개한 시다레자쿠라의 대비는 회화적. 관광지화되지 않은 숨은 벚꽃 명소로, 인파를 피하고 싶은 사진 애호가에게 지지받는 마쓰모토시의 봄 촬영지입니다.",
+    },
     highlights: {
       ja: [
         "樹齢約100年のしだれ桜 — 淡紅色の花房が地面まで垂れる優美な姿、4月中旬満開",
@@ -6070,6 +6121,27 @@ export const LOCATION_CONTENT = {
         "Hidden, Uncrowded Spot — a quiet cherry temple visited mostly by locals, where you can shoot at leisure",
         "Evening Cherry — the western sun gilds tree and hall, with no crowds and a meditative stillness",
         "Within the Grounds — moss-covered stone steps and paths offer countless quintessentially Japanese photographic moments",
+      ],
+      zh: [
+        "树龄约100年垂枝樱 — 粉花房垂地的优雅之姿，4月中旬满开",
+        "本堂与钟楼的对比 — 沉稳木造建筑与樱华丽如画构图",
+        "未观光地化的隐藏名所 — 本地人访问的静谧樱寺，可悠悠撮影",
+        "傍晚樱 — 西阳染樱与本堂金黄色时段，无人静寂氛围",
+        "境内小径 — 苔藓石阶·参道，欲入照的和风景观",
+      ],
+      "zh-tw": [
+        "樹齡約100年垂枝櫻 — 粉花房垂地的優雅之姿，4月中旬滿開",
+        "本堂與鐘樓的對比 — 沉穩木造建築與櫻華麗如畫構圖",
+        "未觀光地化的隱藏名所 — 本地人訪問的靜謐櫻寺，可悠悠撮影",
+        "傍晚櫻 — 西陽染櫻與本堂金黃色時段，無人靜寂氛圍",
+        "境內小徑 — 苔蘚石階·參道，欲入照的和風景觀",
+      ],
+      ko: [
+        "수령 약 100년의 시다레자쿠라 — 연분홍색 꽃송이가 땅까지 늘어지는 우아한 모습, 4월 중순 만개",
+        "본당과 종루와의 대비 — 차분한 목조 건축과 벚꽃의 화려함이 회화적 구도",
+        "관광지화되지 않은 숨은 명소 — 현지인이 찾는 조용한 벚꽃 사찰, 천천히 촬영 가능",
+        "저녁의 벚꽃 — 서쪽 햇빛이 벚꽃과 본당을 황금빛으로 물들이는 시간대, 사람이 없는 정적의 분위기",
+        "경내의 작은 길 — 이끼 낀 돌계단·참배길, 사진으로 담고 싶은 와의 풍경",
       ],
     },
     quickAnswers: {
@@ -6088,6 +6160,30 @@ export const LOCATION_CONTENT = {
         { q: "Photography etiquette?", a: "An active religious site — the main hall interior and cemetery are off-limits. Only the weeping cherry in the precincts may be photographed. Consult the head priest before using flash or a tripod. Commercial use requires advance approval. Don't make worshippers detour around you — shoot quietly and respectfully." },
         { q: "Photography techniques?", a: "①Wide angle (16–35mm) for the main hall, bell tower, and weeping cherry ②Telephoto (70–200mm) for cascading flower-cluster closeups ③Macro (90mm) for individual blossom detail. Soft early-morning light captures the tree's delicate hues most beautifully. Post-rain water droplets on petals add atmosphere." },
         { q: "How does Anyo-ji compare to Matsumoto's other cherry sites?", a: "Matsumoto Castle pairs the National Treasure keep with cherry; Kobo-yama uses the Northern Alps as a borrowed backdrop; Anyo-ji offers a quiet Zen-temple setting with a single weeping cherry. The contrast across the three is striking — pair them in one day to capture different cherry moods. Anyo-ji is the least crowded and most contemplative." },
+      ],
+      zh: [
+        { q: "安养寺是什么?", a: "长野县松本市岛内真宗大谷派寺院，树龄约100年垂枝樱4月中旬震撼之姿的隐藏樱名所。未观光地化深受希望避人潮的摄影爱好者喜爱的松本市静谧春景撮影地。" },
+        { q: "安养寺垂枝樱见顷?", a: "4月中旬。早晨至上午顺光花色鲜艳。傍晚本堂与樱花剪影映入。境内静谧宗教设施需守礼仪撮影，勿妨参拜者。" },
+        { q: "如何前往?", a: "JR松本站开车约15分，或北松本站步行30分。停车场有(寺停车场，参拜者用)。与松本城·弘法山古坟组合市内樱花巡游一环访问推荐，撮影所需30分至1小时。" },
+        { q: "撮影礼仪?", a: "现役宗教设施故本堂内·墓地禁拍。境内枝垂樱仅可拍，闪光·三脚使用事前与住持商量。商用撮影需事前申请。参拜者撮影避绕走的状况避免，敬意静默撮影。" },
+        { q: "撮影技巧?", a: "①广角(16-35mm)拍本堂·钟楼与垂枝樱全景②长焦(70-200mm)垂枝花房特写③微距(90mm)拍单花细节。早晨柔光最美摄花纤细色调。雨后花瓣残水滴更具风情。" },
+        { q: "与松本他樱花名所差异?", a: "松本城迫力国宝城+樱组合，弘法山古坟北阿尔卑斯借景大景，安养寺静谧禅寺境内+一本垂枝樱对照3处。同松本市内不同樱表情1日可拍故组合访问定番。安养寺最空闲落着撮影可。" },
+      ],
+      "zh-tw": [
+        { q: "安養寺是什麼?", a: "長野縣松本市島內真宗大谷派寺院，樹齡約100年垂枝櫻4月中旬震撼之姿的隱藏櫻名所。未觀光地化深受希望避人潮的攝影愛好者喜愛的松本市靜謐春景撮影地。" },
+        { q: "安養寺垂枝櫻見頃?", a: "4月中旬。早晨至上午順光花色鮮豔。傍晚本堂與櫻花剪影映入。境內靜謐宗教設施需守禮儀撮影，勿妨參拜者。" },
+        { q: "如何前往?", a: "JR松本站開車約15分，或北松本站步行30分。停車場有(寺停車場，參拜者用)。與松本城·弘法山古墳組合市內櫻花巡遊一環訪問推薦，撮影所需30分至1小時。" },
+        { q: "撮影禮儀?", a: "現役宗教設施故本堂內·墓地禁拍。境內枝垂櫻僅可拍，閃光·三腳使用事前與住持商量。商用撮影需事前申請。參拜者撮影避繞走的狀況避免，敬意靜默撮影。" },
+        { q: "撮影技巧?", a: "①廣角(16-35mm)拍本堂·鐘樓與垂枝櫻全景②長焦(70-200mm)垂枝花房特寫③微距(90mm)拍單花細節。早晨柔光最美攝花纖細色調。雨後花瓣殘水滴更具風情。" },
+        { q: "與松本他櫻花名所差異?", a: "松本城迫力國寶城+櫻組合，弘法山古墳北阿爾卑斯借景大景，安養寺靜謐禪寺境內+一本垂枝櫻對照3處。同松本市內不同櫻表情1日可拍故組合訪問定番。安養寺最空閒落著撮影可。" },
+      ],
+      ko: [
+        { q: "안요지란?", a: "나가노현 마쓰모토시 시마우치의 진종 오타니파 사원으로, 수령 약 100년의 시다레자쿠라가 4월 중순 압권의 모습을 보여주는 숨은 벚꽃 명소. 관광지화되지 않아 인파를 피하고 싶은 사진 애호가에게 사랑받는, 마쓰모토시의 정적인 봄 촬영지입니다." },
+        { q: "안요지의 시다레자쿠라 절정은?", a: "4월 중순. 이른 아침~오전은 순광으로 꽃의 색이 선명. 저녁은 본당과 벚꽃의 실루엣이 잘 살아남. 경내는 조용한 종교 시설이므로 매너를 지켜 촬영을, 참배 오시는 분에게 방해되지 않도록 배려해주세요." },
+        { q: "가는 방법은?", a: "JR 마쓰모토역에서 차로 약 15분, 또는 키타마쓰모토역에서 도보 30분. 주차장 있음(절의 주차장, 참배자용). 마쓰모토성·고보야마와 조합한 시내 벚꽃 순례의 일환으로 방문 추천, 촬영 소요 시간 30분~1시간." },
+        { q: "촬영 매너는?", a: "현역의 종교 시설이므로, 본당 내·묘지는 촬영 금지. 경내의 시다레자쿠라만 촬영 가능, 플래시·삼각대 사용은 사전에 주지스님께 상담을. 상업적 촬영은 사전 신청 요. 참배 오시는 분이 촬영자를 피해 우회하는 상황은 피하고, 조용히 경의를 가지고 촬영해주세요." },
+        { q: "촬영 테크닉은?", a: "①광각(16-35mm)으로 본당·종루와 시다레자쿠라의 전경 ②망원(70-200mm)으로 시다레의 꽃송이 클로즈업 ③매크로(90mm)로 개별 꽃의 디테일. 이른 아침의 부드러운 빛이 꽃의 섬세한 색감을 가장 아름답게 찍힘. 비 온 후는 꽃잎에 물방울이 남아 더욱 풍정 있는 사진으로." },
+        { q: "다른 마쓰모토의 벚꽃 명소와의 차이는?", a: "마쓰모토성은 박력 있는 국보의 성+벚꽃의 조합, 고보야마는 북알프스를 차경으로 한 대경, 안요지는 정적인 선사의 경내+한 그루의 시다레자쿠라라는 대조적인 3곳. 같은 마쓰모토 시내에서 완전히 다른 벚꽃의 표정을 1일에 찍을 수 있으므로, 조합 방문이 정석. 안요지가 가장 한산하고 차분한 촬영이 가능합니다." },
       ],
     },
     faqs: [
