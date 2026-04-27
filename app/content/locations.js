@@ -1872,10 +1872,13 @@ export const LOCATION_CONTENT = {
       "松山城位於海拔132米的勝山山頂，現存12天守之一（1627年）。黑白對比分明的連立式天守，賞櫻百選名所。可乘纜車或吊椅登頂，天守閣俯瞰瀨戶內海必拍。",
       "마쓰야마성은 해발 132m 가쓰야마 산 정상의 현존 12천수 중 하나(1627년). 검정·흰색 대비가 아름다운 연립식 천수로 벚꽃 명소 100선. 로프웨이 또는 리프트로 오르며, 천수각에서 바라보는 세토내해 전망은 필촬영."
     ),
-    definition: lh(
-      "松山城(まつやまじょう)は愛媛県松山市の標高132m・勝山(かつやま)山頂に建つ平山城で、現存12天守の一つ。慶長7年(1602年)から築城を開始し、寛永4年(1627年)に完成、寛永12年(1635年)から松平氏15代が居城とした伊予国の拠点。連立式天守(本壇に大天守・小天守・南隅櫓・北隅櫓を渡櫓で連結する独特の構造)で、安政元年(1854年)に再建された大天守をはじめ21の建造物が国の重要文化財。「日本の100名城」「桜名所100選」「日本100名山」(背景の石鎚山系)に選定された四国を代表する名城です。",
-      "Matsuyama Castle is a flatland-mountain castle atop the 132 m Mt. Katsuyama in Matsuyama City, Ehime Prefecture, and one of Japan's 12 surviving original tenshu. Construction began in 1602 and was completed in 1627; from 1635 it served 15 generations of the Matsudaira clan as the seat of the Iyo domain. Its rare connected keep — combining a great keep, lesser keep, southern corner turret, and northern corner turret via passage turrets around a central platform — and 21 structures including the great keep (rebuilt 1854) are designated Important Cultural Properties. Selected for «Japan's Top 100 Castles,» «Top 100 Cherry Blossom Sites,» and (with the Ishizuchi range as backdrop) «Top 100 Mountains,» it stands as Shikoku's representative castle."
-    ),
+    definition: {
+      ja: "松山城(まつやまじょう)は愛媛県松山市の標高132m・勝山(かつやま)山頂に建つ平山城で、現存12天守の一つ。慶長7年(1602年)から築城を開始し、寛永4年(1627年)に完成、寛永12年(1635年)から松平氏15代が居城とした伊予国の拠点。連立式天守(本壇に大天守・小天守・南隅櫓・北隅櫓を渡櫓で連結する独特の構造)で、安政元年(1854年)に再建された大天守をはじめ21の建造物が国の重要文化財。「日本の100名城」「桜名所100選」「日本100名山」(背景の石鎚山系)に選定された四国を代表する名城です。",
+      en: "Matsuyama Castle is a flatland-mountain castle atop the 132 m Mt. Katsuyama in Matsuyama City, Ehime Prefecture, and one of Japan's 12 surviving original tenshu. Construction began in 1602 and was completed in 1627; from 1635 it served 15 generations of the Matsudaira clan as the seat of the Iyo domain. Its rare connected keep — combining a great keep, lesser keep, southern corner turret, and northern corner turret via passage turrets around a central platform — and 21 structures including the great keep (rebuilt 1854) are designated Important Cultural Properties. Selected for «Japan's Top 100 Castles,» «Top 100 Cherry Blossom Sites,» and (with the Ishizuchi range as backdrop) «Top 100 Mountains,» it stands as Shikoku's representative castle.",
+      zh: "松山城(まつやまじょう)位于爱媛县松山市海拔132米·胜山(かつやま)山顶的平山城，现存12天守之一。庆长7年(1602年)开始筑城，宽永4年(1627年)完工，宽永12年(1635年)起松平氏15代居城的伊予国据点。连立式天守(本坛以大天守·小天守·南隅橹·北隅橹以渡橹连结的独特构造)，安政元年(1854年)再建的大天守为首21栋建造物为国家重要文化财。入选「日本100名城」「樱名所100选」「日本100名山」(背景石鎚山系)的四国代表名城。",
+      "zh-tw": "松山城(まつやまじょう)位於愛媛縣松山市海拔132米·勝山(かつやま)山頂的平山城，現存12天守之一。慶長7年(1602年)開始築城，寬永4年(1627年)完工，寬永12年(1635年)起松平氏15代居城的伊予國據點。連立式天守(本壇以大天守·小天守·南隅櫓·北隅櫓以渡櫓連結的獨特構造)，安政元年(1854年)再建的大天守為首21棟建造物為國家重要文化財。入選「日本100名城」「櫻名所100選」「日本100名山」(背景石鎚山系)的四國代表名城。",
+      ko: "마쓰야마성(まつやまじょう)은 에히메현 마쓰야마시 해발 132m 가쓰야마(かつやま) 산 정상에 있는 평산성으로, 현존 12천수 중 하나. 게이초 7년(1602년)부터 축성을 시작하여 간에이 4년(1627년)에 완성, 간에이 12년(1635년)부터 마쓰다이라 가문 15대가 거성으로 삼은 이요국의 거점. 연립식 천수(혼단에 대천수·소천수·남쪽 모퉁이 망루·북쪽 모퉁이 망루를 와타리야구라로 연결한 독특한 구조)로, 안세이 원년(1854년)에 재건된 대천수를 비롯한 21동의 건조물이 국가 중요문화재. 「일본 100명성」 「벚꽃 명소 100선」 「일본 100명산」(배경의 이시즈치 산계)에 선정된 시코쿠를 대표하는 명성입니다.",
+    },
     highlights: {
       ja: [
         "大天守・連立式天守 — 1854年再建の大天守、本壇に小天守・南隅櫓・北隅櫓を配する全国でも稀な連結構造",
@@ -1890,6 +1893,27 @@ export const LOCATION_CONTENT = {
         "Cherry blossom site — the rebuilt 1854 keep paired with 500 Yoshino cherry trees; the Honmaru plaza in early April rivals any in the Top 100 Castles",
         "Seto Inland Sea view — the keep's observation deck commands the Matsuyama Plain, the Inland Sea, and the Ishizuchi range (West Japan's tallest at 1,982 m)",
         "Stone walls — Keicho-period high stonework, plus the Tonashimon, Taikomon, and other 21 Important Cultural Property structures — a paradise for fortification fans",
+      ],
+      zh: [
+        "大天守·连立式天守 — 1854年再建大天守，本坛配小天守·南隅橹·北隅橹的全国稀有连结构造",
+        "缆车·吊椅乘场 — 街中至城山顶3分钟，无顶吊椅可全身感受绝景",
+        "樱花名所 — 1854年再建天守与500株染井吉野，4月上旬本丸广场为日本100名城屈指樱景",
+        "濑户内海眺望 — 天守阁展望台一览松山平原·濑户内海·石鎚山(西日本最高峰，1982米)",
+        "石垣群 — 庆长期高石垣，户无门、太鼓门、隐门续橹等21件重要文化财，石垣爱好者必看",
+      ],
+      "zh-tw": [
+        "大天守·連立式天守 — 1854年再建大天守，本壇配小天守·南隅櫓·北隅櫓的全國稀有連結構造",
+        "纜車·吊椅乘場 — 街中至城山頂3分鐘，無頂吊椅可全身感受絕景",
+        "櫻花名所 — 1854年再建天守與500株染井吉野，4月上旬本丸廣場為日本100名城屈指櫻景",
+        "瀨戶內海眺望 — 天守閣展望台一覽松山平原·瀨戶內海·石鎚山(西日本最高峰，1982米)",
+        "石垣群 — 慶長期高石垣，戶無門、太鼓門、隱門續櫓等21件重要文化財，石垣愛好者必看",
+      ],
+      ko: [
+        "대천수·연립식 천수 — 1854년 재건된 대천수, 혼단에 소천수·남쪽 모퉁이 망루·북쪽 모퉁이 망루를 배치한 전국에서도 드문 연결 구조",
+        "로프웨이·리프트 승강장 — 시내에서 성 정상까지 3분, 지붕 없는 리프트는 절경을 온몸으로 느낌",
+        "벚꽃 명소 — 1854년 재건된 천수와 500그루의 소메이요시노, 4월 상순의 혼마루 광장은 일본 100명성 굴지의 벚꽃 풍경",
+        "세토내해의 전망 — 천수각 전망대에서 마쓰야마 평야·세토내해·이시즈치산(서일본 최고봉, 1,982m)까지 한눈에",
+        "석축군 — 게이초기의 고석축, 토나시몬, 다이코몬, 카쿠시몬 츠즈키야구라 등 21건의 중요문화재, 석축 팬 필견",
       ],
     },
     quickAnswers: {
@@ -1909,6 +1933,30 @@ export const LOCATION_CONTENT = {
         { q: "Access?", a: "From JR Matsuyama Station, the tram to «Okaido» takes 10 min, ¥170, then a 5-min walk to the ropeway/lift base. To the summit: ropeway 3 min, lift 6 min (open-air, weather permitting). Four maintained walking routes (Shinonome-guchi, Furumachi-guchi, Kencho-guchi, Kuromon-guchi), 20–45 min each." },
         { q: "Tripod and gear?", a: "Tripods allowed within the grounds (be considerate of crowds). Telephoto 70–200mm for keep details, wide 16–35mm for stone walls plus keep, a single standard zoom covers most of the Honmaru area. Evening illumination shoots get cold — bring warm clothes, and prevent camera condensation (plastic bag) when re-entering warm rooms." },
       ],
+      zh: [
+        { q: "松山城是什么?", a: "爱媛县松山市海拔132米胜山山顶的平山城，现存12天守之一。1627年完工，1854年再建大天守，连立式天守独特构造，含21件重要文化财建造物的四国代表名城。" },
+        { q: "缆车与吊椅哪个?", a: "天气好时无顶吊椅可全身感受景色推荐。所需约3分钟，共通券两者皆可乘。雨天或强风时缆车较安全。" },
+        { q: "撮影最佳季节?", a: "樱花4月上旬(本丸广场500株染井吉野)、红叶11月下旬、雪松山城为年中数次稀有构图、夜间灯光秀全年绝景。早晨6时开门时人少光柔。" },
+        { q: "天守门票·营业时间?", a: "天守入场520日元，缆车·吊椅往返520日元(共通券套1040日元)。9:00至17:00(8月延至17:30)，全年无休。本丸广场免费区24小时开放，夜景撮影乘步道(约30分)上至本丸广场，夜景需特别防寒装备。" },
+        { q: "如何前往?", a: "JR松山站乘市电「大街道站」10分钟·170日元，步行5分至缆车·吊椅乘场。山顶缆车3分·吊椅6分(无顶仅天气好时)。步道(东云口·古町口·县厅口·黑门口4路线)亦整备，所需20至45分散步路线。" },
+        { q: "三脚架·撮影器材?", a: "场内三脚架可(顾及他游客)。长焦70-200mm拍天守细节，广角16-35mm拍石垣与天守组合，本丸广场标准变焦1支基本可覆盖。日落后灯光秀撮影寒冷需防寒，夜景相机防露(塑料袋)。" },
+      ],
+      "zh-tw": [
+        { q: "松山城是什麼?", a: "愛媛縣松山市海拔132米勝山山頂的平山城，現存12天守之一。1627年完工，1854年再建大天守，連立式天守獨特構造，含21件重要文化財建造物的四國代表名城。" },
+        { q: "纜車與吊椅哪個?", a: "天氣好時無頂吊椅可全身感受景色推薦。所需約3分鐘，共通券兩者皆可乘。雨天或強風時纜車較安全。" },
+        { q: "撮影最佳季節?", a: "櫻花4月上旬(本丸廣場500株染井吉野)、紅葉11月下旬、雪松山城為年中數次稀有構圖、夜間燈光秀全年絕景。早晨6時開門時人少光柔。" },
+        { q: "天守門票·營業時間?", a: "天守入場520日圓，纜車·吊椅往返520日圓(共通券套1040日圓)。9:00至17:00(8月延至17:30)，全年無休。本丸廣場免費區24小時開放，夜景撮影搭步道(約30分)上至本丸廣場，夜景需特別防寒裝備。" },
+        { q: "如何前往?", a: "JR松山站搭市電「大街道站」10分鐘·170日圓，步行5分至纜車·吊椅乘場。山頂纜車3分·吊椅6分(無頂僅天氣好時)。步道(東雲口·古町口·縣廳口·黑門口4路線)亦整備，所需20至45分散步路線。" },
+        { q: "三腳架·撮影器材?", a: "場內三腳架可(顧及他遊客)。長焦70-200mm拍天守細節，廣角16-35mm拍石垣與天守組合，本丸廣場標準變焦1支基本可覆蓋。日落後燈光秀撮影寒冷需防寒，夜景相機防露(塑料袋)。" },
+      ],
+      ko: [
+        { q: "마쓰야마성이란?", a: "에히메현 마쓰야마시 해발 132m 가쓰야마 산 정상의 평산성으로, 현존 12천수 중 하나. 1627년 완성, 1854년 재건된 대천수, 연립식 천수의 독특한 구조, 21건의 중요문화재 건조물을 거느린 시코쿠를 대표하는 명성입니다." },
+        { q: "로프웨이와 리프트 중 어느 쪽?", a: "날씨가 좋으면 지붕 없는 리프트가 경치를 온몸으로 느낄 수 있어 추천. 소요 약 3분, 공통권으로 둘 다 이용 가능. 비 오거나 강풍 시에는 로프웨이가 안전합니다." },
+        { q: "촬영 베스트 시즌은?", a: "벚꽃의 4월 상순(혼마루 광장 500그루의 소메이요시노), 단풍의 11월 하순, 눈 덮인 마쓰야마성은 연 수회의 희귀한 구도, 야간 조명(연중)은 연중 절경. 이른 아침 6시 개문 때가 사람이 적고 빛이 부드러움." },
+        { q: "천수 입장료·영업 시간은?", a: "천수 입장 520엔, 로프웨이·리프트 왕복 520엔(공통권 세트 1,040엔). 9:00~17:00(8월만 17:30까지), 연중무휴. 혼마루 광장은 무료 구역으로 24시간 개방, 야경 촬영은 혼마루 광장까지 올라가는 도보길(약 30분)을 이용, 야경 시는 특히 방한 장비를." },
+        { q: "가는 방법은?", a: "JR 마쓰야마역에서 시영전차 「오카이도역」까지 10분·170엔, 도보 5분으로 로프웨이·리프트 승강장. 산정까지 로프웨이 3분·리프트 6분(지붕 없음, 날씨 좋은 날만). 도보길(시노노메구치·후루마치구치·켄초구치·쿠로몬구치의 4루트)도 정비, 소요 20~45분의 산책 코스." },
+        { q: "삼각대·촬영 기재는?", a: "장내는 삼각대 OK(다른 관광객 배려). 망원 70-200mm로 천수 디테일, 광각 16-35mm로 석축과 천수의 조합, 혼마루 광장에서는 표준 줌 1개로 거의 커버 가능. 일몰 후 조명 촬영은 추워지므로 방한, 야경의 경우 카메라의 결로 대책(비닐봉지)도." },
+      ],
     },
     faqs: [
       { q: d("ロープウェイとリフトどっち？","Ropeway or chairlift?","缆车还是吊椅？","纜車還是吊椅？","로프웨이와 리프트 중 추천은?"),
@@ -1923,10 +1971,13 @@ export const LOCATION_CONTENT = {
       "來島海峽大橋是橫跨瀨戶內海來島海峽的3連吊橋（總長4105米）。島波海道的標誌性建築，世界首座3連吊橋。急潮海峽與壯麗橋樑構成瀨戶內海最戲劇性風景。",
       "구루시마 해협 대교는 세토내해의 구루시마 해협에 놓인 3연속 현수교(총연장 4,105m). 시마나미 가이도의 상징으로 세계 최초 3연 현수교. 거센 해협 조류와 장대한 교량은 세토내해 최고의 드라마틱한 풍경."
     ),
-    definition: lh(
-      "来島海峡大橋(くるしまかいきょうおおはし)は愛媛県今治市と大島の間の来島海峡に架かる総延長4,105mの3連の長大吊り橋で、1999年5月の本州四国連絡橋・尾道今治ルート(しまなみ海道)の全線開通と同時に開業した世界初の3連吊り橋。第一(960m)・第二(1,515m)・第三(1,570m)の三つの吊り橋が連続する独特の形状で、橋の下では日本三大急潮の一つ「来島海峡」の最大時速10ノットの潮流が流れます。橋上には自転車・歩行者専用道路もあり、しまなみ海道は世界的に有名なサイクリングルート、亀老山展望台や糸山公園からの俯瞰が瀬戸内海最高峰のドラマチックな構図を生み出します。",
-      "The Kurushima-Kaikyo Bridge connects Imabari City in Ehime Prefecture to Oshima Island across the Kurushima Strait — a three-in-a-row suspension bridge with a total length of 4,105 m. It opened in May 1999 with the completion of the Honshu-Shikoku Onomichi-Imabari route (Shimanami Kaido), as the world's first three-section suspension bridge. The first (960 m), second (1,515 m), and third (1,570 m) suspension structures connect in distinctive sequence; beneath them flow currents of up to 10 knots in the Kurushima Strait — one of Japan's three great fast-current straits. With a bicycle and pedestrian path along the deck, Shimanami Kaido is a globally renowned cycling route, and the views from Mt. Kiro Observatory and Itoyama Park form the Inland Sea's most dramatic compositions."
-    ),
+    definition: {
+      ja: "来島海峡大橋(くるしまかいきょうおおはし)は愛媛県今治市と大島の間の来島海峡に架かる総延長4,105mの3連の長大吊り橋で、1999年5月の本州四国連絡橋・尾道今治ルート(しまなみ海道)の全線開通と同時に開業した世界初の3連吊り橋。第一(960m)・第二(1,515m)・第三(1,570m)の三つの吊り橋が連続する独特の形状で、橋の下では日本三大急潮の一つ「来島海峡」の最大時速10ノットの潮流が流れます。橋上には自転車・歩行者専用道路もあり、しまなみ海道は世界的に有名なサイクリングルート、亀老山展望台や糸山公園からの俯瞰が瀬戸内海最高峰のドラマチックな構図を生み出します。",
+      en: "The Kurushima-Kaikyo Bridge connects Imabari City in Ehime Prefecture to Oshima Island across the Kurushima Strait — a three-in-a-row suspension bridge with a total length of 4,105 m. It opened in May 1999 with the completion of the Honshu-Shikoku Onomichi-Imabari route (Shimanami Kaido), as the world's first three-section suspension bridge. The first (960 m), second (1,515 m), and third (1,570 m) suspension structures connect in distinctive sequence; beneath them flow currents of up to 10 knots in the Kurushima Strait — one of Japan's three great fast-current straits. With a bicycle and pedestrian path along the deck, Shimanami Kaido is a globally renowned cycling route, and the views from Mt. Kiro Observatory and Itoyama Park form the Inland Sea's most dramatic compositions.",
+      zh: "来岛海峡大桥(くるしまかいきょうおおはし)是横跨爱媛县今治市与大岛之间来岛海峡总长4105米的3连长大吊桥，1999年5月本州四国连络桥·尾道今治路线(岛波海道)全线开通同时开业的世界首座3连吊桥。第一(960米)·第二(1515米)·第三(1570米)三座吊桥连续的独特形状，桥下流淌日本三大急潮之一「来岛海峡」最高时速10节的潮流。桥上有自行车·步行专用道，岛波海道是世界闻名的骑行路线，龟老山展望台与糸山公园的俯瞰构成濑户内海最戏剧性构图。",
+      "zh-tw": "來島海峽大橋(くるしまかいきょうおおはし)是橫跨愛媛縣今治市與大島之間來島海峽總長4105米的3連長大吊橋，1999年5月本州四國連絡橋·尾道今治路線(島波海道)全線開通同時開業的世界首座3連吊橋。第一(960米)·第二(1515米)·第三(1570米)三座吊橋連續的獨特形狀，橋下流淌日本三大急潮之一「來島海峽」最高時速10節的潮流。橋上有自行車·步行專用道，島波海道是世界聞名的騎行路線，龜老山展望台與糸山公園的俯瞰構成瀨戶內海最戲劇性構圖。",
+      ko: "구루시마 해협 대교(くるしまかいきょうおおはし)는 에히메현 이마바리시와 오시마 사이의 구루시마 해협에 놓인 총연장 4,105m의 3연속 장대 현수교로, 1999년 5월 혼슈-시코쿠 연락교·오노미치 이마바리 루트(시마나미 가이도)의 전선 개통과 동시에 개업한 세계 최초의 3연속 현수교. 제1(960m)·제2(1,515m)·제3(1,570m)의 세 현수교가 연속하는 독특한 형상으로, 다리 아래로는 일본 3대 급조 중 하나인 「구루시마 해협」의 최대 시속 10노트의 조류가 흐릅니다. 다리 위에는 자전거·보행자 전용 도로가 있어 시마나미 가이도는 세계적으로 유명한 사이클링 루트, 기로산 전망대와 이토야마 공원에서의 부감이 세토내해 최고봉의 드라마틱한 구도를 만들어냅니다.",
+    },
     highlights: {
       ja: [
         "3連吊り橋構造 — 第一・第二・第三吊り橋が連続する世界初の形状、全長4,105m、海峡を一直線に貫く",
@@ -1941,6 +1992,27 @@ export const LOCATION_CONTENT = {
         "Itoyama Park (Imabari side) — a park beside the bridge's foot, where the slanting late-day light and the shimmering surface combine beautifully",
         "Cycling deck — a 6.5 km cycling path on top of the bridge, riding 70 m above the sea — the symbol of the Shimanami Kaido route",
         "Fast strait currents — up to 10 knots beneath the bridge, with whitecaps and eddies that animate the shot",
+      ],
+      zh: [
+        "3连吊桥构造 — 第一·第二·第三吊桥连续的世界首创形状，全长4105米，海峡一直贯穿",
+        "龟老山展望台俯瞰 — 海拔307米，整桥与来岛海峡·岛屿360度全景，夕阳绝景",
+        "糸山公园(今治侧) — 近距望桥起点的公园，斜阳桥脚与海面闪光美丽",
+        "骑行道 — 桥上6.5公里自行车道，海上70米绝景骑行，岛波海道象征",
+        "急潮海峡 — 桥下最高时速10节潮流，白浪与漩涡的动态被摄体",
+      ],
+      "zh-tw": [
+        "3連吊橋構造 — 第一·第二·第三吊橋連續的世界首創形狀，全長4105米，海峽一直貫穿",
+        "龜老山展望台俯瞰 — 海拔307米，整橋與來島海峽·島嶼360度全景，夕陽絕景",
+        "糸山公園(今治側) — 近距望橋起點的公園，斜陽橋腳與海面閃光美麗",
+        "騎行道 — 橋上6.5公里自行車道，海上70米絕景騎行，島波海道象徵",
+        "急潮海峽 — 橋下最高時速10節潮流，白浪與漩渦的動態被攝體",
+      ],
+      ko: [
+        "3연 현수교 구조 — 제1·제2·제3 현수교가 연속되는 세계 최초의 형상, 전장 4,105m, 해협을 일직선으로 관통",
+        "기로산 전망대에서의 부감 — 해발 307m, 다리 전체와 구루시마 해협·섬들을 360도 파노라마, 일몰의 절경",
+        "이토야마 공원(이마바리 측) — 다리의 기점을 가까이서 바라보는 공원, 사양의 교각과 해면의 빛남이 아름다움",
+        "사이클링 도로 — 다리 위 6.5km의 자전거 도로, 해상 70m의 절경 라이드, 시마나미 가이도의 상징",
+        "급조의 해협 — 다리 아래 최대 시속 10노트의 조류, 흰 파도와 소용돌이의 동적 피사체",
       ],
     },
     quickAnswers: {
@@ -1960,6 +2032,30 @@ export const LOCATION_CONTENT = {
         { q: "When to see the tidal currents?", a: "The Kurushima Strait is one of Japan's three great tidal currents, with up to 10 knots driven by the level gap between the Inland Sea and Hiuchi-nada. Shoot within ±1 hour of peak tides — whitecaps and whirlpools at their most dramatic. Mt. Kiro Observatory captures bridge and currents in one frame, especially during spring and autumn ohshio (great tides)." },
         { q: "Other nearby attractions?", a: "①Itoyama Park (under the bridge, low-angle drama) ②Yoshiumi Rose Park (May, roses + bridge) ③Oshima Stone Quarry Ruins (white rock walls) ④Yoshiumi Iki-iki Kan (seafood with bridge view dining) ⑤Murakami Suigun Museum (medieval pirate culture). A 1–2 day stay covers the bridge from many angles." },
       ],
+      zh: [
+        { q: "来岛海峡大桥是什么?", a: "爱媛县今治市与大岛间来岛海峡总长4105米的世界首座3连吊桥，1999年岛波海道全线开通同时开业。第一·第二·第三三座吊桥连续的独特形状，桥上自行车·步行可通的世界级骑行路线象征。" },
+        { q: "桥撮影最佳点?", a: "龟老山展望台(今治市大岛)俯瞰最强。夕阳染桥橙色时段与蓝调时刻蓝两者拍为王道。糸山公园近距望桥，骑行道海上70米骑行视角多彩。" },
+        { q: "如何前往与骑行信息?", a: "今治站至龟老山展望台开车约30分钟，骑行从今治港租车至桥约20公里。岛波海道全线骑行70公里，初学者1日，专业半日完走可。" },
+        { q: "开车通行费?", a: "今治IC至大岛南IC普通车1000日元(ETC优惠800日元)。桥上有自行车道·步道，车辆仅中央车道。步行·自行车免费(2024年4月起收费，自行车100日元·步行继续免费)。骑行桥全长5公里所需15至20分，绝景连续。" },
+        { q: "潮流最佳观赏期?", a: "来岛海峡为日本三大急潮之一，濑户内海与燧滩潮差产生最高10节激流。撮影最佳为大潮干满时刻±1小时内，白浪与漩涡迫力。龟老山展望台可一图收潮动与桥，春秋大潮日条件最齐。" },
+        { q: "周边看点?", a: "①糸山公园(桥正下，迫力低视点)②吉海玫瑰公园(5月，玫瑰与桥合作)③大岛石采石场迹(白石壁独特风景)④吉海生气活力馆(海鲜美食，望桥用餐)⑤村上水军博物馆(中世海贼文化)。1至2日可多角度撮影桥周边。" },
+      ],
+      "zh-tw": [
+        { q: "來島海峽大橋是什麼?", a: "愛媛縣今治市與大島間來島海峽總長4105米的世界首座3連吊橋，1999年島波海道全線開通同時開業。第一·第二·第三三座吊橋連續的獨特形狀，橋上自行車·步行可通的世界級騎行路線象徵。" },
+        { q: "橋撮影最佳點?", a: "龜老山展望台(今治市大島)俯瞰最強。夕陽染橋橙色時段與藍調時刻藍兩者拍為王道。糸山公園近距望橋，騎行道海上70米騎行視角多彩。" },
+        { q: "如何前往與騎行信息?", a: "今治站至龜老山展望台開車約30分鐘，騎行從今治港租車至橋約20公里。島波海道全線騎行70公里，初學者1日，專業半日完走可。" },
+        { q: "開車通行費?", a: "今治IC至大島南IC普通車1000日圓(ETC優惠800日圓)。橋上有自行車道·步道，車輛僅中央車道。步行·自行車免費(2024年4月起收費，自行車100日圓·步行繼續免費)。騎行橋全長5公里所需15至20分，絕景連續。" },
+        { q: "潮流最佳觀賞期?", a: "來島海峽為日本三大急潮之一，瀨戶內海與燧灘潮差產生最高10節激流。撮影最佳為大潮乾滿時刻±1小時內，白浪與漩渦迫力。龜老山展望台可一圖收潮動與橋，春秋大潮日條件最齊。" },
+        { q: "周邊看點?", a: "①糸山公園(橋正下，迫力低視點)②吉海玫瑰公園(5月，玫瑰與橋合作)③大島石採石場跡(白石壁獨特風景)④吉海生氣活力館(海鮮美食，望橋用餐)⑤村上水軍博物館(中世海賊文化)。1至2日可多角度撮影橋周邊。" },
+      ],
+      ko: [
+        { q: "구루시마 해협 대교란?", a: "에히메현 이마바리시와 오시마 사이의 구루시마 해협에 놓인 총연장 4,105m의 세계 최초의 3연속 현수교로, 1999년 시마나미 가이도 전선 개통과 동시에 개업. 제1·제2·제3의 세 현수교가 연속하는 독특한 형상으로, 다리 위를 자전거·보행자가 통행할 수 있는 세계적 사이클링 루트의 상징입니다." },
+        { q: "다리의 베스트 촬영 포인트는?", a: "기로산 전망대(이마바리시 오시마)에서의 부감이 최강. 일몰에 다리가 오렌지로 물드는 시간대와 블루 아워의 푸름의 두 가지를 찍는 것이 왕도. 이토야마 공원에서는 다리를 가까이서, 자전거 도로에서는 해상 70m의 라이드 시점 등 다채로움." },
+        { q: "가는 방법과 사이클링 정보는?", a: "이마바리역에서 기로산 전망대까지 차로 약 30분, 사이클링은 이마바리 항구의 렌탈 사이클에서 다리까지 약 20km. 시마나미 가이도 전선 사이클링은 70km, 초보자는 1일, 본격파는 반나절에 완주 가능." },
+        { q: "차로 건널 경우 통행료는?", a: "이마바리 IC~오시마 미나미 IC로 보통차 1,000엔(ETC 할인 800엔). 다리 위에는 사이클링 도로·보도가 있고, 차량은 중앙 차도만. 도보·자전거는 무료였으나(2024년 4월부터 유료화, 자전거 100엔·보행자는 무료 계속). 사이클링은 다리 전장 5km를 소요 15~20분, 절경이 연속됩니다." },
+        { q: "조류의 견 시기는?", a: "구루시마 해협은 일본 3대 급조 중 하나로, 세토내해와 히우치나다의 간만 차에서 최대 10노트의 격류가 발생. 촬영의 베스트는 대조의 간만 시각 ±1시간 이내, 흰 파도와 소용돌이를 일으키는 박력. 기로산 전망대에서는 조류의 움직임과 다리를 한 장에 담을 수 있고, 특히 봄·가을의 대조일이 조건이 잘 갖춰지기 쉬움." },
+        { q: "주변의 볼거리는?", a: "①이토야마 공원(다리 바로 아래, 박력 있는 로우 시점) ②요시우미 장미 공원(5월, 장미와 다리의 콜라보) ③오시마 석재 채석장 터(흰 돌벽의 독특한 풍경) ④요시우미 이키이키칸(해산물 요리, 다리를 보면서 식사) ⑤무라카미 수군 박물관(중세의 해적 문화). 1~2일에 걸쳐 다리 주변을 다각도로 촬영할 수 있습니다." },
+      ],
     },
     faqs: [
       { q: d("橋の撮影ベストポイントは？","Best spot to photograph the bridge?","桥梁最佳拍摄点？","橋梁最佳拍攝點？","다리 최고 촬영 포인트는?"),
@@ -1974,10 +2070,13 @@ export const LOCATION_CONTENT = {
       "龜老山展望台位於今治市大島，海拔307米。由隈研吾設計、埋入地形的展望台可俯瞰來島海峽大橋與瀨戶內海多島美景。夕陽與藍色時刻尤為著名。",
       "기로산 전망대는 이마바리시 오시마의 해발 307m. 구마 켄고 설계로 지형에 묻힌 전망대에서 구루시마 해협 대교와 세토내해 다도미를 부감할 수 있는 절경 포인트. 일몰과 블루아워가 특히 유명합니다."
     ),
-    definition: lh(
-      "亀老山(きろうさん)展望台は愛媛県今治市吉海町南浦487-4、大島南端の標高307mの亀老山山頂に整備された展望公園で、世界的建築家・隈研吾が設計した「地形に埋もれる」展望デッキとして1994年に完成、ARCASIA建築賞ゴールドメダル(1995年)受賞作品。展望台は山頂の輪郭を崩さないよう地中に埋め込まれ、上から見ると公園のように見える革新的なデザイン。眼下には来島海峡大橋(全長4,105mの3連吊り橋)、瀬戸内海の多島美、晴れた日には西日本最高峰の石鎚山(1,982m)まで一望でき、夕日と橋・海・島々が織りなす光景は瀬戸内海屈指のサンセットスポットです。",
-      "Mt. Kiro Observatory, located at 487-4 Minamiura, Yoshiumi-cho, Imabari City, Ehime Prefecture, sits atop the 307 m summit of Mt. Kiro at the southern tip of Oshima Island. Designed by world-renowned architect Kengo Kuma as an «earth-integrated» viewing deck, it was completed in 1994 and won the ARCASIA Gold Medal for Architecture in 1995. The observatory is buried into the ground so that the mountain's outline remains intact — viewed from above, it appears as a park, an innovative design. Below lie the 4,105 m Kurushima-Kaikyo Bridge (the three-section suspension bridge), the Inland Sea's countless islands, and on clear days even Mt. Ishizuchi (1,982 m, West Japan's tallest peak). The interplay of sunset, bridge, sea, and islands makes it one of the Inland Sea's premier sunset locations."
-    ),
+    definition: {
+      ja: "亀老山(きろうさん)展望台は愛媛県今治市吉海町南浦487-4、大島南端の標高307mの亀老山山頂に整備された展望公園で、世界的建築家・隈研吾が設計した「地形に埋もれる」展望デッキとして1994年に完成、ARCASIA建築賞ゴールドメダル(1995年)受賞作品。展望台は山頂の輪郭を崩さないよう地中に埋め込まれ、上から見ると公園のように見える革新的なデザイン。眼下には来島海峡大橋(全長4,105mの3連吊り橋)、瀬戸内海の多島美、晴れた日には西日本最高峰の石鎚山(1,982m)まで一望でき、夕日と橋・海・島々が織りなす光景は瀬戸内海屈指のサンセットスポットです。",
+      en: "Mt. Kiro Observatory, located at 487-4 Minamiura, Yoshiumi-cho, Imabari City, Ehime Prefecture, sits atop the 307 m summit of Mt. Kiro at the southern tip of Oshima Island. Designed by world-renowned architect Kengo Kuma as an «earth-integrated» viewing deck, it was completed in 1994 and won the ARCASIA Gold Medal for Architecture in 1995. The observatory is buried into the ground so that the mountain's outline remains intact — viewed from above, it appears as a park, an innovative design. Below lie the 4,105 m Kurushima-Kaikyo Bridge (the three-section suspension bridge), the Inland Sea's countless islands, and on clear days even Mt. Ishizuchi (1,982 m, West Japan's tallest peak). The interplay of sunset, bridge, sea, and islands makes it one of the Inland Sea's premier sunset locations.",
+      zh: "龟老山(きろうさん)展望台位于爱媛县今治市吉海町南浦487-4，大岛南端海拔307米的龟老山山顶整备的展望公园，是世界级建筑家·隈研吾设计的「埋入地形」展望台，1994年完工，ARCASIA建筑奖金奖(1995年)获奖作品。展望台为不破坏山顶轮廓而埋入地中，从上方看似公园的革新设计。眼下来岛海峡大桥(全长4105米3连吊桥)、濑户内海多岛美，晴朗日可远望西日本最高峰石鎚山(1982米)，夕阳与桥·海·岛织就的光景是濑户内海首屈一指的日落胜地。",
+      "zh-tw": "龜老山(きろうさん)展望台位於愛媛縣今治市吉海町南浦487-4，大島南端海拔307米的龜老山山頂整備的展望公園，是世界級建築家·隈研吾設計的「埋入地形」展望台，1994年完工，ARCASIA建築獎金獎(1995年)獲獎作品。展望台為不破壞山頂輪廓而埋入地中，從上方看似公園的革新設計。眼下來島海峽大橋(全長4105米3連吊橋)、瀨戶內海多島美，晴朗日可遠望西日本最高峰石鎚山(1982米)，夕陽與橋·海·島織就的光景是瀨戶內海首屈一指的日落勝地。",
+      ko: "기로산(きろうさん) 전망대는 에히메현 이마바리시 요시우미초 미나미우라 487-4, 오시마 남단의 해발 307m의 기로산 정상에 정비된 전망 공원으로, 세계적인 건축가 구마 켄고가 설계한 「지형에 묻히는」 전망 데크로 1994년 완공, ARCASIA 건축상 골드 메달(1995년) 수상 작품. 전망대는 산정의 윤곽을 무너뜨리지 않도록 지중에 묻혀, 위에서 보면 공원처럼 보이는 혁신적인 디자인. 발 아래로 구루시마 해협 대교(전장 4,105m의 3연속 현수교), 세토내해의 다도미, 맑은 날에는 서일본 최고봉 이시즈치산(1,982m)까지 한눈에 볼 수 있으며, 일몰과 다리·바다·섬들이 짜내는 광경은 세토내해 굴지의 선셋 스팟입니다.",
+    },
     highlights: {
       ja: [
         "隈研吾設計の地中埋設展望台 — 1994年完成、ARCASIA金賞受賞、地形を残す革新的デザイン",
@@ -1992,6 +2091,27 @@ export const LOCATION_CONTENT = {
         "Inland Sea's multi-island beauty — Omishima, Hakatajima, Oshima, and the Geiyo Islands strung together, blue sea against green islands",
         "Distant Mt. Ishizuchi — West Japan's tallest peak (1,982 m), visible only on clear days, especially crisp winter mornings",
         "Sunset to blue hour — among West Japan's finest sunset spots; bridge, sea, islands, and sky shift from orange to blue",
+      ],
+      zh: [
+        "隈研吾设计的地中埋设展望台 — 1994年完工，ARCASIA金奖获奖，留存地形的革新设计",
+        "来岛海峡大桥俯瞰 — 全长4105米·3连吊桥真上拍摄，夕阳染色时段为王道",
+        "濑户内海多岛美 — 大三岛·伯方岛·大岛·艺予诸岛连绵，蓝海与绿岛绝景",
+        "石鎚山远望 — 西日本最高峰1982米，仅晴朗日可见，尤冬空气澄清的早晨",
+        "夕景至蓝调时刻 — 西日本首屈一指的日落胜地，桥·海·岛·空由橙至蓝的变化",
+      ],
+      "zh-tw": [
+        "隈研吾設計的地中埋設展望台 — 1994年完工，ARCASIA金獎獲獎，留存地形的革新設計",
+        "來島海峽大橋俯瞰 — 全長4105米·3連吊橋真上拍攝，夕陽染色時段為王道",
+        "瀨戶內海多島美 — 大三島·伯方島·大島·藝予諸島連綿，藍海與綠島絕景",
+        "石鎚山遠望 — 西日本最高峰1982米，僅晴朗日可見，尤冬空氣澄清的早晨",
+        "夕景至藍調時刻 — 西日本首屈一指的日落勝地，橋·海·島·空由橙至藍的變化",
+      ],
+      ko: [
+        "구마 켄고 설계의 지중 매설 전망대 — 1994년 완공, ARCASIA 금상 수상, 지형을 살리는 혁신적 디자인",
+        "구루시마 해협 대교의 부감 — 전장 4,105m·3연속 현수교를 바로 위에서, 일몰에 물드는 시간대가 왕도",
+        "세토내해의 다도미 — 오미시마·하카타지마·오시마·게이요 제도의 섬들이 이어짐, 푸른 바다와 녹색 섬의 절경",
+        "이시즈치산 원망 — 서일본 최고봉 1,982m, 맑은 날만, 특히 겨울 공기가 맑은 아침",
+        "석경~블루 아워 — 서일본 굴지의 선셋 스팟, 다리·바다·섬·하늘의 오렌지에서 푸른색으로의 변화",
       ],
     },
     quickAnswers: {
@@ -2010,6 +2130,30 @@ export const LOCATION_CONTENT = {
         { q: "What's special about Kuma's architecture?", a: "Designed under the concept «integrate, don't destroy» — the concrete structure is buried in the mountain with a turf-covered roof, so from afar the observatory disappears into the silhouette. The deck rim opens like an aperture in the summit, framing the Kurushima-Kaikyo Bridge like a painting. The building itself is a work of art." },
         { q: "Tripod and gear?", a: "Tripods are OK except during peak crowds. Wide angle (16–35mm) for the observatory + bridge in one frame; telephoto (70–200mm) compresses bridge details and islands; ultra-wide (14mm) emphasizes the architecture's geometry. Plan a 2-hour stay for sunset to night; bring warm clothes, a headlamp, and condensation prevention. 5-min walk from parking to observatory." },
         { q: "When is Mt. Ishizuchi visible?", a: "West Japan's tallest peak (1,982 m, ~60 km west of Mt. Kiro) is visible only on clear, dry days. Winter (Nov–Feb) is most likely, especially the morning after rain when air is cleanest. Shoot southwest with a 70–200mm; capturing Mt. Ishizuchi with the Kurushima-Kaikyo Bridge in one frame is a rare winter privilege." },
+      ],
+      zh: [
+        { q: "龟老山展望台是什么?", a: "爱媛县今治市大岛海拔307米龟老山山顶上的世界级建筑家·隈研吾设计的地中埋设型展望台(1994年完工，ARCASIA金奖获奖)。可360度俯瞰来岛海峡大桥与濑户内海多岛美，是西日本首屈一指的日落胜地。" },
+        { q: "如何前往?", a: "岛波海道巴士(今治站或福山站乘至「龟老山展望公园入口」下车，步行30分钟)、自行车(有车场)、汽车(山顶附近有停车场)。今治站租车约30分钟，岛波海道沿途兜风亦推荐。" },
+        { q: "撮影最佳时段?", a: "夕阳照亮来岛海峡大桥时段，与其后蓝调时刻(日落后30分)2回压倒性。冬空气澄清可见石鎚山，夕阳色彩鲜艳。避拥挤需平日朝。" },
+        { q: "隈研吾建筑的特征?", a: "「不破坏山而融入景观」概念设计的地中型展望台。混凝土结构埋入山中，屋顶覆草坪保留山顶线，远景看不见展望台存在。展望台似山顶开洞之缘的构造，将来岛海峡大桥如「画框」般切取的建筑本身亦为艺术作品。" },
+        { q: "三脚架·撮影器材?", a: "展望台除拥挤时三脚架可。广角(16-35mm)拍展望台与桥同框，长焦(70-200mm)压缩桥细节与岛屿，超广角(14mm)强调建筑几何美。夕景至夜景预计2小时停留，防寒装备与头灯、镜头防露要。停车场至展望台步行5分。" },
+        { q: "石鎚山可见之日?", a: "西日本最高峰石鎚山(1982米，距龟老山约60公里西)仅晴朗空气澄清之日。冬(11至2月)概率最高，尤降水翌日朝空气清。展望台向西南方望长焦70-200mm撮影，石鎚山与来岛海峡大桥同框稀有构图为冬之特权。" },
+      ],
+      "zh-tw": [
+        { q: "龜老山展望台是什麼?", a: "愛媛縣今治市大島海拔307米龜老山山頂上的世界級建築家·隈研吾設計的地中埋設型展望台(1994年完工，ARCASIA金獎獲獎)。可360度俯瞰來島海峽大橋與瀨戶內海多島美，是西日本首屈一指的日落勝地。" },
+        { q: "如何前往?", a: "島波海道巴士(今治站或福山站搭至「龜老山展望公園入口」下車，步行30分鐘)、自行車(有車場)、汽車(山頂附近有停車場)。今治站租車約30分鐘，島波海道沿途兜風亦推薦。" },
+        { q: "撮影最佳時段?", a: "夕陽照亮來島海峽大橋時段，與其後藍調時刻(日落後30分)2回壓倒性。冬空氣澄清可見石鎚山，夕陽色彩鮮豔。避擁擠需平日朝。" },
+        { q: "隈研吾建築的特徵?", a: "「不破壞山而融入景觀」概念設計的地中型展望台。混凝土結構埋入山中，屋頂覆草坪保留山頂線，遠景看不見展望台存在。展望台似山頂開洞之緣的構造，將來島海峽大橋如「畫框」般切取的建築本身亦為藝術作品。" },
+        { q: "三腳架·撮影器材?", a: "展望台除擁擠時三腳架可。廣角(16-35mm)拍展望台與橋同框，長焦(70-200mm)壓縮橋細節與島嶼，超廣角(14mm)強調建築幾何美。夕景至夜景預計2小時停留，防寒裝備與頭燈、鏡頭防露要。停車場至展望台步行5分。" },
+        { q: "石鎚山可見之日?", a: "西日本最高峰石鎚山(1982米，距龜老山約60公里西)僅晴朗空氣澄清之日。冬(11至2月)概率最高，尤降水翌日朝空氣清。展望台向西南方望長焦70-200mm撮影，石鎚山與來島海峽大橋同框稀有構圖為冬之特權。" },
+      ],
+      ko: [
+        { q: "기로산 전망대란?", a: "에히메현 이마바리시 오시마의 해발 307m 기로산 산정에 있는, 세계적 건축가 구마 켄고 설계의 지중 매설형 전망대(1994년 완공, ARCASIA 금상 수상). 구루시마 해협 대교와 세토내해의 다도미를 360도 파노라마로 부감할 수 있어, 서일본 굴지의 선셋 스팟입니다." },
+        { q: "가는 방법은?", a: "시마나미 가이도 버스(이마바리역 또는 후쿠야마역에서 「기로산 전망 공원 입구」 하차, 도보 30분), 자전거(주륜장 있음), 차(산정 가까이까지 주차장). 이마바리역에서 렌터카로 약 30분, 시마나미 가이도 경유 드라이브도 추천." },
+        { q: "촬영 베스트 타임은?", a: "일몰이 구루시마 해협 대교를 비추는 시간대와, 그 후의 블루 아워(일몰 후 30분)의 2회가 압도적. 겨울은 공기가 맑아 이시즈치산도 보이고, 일몰의 색도 선명. 혼잡 회피는 평일 아침." },
+        { q: "구마 켄고의 건축 특징은?", a: "「산을 파괴하지 않고 경관에 녹아드는」 콘셉트로 설계된 지중형 전망대. 콘크리트 구조를 산에 묻고, 옥상을 잔디로 덮어 산정선을 유지했기 때문에 원경에서는 전망대의 존재가 보이지 않음. 전망 데크가 산정에 뻥 뚫린 가장자리 같은 구조로, 구루시마 해협 대교를 「회화의 액자」처럼 잘라내는 건축 자체가 예술 작품입니다." },
+        { q: "삼각대·촬영 기재는?", a: "전망대는 혼잡 시를 제외하고 삼각대 OK. 광각(16-35mm)으로 전망대와 다리를 한 장에, 망원(70-200mm)으로 다리의 디테일과 섬들을 압축, 초광각(14mm)으로 건축의 기하학미를 강조. 석경~야경은 2시간 체류를 상정, 방한 장비와 헤드라이트, 렌즈의 결로 대책도. 주차장에서 전망대까지 도보 5분." },
+        { q: "이시즈치산이 보이는 날은?", a: "서일본 최고봉 이시즈치산(1,982m, 기로산에서 약 60km 서쪽)은 맑고 공기가 맑은 날만. 겨울(11~2월)이 가장 확률 높음, 특히 강수 다음날 아침은 공기가 클리어. 전망대에서 남서 방향으로 망원 70-200mm로 촬영, 이시즈치산과 구루시마 해협 대교를 한 장에 담는 희귀 구도는 겨울의 특권입니다." },
       ],
     },
     faqs: [
@@ -2933,10 +3077,13 @@ export const LOCATION_CONTENT = {
       "鳴門海峽位於德島與淡路島之間，世界三大潮流之一，最寬1.3公里。春秋大潮期直徑20米巨大漩渦形成，可從觀潮船或大鳴門橋步道「渦之道」拍攝。",
       "나루토 해협은 도쿠시마현과 아와지섬 사이, 세계 3대 조류 중 하나로 최대 폭 1.3km. 봄·가을 대조 시 지름 20m에 달하는 거대 소용돌이가 발생하며, 유람선이나 오나루토 대교 산책로 '우즈노미치'에서 촬영 가능."
     ),
-    definition: lh(
-      "鳴門海峡(なるとかいきょう)は徳島県鳴門市と兵庫県南あわじ市(淡路島)の間にある幅約1.3kmの狭い海峡で、瀬戸内海と紀伊水道を結ぶ位置にあります。瀬戸内海と紀伊水道の干満差(最大1.5m)と狭い海峡地形が組み合わさり、海水が時速約20km(最大10ノット)で流れる日本三大急潮の一つ、世界的にも珍しい巨大渦潮現象が発生。直径20mを超える渦潮は満潮・干潮前後の1〜2時間に最大となり、特に春・秋の大潮(新月・満月前後)は世界三大潮流(メッシーナ海峡・セイモア海峡と並ぶ)。観潮船または大鳴門橋遊歩道「渦の道」(海上45m)から撮影可能です。",
-      "The Naruto Strait, between Naruto City in Tokushima Prefecture and Minamiawaji City in Hyogo Prefecture (Awaji Island), is a narrow channel about 1.3 km wide that connects the Inland Sea to the Kii Channel. The combination of a tidal differential of up to 1.5 m and the narrow geography drives water through at about 20 km/h (max 10 knots), producing one of Japan's three great tidal currents — and one of the world's three (alongside the Strait of Messina and Seymour Narrows). Whirlpools over 20 m across reach maximum size 1–2 hours around high or low tide, especially during the spring tides of spring and autumn (near new and full moons). They can be photographed from sightseeing boats or from «Uzu-no-Michi,» the walkway 45 m above the strait beneath the Onaruto Bridge."
-    ),
+    definition: {
+      ja: "鳴門海峡(なるとかいきょう)は徳島県鳴門市と兵庫県南あわじ市(淡路島)の間にある幅約1.3kmの狭い海峡で、瀬戸内海と紀伊水道を結ぶ位置にあります。瀬戸内海と紀伊水道の干満差(最大1.5m)と狭い海峡地形が組み合わさり、海水が時速約20km(最大10ノット)で流れる日本三大急潮の一つ、世界的にも珍しい巨大渦潮現象が発生。直径20mを超える渦潮は満潮・干潮前後の1〜2時間に最大となり、特に春・秋の大潮(新月・満月前後)は世界三大潮流(メッシーナ海峡・セイモア海峡と並ぶ)。観潮船または大鳴門橋遊歩道「渦の道」(海上45m)から撮影可能です。",
+      en: "The Naruto Strait, between Naruto City in Tokushima Prefecture and Minamiawaji City in Hyogo Prefecture (Awaji Island), is a narrow channel about 1.3 km wide that connects the Inland Sea to the Kii Channel. The combination of a tidal differential of up to 1.5 m and the narrow geography drives water through at about 20 km/h (max 10 knots), producing one of Japan's three great tidal currents — and one of the world's three (alongside the Strait of Messina and Seymour Narrows). Whirlpools over 20 m across reach maximum size 1–2 hours around high or low tide, especially during the spring tides of spring and autumn (near new and full moons). They can be photographed from sightseeing boats or from «Uzu-no-Michi,» the walkway 45 m above the strait beneath the Onaruto Bridge.",
+      zh: "鸣门海峡(なるとかいきょう)是位于德岛县鸣门市与兵库县南淡路市(淡路岛)之间宽约1.3公里的狭窄海峡，连结濑户内海与纪伊水道。濑户内海与纪伊水道的潮差(最大1.5米)与狭窄海峡地形组合，海水以时速约20公里(最大10节)流动的日本三大急潮之一，世界上也罕见的巨大漩涡现象发生。直径20米以上的漩涡满潮·干潮前后1至2小时最大，尤其春·秋大潮(新月·满月前后)与梅西纳海峡·西摩尔海峡并称世界三大潮流。观潮船或大鸣门桥步道「涡之道」(海上45米)可撮影。",
+      "zh-tw": "鳴門海峽(なるとかいきょう)是位於德島縣鳴門市與兵庫縣南淡路市(淡路島)之間寬約1.3公里的狹窄海峽，連結瀨戶內海與紀伊水道。瀨戶內海與紀伊水道的潮差(最大1.5米)與狹窄海峽地形組合，海水以時速約20公里(最大10節)流動的日本三大急潮之一，世界上也罕見的巨大漩渦現象發生。直徑20米以上的漩渦滿潮·乾潮前後1至2小時最大，尤其春·秋大潮(新月·滿月前後)與梅西納海峽·西摩爾海峽並稱世界三大潮流。觀潮船或大鳴門橋步道「渦之道」(海上45米)可撮影。",
+      ko: "나루토 해협(なるとかいきょう)은 도쿠시마현 나루토시와 효고현 미나미아와지시(아와지섬) 사이에 있는 폭 약 1.3km의 좁은 해협으로, 세토내해와 기이수도를 연결하는 위치에 있습니다. 세토내해와 기이수도의 간만 차(최대 1.5m)와 좁은 해협 지형이 결합되어, 해수가 시속 약 20km(최대 10노트)로 흐르는 일본 3대 급조 중 하나, 세계적으로도 드문 거대 소용돌이 현상이 발생. 지름 20m가 넘는 소용돌이는 만조·간조 전후의 1~2시간에 최대가 되며, 특히 봄·가을의 대조(신월·만월 전후)는 메시나 해협·시모어 해협과 함께 세계 3대 조류. 유람선 또는 오나루토 대교의 산책로 「우즈노미치」(해상 45m)에서 촬영 가능합니다.",
+    },
     highlights: {
       ja: [
         "渦潮(うずしお) — 直径20m超、世界三大潮流、満潮/干潮前後1〜2時間で最大化",
@@ -2951,6 +3098,27 @@ export const LOCATION_CONTENT = {
         "Uzu-no-Michi — a 450 m walkway under the Onaruto Bridge, 45 m above the strait, with glass floors offering direct views of the whirlpools",
         "Senjojiki Observatory and Naruto Park — overlooks on the Tokushima side; cherry blossoms with the strait make a stunning spring scene",
         "Michi-no-Eki Uzushio (Awaji side) — sweeping view of the bridge and strait; the sunset moment is unforgettable",
+      ],
+      zh: [
+        "漩涡(うずしお) — 直径20米以上，世界三大潮流，满潮/干潮前后1至2小时最大化",
+        "观潮船 — 鸣门观光港出发，约30分钟，迫力满分接近漩涡内",
+        "涡之道(うずのみち) — 大鸣门桥下450米步道，海上45米，玻璃地板直视漩涡",
+        "千畳敷展望台·鸣门公园 — 德岛侧俯瞰点，樱与海峡组合为春绝景",
+        "道之站涡潮(淡路岛侧) — 大鸣门桥与海峡俯瞰，夕阳染色瞬间美丽",
+      ],
+      "zh-tw": [
+        "漩渦(うずしお) — 直徑20米以上，世界三大潮流，滿潮/乾潮前後1至2小時最大化",
+        "觀潮船 — 鳴門觀光港出發，約30分鐘，迫力滿分接近漩渦內",
+        "渦之道(うずのみち) — 大鳴門橋下450米步道，海上45米，玻璃地板直視漩渦",
+        "千疊敷展望台·鳴門公園 — 德島側俯瞰點，櫻與海峽組合為春絕景",
+        "道之站渦潮(淡路島側) — 大鳴門橋與海峽俯瞰，夕陽染色瞬間美麗",
+      ],
+      ko: [
+        "소용돌이(うずしお) — 지름 20m 이상, 세계 3대 조류, 만조/간조 전후 1~2시간에 최대화",
+        "유람선 — 나루토 관광항에서 출발, 약 30분, 박력 만점으로 소용돌이 안까지 접근",
+        "우즈노미치(うずのみち) — 다리 아래 450m의 산책로, 해상 45m, 유리 바닥에서 소용돌이를 직시",
+        "센조지키 전망대·나루토 공원 — 도쿠시마 쪽의 부감 스팟, 벚꽃과 해협의 조합이 봄의 절경",
+        "미치노에키 우즈시오(아와지섬 쪽) — 오나루토 대교와 해협의 부감, 일몰에 물드는 순간이 아름다움",
       ],
     },
     quickAnswers: {
@@ -2969,6 +3137,30 @@ export const LOCATION_CONTENT = {
         { q: "Boat and walkway fees and hours?", a: "Sightseeing boats «Uzushio Kisen» and «Uzushio Cruise» (from Kameura Port or Fukura Port, ~30 min, ¥1,800–2,500). Uzu-no-Michi (Onaruto Bridge walkway, 9:00–18:00, ¥510, summer extended hours). Combo discounts available at tourism offices. Reservations required during peak periods." },
         { q: "Recommended camera gear?", a: "①Telephoto 70–300mm (to crop whirlpool detail) ②ND filter (slow shutter for whirlpool motion) ③CPL (cuts surface reflection, makes whirlpools more visible) ④Wide angle (bridge + strait grand vista). Boats rock — image stabilization helps. Use a lens hood against spray and rinse off salt afterwards." },
         { q: "Combined sightseeing route?", a: "①Naruto Strait (morning, sightseeing boat) ②Uzu-no-Michi walkway (afternoon, overhead views) ③Awaji Michi-no-Eki Uzushio (sunset) ④Naruto Park (Senjojiki Observatory, cherry-blossom site) ⑤Naruto German House (the Bando POW camp where Beethoven's 9th had its Japanese premiere). One full day for many whirlpool angles; stay on Awaji for next-morning sea." },
+      ],
+      zh: [
+        { q: "鸣门海峡是什么?", a: "德岛县与淡路岛间宽1.3公里的狭窄海峡，世界三大潮流之一。濑户内海与纪伊水道潮差产生时速20公里潮流，生成直径20米以上漩涡的世界稀有撮影地。" },
+        { q: "观潮船与步道哪个推荐?", a: "迫力为观潮船(接近海面)，俯瞰与安全为步道「涡之道」(海上45米直下俯瞰)。船需防浪花觉悟，两者皆乘可360度欣赏漩涡。" },
+        { q: "撮影最佳时段?", a: "春·秋大潮(新月·满月前后)、满潮/干潮前后1至2小时最大。事前查潮汐表，观光协会「漩涡见顷日历」便利。观潮船时刻指定建议预约。" },
+        { q: "观潮船与涡之道费用·营业时间?", a: "观潮船「涡潮汽船」「涡潮Cruise」(龟浦观光港·福良港发，所需约30分·1800至2500日元)。涡之道(大鸣门桥步道，9:00至18:00，入场510日元·夏期延长)。两者共通券有优惠，观光协会窗口办理。拥挤期需事前预约。" },
+        { q: "撮影器材建议?", a: "①长焦70-300mm(切取漩涡细节)②ND滤镜(慢门表现漩涡动态)③CPL(切水面反射，提升漩涡可见度)④广角(桥全景+海峡大景)。观潮船摇晃，防抖必备，遮光罩防浪花，撮影后盐分清洗勿忘。" },
+        { q: "周边连续观光?", a: "①鸣门海峡(午前，观潮船)②大鸣门桥步道「涡之道」(午后，俯瞰撮影)③淡路岛·道之站涡潮(夕景)④鸣门公园(千畳敷展望台，樱花名所)⑤鸣门市德意志馆(板东俘虏收容所迹，贝多芬第九首演地)。1日多角度撮影漩涡，淡路岛宿可拍翌朝海。" },
+      ],
+      "zh-tw": [
+        { q: "鳴門海峽是什麼?", a: "德島縣與淡路島間寬1.3公里的狹窄海峽，世界三大潮流之一。瀨戶內海與紀伊水道潮差產生時速20公里潮流，生成直徑20米以上漩渦的世界稀有撮影地。" },
+        { q: "觀潮船與步道哪個推薦?", a: "迫力為觀潮船(接近海面)，俯瞰與安全為步道「渦之道」(海上45米直下俯瞰)。船需防浪花覺悟，兩者皆乘可360度欣賞漩渦。" },
+        { q: "撮影最佳時段?", a: "春·秋大潮(新月·滿月前後)、滿潮/乾潮前後1至2小時最大。事前查潮汐表，觀光協會「漩渦見頃日曆」便利。觀潮船時刻指定建議預約。" },
+        { q: "觀潮船與渦之道費用·營業時間?", a: "觀潮船「渦潮汽船」「渦潮Cruise」(龜浦觀光港·福良港發，所需約30分·1800至2500日圓)。渦之道(大鳴門橋步道，9:00至18:00，入場510日圓·夏期延長)。兩者共通券有優惠，觀光協會窗口辦理。擁擠期需事前預約。" },
+        { q: "撮影器材建議?", a: "①長焦70-300mm(切取漩渦細節)②ND濾鏡(慢門表現漩渦動態)③CPL(切水面反射，提升漩渦可見度)④廣角(橋全景+海峽大景)。觀潮船搖晃，防抖必備，遮光罩防浪花，撮影後鹽分清洗勿忘。" },
+        { q: "周邊連續觀光?", a: "①鳴門海峽(午前，觀潮船)②大鳴門橋步道「渦之道」(午後，俯瞰撮影)③淡路島·道之站渦潮(夕景)④鳴門公園(千疊敷展望台，櫻花名所)⑤鳴門市德意志館(板東俘虜收容所跡，貝多芬第九首演地)。1日多角度撮影漩渦，淡路島宿可拍翌朝海。" },
+      ],
+      ko: [
+        { q: "나루토 해협이란?", a: "도쿠시마현과 아와지섬 사이의 폭 1.3km의 좁은 해협으로, 세계 3대 조류 중 하나. 세토내해와 기이수도의 간만 차로 시속 20km의 조류가 발생, 지름 20m가 넘는 소용돌이를 만들어내는 세계적으로도 드문 현상을 볼 수 있는 촬영지입니다." },
+        { q: "유람선과 산책로 중 추천은?", a: "박력은 유람선(해면까지 접근), 부감과 안전성은 산책로 「우즈노미치」(해상 45m에서 바로 아래를 내려다봄). 배는 물보라를 맞을 각오 필요, 둘 다 타면 소용돌이를 360도 즐길 수 있음." },
+        { q: "촬영 베스트 타임은?", a: "봄·가을의 대조(신월·만월 전후), 만조/간조 전후 1~2시간이 최대. 사전에 조견표 확인, 관광협회의 「소용돌이 견 시기 캘린더」가 편리. 유람선은 시각 지정으로 예약 권장입니다." },
+        { q: "유람선과 우즈노미치 요금·영업 시간은?", a: "유람선 「우즈시오 키센」 「우즈시오 크루즈」(가메우라 관광항·후쿠라항 출발, 소요 약 30분·1,800~2,500엔). 우즈노미치(오나루토 대교 산책로, 9:00~18:00, 입장 510엔·여름철 연장). 양쪽의 공통권은 할인 있음, 관광협회 창구에서. 혼잡기는 사전 예약 필수입니다." },
+        { q: "촬영 기재 추천은?", a: "①망원 70-300mm(소용돌이의 디테일을 잘라냄) ②ND 필터(슬로우 셔터로 소용돌이의 움직임 표현) ③CPL(해면 반사 컷, 소용돌이가 잘 보임) ④광각(다리 전경+해협의 대경). 유람선은 흔들리므로 손떨림 보정 필수, 렌즈 후드로 물보라 방지, 촬영 후 염분 세척을 잊지 말 것." },
+        { q: "주변의 관광 연계는?", a: "①나루토 해협(오전, 유람선) ②오나루토 대교 산책로 「우즈노미치」(오후, 부감 촬영) ③아와지섬·미치노에키 우즈시오(석경) ④나루토 공원(센조지키 전망대, 벚꽃 명소) ⑤나루토시 도이치칸(반도 포로수용소 터, 베토벤 제9 초연지). 하루에 소용돌이를 다각도에서 촬영, 아와지섬 숙박으로 다음 날 아침 바다도." },
       ],
     },
     faqs: [
@@ -3811,10 +4003,13 @@ export const LOCATION_CONTENT = {
       "大鳴門橋是跨鳴門海峽的1629米吊橋（1985年開通）。橋下步道「渦之道」玻璃地板可俯瞰45米下的漩渦。橋身曲線與海峽相映絕景。",
       "오나루토 대교는 나루토 해협을 가로지르는 전장 1,629m 현수교(1985년 개통). 다리 바로 아래 산책로 '우즈노미치'에서는 유리 바닥을 통해 45m 아래 소용돌이를 내려다볼 수 있습니다. 다리의 아름다운 곡선과 해협의 조합이 절경."
     ),
-    definition: lh(
-      "大鳴門橋(おおなるときょう)は徳島県鳴門市と兵庫県南あわじ市(淡路島)を繋ぐ全長1,629m・主塔高さ144mの吊り橋で、1985年に本州四国連絡橋・神戸鳴門ルートとして開通。鳴門海峡の最も狭い部分(幅約1.3km)を一跨ぎし、橋下では世界三大潮流の一つ・直径20mに及ぶ巨大渦潮が発生します。橋の徳島側橋脚部分には全長450mの遊歩道「渦の道(うずのみち)」(1階下、海上45m)が設けられ、ガラス床から真下の渦潮を覗き込める日本でも稀有な体験施設。橋自体の優美な曲線と海峡・淡路島の組合せは瀬戸内海最高峰のドラマチックな風景です。",
-      "Onaruto Bridge is a 1,629 m suspension bridge with 144 m towers connecting Naruto City in Tokushima Prefecture to Minamiawaji City in Hyogo Prefecture (Awaji Island). Opened in 1985 as part of the Honshu-Shikoku Bridge Project's Kobe-Naruto route, it spans the narrowest section of the Naruto Strait (about 1.3 km wide), beneath which whirlpools up to 20 m across — one of the world's three great tidal currents — form. On the Tokushima side, beneath the bridge, the 450 m «Uzu-no-Michi» promenade (one level down, 45 m above the sea) lets visitors look directly down through glass floors at whirlpools — a rare experience even by Japanese standards. The bridge's graceful curves combined with the strait and Awaji Island make for the Inland Sea's most dramatic scenery."
-    ),
+    definition: {
+      ja: "大鳴門橋(おおなるときょう)は徳島県鳴門市と兵庫県南あわじ市(淡路島)を繋ぐ全長1,629m・主塔高さ144mの吊り橋で、1985年に本州四国連絡橋・神戸鳴門ルートとして開通。鳴門海峡の最も狭い部分(幅約1.3km)を一跨ぎし、橋下では世界三大潮流の一つ・直径20mに及ぶ巨大渦潮が発生します。橋の徳島側橋脚部分には全長450mの遊歩道「渦の道(うずのみち)」(1階下、海上45m)が設けられ、ガラス床から真下の渦潮を覗き込める日本でも稀有な体験施設。橋自体の優美な曲線と海峡・淡路島の組合せは瀬戸内海最高峰のドラマチックな風景です。",
+      en: "Onaruto Bridge is a 1,629 m suspension bridge with 144 m towers connecting Naruto City in Tokushima Prefecture to Minamiawaji City in Hyogo Prefecture (Awaji Island). Opened in 1985 as part of the Honshu-Shikoku Bridge Project's Kobe-Naruto route, it spans the narrowest section of the Naruto Strait (about 1.3 km wide), beneath which whirlpools up to 20 m across — one of the world's three great tidal currents — form. On the Tokushima side, beneath the bridge, the 450 m «Uzu-no-Michi» promenade (one level down, 45 m above the sea) lets visitors look directly down through glass floors at whirlpools — a rare experience even by Japanese standards. The bridge's graceful curves combined with the strait and Awaji Island make for the Inland Sea's most dramatic scenery.",
+      zh: "大鸣门桥(おおなるときょう)是连结德岛县鸣门市与兵库县南淡路市(淡路岛)的全长1629米·主塔高144米的吊桥，1985年作为本州四国连络桥·神户鸣门路线开通。一跨鸣门海峡最狭部分(宽约1.3公里)，桥下世界三大潮流之一·直径达20米的巨大漩涡发生。桥德岛侧桥脚部设全长450米的步道「涡之道(うずのみち)」(下一层，海上45米)，玻璃地板可俯视真下漩涡的日本稀有体验设施。桥本身优美曲线与海峡·淡路岛的组合构成濑户内海最高峰的戏剧性风景。",
+      "zh-tw": "大鳴門橋(おおなるときょう)是連結德島縣鳴門市與兵庫縣南淡路市(淡路島)的全長1629米·主塔高144米的吊橋，1985年作為本州四國連絡橋·神戶鳴門路線開通。一跨鳴門海峽最狹部分(寬約1.3公里)，橋下世界三大潮流之一·直徑達20米的巨大漩渦發生。橋德島側橋腳部設全長450米的步道「渦之道(うずのみち)」(下一層，海上45米)，玻璃地板可俯視真下漩渦的日本稀有體驗設施。橋本身優美曲線與海峽·淡路島的組合構成瀨戶內海最高峰的戲劇性風景。",
+      ko: "오나루토 대교(おおなるときょう)는 도쿠시마현 나루토시와 효고현 미나미아와지시(아와지섬)를 연결하는 전장 1,629m·주탑 높이 144m의 현수교로, 1985년에 혼슈-시코쿠 연락교·고베 나루토 루트로 개통. 나루토 해협의 가장 좁은 부분(폭 약 1.3km)을 한걸음에 가로지르며, 다리 아래로는 세계 3대 조류 중 하나인 지름 20m에 달하는 거대 소용돌이가 발생. 다리의 도쿠시마 쪽 교각 부분에는 전장 450m의 산책로 「우즈노미치(うずのみち)」(1층 아래, 해상 45m)가 마련되어 있으며, 유리 바닥에서 바로 아래의 소용돌이를 들여다볼 수 있는 일본에서도 보기 드문 체험 시설. 다리 자체의 우아한 곡선과 해협·아와지섬의 조합은 세토내해 최고봉의 드라마틱한 풍경입니다.",
+    },
     highlights: {
       ja: [
         "大鳴門橋本体 — 全長1,629m、主塔高さ144m、優美な吊り橋曲線、淡路島側からの全景が王道",
@@ -3829,6 +4024,27 @@ export const LOCATION_CONTENT = {
         "Naruto Park and Senjojiki Observatory — a viewing hub close to the bridge; cherry blossoms paired with the bridge make a stunning spring scene",
         "Michi-no-Eki Uzushio (Awaji side) — a sweeping overlook of the bridge, with sunset igniting bridge and strait in vivid contrast",
         "Naruto Skyline — a scenic drive route with multiple observatories overlooking the bridge; especially exquisite at blue hour",
+      ],
+      zh: [
+        "大鸣门桥本体 — 全长1629米，主塔高144米，优美吊桥曲线，淡路岛侧全景为王道",
+        "涡之道(うずのみち) — 桥下450米步道，海上45米，玻璃地板可俯视漩涡",
+        "鸣门公园·千畳敷展望台 — 近距望桥的观光据点，樱与桥组合为春绝景",
+        "道之站涡潮(淡路岛侧) — 桥俯瞰点，夕阳染色桥与海峡的对比",
+        "鸣门天空线 — 望桥的兜风路线，多处展望台，蓝调时刻绝景",
+      ],
+      "zh-tw": [
+        "大鳴門橋本體 — 全長1629米，主塔高144米，優美吊橋曲線，淡路島側全景為王道",
+        "渦之道(うずのみち) — 橋下450米步道，海上45米，玻璃地板可俯視漩渦",
+        "鳴門公園·千疊敷展望台 — 近距望橋的觀光據點，櫻與橋組合為春絕景",
+        "道之站渦潮(淡路島側) — 橋俯瞰點，夕陽染色橋與海峽的對比",
+        "鳴門天空線 — 望橋的兜風路線，多處展望台，藍調時刻絕景",
+      ],
+      ko: [
+        "오나루토 대교 본체 — 전장 1,629m, 주탑 높이 144m, 우아한 현수교 곡선, 아와지섬 쪽에서의 전경이 왕도",
+        "우즈노미치(うずのみち) — 다리 아래 450m 산책로, 해상 45m, 유리 바닥에서 소용돌이를 내려다봄",
+        "나루토 공원·센조지키 전망대 — 다리를 가까이서 바라보는 관광 거점, 벚꽃과 다리의 조합이 봄의 절경",
+        "미치노에키 우즈시오(아와지섬 쪽) — 다리의 부감 스팟, 일몰에 물드는 다리와 해협의 대비",
+        "나루토 스카이라인 — 다리를 바라보는 드라이브 코스, 복수의 전망대, 블루 아워의 절경",
       ],
     },
     quickAnswers: {
@@ -3847,6 +4063,30 @@ export const LOCATION_CONTENT = {
         { q: "Toll for crossing by car?", a: "As part of the Kobe-Awaji-Naruto Expressway, Awaji-Minami IC to Naruto-Kita IC costs ¥1,140 for standard cars (¥860 with ETC). From Honshu, drivers cross the Akashi-Kaikyo Bridge (Kobe→Awaji) then the Onaruto Bridge (Awaji→Tokushima) — a great two-bridge expressway run. Buses use the same route to link Honshu and Shikoku." },
         { q: "Recommended camera gear?", a: "①Wide angle (16–35mm) for bridge + strait grand vista ②Telephoto 70–200mm for tower details and the geometry of the suspension cables ③ND filter (slow shutter for surface and cloud motion). Sea winds are strong — bring a heavy tripod or windbreak stones. A protective lens filter helps against salt spray." },
         { q: "Comparison with the Akashi-Kaikyo Bridge?", a: "The Akashi-Kaikyo Bridge (Kobe–Awaji, opened 1998) is among the world's longest suspension bridges (central span 1,991 m). Onaruto (1985) is its predecessor, with an 876 m central span. Both share Honshu-Shikoku Bridge Authority design language — sharp lines, functional beauty. Akashi wins on scale; Onaruto wins on the unique «Uzu-no-Michi» walkway. Bridge enthusiasts should photograph both." },
+      ],
+      zh: [
+        { q: "大鸣门桥是什么?", a: "连结德岛县鸣门市与淡路岛的全长1629米吊桥，1985年开通。主塔高144米，跨越世界三大潮流的鸣门海峡，桥下步道「涡之道」(海上45米)玻璃地板可俯视漩涡的稀有观光地。" },
+        { q: "桥撮影点?", a: "龟老山展望台级俯瞰为淡路岛侧「道之站涡潮」最佳。夕阳染色桥与海峡对比美。德岛侧从鸣门公园·千畳敷展望台近距望桥，樱与桥组合春绝景。" },
+        { q: "涡之道如何前往?", a: "JR鸣门站乘巴士「鸣门公园」下车，步行5分。营业时间9:00至18:00(夏季)，入场料520日元。漩涡高峰为大潮日(春·秋新月·满月前后)，满潮/干潮前后1至2小时最大。" },
+        { q: "开车通行费?", a: "神户淡路鸣门自动车道一部，淡路岛南IC至鸣门北IC普通车1140日元(ETC优惠860日元)。本州起经明石海峡大桥(神户至淡路岛)+大鸣门桥(淡路岛至德岛)2桥连续接驳，本四连络桥一气贯穿的兜风路线。巴士经高速本州至四国直连。" },
+        { q: "撮影器材建议?", a: "①广角(16-35mm)拍桥全景与海峡②长焦70-200mm拍主塔细节·吊桥几何美③ND滤镜(海面慢门·云流)。海风强故三脚架重型或防风石确保稳定，盐害对策推荐镜头前保护滤镜。" },
+        { q: "与明石海峡大桥比较?", a: "明石海峡大桥(神户至淡路岛，1998年开通)世界最长级吊桥(中央径间1991米)，大鸣门桥(1985年)为前辈，中央径间876米。两桥皆本四连络桥公团设计，锐利线条、机能美共通。明石超高，大鸣门中规模但「涡之道」体验独特，桥迷请双拍。" },
+      ],
+      "zh-tw": [
+        { q: "大鳴門橋是什麼?", a: "連結德島縣鳴門市與淡路島的全長1629米吊橋，1985年開通。主塔高144米，跨越世界三大潮流的鳴門海峽，橋下步道「渦之道」(海上45米)玻璃地板可俯視漩渦的稀有觀光地。" },
+        { q: "橋撮影點?", a: "龜老山展望台級俯瞰為淡路島側「道之站渦潮」最佳。夕陽染色橋與海峽對比美。德島側從鳴門公園·千疊敷展望台近距望橋，櫻與橋組合春絕景。" },
+        { q: "渦之道如何前往?", a: "JR鳴門站搭巴士「鳴門公園」下車，步行5分。營業時間9:00至18:00(夏季)，入場料520日圓。漩渦高峰為大潮日(春·秋新月·滿月前後)，滿潮/乾潮前後1至2小時最大。" },
+        { q: "開車通行費?", a: "神戶淡路鳴門自動車道一部，淡路島南IC至鳴門北IC普通車1140日圓(ETC優惠860日圓)。本州起經明石海峽大橋(神戶至淡路島)+大鳴門橋(淡路島至德島)2橋連續接駁，本四連絡橋一氣貫穿的兜風路線。巴士經高速本州至四國直連。" },
+        { q: "撮影器材建議?", a: "①廣角(16-35mm)拍橋全景與海峽②長焦70-200mm拍主塔細節·吊橋幾何美③ND濾鏡(海面慢門·雲流)。海風強故三腳架重型或防風石確保穩定，鹽害對策推薦鏡頭前保護濾鏡。" },
+        { q: "與明石海峽大橋比較?", a: "明石海峽大橋(神戶至淡路島，1998年開通)世界最長級吊橋(中央徑間1991米)，大鳴門橋(1985年)為前輩，中央徑間876米。兩橋皆本四連絡橋公團設計，銳利線條、機能美共通。明石超高，大鳴門中規模但「渦之道」體驗獨特，橋迷請雙拍。" },
+      ],
+      ko: [
+        { q: "오나루토 대교란?", a: "도쿠시마현 나루토시와 아와지섬을 연결하는 전장 1,629m의 현수교로 1985년 개통. 주탑 높이 144m, 세계 3대 조류의 나루토 해협을 가로지르며, 다리 아래 산책로 「우즈노미치」(해상 45m)에서 유리 바닥으로 소용돌이를 내려다볼 수 있는 보기 드문 관광지입니다." },
+        { q: "다리의 촬영 포인트는?", a: "기로산 전망대 급의 부감이라면 아와지섬 쪽의 「미치노에키 우즈시오」가 베스트. 일몰에 물드는 다리와 해협의 대비가 아름다움. 도쿠시마 쪽에서는 나루토 공원·센조지키 전망대에서 다리를 가까이서 바라보며, 벚꽃과 다리의 조합이 봄의 절경." },
+        { q: "우즈노미치의 액세스는?", a: "JR 나루토역에서 버스로 「나루토 공원」 하차, 도보 5분. 영업 시간 9:00~18:00(여름철), 입장료 520엔. 소용돌이 절정은 대조의 날(봄·가을의 신월·만월 전후), 만조/간조 전후 1~2시간이 최대." },
+        { q: "차로 건널 경우 통행료는?", a: "고베 아와지 나루토 자동차도의 일부로, 아와지섬 미나미 IC~나루토 키타 IC로 보통차 1,140엔(ETC 할인 860엔). 혼슈에서는 아카시 해협 대교(고베~아와지섬)+오나루토 대교(아와지섬~도쿠시마)의 2교 연속으로 액세스, 혼시 연락교를 단숨에 건너는 즐거운 드라이브 코스. 버스는 고속도로 경유로 혼슈~시코쿠를 직결합니다." },
+        { q: "촬영 기재 추천은?", a: "①광각(16-35mm)으로 다리 전경과 해협 ②망원 70-200mm로 주탑의 디테일·현수교의 기하학미 ③ND 필터(해면의 슬로우 셔터·구름의 흐름). 바닷바람이 강하므로 삼각대는 무거운 것이나 방풍석으로 안정 확보, 염해 대책으로 렌즈 앞 유리 보호 필터 추천입니다." },
+        { q: "아카시 해협 대교와의 비교는?", a: "아카시 해협 대교(고베~아와지섬, 1998년 개통)는 세계 최장급 현수교(중앙 경간 1,991m), 오나루토 대교(1985년)는 그 선배격으로 중앙 경간 876m. 양 다리 모두 혼시 연락교 공단의 설계로, 샤프한 라인, 기능미가 공통. 아카시는 초대형, 오나루토는 중규모이지만 「우즈노미치」의 독특한 체험으로 승부, 다리 팬은 부디 양쪽의 촬영을." },
       ],
     },
     faqs: [
