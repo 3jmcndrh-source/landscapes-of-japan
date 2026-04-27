@@ -21,8 +21,13 @@ import tr from "./extras/tr.js";
 import nl from "./extras/nl.js";
 import pl from "./extras/pl.js";
 import sv from "./extras/sv.js";
+import fa from "./extras/fa.js";
+import he from "./extras/he.js";
+import bn from "./extras/bn.js";
+import tl from "./extras/tl.js";
+import uk from "./extras/uk.js";
 
-const EXTRA_LANGS = { es, fr, de, pt, it, ru, ar, hi, th, vi, id, tr, nl, pl, sv };
+const EXTRA_LANGS = { es, fr, de, pt, it, ru, ar, hi, th, vi, id, tr, nl, pl, sv, fa, he, bn, tl, uk };
 
 function mergeExtras(base, type) {
   // type は "prefectures" | "locations"

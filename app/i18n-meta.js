@@ -2,14 +2,15 @@ export const SITE_URL = "https://landscapes-of-japan.vercel.app";
 export const OG_IMAGE = "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/DSC07601_cocitq.jpg";
 export const DEFAULT_LANG = "en";
 
-export const LANGS = ["ja","en","zh","zh-tw","ko","es","fr","de","pt","it","ru","ar","hi","th","vi","id","tr","nl","pl","sv"];
+export const LANGS = ["ja","en","zh","zh-tw","ko","es","fr","de","pt","it","ru","ar","hi","th","vi","id","tr","nl","pl","sv","fa","he","bn","tl","uk"];
 
-export const RTL_LANGS = new Set(["ar"]);
+export const RTL_LANGS = new Set(["ar","fa","he"]);
 
 export const HREFLANG = {
   ja:"ja", en:"en", zh:"zh-Hans", "zh-tw":"zh-Hant", ko:"ko",
   es:"es", fr:"fr", de:"de", pt:"pt", it:"it", ru:"ru", ar:"ar",
   hi:"hi", th:"th", vi:"vi", id:"id", tr:"tr", nl:"nl", pl:"pl", sv:"sv",
+  fa:"fa", he:"he", bn:"bn", tl:"tl", uk:"uk",
 };
 
 // 地域別hreflang拡張: 1つの slug を複数の region tag にマッピング
@@ -180,5 +181,35 @@ export const SEO_META = {
     description: "En filmisk samling landskap från hela Japan: Hokkaido, Kyoto, Kamakura, Shiretoko, Miyako-ön och mer. Över 380 bilder från 18 prefekturer.",
     keywords: ["Japan","landskapsfotografi","portfolio","Kyoto","Hokkaido","Okinawa","resor","natur"],
     ogLocale: "sv_SE",
+  },
+  fa: {
+    title: "مناظر ژاپن — مجموعه عکاسی منظره ژاپنی",
+    description: "مجموعه‌ای سینمایی از مناظر سراسر ژاپن: هوکایدو، کیوتو، کاماکورا، شیرتوکو، جزیره میاکو و بیشتر. بیش از ۳۸۰ عکس از ۱۸ استان.",
+    keywords: ["ژاپن","عکاسی منظره","پورتفولیو","کیوتو","هوکایدو","اوکیناوا","سفر","طبیعت","کوه فوجی","شکوفه گیلاس","عکاسی پاییزی","معبد ژاپنی"],
+    ogLocale: "fa_IR",
+  },
+  he: {
+    title: "נופי יפן — תיק עבודות צילום נוף יפני",
+    description: "אוסף קולנועי של נופים מרחבי יפן: הוקאידו, קיוטו, קמקורה, שירטוקו, האי מיאקו ועוד. למעלה מ-380 תמונות מ-18 מחוזות.",
+    keywords: ["יפן","צילום נוף","תיק עבודות","קיוטו","הוקאידו","אוקינאווה","טיולים","טבע","הר פוג'י","פריחת דובדבן","צילום סתיו","מקדש יפני"],
+    ogLocale: "he_IL",
+  },
+  bn: {
+    title: "জাপানের ভূদৃশ্য — জাপানি ল্যান্ডস্কেপ ফটোগ্রাফি পোর্টফোলিও",
+    description: "জাপানের নানা প্রান্ত থেকে চলচ্চিত্রিক ভূদৃশ্যের সংকলন: হোক্কাইডো, কিয়োটো, কামাকুরা, শিরেতোকো, মিয়াকো দ্বীপ ও আরও অনেক। ১৮টি প্রিফেকচার থেকে ৩৮০-এর বেশি ছবি।",
+    keywords: ["জাপান","ল্যান্ডস্কেপ ফটোগ্রাফি","পোর্টফোলিও","কিয়োটো","হোক্কাইডো","ওকিনাওয়া","ভ্রমণ","প্রকৃতি","ফুজি পর্বত","চেরি ফুল","শরতের পাতা","জাপানি মন্দির"],
+    ogLocale: "bn_BD",
+  },
+  tl: {
+    title: "Mga Tanawin ng Hapon — Portfolio ng Photography ng Tanawing Hapones",
+    description: "Sinematic na koleksyon ng mga tanawin mula sa buong Hapon: Hokkaido, Kyoto, Kamakura, Shiretoko, Pulo ng Miyako at higit pa. Mahigit 380 larawan mula sa 18 prepektura.",
+    keywords: ["Hapon","landscape photography","portfolio","Kyoto","Hokkaido","Okinawa","biyahe","kalikasan","Mt Fuji","cherry blossom","autumn foliage","Japanese temple","Japan travel"],
+    ogLocale: "tl_PH",
+  },
+  uk: {
+    title: "Пейзажі Японії — Портфоліо японської пейзажної фотографії",
+    description: "Кінематографічна колекція пейзажів з усієї Японії: Хоккайдо, Кіото, Камакура, Сіретоко, острів Міяко та багато іншого. Понад 380 фотографій із 18 префектур.",
+    keywords: ["Японія","пейзажна фотографія","портфоліо","Кіото","Хоккайдо","Окінава","подорожі","природа","гора Фудзі","сакура","осіннє листя","японський храм"],
+    ogLocale: "uk_UA",
   },
 };

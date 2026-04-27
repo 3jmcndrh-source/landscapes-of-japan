@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const LANGS = ["ja","en","zh","zh-tw","ko","es","fr","de","pt","it","ru","ar","hi","th","vi","id","tr","nl","pl","sv"];
+const LANGS = ["ja","en","zh","zh-tw","ko","es","fr","de","pt","it","ru","ar","hi","th","vi","id","tr","nl","pl","sv","fa","he","bn","tl","uk"];
 const LANG_SET = new Set(LANGS);
 const DEFAULT_LANG = "en";
 
