@@ -2428,10 +2428,13 @@ export const LOCATION_CONTENT = {
       "由布院是仰望由布岳的高原溫泉。湯之坪街道、金鱗湖、晨霧街景、靜謐森林藝術空間等，與別府對照的靜雅溫泉鄉。秋冬清晨「金鱗湖晨霧」必拍。",
       "유후인은 유후다케를 바라보는 고원 온천지. 유노쓰보 거리, 긴린 호수, 아침 안개에 싸인 거리, 조용한 숲의 예술 공간 등 벳푸와 대조적인 차분한 온천 마을. 가을~겨울 이른 아침의 '아침 안개의 긴린 호수'는 꼭 담아야 할 장면."
     ),
-    definition: lh(
-      "湯布院(ゆふいん)は大分県由布市湯布院町の温泉地で、由布岳(ゆふだけ、1,583mの双峰の活火山)を仰ぐ標高400〜500mの高原に広がります。1995年から中谷健太郎ら町長を中心とする「自分達の町は自分達で」のまちづくり運動の結果、ホテル建設規制・看板規制で日本屈指の品格ある温泉街として発展。中心の金鱗湖(きんりんこ)は温泉と冷水が混じる珍しい池で、秋〜冬の早朝には水温と外気の温度差で立ち上る朝霧の絶景が有名。湯布院温泉は源泉数852で日本2位、女性に人気の優雅な温泉郷です。",
-      "Yufuin is a hot-spring town in Yufu City, Oita Prefecture, set on a plateau of 400–500 m beneath the twin-peaked active volcano Mt. Yufu (1,583 m). Since 1995, a community-led development movement (initiated by figures like Kentaro Nakaya) has restricted hotel construction and signage, growing Yufuin into one of Japan's most refined hot-spring towns. At its heart, Lake Kinrin — a rare pond where hot springs mix with cold water — is famous for the autumn-to-winter dawn mist born of the temperature gap. With 852 sources (Japan's second-most), Yufuin is a graceful onsen popular especially with women travelers."
-    ),
+    definition: {
+      ja: "湯布院(ゆふいん)は大分県由布市湯布院町の温泉地で、由布岳(ゆふだけ、1,583mの双峰の活火山)を仰ぐ標高400〜500mの高原に広がります。1995年から中谷健太郎ら町長を中心とする「自分達の町は自分達で」のまちづくり運動の結果、ホテル建設規制・看板規制で日本屈指の品格ある温泉街として発展。中心の金鱗湖(きんりんこ)は温泉と冷水が混じる珍しい池で、秋〜冬の早朝には水温と外気の温度差で立ち上る朝霧の絶景が有名。湯布院温泉は源泉数852で日本2位、女性に人気の優雅な温泉郷です。",
+      en: "Yufuin is a hot-spring town in Yufu City, Oita Prefecture, set on a plateau of 400–500 m beneath the twin-peaked active volcano Mt. Yufu (1,583 m). Since 1995, a community-led development movement (initiated by figures like Kentaro Nakaya) has restricted hotel construction and signage, growing Yufuin into one of Japan's most refined hot-spring towns. At its heart, Lake Kinrin — a rare pond where hot springs mix with cold water — is famous for the autumn-to-winter dawn mist born of the temperature gap. With 852 sources (Japan's second-most), Yufuin is a graceful onsen popular especially with women travelers.",
+      zh: "由布院(ゆふいん)是大分县由布市汤布院町的温泉地，仰望由布岳(ゆふだけ，1583米双峰活火山)的海拔400至500米高原。自1995年中谷健太郎等町长主导的「自己的城自己建」街道营造运动结果，酒店建造限制·招牌限制使其发展为日本屈指的品格温泉街。中心金鳞湖(きんりんこ)是温泉与冷水混合的稀有池，秋至冬清晨水温与外气温差所升起的朝雾绝景闻名。由布院温泉源泉数852为日本第2，女性喜爱的优雅温泉乡。",
+      "zh-tw": "由布院(ゆふいん)是大分縣由布市湯布院町的溫泉地，仰望由布岳(ゆふだけ，1583米雙峰活火山)的海拔400至500米高原。自1995年中谷健太郎等町長主導的「自己的城自己建」街道營造運動結果，酒店建造限制·招牌限制使其發展為日本屈指的品格溫泉街。中心金鱗湖(きんりんこ)是溫泉與冷水混合的稀有池，秋至冬清晨水溫與外氣溫差所升起的朝霧絕景聞名。由布院溫泉源泉數852為日本第2，女性喜愛的優雅溫泉鄉。",
+      ko: "유후인(ゆふいん)은 오이타현 유후시 유후인마치의 온천지로, 유후다케(ゆふだけ, 1,583m의 쌍봉 활화산)를 바라보는 해발 400~500m의 고원에 펼쳐집니다. 1995년부터 나카야 겐타로 등 마을장을 중심으로 한 「우리 동네는 우리가」의 마을 만들기 운동의 결과, 호텔 건설 규제·간판 규제로 일본 굴지의 품격 있는 온천 거리로 발전. 중심의 긴린 호수(きんりんこ)는 온천과 냉수가 섞이는 희귀한 못으로, 가을~겨울의 이른 아침 수온과 외기의 온도차로 피어오르는 아침 안개의 절경이 유명. 유후인 온천은 원천 수 852로 일본 2위, 여성에게 인기 있는 우아한 온천향입니다.",
+    },
     highlights: {
       ja: [
         "金鱗湖(きんりんこ) — 温泉と冷水が混じる珍しい湖、秋〜冬早朝の朝霧は別世界、湖畔1周徒歩15分",
@@ -2446,6 +2449,27 @@ export const LOCATION_CONTENT = {
         "Yunotsubo-kaido — about 1 km from Yufuin Station to Lake Kinrin, lined with traditional townhouses, cafés, and craft shops",
         "Ryokan district — strict signage rules and low-rise architecture preserve the elegant streetscape; warm lighting at night",
         "Yufu-mi-dori (Yufuin Station front) — Arata Isozaki designed the 1990 Yufuin Station; a great spot for Mt. Yufu compositions",
+      ],
+      zh: [
+        "金鳞湖(きんりんこ) — 温泉与冷水混合的稀有湖，秋至冬清晨朝雾如别世界，湖畔1周步行15分钟",
+        "由布岳 — 1583米双峰活火山，由布院盆地象征，汤之坪街道构图为王道",
+        "汤之坪街道 — 由布院站至金鳞湖约1公里，町家·咖啡·工艺店云集的怀旧商店街",
+        "由布院温泉旅馆街 — 招牌规制与低层建筑保持品格的街景，夜灯温暖",
+        "由布见通(由布院站前) — 1990年矶崎新设计的由布院站，站前可望由布岳的撮影地",
+      ],
+      "zh-tw": [
+        "金鱗湖(きんりんこ) — 溫泉與冷水混合的稀有湖，秋至冬清晨朝霧如別世界，湖畔1周步行15分鐘",
+        "由布岳 — 1583米雙峰活火山，由布院盆地象徵，湯之坪街道構圖為王道",
+        "湯之坪街道 — 由布院站至金鱗湖約1公里，町家·咖啡·工藝店雲集的懷舊商店街",
+        "由布院溫泉旅館街 — 招牌規制與低層建築保持品格的街景，夜燈溫暖",
+        "由布見通(由布院站前) — 1990年磯崎新設計的由布院站，站前可望由布岳的撮影地",
+      ],
+      ko: [
+        "긴린 호수(きんりんこ) — 온천과 냉수가 섞이는 희귀한 호수, 가을~겨울 이른 아침의 아침 안개는 별세계, 호반 1주 도보 15분",
+        "유후다케 — 1,583m의 쌍봉 활화산, 유후인 분지의 상징, 유노쓰보 거리에서의 구도가 왕도",
+        "유노쓰보 거리 — 유후인역에서 긴린 호수까지의 약 1km, 마치야·카페·공예점이 늘어선 레트로한 상점가",
+        "유후인 온천 료칸 거리 — 간판 규제와 저층 건축으로 품격을 지키는 거리, 밤의 불빛이 따뜻",
+        "유후미 거리(유후인역 앞) — 1990년 이소자키 아라타가 설계한 유후인역, 역 앞에서 유후다케를 바라보는 촬영지",
       ],
     },
     quickAnswers: {
@@ -2464,6 +2488,30 @@ export const LOCATION_CONTENT = {
         { q: "Access?", a: "From JR Kyudai Main Line «Yufuin» Station, the town center is walkable. The Limited Express «Yufuin no Mori» (Hakata–Yufuin, ~2 hr 20 min) is popular as a sightseeing train. From Fukuoka Airport, ~1 hr 50 min by car. From Beppu, 1 hr by car. With a rental car, pair with a Mt. Yufu drive." },
         { q: "Recommended ryokan?", a: "Luxury: Kamenoi Bessou, Tama-no-Yu, Murata (the «Big Three of Yufuin,» ¥50,000–100,000/night). Mid-range: Kokuchi, Yufuin Hanayoshi (¥20,000–30,000). Budget: Yufuin Ryotei Ikkoten (¥15,000). Day-bath access ¥1,500–2,000 — you can crawl multiple ryokan. Yufuin's signature is unpretentious refinement and dining quality." },
         { q: "Yunotsubo-kaido gourmet?", a: "①Village Cerisier (pudding specialist) ②B-Speak (roll cakes) ③Kinsho Korokke (croquettes) ④Theomurata (chocolate) ⑤Mitsubachi (honey) ⑥Toriten (local-chicken tempura). All walkable, perfect for a photography-and-snacking onsen-town stroll." },
+      ],
+      zh: [
+        { q: "由布院是什么?", a: "大分县由布市的温泉地，仰望由布岳(1583米)的海拔400至500米高原。自1995年规制街道营造发展为日本屈指品格温泉街，源泉数日本第2的852本，以金鳞湖朝雾闻名的女性喜爱温泉乡。" },
+        { q: "金鳞湖朝雾出现条件?", a: "11至3月晴朗早晨，气温5度以下。温泉水与外气温差产生。日出前至1小时最浓。湖畔足汤望去汤气与朝雾双重升起的梦幻光景。" },
+        { q: "与别府的差异?", a: "别府以汤量·地狱巡的迫力，由布院以静寂与高原品格。从别府开车约1小时，由布院IC近。半日各巡两地亦可，由布院理想为住宿夜与晨雾。" },
+        { q: "如何前往?", a: "JR久大本线「由布院站」步行至温泉街中心，特急「由布院之森」(博多至由布院，约2小时20分)作为观光列车人气。福冈机场开车1小时50分，别府开车1小时。租车可与由布岳兜风组合。" },
+        { q: "推荐住宿?", a: "高级:「龟之井别庄」「玉之汤」「无量塔」(由布院御三家，1宿50000至100000日元)。中级:「鞠智」「由布院花由」(20000至30000日元)。经济:「由布院旅亭一壶天」(15000日元)。日归入浴1500至2000日元，可多家温泉巡。朴素品格与料理质量是由布院旅馆特征。" },
+        { q: "汤之坪街道美食?", a: "①「Village Cerisier」(布丁专门店)②「B-Speak」(蛋糕卷)③「金赏可乐饼」(炸物名物)④「Theomurata」(巧克力)⑤「Mitsubachi」(蜂蜜专门店)⑥「鸡天」(地鸡天妇罗)。仅步行可巡，撮影与边走边吃的温泉街散步路线。" },
+      ],
+      "zh-tw": [
+        { q: "由布院是什麼?", a: "大分縣由布市的溫泉地，仰望由布岳(1583米)的海拔400至500米高原。自1995年規制街道營造發展為日本屈指品格溫泉街，源泉數日本第2的852本，以金鱗湖朝霧聞名的女性喜愛溫泉鄉。" },
+        { q: "金鱗湖朝霧出現條件?", a: "11至3月晴朗早晨，氣溫5度以下。溫泉水與外氣溫差產生。日出前至1小時最濃。湖畔足湯望去湯氣與朝霧雙重升起的夢幻光景。" },
+        { q: "與別府的差異?", a: "別府以湯量·地獄巡的迫力，由布院以靜寂與高原品格。從別府開車約1小時，由布院IC近。半日各巡兩地亦可，由布院理想為住宿夜與晨霧。" },
+        { q: "如何前往?", a: "JR久大本線「由布院站」步行至溫泉街中心，特急「由布院之森」(博多至由布院，約2小時20分)作為觀光列車人氣。福岡機場開車1小時50分，別府開車1小時。租車可與由布岳兜風組合。" },
+        { q: "推薦住宿?", a: "高級:「龜之井別莊」「玉之湯」「無量塔」(由布院御三家，1宿50000至100000日圓)。中級:「鞠智」「由布院花由」(20000至30000日圓)。經濟:「由布院旅亭一壺天」(15000日圓)。日歸入浴1500至2000日圓，可多家溫泉巡。樸素品格與料理質量是由布院旅館特徵。" },
+        { q: "湯之坪街道美食?", a: "①「Village Cerisier」(布丁專門店)②「B-Speak」(蛋糕捲)③「金賞可樂餅」(炸物名物)④「Theomurata」(巧克力)⑤「Mitsubachi」(蜂蜜專門店)⑥「雞天」(地雞天婦羅)。僅步行可巡，撮影與邊走邊吃的溫泉街散步路線。" },
+      ],
+      ko: [
+        { q: "유후인이란?", a: "오이타현 유후시의 온천지로, 유후다케(1,583m)를 바라보는 해발 400~500m의 고원. 1995년부터의 규제 마을 만들기로 일본 굴지의 품격 있는 온천 거리로 발전, 원천 수 일본 2위의 852본, 긴린 호수의 아침 안개로 유명한 여성에게 인기 있는 온천향입니다." },
+        { q: "긴린 호수의 아침 안개가 나타나는 조건은?", a: "11~3월의 맑은 아침, 기온 5도 이하. 온천수와 외기의 온도차로 발생합니다. 일출 직전~1시간이 진함. 호반의 족욕탕에서 바라보면 김과 아침 안개가 이중으로 피어오르는 환상적인 광경이." },
+        { q: "벳푸와의 차이는?", a: "벳푸는 탕량·지옥 순례의 박력, 유후인은 정적과 고원의 품격. 벳푸에서 차로 약 1시간, 유후인 IC 근처. 반나절씩으로 양쪽을 둘러보는 것도 가능, 유후인은 숙박해서 밤과 아침 안개를 노리는 것이 이상적입니다." },
+        { q: "가는 방법은?", a: "JR 큐다이 본선 「유후인역」에서 도보로 온천 거리 중심부, 특급 「유후인 모리」(하카타~유후인, 약 2시간 20분)가 관광 열차로 인기. 후쿠오카 공항에서 차로 1시간 50분, 벳푸에서 차로 1시간. 렌터카가 있으면 유후다케 드라이브와 조합 가능." },
+        { q: "추천 숙소는?", a: "고급: 「가메노이 벳소」 「타마노유」 「무라타」(유후인 고산케, 1박 50,000~100,000엔). 중급: 「코쿠치」 「유후인 하나요시」(20,000~30,000엔). 합리적: 「유후인 료테이 잇코텐」(15,000엔). 당일 입욕은 1,500~2,000엔, 여러 숙소에서 온천 순례도 가능. 소박한 품격과 요리의 질이 유후인 숙소의 특징입니다." },
+        { q: "유노쓰보 거리의 미식은?", a: "①「Village Cerisier」(푸딩 전문점) ②「B-Speak」(롤케이크) ③「긴쇼 고로케」(튀김 명물) ④「Theomurata」(초콜릿) ⑤「미쓰바치」(꿀 전문점) ⑥「토리텐」(닭고기 튀김). 도보로만 둘러볼 수 있어 촬영과 먹거리를 즐길 수 있는 온천 거리 산책 코스." },
       ],
     },
     faqs: [
@@ -2784,10 +2832,13 @@ export const LOCATION_CONTENT = {
       "法隆寺是607年聖德太子創建的世界最古木造建築群。金堂、五重塔等西院伽藍為7世紀末-8世紀初創建原貌。1993年作為日本首個世界遺產登錄，是日本佛教美術至寶。",
       "호류지는 607년 쇼토쿠 태자가 창건한 세계 최고(最古) 목조 건축군. 금당과 5중탑을 포함한 사이인 가람은 7세기 말~8세기 초 창건 당시의 모습 그대로 현존. 1993년 유네스코 세계유산 제1호로 등록된 일본 불교 미술의 지보."
     ),
-    definition: lh(
-      "法隆寺(ほうりゅうじ)は奈良県生駒郡斑鳩町(いかるがちょう)にある聖徳宗の総本山で、推古天皇15年(607年)に聖徳太子と推古天皇が建立したと伝わる世界最古の木造建築群。1993年に姫路城と並んで日本初の世界文化遺産として登録、世界遺産登録第1号の一つです。西院伽藍(さいいんがらん)の金堂・五重塔は7世紀後半から8世紀初頭の創建時の姿のまま約1,300年に渡って現存し、世界最古の現存木造建築としてユネスコに認定。東院伽藍の夢殿(739年)、約100棟の建造物中38棟が国宝、約4,600件の国宝・重要文化財を擁する日本仏教美術の至宝です。",
-      "Horyu-ji is the head temple of the Shotoku sect, located in Ikaruga Town, Ikoma District, Nara Prefecture. Tradition holds that it was founded by Prince Shotoku and Empress Suiko in the 15th year of Empress Suiko's reign (607 CE), and it preserves the world's oldest surviving wooden architecture. Registered in 1993 as one of Japan's first World Cultural Heritage sites (alongside Himeji Castle), it stands as one of the original UNESCO World Heritage entries. The Sai-in complex's Kondo and five-story pagoda survive from the late 7th to early 8th century — nearly 1,300 years — and are recognized by UNESCO as the world's oldest extant wooden buildings. With the To-in complex's Yumedono (Hall of Dreams, built 739), 38 of about 100 buildings designated as National Treasures, and roughly 4,600 designated cultural assets, Horyu-ji is the supreme repository of Japanese Buddhist art."
-    ),
+    definition: {
+      ja: "法隆寺(ほうりゅうじ)は奈良県生駒郡斑鳩町(いかるがちょう)にある聖徳宗の総本山で、推古天皇15年(607年)に聖徳太子と推古天皇が建立したと伝わる世界最古の木造建築群。1993年に姫路城と並んで日本初の世界文化遺産として登録、世界遺産登録第1号の一つです。西院伽藍(さいいんがらん)の金堂・五重塔は7世紀後半から8世紀初頭の創建時の姿のまま約1,300年に渡って現存し、世界最古の現存木造建築としてユネスコに認定。東院伽藍の夢殿(739年)、約100棟の建造物中38棟が国宝、約4,600件の国宝・重要文化財を擁する日本仏教美術の至宝です。",
+      en: "Horyu-ji is the head temple of the Shotoku sect, located in Ikaruga Town, Ikoma District, Nara Prefecture. Tradition holds that it was founded by Prince Shotoku and Empress Suiko in the 15th year of Empress Suiko's reign (607 CE), and it preserves the world's oldest surviving wooden architecture. Registered in 1993 as one of Japan's first World Cultural Heritage sites (alongside Himeji Castle), it stands as one of the original UNESCO World Heritage entries. The Sai-in complex's Kondo and five-story pagoda survive from the late 7th to early 8th century — nearly 1,300 years — and are recognized by UNESCO as the world's oldest extant wooden buildings. With the To-in complex's Yumedono (Hall of Dreams, built 739), 38 of about 100 buildings designated as National Treasures, and roughly 4,600 designated cultural assets, Horyu-ji is the supreme repository of Japanese Buddhist art.",
+      zh: "法隆寺(ほうりゅうじ)位于奈良县生驹郡斑鸠町(いかるがちょう)的圣德宗总本山，是推古天皇15年(607年)圣德太子与推古天皇所建造，世界最古老的木造建筑群。1993年与姫路城并列日本首个世界文化遗产登录，是世界遗产登录第1号之一。西院伽蓝(さいいんがらん)的金堂·五重塔保留7世纪后半至8世纪初创建时的原貌约1300年，被联合国教科文组织认定为世界最古的现存木造建筑。东院伽蓝的梦殿(739年)、约100栋建筑物中38栋为国宝，约4600件国宝·重要文化财，是日本佛教美术的至宝。",
+      "zh-tw": "法隆寺(ほうりゅうじ)位於奈良縣生駒郡斑鳩町(いかるがちょう)的聖德宗總本山，是推古天皇15年(607年)聖德太子與推古天皇所建造，世界最古老的木造建築群。1993年與姫路城並列日本首個世界文化遺產登錄，是世界遺產登錄第1號之一。西院伽藍(さいいんがらん)的金堂·五重塔保留7世紀後半至8世紀初創建時的原貌約1300年，被聯合國教科文組織認定為世界最古的現存木造建築。東院伽藍的夢殿(739年)、約100棟建築物中38棟為國寶，約4600件國寶·重要文化財，是日本佛教美術的至寶。",
+      ko: "호류지(ほうりゅうじ)는 나라현 이코마군 이카루가초(いかるがちょう)에 있는 쇼토쿠종의 총본산으로, 스이코 천황 15년(607년)에 쇼토쿠 태자와 스이코 천황이 건립했다고 전해지는 세계 최고(最古)의 목조 건축군. 1993년에 히메지성과 나란히 일본 최초의 세계문화유산으로 등록, 세계유산 등록 제1호 중 하나입니다. 사이인 가람(さいいんがらん)의 금당·5층탑은 7세기 후반부터 8세기 초의 창건 당시의 모습 그대로 약 1,300년에 걸쳐 현존하며, 세계 최고(最古)의 현존 목조 건축으로 유네스코에 인정. 도인 가람의 유메도노(739년), 약 100동의 건조물 중 38동이 국보, 약 4,600건의 국보·중요문화재를 거느린 일본 불교 미술의 지보입니다.",
+    },
     highlights: {
       ja: [
         "金堂(こんどう) — 7世紀建立の世界最古の木造建築、釈迦三尊像(国宝)を安置、エンタシス柱の美",
@@ -2802,6 +2853,27 @@ export const LOCATION_CONTENT = {
         "Yumedono (Hall of Dreams) and To-in Precinct — built in 739 as an octagonal hall, with the secret Guze Kannon, said to be a life-sized image of Prince Shotoku",
         "Chumon (Central Gate) — the main gate to the Sai-in Precinct, with entasis columns and two Niou (Vajra Warrior) guardians",
         "Kudara Kannon (National Treasure) — enshrined in the Daihozoin, a 2.1 m wooden Asuka-period image with a uniquely elongated form",
+      ],
+      zh: [
+        "金堂(こんどう) — 7世纪建立的世界最古木造建筑，安置释迦三尊像(国宝)，柱身收分(エンタシス)之美",
+        "五重塔(ごじゅうのとう) — 高31.5米，世界最古五重塔，1至5层屋檐比例完美",
+        "梦殿(ゆめどの)·东院伽蓝 — 739年建八角圆堂，圣德太子等身大救世观音菩萨像(秘佛)",
+        "中门(ちゅうもん) — 西院伽蓝正面门，柱身收分柱，2尊金刚力士像",
+        "百济观音像(国宝) — 大宝藏院安置，高2.1米的飞鸟时代木造佛像，独特细长之姿",
+      ],
+      "zh-tw": [
+        "金堂(こんどう) — 7世紀建立的世界最古木造建築，安置釋迦三尊像(國寶)，柱身收分(エンタシス)之美",
+        "五重塔(ごじゅうのとう) — 高31.5米，世界最古五重塔，1至5層屋檐比例完美",
+        "夢殿(ゆめどの)·東院伽藍 — 739年建八角圓堂，聖德太子等身大救世觀音菩薩像(秘佛)",
+        "中門(ちゅうもん) — 西院伽藍正面門，柱身收分柱，2尊金剛力士像",
+        "百濟觀音像(國寶) — 大寶藏院安置，高2.1米的飛鳥時代木造佛像，獨特細長之姿",
+      ],
+      ko: [
+        "금당(こんどう) — 7세기 건립된 세계 최고(最古)의 목조 건축, 석가삼존상(국보)을 안치, 엔타시스 기둥의 미",
+        "5중탑(ごじゅうのとう) — 높이 31.5m, 세계 최고(最古)의 5중탑, 1~5층 지붕의 균형이 완벽",
+        "유메도노(ゆめどの)·도인 가람 — 739년 건립된 팔각원당, 쇼토쿠 태자 등신대의 구세관음보살상(비불)",
+        "주몬(ちゅうもん) — 사이인 가람의 정면문, 엔타시스 기둥, 2체의 금강역사상",
+        "구다라관음상(국보) — 다이호조인에 안치, 높이 2.1m의 아스카 시대 목조 불상, 독특한 가늘고 긴 모습",
       ],
     },
     quickAnswers: {
@@ -2820,6 +2892,30 @@ export const LOCATION_CONTENT = {
         { q: "Best photography seasons?", a: "Post-monsoon July with blue sky + white clouds + white walls is the most vivid pairing. Persimmons in November and cherry blossoms in early April add seasonal character. Snow-clad Horyu-ji is a rare frame appearing only a few days each winter — early-morning chance shots. Pagoda and gate silhouettes shine at sunset, with the sky color changing minute by minute." },
         { q: "Recommended camera gear?", a: "①Wide angle (16–35mm) for the full pagoda and corridor view ②Telephoto (70–200mm) for tower details, brackets, and ornaments ③Standard zoom for architectural detail. Shoot it like rail-photography, framing «classic Japan.» CPL filter strengthens the contrast of persimmon-toned columns and white plaster; even low saturation conveys unique mood." },
         { q: "Combined sightseeing route?", a: "①Horyu-ji (early morning–morning) ②Horinji and Hokiji (5 min by car, three-tier pagodas) ③Chuguji (next to Horyu-ji, famous for the half-lotus Bodhisattva) ④Yakushiji and Toshodaiji (30 min by car, Nishinokyo area in Nara) ⑤Nara Park (40 min by car, Todaiji and Kasuga Taisha). A full-day route covers five Nara World Heritage sites; late afternoon brings out active deer in Nara Park." },
+      ],
+      zh: [
+        { q: "法隆寺是什么?", a: "奈良县斑鸠町的圣德宗总本山，是607年圣德太子所建造的世界最古老木造建筑群。1993年作为日本首个世界文化遗产登录，金堂·五重塔保留约1300年前创建时原貌，拥有约4600件国宝·重要文化财，是日本佛教美术的至宝。" },
+        { q: "撮影规则?", a: "境内建筑可撮影，堂内佛像基本禁拍。三脚架·闪光灯境内亦不可，请勿妨碍参拜者。早晨(8时开门)·傍晚人少光柔为绝佳撮影时间。" },
+        { q: "如何前往与拜观料?", a: "JR法隆寺站步行20分钟或乘巴士约7分钟。拜观料为西院伽蓝·大宝藏院·东院伽蓝共通券1500日元。所需时间2至3小时。京都·奈良当日往返可，京都站乘快速约45分钟。" },
+        { q: "最佳撮影季节?", a: "梅雨结束后7月青空+白云+白墙组合最鲜艳。秋柿(11月)·樱(4月初)亦为季节感被摄体。雪法隆寺为年中数次稀有构图，冬清晨运气好可拍。塔与门剪影夕阳时分迷人，天空色彩刻刻变化的瞬间为看点。" },
+        { q: "撮影器材建议?", a: "①广角(16-35mm)拍五重塔与回廊全景②长焦(70-200mm)拍塔细节·斗拱·装饰③标准变焦拍建筑细节。鉄道写真感觉切取「日本原风景」。柿渋色柱与白漆喰对比CPL滤镜强化色彩，低饱和亦独特风情。" },
+        { q: "周边观光连续?", a: "①法隆寺(早晨~上午)②法轮寺·法起寺(车5分，三重塔的三井寺)③中宫寺(法隆寺邻接，菩萨半跏像闻名)④药师寺·唐招提寺(车30分，奈良市内·西之京区)⑤奈良公园(车40分，东大寺·春日大社)。1日可巡奈良5件世界遗产撮影旅程，下午晚奈良公园鹿活泼。" },
+      ],
+      "zh-tw": [
+        { q: "法隆寺是什麼?", a: "奈良縣斑鳩町的聖德宗總本山，是607年聖德太子所建造的世界最古老木造建築群。1993年作為日本首個世界文化遺產登錄，金堂·五重塔保留約1300年前創建時原貌，擁有約4600件國寶·重要文化財，是日本佛教美術的至寶。" },
+        { q: "撮影規則?", a: "境內建築可撮影，堂內佛像基本禁拍。三腳架·閃光燈境內亦不可，請勿妨礙參拜者。早晨(8時開門)·傍晚人少光柔為絕佳撮影時間。" },
+        { q: "如何前往與拜觀料?", a: "JR法隆寺站步行20分鐘或搭巴士約7分鐘。拜觀料為西院伽藍·大寶藏院·東院伽藍共通券1500日圓。所需時間2至3小時。京都·奈良當日往返可，京都站搭快速約45分鐘。" },
+        { q: "最佳撮影季節?", a: "梅雨結束後7月青空+白雲+白牆組合最鮮豔。秋柿(11月)·櫻(4月初)亦為季節感被攝體。雪法隆寺為年中數次稀有構圖，冬清晨運氣好可拍。塔與門剪影夕陽時分迷人，天空色彩刻刻變化的瞬間為看點。" },
+        { q: "撮影器材建議?", a: "①廣角(16-35mm)拍五重塔與迴廊全景②長焦(70-200mm)拍塔細節·斗拱·裝飾③標準變焦拍建築細節。鉄道寫真感覺切取「日本原風景」。柿澀色柱與白漆喰對比CPL濾鏡強化色彩，低飽和亦獨特風情。" },
+        { q: "周邊觀光連續?", a: "①法隆寺(早晨~上午)②法輪寺·法起寺(車5分，三重塔的三井寺)③中宮寺(法隆寺鄰接，菩薩半跏像聞名)④藥師寺·唐招提寺(車30分，奈良市內·西之京區)⑤奈良公園(車40分，東大寺·春日大社)。1日可巡奈良5件世界遺產撮影旅程，下午晚奈良公園鹿活潑。" },
+      ],
+      ko: [
+        { q: "호류지란?", a: "나라현 이카루가초의 쇼토쿠종 총본산으로, 607년에 쇼토쿠 태자가 창건했다고 전해지는 세계 최고(最古)의 목조 건축군. 1993년에 일본 최초의 세계문화유산 등록, 금당·5층탑은 약 1,300년 전 창건 당시의 모습 그대로 현존하며, 약 4,600건의 국보·중요문화재를 거느린 일본 불교 미술의 지보입니다." },
+        { q: "사진 촬영 규칙은?", a: "경내 건축은 촬영 가능. 당내의 불상은 거의 촬영 금지. 삼각대·플래시는 경내에서도 불가, 참배자에게 방해되지 않도록 배려를. 이른 아침(8시 개문)·저녁은 사람이 적고 빛이 부드러운 절호의 촬영 시간입니다." },
+        { q: "가는 방법과 관람료는?", a: "JR 호류지역에서 도보 20분 또는 버스로 약 7분. 관람료는 사이인 가람·다이호조인·도인 가람의 공통권으로 1,500엔. 소요 시간 2~3시간. 교토·나라에서 당일치기 가능, 교토역에서 쾌속으로 약 45분." },
+        { q: "베스트 촬영 시즌은?", a: "장마가 끝난 7월의 푸른 하늘+흰 구름+흰 벽의 조합이 가장 선명함. 가을의 감(11월)·벚꽃(4월 초)도 계절감의 피사체. 눈 화장한 호류지는 연 수회의 희귀한 구도, 겨울 이른 아침에 운이 좋으면 찍을 수 있음. 탑과 문의 실루엣은 노을 시에 빛나며, 하늘의 색이 시시각각 변하는 순간이 볼거리." },
+        { q: "촬영 기재 추천은?", a: "①광각(16-35mm)으로 5층탑과 회랑의 전경 ②망원(70-200mm)으로 탑의 디테일·구미모노·장식 ③표준 줌으로 건축의 디테일. 철도 사진 감각으로 「일본의 원풍경」을 잘라낸다. 감색 기둥과 흰 회반죽의 대비는 CPL 필터로 색채를 강화, 저채도라도 독특한 풍정." },
+        { q: "주변의 관광 연계는?", a: "①호류지(이른 아침~오전) ②호린지·호키지(차 5분, 3중탑의 미이데라) ③주구지(호류지 인접, 보살반가상으로 유명) ④야쿠시지·토쇼다이지(차 30분, 나라 시내·니시노쿄 지역) ⑤나라 공원(차 40분, 도다이지·가스가타이샤). 하루에 나라의 세계유산 5건을 둘러보는 촬영 여정이 가능, 늦은 오후는 나라 공원의 사슴이 활발." },
       ],
     },
     faqs: [
@@ -3614,10 +3710,13 @@ export const LOCATION_CONTENT = {
       "法隆寺東院夢殿建於739年聖德太子斑鳩宮故址上的八角圓堂。中央安置秘藏救世觀音（飛鳥時代），僅春秋特別公開。均衡的八角形剪影是日本建築至寶。",
       "호류지 동원의 유메도노는 쇼토쿠 태자의 이카루가 궁터에 739년 건립된 팔각원당. 중앙에 비불 구세관음(아스카시대)을 안치하며, 봄·가을에만 특별 공개. 균형 잡힌 팔각형 실루엣은 일본 건축의 지보."
     ),
-    definition: lh(
-      "法隆寺夢殿(ほうりゅうじゆめどの)は奈良県斑鳩町にある法隆寺東院の中心建築で、天平11年(739年)に行信僧都(ぎょうしんそうず)が聖徳太子の住まい「斑鳩宮(いかるがのみや)」の遺址に建立した八角形の円堂。直径12mの八角形プラン、檜皮葺の屋根、宝珠の頂部から成る均整のとれた優美な形姿で、日本最古の八角円堂として国宝に指定されています。中央には聖徳太子の等身像と伝わる救世観音菩薩立像(秘仏、飛鳥時代の楠木一木造、像高178.8cm)を安置し、長らく白布に包まれ祟りを恐れて開帳禁止だったところ、1884年にフェノロサと岡倉天心が初めて開帳しました。春と秋の特別公開期間のみ拝観可能です。",
-      "Yumedono (the Hall of Dreams) of Horyu-ji, in Ikaruga Town, Nara Prefecture, is the central building of Horyu-ji's East Precinct. It was built in 739 by the priest Gyoshin Sozu on the site of Prince Shotoku's «Ikaruga Palace.» An octagonal hall 12 m across with a hinoki-bark-shingled roof and a jewel-shaped finial, it is the oldest octagonal hall in Japan and a National Treasure. At its center stands the Guze Kannon — said to be a life-sized image of Prince Shotoku, carved from a single block of camphor wood in the Asuka period (statue height 178.8 cm). For centuries it was wrapped in white cloth and not displayed, due to fears of curses; in 1884, Ernest Fenollosa and Tenshin Okakura unveiled it for the first time. It is visible only during limited spring and autumn openings."
-    ),
+    definition: {
+      ja: "法隆寺夢殿(ほうりゅうじゆめどの)は奈良県斑鳩町にある法隆寺東院の中心建築で、天平11年(739年)に行信僧都(ぎょうしんそうず)が聖徳太子の住まい「斑鳩宮(いかるがのみや)」の遺址に建立した八角形の円堂。直径12mの八角形プラン、檜皮葺の屋根、宝珠の頂部から成る均整のとれた優美な形姿で、日本最古の八角円堂として国宝に指定されています。中央には聖徳太子の等身像と伝わる救世観音菩薩立像(秘仏、飛鳥時代の楠木一木造、像高178.8cm)を安置し、長らく白布に包まれ祟りを恐れて開帳禁止だったところ、1884年にフェノロサと岡倉天心が初めて開帳しました。春と秋の特別公開期間のみ拝観可能です。",
+      en: "Yumedono (the Hall of Dreams) of Horyu-ji, in Ikaruga Town, Nara Prefecture, is the central building of Horyu-ji's East Precinct. It was built in 739 by the priest Gyoshin Sozu on the site of Prince Shotoku's «Ikaruga Palace.» An octagonal hall 12 m across with a hinoki-bark-shingled roof and a jewel-shaped finial, it is the oldest octagonal hall in Japan and a National Treasure. At its center stands the Guze Kannon — said to be a life-sized image of Prince Shotoku, carved from a single block of camphor wood in the Asuka period (statue height 178.8 cm). For centuries it was wrapped in white cloth and not displayed, due to fears of curses; in 1884, Ernest Fenollosa and Tenshin Okakura unveiled it for the first time. It is visible only during limited spring and autumn openings.",
+      zh: "法隆寺梦殿(ほうりゅうじゆめどの)位于奈良县斑鸠町法隆寺东院中心建筑，是天平11年(739年)行信僧都(ぎょうしんそうず)在圣德太子住所「斑鸠宫(いかるがのみや)」遗址建立的八角形圆堂。直径12米的八角形布局，桧皮葺屋顶，宝珠顶部组成的均衡优美形姿，作为日本最古老八角圆堂被指定为国宝。中央安置传为圣德太子等身像的救世观音菩萨立像(秘佛，飞鸟时代楠木一木造，像高178.8厘米)，长期以白布包裹因恐祟祟而开帐禁止，至1884年由费诺罗萨与冈仓天心首次开帐。仅春秋特别公开期间可参拜。",
+      "zh-tw": "法隆寺夢殿(ほうりゅうじゆめどの)位於奈良縣斑鳩町法隆寺東院中心建築，是天平11年(739年)行信僧都(ぎょうしんそうず)在聖德太子住所「斑鳩宮(いかるがのみや)」遺址建立的八角形圓堂。直徑12米的八角形佈局，檜皮葺屋頂，寶珠頂部組成的均衡優美形姿，作為日本最古老八角圓堂被指定為國寶。中央安置傳為聖德太子等身像的救世觀音菩薩立像(秘佛，飛鳥時代楠木一木造，像高178.8厘米)，長期以白布包裹因恐祟祟而開帳禁止，至1884年由費諾羅薩與岡倉天心首次開帳。僅春秋特別公開期間可參拜。",
+      ko: "호류지 유메도노(ほうりゅうじゆめどの)는 나라현 이카루가초에 있는 호류지 동원의 중심 건축으로, 덴표 11년(739년)에 교신 소즈(ぎょうしんそうず)가 쇼토쿠 태자의 거처 「이카루가노미야(いかるがのみや)」 유적지에 건립한 팔각형의 원당. 지름 12m의 팔각형 평면, 히와다부키 지붕, 보주의 정상부로 이루어진 균형 잡힌 우아한 형상으로, 일본 최고(最古)의 팔각원당으로 국보로 지정되어 있습니다. 중앙에는 쇼토쿠 태자의 등신상이라 전해지는 구세관음보살 입상(비불, 아스카 시대의 녹나무 일목조, 상 높이 178.8cm)을 안치하며, 오랫동안 흰 천에 싸여 저주를 두려워하여 개장 금지였던 것을, 1884년에 페놀로사와 오카쿠라 텐신이 처음 개장했습니다. 봄과 가을의 특별 공개 기간에만 참배 가능합니다.",
+    },
     highlights: {
       ja: [
         "夢殿外観 — 八角形プラン直径12m、均整の取れた檜皮葺の優美な姿、外観は通年撮影可",
@@ -3632,6 +3731,27 @@ export const LOCATION_CONTENT = {
         "Chuguji and the Edono of the East Precinct — adjacent to Yumedono, displaying replicas of the Tenjukoku Shucho thought to have been designed by Prince Shotoku",
         "Kamakura-Era Renovation — a worship hall was added in the 1230s; the current building preserves Tenpyo design while bearing Kamakura-period touches",
         "Spring and Autumn Special Openings — Spring April 11–May 18, Autumn October 22–November 22; the inner sanctum and Guze Kannon become viewable up close",
+      ],
+      zh: [
+        "梦殿外观 — 八角形布局直径12米，均衡的桧皮葺优美姿态，外观全年可撮影",
+        "救世观音菩萨立像(国宝，秘佛) — 飞鸟时代楠木一木造，像高178.8厘米，传为圣德太子等身像",
+        "中宫寺·绘殿(东院伽蓝) — 邻接梦殿，展示传为圣德太子作天寿国绣帐的复制品",
+        "镰仓时代补修 — 1230年代礼堂增建，现建筑保持天平意匠的同时含镰仓手法",
+        "春·秋特别公开 — 春期4月11日至5月18日，秋期10月22日至11月22日，内堂与救世观音可近距参拜",
+      ],
+      "zh-tw": [
+        "夢殿外觀 — 八角形佈局直徑12米，均衡的檜皮葺優美姿態，外觀全年可撮影",
+        "救世觀音菩薩立像(國寶，秘佛) — 飛鳥時代楠木一木造，像高178.8厘米，傳為聖德太子等身像",
+        "中宮寺·繪殿(東院伽藍) — 鄰接夢殿，展示傳為聖德太子作天壽國繡帳的複製品",
+        "鎌倉時代補修 — 1230年代禮堂增建，現建築保持天平意匠的同時含鎌倉手法",
+        "春·秋特別公開 — 春期4月11日至5月18日，秋期10月22日至11月22日，內堂與救世觀音可近距參拜",
+      ],
+      ko: [
+        "유메도노 외관 — 팔각형 평면 지름 12m, 균형 잡힌 히와다부키의 우아한 모습, 외관은 연중 촬영 가능",
+        "구세관음보살 입상(국보, 비불) — 아스카 시대의 녹나무 일목조, 상 높이 178.8cm, 쇼토쿠 태자의 등신상이라 전해짐",
+        "주구지·에덴(동원 가람) — 유메도노에 인접, 쇼토쿠 태자 작이라 전해지는 텐주코쿠 슈초의 복제를 전시",
+        "가마쿠라 시대의 보수 — 1230년대에 라이도가 증축되어, 현재의 건물은 덴표의 의장을 유지하면서 가마쿠라의 손길이 들어감",
+        "봄·가을 특별 공개 — 봄 4월 11일~5월 18일, 가을 10월 22일~11월 22일, 내진과 구세관음을 가까이서 참배",
       ],
     },
     quickAnswers: {
@@ -3650,6 +3770,30 @@ export const LOCATION_CONTENT = {
         { q: "Architectural beauty of the octagonal hall?", a: "Yumedono is Japan's oldest octagonal hall, ~12 m across and 9.5 m tall. The octagonal plan was chosen as a memorial form to venerate Prince Shotoku — an unusual shape distilling Tenpyo-era wooden architecture: graceful hinoki-bark roofing, eave brackets, and fan rafters. The current form was extended with a worship hall in the 1230s; the exterior reveals balanced beauty from any of its four cardinal angles." },
         { q: "The Shotoku legend and the Fenollosa unveiling?", a: "Said to be Prince Shotoku's life-sized portrait, the Guze Kannon was sealed as «a hidden statue whose doors must never open» for nearly a thousand years until the Meiji era. In 1884, the American Orientalist Ernest Fenollosa and his student Tenshin Okakura succeeded in opening it, unwinding over 500 bandages — a turning point in Japanese art history. Still shown only in spring and autumn; photography of the statue is strictly forbidden." },
         { q: "Nearby attractions?", a: "①Yumedono (early-morning to morning, octagonal exterior) ②Chuguji (adjacent, National Treasure half-lotus Bodhisattva) ③Horyu-ji West Precinct (Kondo and pagoda) ④Horinji and Hokiji (5 min by car, sister-temple three-tier pagodas) ⑤Central Nara (30 min by car, Todaiji and Kasuga Taisha). A full-day five-World-Heritage route — Yumedono sits at the deepest end of the East Precinct, ideal as the final, contemplative stop." },
+      ],
+      zh: [
+        { q: "法隆寺梦殿是什么?", a: "奈良县斑鸠町法隆寺东院中心建筑，739年圣德太子斑鸠宫迹上建立的日本最古八角圆堂(国宝)。安置传为圣德太子等身的秘佛·救世观音(飞鸟时代楠木一木造)，春秋限定公开吸引世界各地参拜者。" },
+        { q: "救世观音公开时期?", a: "春期4月11日至5月18日、秋期10月22日至11月22日年2回限定。1884年费诺罗萨与冈仓天心初开帐之秘佛，像内部禁拍。建筑外观与境内全年可撮影。" },
+        { q: "如何前往与拜观料?", a: "JR法隆寺站步行20分钟或乘巴士7分钟。法隆寺西院伽蓝共通券1500日元(含东院伽蓝·梦殿)。所需时间东院伽蓝单看30分钟，整个法隆寺2至3小时。京都站乘快速约45分钟当日往返圈内。" },
+        { q: "八角圆堂的建筑美?", a: "梦殿是日本最古八角圆堂，直径约12米·高约9.5米。八角形布局是为礼拜圣德太子的纪念建筑选择的特殊形状，桧皮葺优美屋顶、檐下斗拱、扇垂木等天平时代木造建筑技术之精华。1230年代镰仓时代礼堂增建为现今之姿，外观四方任一角度皆可撮影均衡之美。" },
+        { q: "圣德太子传说与费诺罗萨开帐?", a: "传为圣德太子等身像的救世观音，明治时代前以「绝不可开门的秘佛」之名近千年封印。1884年(明治17年)，美籍东洋美术研究家费诺罗萨与弟子冈仓天心成功初开帐，解开500余条绷带显现真身的瞬间成为日本美术史转机。今仅春秋公开，严禁撮影。" },
+        { q: "周边看点?", a: "①梦殿(早晨~上午，八角形外观)②中宫寺(邻接，菩萨半跏像为国宝)③法隆寺西院伽蓝(金堂·五重塔)④法轮寺·法起寺(车5分，姊妹寺院的三重塔)⑤奈良市内(车30分，东大寺·春日大社)。1日可巡奈良5件世界遗产撮影旅程，梦殿位于东院伽蓝最深处宜最后于静寂中访问。" },
+      ],
+      "zh-tw": [
+        { q: "法隆寺夢殿是什麼?", a: "奈良縣斑鳩町法隆寺東院中心建築，739年聖德太子斑鳩宮跡上建立的日本最古八角圓堂(國寶)。安置傳為聖德太子等身的秘佛·救世觀音(飛鳥時代楠木一木造)，春秋限定公開吸引世界各地參拜者。" },
+        { q: "救世觀音公開時期?", a: "春期4月11日至5月18日、秋期10月22日至11月22日年2回限定。1884年費諾羅薩與岡倉天心初開帳之秘佛，像內部禁拍。建築外觀與境內全年可撮影。" },
+        { q: "如何前往與拜觀料?", a: "JR法隆寺站步行20分鐘或搭巴士7分鐘。法隆寺西院伽藍共通券1500日圓(含東院伽藍·夢殿)。所需時間東院伽藍單看30分鐘，整個法隆寺2至3小時。京都站搭快速約45分鐘當日往返圈內。" },
+        { q: "八角圓堂的建築美?", a: "夢殿是日本最古八角圓堂，直徑約12米·高約9.5米。八角形佈局是為禮拜聖德太子的紀念建築選擇的特殊形狀，檜皮葺優美屋頂、檐下斗拱、扇垂木等天平時代木造建築技術之精華。1230年代鎌倉時代禮堂增建為現今之姿，外觀四方任一角度皆可撮影均衡之美。" },
+        { q: "聖德太子傳說與費諾羅薩開帳?", a: "傳為聖德太子等身像的救世觀音，明治時代前以「絕不可開門的秘佛」之名近千年封印。1884年(明治17年)，美籍東洋美術研究家費諾羅薩與弟子岡倉天心成功初開帳，解開500餘條繃帶顯現真身的瞬間成為日本美術史轉機。今僅春秋公開，嚴禁撮影。" },
+        { q: "周邊看點?", a: "①夢殿(早晨~上午，八角形外觀)②中宮寺(鄰接，菩薩半跏像為國寶)③法隆寺西院伽藍(金堂·五重塔)④法輪寺·法起寺(車5分，姊妹寺院的三重塔)⑤奈良市內(車30分，東大寺·春日大社)。1日可巡奈良5件世界遺產撮影旅程，夢殿位於東院伽藍最深處宜最後於靜寂中訪問。" },
+      ],
+      ko: [
+        { q: "호류지 유메도노란?", a: "나라현 이카루가초의 호류지 동원의 중심 건축으로, 739년에 쇼토쿠 태자의 이카루가 궁터에 건립된 일본 최고(最古)의 팔각원당(국보). 쇼토쿠 태자 등신대로 전해지는 비불·구세관음(아스카 시대의 녹나무 일목조)을 안치하며, 봄·가을 한정 공개로 전 세계에서 참배자가 찾습니다." },
+        { q: "구세관음의 공개 시기는?", a: "봄 4월 11일~5월 18일, 가을 10월 22일~11월 22일의 연 2회 한정. 1884년에 페놀로사와 오카쿠라 텐신이 처음 개장한 비불로, 상의 내부 촬영은 금지입니다. 건물 외관과 경내는 연중 촬영 가능." },
+        { q: "가는 방법과 관람료는?", a: "JR 호류지역에서 도보 20분 또는 버스 7분. 호류지 사이인 가람과 공통권으로 1,500엔(도인 가람·유메도노 포함). 소요 시간은 도인 가람만 30분, 호류지 전체 2~3시간. 교토역에서 쾌속으로 약 45분의 당일치기 권내." },
+        { q: "팔각원당의 건축미는?", a: "유메도노는 일본 최고(最古)의 팔각원당으로, 지름 약 12m·높이 약 9.5m. 팔각형 평면은 쇼토쿠 태자를 예배하는 기념 건축으로 선택된 특수한 형상으로, 히와다부키의 우아한 지붕, 처마 밑의 구미모노, 부채 모양의 다루키 등 덴표 시대 목조 건축 기술의 정수가 응축. 1230년대 가마쿠라 시대에 라이도가 증축되어 현재의 모습이 되었으며, 외관은 사방 어느 각도에서도 균형미를 촬영할 수 있습니다." },
+        { q: "쇼토쿠 태자 전설과 페놀로사의 개장은?", a: "쇼토쿠 태자의 등신상이라 전해지는 구세관음은 메이지 시대까지 「결코 문을 열어서는 안 되는 비불」로 천 년 가까이 봉인되어 있었음. 1884년(메이지 17년), 미국인 동양미술 연구가 어니스트 페놀로사와 제자 오카쿠라 텐신이 첫 개장에 성공, 500개 이상의 붕대를 풀고 모습을 드러낸 순간이 일본 미술사의 전기가 되었습니다. 지금도 봄·가을에만 공개, 사진 촬영은 엄금." },
+        { q: "주변의 볼거리는?", a: "①유메도노(이른 아침~오전, 팔각형 외관) ②주구지(인접, 보살반가상이 국보) ③호류지 사이인 가람(금당·5층탑) ④호린지·호키지(차 5분, 자매 사원의 3중탑) ⑤나라 시내(차 30분, 도다이지·가스가타이샤). 하루에 나라의 세계유산 5건을 둘러보는 촬영 여정, 유메도노는 도인 가람의 가장 깊숙한 곳에 있으므로 마지막에 정적 속에서 방문하는 것이 좋음." },
       ],
     },
     faqs: [
