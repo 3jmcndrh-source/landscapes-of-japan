@@ -2603,10 +2603,13 @@ export const LOCATION_CONTENT = {
       "仁淀淵是仁淀川水系枝川川上游的神秘水潭。陽光灑下時水面呈翡翠至鈷藍「仁淀藍」。當地視為水神棲息地，禁止戲水與飲食。",
       "니코부치는 니요도강 수계 에다가와강 상류의 신비한 못. 햇빛이 수면에 비치면 비취~코발트블루의 '니요도 블루'가 나타납니다. 현지에서는 물의 신이 사는 신성한 장소로 여겨지며 수영·음식은 금지."
     ),
-    definition: lh(
-      "にこ淵(にこぶち)は高知県吾川郡いの町、仁淀川水系の支流・枝川川(えだがわがわ)上流にある神秘の淵で、日本最後の清流と称される仁淀川の透明度を最も鮮明に体現する場所。太陽光が水面に差し込む条件が揃うと、翡翠色からコバルトブルーへと変わる「仁淀ブルー(におどブルー)」と呼ばれる神秘の色彩を見せます。地元では古来から水神が棲む神聖な場所として崇められ、水着や入水・飲食・キャンプは全面禁止。アクセスは駐車場から急な階段(約10分)を下る必要があり、滑らない靴が必須です。",
-      "Nikobuchi is a sacred pool on the upper Edagawa River — a tributary of the Niyodo River system — in Ino Town, Agawa District, Kochi Prefecture. It most vividly embodies the transparency of the Niyodo, often called Japan's last truly clear river. When sunlight strikes the water under the right conditions, it transforms from jade green to cobalt blue — a phenomenon known as «Niyodo Blue.» Locally revered as the dwelling of a water deity, the pool prohibits swimming, eating, and camping. Access requires descending steep stairs (about 10 minutes) from the parking lot — non-slip footwear is essential."
-    ),
+    definition: {
+      ja: "にこ淵(にこぶち)は高知県吾川郡いの町、仁淀川水系の支流・枝川川(えだがわがわ)上流にある神秘の淵で、日本最後の清流と称される仁淀川の透明度を最も鮮明に体現する場所。太陽光が水面に差し込む条件が揃うと、翡翠色からコバルトブルーへと変わる「仁淀ブルー(におどブルー)」と呼ばれる神秘の色彩を見せます。地元では古来から水神が棲む神聖な場所として崇められ、水着や入水・飲食・キャンプは全面禁止。アクセスは駐車場から急な階段(約10分)を下る必要があり、滑らない靴が必須です。",
+      en: "Nikobuchi is a sacred pool on the upper Edagawa River — a tributary of the Niyodo River system — in Ino Town, Agawa District, Kochi Prefecture. It most vividly embodies the transparency of the Niyodo, often called Japan's last truly clear river. When sunlight strikes the water under the right conditions, it transforms from jade green to cobalt blue — a phenomenon known as «Niyodo Blue.» Locally revered as the dwelling of a water deity, the pool prohibits swimming, eating, and camping. Access requires descending steep stairs (about 10 minutes) from the parking lot — non-slip footwear is essential.",
+      zh: "仁淀渊(にこぶち)位于高知县吾川郡伊野町，仁淀川水系支流枝川川(えだがわがわ)上游的神秘水渊，是日本最后的清流仁淀川透明度最鲜明的体现地。太阳光照入水面条件齐备时，呈现从翡翠色变为钴蓝的「仁淀蓝(におどブルー)」神秘色彩。当地古来视为水神栖息神圣之地，泳衣·入水·饮食·露营全面禁止。从停车场需下急阶梯(约10分钟)，防滑鞋必备。",
+      "zh-tw": "仁淀淵(にこぶち)位於高知縣吾川郡伊野町，仁淀川水系支流枝川川(えだがわがわ)上游的神秘水淵，是日本最後的清流仁淀川透明度最鮮明的體現地。太陽光照入水面條件齊備時，呈現從翡翠色變為鈷藍的「仁淀藍(におどブルー)」神秘色彩。當地古來視為水神棲息神聖之地，泳衣·入水·飲食·露營全面禁止。從停車場需下急階梯(約10分鐘)，防滑鞋必備。",
+      ko: "니코부치(にこぶち)는 고치현 아가와군 이노초의 니요도강 수계 지류·에다가와강(えだがわがわ) 상류에 있는 신비의 못으로, 일본 최후의 청류로 불리는 니요도강의 투명도를 가장 선명하게 구현하는 장소. 햇빛이 수면에 비치는 조건이 갖춰지면 비취색에서 코발트블루로 변하는 「니요도 블루(におどブルー)」라 불리는 신비의 색채를 보입니다. 현지에서는 예로부터 물의 신이 사는 신성한 장소로 숭배되어, 수영복·입수·음식·캠핑은 전면 금지. 액세스는 주차장에서 가파른 계단(약 10분)을 내려가야 하므로 미끄럽지 않은 신발이 필수입니다.",
+    },
     highlights: {
       ja: [
         "仁淀ブルーの水面 — 晴天正午前後に最も濃い青、PLフィルターで反射を抑えるとさらに深い色合いに",
@@ -2621,6 +2624,27 @@ export const LOCATION_CONTENT = {
         "Surrounding nature — the headwaters of the Niyodo, mossy boulders, primeval forest; mist and moss after rain are otherworldly",
         "Photography rules — be considerate with tripods when busy, no underwater photography, drones prohibited; respect local protocols",
         "Access difficulty — about 1 hour by car from Kochi City; nearest station is Tosa Kure, with a rental car strongly recommended",
+      ],
+      zh: [
+        "仁淀蓝水面 — 晴天正午前后蓝最浓，PL滤镜抑反射更深色调",
+        "急阶梯(约10分) — 停车场至渊100级以上急阶梯，易滑需注意",
+        "周边自然 — 仁淀川源流清流，苔生岩，原生林，雨后雾与苔梦幻",
+        "撮影规则 — 三脚拥挤时顾及，水下撮影不可，无人机禁，尊重本地规则",
+        "前往难度 — 高知市开车1小时，最近车站土佐久礼站，建议租车",
+      ],
+      "zh-tw": [
+        "仁淀藍水面 — 晴天正午前後藍最濃，PL濾鏡抑反射更深色調",
+        "急階梯(約10分) — 停車場至淵100級以上急階梯，易滑需注意",
+        "周邊自然 — 仁淀川源流清流，苔生岩，原生林，雨後霧與苔夢幻",
+        "撮影規則 — 三腳擁擠時顧及，水下撮影不可，無人機禁，尊重本地規則",
+        "前往難度 — 高知市開車1小時，最近車站土佐久禮站，建議租車",
+      ],
+      ko: [
+        "니요도 블루의 수면 — 맑은 날 정오 전후가 가장 진한 푸름, PL 필터로 반사를 억제하면 더 깊은 색조",
+        "가파른 계단(약 10분) — 주차장에서 못까지 100계단 이상의 가파른 계단, 미끄러우니 주의",
+        "주변의 자연 — 니요도강 원류의 청류, 이끼 낀 바위, 원생림, 비 온 후 안개와 이끼가 환상적",
+        "촬영 규칙 — 삼각대는 혼잡 시 배려, 수중 촬영 불가, 드론 금지, 현지의 규칙을 존중",
+        "액세스 난이도 — 고치시에서 차로 1시간, 최근역은 도사쿠레역, 렌터카 추천",
       ],
     },
     quickAnswers: {
@@ -2639,6 +2663,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended camera gear?", a: "Polarizing filter is essential — cutting surface reflection deepens the blue. Wide angle (16–35mm) for the whole pool and falls; standard zoom (24–105mm) for water surface detail; telephoto for waterfall spray. Tripods OK but don't block paths. Slow shutter (1/4s) reveals water motion." },
         { q: "Other Niyodo Blue spots nearby?", a: "①Yasui Gorge (30 min by car, sequence of blue pools with maintained trails) ②Nakatsu Gorge (Uryu Falls, autumn foliage) ③Various less-known pools in the upper Agawa system (locals' secret) ④Sinkabashi (sinking bridges) at the Niyodo's mouth. The whole Niyodo basin is a treasury of blue — a half-to-full-day drive can visit several pools." },
         { q: "Best approach season?", a: "May to October: water warmer, bluest, peaking July–August. Pair with new greenery (May) or autumn foliage (November) for stunning combinations. Winter (Dec–Feb) sees lower water from leaf-fall and slightly muted blue, but the silence intensifies. Three to five days of dry weather after rain is optimal." },
+      ],
+      zh: [
+        { q: "仁淀渊是什么?", a: "高知县伊野町，仁淀川水系·枝川川上游的神秘水渊。日本最后的清流仁淀川透明度最鲜明体现的「仁淀蓝」圣地，当地视为水神栖息神圣之地。" },
+        { q: "蓝色明显的时期?", a: "晴天正午前后(10至14时)，尤夏至初秋。雨翌日水量多浊故晴天连续为理想。PL滤镜必备，水面反射抑制色彩更深。" },
+        { q: "前往与注意点?", a: "高知市开车1小时，停车场急阶梯约10分钟徒步。易滑必备防滑鞋。泳衣·入水·饮食·露营·无人机全面禁，本地圣地静谧撮影。" },
+        { q: "撮影器材推荐?", a: "PL滤镜必备(切水面反射蓝色更浓)。广角(16-35mm)拍渊全体与瀑布，标准变焦(24-105mm)拍水面细节，长焦切瀑布水花部分。三脚架OK但勿妨他人通行。慢门(1/4秒)亦可拍水流表情。" },
+        { q: "周边其他仁淀蓝点?", a: "①安居溪谷(车30分，连续青渊，步道整备)②中津溪谷(雨龙瀑，红叶名所)③吾川川上游各渊(本地知秘境)④仁淀川河口沈下桥。仁淀川全域为青之宝库，半日至1日驾车可巡多处。" },
+        { q: "最佳前往时期?", a: "5至10月水温升蓝最大，尤7至8月深蓝。春新绿(5月)+蓝、秋红叶(11月)+蓝组合亦美。冬(12至2月)周边落叶水量减蓝稍弱但静寂增。雨后3至5日晴天续为最佳。" },
+      ],
+      "zh-tw": [
+        { q: "仁淀淵是什麼?", a: "高知縣伊野町，仁淀川水系·枝川川上游的神秘水淵。日本最後的清流仁淀川透明度最鮮明體現的「仁淀藍」聖地，當地視為水神棲息神聖之地。" },
+        { q: "藍色明顯的時期?", a: "晴天正午前後(10至14時)，尤夏至初秋。雨翌日水量多濁故晴天連續為理想。PL濾鏡必備，水面反射抑制色彩更深。" },
+        { q: "前往與注意點?", a: "高知市開車1小時，停車場急階梯約10分鐘徒步。易滑必備防滑鞋。泳衣·入水·飲食·露營·無人機全面禁，本地聖地靜謐撮影。" },
+        { q: "撮影器材推薦?", a: "PL濾鏡必備(切水面反射藍色更濃)。廣角(16-35mm)拍淵全體與瀑布，標準變焦(24-105mm)拍水面細節，長焦切瀑布水花部分。三腳架OK但勿妨他人通行。慢門(1/4秒)亦可拍水流表情。" },
+        { q: "周邊其他仁淀藍點?", a: "①安居溪谷(車30分，連續青淵，步道整備)②中津溪谷(雨龍瀑，紅葉名所)③吾川川上游各淵(本地知秘境)④仁淀川河口沈下橋。仁淀川全域為青之寶庫，半日至1日駕車可巡多處。" },
+        { q: "最佳前往時期?", a: "5至10月水溫升藍最大，尤7至8月深藍。春新綠(5月)+藍、秋紅葉(11月)+藍組合亦美。冬(12至2月)周邊落葉水量減藍稍弱但靜寂增。雨後3至5日晴天續為最佳。" },
+      ],
+      ko: [
+        { q: "니코부치란?", a: "고치현 이노초, 니요도강 수계·에다가와강 상류의 신비한 못. 일본 최후의 청류로 불리는 니요도강의 투명도를 가장 선명하게 구현하는 「니요도 블루」의 성지로, 현지에서는 물의 신이 사는 신성한 장소로 숭배되고 있습니다." },
+        { q: "푸른빛이 잘 나오는 시기는?", a: "맑은 날 정오 전후(10~14시), 특히 여름~초가을. 비 온 다음날은 수량이 많고 탁해지므로 맑은 날이 연속되는 것이 이상적. PL 필터 필휴, 수면 반사를 억제하면 색이 깊어집니다." },
+        { q: "가는 방법과 주의점은?", a: "고치시에서 차로 1시간, 주차장에서 가파른 계단 약 10분 도보. 미끄러우니 미끄럼 방지 신발 필수. 수영복·입수·음식·캠핑·드론은 전면 금지, 현지의 성지로서 조용히 촬영해주세요." },
+        { q: "촬영 기재 추천은?", a: "PL 필터 필휴(수면 반사 컷으로 푸른색이 진해짐). 광각(16-35mm)으로 못 전체와 폭포를, 표준 줌(24-105mm)으로 수면의 디테일, 망원으로 폭포의 샤워 부분을 잘라냄. 삼각대는 OK이지만 다른 사람의 통행을 방해하지 말 것. 슬로우 셔터(1/4초)로 물의 흐름의 표정도 찍을 수 있음." },
+        { q: "주변의 다른 니요도 블루 스팟은?", a: "①야스이 계곡(차로 30분, 푸른 못이 연속, 산책로 정비) ②나카쓰 계곡(우류 폭포, 단풍 명소) ③아가와강 상류의 각 못(현지인만 아는 비경) ④니요도강 하구의 침하교. 니코부치뿐만 아니라 니요도강 전역이 푸름의 보고, 반나절~1일에 여러 푸름을 도는 드라이브가 가능합니다." },
+        { q: "베스트 어프로치 시기는?", a: "5~10월이 수온 상승으로 푸름 최대, 특히 7~8월이 깊은 푸름. 봄의 신록(5월)+푸름, 가을의 단풍(11월)+푸름의 조합도 아름다움. 겨울(12~2월)은 주변의 낙엽으로 수량 감소, 푸름도 다소 절제되지만 정적감이 증가. 비 온 후 3~5일의 맑은 날씨가 최적입니다." },
       ],
     },
     faqs: [
@@ -2852,10 +2900,13 @@ export const LOCATION_CONTENT = {
       "名越屋沈下橋橫跨仁淀川。無護欄以防洪水沖走，樸素造型與清流仁淀川共構日本原風景。",
       "나고야 침하교는 니요도강에 놓인 침하교. 증수 시 침수되어 다리가 쓸려가지 않도록 난간 없이 소박하게 지어졌습니다. 맑은 니요도강 풍경과 어우러져 일본 원풍경의 상징적 피사체."
     ),
-    definition: lh(
-      "名越屋沈下橋(なごやちんかばし)は高知県吾川郡いの町、日本最後の清流と称される仁淀川(によどがわ、全長124km)に架かる全長191m・幅2.5mの沈下橋(ちんかばし)で、1965年(昭和40年)架橋。沈下橋とは増水時に水没することで橋桁・橋脚に水流の抵抗を受けず流失を防ぐ独特の構造の橋で、欄干がないシンプルな橋面が特徴。仁淀川には大小48本の沈下橋が架かりますが、名越屋沈下橋はその代表格で、橋の下を流れる「仁淀ブルー」の透明な川面、河原の石、対岸の山々が織りなす景色は日本の原風景そのもの。地元では生活道として現役で使用される橋上を、車・自転車・歩行者が共用する素朴な日常風景です。",
-      "Nagoya Submersible Bridge (Nagoya Chinkabashi), located in Ino Town, Agawa District, Kochi Prefecture, is a 191 m long, 2.5 m wide submersible bridge spanning the 124 km Niyodo River — Japan's «last clear river» — built in 1965 (Showa 40). Submersible bridges (chinkabashi) are uniquely engineered to flood with rising water rather than resist the current, preventing the bridge from being swept away; they have no railings, only a simple deck. The Niyodo carries 48 chinkabashi of various sizes; Nagoya is the most representative. Beneath it flows transparent «Niyodo Blue» water, with riverside stones and mountains on the far bank forming a scene that is the very picture of rural Japan. Locally still in active use as a road, with cars, bicycles, and pedestrians sharing the deck, it remains an unfussy daily-life landscape."
-    ),
+    definition: {
+      ja: "名越屋沈下橋(なごやちんかばし)は高知県吾川郡いの町、日本最後の清流と称される仁淀川(によどがわ、全長124km)に架かる全長191m・幅2.5mの沈下橋(ちんかばし)で、1965年(昭和40年)架橋。沈下橋とは増水時に水没することで橋桁・橋脚に水流の抵抗を受けず流失を防ぐ独特の構造の橋で、欄干がないシンプルな橋面が特徴。仁淀川には大小48本の沈下橋が架かりますが、名越屋沈下橋はその代表格で、橋の下を流れる「仁淀ブルー」の透明な川面、河原の石、対岸の山々が織りなす景色は日本の原風景そのもの。地元では生活道として現役で使用される橋上を、車・自転車・歩行者が共用する素朴な日常風景です。",
+      en: "Nagoya Submersible Bridge (Nagoya Chinkabashi), located in Ino Town, Agawa District, Kochi Prefecture, is a 191 m long, 2.5 m wide submersible bridge spanning the 124 km Niyodo River — Japan's «last clear river» — built in 1965 (Showa 40). Submersible bridges (chinkabashi) are uniquely engineered to flood with rising water rather than resist the current, preventing the bridge from being swept away; they have no railings, only a simple deck. The Niyodo carries 48 chinkabashi of various sizes; Nagoya is the most representative. Beneath it flows transparent «Niyodo Blue» water, with riverside stones and mountains on the far bank forming a scene that is the very picture of rural Japan. Locally still in active use as a road, with cars, bicycles, and pedestrians sharing the deck, it remains an unfussy daily-life landscape.",
+      zh: "名越屋沈下桥(なごやちんかばし)位于高知县吾川郡伊野町，日本最后的清流仁淀川(によどがわ，全长124公里)上架设的全长191米·宽2.5米的沈下桥(ちんかばし)，1965年(昭和40年)架桥。沈下桥即增水时浸没让桥桁·桥脚不受水流抵抗以防流失的独特结构桥，无护栏简朴桥面为特征。仁淀川架有大小48座沈下桥，名越屋沈下桥为代表，桥下流淌的「仁淀蓝」透明川面、河原石、对岸山织就的景色就是日本原风景。本地作为生活道现役使用，桥上车·自行车·步行者共用的朴素日常风景。",
+      "zh-tw": "名越屋沈下橋(なごやちんかばし)位於高知縣吾川郡伊野町，日本最後的清流仁淀川(によどがわ，全長124公里)上架設的全長191米·寬2.5米的沈下橋(ちんかばし)，1965年(昭和40年)架橋。沈下橋即增水時浸沒讓橋桁·橋腳不受水流抵抗以防流失的獨特結構橋，無護欄簡樸橋面為特徵。仁淀川架有大小48座沈下橋，名越屋沈下橋為代表，橋下流淌的「仁淀藍」透明川面、河原石、對岸山織就的景色就是日本原風景。本地作為生活道現役使用，橋上車·自行車·步行者共用的樸素日常風景。",
+      ko: "나고야 침하교(なごやちんかばし)는 고치현 아가와군 이노초, 일본 최후의 청류로 불리는 니요도강(によどがわ, 전장 124km)에 놓인 전장 191m·폭 2.5m의 침하교(ちんかばし)로, 1965년(쇼와 40년) 가설. 침하교란 증수 시 침수됨으로써 다리 거더·교각이 수류의 저항을 받지 않고 유실을 막는 독특한 구조의 다리로, 난간 없는 심플한 다리 면이 특징. 니요도강에는 크고 작은 48개의 침하교가 놓여 있지만, 나고야 침하교는 그 대표격으로, 다리 아래 흐르는 「니요도 블루」의 투명한 강 수면, 강가의 돌, 건너편의 산들이 짜내는 경치는 일본의 원풍경 그 자체. 현지에서는 생활 도로로 현역 사용되는 다리 위를, 차·자전거·보행자가 공용하는 소박한 일상 풍경입니다.",
+    },
     highlights: {
       ja: [
         "全長191m・欄干なし — 沈下橋特有のシンプルな造形、増水時に水没する独特の機能美",
@@ -2870,6 +2921,27 @@ export const LOCATION_CONTENT = {
         "Shared with cars and bicycles — still active as a local road, with everyday life lending the frame its charm",
         "Four seasons from fresh greens to autumn colors — May's new growth, summer river play (July–August), October–November foliage, winter morning mist",
         "A network of submersible bridges — the Niyodo carries 48 chinkabashi; consider combining Sagawa, Renkon, or Ogawa Submersible Bridges",
+      ],
+      zh: [
+        "全长191米·无护栏 — 沈下桥特有简朴造型，增水时水没的独特功能美",
+        "仁淀蓝 — 日本最后的清流仁淀川的透明川面，越桥俯瞰翡翠绿",
+        "车·自行车共用 — 本地生活道现役，本地日常风景入画",
+        "新绿至红叶四季 — 5月新绿、7至8月戏水、10至11月红叶、冬晨雾",
+        "周边沈下桥网 — 仁淀川48座沈下桥，佐川·莲根·小川等可组合",
+      ],
+      "zh-tw": [
+        "全長191米·無護欄 — 沈下橋特有簡樸造型，增水時水沒的獨特功能美",
+        "仁淀藍 — 日本最後的清流仁淀川的透明川面，越橋俯瞰翡翠綠",
+        "車·自行車共用 — 本地生活道現役，本地日常風景入畫",
+        "新綠至紅葉四季 — 5月新綠、7至8月戲水、10至11月紅葉、冬晨霧",
+        "周邊沈下橋網 — 仁淀川48座沈下橋，佐川·蓮根·小川等可組合",
+      ],
+      ko: [
+        "전장 191m·난간 없음 — 침하교 특유의 심플한 조형, 증수 시 침수되는 독특한 기능미",
+        "니요도 블루 — 일본 최후의 청류 니요도강의 투명한 강 수면, 다리 너머 내려다보는 에메랄드 그린",
+        "차·자전거와 공용 — 현지의 생활 도로로 현역, 로컬한 일상 풍경이 화면에 들어옴",
+        "신록~단풍의 사계 — 5월의 신록, 7~8월의 물놀이, 10~11월의 단풍, 겨울의 새벽 안개",
+        "주변의 침하교 네트워크 — 니요도강에는 48개의 침하교, 사가와·렌콘·오가와 침하교 등 조합 가능",
       ],
     },
     quickAnswers: {
@@ -2888,6 +2960,30 @@ export const LOCATION_CONTENT = {
         { q: "Shooting angles and techniques?", a: "①Side-on from the downstream riverbed (whole bridge with river in one frame) ②Looking down from the bridge (the railing-less feel of vertigo) ③Telephoto capturing people or cars crossing (dynamic). Wide angle 16–35mm is standard; ND 8–32 enables slow shutter for cloud and water motion. Three to five days after rain in clear weather offers the best clarity-water-balance." },
         { q: "History and design of submersible bridges?", a: "Kochi Prefecture has 48 chinkabashi («submersible bridges»), a structure rare worldwide. The lack of railings keeps debris from catching during typhoons and floods, with the bridge itself submerging to preserve its structure. Built in 1965, Nagoya remains an active local road today; sister bridges «Sagawa,» «Renkon,» and others stand nearby on the Niyodo." },
         { q: "Combined sightseeing route?", a: "①Nagoya Submersible Bridge (early morning) ②Nikobuchi (30 min by car, sacred Niyodo Blue pool) ③Yasui Gorge (1 hr by car, sequence of blue pools) ④Tosa Washi Craft Village (papermaking experience from ¥1,500) ⑤Central Kochi (40 min by car, Hirome Market and Kochi Castle). A full-day Niyodo basin loop captures the river's four-seasonal moods from multiple angles." },
+      ],
+      zh: [
+        { q: "名越屋沈下桥是什么?", a: "高知县伊野町，日本最后清流仁淀川上架设的全长191米沈下桥(1965年架桥)。增水时水没护桥的独特结构，无护栏简朴桥面为特征。仁淀蓝川面与素朴日常风景就是日本原风景。" },
+        { q: "撮影佳季节?", a: "新绿5月、夏戏水期(7至8月)、秋(10至11月)红叶时。冬晨雾日亦梦幻。仁淀蓝最浓为晴天正午前后，桥上拍时PL滤镜抑反射色彩更深。" },
+        { q: "前往与注意点?", a: "高知市开车40分，JR波川站开车10分。沈下桥上为车道故撮影时注意通行车辆。桥宽2.5米对向车难错车，本地居民生活道优先勿久留。" },
+        { q: "撮影角度与技巧?", a: "①桥真侧拍(下游河原，桥全体与川一帧)②桥上俯瞰川面(无护栏不安感传)③长焦拍人或车过桥瞬间(动感)。广角16-35mm定番，ND8至32慢门表现云水动。雨后3至5日晴天为透明度·水量平衡最佳。" },
+        { q: "沈下桥的历史与原理?", a: "高知县有48座沈下桥(别名潜水桥)，世界稀有结构。台风豪雨川增水时漂木土砂不挂故无护栏，桥自体水没保结构的智慧。1965年架的名越屋今仍本地生活道路现役，附近「佐川沈下桥」「莲根沈下桥」等兄弟桥连。" },
+        { q: "周边连续观光?", a: "①名越屋沈下桥(早晨至上午)②仁淀渊(车30分，仁淀蓝神秘渊)③安居溪谷(车1小时，青之连续渊)④土佐和纸工艺村(土佐和纸体验·1500日元起)⑤高知市街(车40分，弘人市场·高知城)。仁淀川流域全1日驾车撮影旅程，清流四季表情多角度捕捉。" },
+      ],
+      "zh-tw": [
+        { q: "名越屋沈下橋是什麼?", a: "高知縣伊野町，日本最後清流仁淀川上架設的全長191米沈下橋(1965年架橋)。增水時水沒護橋的獨特結構，無護欄簡樸橋面為特徵。仁淀藍川面與素樸日常風景就是日本原風景。" },
+        { q: "撮影佳季節?", a: "新綠5月、夏戲水期(7至8月)、秋(10至11月)紅葉時。冬晨霧日亦夢幻。仁淀藍最濃為晴天正午前後，橋上拍時PL濾鏡抑反射色彩更深。" },
+        { q: "前往與注意點?", a: "高知市開車40分，JR波川站開車10分。沈下橋上為車道故撮影時注意通行車輛。橋寬2.5米對向車難錯車，本地居民生活道優先勿久留。" },
+        { q: "撮影角度與技巧?", a: "①橋真側拍(下游河原，橋全體與川一幀)②橋上俯瞰川面(無護欄不安感傳)③長焦拍人或車過橋瞬間(動感)。廣角16-35mm定番，ND8至32慢門表現雲水動。雨後3至5日晴天為透明度·水量平衡最佳。" },
+        { q: "沈下橋的歷史與原理?", a: "高知縣有48座沈下橋(別名潛水橋)，世界稀有結構。颱風豪雨川增水時漂木土砂不掛故無護欄，橋自體水沒保結構的智慧。1965年架的名越屋今仍本地生活道路現役，附近「佐川沈下橋」「蓮根沈下橋」等兄弟橋連。" },
+        { q: "周邊連續觀光?", a: "①名越屋沈下橋(早晨至上午)②仁淀淵(車30分，仁淀藍神秘淵)③安居溪谷(車1小時，青之連續淵)④土佐和紙工藝村(土佐和紙體驗·1500日圓起)⑤高知市街(車40分，弘人市場·高知城)。仁淀川流域全1日駕車撮影旅程，清流四季表情多角度捕捉。" },
+      ],
+      ko: [
+        { q: "나고야 침하교란?", a: "고치현 이노초, 일본 최후의 청류·니요도강에 놓인 전장 191m의 침하교(1965년 가설). 증수 시 침수됨으로써 다리를 지키는 독특한 구조로, 난간 없는 소박한 다리 면이 특징. 니요도 블루의 강 수면과 소박한 일상 풍경은 일본의 원풍경 그 자체입니다." },
+        { q: "촬영에 좋은 계절은?", a: "신록의 5월, 여름의 물놀이 시기(7~8월), 가을(10~11월)의 단풍기. 새벽 안개가 나오는 겨울 아침도 환상적. 니요도 블루의 진함은 맑은 정오 전후가 절정, 다리 위에서 찍을 때는 PL 필터로 반사를 억제하면 더 깊은 색조." },
+        { q: "가는 방법과 주의점은?", a: "고치시에서 차로 40분, JR 하카와역에서 차로 10분. 침하교 위는 차도이므로 촬영 시 통행 차량 주의. 다리 폭 2.5m로 대향차와 비켜가기 어려움, 현지 주민의 생활 도로 우선으로 오래 머무르지 않는 배려를." },
+        { q: "촬영 앵글과 테크닉은?", a: "①다리를 정면 옆에서 찍기(하류 쪽 강변에서, 다리 전체와 강을 한 장에) ②다리 위에서 강 수면을 내려다봄(난간 없는 불안감이 전달됨) ③망원으로 사람이나 차가 다리를 건너는 순간(동감). 광각 16-35mm가 정석, ND 8~32로 구름이나 물의 흐름을 슬로우 셔터로 표현. 비 온 후 3~5일 후의 맑은 날이 투명도·수량 밸런스 최적." },
+        { q: "침하교의 역사와 원리는?", a: "고치현에는 48기의 침하교(별명·잠수교)가 있어, 세계적으로도 보기 드문 구조. 태풍이나 호우로 강이 증수되어도 유목이나 토사가 걸리지 않도록 난간을 마련하지 않고, 다리 자체가 침수됨으로써 구조를 지키는 지혜. 1965년 가설된 나고야는 지금도 현지의 생활 도로로 현역으로, 인근에 「사가와 침하교」 「렌콘 침하교」 등 형제교가 이어집니다." },
+        { q: "주변의 연속 관광은?", a: "①나고야 침하교(이른 아침~오전) ②니코부치(차로 30분, 니요도 블루 신비의 못) ③야스이 계곡(차로 1시간, 푸름의 연속 못) ④도사 와시 공예 마을(도사 와시 체험·1,500엔~) ⑤고치 시가지(차로 40분, 히로메 시장·고치성). 니요도강 유역 전체를 하루에 걸쳐 도는 촬영 여정으로, 청류의 사계 표정을 다각도로 포착할 수 있습니다." },
       ],
     },
     faqs: [
