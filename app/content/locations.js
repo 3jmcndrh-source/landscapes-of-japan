@@ -4609,10 +4609,13 @@ export const LOCATION_CONTENT = {
       "三重縣梅林公園（津市結城神社等）是早春2-3月梅花盛開名所。紅梅、白梅、垂枝梅齊放，遠眺伊勢灣與山巒，宣告春的到來。",
       "미에현의 매림 공원(쓰시 유키신사 등)은 이른 봄 2~3월 매화가 만개하는 명소. 홍매·백매·수양매화가 어우러지고 흐릿한 이세만과 주변 산봉우리를 배경으로 봄의 도래를 알립니다."
     ),
-    definition: lh(
-      "梅林公園(ばいりんこうえん)は三重県の梅の名所の総称で、特に津市の結城神社境内梅園(約300本、樹齢300年超の枝垂れ梅含む)と、いなべ市農業公園梅林(約4,500本、東海地区最大級)が代表的。早春2〜3月に紅梅・白梅・枝垂れ梅が次々と開花し、桜より一足早い春の訪れを告げる伝統的な被写体です。結城神社は南北朝時代の忠臣・結城宗広を祀る古社で、梅の名所としても古来詠まれ、いなべ市梅林はパッチワーク状の白とピンクの絨毯が圧巻。",
-      "Plum Grove Parks (Bairin-koen) is the collective name for Mie Prefecture's plum-blossom destinations, most notably Yuki Shrine in Tsu City (about 300 trees including weeping plums over 300 years old) and Inabe City Agricultural Park's plum grove (about 4,500 trees, the largest in the Tokai region). From mid-February through early March, red, white, and weeping plums bloom in succession, heralding spring earlier than cherry blossoms. Yuki Shrine, an old shrine venerating the Nanboku-cho-era loyalist Munehiro Yuki, has been celebrated in poetry as a plum-viewing site, while Inabe's grove unfolds a patchwork carpet of white and pink across its hillsides."
-    ),
+    definition: {
+      ja: "梅林公園(ばいりんこうえん)は三重県の梅の名所の総称で、特に津市の結城神社境内梅園(約300本、樹齢300年超の枝垂れ梅含む)と、いなべ市農業公園梅林(約4,500本、東海地区最大級)が代表的。早春2〜3月に紅梅・白梅・枝垂れ梅が次々と開花し、桜より一足早い春の訪れを告げる伝統的な被写体です。結城神社は南北朝時代の忠臣・結城宗広を祀る古社で、梅の名所としても古来詠まれ、いなべ市梅林はパッチワーク状の白とピンクの絨毯が圧巻。",
+      en: "Plum Grove Parks (Bairin-koen) is the collective name for Mie Prefecture's plum-blossom destinations, most notably Yuki Shrine in Tsu City (about 300 trees including weeping plums over 300 years old) and Inabe City Agricultural Park's plum grove (about 4,500 trees, the largest in the Tokai region). From mid-February through early March, red, white, and weeping plums bloom in succession, heralding spring earlier than cherry blossoms. Yuki Shrine, an old shrine venerating the Nanboku-cho-era loyalist Munehiro Yuki, has been celebrated in poetry as a plum-viewing site, while Inabe's grove unfolds a patchwork carpet of white and pink across its hillsides.",
+      zh: "梅林公园(ばいりんこうえん)是三重县梅花名所总称，尤津市结城神社境内梅园(约300本，含树龄300年以上枝垂梅)与伊势市农业公园梅林(约4500本，东海地区最大级)为代表。早春2至3月红梅·白梅·枝垂梅次第开花，比樱花早一步告春之到来的传统被摄体。结城神社是南北朝时代忠臣结城宗广所祀古社，梅之名所古来咏诗，伊势市梅林拼布状白与粉的地毯震撼。",
+      "zh-tw": "梅林公園(ばいりんこうえん)是三重縣梅花名所總稱，尤津市結城神社境內梅園(約300本，含樹齡300年以上枝垂梅)與伊勢市農業公園梅林(約4500本，東海地區最大級)為代表。早春2至3月紅梅·白梅·枝垂梅次第開花，比櫻花早一步告春之到來的傳統被攝體。結城神社是南北朝時代忠臣結城宗廣所祀古社，梅之名所古來詠詩，伊勢市梅林拼布狀白與粉的地毯震撼。",
+      ko: "매림 공원(ばいりんこうえん)은 미에현의 매화 명소의 총칭으로, 특히 쓰시의 유키 신사 경내 매원(약 300그루, 수령 300년 이상의 시다레우메 포함)과 이나베시 농업공원 매림(약 4,500그루, 도카이 지구 최대급)이 대표적. 이른 봄 2~3월에 홍매·백매·시다레우메가 차례로 개화하여, 벚꽃보다 한 발 빠른 봄의 도래를 알리는 전통적인 피사체입니다. 유키 신사는 남북조 시대의 충신 유키 무네히로를 모시는 고사로, 매화 명소로도 예로부터 읊어졌고, 이나베시 매림은 패치워크 모양의 흰색과 분홍색 융단이 압권.",
+    },
     highlights: {
       ja: [
         "結城神社梅園(津市) — 約300本、樹齢300年超の枝垂れ梅が境内を彩る、神社建築との組合せ",
@@ -4627,6 +4630,27 @@ export const LOCATION_CONTENT = {
         "Weeping Plums — among plum varieties, the most painterly; flower clusters dropping nearly to the ground photograph spectacularly",
         "Suzuka no Mori Garden — over 200 weeping plums, with magical illumination in March",
         "Yukiwa and Yae-zaki Varieties — many cultivars mingle, offering gradients of red, white, and pale pink",
+      ],
+      zh: [
+        "结城神社梅园(津市) — 约300本，树龄300年以上枝垂梅彩境内，与神社建筑组合",
+        "伊势市农业公园梅林 — 东海地区最大级，约4500本，白与粉拼布状之丘",
+        "枝垂梅 — 梅中尤画意品种，花房垂至地面映入",
+        "铃鹿之森庭园 — 200本以上枝垂梅，3月灯光秀梦幻",
+        "雪轮·八重咲品种 — 多彩品种混合，红·白·淡桃渐变可享",
+      ],
+      "zh-tw": [
+        "結城神社梅園(津市) — 約300本，樹齡300年以上枝垂梅彩境內，與神社建築組合",
+        "伊勢市農業公園梅林 — 東海地區最大級，約4500本，白與粉拼布狀之丘",
+        "枝垂梅 — 梅中尤畫意品種，花房垂至地面映入",
+        "鈴鹿之森庭園 — 200本以上枝垂梅，3月燈光秀夢幻",
+        "雪輪·八重咲品種 — 多彩品種混合，紅·白·淡桃漸變可享",
+      ],
+      ko: [
+        "유키 신사 매원(쓰시) — 약 300그루, 수령 300년 이상의 시다레우메가 경내를 수놓음, 신사 건축과의 조합",
+        "이나베시 농업공원 매림 — 도카이 지구 최대급, 약 4,500그루, 흰색과 분홍색 패치워크 모양의 언덕",
+        "시다레우메 — 매화 중에서도 특히 회화적인 품종, 땅에 닿을 정도의 꽃송이는 사진이 잘 살아남",
+        "스즈카노모리 정원 — 200그루 이상의 시다레우메, 3월의 조명은 환상적",
+        "유키와·야에자키 품종 — 다채로운 품종이 섞여 있어, 빨강·흰색·옅은 분홍의 그라데이션을 즐길 수 있음",
       ],
     },
     quickAnswers: {
@@ -4646,6 +4670,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended shooting techniques?", a: "①Macro (90mm) for blossom detail ②Telephoto 70–200mm to compress overlapping branches ③Wide 16–35mm for the whole grove with sky ④Borrowed scenery using shrine buildings or mountains. Overcast saturates color; sunny days highlight branch silhouettes. Post-rain water-drop shots and dawn pairings with Japanese white-eye and brown-eared bulbul birds are ideal." },
         { q: "What's special about Suzuka no Mori Garden?", a: "A private garden specializing in over 200 weeping plums, open just 20 days each March (period varies yearly), admission ¥1,500. Multiple century-old «finest weeping plums in Japan» trees; night illumination (additional fee) shows blossoms floating in darkness. Photography etiquette is strict (early-bird priority entry available for photographers)." },
       ],
+      zh: [
+        { q: "梅林公园是什么?", a: "三重县梅花名所总称，结城神社境内梅园(津市，树龄300年以上枝垂梅)、伊势市农业公园梅林(东海最大，约4500本)、铃鹿之森庭园等为代表。早春2至3月红梅·白梅·枝垂梅，比樱花早一步的春之被摄体。" },
+        { q: "盛开期?", a: "2月中旬至3月上旬高峰。早晚品种皆有，2月末最多种俱齐。寒返开花延迟之年亦有，各公园公式网站开花信息确认必须。" },
+        { q: "如何前往?", a: "结城神社从近铁津站乘巴士20分。伊势市梅林公园从近铁阿下喜站开车15分(梅祭期接驳巴士有)。两处1日游建议租车。" },
+        { q: "梅祭费用与特典?", a: "结城神社梅祭(2月上旬至3月中旬):成人500日元·小学生300日元。茶接待·梅花茶碗抹茶提供(另500日元)等。伊势市梅林公园梅祭(2月末至3月中旬):成人500日元·小中学生200日元，夜间灯光秀日另收费。两处皆可撮影，商用使用需事前申请。" },
+        { q: "推荐撮影技巧?", a: "①微距(90mm)拍梅花细节②长焦70-200mm压缩枝重叠③广角16-35mm拍梅林全景与天空④背景含神社建筑或山的借景构图。阴天花色发色UP，晴天枝剪影映入。雨后水滴梅花瓣映入，与绣眼鸟·鹎同拍清晨为目标。" },
+        { q: "铃鹿之森庭园特别之点?", a: "200本以上枝垂梅专门私设庭园，3月20日限定开园(年开园期变动)，入园1500日元。被誉日本第一枝垂梅的百年级名木多株，夜灯光秀(另收费)可拍闇浮梅花的梦幻姿态。撮影礼仪严格(摄影师有朝优先入场制度)。" },
+      ],
+      "zh-tw": [
+        { q: "梅林公園是什麼?", a: "三重縣梅花名所總稱，結城神社境內梅園(津市，樹齡300年以上枝垂梅)、伊勢市農業公園梅林(東海最大，約4500本)、鈴鹿之森庭園等為代表。早春2至3月紅梅·白梅·枝垂梅，比櫻花早一步的春之被攝體。" },
+        { q: "盛開期?", a: "2月中旬至3月上旬高峰。早晚品種皆有，2月末最多種俱齊。寒返開花延遲之年亦有，各公園公式網站開花信息確認必須。" },
+        { q: "如何前往?", a: "結城神社從近鐵津站搭巴士20分。伊勢市梅林公園從近鐵阿下喜站開車15分(梅祭期接駁巴士有)。兩處1日遊建議租車。" },
+        { q: "梅祭費用與特典?", a: "結城神社梅祭(2月上旬至3月中旬):成人500日圓·小學生300日圓。茶接待·梅花茶碗抹茶提供(另500日圓)等。伊勢市梅林公園梅祭(2月末至3月中旬):成人500日圓·小中學生200日圓，夜間燈光秀日另收費。兩處皆可撮影，商用使用需事前申請。" },
+        { q: "推薦撮影技巧?", a: "①微距(90mm)拍梅花細節②長焦70-200mm壓縮枝重疊③廣角16-35mm拍梅林全景與天空④背景含神社建築或山的借景構圖。陰天花色發色UP，晴天枝剪影映入。雨後水滴梅花瓣映入，與繡眼鳥·鵯同拍清晨為目標。" },
+        { q: "鈴鹿之森庭園特別之點?", a: "200本以上枝垂梅專門私設庭園，3月20日限定開園(年開園期變動)，入園1500日圓。被譽日本第一枝垂梅的百年級名木多株，夜燈光秀(另收費)可拍闇浮梅花的夢幻姿態。撮影禮儀嚴格(攝影師有朝優先入場制度)。" },
+      ],
+      ko: [
+        { q: "매림 공원이란?", a: "미에현의 매화 명소의 총칭으로, 유키 신사 경내 매원(쓰시, 수령 300년 이상의 시다레우메), 이나베시 농업공원 매림(도카이 최대, 약 4,500그루), 스즈카노모리 정원 등이 대표. 이른 봄 2~3월의 홍매·백매·시다레우메로, 벚꽃보다 한 발 빠른 봄의 피사체입니다." },
+        { q: "절정기는 언제?", a: "2월 중순~3월 상순이 절정. 조생·만생 품종이 있어, 2월 말경이 가장 다양한 종류가 갖춰짐. 꽃샘추위로 개화가 늦어지는 해도 있으므로, 각 공원 공식 사이트의 개화 정보 확인이 필수입니다." },
+        { q: "가는 방법은?", a: "유키 신사는 긴테쓰 쓰역에서 버스로 20분. 이나베시 매림 공원은 긴테쓰 아게키역에서 차로 15분(매화 축제 기간 중 셔틀버스 있음). 양쪽을 1일에 둘러보려면 렌터카 추천입니다." },
+        { q: "매화 축제 요금과 특전은?", a: "유키 신사 매화 축제(2월 상순~3월 중순): 성인 500엔·초등학생 300엔. 차 접대나 매화 다완으로 말차 제공(별도 500엔) 등. 이나베시 매림 공원 매화 축제(2월 말~3월 중순): 성인 500엔·초중학생 200엔, 야간 조명 실시일은 별도 요금. 양쪽 모두 촬영 가능, 상업적 이용은 사전 신청이 필요합니다." },
+        { q: "추천 촬영 테크닉은?", a: "①매크로(90mm)로 매화의 디테일 ②망원 70-200mm로 가지의 겹침 압축 ③광각 16-35mm로 매림 전경과 하늘 ④배경에 신사 건축이나 산을 넣은 차경 구도. 흐린 날은 꽃의 발색 UP, 맑은 날은 가지의 실루엣이 잘 살아남. 비 온 후는 물방울이 얹힌 꽃잎이 잘 살아나며, 동박새·직박구리와 함께 찍을 수 있는 이른 아침이 노릴 만." },
+        { q: "스즈카노모리 정원의 특별한 점은?", a: "200그루 이상의 시다레우메 전문 사설 정원으로, 3월의 20일간 한정 개원(해에 따라 개원 기간 변동), 입원료 1,500엔. 일본 제일의 시다레우메라 불리는 수령 백 년 급의 명목이 다수 있고, 야간 조명(별도 요금)에서는 어둠 속에 떠오르는 매화의 환상적인 모습을 찍을 수 있음. 촬영 매너가 엄격(사진가에게 아침 우선 입장 제도도)." },
+      ],
     },
     faqs: [
       { q: d("見頃はいつ？","When is peak bloom?","盛开期？","盛開期？","절정기는?"),
@@ -4660,10 +4708,13 @@ export const LOCATION_CONTENT = {
       "鳥羽水族館擁有1200種3萬餘件日本最多展示生物。儒艮、海牛、海獺等珍稀生物亦可見。12個生態區自由路線，適合全家遊覽。",
       "도바 수족관은 1,200종 3만 점이 넘는 일본 최다 전시 생물을 자랑하는 종합 수족관. 듀공, 매너티, 해달 등 다른 곳에서 볼 수 없는 귀한 생물도 있습니다. 12개 생태계 구역으로 나뉜 전시는 자유 동선으로 가족 단위에도 최적."
     ),
-    definition: lh(
-      "鳥羽水族館(とばすいぞくかん)は三重県鳥羽市鳥羽3丁目3-6にある総合水族館で、1955年開業の老舗。飼育種類数は約1,200種(国内最多)、飼育数約30,000匹に達する西日本最大級の水族館。日本で唯一ジュゴン(現在は1頭、セレナ)を飼育・展示する施設として知られ、ラッコ、マナティ、スナメリ、アフリカマナティ、コウテイペンギンの仲間など、他では見られない貴重な海洋生物を多数展示。展示は12のテーマゾーンに分かれ、決まった順路がなく自由に巡れる「フリーフロー」方式。鳥羽駅から徒歩10分、伊勢神宮参拝とセットで訪れる人気の観光地です。",
-      "Toba Aquarium, located at 3-6 3-chome Toba in Toba City, Mie Prefecture, opened in 1955 and is one of Japan's most established aquariums. With about 1,200 species — the most of any Japanese aquarium — and roughly 30,000 individuals, it ranks as one of West Japan's largest. It is the only Japanese facility that houses a dugong (currently a single individual, Serena), alongside sea otters, manatees, finless porpoises, African manatees, emperor-penguin relatives, and many other rare marine creatures unavailable elsewhere. Its 12 themed zones use a free-flow design, letting visitors explore at their own pace. Located 10 minutes on foot from Toba Station, it is a popular destination paired with Ise Jingu pilgrimages."
-    ),
+    definition: {
+      ja: "鳥羽水族館(とばすいぞくかん)は三重県鳥羽市鳥羽3丁目3-6にある総合水族館で、1955年開業の老舗。飼育種類数は約1,200種(国内最多)、飼育数約30,000匹に達する西日本最大級の水族館。日本で唯一ジュゴン(現在は1頭、セレナ)を飼育・展示する施設として知られ、ラッコ、マナティ、スナメリ、アフリカマナティ、コウテイペンギンの仲間など、他では見られない貴重な海洋生物を多数展示。展示は12のテーマゾーンに分かれ、決まった順路がなく自由に巡れる「フリーフロー」方式。鳥羽駅から徒歩10分、伊勢神宮参拝とセットで訪れる人気の観光地です。",
+      en: "Toba Aquarium, located at 3-6 3-chome Toba in Toba City, Mie Prefecture, opened in 1955 and is one of Japan's most established aquariums. With about 1,200 species — the most of any Japanese aquarium — and roughly 30,000 individuals, it ranks as one of West Japan's largest. It is the only Japanese facility that houses a dugong (currently a single individual, Serena), alongside sea otters, manatees, finless porpoises, African manatees, emperor-penguin relatives, and many other rare marine creatures unavailable elsewhere. Its 12 themed zones use a free-flow design, letting visitors explore at their own pace. Located 10 minutes on foot from Toba Station, it is a popular destination paired with Ise Jingu pilgrimages.",
+      zh: "鸟羽水族馆(とばすいぞくかん)位于三重县鸟羽市鸟羽3丁目3-6的综合水族馆，1955年开业老铺。饲养种类约1200种(国内最多)，饲养数约30000只达西日本最大级水族馆。日本唯一饲养·展示儒艮(现1头，Selena)的设施闻名，海獭·海牛·江豚·非洲海牛·帝企鹅之伴等他处难见的珍稀海洋生物多数展示。展示分12主题区，无固定路线自由巡游的「Free Flow」方式。鸟羽站步行10分，与伊势神宫参拜组合的人气观光地。",
+      "zh-tw": "鳥羽水族館(とばすいぞくかん)位於三重縣鳥羽市鳥羽3丁目3-6的綜合水族館，1955年開業老鋪。飼養種類約1200種(國內最多)，飼養數約30000隻達西日本最大級水族館。日本唯一飼養·展示儒艮(現1頭，Selena)的設施聞名，海獺·海牛·江豚·非洲海牛·帝企鵝之伴等他處難見的珍稀海洋生物多數展示。展示分12主題區，無固定路線自由巡遊的「Free Flow」方式。鳥羽站步行10分，與伊勢神宮參拜組合的人氣觀光地。",
+      ko: "도바 수족관(とばすいぞくかん)은 미에현 도바시 도바 3초메 3-6에 있는 종합 수족관으로, 1955년 개업한 노포. 사육 종류 수는 약 1,200종(국내 최다), 사육 수 약 30,000마리에 달하는 서일본 최대급 수족관. 일본에서 유일하게 듀공(현재는 1마리, 세레나)을 사육·전시하는 시설로 알려져 있으며, 해달, 매너티, 스나메리, 아프리카 매너티, 황제펭귄의 친척 등 다른 곳에서 볼 수 없는 귀한 해양 생물을 다수 전시. 전시는 12개의 테마 구역으로 나뉘어, 정해진 동선이 없고 자유롭게 둘러볼 수 있는 「프리 플로우」 방식. 도바역에서 도보 10분, 이세 신궁 참배와 세트로 찾는 인기 관광지입니다.",
+    },
     highlights: {
       ja: [
         "ジュゴン「セレナ」 — 日本で唯一の飼育、餌やり時間(11時・15時)に活発、ガラス越しの近接撮影",
@@ -4678,6 +4729,27 @@ export const LOCATION_CONTENT = {
         "Manatee and Finless Porpoise — their leisurely swimming charms families",
         "Ancient Seas Zone — coelacanths, nautiluses, and other living fossils against a magical blue-lit backdrop",
         "Penguin Walk — held on rotating days; a parade of penguins through the aquarium photographs delightfully at child-eye level",
+      ],
+      zh: [
+        "儒艮「Selena」 — 日本唯一饲养，餐时(11时·15时)活跃，隔玻璃近距撮影",
+        "海獭 — 国内稀少珍贵种，砸贝壳行动瞬间，餐时为看点",
+        "海牛·江豚 — 悠闲游姿可爱，家庭超人气",
+        "古代海区 — 腔棘鱼·鹦鹉螺等活化石，蓝光背景梦幻",
+        "企鹅散步 — 隔日开催，馆内企鹅行进，与儿童视点撮影映入",
+      ],
+      "zh-tw": [
+        "儒艮「Selena」 — 日本唯一飼養，餐時(11時·15時)活躍，隔玻璃近距撮影",
+        "海獺 — 國內稀少珍貴種，砸貝殼行動瞬間，餐時為看點",
+        "海牛·江豚 — 悠閒游姿可愛，家庭超人氣",
+        "古代海區 — 腔棘魚·鸚鵡螺等活化石，藍光背景夢幻",
+        "企鵝散步 — 隔日開催，館內企鵝行進，與兒童視點撮影映入",
+      ],
+      ko: [
+        "듀공 「세레나」 — 일본 유일의 사육, 먹이 시간(11시·15시)에 활발, 유리 너머의 근접 촬영",
+        "해달 — 국내에서는 드문 귀한 종, 조개 깨기 행동의 순간, 먹이 시간이 볼거리",
+        "매너티·스나메리 — 한가로운 헤엄이 사랑스러움, 가족 동반에 큰 인기",
+        "고대의 바다 구역 — 실러캔스, 앵무조개 등 살아있는 화석, 푸른 조명 배경이 환상적",
+        "펭귄의 산책 — 격일 개최, 관내를 걷는 펭귄의 행진, 어린이의 시선으로 촬영하면 잘 살아남",
       ],
     },
     quickAnswers: {
@@ -4697,6 +4769,30 @@ export const LOCATION_CONTENT = {
         { q: "Access?", a: "10-minute walk from Kintetsu/JR Toba Station, via direct walkway. From Nagoya, Kintetsu limited express ~1 hr 40 min, ¥3,950. From Ise Jingu: 15 min by car, 30 min by train. Sata-hama West Parking ¥800/day. Pairs naturally with Toba Bay cruises and Marineland — perfect for an Ise-Shima itinerary." },
         { q: "When to photograph the sea otters?", a: "Japan currently houses about 3 sea otters total nationwide; Toba's «Mei» and «Kira» are precious. Feeding times (10:30 and 15:30) bring the most activity. The rare «tool use» — breaking shells with stones — is a must-shoot. The tank is small, so close-range through-acrylic shooting is needed; a fast lens is essential." },
       ],
+      zh: [
+        { q: "鸟羽水族馆是什么?", a: "三重县鸟羽市1955年开业综合水族馆，饲养种类约1200种日本最多。日本唯一饲养儒艮「Selena」，含海獭·海牛等他处难见珍稀海洋生物。12主题区自由巡游的西日本最大级水族馆。" },
+        { q: "儒艮何时活跃?", a: "餐时(11时·15时左右)最动。隔玻璃凑近的珍稀瞬间为快门时机。日中悠闲游姿多，水槽暗ISO上调。" },
+        { q: "撮影技巧?", a: "隔玻璃撮影故镜头如防反射罩贴水槽玻璃消反射。明亮定焦(50mm f/1.8)拍背景虚化，ISO800至3200止动。闪光对生物有害禁。" },
+        { q: "门票·营业时间?", a: "成人2800日元·小中学生1600日元·幼儿800日元。全年无休，9:00至17:00(7-8月夏期延19:00)。末入馆闭馆1小时前。所需2至3小时，12区全巡半日。避拥挤开馆即或傍晚为目标。" },
+        { q: "如何前往?", a: "近铁·JR「鸟羽站」步行10分·有连络通道。名古屋乘近铁特急约1小时40分·3950日元。伊势神宫开车15分·电车30分。佐田滨西停车场(1日800日元)。鸟羽湾巡游与海洋乐园组合定番，伊势志摩观光最佳组合。" },
+        { q: "海獭撮影时机?", a: "日本国内饲养海獭现存约3头(全国)，鸟羽水族馆「Mei」「Kira」稀有。餐时(10:30·15:30)动得活跃。砸贝以石的「工具使用」珍稀行动必拍。水槽窄故隔亚克力近距撮影必要，明亮镜头必备。" },
+      ],
+      "zh-tw": [
+        { q: "鳥羽水族館是什麼?", a: "三重縣鳥羽市1955年開業綜合水族館，飼養種類約1200種日本最多。日本唯一飼養儒艮「Selena」，含海獺·海牛等他處難見珍稀海洋生物。12主題區自由巡遊的西日本最大級水族館。" },
+        { q: "儒艮何時活躍?", a: "餐時(11時·15時左右)最動。隔玻璃湊近的珍稀瞬間為快門時機。日中悠閒游姿多，水槽暗ISO上調。" },
+        { q: "撮影技巧?", a: "隔玻璃撮影故鏡頭如防反射罩貼水槽玻璃消反射。明亮定焦(50mm f/1.8)拍背景虛化，ISO800至3200止動。閃光對生物有害禁。" },
+        { q: "門票·營業時間?", a: "成人2800日圓·小中學生1600日圓·幼兒800日圓。全年無休，9:00至17:00(7-8月夏期延19:00)。末入館閉館1小時前。所需2至3小時，12區全巡半日。避擁擠開館即或傍晚為目標。" },
+        { q: "如何前往?", a: "近鐵·JR「鳥羽站」步行10分·有連絡通道。名古屋搭近鐵特急約1小時40分·3950日圓。伊勢神宮開車15分·電車30分。佐田濱西停車場(1日800日圓)。鳥羽灣巡遊與海洋樂園組合定番，伊勢志摩觀光最佳組合。" },
+        { q: "海獺撮影時機?", a: "日本國內飼養海獺現存約3頭(全國)，鳥羽水族館「Mei」「Kira」稀有。餐時(10:30·15:30)動得活躍。砸貝以石的「工具使用」珍稀行動必拍。水槽窄故隔亞克力近距撮影必要，明亮鏡頭必備。" },
+      ],
+      ko: [
+        { q: "도바 수족관이란?", a: "미에현 도바시의 1955년 개업한 종합 수족관으로, 사육 종류 수 약 1,200종은 일본 최다. 일본에서 유일하게 듀공 「세레나」를 사육, 해달이나 매너티 등 다른 곳에서 볼 수 없는 귀한 해양 생물을 전시. 12테마 구역을 자유롭게 둘러보는 서일본 최대급의 수족관입니다." },
+        { q: "듀공은 언제 활발?", a: "먹이 시간(11시·15시 무렵)이 가장 움직임. 유리 너머로 딱 붙어 다가오는 보기 드문 순간을 노리면 셔터 찬스. 한낮은 느긋하게 헤엄치는 모습이 많고, 어두운 수조에서 ISO를 올림." },
+        { q: "촬영 테크닉은?", a: "유리 너머의 촬영이므로, 렌즈를 반사 방지 후드처럼 수조 유리에 밀착시켜 반사를 없앰. 밝은 단초점(50mm f/1.8)으로 배경 보케, ISO 800~3200으로 움직임을 멈춤. 플래시는 생물에 유해하여 금지." },
+        { q: "입장료·영업 시간은?", a: "성인 2,800엔·초중학생 1,600엔·유아 800엔. 연중무휴, 9:00~17:00(7-8월의 여름철은 19:00까지 연장). 최종 입장은 폐관 1시간 전. 소요 시간 2~3시간, 12구역 전부 둘러보면 반나절. 혼잡 회피라면 개관 직후 또는 저녁이 노릴 만." },
+        { q: "가는 방법은?", a: "긴테쓰·JR 「도바역」에서 도보 10분·연락 통로 있음. 나고야에서 긴테쓰 특급으로 약 1시간 40분·3,950엔. 이세 신궁에서 차로 15분·전차로 30분. 사타하마 서쪽 주차장(하루 800엔). 도바만 순회와 세트로 마린랜드가 정석, 이세시마 관광의 조합에 최적입니다." },
+        { q: "해달 촬영 타이밍은?", a: "일본 국내에서 사육되는 해달은 현존 약 3마리(전국)로, 도바 수족관의 「메이」 「키라」는 희귀. 먹이 시간(10:30·15:30)에 활발하게 움직임. 조개를 돌로 깨는 「도구 사용」의 보기 드문 행동은 촬영 필수. 좁은 수조이므로 아크릴 너머 근거리 촬영이 필요, 밝은 렌즈 필휴입니다." },
+      ],
     },
     faqs: [
       { q: d("ジュゴンは何時に活発？","When is the dugong most active?","儒艮何时活跃？","儒艮何時活躍？","듀공은 언제 활발한가요?"),
@@ -4713,10 +4809,13 @@ export const LOCATION_CONTENT = {
       "清水寺周邊的二年坂、三年坂、清水坂是石板路與傳統町家並排的重要傳統建築群保護區。以八坂塔（法觀寺）為借景構圖為京都經典。清晨遊客少時最佳。",
       "기요미즈데라 주변의 니넨자카·산넨자카·기요미즈자카는 돌길과 전통 마치야가 늘어선 중요 전통건조물군 보존지구. 야사카 탑(호칸지)을 차경한 구도는 교토의 정석. 이른 아침 관광객이 적은 시간대가 추천."
     ),
-    definition: lh(
-      "清水寺周辺(きよみずでらしゅうへん)は京都府京都市東山区にある清水寺へと続く参道地区で、三年坂(産寧坂)・二年坂(二寧坂)・清水坂・八坂通など江戸〜明治期の町家と石畳が連なる重要伝統的建造物群保存地区(重伝建)。エリアの象徴である八坂の塔(法観寺、高さ46mの五重塔、5世紀末聖徳太子創建伝、現在の塔は1440年再建)は京都市街のスカイラインに古都の顔を与えています。狭い石畳の坂道、格子戸の町家、和服姿の観光客と八坂の塔を組み合わせた構図は世界中の写真家に愛され、京都を象徴する撮影地として年間数百万人が訪れます。",
-      "The lanes around Kiyomizu-dera (Kiyomizu-dera shu-hen) form the approach district to the temple in Kyoto's Higashiyama Ward, including Sannenzaka, Ninenzaka, Kiyomizuzaka, and Yasaka-dori — a Designated Important Preservation District for Groups of Traditional Buildings, where Edo-to-Meiji-era machiya houses line stone-paved streets. The district's icon, the Yasaka Pagoda (Hokan-ji), is a 46 m five-story pagoda — said to have been founded by Prince Shotoku in the late 5th century, with the current structure dating to 1440 — that defines Kyoto's old-city skyline. Compositions combining narrow stone-paved slopes, lattice-fronted machiya, kimono-clad visitors, and the pagoda are beloved by photographers worldwide, drawing several million visitors a year as Kyoto's quintessential photographic district."
-    ),
+    definition: {
+      ja: "清水寺周辺(きよみずでらしゅうへん)は京都府京都市東山区にある清水寺へと続く参道地区で、三年坂(産寧坂)・二年坂(二寧坂)・清水坂・八坂通など江戸〜明治期の町家と石畳が連なる重要伝統的建造物群保存地区(重伝建)。エリアの象徴である八坂の塔(法観寺、高さ46mの五重塔、5世紀末聖徳太子創建伝、現在の塔は1440年再建)は京都市街のスカイラインに古都の顔を与えています。狭い石畳の坂道、格子戸の町家、和服姿の観光客と八坂の塔を組み合わせた構図は世界中の写真家に愛され、京都を象徴する撮影地として年間数百万人が訪れます。",
+      en: "The lanes around Kiyomizu-dera (Kiyomizu-dera shu-hen) form the approach district to the temple in Kyoto's Higashiyama Ward, including Sannenzaka, Ninenzaka, Kiyomizuzaka, and Yasaka-dori — a Designated Important Preservation District for Groups of Traditional Buildings, where Edo-to-Meiji-era machiya houses line stone-paved streets. The district's icon, the Yasaka Pagoda (Hokan-ji), is a 46 m five-story pagoda — said to have been founded by Prince Shotoku in the late 5th century, with the current structure dating to 1440 — that defines Kyoto's old-city skyline. Compositions combining narrow stone-paved slopes, lattice-fronted machiya, kimono-clad visitors, and the pagoda are beloved by photographers worldwide, drawing several million visitors a year as Kyoto's quintessential photographic district.",
+      zh: "清水寺周边(きよみずでらしゅうへん)是位于京都府京都市东山区清水寺通参道区，含三年坂(产宁坂)·二年坂(二宁坂)·清水坂·八坂通等江户至明治期町家与石板连绵的重要传统建造物群保存地区(重伝建)。区域象征的八坂塔(法观寺，高46米五重塔，5世纪末圣德太子创建传，现塔1440年再建)赋予京都市街天际线古都之颜。狭窄石板坡道·格子门町家·和服游客与八坂塔组合的构图深受世界摄影家喜爱，作为京都象征撮影地年访客数百万人。",
+      "zh-tw": "清水寺周邊(きよみずでらしゅうへん)是位於京都府京都市東山區清水寺通參道區，含三年坂(產寧坂)·二年坂(二寧坂)·清水坂·八坂通等江戶至明治期町家與石板連綿的重要傳統建造物群保存地區(重伝建)。區域象徵的八坂塔(法觀寺，高46米五重塔，5世紀末聖德太子創建傳，現塔1440年再建)賦予京都市街天際線古都之顏。狹窄石板坡道·格子門町家·和服遊客與八坂塔組合的構圖深受世界攝影家喜愛，作為京都象徵撮影地年訪客數百萬人。",
+      ko: "기요미즈데라 주변(きよみずでらしゅうへん)은 교토부 교토시 히가시야마구에 있는 기요미즈데라로 이어지는 참배로 지구로, 산넨자카(산네이자카)·니넨자카(니네이자카)·기요미즈자카·야사카도리 등 에도~메이지기의 마치야와 돌길이 연이은 중요 전통적 건조물군 보존지구(중전건). 지역의 상징인 야사카 탑(호칸지, 높이 46m의 5층탑, 5세기 말 쇼토쿠 태자 창건 전, 현재의 탑은 1440년 재건)은 교토 시가지의 스카이라인에 고도의 얼굴을 부여하고 있습니다. 좁은 돌길의 비탈길, 격자문의 마치야, 기모노 차림의 관광객과 야사카 탑을 조합한 구도는 전 세계 사진가들에게 사랑받고, 교토를 상징하는 촬영지로 연간 수백만 명이 찾습니다.",
+    },
     highlights: {
       ja: [
         "三年坂(産寧坂) — 1740年代整備の石段坂、江戸の町並みと八坂の塔越しの構図、桜と紅葉の借景",
@@ -4731,6 +4830,27 @@ export const LOCATION_CONTENT = {
         "Yasaka Pagoda (Hokan-ji) — the 46 m five-story tower; looking up from below on Yasaka-dori is the iconic worldwide composition",
         "Nene-no-Michi — a stone-paved path leading to Kodai-ji, named for Nene (wife of Toyotomi Hideyoshi), popular for kimono dressing experiences",
         "Kiyomizuzaka — the main approach to Kiyomizu-dera, with souvenir shops and Kyoto-style atmosphere; photograph after the evening crowds disperse",
+      ],
+      zh: [
+        "三年坂(产宁坂) — 1740年代整备的石阶坡，江户街景与八坂塔越构图，樱与红叶借景",
+        "二年坂(二宁坂) — 比三年坂缓坡，明治町家与石板，黄昏提灯灯光有情",
+        "八坂塔(法观寺) — 高46米五重塔，八坂通坡道下方仰拍构图世界闻名",
+        "宁宁之道 — 通向高台寺的石板小径，宁宁(丰臣秀吉夫人)相关之道，和服着装体验人气",
+        "清水坂 — 清水寺正面参道，土特产店与京都风情，傍晚拥挤散去时为目标",
+      ],
+      "zh-tw": [
+        "三年坂(產寧坂) — 1740年代整備的石階坡，江戶街景與八坂塔越構圖，櫻與紅葉借景",
+        "二年坂(二寧坂) — 比三年坂緩坡，明治町家與石板，黃昏提燈燈光有情",
+        "八坂塔(法觀寺) — 高46米五重塔，八坂通坡道下方仰拍構圖世界聞名",
+        "寧寧之道 — 通向高台寺的石板小徑，寧寧(豐臣秀吉夫人)相關之道，和服著裝體驗人氣",
+        "清水坂 — 清水寺正面參道，土特產店與京都風情，傍晚擁擠散去時為目標",
+      ],
+      ko: [
+        "산넨자카(산네이자카) — 1740년대 정비된 돌계단 비탈, 에도의 거리 풍경과 야사카 탑 너머의 구도, 벚꽃과 단풍의 차경",
+        "니넨자카(니네이자카) — 산넨자카보다 완만한 비탈, 메이지의 마치야와 돌길, 황혼의 등불의 빛이 정취",
+        "야사카 탑(호칸지) — 높이 46m의 5층탑, 야사카도리 비탈길 아래에서 올려다보는 구도가 세계적으로 유명",
+        "네네의 길 — 고다이지로 이어지는 돌길의 작은 길, 네네(도요토미 히데요시의 부인)와 관련된 길, 기모노 입기 체험으로 인기",
+        "기요미즈자카 — 기요미즈데라로의 정면 참배로, 기념품 가게와 교토다운 정취, 저녁의 혼잡이 사라진 무렵이 노릴 만",
       ],
     },
     quickAnswers: {
@@ -4749,6 +4869,30 @@ export const LOCATION_CONTENT = {
         { q: "History of Sannenzaka and Ninenzaka?", a: "Sannenzaka is named for legend that it was built in Daido 3 (808 AD), though actual paving dates to the 1740s. From the folk belief «trip here, die in three years,» shops still sell gourd-shaped charms against falls. Designated Important Preservation District in 1976, it remains an iconic success story of Kyoto machiya preservation." },
         { q: "Kimono rental and dressing experiences?", a: "Around 30 kimono rental shops in Gion and Higashiyama. Half-day plans ¥3,000–6,000 (kimono + hair); plus a photo session, ¥15,000+. «Yumeyakata Gion» and «Okamoto» are major chains. Pick up early, shoot before the crowds, return in the evening — that's the efficient pattern. Kimono on the approach paths is a Kyoto signature." },
         { q: "Combine with nearby attractions?", a: "①Kiyomizu-dera (8 AM opening) → ②Sannenzaka/Ninenzaka (stone paving + Yasaka Pagoda) → ③Yasaka Shrine (matchmaking, night illumination) → ④Gion Shirakawa (machiya + cherry/night) → ⑤Hanami-koji (you might glimpse maiko). The Kyoto golden route, all walkable; covers half a day to a full day." },
+      ],
+      zh: [
+        { q: "清水寺周边是什么?", a: "京都市东山区清水寺通参道区(三年坂·二年坂·清水坂·八坂通)，江户至明治期町家与石板连绵的重要传统建造物群保存地区。借景八坂塔(法观寺)的构图是京都象征撮影地。" },
+        { q: "八坂塔撮影点?", a: "八坂通坡道下方仰拍角度世界闻名定番。早6至7时游客几无，和服肖像撮影最佳。雨后石板反射的傍晚亦独特情调。" },
+        { q: "撮影最佳时段?", a: "清晨6至8时压倒性空闲且光柔，和服游客点缀画面午后3时左右◎。日落前后蓝调时刻提灯与石板组合梦幻，雨日湿石板亦深受外国摄影师人气。" },
+        { q: "三年坂·二年坂的历史?", a: "三年坂据传大同3年(808年)整备而得名，实际1740年代整备。「此跌3年内死」的俗信，今仍有售跌防瓢の店。1976年指定重要传统建造物群保存地区，京都町家保存代表性成功例。" },
+        { q: "和服租借·着装体验?", a: "祇园·东山周边和服租借店约30家。半日方案3000至6000日元(着装+发型，含)，撮影方案15000日元起。「梦京都祇园店」「冈本」为大手。早出发避人潮撮影，傍晚归还效率高。和服参道撮影是京都风物诗。" },
+        { q: "周边连续观光路线?", a: "①清水寺(8时开门)→②三年坂·二年坂(石板与八坂塔)→③八坂神社(结缘，夜灯光)→④祇园白川(町家与樱·夜景)→⑤花见小路(可遇舞妓)。徒步全可巡的京都黄金路线，半日至1日撮影可能。" },
+      ],
+      "zh-tw": [
+        { q: "清水寺周邊是什麼?", a: "京都市東山區清水寺通參道區(三年坂·二年坂·清水坂·八坂通)，江戶至明治期町家與石板連綿的重要傳統建造物群保存地區。借景八坂塔(法觀寺)的構圖是京都象徵撮影地。" },
+        { q: "八坂塔撮影點?", a: "八坂通坡道下方仰拍角度世界聞名定番。早6至7時遊客幾無，和服肖像撮影最佳。雨後石板反射的傍晚亦獨特情調。" },
+        { q: "撮影最佳時段?", a: "清晨6至8時壓倒性空閒且光柔，和服遊客點綴畫面午後3時左右◎。日落前後藍調時刻提燈與石板組合夢幻，雨日濕石板亦深受外國攝影師人氣。" },
+        { q: "三年坂·二年坂的歷史?", a: "三年坂據傳大同3年(808年)整備而得名，實際1740年代整備。「此跌3年內死」的俗信，今仍有售跌防瓢の店。1976年指定重要傳統建造物群保存地區，京都町家保存代表性成功例。" },
+        { q: "和服租借·著裝體驗?", a: "祇園·東山周邊和服租借店約30家。半日方案3000至6000日圓(著裝+髮型，含)，撮影方案15000日圓起。「夢京都祇園店」「岡本」為大手。早出發避人潮撮影，傍晚歸還效率高。和服參道撮影是京都風物詩。" },
+        { q: "周邊連續觀光路線?", a: "①清水寺(8時開門)→②三年坂·二年坂(石板與八坂塔)→③八坂神社(結緣，夜燈光)→④祇園白川(町家與櫻·夜景)→⑤花見小路(可遇舞妓)。徒步全可巡的京都黃金路線，半日至1日撮影可能。" },
+      ],
+      ko: [
+        { q: "기요미즈데라 주변이란?", a: "교토시 히가시야마구의 기요미즈데라로의 참배로 지구(산넨자카·니넨자카·기요미즈자카·야사카도리)로, 에도~메이지기의 마치야와 돌길이 연이은 중요 전통적 건조물군 보존지구. 야사카 탑(호칸지)을 차경으로 한 구도는 교토를 상징하는 촬영지입니다." },
+        { q: "야사카 탑의 촬영 포인트는?", a: "야사카도리의 비탈길 아래에서 올려다보는 앵글이 세계적으로 유명한 정석. 아침 6~7시는 관광객이 거의 제로로, 기모노 차림의 포트레이트 촬영에도 최적. 비 온 후 돌길이 반사하는 저녁도 독특한 정취가 있음." },
+        { q: "베스트 촬영 시간대는?", a: "이른 아침 6~8시가 압도적으로 한적하고 빛도 부드러움, 기모노 차림의 관광객이 화면을 수놓는 오후 3시 무렵도 ◎. 일몰 전후의 푸른 시간대는 등불과 돌길의 조합이 환상적, 비 오는 날의 젖은 돌길도 외국인 사진가에게 큰 인기." },
+        { q: "산넨자카·니넨자카의 역사는?", a: "산넨자카는 다이도 3년(808년)에 정비되었다는 전승에서 이름이 붙었지만, 실제로는 1740년대의 정비. 「여기서 넘어지면 3년에 죽는다」는 속신에서, 넘어짐 액땜의 표주박을 파는 가게가 지금도 남아 있음. 1976년에 중요 전통적 건조물군 보존지구로 지정, 교토의 마치야 보존의 대표적 성공 사례입니다." },
+        { q: "기모노 렌탈·입기 체험은?", a: "기온·히가시야마 주변에 기모노 렌탈 가게 약 30곳. 반나절 플랜 3,000~6,000엔(기모노+헤어 세트 포함), 사진 촬영 플랜 15,000엔~. 「유메 교토 기온점」 「오카모토」가 대형. 이른 출발로 인파 전 촬영, 저녁 반납이 효율적. 기모노 차림으로의 참배로 촬영은 교토의 풍물시." },
+        { q: "주변의 볼거리 연속 코스?", a: "①기요미즈데라(8시 개문) → ②산넨자카·니넨자카(돌길과 야사카 탑) → ③야사카 신사(결연, 밤의 조명) → ④기온 시라카와(마치야와 벚꽃·야경) → ⑤하나미코지(마이코를 만날 수 있을지도). 도보로 모두 둘러볼 수 있는 교토 골든 루트, 반나절~1일에 촬영 가능합니다." },
       ],
     },
     faqs: [
