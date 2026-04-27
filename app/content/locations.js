@@ -1209,10 +1209,13 @@ export const LOCATION_CONTENT = {
       "內宮前石板參道御祓町再現江戶至明治街景。中段的「御蔭橫丁」是參拜後熱鬧區域，赤福本店、伊勢烏龍、手捏壽司等美食與風情兼具。",
       "내궁 앞 돌길 참배로 오하라이마치는 에도~메이지 시대 거리를 재현. 그 중간의 '오카게요코초'는 참배 후 활기찬 구역으로 아카후쿠 본점, 이세 우동, 데코네즈시 등 먹거리와 정취를 즐길 수 있습니다."
     ),
-    definition: lh(
-      "おはらい町・おかげ横丁(おはらいまち・おかげよこちょう)は三重県伊勢市の伊勢神宮内宮(皇大神宮)門前に広がる石畳の参道(全長約800m)で、江戸末期から明治初期の伊勢路の町並みを再現した観光商業地区。中心部にある「おかげ横丁」(2,700坪、約50店舗)は1993年に「赤福本店」を擁する赤福が創業290周年事業として開発した伝統町並み再現エリアで、伊勢神宮参拝後の「お蔭まいり」文化を体現します。赤福本店、伊勢うどん、てこね寿司、松阪牛、神宮酒場、伊勢萬古焼など、伊勢の食文化と伝統工芸が一堂に集まり、年間約400万人が訪れる日本有数の門前町です。",
-      "Oharaimachi and Okage Yokocho form an 800 m stone-paved approach to the Inner Shrine (Kotai Jingu) of Ise Jingu in Ise City, Mie Prefecture, recreating the late-Edo to early-Meiji townscape of the Ise pilgrimage route. At its heart, «Okage Yokocho» (2,700 tsubo, about 50 shops) was developed in 1993 by Akafuku as the 290th-anniversary project, embodying the post-pilgrimage «Okage-mairi» tradition. With Akafuku Honten, Ise udon, tekone-zushi, Matsusaka beef, the Jingu Sakaba, and Iseban-ko pottery all gathered in one place, this temple-front district welcomes about 4 million visitors a year and ranks among Japan's foremost approach-streets."
-    ),
+    definition: {
+      ja: "おはらい町・おかげ横丁(おはらいまち・おかげよこちょう)は三重県伊勢市の伊勢神宮内宮(皇大神宮)門前に広がる石畳の参道(全長約800m)で、江戸末期から明治初期の伊勢路の町並みを再現した観光商業地区。中心部にある「おかげ横丁」(2,700坪、約50店舗)は1993年に「赤福本店」を擁する赤福が創業290周年事業として開発した伝統町並み再現エリアで、伊勢神宮参拝後の「お蔭まいり」文化を体現します。赤福本店、伊勢うどん、てこね寿司、松阪牛、神宮酒場、伊勢萬古焼など、伊勢の食文化と伝統工芸が一堂に集まり、年間約400万人が訪れる日本有数の門前町です。",
+      en: "Oharaimachi and Okage Yokocho form an 800 m stone-paved approach to the Inner Shrine (Kotai Jingu) of Ise Jingu in Ise City, Mie Prefecture, recreating the late-Edo to early-Meiji townscape of the Ise pilgrimage route. At its heart, «Okage Yokocho» (2,700 tsubo, about 50 shops) was developed in 1993 by Akafuku as the 290th-anniversary project, embodying the post-pilgrimage «Okage-mairi» tradition. With Akafuku Honten, Ise udon, tekone-zushi, Matsusaka beef, the Jingu Sakaba, and Iseban-ko pottery all gathered in one place, this temple-front district welcomes about 4 million visitors a year and ranks among Japan's foremost approach-streets.",
+      zh: "御祓町·御荫横丁(おはらいまち・おかげよこちょう)是三重县伊势市伊势神宫内宫(皇大神宫)门前展开的石板参道(全长约800米)，再现江户末至明治初期伊势路街景的观光商业区。中央「御荫横丁」(2700坪，约50店铺)是1993年赤福(含「赤福本店」)创业290周年事业开发的传统街景再现区，体现伊势神宫参拜后的「御荫参」文化。赤福本店、伊势乌冬、手捏寿司、松阪牛、神宫酒场、伊势万古烧等，伊势饮食文化与传统工艺集一堂，年约400万人来访的日本屈指门前町。",
+      "zh-tw": "御祓町·御蔭橫丁(おはらいまち・おかげよこちょう)是三重縣伊勢市伊勢神宮內宮(皇大神宮)門前展開的石板參道(全長約800米)，再現江戶末至明治初期伊勢路街景的觀光商業區。中央「御蔭橫丁」(2700坪，約50店鋪)是1993年赤福(含「赤福本店」)創業290週年事業開發的傳統街景再現區，體現伊勢神宮參拜後的「御蔭參」文化。赤福本店、伊勢烏龍、手捏壽司、松阪牛、神宮酒場、伊勢萬古燒等，伊勢飲食文化與傳統工藝集一堂，年約400萬人來訪的日本屈指門前町。",
+      ko: "오하라이마치·오카게요코초(おはらいまち・おかげよこちょう)는 미에현 이세시의 이세 신궁 내궁(고타이진구) 문전에 펼쳐진 돌길 참배로(전장 약 800m)로, 에도 말기부터 메이지 초기의 이세로의 거리를 재현한 관광 상업 지구. 중심부의 「오카게요코초」(2,700평, 약 50개 점포)는 1993년 「아카후쿠 본점」을 거느린 아카후쿠가 창업 290주년 사업으로 개발한 전통 거리 재현 구역으로, 이세 신궁 참배 후의 「오카게마이리」 문화를 구현합니다. 아카후쿠 본점, 이세 우동, 데코네즈시, 마쓰사카 소고기, 진구 사카바, 이세 만코야키 등 이세의 음식 문화와 전통 공예가 한자리에 모여, 연간 약 400만 명이 찾는 일본 굴지의 문전 마을입니다.",
+    },
     highlights: {
       ja: [
         "おかげ横丁 — 江戸〜明治の町並み再現、約50店舗、赤福本店、伊勢うどん、てこね寿司の本場",
@@ -1227,6 +1230,27 @@ export const LOCATION_CONTENT = {
         "Akafuku Honten — Ise's famous mochi shop founded in 1707; enjoy it inside while gazing at the Isuzu River",
         "Maneki-neko Shop and Iseban-ko Pottery — traditional craft shops where you can watch artisans at work",
         "Evening Illumination — lanterns and stone paving create a retro nightscape, especially atmospheric when wet stone reflects light after rain",
+      ],
+      zh: [
+        "御荫横丁 — 江户至明治街景再现，约50店铺，赤福本店·伊势乌冬·手捏寿司本场",
+        "御祓町通 — 通向内宫的石板参道，五十铃川沿木造建筑连绵",
+        "赤福本店 — 1707年创业的伊势名物饼，店内可眺五十铃川品尝",
+        "招猫店·伊势万古烧工坊 — 传统工艺店林立，工匠手作近距观察",
+        "夜间灯光秀 — 提灯与石板的怀旧夜景，雨后石板反射梦幻",
+      ],
+      "zh-tw": [
+        "御蔭橫丁 — 江戶至明治街景再現，約50店鋪，赤福本店·伊勢烏龍·手捏壽司本場",
+        "御祓町通 — 通向內宮的石板參道，五十鈴川沿木造建築連綿",
+        "赤福本店 — 1707年創業的伊勢名物餅，店內可眺五十鈴川品嘗",
+        "招貓店·伊勢萬古燒工坊 — 傳統工藝店林立，工匠手作近距觀察",
+        "夜間燈光秀 — 提燈與石板的懷舊夜景，雨後石板反射夢幻",
+      ],
+      ko: [
+        "오카게요코초 — 에도~메이지 거리 재현, 약 50개 점포, 아카후쿠 본점·이세 우동·데코네즈시의 본고장",
+        "오하라이마치 거리 — 내궁으로 이어지는 돌길 참배로, 이스즈가와 변의 목조 건축이 연이음",
+        "아카후쿠 본점 — 1707년 창업한 이세의 명물 떡, 가게 안에서 이스즈가와를 바라보면서 즐길 수 있음",
+        "마네키네코 가게·이세 만코야키 공방 — 전통 공예점이 늘어서 있어, 장인의 손 작업을 가까이서 관찰",
+        "야간 조명 — 등불과 돌길의 레트로한 야경, 비 온 후 돌길의 반사가 환상적",
       ],
     },
     quickAnswers: {
@@ -1246,6 +1270,30 @@ export const LOCATION_CONTENT = {
         { q: "Recommended foods?", a: "①Ise udon (fat soft noodles in tamari sauce, ¥550) ②Tekone-zushi (fisherman-style marinated bonito sushi, ¥1,500) ③Ise beef skewers (local Black Wagyu, ¥1,000) ④Matsusaka beef nigiri (luxe, ¥1,000+ per piece) ⑤Buta-sute croquettes (¥100). Walking-and-eating pairs naturally with townscape photography." },
         { q: "Etiquette for photographing inside shops?", a: "Inside-shop photography is generally OK with a quick word to staff. Avoid photographing products without buying. Be considerate when including tourists or shopkeepers. Tripods aren't usable on narrow streets; mind your strap in tight aisles. Early morning 7–8 AM offers the bonus of shopkeepers preparing — beautiful subjects." },
       ],
+      zh: [
+        { q: "御祓町·御荫横丁是什么?", a: "三重县伊势市伊势神宫内宫门前展开的全长约800米石板参道，再现江户末至明治初期伊势路街景。以1993年赤福开发的「御荫横丁」(50店铺)为中心，年400万人来访的日本屈指门前町。" },
+        { q: "最佳时段?", a: "清晨7至9时游客少，木造建筑光影美撮影时段。傍晚至夜灯光秀提灯与石板组合有情。雨天石板亦优秀被摄体。" },
+        { q: "如何前往与参拜后行程?", a: "近铁宇治山田站·伊势市站乘巴士至内宫前20分。内宫参拜(早晨)→御祓町·御荫横丁(早餐至午餐)为定番路线。半日足够。" },
+        { q: "赤福本店是什么?", a: "1707年(宝永4年)创业的伊势老铺和菓子店，御荫横丁中央本店为大正期建木造。豆沙饼3个300日元，赤福冰(夏期)·赤福善哉(冬期)等季节限定。本店2楼榻榻米席可望宇治川绝景，撮影与休息最佳。早5时开店。" },
+        { q: "推荐美食?", a: "①伊势乌冬(粗软面酱油酱，550日元)②手捏寿司(渔师饭由来腌鲣寿司，1500日元)③伊势牛串烤(本地黑毛和牛，1000日元)④松阪牛握寿司(奢华，1贯1000日元起)⑤豚舍可乐饼(100日元)。可边吃边走拍街景。" },
+        { q: "店铺撮影礼仪?", a: "店内撮影一句话告知店主大致可。商品单独撮影避免(撮前购买为礼)。游客或店主入镜需顾及。三脚妨通行禁，肩带在窄道注意。早7至8时店铺准备风景亦佳被摄体。" },
+      ],
+      "zh-tw": [
+        { q: "御祓町·御蔭橫丁是什麼?", a: "三重縣伊勢市伊勢神宮內宮門前展開的全長約800米石板參道，再現江戶末至明治初期伊勢路街景。以1993年赤福開發的「御蔭橫丁」(50店鋪)為中心，年400萬人來訪的日本屈指門前町。" },
+        { q: "最佳時段?", a: "清晨7至9時遊客少，木造建築光影美撮影時段。傍晚至夜燈光秀提燈與石板組合有情。雨天石板亦優秀被攝體。" },
+        { q: "如何前往與參拜後行程?", a: "近鐵宇治山田站·伊勢市站搭巴士至內宮前20分。內宮參拜(早晨)→御祓町·御蔭橫丁(早餐至午餐)為定番路線。半日足夠。" },
+        { q: "赤福本店是什麼?", a: "1707年(寶永4年)創業的伊勢老鋪和菓子店，御蔭橫丁中央本店為大正期建木造。豆沙餅3個300日圓，赤福冰(夏期)·赤福善哉(冬期)等季節限定。本店2樓榻榻米席可望宇治川絕景，撮影與休息最佳。早5時開店。" },
+        { q: "推薦美食?", a: "①伊勢烏龍(粗軟麵醬油醬，550日圓)②手捏壽司(漁師飯由來醃鰹壽司，1500日圓)③伊勢牛串烤(本地黑毛和牛，1000日圓)④松阪牛握壽司(奢華，1貫1000日圓起)⑤豚舍可樂餅(100日圓)。可邊吃邊走拍街景。" },
+        { q: "店鋪撮影禮儀?", a: "店內撮影一句話告知店主大致可。商品單獨撮影避免(撮前購買為禮)。遊客或店主入鏡需顧及。三腳妨通行禁，肩帶在窄道注意。早7至8時店鋪準備風景亦佳被攝體。" },
+      ],
+      ko: [
+        { q: "오하라이마치·오카게요코초란?", a: "미에현 이세시의 이세 신궁 내궁 문전에 펼쳐진 전장 약 800m의 돌길 참배로로, 에도 말기~메이지 초기의 이세로의 거리를 재현. 1993년 아카후쿠가 개발한 「오카게요코초」(50개 점포)를 중심으로, 연간 400만 명이 찾는 일본 굴지의 문전 마을입니다." },
+        { q: "베스트 시간대는?", a: "이른 아침 7~9시는 관광객이 적고, 목조 건축의 음영이 아름다운 촬영 타임. 저녁~밤의 조명은 등불과 돌길의 조합이 운치 있음. 비 오는 날의 돌길도 피사체로 훌륭함." },
+        { q: "가는 방법과 참배 후 흐름은?", a: "긴테쓰 우지야마다역·이세시역에서 버스로 내궁 앞까지 20분. 내궁 참배(이른 아침)→오하라이마치·오카게요코초(아침~점심)가 정석 루트. 반나절이면 충분히 둘러볼 수 있음." },
+        { q: "아카후쿠 본점이란?", a: "1707년(호에이 4년) 창업한 이세의 노포 화과자 가게로, 오카게요코초 중앙의 본점은 다이쇼기 축조의 목조 건축. 팥 떡 3개입 300엔, 아카후쿠 빙수(여름철)·아카후쿠 젠자이(겨울철) 등 계절 한정 메뉴도. 본점 2층 다다미석은 우지가와를 바라보는 절경, 촬영과 휴식에 최적. 아침 5시 개점." },
+        { q: "추천 미식은?", a: "①이세 우동(굵은 코시 없는 면, 다마리 간장 소스, 550엔) ②데코네즈시(어부 밥 유래의 절임 가다랑어 스시, 1,500엔) ③이세 소고기 꼬치구이(현지 흑모와규, 1,000엔) ④마쓰사카 소고기 니기리(사치, 1점 1,000엔~) ⑤부타스테 고로케(100엔). 먹으면서 걸으며 거리 촬영을 즐길 수 있음." },
+        { q: "점포의 촬영 매너는?", a: "점내 촬영은 점주·스태프에게 한마디 건네면 대체로 가능. 상품 단독 촬영은 자제하는 것이 예의(촬영 전 구입). 관광객이나 가게 인물을 화면에 넣을 경우 배려. 삼각대는 통행 방해가 되므로 사용 불가, 스트랩도 좁은 통로에서 조심을. 이른 아침 7~8시는 점포의 준비 풍경도 좋은 피사체에." },
+      ],
     },
     faqs: [
       { q: d("ベストな時間帯は？","Best time of day?","最佳时段？","最佳時段？","최적 시간대는?"),
@@ -1260,10 +1308,13 @@ export const LOCATION_CONTENT = {
       "朝熊山展望台海拔555米，是伊勢志摩國立公園最高峰。晴天可眺望伊勢灣、富士山、鳥羽灣的800米高空全景。有天空郵筒和足湯。",
       "아사마산 전망대는 해발 555m, 이세시마 국립공원 내 최고봉. 맑은 날에는 이세만, 후지산, 도바만, 지상 800m 절경 파노라마를 조망. '천공 우체통'과 족욕탕도 있습니다."
     ),
-    definition: lh(
-      "朝熊山(あさまやま)展望台は三重県伊勢市朝熊町、標高555mの朝熊ヶ岳山頂付近にある展望台で、伊勢志摩国立公園内の最高峰。伊勢志摩スカイライン(1964年開通の有料道路、全長16.3km)を通って車・バイクでアクセス可能で、晴天時には眼下に伊勢湾の島々、北西方向に富士山(直線距離約200km)、南には鳥羽湾と志摩半島のリアス式海岸線まで一望できる西日本屈指のパノラマスポット。「天空のポスト」と称される赤いポスト、足湯、開運招福朝熊岳金剛證寺など、伊勢神宮参拝者が「奥の院」として参拝する古来の聖地でもあります。",
-      "The Mt. Asama Observatory in Asama-cho, Ise City, Mie Prefecture, sits near the summit of Asamagatake at 555 m — the highest peak within Ise-Shima National Park. Accessible by car or motorcycle via the Ise-Shima Skyline (a 16.3 km toll road opened in 1964), on clear days it commands the islands of Ise Bay below, Mt. Fuji to the northwest about 200 km in the distance, and Toba Bay and the Shima Peninsula's ria coastline to the south — one of western Japan's premier panoramas. With its red «Sky Post,» foot bath, and Kongoshoji Temple (the «inner sanctuary» of Ise Jingu, traditionally visited together with the main shrines), it serves as a sacred site as well as a viewpoint."
-    ),
+    definition: {
+      ja: "朝熊山(あさまやま)展望台は三重県伊勢市朝熊町、標高555mの朝熊ヶ岳山頂付近にある展望台で、伊勢志摩国立公園内の最高峰。伊勢志摩スカイライン(1964年開通の有料道路、全長16.3km)を通って車・バイクでアクセス可能で、晴天時には眼下に伊勢湾の島々、北西方向に富士山(直線距離約200km)、南には鳥羽湾と志摩半島のリアス式海岸線まで一望できる西日本屈指のパノラマスポット。「天空のポスト」と称される赤いポスト、足湯、開運招福朝熊岳金剛證寺など、伊勢神宮参拝者が「奥の院」として参拝する古来の聖地でもあります。",
+      en: "The Mt. Asama Observatory in Asama-cho, Ise City, Mie Prefecture, sits near the summit of Asamagatake at 555 m — the highest peak within Ise-Shima National Park. Accessible by car or motorcycle via the Ise-Shima Skyline (a 16.3 km toll road opened in 1964), on clear days it commands the islands of Ise Bay below, Mt. Fuji to the northwest about 200 km in the distance, and Toba Bay and the Shima Peninsula's ria coastline to the south — one of western Japan's premier panoramas. With its red «Sky Post,» foot bath, and Kongoshoji Temple (the «inner sanctuary» of Ise Jingu, traditionally visited together with the main shrines), it serves as a sacred site as well as a viewpoint.",
+      zh: "朝熊山(あさまやま)展望台位于三重县伊势市朝熊町，海拔555米朝熊岳山顶附近的展望台，伊势志摩国立公园内最高峰。可通过伊势志摩天际线(1964年开通收费道路，全长16.3公里)开车·机车前往，晴天可俯瞰伊势湾岛屿、西北方向富士山(直线距离约200公里)、南鸟羽湾与志摩半岛里亚斯式海岸线，西日本屈指全景点。称「天空邮筒」的红色邮箱、足汤、开运招福朝熊岳金刚证寺等，亦是伊势神宫参拜者作为「奥之院」古来参拜的圣地。",
+      "zh-tw": "朝熊山(あさまやま)展望台位於三重縣伊勢市朝熊町，海拔555米朝熊岳山頂附近的展望台，伊勢志摩國立公園內最高峰。可通過伊勢志摩天際線(1964年開通收費道路，全長16.3公里)開車·機車前往，晴天可俯瞰伊勢灣島嶼、西北方向富士山(直線距離約200公里)、南鳥羽灣與志摩半島里亞斯式海岸線，西日本屈指全景點。稱「天空郵筒」的紅色郵箱、足湯、開運招福朝熊岳金剛證寺等，亦是伊勢神宮參拜者作為「奧之院」古來參拜的聖地。",
+      ko: "아사마산(あさまやま) 전망대는 미에현 이세시 아사마초, 해발 555m의 아사마가타케 산정 부근에 있는 전망대로, 이세시마 국립공원 내 최고봉. 이세시마 스카이라인(1964년 개통한 유료 도로, 전장 16.3km)을 통해 차·바이크로 액세스 가능하며, 맑은 날에는 발 아래 이세만의 섬들, 북서 방향에 후지산(직선 거리 약 200km), 남쪽에는 도바만과 시마 반도의 리아스식 해안선까지 한눈에 볼 수 있는 서일본 굴지의 파노라마 스팟. 「천공의 우체통」으로 불리는 빨간 우체통, 족욕탕, 개운초복 아사마다케 곤고쇼지 등, 이세 신궁 참배자가 「오쿠노인」으로 참배하는 고래의 성지이기도 합니다.",
+    },
     highlights: {
       ja: [
         "山頂展望台 — 標高555m、東に伊勢湾と富士山、南に鳥羽湾と志摩半島の360度パノラマ",
@@ -1278,6 +1329,27 @@ export const LOCATION_CONTENT = {
         "Kongoshoji Temple — founded in the Heian period, the «inner sanctuary» of Ise Jingu; the Edo-period main hall was built by master shrine carpenters",
         "Foot Bath — beside the summit restaurant, free to use while gazing over Ise Bay; especially memorable in winter",
         "Ise-Shima Skyline — a 16.3 km scenic drive opened in 1964, with cherry blossoms, fresh green, and autumn colors across the seasons",
+      ],
+      zh: [
+        "山顶展望台 — 海拔555米，东伊势湾与富士山，南鸟羽湾与志摩半岛360度全景",
+        "天空邮筒 — 山顶红色邮箱，可投函明信片，与富士山合影定番",
+        "金刚证寺(こんごうしょうじ) — 平安时代创建，伊势神宫「奥之院」，宫大工江户期本堂",
+        "足汤 — 山顶餐厅旁，可眺伊势湾免费利用，冬季绝景",
+        "伊势志摩天际线 — 全长16.3公里，1964年开通绝景兜风，樱·新绿·红叶四季",
+      ],
+      "zh-tw": [
+        "山頂展望台 — 海拔555米，東伊勢灣與富士山，南鳥羽灣與志摩半島360度全景",
+        "天空郵筒 — 山頂紅色郵箱，可投函明信片，與富士山合影定番",
+        "金剛證寺(こんごうしょうじ) — 平安時代創建，伊勢神宮「奧之院」，宮大工江戶期本堂",
+        "足湯 — 山頂餐廳旁，可眺伊勢灣免費利用，冬季絕景",
+        "伊勢志摩天際線 — 全長16.3公里，1964年開通絕景兜風，櫻·新綠·紅葉四季",
+      ],
+      ko: [
+        "산정 전망대 — 해발 555m, 동쪽에 이세만과 후지산, 남쪽에 도바만과 시마 반도의 360도 파노라마",
+        "천공의 우체통 — 산정의 빨간 우체통, 엽서를 투함할 수 있음, 후지산과의 사진이 정석",
+        "곤고쇼지(こんごうしょうじ) — 헤이안 시대 창건, 이세 신궁의 「오쿠노인」, 미야다이쿠에 의한 에도기 본당",
+        "족욕탕 — 산정 레스토랑 옆, 이세만을 바라보면서 무료로 이용 가능, 겨울 절경",
+        "이세시마 스카이라인 — 전장 16.3km, 1964년 개통한 절경 드라이브, 벚꽃·신록·단풍과 사계",
       ],
     },
     quickAnswers: {
@@ -1297,6 +1369,30 @@ export const LOCATION_CONTENT = {
         { q: "How do I use the Sky Post?", a: "The red mailbox in front of the summit rest house is a real working post box — buy a postcard inside (¥300) and mail it. Cards receive the «Asamasanchodai Post Office» postmark. The classic shot pairs it with Mt. Fuji. Seasonal limited postmarks are also issued — perfect blend of photography and souvenir." },
         { q: "Combined sightseeing route?", a: "①Ise Jingu (early morning) → ②Oharaimachi/Okage Yokocho (breakfast) → ③Mt. Asama Observatory (morning, especially good if Fuji is visible) → ④Meoto Iwa (evening or next morning sunrise) → ⑤Toba Aquarium / Pearl Road (1 hr by car). A two-day itinerary covers Ise-Shima's vistas, cuisine, and shrines." },
       ],
+      zh: [
+        { q: "朝熊山展望台是什么?", a: "三重县伊势市海拔555米朝熊岳山顶附近的展望台，伊势志摩国立公园最高峰。伊势志摩天际线开车前往，晴天可眺富士山(200公里)、伊势湾、鸟羽湾，含「天空邮筒」与足汤的绝景点。" },
+        { q: "富士山可见条件?", a: "冬至春空气干燥晴天清晨(尤11至2月)。年约50至60日。日出前后逆光剪影美。降水翌日空气清晰富士见率高。" },
+        { q: "如何前往?", a: "通过伊势志摩天际线(收费1270日元)开车·机车至山顶。伊势神宫内宫开车约30分。巴士亦有但班次少。营业时间7至19时(季节变动)，夜闭锁。" },
+        { q: "金刚证寺是什么?", a: "山顶近真言宗智山派寺院，平安时代创建。守护伊势神宫鬼门(东北)的「神宫奥之院」神佛习合圣地。江户时代建本堂为重要文化财，境内含名工所造仁王门。神宫参拜后参此寺为伊势参正式流程。撮影需静，境内脱帽礼仪。" },
+        { q: "天空邮筒使用方法?", a: "山顶休息所前红色邮箱，可投函绘明信片(休息所300日元)的真实邮筒。盖「朝熊山顶邮局」邮戳后投递。与富士山同框为王道，季节限定朝熊山特别邮戳，撮影与纪念组合最佳。" },
+        { q: "周边连续观光?", a: "①伊势神宫(早晨)→②御祓町·御荫横丁(早餐)→③朝熊山展望台(午前，富士山可见◎)→④夫妻岩(夕方，或翌晨日出)→⑤鸟羽水族馆·珍珠路(车1小时)。1宿2日可饱览伊势志摩绝景·美食·神社的定番路线。" },
+      ],
+      "zh-tw": [
+        { q: "朝熊山展望台是什麼?", a: "三重縣伊勢市海拔555米朝熊岳山頂附近的展望台，伊勢志摩國立公園最高峰。伊勢志摩天際線開車前往，晴天可眺富士山(200公里)、伊勢灣、鳥羽灣，含「天空郵筒」與足湯的絕景點。" },
+        { q: "富士山可見條件?", a: "冬至春空氣乾燥晴天清晨(尤11至2月)。年約50至60日。日出前後逆光剪影美。降水翌日空氣清晰富士見率高。" },
+        { q: "如何前往?", a: "通過伊勢志摩天際線(收費1270日圓)開車·機車至山頂。伊勢神宮內宮開車約30分。巴士亦有但班次少。營業時間7至19時(季節變動)，夜閉鎖。" },
+        { q: "金剛證寺是什麼?", a: "山頂近真言宗智山派寺院，平安時代創建。守護伊勢神宮鬼門(東北)的「神宮奧之院」神佛習合聖地。江戶時代建本堂為重要文化財，境內含名工所造仁王門。神宮參拜後參此寺為伊勢參正式流程。撮影需靜，境內脫帽禮儀。" },
+        { q: "天空郵筒使用方法?", a: "山頂休息所前紅色郵箱，可投函繪明信片(休息所300日圓)的真實郵筒。蓋「朝熊山頂郵局」郵戳後投遞。與富士山同框為王道，季節限定朝熊山特別郵戳，撮影與紀念組合最佳。" },
+        { q: "周邊連續觀光?", a: "①伊勢神宮(早晨)→②御祓町·御蔭橫丁(早餐)→③朝熊山展望台(午前，富士山可見◎)→④夫婦岩(夕方，或翌晨日出)→⑤鳥羽水族館·珍珠路(車1小時)。1宿2日可飽覽伊勢志摩絕景·美食·神社的定番路線。" },
+      ],
+      ko: [
+        { q: "아사마산 전망대란?", a: "미에현 이세시 해발 555m의 아사마가타케 산정 부근 전망대로, 이세시마 국립공원 최고봉. 이세시마 스카이라인으로 차량 액세스, 맑은 날 후지산(200km), 이세만, 도바만을 한눈에, 「천공의 우체통」과 족욕탕이 있는 절경 스팟입니다." },
+        { q: "후지산이 보이는 조건은?", a: "겨울~봄 공기가 건조한 맑은 이른 아침(특히 11~2월). 연간 50~60일 정도. 일출 전후의 역광 실루엣이 아름다움. 강수 다음날은 공기가 클리어해 후지산 보일 확률이 올라감." },
+        { q: "가는 방법은?", a: "이세시마 스카이라인(유료 1,270엔)을 통해 차·바이크로 산정까지. 이세 신궁 내궁에서 차로 약 30분. 버스 편도 있으나 편수 적음. 영업 시간은 7~19시(계절 변동), 밤은 폐쇄됩니다." },
+        { q: "곤고쇼지란?", a: "산정 가까이의 진언종 치산파 사원으로, 헤이안 시대 창건. 이세 신궁의 귀문(동북)을 수호하는 「신궁의 오쿠노인」으로 여겨지는 신불 습합의 성지. 에도 시대 축조의 본당은 중요문화재, 경내에 명공이 만든 인왕문도. 신궁 참배 후 이 절을 참배하는 것이 이세 참배의 정식 흐름이었음. 촬영은 조용히, 경내에서는 모자를 벗는 예의를." },
+        { q: "천공의 우체통 사용법은?", a: "산정 휴게소 앞의 빨간 우체통으로, 그림엽서(휴게소에서 300엔)를 투함할 수 있는 진짜 우체통. 「아사마산초우체국」의 소인이 찍혀 배달됨. 후지산과 함께 찍는 구도가 왕도, 계절 한정의 아사마산 특별 소인도 있어, 촬영과 기념의 조합에 최적입니다." },
+        { q: "주변의 연속 관광 루트는?", a: "①이세 신궁(이른 아침)→②오하라이마치·오카게요코초(아침)→③아사마산 전망대(오전, 후지산 보이면 ◎)→④메오토이와(저녁, 또는 다음 날 일출)→⑤도바 수족관·진주로(차로 1시간). 1박 2일에 이세시마의 절경·미식·신사를 모두 만끽할 수 있는 정석 코스입니다." },
+      ],
     },
     faqs: [
       { q: d("富士山が見える条件は？","When can Mt. Fuji be seen?","何时能看到富士山？","何時能看到富士山？","후지산이 보이는 조건은?"),
@@ -1311,10 +1407,13 @@ export const LOCATION_CONTENT = {
       "橫山展望台可眺望英虞灣多島美景，是三重縣代表絕景。里亞式海岸散落60餘座小島與珍珠養殖筏，宛如日本的地中海。無障礙展望台便於拍攝。",
       "요코야마 전망대는 아고만의 다도해 절경을 한눈에 담을 수 있는 미에현 대표 전망대. 리아스식 해안에 흩어진 60여 개 섬과 진주 양식 뗏목이 어우러져 일본의 지중해 같습니다. 배리어프리 전망대에서 편하게 촬영 가능."
     ),
-    definition: lh(
-      "横山展望台(よこやまてんぼうだい)は三重県志摩市阿児町鵜方、標高140mの横山山頂付近にある展望台で、英虞湾(あごわん)のリアス式海岸の多島美を一望できる伊勢志摩国立公園内の代表的な絶景スポット。2018年に横山ビジターセンター・スカイテラスとして大規模リニューアルされ、バリアフリーの木造ウッドデッキ「天空カフェテラス」「桜広場」「見晴らし展望台」など複数のデッキが整備されました。眼下には英虞湾の60を超える小さな島々と真珠養殖の筏が広がり、日本のミコノス島とも称される風景。2016年G7伊勢志摩サミット記念碑も設置されています。",
-      "Yokoyama Observatory, atop Mt. Yokoyama (about 140 m) in Ago-cho Ukata, Shima City, Mie Prefecture, is the iconic viewpoint within Ise-Shima National Park overlooking the multi-island beauty of the Ago Bay ria coastline. Following a major 2018 renovation as the «Yokoyama Visitor Center & Sky Terrace,» the site now offers barrier-free wooden boardwalks across multiple decks — the «Sky Café Terrace,» «Sakura Plaza,» and the original observatory. Below, more than 60 small islands and pearl-cultivation rafts dot Ago Bay, earning comparisons to Mykonos. A monument also commemorates the 2016 G7 Ise-Shima Summit."
-    ),
+    definition: {
+      ja: "横山展望台(よこやまてんぼうだい)は三重県志摩市阿児町鵜方、標高140mの横山山頂付近にある展望台で、英虞湾(あごわん)のリアス式海岸の多島美を一望できる伊勢志摩国立公園内の代表的な絶景スポット。2018年に横山ビジターセンター・スカイテラスとして大規模リニューアルされ、バリアフリーの木造ウッドデッキ「天空カフェテラス」「桜広場」「見晴らし展望台」など複数のデッキが整備されました。眼下には英虞湾の60を超える小さな島々と真珠養殖の筏が広がり、日本のミコノス島とも称される風景。2016年G7伊勢志摩サミット記念碑も設置されています。",
+      en: "Yokoyama Observatory, atop Mt. Yokoyama (about 140 m) in Ago-cho Ukata, Shima City, Mie Prefecture, is the iconic viewpoint within Ise-Shima National Park overlooking the multi-island beauty of the Ago Bay ria coastline. Following a major 2018 renovation as the «Yokoyama Visitor Center & Sky Terrace,» the site now offers barrier-free wooden boardwalks across multiple decks — the «Sky Café Terrace,» «Sakura Plaza,» and the original observatory. Below, more than 60 small islands and pearl-cultivation rafts dot Ago Bay, earning comparisons to Mykonos. A monument also commemorates the 2016 G7 Ise-Shima Summit.",
+      zh: "横山展望台(よこやまてんぼうだい)位于三重县志摩市阿儿町鵜方，海拔140米横山山顶附近的展望台，可眺望英虞湾(あごわん)里亚斯海岸多岛美的伊势志摩国立公园代表绝景点。2018年作为横山游客中心·天空露台大规模翻新，无障碍木造Wood Deck「天空咖啡露台」「樱广场」「眺望展望台」等多处展望台整备。眼下英虞湾60余座小岛与珍珠养殖筏展开，被誉日本米科诺斯岛的风景。2016年G7伊势志摩峰会纪念碑亦设置。",
+      "zh-tw": "橫山展望台(よこやまてんぼうだい)位於三重縣志摩市阿兒町鵜方，海拔140米橫山山頂附近的展望台，可眺望英虞灣(あごわん)里亞斯海岸多島美的伊勢志摩國立公園代表絕景點。2018年作為橫山遊客中心·天空露台大規模翻新，無障礙木造Wood Deck「天空咖啡露台」「櫻廣場」「眺望展望台」等多處展望台整備。眼下英虞灣60餘座小島與珍珠養殖筏展開，被譽日本米科諾斯島的風景。2016年G7伊勢志摩峰會紀念碑亦設置。",
+      ko: "요코야마 전망대(よこやまてんぼうだい)는 미에현 시마시 아고초 우카타, 해발 140m의 요코야마 산정 부근에 있는 전망대로, 아고만(あごわん) 리아스식 해안의 다도미를 한눈에 바라볼 수 있는 이세시마 국립공원 내의 대표적인 절경 스팟. 2018년에 요코야마 비지터 센터·스카이 테라스로서 대규모 리뉴얼되어, 배리어프리의 목조 우드 데크 「천공 카페 테라스」 「벚꽃 광장」 「전망 전망대」 등 여러 데크가 정비되었습니다. 발 아래로는 아고만의 60개가 넘는 작은 섬들과 진주 양식 뗏목이 펼쳐지며, 일본의 미코노스섬으로도 불리는 풍경. 2016년 G7 이세시마 정상회담 기념비도 설치되어 있습니다.",
+    },
     highlights: {
       ja: [
         "天空カフェテラス — 2018年新設のバリアフリーウッドデッキ、英虞湾を見下ろすカフェ併設",
@@ -1329,6 +1428,27 @@ export const LOCATION_CONTENT = {
         "Sakura Plaza — about 200 Yoshino cherry trees framing Ago Bay in early April",
         "G7 Ise-Shima Summit Monument — installed to commemorate the 2016 leaders' meeting held here",
         "Sunset to Blue Hour — sun setting beyond the pearl rafts and silhouetted islands; one of West Japan's finest sunset spots",
+      ],
+      zh: [
+        "天空咖啡露台 — 2018年新设的无障碍Wood Deck，含俯瞰英虞湾的咖啡馆",
+        "眺望展望台 — 原有定番展望台，秋至冬清晨云海梦幻",
+        "樱广场 — 约200株染井吉野，4月上旬越樱英虞湾绝景",
+        "G7伊势志摩峰会纪念碑 — 2016年首脑会议开催地设置",
+        "夕景至蓝调时刻 — 越珍珠筏的夕阳，岛影剪影，西日本屈指夕景点",
+      ],
+      "zh-tw": [
+        "天空咖啡露台 — 2018年新設的無障礙Wood Deck，含俯瞰英虞灣的咖啡館",
+        "眺望展望台 — 原有定番展望台，秋至冬清晨雲海夢幻",
+        "櫻廣場 — 約200株染井吉野，4月上旬越櫻英虞灣絕景",
+        "G7伊勢志摩峰會紀念碑 — 2016年首腦會議開催地設置",
+        "夕景至藍調時刻 — 越珍珠筏的夕陽，島影剪影，西日本屈指夕景點",
+      ],
+      ko: [
+        "천공 카페 테라스 — 2018년 신설된 배리어프리 우드 데크, 아고만을 내려다보는 카페 병설",
+        "전망 전망대 — 원래 있던 정석 전망대, 운해의 아침(가을~겨울)이 환상적",
+        "벚꽃 광장 — 약 200그루의 소메이요시노, 4월 상순은 벚꽃 너머의 아고만의 절경",
+        "G7 이세시마 정상회담 기념비 — 2016년 정상회의 개최지로 설치",
+        "석경~블루 아워 — 진주 뗏목 너머의 일몰, 섬 그림자의 실루엣, 서일본 굴지의 석양 스팟",
       ],
     },
     quickAnswers: {
@@ -1347,6 +1467,30 @@ export const LOCATION_CONTENT = {
         { q: "Camera gear?", a: "Wide angle (16–35mm) for full Ago Bay panorama, standard zoom (24–105mm) for island and raft detail, telephoto (70–200mm) to compress distant islands. Tripods OK (consider crowds). Plan a 2-hour stay for sunset to blue hour, with warm clothing and headlamp." },
         { q: "Conditions for sea-of-clouds?", a: "Cool, clear, windless mornings October–February, especially after rain or fog the night before. Peak 30 min to 1 hour before sunrise. About 20–30 mornings per year — when it appears, islands floating above the clouds («sky islands») make a stunning composition." },
         { q: "G7 summit and pearl history?", a: "The 2016 G7 Ise-Shima Summit was held on Kashikojima within this same Ago Bay. The bay is the birthplace of pearl aquaculture — in 1893 Kokichi Mikimoto here succeeded with the world's first cultured spherical pearls. The rafts you see from the observatory still cultivate pearls today; the bay's beauty itself is testament to the conditions that nurture them." },
+      ],
+      zh: [
+        { q: "横山展望台是什么?", a: "三重县志摩市海拔140米横山山顶的展望台，可眺望英虞湾里亚斯式海岸与60余座小岛·珍珠筏的伊势志摩国立公园代表绝景点。2018年无障碍化，被誉日本的米科诺斯岛风景。" },
+        { q: "推荐撮影时间?", a: "日出至晨，或夕阳染色时段。尤夕阳至蓝调时刻岛影与珍珠筏剪影梦幻。秋至冬清晨可现云海，当日海与天皆橙色。" },
+        { q: "如何前往?", a: "近铁志摩线「鵜方站」开车10分，亦有接驳巴士(夏期限)。停车场免费。无阶梯无障碍设计，轮椅·婴儿车亦可轻松至展望台。" },
+        { q: "撮影器材?", a: "广角(16-35mm)拍英虞湾全景，标准变焦(24-105mm)拍岛与珍珠筏细节，长焦(70-200mm)远方岛屿压缩构图。三脚架OK(拥挤时顾及)。日落至蓝调时刻撮影预计2小时停留，防寒装备与头灯勿忘。" },
+        { q: "云海发生条件?", a: "10至2月清晨，晴天气温低无风，前夜雨雾日。日出前30分至1小时为高峰。云海概率年20至30日较低，但出现则可拍岛屿浮于云上「天空之岛」般构图。" },
+        { q: "G7峰会与珍珠的关系?", a: "2016年G7伊势志摩峰会会场(贤岛)在此英虞湾内。作为珍珠养殖发祥地，御木本幸吉1893年于此成功世界首个真圆珍珠养殖的历史。展望台所见筏今仍养珍珠，海之美亦为孕育珍珠自然条件的证。" },
+      ],
+      "zh-tw": [
+        { q: "橫山展望台是什麼?", a: "三重縣志摩市海拔140米橫山山頂的展望台，可眺望英虞灣里亞斯式海岸與60餘座小島·珍珠筏的伊勢志摩國立公園代表絕景點。2018年無障礙化，被譽日本的米科諾斯島風景。" },
+        { q: "推薦撮影時間?", a: "日出至晨，或夕陽染色時段。尤夕陽至藍調時刻島影與珍珠筏剪影夢幻。秋至冬清晨可現雲海，當日海與天皆橙色。" },
+        { q: "如何前往?", a: "近鐵志摩線「鵜方站」開車10分，亦有接駁巴士(夏期限)。停車場免費。無階梯無障礙設計，輪椅·嬰兒車亦可輕鬆至展望台。" },
+        { q: "撮影器材?", a: "廣角(16-35mm)拍英虞灣全景，標準變焦(24-105mm)拍島與珍珠筏細節，長焦(70-200mm)遠方島嶼壓縮構圖。三腳架OK(擁擠時顧及)。日落至藍調時刻撮影預計2小時停留，防寒裝備與頭燈勿忘。" },
+        { q: "雲海發生條件?", a: "10至2月清晨，晴天氣溫低無風，前夜雨霧日。日出前30分至1小時為高峰。雲海概率年20至30日較低，但出現則可拍島嶼浮於雲上「天空之島」般構圖。" },
+        { q: "G7峰會與珍珠的關係?", a: "2016年G7伊勢志摩峰會會場(賢島)在此英虞灣內。作為珍珠養殖發祥地，御木本幸吉1893年於此成功世界首個真圓珍珠養殖的歷史。展望台所見筏今仍養珍珠，海之美亦為孕育珍珠自然條件的證。" },
+      ],
+      ko: [
+        { q: "요코야마 전망대란?", a: "미에현 시마시의 해발 140m 요코야마 산정의 전망대로, 아고만의 리아스식 해안과 60개가 넘는 작은 섬·진주 뗏목을 한눈에 볼 수 있는 이세시마 국립공원의 대표 절경 스팟. 2018년에 배리어프리화되어 일본의 미코노스섬으로 불리는 풍경입니다." },
+        { q: "추천 촬영 시간은?", a: "일출~아침, 또는 일몰에 물드는 시간대. 특히 일몰~블루 아워는 섬 그림자와 진주 뗏목의 실루엣이 환상적. 가을~겨울 아침에는 운해가 나오는 일도 있고, 그날 안에는 바다와 하늘이 오렌지색으로." },
+        { q: "가는 방법은?", a: "긴테쓰 시마선 「우카타역」에서 차로 10분, 셔틀버스도 있음(여름철 한정). 주차장 있음(무료). 계단 없는 배리어프리 설계로, 휠체어·유모차로도 전망대까지 쉽게 액세스 가능합니다." },
+        { q: "촬영 기재는?", a: "광각(16-35mm)으로 아고만 전경, 표준 줌(24-105mm)으로 섬과 진주 뗏목의 디테일, 망원(70-200mm)으로 먼 섬들의 압축 구도. 삼각대 OK(혼잡 시 배려). 일몰~블루 아워 촬영은 2시간 체류를 상정, 방한 장비와 헤드라이트를 잊지 말 것." },
+        { q: "운해의 발생 조건은?", a: "10~2월의 이른 아침, 맑은 날씨에 기온이 낮고 무풍, 전날 밤에 비나 안개가 있었던 날. 일출 전 30분~1시간이 절정. 운해 확률은 연간 20~30일 정도로 낮지만, 출현하면 섬들이 구름 위에 떠오르는 「천공의 섬」 같은 구도를 찍을 수 있음." },
+        { q: "G7 정상회담과 진주의 관계는?", a: "2016년 G7 이세시마 정상회담 회장(가시코지마)은 이 아고만 내. 진주 양식의 발상지로서, 미키모토 코키치가 1893년에 세계 최초의 진원 진주 양식에 성공한 역사도. 전망대에서 보이는 뗏목은 지금도 진주 양식이 이루어지고 있는 현역, 바다의 아름다움은 진주를 키우는 자연 조건의 증거이기도 합니다." },
       ],
     },
     faqs: [
