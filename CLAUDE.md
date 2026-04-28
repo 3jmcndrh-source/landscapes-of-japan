@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Japanese landscape photography portfolio. Built with **Next.js 16** + **Cloudinary** + **D3.js**, deployed on **Vercel**. 20-language localization, gold-accent dark-cinematic design.
+Japanese landscape photography portfolio. Built with **Next.js 16** + **Cloudinary** + **D3.js**, deployed on **Vercel**. 25-language localization, gold-accent dark-cinematic design.
 
 - **Production URL:** https://landscapes-of-japan.vercel.app
 - **GitHub:** https://github.com/3jmcndrh-source/landscapes-of-japan (branch: master — Vercel auto-deploys on push)
@@ -19,12 +19,14 @@ Preview launch config: `C:\Users\3jmcn\Downloads\files\.claude\launch.json` (use
 ```
 app/
   [lang]/
-    layout.js             # Root layout: html/body/fonts, dynamic <html lang dir>, RTL for ar
-    page.js               # Server component: generateStaticParams (20 langs), generateMetadata
+    layout.js             # Root layout: html/body/fonts, dynamic <html lang dir>, RTL for ar/fa/he
+    page.js               # Server component: generateStaticParams (25 langs), generateMetadata
     opengraph-image.js    # Edge runtime: dynamic per-lang OG image via next/og + Satori
   PageClient.js           # Client component (~1558 lines): old page.js, now takes initialLang prop
   i18n-meta.js            # LANGS, HREFLANG (BCP 47), SEO_META per lang, SITE_URL, OG_IMAGE, RTL_LANGS
-  sitemap.js              # 20 URL entries + hreflang alternates (replaces public/sitemap.xml)
+  sitemap.xml/route.js    # Sitemap index → /sitemap/0.xml + per-prefecture /sitemap/{1..N}.xml
+  sitemap/[id]/route.js   # Split sitemap (id=0: root+pref+loc+blog+...; id=N: photo URLs of pref N-1)
+  sitemap-images.xml/route.js  # Google image sitemap (canonical /ja/ URLs only)
   globals.css             # All styles (dark theme, glassmorphism, gold accents, reveal animations)
   favicon.ico
 proxy.js              # Root-level: Next.js 16 renamed middleware. Accept-Language → /{lang}/ 301
@@ -43,19 +45,19 @@ vercel.json        # Security headers (CSP, X-Frame-Options)
 
 ## Architecture
 
-20 language-prefixed routes via `app/[lang]/` dynamic segment. Flow:
+25 language-prefixed routes via `app/[lang]/` dynamic segment. Flow:
 
 1. `proxy.js` (Next.js 16 renamed middleware) catches `/` → Accept-Language match → 301 to `/{lang}`.
-2. `app/[lang]/layout.js` is the root layout — sets `<html lang dir>` per language (RTL for `ar`, `zh-Hans`/`zh-Hant` for Chinese).
-3. `app/[lang]/page.js` is a server component: exports `generateStaticParams` (all 20 langs), `generateMetadata` (localized title/desc/keywords, canonical, 20-lang hreflang alternates + x-default), renders `<PageClient initialLang={lang}/>`.
+2. `app/[lang]/layout.js` is the root layout — sets `<html lang dir>` per language (RTL for `ar`/`fa`/`he`, `zh-Hans`/`zh-Hant` for Chinese).
+3. `app/[lang]/page.js` is a server component: exports `generateStaticParams` (all 25 langs), `generateMetadata` (localized title/desc/keywords, canonical, 25-lang hreflang alternates + x-default), renders `<PageClient initialLang={lang}/>`.
 4. `app/PageClient.js` contains the actual app — the old single-client component, unchanged structurally except it accepts `initialLang` prop and imports SEO_META/HREFLANG/SITE_URL/OG_IMAGE from `i18n-meta.js` for the JSON-LD graph.
 
 No trailing slashes on any URL (Vercel normalizes `/ja/` → `/ja`; canonical/alternates/sitemap/proxy-target all match).
 
-### Key data structures (top of page.js)
-- **TR** — translation strings (UI), 20 languages including "zh-tw" quoted key
-- **PREF_I18N** — 47 prefecture names × 20 languages
-- **LOC_I18N** — 64 location names × 20 languages
+### Key data structures (in app/data.js)
+- **TR** — translation strings (UI), 25 languages including "zh-tw" quoted key
+- **PREF_I18N** — 47 prefecture names × 25 languages
+- **LOC_I18N** — 78 location names × 25 languages
 - **PREFECTURES** — ordered ISO-standard (北海道 first, 沖縄 last) array. Each: `{ pref, lat, lng, photos: [{id, loc, year}] }`
 
 ### Main components inside page.js
@@ -115,19 +117,25 @@ git add app/page.js && git commit -m "..." && git push
 | 大分県 | 8 | 別府, 湯布院 |
 | 沖縄県 | 81 | 宮古島, 沖縄 |
 
-## 20-Language Translation (verified complete)
+## 25-Language Translation (verified complete)
 
-`ja, en, zh, zh-tw, ko, es, fr, de, pt, it, ru, ar, hi, th, vi, id, tr, nl, pl, sv`
+Base 5 (full data baked in `app/content/{prefectures,locations}.js`):
+`ja, en, zh, zh-tw, ko`
 
-Translations are manual in `TR`, `PREF_I18N`, `LOC_I18N`. A verification snippet that catches missing entries:
+Extras 20 (in `app/content/extras/{lang}.js`, merged at runtime via `descriptions.js`):
+`es, fr, de, pt, it, ru, ar, hi, th, vi, id, tr, nl, pl, sv, fa, he, bn, tl, uk`
+
+RTL languages (set by `RTL_LANGS` in `app/i18n-meta.js`): `ar, fa, he`
+
+Translations are manual in `TR`, `PREF_I18N`, `LOC_I18N` (UI + names) and in `app/content/extras/{lang}.js` (descriptions, FAQs, definitions, highlights, quickAnswers). A verification snippet that catches missing entries:
 
 ```js
-// Run in: node -e "..." (see earlier _verify.mjs patterns)
-// Check all three objects have all 20 lang keys; confirm every loc used
-// in PREFECTURES has an LOC_I18N entry.
+// Run in: cd landscapes-of-japan && node --input-type=module -e "..."
+// Check all three (TR/PREF_I18N/LOC_I18N) have all 25 lang keys.
+// Check each app/content/extras/{lang}.js has 20 prefs / 68 locs / 20 prefFaqs / 69 locFaqs / 20 defs / 20 hls / 20 qas.
 ```
 
-Last audited: all 47 prefectures × 20, all 64 locations × 20, and every used `loc` is translated.
+Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras langs (fa/he/bn/tl/uk added 2026-04-28 in A12) at full ar.js parity.
 
 ## Design Language (current — post 2026-04 redesign)
 
@@ -212,7 +220,7 @@ Commits `cc7d0e3` through `8268415`:
 13. **Map double-tap navigation rewritten** — uses `id="pref-{i}"` lookup instead of callback-ref map (R19 callback-ref reordering bug); manual `window.scrollTo` with re-correction at 400/900/1500ms (lazy-loaded images shifting layout); center-fallback when scroll target exceeds maxScroll
 14. **Okinawa inset rect** with `pointerEvents:all` + onClick(handlePrefInteraction "沖縄県") — tap anywhere in inset box navigates
 15. **JP_GEO fallback removed** (English names mismatched prefMap during cold-load)
-16. **Nav button "撮影地マップ" → "撮影地"** across all 20 languages (both `nav.map` and `mapL`)
+16. **Nav button "撮影地マップ" → "撮影地"** across all 25 languages (both `nav.map` and `mapL`)
 17. **Hero watermark added** — Mt Fuji + pagoda images, grayscale via Cloudinary `e_grayscale` URL (no CSS filter to avoid compositor seams), opacity .32, swaps landscape/portrait by viewport
 18. **Top-bar transparent over hero**, decoration only on `.scrolled`. Removed backdrop-filter from `.top-nav-link`. `.top-langs` scrollbar fully hidden (was leaving phantom thin line on Edge).
 19. **Horizontal-line bug ROOT CAUSE 2026-04-19:** `.cin-section::before` had `top:-10%` which placed its 9487px-section's top edge at screen y≈131px — the radial-gradient's bounding-box edge rendered as a full-width hairline. Fixed by `top:0`. (Lost ~8 deploy cycles to compositor-seam theories before finally bisecting via `display:none`.)
@@ -220,15 +228,15 @@ Commits `cc7d0e3` through `8268415`:
 
 ## SEO Phase 5 — Per-loc expansion (COMPLETE 2026-04-19)
 
-1,460 URLs deployed. Commit `cd6cae8`.
+Initial deploy: 1,460 URLs at 20 langs. Post-A12 (2026-04-28): **4,156 static pages at 25 langs**. Commit `cd6cae8`.
 
-- `app/[lang]/[pref]/page.js` + `[loc]/page.js`: prefecture + location landing pages (18 prefs + 54 locs × 20 langs = 1,440 new)
+- `app/[lang]/[pref]/page.js` + `[loc]/page.js`: prefecture + location landing pages
 - `app/slugs.js`: JP↔slug maps (e.g. `清水寺` ↔ `kiyomizu-dera`, `父母ヶ浜` ↔ `chichibugahama`)
 - `app/data.js`: extracted PREFECTURES/TR/helpers from PageClient for server-side reuse
 - `app/PrefClient.js` / `app/LocClient.js`: client components with lightbox, language switcher anchors
-- `app/content/`: descriptions.js merges prefectures.js + locations.js (5 base langs) with extras/*.js (15 additional langs). Graceful fallback to English when a lang entry is missing.
-- `app/sitemap.js`: 1,460 URLs (20 root + 360 pref + 1,080 loc) with 21-lang hreflang alternates each
-- `app/sitemap-images.xml/route.js`: 72 URLs × 522 image entries with localized titles
+- `app/content/`: descriptions.js merges prefectures.js + locations.js (5 base langs) with extras/*.js (20 additional langs). Graceful fallback to English when a lang entry is missing.
+- `app/sitemap/[id]/route.js`: split sitemap (chunked to handle >50k URLs at 25 langs × per-photo SSG)
+- `app/sitemap-images.xml/route.js`: canonical /ja/ URLs only (Google Images discovers other langs via HTML hreflang)
 - `app/PageClient.js`: language buttons are now `<a href="/{lang}">` (URL nav) — proper analytics + SEO. D3 named imports (`select/zoom/zoomIdentity/geoMercator/geoPath`) for better tree-shaking
 
 Watermark opacity bumped from .4 to .75 with text-shadow (2026-04-19).
@@ -237,13 +245,26 @@ Watermark opacity bumped from .4 to .75 with text-shadow (2026-04-19).
 
 All four phases implemented and deployed. Commits `59cdd32`, `3e32d8e`, `dd67123`, `81d1a39`, `1b59790`.
 
-21. **Phase 1 — routing/metadata/sitemap/proxy:** moved to `app/[lang]/`, added generateStaticParams + generateMetadata with hreflang + sitemap.js with 20-URL hreflang alternates + proxy.js (Accept-Language 301).
+21. **Phase 1 — routing/metadata/sitemap/proxy:** moved to `app/[lang]/`, added generateStaticParams + generateMetadata with hreflang + sitemap.js with 25-URL hreflang alternates + proxy.js (Accept-Language 301).
 22. **Phase 1 fix — trailing slash:** Vercel strips `/ja/` → `/ja` with 308. Stripped trailing slashes from canonical/alternates/sitemap/proxy target to match served URL.
 23. **Phase 2 — localized alt:** gallery + lightbox `img alt` now uses `getLocName(loc, lang) + " - " + getPrefName(pf.pref, lang)`.
 24. **Phase 3 — JSON-LD @graph:** 59 entries per page — Person (brand name), WebSite, WebPage (inLanguage=BCP 47), BreadcrumbList, localized ImageGallery with Photograph children, 54 TouristDestination (one per loc).
-25. **Phase 4 — dynamic OG image:** `app/[lang]/opengraph-image.js` with edge runtime + Satori. Fonts loaded per script via Google Fonts CSS API (Noto Sans JP/SC/TC/KR/Devanagari/Thai, Noto Sans for Latin/Cyrillic/Vietnamese). Arabic falls back to English text (Satori can't render Arabic shaping — `lookupType:5 substFormat:3` unsupported).
+25. **Phase 4 — dynamic OG image:** `app/[lang]/opengraph-image.js` with edge runtime + Satori. Fonts loaded per script via Google Fonts CSS API (Noto Sans JP/SC/TC/KR/Devanagari/Thai/Bengali, Noto Sans for Latin/Cyrillic/Vietnamese). Arabic / Persian / Hebrew fall back to English text (Satori can't render complex Arabic-script & Hebrew shaping — `lookupType:5 substFormat:3` unsupported). RTL `dir="rtl"` only set when actually rendering ar/fa/he text.
 
-**Gotcha for future OG image work:** do NOT use `generateImageMetadata` for a single image per route — it adds `/undefined` to the URL. Just use static `export const alt`. Also remove explicit `openGraph.images` / `twitter.images` from generateMetadata, else they override the dynamic one.
+**Gotcha for future OG image work:** do NOT use `generateImageMetadata` for a single image per route — it adds `/undefined` to the URL. Just use static `export const alt`. Also remove explicit `openGraph.images` / `twitter.images` from generateMetadata, else they override the dynamic one. When adding a new lang with non-Latin script, update `pickBodyFamily()` and `UNSAFE_SCRIPTS` in `app/[lang]/opengraph-image.js`.
+
+## A12 — 5-language expansion (COMPLETE 2026-04-28)
+
+Added `fa` (Persian/Farsi), `he` (Hebrew), `bn` (Bengali), `tl` (Tagalog/Filipino), `uk` (Ukrainian) for a total of **25 languages**. 40 commits. Build verified: 4,156 static pages.
+
+- `app/i18n-meta.js`: LANGS 20→25, RTL_LANGS extended (`ar`+`fa`+`he`), HREFLANG + SEO_META 5 entries (`fa_IR`, `he_IL`, `bn_BD`, `tl_PH`, `uk_UA`)
+- `proxy.js`: LANGS array extended (Accept-Language detection now matches new langs)
+- `app/data.js`: TR (UI strings) 5 entries with full ~30 keys; PREF_I18N 47×5 + LOC_I18N 78×5 names added via one-shot migration scripts
+- `app/content/extras/{fa,he,bn,tl,uk}.js`: each at full ar.js parity — prefectures (20) + locations (68) + prefectureFaqs (20) + locationFaqs (69) + prefectureDefinitions (20) + prefectureHighlights (20×5 items) + prefectureQuickAnswers (20×3 Q&A)
+- `app/content/descriptions.js`: EXTRA_LANGS map extended; merge logic untouched (handles new langs automatically via Object iteration)
+- `app/[lang]/opengraph-image.js`: UNSAFE_SCRIPTS extended to `ar+fa+he`; `pickBodyFamily` adds `bn → "Noto Sans Bengali"`; RTL dir applies to fa/he too
+
+**Session-stability gotcha discovered during A12:** Single Edit/Write operations exceeding ~500 lines of multi-byte content (Persian/Hebrew/Bengali/Cyrillic) caused Anthropic API session crashes ("session stopped responding"). Workaround: split each language's full content into 5 sequential commits (prefectures+locations / prefectureFaqs / locationFaqs / definitions+highlights / quickAnswers). Latin-script langs (tl, uk) tolerated larger Edits than Arabic-script.
 
 ## Conventions
 
@@ -262,6 +283,6 @@ All four phases implemented and deployed. Commits `59cdd32`, `3e32d8e`, `dd67123
 1. `preview_console_logs` level=error → none
 2. `sort-photos.mjs` ran recently if photos added
 3. Prefecture order correct (北海道 first, 沖縄 last)
-4. Translation audit (TR + PREF_I18N + LOC_I18N each 20 langs, every loc covered)
+4. Translation audit (TR + PREF_I18N + LOC_I18N each 25 langs, every loc covered; extras/{lang}.js sections complete)
 5. Lightbox opens AND closes (regression test after any touch/click handler edits)
 6. Mobile viewport (`preview_resize` mobile) scrolls cleanly through hero → map → gallery
