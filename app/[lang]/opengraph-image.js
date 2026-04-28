@@ -26,11 +26,13 @@ function pickBodyFamily(lang) {
   if (lang === "ko") return "Noto Sans KR";
   if (lang === "hi") return "Noto Sans Devanagari";
   if (lang === "th") return "Noto Sans Thai";
-  return "Noto Sans";
+  if (lang === "bn") return "Noto Sans Bengali";
+  return "Noto Sans"; // Latin/Cyrillic/Vietnamese (incl. uk, tl)
 }
 
-// Satori can't render complex shaping for these scripts — fall back to English subtitle
-const UNSAFE_SCRIPTS = new Set(["ar"]);
+// Satori can't render complex shaping (lookupType:5 substFormat:3) for these scripts —
+// fall back to English subtitle. Includes Arabic-script and Hebrew.
+const UNSAFE_SCRIPTS = new Set(["ar", "fa", "he"]);
 
 const BG_URL = "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/DSC07601_cocitq.jpg";
 const BRAND = "Landscapes of Japan";
@@ -53,7 +55,8 @@ export default async function Image({ params }) {
   if (brandFont) fonts.push({ name: "PlayfairDisplay", data: brandFont, style: "italic", weight: 700 });
   if (bodyFont) fonts.push({ name: "Body", data: bodyFont, style: "normal", weight: 500 });
 
-  const dir = lang === "ar" && !unsafe ? "rtl" : "ltr";
+  // RTL only when we actually render the language's text (not when fallback to English)
+  const dir = !unsafe && (lang === "ar" || lang === "fa" || lang === "he") ? "rtl" : "ltr";
 
   return new ImageResponse(
     (
