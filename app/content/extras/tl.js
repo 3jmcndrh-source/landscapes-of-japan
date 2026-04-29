@@ -94,6 +94,7 @@ export default {
     "高島公園(諏訪市)": `Ang Takashima Park sa Suwa ay nakatayo sa mga guho ng Takashima Castle, tirahan ng Suwa clan. Dating tinawag na "lumulutang na Suwa Castle", ang muling itinayong tower at halos 100 cherry tree sa palibot ng moat ay namumulaklak sa kalagitnaan ng Abril. Ang tower na nababanaag sa moat na may sakura ay isang iconic na tagsibol na eksena ng Suwa.`,
     "諏訪湖": `Ang Lawa ng Suwa sa gitnang Nagano sa 759 m ay pinakamalaking lawa ng prepektura. Sikat sa "omiwatari" — ridges ng yelo na tumataas mula sa ibabaw sa kalaliman ng taglamig — at sa summer fireworks. Inspirasyon ng lawa sa pelikulang "Your Name."`,
     "立石公園": `Ang Tateishi Park sa 934 m sa ibabaw ng Lawa ng Suwa ay nag-aalok ng panorama ng lawa na may Yatsugatake at maging Bundok Fuji sa abot-tanaw. Sa gabi, ang Suwa ay nag-glimer tulad ng jewel box. Sikat bilang pilgrimage site ng pelikulang "Your Name", at photogenic sa anumang oras.`,
+    "支笏湖": `Ang Lawa ng Shikotsu ay isang caldera lake sa Shikotsu-Toya National Park sa Chitose, Hokkaido. Ang pinakamalalim na 360 m ay nagiging ito bilang pangalawang pinakamalalim na lawa sa Japan, at ang kalidad ng tubig ay niranggo bilang una sa Japan sa 11 magkakasunod na taon. Ang aktibong mga bulkan na Eniwa at Tarumae ay nasasalamin sa esmeralda na ibabaw sa tag-araw; ang winter Hyoto ice sculpture festival ay napaka-pampangarap.`,
   },
   prefectureFaqs: {
     "北海道": [

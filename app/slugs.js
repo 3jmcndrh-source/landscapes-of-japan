@@ -38,6 +38,7 @@ export const LOC_SLUGS = {
   "小樽": "otaru",
   "美唄": "bibai",
   "洞爺湖": "lake-toya",
+  "支笏湖": "lake-shikotsu",
   "登別": "noboribetsu",
   "北竜町": "hokuryu",
   /* Chiba */

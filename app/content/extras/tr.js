@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Suwa'daki Takashima Parkı, Suwa klanının ikametgahı Takashima Kalesi'nin kalıntıları üzerinde yer alır. Bir zamanlar «Suwa'nın Yüzen Kalesi» denilen yeniden inşa edilmiş kulesi ve hendek çevresindeki yaklaşık 100 kiraz ağacı Nisan ortasında çiçek açar. Hendekte yansıyan kule ve kiraz Suwa'nın ikonik ilkbahar sahnesidir.`,
     "諏訪湖": `Nagano'nun ortasında 759 m yükseklikteki Suwa Gölü, ilin en büyük gölüdür. Kış ortasında yüzeyden yükselen buz sırtları «Omiwatari» ve yaz havai fişekleriyle ünlüdür. «Your Name» filmindeki gölün ilhamı.`,
     "立石公園": `Suwa Gölü'nün 934 m üzerindeki Tateishi Parkı, gölün Yatsugatake ve hatta uzaktan Fuji Dağı manzarasını sunar. Geceleri Suwa mücevher kutusu gibi parıldar. «Your Name» filminin hac yeri olarak ünlü, her saatte fotojenik.`,
+    "支笏湖": `Shikotsu Gölü, Hokkaido'nun Chitose kasabasındaki Shikotsu-Toya Milli Parkı'nda bulunan bir kaldera gölüdür. 360 m maksimum derinliği ile Japonya'nın ikinci en derin gölüdür ve su kalitesi 11 yıl üst üste Japonya'da birinci sıraya yerleştirilmiştir. Aktif volkanlar Eniwa ve Tarumae yazın zümrüt yüzeye yansır; kış Hyoto buz heykel festivali rüya gibidir.`,
   },
   prefectureFaqs: {
     "北海道": [

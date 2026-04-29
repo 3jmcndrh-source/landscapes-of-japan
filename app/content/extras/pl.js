@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Park Takashima w Suwa stoi na ruinach zamku Takashima, siedzibie klanu Suwa. Niegdyś zwany «Pływającym Zamkiem Suwa», jego odbudowana wieża i około 100 wiśni wokół fosy kwitnie w połowie kwietnia. Wieża odbita w fosie z kwiatami wiśni to ikoniczna scena wiosenna Suwa.`,
     "諏訪湖": `Jezioro Suwa w środkowej Nagano na 759 m to największe jezioro prefektury. Znane z «Omiwatari» — lodowych grzbietów wynurzających się z powierzchni w środku zimy — i letnich fajerwerków. Inspiracja dla jeziora w filmie «Your Name».`,
     "立石公園": `Park Tateishi na 934 m nad Jeziorem Suwa oferuje panoramę jeziora z Yatsugatake i nawet górą Fuji w oddali. Nocą Suwa lśni jak szkatułka klejnotów. Słynny jako miejsce pielgrzymek do filmu «Your Name», fotogeniczny o każdej porze.`,
+    "支笏湖": `Jezioro Shikotsu to jezioro kalderowe w Parku Narodowym Shikotsu-Toya w Chitose, Hokkaido. Maksymalna głębokość 360 m czyni je drugim najgłębszym jeziorem w Japonii, a jakość wody przez 11 kolejnych lat plasuje się na pierwszym miejscu w Japonii. Aktywne wulkany Eniwa i Tarumae odbijają się na szmaragdowej powierzchni latem; zimowy festiwal rzeźb lodowych Hyoto jest baśniowy.`,
   },
   prefectureFaqs: {
     "北海道": [

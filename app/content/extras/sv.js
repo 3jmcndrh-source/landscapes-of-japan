@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Takashima-parken i Suwa står på ruinerna av Takashima-slottet, Suwa-klanens säte. En gång kallat «Suwas flytande slott», dess återuppbyggda torn och cirka 100 körsbärsträd runt vallgraven blommar i mitten av april. Tornet speglat i vallgraven med körsbärsblommor är en ikonisk vårsyn för Suwa.`,
     "諏訪湖": `Suwasjön i centrala Nagano på 759 m är prefekturens största sjö. Berömd för «Omiwatari» — isåsar som reser sig från ytan mitt i vintern — och sommarfyrverkerier. Inspiration till sjön i filmen «Your Name».`,
     "立石公園": `Tateishi-parken på 934 m över Suwasjön erbjuder en panorama över sjön med Yatsugatake och till och med berget Fuji i fjärran. På natten glimmar Suwa som ett smyckeskrin. Berömd som pilgrimsplats för filmen «Your Name», fotogen vid alla tider.`,
+    "支笏湖": `Shikotsu-sjön är en kaldera-sjö i Shikotsu-Toya nationalpark i Chitose, Hokkaido. Med ett maxdjup på 360 m är den Japans näst djupaste sjö, och vattenkvaliteten har rankats som Japans bästa 11 år i rad. Aktiva vulkaner Eniwa och Tarumae speglas på den smaragdgröna ytan på sommaren; vinterns Hyoto-isskulpturfestival är drömlik.`,
   },
   prefectureFaqs: {
     "北海道": [

@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Công viên Takashima ở Suwa nằm trên di tích thành Takashima, dinh của gia tộc Suwa. Từng được gọi là «Lâu đài nổi của Suwa», tháp được tái dựng và khoảng 100 cây hoa anh đào quanh hào nở rộ giữa tháng Tư. Tháp phản chiếu trong hào với hoa anh đào là cảnh xuân biểu tượng của Suwa.`,
     "諏訪湖": `Hồ Suwa ở trung tâm Nagano cao 759 m là hồ lớn nhất tỉnh. Nổi tiếng với «Omiwatari» — những gờ băng nổi lên từ mặt hồ giữa mùa đông sâu — và pháo hoa mùa hè. Cảm hứng cho hồ trong phim «Your Name».`,
     "立石公園": `Công viên Tateishi cao 934 m bên trên hồ Suwa cho toàn cảnh hồ với Yatsugatake và cả núi Phú Sĩ phía xa. Đêm Suwa lấp lánh như hộp trang sức. Nổi tiếng là điểm hành hương của phim «Your Name», đẹp ảnh ở mọi thời khắc.`,
+    "支笏湖": `Hồ Shikotsu là hồ caldera trong Vườn Quốc gia Shikotsu-Toya tại Chitose, Hokkaido. Độ sâu tối đa 360 m khiến nó là hồ sâu thứ 2 Nhật Bản, và chất lượng nước được xếp hạng số 1 Nhật Bản 11 năm liên tiếp. Núi lửa hoạt động Eniwa và Tarumae phản chiếu trên mặt nước ngọc lục bảo vào mùa hè; lễ hội điêu khắc băng Hyoto mùa đông như giấc mơ.`,
   },
   prefectureFaqs: {
     "北海道": [

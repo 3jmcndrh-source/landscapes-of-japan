@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Taman Takashima di Suwa berdiri di atas reruntuhan Kastil Takashima, kediaman klan Suwa. Pernah disebut «Kastil Mengapung Suwa», menara yang direkonstruksi dan sekitar 100 pohon sakura di sekitar parit mekar pertengahan April. Menara terpantul di parit dengan sakura adalah pemandangan musim semi ikonik Suwa.`,
     "諏訪湖": `Danau Suwa di Nagano tengah pada 759 m adalah danau terbesar prefektur. Terkenal akan «Omiwatari» — punggungan es yang muncul dari permukaan di tengah musim dingin — dan kembang api musim panas. Inspirasi danau di film «Your Name».`,
     "立石公園": `Taman Tateishi pada 934 m di atas Danau Suwa menawarkan panorama danau dengan Yatsugatake dan bahkan Gunung Fuji di kejauhan. Pada malam hari Suwa berkilau seperti kotak perhiasan. Terkenal sebagai lokasi ziarah film «Your Name», fotogenik setiap waktu.`,
+    "支笏湖": `Danau Shikotsu adalah danau kaldera di Taman Nasional Shikotsu-Toya di Chitose, Hokkaido. Kedalaman maksimum 360 m membuatnya menjadi danau terdalam kedua di Jepang, dan kualitas airnya diperingkat pertama di Jepang 11 tahun berturut-turut. Gunung berapi aktif Eniwa dan Tarumae terpantul di permukaan zamrud pada musim panas; festival pahatan es musim dingin Hyoto sangat menakjubkan.`,
   },
   prefectureFaqs: {
     "北海道": [

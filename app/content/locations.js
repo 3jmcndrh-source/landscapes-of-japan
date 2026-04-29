@@ -502,6 +502,15 @@ export const LOCATION_CONTENT = {
         a: d("三脚必須。ISO100・F8・シャッター4〜8秒バルブ。湖に映る花火も狙える湖畔の展望台がベスト。","Tripod required. ISO 100, f/8, 4–8s bulb exposure. The lakeside observation deck captures fireworks with their reflection.","必备三脚架。ISO 100、F8、4-8秒B门。湖畔展望台可同时拍到花火与倒影。","必備三腳架。ISO 100、F8、4-8秒B門。湖畔展望台可同時拍到煙火與倒影。","삼각대 필수. ISO 100, F8, 4-8초 벌브. 호반 전망대에서 불꽃과 반영을 함께 담을 수 있습니다.") },
     ],
   },
+  "支笏湖": {
+    desc: d(
+      "支笏湖は北海道千歳市の支笏洞爺国立公園内にあるカルデラ湖。最大水深360mは日本第2位、水質は11年連続日本一の透明度を誇る。活火山の恵庭岳・樽前山を湖面に映し、夏は鮮やかな碧、冬は氷濤まつりが幻想的。",
+      "Lake Shikotsu is a caldera lake in Shikotsu-Toya National Park in Chitose, Hokkaido. Its maximum depth of 360 m is Japan's second-deepest, and its water quality has been ranked first in Japan for 11 consecutive years. Active volcanoes Mt. Eniwa and Mt. Tarumae mirror on its surface in vivid emerald summers; winter brings the dreamlike Hyoto (ice sculpture) Festival.",
+      "支笏湖位于北海道千岁市支笏洞爷国立公园内的破火山口湖。最大水深360米居日本第二，水质连续11年日本第一透明度。活火山恵庭岳与樽前山倒映湖面，夏季碧绿鲜明，冬季氷濤祭充满梦幻。",
+      "支笏湖位於北海道千歲市支笏洞爺國立公園內的破火山口湖。最大水深360米居日本第二，水質連續11年日本第一透明度。活火山惠庭岳與樽前山倒映湖面，夏季碧綠鮮明，冬季氷濤祭充滿夢幻。",
+      "시코쓰호는 홋카이도 치토세시 시코쓰토야 국립공원 내의 칼데라 호수. 최대 수심 360m는 일본 2위, 수질은 11년 연속 일본 제일의 투명도를 자랑한다. 활화산 에니와다케·타루마에산이 호면에 비치고, 여름에는 선명한 푸른빛, 겨울에는 효토 마쓰리가 환상적."
+    ),
+  },
   "富良野": {
     desc: d(
       "富良野は北海道中央部の大地、ファーム富田を中心にしたラベンダー畑で有名。7月中旬〜下旬が見頃で、紫の絨毯と青空のコントラストは日本屈指の絵画的風景。8月〜秋は他のハーブや花々が咲き誇る。",

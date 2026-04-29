@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Takashima-park in Suwa staat op de ruïnes van Kasteel Takashima, zetel van de Suwa-clan. Ooit «Suwa's drijvend kasteel» genoemd, blozen de gereconstrueerde toren en zo'n 100 kersenbomen rond de slotgracht half april. De toren weerspiegeld in de slotgracht met kersenbloesem is een iconisch Suwa-lentebeeld.`,
     "諏訪湖": `Het Suwameer in centraal Nagano op 759 m is het grootste meer van de prefectuur. Beroemd om «Omiwatari» — ijsruggen die in diepe winter uit het oppervlak rijzen — en zomervuurwerk. Inspiratie voor het meer in de film «Your Name».`,
     "立石公園": `Tateishi-park, 934 m boven het Suwameer, biedt een panorama van het meer met Yatsugatake en zelfs de Fuji op de achtergrond. 's Nachts schittert Suwa als een juwelendoosje. Beroemd als pelgrimsoord van «Your Name», fotogeniek op elk uur.`,
+    "支笏湖": `Het Shikotsumeer is een caldera-meer in het Shikotsu-Toya Nationaal Park in Chitose, Hokkaido. Met een maximale diepte van 360 m is het het op één na diepste meer van Japan, en de waterkwaliteit is 11 jaar achter elkaar als beste van Japan beoordeeld. Actieve vulkanen Eniwa en Tarumae spiegelen op het smaragdgroene oppervlak in de zomer; het winterse Hyoto-ijssculpturenfestival is dromerig.`,
   },
   prefectureFaqs: {
     "北海道": [

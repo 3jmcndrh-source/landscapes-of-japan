@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Il Parco Takashima a Suwa sorge sulle rovine del castello Takashima, sede del clan Suwa. Detto «Castello Galleggiante di Suwa», la sua torre ricostruita e circa 100 ciliegi attorno al fossato fioriscono a metà aprile. La torre riflessa nel fossato con i ciliegi è una scena primaverile iconica di Suwa.`,
     "諏訪湖": `Il Lago Suwa, nel centro di Nagano a 759 m, è il lago più grande della prefettura. Famoso per l'«Omiwatari», creste di ghiaccio che emergono in pieno inverno, e per i fuochi d'artificio estivi. Ispirazione del lago nel film «Your Name».`,
     "立石公園": `Il Parco Tateishi, a 934 m sopra il Lago Suwa, offre un panorama sul lago con Yatsugatake e persino il Monte Fuji sullo sfondo. Di notte, Suwa scintilla come uno scrigno di gioielli. Famoso come luogo di pellegrinaggio del film «Your Name», è fotogenico a ogni ora.`,
+    "支笏湖": `Il Lago Shikotsu è un lago caldera nel Parco Nazionale Shikotsu-Toya a Chitose, Hokkaido. Con i suoi 360 m di profondità massima è il secondo più profondo del Giappone, e la qualità dell'acqua è classificata prima in Giappone da 11 anni consecutivi. I vulcani attivi Eniwa e Tarumae si riflettono sulla superficie smeraldo in estate; il festival invernale Hyoto di sculture di ghiaccio è onirico.`,
   },
   prefectureFaqs: {
     "北海道": [

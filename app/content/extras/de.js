@@ -91,6 +91,7 @@ export default {
     "高島公園(諏訪市)": `Der Takashima-Park in Suwa steht auf den Ruinen der Takashima-Burg, dem Sitz des Suwa-Clans. Einst «Suwas schwimmende Burg» genannt; sein rekonstruierter Turm und etwa 100 Kirschbäume rund um den Burggraben blühen Mitte April. Der im Graben gespiegelte Turm mit Kirschblüten ist eine ikonische Frühlingsszene Suwas.`,
     "諏訪湖": `Der Suwa-See in der zentralen Nagano-Präfektur auf 759 m ist der größte See der Präfektur. Berühmt für «Omiwatari» — Eisrücken, die im tiefen Winter aus der Oberfläche aufsteigen — und das sommerliche Feuerwerk. Vorbild für den See im Film «Your Name».`,
     "立石公園": `Der Tateishi-Park, 934 m über dem Suwa-See, bietet ein Panorama über den See mit Yatsugatake und sogar dem Berg Fuji im Hintergrund. Nachts funkelt Suwa wie eine Schmuckschatulle. Berühmt als Pilgerstätte für den Film «Your Name», ist er zu jeder Stunde fotogen.`,
+    "支笏湖": `Der Shikotsusee ist ein Calderasee im Shikotsu-Toya-Nationalpark in Chitose, Hokkaido. Mit maximal 360 m Tiefe ist er der zweittiefste See Japans, und seine Wasserqualität wird seit 11 Jahren in Folge als die beste Japans eingestuft. Aktive Vulkane Eniwa und Tarumae spiegeln sich in der smaragdgrünen Oberfläche im Sommer; das winterliche Hyoto-Eisskulpturfestival ist traumhaft.`,
   },
   prefectureFaqs: {
     "北海道": [
