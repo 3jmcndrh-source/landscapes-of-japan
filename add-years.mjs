@@ -8,7 +8,7 @@ import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PAGE_JS = resolve(__dirname, "app", "page.js");
+const PAGE_JS = resolve(__dirname, "app", "data.js");
 
 function loadEnv() {
   const envPath = resolve(__dirname, ".env");

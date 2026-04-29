@@ -18,7 +18,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CLOUD_NAME = "dr53c12fo";
-const PAGE_JS = resolve(__dirname, "app", "page.js");
+const PAGE_JS = resolve(__dirname, "app", "data.js");
 
 const PREF_COORDS = {
   "北海道": [43.06, 141.35], "青森県": [40.82, 140.74], "岩手県": [39.70, 141.15],

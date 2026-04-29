@@ -9,7 +9,7 @@ import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PAGE_JS = resolve(__dirname, "app", "page.js");
+const PAGE_JS = resolve(__dirname, "app", "data.js");
 
 function loadEnv() {
   const envPath = resolve(__dirname, ".env");
@@ -31,12 +31,12 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// page.js からPREFECTURESを抽出
+// data.js からPREFECTURESを抽出
 const content = readFileSync(PAGE_JS, "utf-8");
-const prefStart = content.indexOf("const PREFECTURES = [");
+const prefStart = content.indexOf("export const PREFECTURES = [");
 // PREFECTURESの閉じ ]; を正確に見つける（ブラケットの深さを追跡）
 let depth = 0, prefEnd = -1;
-for (let i = prefStart + "const PREFECTURES = [".length; i < content.length; i++) {
+for (let i = prefStart + "export const PREFECTURES = [".length; i < content.length; i++) {
   if (content[i] === "[") depth++;
   else if (content[i] === "]") {
     if (depth === 0) { prefEnd = i + 1; break; }
@@ -150,9 +150,9 @@ ${entries}
   },`;
 }).join("\n");
 
-const newPrefBlock = `const PREFECTURES = [\n${photosStr}\n];`;
+const newPrefBlock = `export const PREFECTURES = [\n${photosStr}\n];`;
 
 const updatedContent = content.slice(0, prefStart) + newPrefBlock + content.slice(prefEnd);
 writeFileSync(PAGE_JS, updatedContent, "utf-8");
 
-console.log("\npage.js を更新しました（日付降順にソート済み）");
+console.log("\ndata.js を更新しました（日付降順にソート済み）");
