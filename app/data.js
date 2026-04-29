@@ -134,6 +134,7 @@ export const LOC_I18N = {
   "横浜":{ja:"横浜",en:"Yokohama",zh:"横滨",ko:"요코하마","zh-tw":"橫濱",es:"Yokohama",fr:"Yokohama",de:"Yokohama",pt:"Yokohama",it:"Yokohama",ru:"Иокогама",ar:"يوكوهاما",hi:"योकोहामा",th:"โยโกฮามะ",vi:"Yokohama",id:"Yokohama",tr:"Yokohama",nl:"Yokohama",pl:"Jokohama",sv:"Yokohama",fa:"یوکوهاما",he:"יוקוהאמה",bn:"ইয়োকোহামা",tl:"Yokohama",uk:"Йокогама"},
   "沖縄":{ja:"沖縄",en:"Okinawa",zh:"冲绳",ko:"오키나와","zh-tw":"沖繩",es:"Okinawa",fr:"Okinawa",de:"Okinawa",pt:"Okinawa",it:"Okinawa",ru:"Окинава",ar:"أوكيناوا",hi:"ओकिनावा",th:"โอกินาวะ",vi:"Okinawa",id:"Okinawa",tr:"Okinawa",nl:"Okinawa",pl:"Okinawa",sv:"Okinawa",fa:"اوکیناوا",he:"אוקינאווה",bn:"ওকিনাওয়া",tl:"Okinawa",uk:"Окінава"},
   "洞爺湖":{ja:"洞爺湖",en:"Lake Toya",zh:"洞爷湖",ko:"도야호","zh-tw":"洞爺湖",es:"Lago Toya",fr:"Lac Toya",de:"Toya-See",pt:"Lago Toya",it:"Lago Toya",ru:"Озеро Тоя",ar:"بحيرة تويا",hi:"तोया झील",th:"ทะเลสาบโทยะ",vi:"Hồ Toya",id:"Danau Toya",tr:"Toya Gölü",nl:"Toyameer",pl:"Jezioro Toya",sv:"Toyasjön",fa:"دریاچه تویا",he:"אגם טויה",bn:"তোয়া হ্রদ",tl:"Lawa ng Toya",uk:"Озеро Тоя"},
+  "支笏湖":{ja:"支笏湖",en:"Lake Shikotsu",zh:"支笏湖",ko:"시코쓰호","zh-tw":"支笏湖",es:"Lago Shikotsu",fr:"Lac Shikotsu",de:"Shikotsusee",pt:"Lago Shikotsu",it:"Lago Shikotsu",ru:"Озеро Сикоцу",ar:"بحيرة شيكوتسو",hi:"शिकोत्सु झील",th:"ทะเลสาบชิโคสึ",vi:"Hồ Shikotsu",id:"Danau Shikotsu",tr:"Shikotsu Gölü",nl:"Shikotsumeer",pl:"Jezioro Shikotsu",sv:"Shikotsu-sjön",fa:"دریاچه شیکوتسو",he:"אגם שיקוטסו",bn:"শিকোতসু হ্রদ",tl:"Lawa ng Shikotsu",uk:"Озеро Сікоцу"},
   "湯布院":{ja:"湯布院",en:"Yufuin",zh:"汤布院",ko:"유후인","zh-tw":"湯布院",es:"Yufuin",fr:"Yufuin",de:"Yufuin",pt:"Yufuin",it:"Yufuin",ru:"Юфуин",ar:"يوفوين",hi:"युफ़ुइन",th:"ยูฟุอิน",vi:"Yufuin",id:"Yufuin",tr:"Yufuin",nl:"Yufuin",pl:"Yufuin",sv:"Yufuin",fa:"یوفوئین",he:"יופואין",bn:"ইউফুইন",tl:"Yufuin",uk:"Юфуін"},
   "父母ヶ浜":{ja:"父母ヶ浜",en:"Chichibugahama Beach",zh:"父母滨",ko:"지치부가하마 해변","zh-tw":"父母濱",es:"Playa Chichibugahama",fr:"Plage de Chichibugahama",de:"Chichibugahama-Strand",pt:"Praia de Chichibugahama",it:"Spiaggia di Chichibugahama",ru:"Пляж Титибугахама",ar:"شاطئ تشيتشيبوغاهاما",hi:"चिचिबुगाहामा समुद्र तट",th:"หาดชิชิบุกาฮามะ",vi:"Bãi biển Chichibugahama",id:"Pantai Chichibugahama",tr:"Chichibugahama Plajı",nl:"Chichibugahama Strand",pl:"Plaża Chichibugahama",sv:"Chichibugahama Strand",fa:"چی‌چیبوگاهاما",he:"צ'יצ'יבוגאהאמה",bn:"চিচিবুগাহামা",tl:"Chichibugahama",uk:"Чічібуґахама"},
   "登別":{ja:"登別",en:"Noboribetsu",zh:"登别",ko:"노보리베쓰","zh-tw":"登別",es:"Noboribetsu",fr:"Noboribetsu",de:"Noboribetsu",pt:"Noboribetsu",it:"Noboribetsu",ru:"Ноборибэцу",ar:"نوبوريبيتسو",hi:"नोबोरिबेत्सू",th:"โนโบริเบ็ตสึ",vi:"Noboribetsu",id:"Noboribetsu",tr:"Noboribetsu",nl:"Noboribetsu",pl:"Noboribetsu",sv:"Noboribetsu",fa:"نوبوریبتسو",he:"נובוריבטסו",bn:"নোবোরিবেতসু",tl:"Noboribetsu",uk:"Нобориベцу"},
@@ -292,6 +293,22 @@ export const PREFECTURES = [
       { id: "qgcwoptede3vztwdxngv", loc: "登別", year: 2025 },
       { id: "rnlyiorswvgfwgyvu6uj", loc: "北竜町", year: 2024 },
       { id: "jlgnjbrolezvatmiu38c", loc: "北竜町", year: 2024 },
+      { id: "unwv58lbzrq0hntck3sd", loc: "美唄", year: 2025 },
+      { id: "sb2vcj2thon1csvthw7p", loc: "美唄", year: 2025 },
+      { id: "vvqp89jctmkyeg6jpzx9", loc: "美唄", year: 2025 },
+      { id: "q4jtcdq9il8tl1i6ii3l", loc: "美唄", year: 2025 },
+      { id: "wvgmejmjl7lin6uwvclj", loc: "美唄", year: 2025 },
+      { id: "lzll6fgjzry9zc62egq9", loc: "美唄", year: 2025 },
+      { id: "lgoysrkflgm8ganzbdem", loc: "美唄", year: 2025 },
+      { id: "prcc3yvkojgqnozjwkz7", loc: "支笏湖", year: 2024 },
+      { id: "nfwbkicpxojjf04uqvjz", loc: "支笏湖", year: 2024 },
+      { id: "nkysoawz5m0o6oxjmllk", loc: "支笏湖", year: 2024 },
+      { id: "rrpabcdnkcwfv0hwd4xt", loc: "支笏湖", year: 2024 },
+      { id: "qnjwxjcldzl4kti13ufo", loc: "支笏湖", year: 2024 },
+      { id: "gipjnpfyggwb6oleqkkb", loc: "北竜町", year: 2024 },
+      { id: "teng87zgd3xcyqjjguqi", loc: "北竜町", year: 2024 },
+      { id: "wcx3gxot0pin82crrgpq", loc: "北竜町", year: 2024 },
+      { id: "mj6p8elxzj7zht0hrgir", loc: "北竜町", year: 2024 },
     ]
   },
   {
@@ -299,6 +316,12 @@ export const PREFECTURES = [
     lat: 35.61, lng: 140.12,
     photos: [
       { id: "pwrg5vqnmt1uxmh07jhb", loc: "鴨川シーワールド", year: 2024 },
+      { id: "y7ua0to15lr4lh88img9", loc: "鴨川シーワールド", year: 2024 },
+      { id: "ns1l4akfkoeskandkivi", loc: "鴨川シーワールド", year: 2024 },
+      { id: "nh3pmwcc3xmuv5foi5wb", loc: "鴨川シーワールド", year: 2024 },
+      { id: "mjst5py48ye0frgtbqox", loc: "鴨川シーワールド", year: 2024 },
+      { id: "r48cniybwcnflzt5q1v2", loc: "鴨川シーワールド", year: 2024 },
+      { id: "vycpckuc4d1pkrekbkbr", loc: "鴨川シーワールド", year: 2024 },
     ]
   },
   {
@@ -703,6 +726,7 @@ export const PREFECTURES = [
     photos: [
       { id: "cherzayx1vksmmu12kfg", loc: "福岡", year: 2025 },
       { id: "zuytsm5uieakyzlj8mqa", loc: "福岡", year: 2025 },
+      { id: "dcl947scp21g2dn0uy2d", loc: "福岡", year: 2025 },
     ]
   },
   {
@@ -717,6 +741,9 @@ export const PREFECTURES = [
       { id: "bwtpdo3ycszgiokdrkqz", loc: "別府", year: 2025 },
       { id: "nejr6pdgmudgjynjhpzl", loc: "別府", year: 2025 },
       { id: "gcjxpyk0fxof7we3ytqo", loc: "湯布院", year: 2025 },
+      { id: "wqeix2pmuahsic4m6nuo", loc: "湯布院", year: 2025 },
+      { id: "xs1de7jtijpqcdtbc46x", loc: "別府", year: 2025 },
+      { id: "nlknxh9bullp7afls30q", loc: "別府", year: 2025 },
     ]
   },
   {
