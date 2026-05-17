@@ -1,0 +1,7 @@
+# Cloudflare Pages build output (not used by Vercel)
+out/
+
+# Build/deploy logs
+build.log
+wrangler-deploy.log
+vercel-deploy.log
