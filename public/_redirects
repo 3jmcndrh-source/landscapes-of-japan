@@ -1,0 +1,9 @@
+# Cloudflare Pages _redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Root → 英語版 (default fallback)
+# 言語検出は client-side JS で実施 (PageClient.js 内)
+/  /en  302
+
+# 古い旧 URL からの redirect (将来用、必要なら追加)
+# /old-path  /en/new-path  301

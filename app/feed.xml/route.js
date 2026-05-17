@@ -2,6 +2,9 @@ import { SITE_URL } from "../i18n-meta.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../slugs.js";
 
+// Cloudflare Pages 静的エクスポート対応
+export const dynamic = "force-static";
+
 const escape = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
 
 export async function GET() {

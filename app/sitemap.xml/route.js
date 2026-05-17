@@ -1,6 +1,9 @@
 import { SITE_URL } from "../i18n-meta.js";
 import { PREFECTURES } from "../data.js";
 
+// Cloudflare Pages 静的エクスポート対応 — build 時に 1 回だけ実行
+export const dynamic = "force-static";
+
 /**
  * Sitemap index: lists all sub-sitemaps.
  * - /sitemap/0.xml = base (root + pref + loc URLs)

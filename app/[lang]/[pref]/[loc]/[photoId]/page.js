@@ -7,13 +7,25 @@ import { getLocDesc } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
 import { TAGS, TAG_SLUGS, getTagName } from "../../../../tags.js";
 
-// 写真個別ページ ~10,320 通り。全ビルド時 SSG は Vercel deploy size 制限に
-// かかるため、build時 pre-render は 0、on-demand ISR で生成 → CDN キャッシュ。
-export const dynamicParams = true;
-export const revalidate = 86400; // 24時間
+// Cloudflare Pages 静的エクスポート: 全 写真 × 25 言語 を build 時に pre-render
+// 約 400 photos × 25 langs = ~10,000 pages (Cloudflare Pages 20k file 上限内)
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [];
+  const params = [];
+  for (const lang of LANGS) {
+    for (const pf of PREFECTURES) {
+      const prefSlug = PREF_SLUGS[pf.pref];
+      if (!prefSlug) continue;
+      for (const photo of pf.photos) {
+        if (!photo.loc) continue;
+        const locSlug = LOC_SLUGS[photo.loc];
+        if (!locSlug) continue;
+        params.push({ lang, pref: prefSlug, loc: locSlug, photoId: photo.id });
+      }
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }) {

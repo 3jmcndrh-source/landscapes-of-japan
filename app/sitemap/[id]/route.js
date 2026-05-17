@@ -6,6 +6,17 @@ import { POSTS, POST_SLUGS } from "../../content/blog/posts.js";
 import { TAGS, TAG_SLUGS } from "../../tags.js";
 import { TECHNIQUES, TECHNIQUE_SLUGS } from "../../techniques.js";
 
+// Cloudflare Pages 静的エクスポート対応 — id=0 + id=1..N (per-pref) を build 時 SSG
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  const params = [{ id: "0.xml" }]; // base sitemap
+  for (let i = 0; i < PREFECTURES.length; i++) {
+    params.push({ id: `${i + 1}.xml` }); // per-prefecture photo sitemap
+  }
+  return params;
+}
+
 // 写真の最新 year を年-12-31 形式の lastmod に
 const yearLastmod = (year) => year ? `${year}-12-31` : null;
 const todayLastmod = () => new Date().toISOString().slice(0, 10);

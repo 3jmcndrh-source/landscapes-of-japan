@@ -1,5 +1,5 @@
 import PageClient from "../PageClient.js";
-import { LANGS, SEO_META, HREFLANG, SITE_URL, buildHreflangMap, getKeywords } from "../i18n-meta.js";
+import { LANGS, SEO_META, HREFLANG, SITE_URL, OG_IMAGE, buildHreflangMap, getKeywords } from "../i18n-meta.js";
 
 export const dynamicParams = false;
 
@@ -29,11 +29,13 @@ export async function generateMetadata({ params }) {
       url: `${SITE_URL}/${lang}`,
       siteName: "Landscapes of Japan",
       locale: meta.ogLocale,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Landscapes of Japan" }],
     },
     twitter: {
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
+      images: [OG_IMAGE],
     },
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   };

@@ -2,6 +2,9 @@ import { PREFECTURES, getLocName, getPrefName, cldUrl } from "../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../slugs.js";
 import { SITE_URL } from "../i18n-meta.js";
 
+// Cloudflare Pages 静的エクスポート対応
+export const dynamic = "force-static";
+
 /**
  * Google image sitemap — Photos on each loc/pref page, canonical Japanese URLs.
  * Google Image Search discovers images across all language variants via the
