@@ -6,8 +6,8 @@
  */
 import { readFileSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.vercel.app/";
-const SITEMAP_URL = "https://landscapes-of-japan.vercel.app/sitemap.xml";
+const SITE_URL = "https://landscapes-of-japan.com/";
+const SITEMAP_URL = "https://landscapes-of-japan.com/sitemap.xml";
 
 // Tiny .env loader (no deps)
 try {

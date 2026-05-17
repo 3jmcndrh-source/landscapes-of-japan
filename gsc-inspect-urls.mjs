@@ -9,7 +9,7 @@
 import crypto from "node:crypto";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.vercel.app/";
+const SITE_URL = "https://landscapes-of-japan.com/";
 const MAX = parseInt(process.argv[2] || "200", 10);
 const KEY_PATH = process.env.GSC_KEY_PATH || "./gsc-service-account.json";
 

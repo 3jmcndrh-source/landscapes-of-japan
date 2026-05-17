@@ -22,7 +22,7 @@ This lets Claude resubmit the sitemap programmatically without manual UI clicks.
 
 4. **Grant GSC Access**
    - Open https://search.google.com/search-console
-   - Select property `landscapes-of-japan.vercel.app`
+   - Select property `landscapes-of-japan.com`
    - Left menu → **設定** → **ユーザーと権限** → **ユーザーを追加**
    - Paste the service account email, permission = **所有者** (Owner)
    - **追加**

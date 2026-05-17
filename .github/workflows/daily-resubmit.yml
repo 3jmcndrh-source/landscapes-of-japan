@@ -53,5 +53,5 @@ jobs:
         if: always()
         run: |
           echo "### Daily Resubmit Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- Sitemap: https://landscapes-of-japan.vercel.app/sitemap.xml" >> $GITHUB_STEP_SUMMARY
+          echo "- Sitemap: https://landscapes-of-japan.com/sitemap.xml" >> $GITHUB_STEP_SUMMARY
           echo "- Run at: $(date -u)" >> $GITHUB_STEP_SUMMARY

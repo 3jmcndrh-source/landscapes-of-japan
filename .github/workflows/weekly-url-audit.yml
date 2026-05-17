@@ -21,7 +21,7 @@ jobs:
       - name: Fetch all sitemap URLs
         run: |
           set +e
-          curl -s https://landscapes-of-japan.vercel.app/sitemap.xml \
+          curl -s https://landscapes-of-japan.com/sitemap.xml \
             | grep -oP '<loc>\K[^<]+' > sitemaps.txt
 
           for sm in $(cat sitemaps.txt); do

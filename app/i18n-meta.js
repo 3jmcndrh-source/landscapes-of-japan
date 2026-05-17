@@ -1,4 +1,4 @@
-export const SITE_URL = "https://landscapes-of-japan.vercel.app";
+export const SITE_URL = "https://landscapes-of-japan.com";
 export const OG_IMAGE = "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/DSC07601_cocitq.jpg";
 export const DEFAULT_LANG = "en";
 

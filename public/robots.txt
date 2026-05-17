@@ -51,7 +51,7 @@ User-agent: meta-externalagent
 Allow: /
 
 # Sitemaps
-Sitemap: https://landscapes-of-japan.vercel.app/sitemap.xml
-Sitemap: https://landscapes-of-japan.vercel.app/sitemap-images.xml
+Sitemap: https://landscapes-of-japan.com/sitemap.xml
+Sitemap: https://landscapes-of-japan.com/sitemap-images.xml
 
 # Crawl-delay: not set (modern bots ignore this)

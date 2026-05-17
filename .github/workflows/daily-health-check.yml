@@ -23,7 +23,7 @@ jobs:
         run: |
           set +e
           # sitemap.xml index から各 sub-sitemap を取得 → ランダムサンプル50URLにHEAD
-          curl -s https://landscapes-of-japan.vercel.app/sitemap.xml \
+          curl -s https://landscapes-of-japan.com/sitemap.xml \
             | grep -oP '<loc>\K[^<]+' > sitemaps.txt
           echo "Found $(wc -l < sitemaps.txt) sub-sitemaps"
 

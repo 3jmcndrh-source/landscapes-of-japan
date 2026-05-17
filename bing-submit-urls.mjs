@@ -6,7 +6,7 @@
  */
 import { readFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.vercel.app/";
+const SITE_URL = "https://landscapes-of-japan.com/";
 const MAX = parseInt(process.argv[2] || "500", 10);
 
 // API key from .env or env var

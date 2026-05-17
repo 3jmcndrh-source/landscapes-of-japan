@@ -10,7 +10,7 @@
  * 1リクエスト最大10,000 URL。それ以上は分割。
  */
 
-const HOST = "landscapes-of-japan.vercel.app";
+const HOST = "landscapes-of-japan.com";
 const KEY = "125bd42ee2a286267e909a4b533251b4";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const ENDPOINT = "https://api.indexnow.org/indexnow"; // Bing→他エンジンに伝播

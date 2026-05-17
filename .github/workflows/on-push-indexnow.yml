@@ -26,7 +26,7 @@ jobs:
       - name: Verify production reflects HEAD commit
         run: |
           # Production HTML or any indicator that latest deploy succeeded
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://landscapes-of-japan.vercel.app/")
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://landscapes-of-japan.com/")
           echo "Production status: $STATUS"
           if [ "$STATUS" != "200" ] && [ "$STATUS" != "301" ] && [ "$STATUS" != "308" ]; then
             echo "::warning::Production not 200, skipping IndexNow"

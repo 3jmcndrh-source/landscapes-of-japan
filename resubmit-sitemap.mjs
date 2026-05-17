@@ -9,8 +9,8 @@
 import crypto from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.vercel.app/";
-const SITEMAP_URL = "https://landscapes-of-japan.vercel.app/sitemap.xml";
+const SITE_URL = "https://landscapes-of-japan.com/";
+const SITEMAP_URL = "https://landscapes-of-japan.com/sitemap.xml";
 const KEY_PATH = process.env.GSC_KEY_PATH || "./gsc-service-account.json";
 
 if (!existsSync(KEY_PATH)) {

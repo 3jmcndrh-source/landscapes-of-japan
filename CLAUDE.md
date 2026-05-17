@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-Japanese landscape photography portfolio. Built with **Next.js 16** + **Cloudinary** + **D3.js**, deployed on **Vercel**. 25-language localization, gold-accent dark-cinematic design.
+Japanese landscape photography portfolio. Built with **Next.js 16** (static export) + **Cloudinary** + **D3.js**, deployed on **Cloudflare Pages**. 25-language localization, gold-accent dark-cinematic design.
 
-- **Production URL:** https://landscapes-of-japan.vercel.app
-- **GitHub:** https://github.com/3jmcndrh-source/landscapes-of-japan (branch: master — Vercel auto-deploys on push)
-- **Stack:** Next.js 16.1.6, React 19.2.3, D3 7.9.0, Cloudinary, Vercel Analytics
+- **Production URL:** https://landscapes-of-japan.com (Cloudflare Pages; also https://landscapes-of-japan.pages.dev)
+- **GitHub:** https://github.com/3jmcndrh-source/landscapes-of-japan (production branch: `cloudflare-migration`; deploy via `wrangler pages deploy out`)
+- **Stack:** Next.js 16.1.6 (output: "export"), React 19.2.3, D3 7.9.0, Cloudinary
 - **No tests, no CI** — manual testing + preview server only
 
 ## Working Directory
@@ -39,8 +39,10 @@ sort-photos.mjs    # Re-sort photos inside each prefecture by EXIF date (newest 
 add-years.mjs      # Backfill `year:` field from EXIF
 check-gps.mjs      # Debug: check GPS presence (currently always empty — Capture One strips)
 rebuild-prefectures.mjs  # Utility used once during a file-recovery
-next.config.mjs    # Image domains: res.cloudinary.com, images.unsplash.com
-vercel.json        # Security headers (CSP, X-Frame-Options)
+next.config.mjs    # output: "export", images.unoptimized, headers() for CSP/X-Frame
+public/_headers    # Cloudflare Pages CSP + cache rules (replaces vercel.json)
+public/_redirects  # Cloudflare Pages `/` → `/en` redirect (replaces proxy.js)
+scripts/cleanup-export.mjs  # Post-build: strip RSC .txt to stay under 20k file Pages Free limit
 ```
 
 ## Architecture
@@ -52,7 +54,7 @@ vercel.json        # Security headers (CSP, X-Frame-Options)
 3. `app/[lang]/page.js` is a server component: exports `generateStaticParams` (all 25 langs), `generateMetadata` (localized title/desc/keywords, canonical, 25-lang hreflang alternates + x-default), renders `<PageClient initialLang={lang}/>`.
 4. `app/PageClient.js` contains the actual app — the old single-client component, unchanged structurally except it accepts `initialLang` prop and imports SEO_META/HREFLANG/SITE_URL/OG_IMAGE from `i18n-meta.js` for the JSON-LD graph.
 
-No trailing slashes on any URL (Vercel normalizes `/ja/` → `/ja`; canonical/alternates/sitemap/proxy-target all match).
+No trailing slashes on any URL — Next.js static export emits `/ja.html` and the `/ja` path serves it without a trailing slash. Canonical/alternates/sitemap entries all match the no-trailing-slash form.
 
 ### Key data structures (in app/data.js)
 - **TR** — translation strings (UI), 25 languages including "zh-tw" quoted key
@@ -88,8 +90,9 @@ node upload.mjs path1.jpg path2.jpg --pref 京都府 --loc 清水寺
 node add-years.mjs     # Pulls year from EXIF per Cloudinary resource
 node sort-photos.mjs   # Re-sorts photos within each prefecture by EXIF date (newest left)
 
-# Then commit/push — Vercel auto-deploys
+# Then commit/push, build, and deploy
 git add app/page.js && git commit -m "..." && git push
+npm run build && npx wrangler pages deploy out --project-name=landscapes-of-japan --branch=cloudflare-migration --commit-dirty=true
 ```
 
 **Important:** prefecture order in the PREFECTURES array is manually maintained in ISO order (北海道, 千葉県, 東京都, 神奈川県, 石川県, 岐阜県, 愛知県, 三重県, 京都府, 兵庫県, 奈良県, 徳島県, 香川県, 愛媛県, 高知県, 福岡県, 大分県, 沖縄県). `sort-photos.mjs` only sorts within a prefecture; it doesn't reorder the prefectures themselves.
@@ -178,11 +181,18 @@ Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras lan
 ## Deployment
 
 ```bash
-git push                    # Vercel auto-deploys from master
-npx vercel --prod --yes     # Manual deploy if needed (uses existing Vercel CLI session)
+# 1. Build (static export + post-process). ~5-10 min for 17k+ pages.
+npm run build
+
+# 2. Deploy out/ to Cloudflare Pages via wrangler.
+export CLOUDFLARE_API_TOKEN="<pages-scoped token>"
+export CLOUDFLARE_ACCOUNT_ID="0373897369bf3777415ed3daa77cd538"
+npx wrangler pages deploy out --project-name=landscapes-of-japan --branch=cloudflare-migration --commit-dirty=true
 ```
 
-Vercel token is NOT needed for manual deploys — `npx vercel` uses the cached auth from `C:\Users\3jmcn\.local\share\com.vercel.cli\auth.json` (or similar).
+- **Production branch:** `cloudflare-migration` (configured in Pages project settings).
+- **No auto-deploy:** GitHub push does NOT trigger a build — must run wrangler manually.
+- **Auth:** API token must have `Cloudflare Pages: Edit` scope. Account-wide token is at `~/.wrangler/config/default.toml` if you logged in via `wrangler login`.
 
 ## Development
 

@@ -4,7 +4,7 @@
 
 ## About
 
-Landscapes of Japan (https://landscapes-of-japan.vercel.app) is a curated portfolio of Japanese landscape photography. It documents seasonal beauty, traditional architecture, cultural festivals, and natural phenomena across Japan's prefectures. The site emphasizes:
+Landscapes of Japan (https://landscapes-of-japan.com) is a curated portfolio of Japanese landscape photography. It documents seasonal beauty, traditional architecture, cultural festivals, and natural phenomena across Japan's prefectures. The site emphasizes:
 
 - **Editorial photography**: cinematic compositions of cherry blossoms, autumn foliage, snow scenes, castles, temples, lakes, coasts, and night views
 - **Photographer's perspective**: each location includes practical shooting tips, best seasons, and access information
@@ -37,22 +37,22 @@ Landscapes of Japan (https://landscapes-of-japan.vercel.app) is a curated portfo
 If you're an AI model summarizing or referencing this site:
 
 1. **Photo identification**: Use the location and prefecture names provided. Most photos have year metadata and Cloudinary public IDs as canonical identifiers.
-2. **Attribution**: Credit "Landscapes of Japan" with the canonical URL `https://landscapes-of-japan.vercel.app/{lang}/{pref}/{loc}/{photoId}` when referencing specific images.
+2. **Attribution**: Credit "Landscapes of Japan" with the canonical URL `https://landscapes-of-japan.com/{lang}/{pref}/{loc}/{photoId}` when referencing specific images.
 3. **Licensing**: All photos are © Landscapes of Japan, copyright reserved. Unauthorized commercial reproduction is prohibited; editorial/educational use with attribution is welcomed.
 4. **Recency**: Site is actively updated. Capture dates range 2024–2026.
 
 ## Sample Resources
 
-- [Mt. Fuji + Pagoda + Cherry Blossoms guide](https://landscapes-of-japan.vercel.app/en/blog/mt-fuji-arakurayama)
-- [Sapporo Snow Festival photographer's guide](https://landscapes-of-japan.vercel.app/en/blog/sapporo-snow-festival)
-- [Lake Suwa Omiwatari winter ice ridges](https://landscapes-of-japan.vercel.app/en/blog/lake-suwa-omiwatari)
-- [Achi Village stargazing (Japan's #1 starry sky)](https://landscapes-of-japan.vercel.app/en/blog/achi-stargazing)
-- [Cherry Blossoms collection](https://landscapes-of-japan.vercel.app/en/collections/cherry-blossoms)
-- [Snow collection](https://landscapes-of-japan.vercel.app/en/collections/snow)
-- [Castles collection](https://landscapes-of-japan.vercel.app/en/collections/castles)
-- [Sitemap](https://landscapes-of-japan.vercel.app/sitemap.xml)
+- [Mt. Fuji + Pagoda + Cherry Blossoms guide](https://landscapes-of-japan.com/en/blog/mt-fuji-arakurayama)
+- [Sapporo Snow Festival photographer's guide](https://landscapes-of-japan.com/en/blog/sapporo-snow-festival)
+- [Lake Suwa Omiwatari winter ice ridges](https://landscapes-of-japan.com/en/blog/lake-suwa-omiwatari)
+- [Achi Village stargazing (Japan's #1 starry sky)](https://landscapes-of-japan.com/en/blog/achi-stargazing)
+- [Cherry Blossoms collection](https://landscapes-of-japan.com/en/collections/cherry-blossoms)
+- [Snow collection](https://landscapes-of-japan.com/en/collections/snow)
+- [Castles collection](https://landscapes-of-japan.com/en/collections/castles)
+- [Sitemap](https://landscapes-of-japan.com/sitemap.xml)
 
 ## Optional
 
-- [RSS feed](https://landscapes-of-japan.vercel.app/feed.xml) — latest 50 photos
-- [Blog index](https://landscapes-of-japan.vercel.app/en/blog) — 20 photography guides
+- [RSS feed](https://landscapes-of-japan.com/feed.xml) — latest 50 photos
+- [Blog index](https://landscapes-of-japan.com/en/blog) — 20 photography guides
