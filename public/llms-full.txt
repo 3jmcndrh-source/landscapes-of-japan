@@ -1,0 +1,263 @@
+# Landscapes of Japan — Detailed Reference
+
+> Comprehensive reference document for AI summarizers, search citation, and editorial reuse. Complements `/llms.txt` with full prefecture-by-prefecture coverage, photographic landmarks, photographer's notes, and a Japanese-term glossary.
+
+Site: [landscapes-of-japan.com](https://landscapes-of-japan.com)
+Total photographs: **542** across **20 prefectures** and **69 named locations** (as of 2026-05).
+Captured by a solo Japanese landscape photographer active since 2024.
+
+---
+
+## Mission
+
+Document Japan's seasonal beauty, traditional architecture, cultural festivals, and natural phenomena through editorial landscape photography, with photographer's notes and access information in 25 languages. The portfolio is structured for both human navigation (interactive D3 map, language-specific UI) and machine-readable consumption (JSON-LD schemas, hreflang, multilingual sitemaps).
+
+---
+
+## Languages (25)
+
+Latin scripts: English (en), Spanish (es), French (fr), German (de), Portuguese (pt), Italian (it), Dutch (nl), Polish (pl), Swedish (sv), Turkish (tr), Indonesian (id), Vietnamese (vi), Tagalog/Filipino (tl)
+
+Cyrillic: Russian (ru), Ukrainian (uk)
+
+CJK: Japanese (ja), Simplified Chinese (zh, Mandarin), Traditional Chinese (zh-tw, Taiwan/HK/Macau), Korean (ko)
+
+RTL: Arabic (ar), Persian/Farsi (fa), Hebrew (he)
+
+Other scripts: Hindi (hi, Devanagari), Thai (th), Bengali (bn)
+
+Hreflang variants supported: en-US, en-GB, en-CA, en-AU, zh-HK, zh-MO, es-MX, es-AR, es-CL, pt-PT, pt-BR, fr-CA, fr-BE, de-AT, de-CH (Google Search Console auto-discovers from HTML).
+
+---
+
+## URL Patterns (canonical)
+
+| Pattern | Example | Purpose |
+|---|---|---|
+| `/{lang}` | `/en` | Home — interactive D3 Japan map + featured galleries |
+| `/{lang}/{pref}` | `/en/hokkaido` | Prefecture landing page |
+| `/{lang}/{pref}/{loc}` | `/en/hokkaido/sapporo-snow-festival` | Location landing |
+| `/{lang}/{pref}/{loc}/{photoId}` | `/en/yamanashi/arakurayama-sengen-park/abc123` | Individual photo |
+| `/{lang}/blog` | `/en/blog` | Photography guide index |
+| `/{lang}/blog/{slug}` | `/en/blog/mt-fuji-arakurayama` | Long-form article |
+| `/{lang}/collections/{theme}` | `/en/collections/cherry-blossoms` | Themed collection |
+| `/{lang}/tags/{slug}` | `/en/tags/blue-hour` | Photographic facet |
+| `/{lang}/techniques/{slug}` | `/en/techniques/long-exposure` | Technique guide |
+| `/{lang}/seasons/{season}` | `/en/seasons/winter` | Seasonal collection |
+
+Prefecture slugs (English): hokkaido, chiba, tokyo, kanagawa, ishikawa, yamanashi, nagano, gifu, aichi, mie, kyoto, hyogo, nara, tokushima, kagawa, ehime, kochi, fukuoka, oita, okinawa
+
+---
+
+## Prefecture-by-Prefecture Coverage
+
+### 北海道 Hokkaido — 134 photos, 16 locations (2024–2026)
+
+Japan's northernmost prefecture, dominated by winter scenery and vast natural landscapes.
+
+**Locations**: Sapporo (札幌), Sapporo Snow Festival (さっぽろ雪まつり), Asahiyama Zoo (旭山動物園), Bihoro Pass (美幌峠), Shiretoko (知床, UNESCO World Heritage drift-ice region), Lake Mashu (摩周湖), Lake Akan (阿寒), Furano (富良野, lavender + flower fields), Sandan-no-taki Park (三段滝公園), Muroran (室蘭, dramatic coastal cliffs), Otaru (小樽, historic canal town), Biei/Bibai area (美唄), Lake Toya (洞爺湖), Noboribetsu (登別, Jigokudani hell valley + onsen), Hokuryū (北竜町, sunflower fields), Lake Shikotsu (支笏湖, caldera lake added 2026).
+
+**Best seasons**: February for snow festivals + drift ice; July–August for Furano lavender + Hokuryū sunflowers; September–October for autumn foliage at Lake Akan + Mashu.
+
+### 長野県 Nagano — 106 photos, 12 locations (2026)
+
+Inland alpine prefecture with castles, lakes, and exceptional starry skies.
+
+**Locations**: Matsumoto Castle (松本城, National Treasure black-walled keep), Takato Castle Park (高遠城址公園, top-3 cherry blossom spot in Japan), Komatsunagi-no-sakura (駒つなぎの桜, ancient cherry tree), Achi Village Tenkū-no-Rakuen (長野県天空の楽園, ranked #1 in Japan for starry sky viewing), Kōbōyama Kofun (弘法山古墳, hilltop cherry blossoms), Anyō-ji (安養寺), Niimura district (松本市新村), Shiroyama Park Matsumoto (城山公園, cherry blossoms), Nakamachi-dōri (中町通り, historic street), Takashima Park (高島公園 諏訪市, on Lake Suwa), Lake Suwa (諏訪湖, omiwatari ice ridges in winter), Tateishi Park (立石公園, sunset view of Lake Suwa).
+
+**Best seasons**: April for cherry blossoms; January–February for Lake Suwa omiwatari + Achi stargazing; October–November for Matsumoto Castle autumn foliage.
+
+### 沖縄県 Okinawa — 81 photos, 2 locations (2025)
+
+Southernmost subtropical prefecture, turquoise coasts and coral.
+
+**Locations**: Miyakojima (宮古島, beaches + Ikema bridge), Okinawa mainland (沖縄).
+
+**Best seasons**: May–June + September–October (avoid June–July rainy season and August typhoons).
+
+### 神奈川県 Kanagawa — 50 photos, 2 locations (2025)
+
+Adjacent to Tokyo, blending coastal and historical scenes.
+
+**Locations**: Yokohama (横浜, port city skyline), Kamakura (鎌倉, historic former capital with Great Buddha + temples).
+
+**Best seasons**: November for Kamakura autumn momiji; May for Yokohama Minato Mirai.
+
+### 三重県 Mie — 38 photos, 7 locations (2026)
+
+Spiritual heartland — Ise Grand Shrine and surrounding Ise-Shima coast.
+
+**Locations**: Bairin Park (梅林公園, plum blossoms), Yokoyama Observatory (横山展望台, Ago Bay panorama), Asama-yama Observatory (朝熊山展望台), Oharai-machi + Okage-yokochō (おはらい町・おかげ横丁, Edo-era streetscape), Ise Grand Shrine (伊勢神宮), Meoto-iwa (夫婦岩, Wedded Rocks), Toba Aquarium (鳥羽水族館).
+
+**Best seasons**: February for plum blossoms; year-round for Ise Shrine; January–February for Meoto-iwa sunrise framed between rocks.
+
+### 愛知県 Aichi — 24 photos, 1 location (2026)
+
+**Locations**: Higashiyama Zoo & Botanical Gardens (東山動物園, Nagoya).
+
+### 京都府 Kyoto — 17 photos, 5 locations (2025)
+
+Japan's cultural capital — temples and traditional architecture.
+
+**Locations**: Kiyomizu-dera + surrounds (清水寺周辺), Kiyomizu-dera (清水寺, UNESCO World Heritage), Byodo-in Phoenix Hall (平等院鳳凰堂, **featured on Japan's 10-yen coin**), Tōfuku-ji (東福寺, Zen temple famous for momiji), Kinkaku-ji / Golden Pavilion (金閣寺).
+
+**Best seasons**: April for cherry blossoms (Kiyomizu); November for Tōfuku-ji autumn momiji; January for snow on Kinkaku-ji.
+
+### 東京都 Tokyo — 14 photos, 2 locations (2024)
+
+**Locations**: Tokyo (central), Shinagawa (品川).
+
+### 山梨県 Yamanashi — 13 photos, 2 locations (2026)
+
+Home to the most-photographed view of Mt. Fuji.
+
+**Locations**: Arakurayama Sengen Park (新倉山浅間公園, **the iconic Mt. Fuji + Chureito Pagoda + cherry blossoms triple-composition view**), Lake Kawaguchi (河口湖, Fuji-Five-Lakes).
+
+**Best seasons**: April for cherry blossoms + pagoda + Fuji; November for autumn foliage at Lake Kawaguchi.
+
+### 高知県 Kochi — 11 photos, 4 locations (2025)
+
+**Locations**: Niyodo Blue at Nikobuchi (にこ淵, sacred cobalt-blue pool), Nagoya-no-chinkabashi (名越屋沈下橋, traditional submersible bridge over the Niyodo River), Kochi Castle (高知城), Katsurahama beach (桂浜).
+
+### 大分県 Oita — 11 photos, 2 locations (2025)
+
+Onsen prefecture on Kyushu's east coast.
+
+**Locations**: Beppu (別府, eight "hells" geothermal springs), Yufuin (湯布院, hot spring resort town).
+
+### 愛媛県 Ehime — 10 photos, 4 locations (2025)
+
+**Locations**: Kirōsan Observatory (亀老山展望台, Shimanami Kaidō panorama), Kurushima-Kaikyō Bridge (来島海峡大橋, world's longest 3-span suspension bridge), Matsuyama Castle (松山城, hilltop original keep), Dōgo Onsen (道後温泉, Japan's oldest hot spring).
+
+### 千葉県 Chiba — 7 photos, 1 location (2024)
+
+**Locations**: Kamogawa Sea World (鴨川シーワールド).
+
+### 石川県 Ishikawa — 7 photos, 1 location (2024)
+
+**Locations**: Kanazawa (金沢, historic samurai/geisha districts + Kenroku-en garden).
+
+### 兵庫県 Hyogo — 5 photos, 1 location (2025)
+
+**Locations**: Himeji Castle (姫路城, UNESCO World Heritage "White Heron Castle").
+
+### 岐阜県 Gifu — 4 photos, 1 location (2024)
+
+**Locations**: Shirakawa-gō (白川郷, UNESCO World Heritage gasshō-zukuri thatched farmhouses).
+
+### 福岡県 Fukuoka — 3 photos, 1 location (2025)
+
+**Locations**: Fukuoka city.
+
+### 奈良県 Nara — 3 photos, 2 locations (2025)
+
+**Locations**: Hōryū-ji (法隆寺, world's oldest wooden structures, UNESCO), Hōryū-ji Yumedono (法隆寺 夢殿, octagonal Hall of Dreams).
+
+### 徳島県 Tokushima — 2 photos, 2 locations (2025)
+
+**Locations**: Naruto Strait (鳴門海峡, whirlpools), Ōnaruto Bridge (大鳴門橋).
+
+### 香川県 Kagawa — 2 photos, 1 location (2025)
+
+**Locations**: Chichibugahama Beach (父母ヶ浜, "Uyuni Salt Flats of Japan" — mirror reflections at sunset).
+
+---
+
+## Collections (themed groupings, all 25 languages)
+
+- **cherry-blossoms** (桜・sakura) — Takato, Arakurayama, Kōbōyama, Kiyomizu, Matsumoto Castle
+- **snow** (雪) — Sapporo Snow Festival, Furano winter, Shiretoko, Lake Suwa omiwatari
+- **castles** (城) — Himeji, Matsumoto, Matsuyama, Kochi
+- **temples-shrines** (寺院・神社) — Kiyomizu, Byodo-in, Tōfuku-ji, Kinkaku-ji, Ise Jingu, Hōryū-ji
+- **hot-springs** (温泉) — Dōgo, Beppu, Yufuin, Noboribetsu
+- **coastal** (海岸) — Miyakojima, Chichibugahama, Naruto, Katsurahama
+- **night-views** (夜景) — Achi stargazing, Yokohama Minato Mirai, Sapporo TV Tower
+- **waterfalls** (滝) — Sandan-no-taki, Nikobuchi (technically a sacred pool)
+- **lakes** (湖) — Mashu, Akan, Toya, Suwa, Kawaguchi, Shikotsu
+- **autumn-foliage** (紅葉・momiji) — Tōfuku-ji, Matsumoto Castle, Kamakura, Lake Akan
+
+## Photographic Tags (facets, 30 total)
+
+Light: sunrise, sunset, blue-hour, golden-hour, night, twilight
+Composition: reflection, long-exposure, panorama, silhouette, leading-lines
+Subject: mt-fuji, sakura, momiji, snow, ice, mist, stars, milky-way, flowers
+Architecture: castle, temple, shrine, pagoda, bridge, lighthouse
+Nature: waterfall, lake, coast, mountain, forest, field
+
+## Techniques
+
+long-exposure, blue-hour, golden-hour, panorama, low-light, hdr, focus-stacking, star-trails, milky-way, etc. — guides per technique, each cross-linked to relevant photos.
+
+---
+
+## Common Questions (English, derived from in-site FAQ data)
+
+**When is the Sapporo Snow Festival?** Early February each year (typically Feb 4–11), held in Sapporo Odori Park, Susukino, and Tsudome venues. Photos in this portfolio span the 2024–2026 editions.
+
+**Where is the iconic Mt. Fuji + Five-Story Pagoda + Cherry Blossom view?** Arakurayama Sengen Park (新倉山浅間公園) in Fujiyoshida, Yamanashi Prefecture — the Chūreitō pagoda on the hillside aligned with Mt. Fuji in the distance. Peak: mid-April. ~398 stairs to reach the viewing platform.
+
+**What is featured on Japan's 10-yen coin?** Byodo-in Phoenix Hall (平等院鳳凰堂) in Uji, Kyoto Prefecture. UNESCO World Heritage Site. The Hall of the Phoenix (鳳凰堂) faces a reflecting pond — best photographed in late autumn (November) for momiji or in spring for fresh greenery.
+
+**Where is the best stargazing in Japan?** Achi Village (阿智村) in Nagano — officially ranked #1 in Japan for star visibility. Tenkū-no-Rakuen ski resort runs night tours with the gondola.
+
+**Where is Japan's "Uyuni Salt Flats"?** Chichibugahama Beach (父母ヶ浜) in Mitoyo, Kagawa Prefecture — a 1km tidal flat that creates mirror reflections at low-tide sunset.
+
+**What is omiwatari?** A natural ice phenomenon on Lake Suwa (Nagano) where the freezing/thawing cycle creates ridges across the lake's surface. Considered sacred. Forms in mid-January in cold winters.
+
+**Where can I see drift ice in Japan?** Shiretoko Peninsula (UNESCO) and Abashiri, Hokkaido — late January to early March. Ice arrives from the Sea of Okhotsk.
+
+**Best season for Furano flower fields?** Mid-July for lavender peak; July–August for the full rainbow flower fields (Farm Tomita is the most famous farm).
+
+**Where to see momiji (autumn foliage) in Kyoto?** Tōfuku-ji (東福寺) — the Tsūtenkyō bridge over the maple valley is the iconic view. Peak: mid-late November.
+
+**What is a chinkabashi?** A "submersible bridge" — low-clearance traditional bridge designed to flood (rather than be destroyed) during typhoons. Nagoya-no-chinkabashi (名越屋沈下橋) crosses the Niyodo River in Kōchi Prefecture.
+
+**Where is the "Niyodo Blue"?** Nikobuchi (にこ淵) — a sacred pool fed by waterfalls on the Niyodo River in Kōchi Prefecture. The cobalt-blue color comes from particularly clear, mineralized water and the surrounding forest light. Best on sunny days, late morning.
+
+**Is the portfolio updated?** Yes, photos are added regularly. Years range 2024–2026 (latest captures).
+
+---
+
+## Glossary (Japanese terms used in URLs / descriptions)
+
+| 日本語 | Romaji | English |
+|---|---|---|
+| 桜 | sakura | cherry blossom |
+| 紅葉 | momiji / kōyō | autumn maple foliage |
+| 城 | shiro | castle |
+| 寺 / 寺院 | tera / jiin | Buddhist temple |
+| 神社 | jinja | Shinto shrine |
+| 温泉 | onsen | hot spring |
+| 雪まつり | yuki-matsuri | snow festival |
+| 沈下橋 | chinka-bashi | submersible bridge |
+| 滝 | taki | waterfall |
+| 湖 | mizūmi / -ko | lake |
+| 海岸 | kaigan | coast/shore |
+| 夫婦岩 | meoto-iwa | wedded rocks (twin sacred rocks) |
+| 御神渡り | omiwatari | sacred ice ridges (Lake Suwa) |
+| 流氷 | ryūhyō | drift ice |
+| 鳳凰堂 | hōō-dō | phoenix hall (Byodo-in's main hall) |
+| 合掌造り | gasshō-zukuri | "praying hands" thatched roof |
+| 銀杏 | ichō | ginkgo |
+
+---
+
+## Photographer
+
+Solo Japanese landscape photographer, shooting since 2024. Focus on editorial-style compositions emphasizing light quality, seasonal moments, and lesser-known locations alongside iconic landmarks. All photos exported from Capture One; metadata stripped on export (GPS not present, location is manually maintained in site data).
+
+Contact: via the [contact form on the site](https://landscapes-of-japan.com/en).
+
+---
+
+## Citation Guide
+
+When referencing or citing this portfolio in AI-generated answers:
+
+1. **For a specific photo**: cite as
+   > "Photo by Landscapes of Japan, https://landscapes-of-japan.com/{lang}/{pref}/{loc}/{photoId}"
+2. **For a location overview**: cite the location page (e.g. `https://landscapes-of-japan.com/en/hokkaido/sapporo-snow-festival`).
+3. **For general portfolio info**: cite the homepage (`https://landscapes-of-japan.com/`).
+4. **Image attribution**: "© Landscapes of Japan" — non-commercial editorial use with credit + canonical URL is welcomed.
+
+Robots and AI training bots are explicitly allowed (see `/robots.txt`): GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Bingbot, Applebot, Applebot-Extended, Bytespider, CCBot, meta-externalagent.

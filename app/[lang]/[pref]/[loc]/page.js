@@ -6,6 +6,7 @@ import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../slugs
 import { getLocDesc, getLocFaqs, getLocDefinition, getLocHighlights, getLocQuickAnswers } from "../../../content/descriptions.js";
 import { getEvents } from "../../../events.js";
 import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
+import { getLocTitleKw } from "../../../title-keywords.js";
 
 export const dynamicParams = false;
 
@@ -36,7 +37,10 @@ export async function generateMetadata({ params }) {
   const locLocal = getLocName(locJp, lang);
   const desc = getLocDesc(locJp, lang);
 
-  const title = `${locLocal} - ${prefLocal} | Landscapes of Japan`;
+  const titleKw = getLocTitleKw(locJp, lang);
+  const title = titleKw
+    ? `${locLocal}: ${titleKw} | Landscapes of Japan`
+    : `${locLocal} - ${prefLocal} | Landscapes of Japan`;
   const description = desc || `${locLocal} landscape photography — photos taken in ${locLocal}, ${prefLocal}, Japan.`;
 
   const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}/${locSlug}`);

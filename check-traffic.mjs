@@ -6,7 +6,9 @@
 import crypto from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.com/";
+// PROPERTY = GSC property identifier (URL prefix or "sc-domain:..."); SITE_URL_STRIP = for path extraction
+const PROPERTY = process.env.GSC_PROPERTY || "sc-domain:landscapes-of-japan.com";
+const SITE_URL = process.env.GSC_SITE_URL || "https://landscapes-of-japan.com/";
 const DAYS = parseInt(process.argv[2] || "28", 10);
 const KEY_PATH = process.env.GSC_KEY_PATH || "./gsc-service-account.json";
 
@@ -56,7 +58,7 @@ const end = fmt(endDate);
 const query = async (body) => {
   const r = await fetch(
     `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
-      SITE_URL
+      PROPERTY
     )}/searchAnalytics/query`,
     {
       method: "POST",

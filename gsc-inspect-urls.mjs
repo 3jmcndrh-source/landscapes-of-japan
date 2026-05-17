@@ -9,7 +9,10 @@
 import crypto from "node:crypto";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.com/";
+const PROPERTY = process.env.GSC_PROPERTY || "sc-domain:landscapes-of-japan.com";
+const SITE_URL = process.env.GSC_SITE_URL || "https://landscapes-of-japan.com/";
+const URL_FROM = process.env.GSC_URL_FROM || "";  // optional: replace this substring in URLs
+const URL_TO = process.env.GSC_URL_TO || "";
 const MAX = parseInt(process.argv[2] || "200", 10);
 const KEY_PATH = process.env.GSC_KEY_PATH || "./gsc-service-account.json";
 
@@ -47,8 +50,13 @@ async function getAllUrls() {
   return [...new Set(all)];
 }
 
-const allUrls = await getAllUrls();
+let allUrls = await getAllUrls();
+if (URL_FROM && URL_TO) {
+  allUrls = allUrls.map(u => u.replace(URL_FROM, URL_TO));
+  console.log(`URL transform: ${URL_FROM} -> ${URL_TO}`);
+}
 console.log(`Total URLs in sitemap: ${allUrls.length}`);
+console.log(`Property: ${PROPERTY}`);
 
 // Random sample of MAX URLs
 const shuffled = [...allUrls].sort(() => Math.random() - 0.5);
@@ -62,7 +70,7 @@ for (let i = 0; i < sample.length; i++) {
   const r = await fetch("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
     method: "POST",
     headers: { Authorization: `Bearer ${tok.access_token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ inspectionUrl: url, siteUrl: SITE_URL }),
+    body: JSON.stringify({ inspectionUrl: url, siteUrl: PROPERTY }),
   });
 
   if (r.status !== 200) {

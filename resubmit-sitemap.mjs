@@ -9,8 +9,8 @@
 import crypto from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.com/";
-const SITEMAP_URL = "https://landscapes-of-japan.com/sitemap.xml";
+const PROPERTY = process.env.GSC_PROPERTY || "sc-domain:landscapes-of-japan.com";
+const SITEMAP_URL = process.env.GSC_SITEMAP_URL || "https://landscapes-of-japan.com/sitemap.xml";
 const KEY_PATH = process.env.GSC_KEY_PATH || "./gsc-service-account.json";
 
 if (!existsSync(KEY_PATH)) {
@@ -53,7 +53,7 @@ if (!tok.access_token) {
 }
 
 const submitUrl = `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
-  SITE_URL
+  PROPERTY
 )}/sitemaps/${encodeURIComponent(SITEMAP_URL)}`;
 const r = await fetch(submitUrl, {
   method: "PUT",

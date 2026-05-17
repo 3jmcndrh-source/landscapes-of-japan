@@ -6,7 +6,8 @@
 import crypto from "node:crypto";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 
-const SITE_URL = "https://landscapes-of-japan.com/";
+const PROPERTY = process.env.GSC_PROPERTY || "sc-domain:landscapes-of-japan.com";
+const SITE_URL = process.env.GSC_SITE_URL || "https://landscapes-of-japan.com/";
 const KEY_PATH = process.env.GSC_KEY_PATH || "./gsc-service-account.json";
 
 if (!existsSync(KEY_PATH)) {
@@ -40,7 +41,7 @@ const fmt = (d) => d.toISOString().slice(0, 10);
 console.log(`Fetching queries ${fmt(startDate)} ~ ${fmt(endDate)} (90 days)...`);
 
 const r = await (await fetch(
-  `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(SITE_URL)}/searchAnalytics/query`,
+  `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(PROPERTY)}/searchAnalytics/query`,
   {
     method: "POST",
     headers: { Authorization: `Bearer ${tok.access_token}`, "Content-Type": "application/json" },

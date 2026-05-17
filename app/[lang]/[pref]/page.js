@@ -5,6 +5,7 @@ import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js"
 import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
 import { getPrefDesc, getPrefFaqs, getPrefDefinition, getPrefHighlights, getPrefQuickAnswers } from "../../content/descriptions.js";
 import { getPrefSameAs } from "../../wikidata.js";
+import { getPrefTitleKw } from "../../title-keywords.js";
 
 export const dynamicParams = false;
 
@@ -27,7 +28,10 @@ export async function generateMetadata({ params }) {
   const prefLocal = getPrefName(prefJp, lang);
   const desc = getPrefDesc(prefJp, lang);
 
-  const title = `${prefLocal} | Landscapes of Japan`;
+  const titleKw = getPrefTitleKw(prefJp, lang);
+  const title = titleKw
+    ? `${prefLocal}: ${titleKw} | Landscapes of Japan`
+    : `${prefLocal} | Landscapes of Japan`;
   const description = desc || `${prefLocal} landscape photography — photos taken across ${prefLocal}, Japan.`;
 
   const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}`);

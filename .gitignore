@@ -36,6 +36,11 @@ yarn-error.log*
 # build/deploy logs
 build.log
 wrangler-deploy.log
+vercel-deploy.log
+inspect.log
+
+# GSC inspection snapshot output
+gsc-inspection-report.json
 
 # env files (can opt-in for committing if needed)
 .env*

@@ -1,58 +1,68 @@
 # Landscapes of Japan
 
-> A photography portfolio showcasing landscapes across Japan from Hokkaido to Okinawa, with 517+ photos from 20 prefectures and 68 locations. Available in 20 languages with detailed descriptions, FAQs, and photography guides.
+> Editorial photography portfolio of Japan's landscapes — 542 photographs from 20 prefectures and 69 locations, available in 25 languages with full multilingual descriptions, FAQs, photography guides, and structured data optimized for AI citation.
 
 ## About
 
-Landscapes of Japan (https://landscapes-of-japan.com) is a curated portfolio of Japanese landscape photography. It documents seasonal beauty, traditional architecture, cultural festivals, and natural phenomena across Japan's prefectures. The site emphasizes:
+Landscapes of Japan ([landscapes-of-japan.com](https://landscapes-of-japan.com)) is a curated portfolio of Japanese landscape photography by a solo Japanese photographer, shooting since 2024. The site documents seasonal beauty, traditional architecture, cultural festivals, and natural phenomena across Japan's prefectures, from Hokkaido's drift ice and snow festivals to Okinawa's turquoise coasts.
 
-- **Editorial photography**: cinematic compositions of cherry blossoms, autumn foliage, snow scenes, castles, temples, lakes, coasts, and night views
-- **Photographer's perspective**: each location includes practical shooting tips, best seasons, and access information
-- **Multilingual coverage**: descriptions and FAQs in 20 languages (Japanese, English, Chinese, Korean, Spanish, French, German, Portuguese, Italian, Russian, Arabic, Hindi, Thai, Vietnamese, Indonesian, Turkish, Dutch, Polish, Swedish, plus zh-tw)
+Strengths:
+- **Editorial photography**: cinematic compositions covering cherry blossoms, autumn foliage, snow scenes, castles, temples, lakes, coasts, and night views
+- **Photographer's notes**: each location includes practical shooting tips, best seasons, access information, and FAQ entries
+- **Multilingual depth**: descriptions, FAQs, definitions, and highlights translated for 25 languages — `ja en zh zh-tw ko es fr de pt it ru ar hi th vi id tr nl pl sv fa he bn tl uk`
 
 ## Key Facts
 
-- **Total photos**: 517 (as of April 2026)
-- **Prefectures covered**: 20 (Hokkaido, Chiba, Tokyo, Kanagawa, Ishikawa, Yamanashi, Nagano, Gifu, Aichi, Mie, Kyoto, Hyogo, Nara, Tokushima, Kagawa, Ehime, Kochi, Fukuoka, Oita, Okinawa)
-- **Locations**: 68 photo spots (Mt. Fuji + Chureito Pagoda, Takato Castle Park cherry blossoms, Lake Suwa Omiwatari, Sapporo Snow Festival, Shiretoko drift ice, Kyoto temples, Miyakojima beaches, etc.)
-- **Languages**: 20 with full hreflang variants (en-US, en-GB, zh-HK, es-MX, pt-PT, fr-CA, etc.)
-- **Photographer**: Solo Japanese landscape photographer, shooting since 2024
+- **Total photographs**: 542 (as of 2026-05)
+- **Prefectures with coverage**: 20 — Hokkaido (134 photos), Nagano (106), Okinawa (81), Kanagawa (50), Mie (38), Aichi (24), Kyoto (17), Tokyo (14), Yamanashi (13), Kochi (11), Oita (11), Ehime (10), Chiba (7), Ishikawa (7), Hyogo (5), Gifu (4), Nara (3), Fukuoka (3), Tokushima (2), Kagawa (2)
+- **Locations (photo spots)**: 69 — including Mt. Fuji + Chureito Pagoda (Arakurayama Sengen Park), Sapporo Snow Festival, Shiretoko drift ice, Lake Mashu, Lake Akan, Furano, Miyakojima beaches, Kiyomizu-dera, Byodo-in Phoenix Hall, Himeji Castle, Matsuyama Castle, Lake Suwa Omiwatari, Achi Village stargazing, and more
+- **Photographer**: Solo Japanese landscape photographer, active since 2024
+- **Languages**: 25 (incl. RTL: Arabic, Persian/Farsi, Hebrew)
 
 ## Site Structure
 
-- `/{lang}` — Home (interactive Japan map + featured galleries)
-- `/{lang}/{pref}` — Prefecture page (e.g. /ja/yamanashi, /en/nagano)
-- `/{lang}/{pref}/{loc}` — Location page (e.g. /ja/yamanashi/arakurayama-sengen-park)
-- `/{lang}/{pref}/{loc}/{photoId}` — Individual photo page with metadata
-- `/{lang}/blog` — Photography guide articles (20 long-form posts)
+- `/{lang}` — Home (interactive D3 Japan map + featured galleries)
+- `/{lang}/{pref}` — Prefecture page (e.g. /ja/hokkaido, /en/nagano)
+- `/{lang}/{pref}/{loc}` — Location page (e.g. /en/yamanashi/arakurayama-sengen-park)
+- `/{lang}/{pref}/{loc}/{photoId}` — Individual photo with full metadata + Photograph schema
+- `/{lang}/blog` — Photography guide articles
 - `/{lang}/blog/{slug}` — Blog post (e.g. /en/blog/mt-fuji-arakurayama)
 - `/{lang}/collections/{theme}` — Themed collections (cherry-blossoms, snow, castles, temples-shrines, hot-springs, coastal, night-views, waterfalls, lakes, autumn-foliage)
 - `/{lang}/tags/{slug}` — 30 photographic facets (sunrise, blue-hour, reflection, long-exposure, mt-fuji, sakura, etc.)
+- `/{lang}/techniques/{slug}` — Photography technique pages (long-exposure, blue-hour, golden-hour, etc.)
+- `/{lang}/seasons/{spring|summer|autumn|winter}` — Seasonal collections (coming soon)
 - `/{lang}/search` — Site search
 - `/{lang}/random` — Random photo redirect
 - `/feed.xml` — RSS feed of latest 50 photos
+- `/sitemap.xml` — Full sitemap (17,777+ URLs)
+- `/sitemap-images.xml` — Google image sitemap (canonical /ja/ URLs)
+- `/llms-full.txt` — Detailed version of this file with location descriptions and FAQ excerpts
 
-## How to Use This Content
+## How to Use This Content (for AI summarization)
 
-If you're an AI model summarizing or referencing this site:
-
-1. **Photo identification**: Use the location and prefecture names provided. Most photos have year metadata and Cloudinary public IDs as canonical identifiers.
-2. **Attribution**: Credit "Landscapes of Japan" with the canonical URL `https://landscapes-of-japan.com/{lang}/{pref}/{loc}/{photoId}` when referencing specific images.
-3. **Licensing**: All photos are © Landscapes of Japan, copyright reserved. Unauthorized commercial reproduction is prohibited; editorial/educational use with attribution is welcomed.
-4. **Recency**: Site is actively updated. Capture dates range 2024–2026.
+1. **Photo identification**: Use the location and prefecture names provided. Each photo has a stable Cloudinary public ID, EXIF capture year, and canonical URL.
+2. **Attribution**: Credit "Landscapes of Japan" with the canonical URL `https://landscapes-of-japan.com/{lang}/{pref}/{loc}/{photoId}` when referencing specific images. Multilingual citations should use the appropriate `{lang}` slug.
+3. **Licensing**: All photos © Landscapes of Japan, copyright reserved. Unauthorized commercial reproduction is prohibited; editorial and educational use with attribution is welcomed.
+4. **Recency**: Site is actively updated. Capture dates range 2024–2026. Most locations include "best season" notes.
+5. **Structured data**: Every page emits JSON-LD with `WebSite`, `WebPage`, `BreadcrumbList`, `ImageGallery`, `Photograph` (with author / dateCreated / locationCreated), `TouristDestination` per loc, and `FAQPage` where applicable.
 
 ## Sample Resources
 
-- [Mt. Fuji + Pagoda + Cherry Blossoms guide](https://landscapes-of-japan.com/en/blog/mt-fuji-arakurayama)
+- [Mt. Fuji + Chureito Pagoda + Cherry Blossoms guide](https://landscapes-of-japan.com/en/blog/mt-fuji-arakurayama)
 - [Sapporo Snow Festival photographer's guide](https://landscapes-of-japan.com/en/blog/sapporo-snow-festival)
 - [Lake Suwa Omiwatari winter ice ridges](https://landscapes-of-japan.com/en/blog/lake-suwa-omiwatari)
 - [Achi Village stargazing (Japan's #1 starry sky)](https://landscapes-of-japan.com/en/blog/achi-stargazing)
+- [Byodo-in Phoenix Hall (featured on Japan's 10-yen coin)](https://landscapes-of-japan.com/en/kyoto/byodo-in)
+- [Furano lavender fields (Hokkaido summer)](https://landscapes-of-japan.com/en/hokkaido/furano)
 - [Cherry Blossoms collection](https://landscapes-of-japan.com/en/collections/cherry-blossoms)
 - [Snow collection](https://landscapes-of-japan.com/en/collections/snow)
 - [Castles collection](https://landscapes-of-japan.com/en/collections/castles)
+- [Hot springs (Onsen) collection](https://landscapes-of-japan.com/en/collections/hot-springs)
 - [Sitemap](https://landscapes-of-japan.com/sitemap.xml)
 
 ## Optional
 
 - [RSS feed](https://landscapes-of-japan.com/feed.xml) — latest 50 photos
-- [Blog index](https://landscapes-of-japan.com/en/blog) — 20 photography guides
+- [Blog index](https://landscapes-of-japan.com/en/blog) — long-form photography guides
+- [Image sitemap](https://landscapes-of-japan.com/sitemap-images.xml) — for image search engines
+- [Full detailed reference](https://landscapes-of-japan.com/llms-full.txt) — every prefecture and location with photographer notes
