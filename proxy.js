@@ -23,7 +23,19 @@ function detectLang(acceptLanguage) {
   return DEFAULT_LANG;
 }
 
+const NEW_HOST = "landscapes-of-japan.com";
+const OLD_HOST = "landscapes-of-japan.vercel.app";
+
 export function proxy(request) {
+  const host = request.headers.get("host");
+  if (host === OLD_HOST) {
+    const url = request.nextUrl.clone();
+    url.host = NEW_HOST;
+    url.protocol = "https:";
+    url.port = "";
+    return NextResponse.redirect(url, 301);
+  }
+
   const { pathname } = request.nextUrl;
   const firstSeg = pathname.split("/")[1];
   if (LANG_SET.has(firstSeg)) return NextResponse.next();
