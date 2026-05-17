@@ -3,9 +3,12 @@ import PhotoClient from "../../../../PhotoClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
-import { getLocDesc } from "../../../../content/descriptions.js";
+import { getLocDesc, getLocHighlights, getLocDefinition } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
 import { TAGS, TAG_SLUGS, getTagName } from "../../../../tags.js";
+import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../../title-keywords.js";
+import { POSTS, getPostTitle, getPostExcerpt } from "../../../../content/blog/posts.js";
+import { ui } from "../../../../ui-strings.js";
 
 // Cloudflare Pages 静的エクスポート: 全 写真 × 25 言語 を build 時に pre-render
 // 約 400 photos × 25 langs = ~10,000 pages (Cloudflare Pages 20k file 上限内)
@@ -44,7 +47,18 @@ export async function generateMetadata({ params }) {
   const desc = getLocDesc(locJp, lang);
   const yearStr = photo.year ? ` (${photo.year})` : "";
 
-  const title = `${locLocal}${yearStr} - ${prefLocal} | Landscapes of Japan`;
+  // Use loc title keyword (en/ja native, others EN parens fallback) so photo
+  // pages also surface high-impression search terms.
+  const titleKw = getLocTitleKw(locJp, lang);
+  const titleKwEN = getLocTitleKwEnFallback(locJp);
+  let title;
+  if (titleKw) {
+    title = `${locLocal}${yearStr}: ${titleKw} | Landscapes of Japan`;
+  } else if (titleKwEN && lang !== "en") {
+    title = `${locLocal}${yearStr} (${titleKwEN}) - ${prefLocal} | Landscapes of Japan`;
+  } else {
+    title = `${locLocal}${yearStr} - ${prefLocal} | Landscapes of Japan`;
+  }
   const description = desc
     ? `${locLocal}, ${prefLocal} — ${desc.slice(0, 140)}`
     : `Photograph of ${locLocal}, ${prefLocal}, Japan${yearStr}.`;
@@ -173,6 +187,14 @@ export default async function Page({ params }) {
     ],
   };
 
+  // SEO content enrichment — photo pages are currently very thin (image +
+  // breadcrumb + related thumbnails). Adding the location description and
+  // its highlights gives Google substantial unique text per location, and
+  // cross-linking blog posts gives those posts inbound link signals.
+  const locDesc = getLocDesc(locJp, lang);
+  const locHighlights = getLocHighlights(locJp, lang);
+  const relatedPosts = POSTS.filter((p) => p.locs && p.locs.includes(locJp));
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -185,6 +207,53 @@ export default async function Page({ params }) {
         photoTags={photoTags}
         similarPhotos={similarPhotos}
       />
+      {(locDesc || locHighlights.length > 0 || relatedPosts.length > 0) && (
+        <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>
+          <div style={{ maxWidth: 980, margin: "0 auto" }}>
+            {locDesc && (
+              <>
+                <h2 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(22px,3vw,32px)", color: "#f2ece2", margin: "0 0 18px", letterSpacing: ".01em" }}>
+                  {ui("aboutThisLocation", lang)}: {locLocal}
+                </h2>
+                <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 15, color: "rgba(232,228,223,.78)", lineHeight: 1.85, margin: "0 0 36px" }}>
+                  {locDesc}
+                </p>
+              </>
+            )}
+            {locHighlights.length > 0 && (
+              <>
+                <h3 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "#f2ece2", margin: "0 0 16px" }}>
+                  {ui("keyFeatures", lang)}
+                </h3>
+                <ul style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.72)", lineHeight: 1.75, paddingLeft: 22, margin: "0 0 40px" }}>
+                  {locHighlights.slice(0, 5).map((h, i) => (
+                    <li key={i} style={{ marginBottom: 10 }}>{h}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {relatedPosts.length > 0 && (
+              <>
+                <h3 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "#f2ece2", margin: "0 0 16px" }}>
+                  {ui("relatedGuides", lang)}
+                </h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
+                  {relatedPosts.map((p) => (
+                    <a key={p.slug} href={`/${lang}/blog/${p.slug}`} style={{ display: "block", padding: 18, background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 6, textDecoration: "none", color: "#e8e4df" }}>
+                      <h4 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontWeight: 500, fontSize: 15, margin: "0 0 8px", color: "#f2ece2", lineHeight: 1.4 }}>
+                        {getPostTitle(p, lang)}
+                      </h4>
+                      <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "rgba(232,228,223,.65)", margin: 0, lineHeight: 1.6 }}>
+                        {getPostExcerpt(p, lang)}
+                      </p>
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </section>
+      )}
     </>
   );
 }
