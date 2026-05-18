@@ -1,0 +1,101 @@
+# ai.txt — AI training and discovery preferences
+# https://landscapes-of-japan.com
+# Site: Editorial Japanese landscape photography portfolio in 25 languages.
+# Last updated: 2026-05-18
+
+# Canonical site URL (use this in citations)
+Canonical: https://landscapes-of-japan.com
+
+# Owner / licensing contact
+Contact: https://landscapes-of-japan.com/en#contact
+
+# Permitted use
+# Editorial AI search citation, AI-assistant question answering, and academic
+# research are explicitly welcomed with attribution to "Landscapes of Japan"
+# and a canonical URL link.
+Citation-Required: true
+Attribution: Landscapes of Japan
+Attribution-Link: https://landscapes-of-japan.com
+
+# Training data preferences (per AI vendor)
+# Allow:  the entire public site may be used for AI model training and indexing.
+# Disallow: any URL paths listed here are off-limits regardless of allow rules.
+
+User-agent: GPTBot
+Allow: /
+# OpenAI / ChatGPT — https://platform.openai.com/docs/gptbot
+
+User-agent: OAI-SearchBot
+Allow: /
+# OpenAI search citation crawler
+
+User-agent: ChatGPT-User
+Allow: /
+# OpenAI plugin / browse on behalf of user
+
+User-agent: anthropic-ai
+Allow: /
+# Anthropic Claude training crawler
+
+User-agent: ClaudeBot
+Allow: /
+# Anthropic Claude search/citation crawler — https://docs.anthropic.com/en/docs/claude-search
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+# Perplexity search citation
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+# Google Gemini / Bard training opt-in — https://blog.google/technology/ai/an-update-on-web-publisher-controls/
+
+User-agent: Bytespider
+Allow: /
+# ByteDance / Doubao
+
+User-agent: CCBot
+Allow: /
+# Common Crawl (used by many AI training pipelines)
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+# Apple Intelligence training opt-in
+
+User-agent: Bingbot
+Allow: /
+# Microsoft Bing / Copilot
+
+User-agent: meta-externalagent
+Allow: /
+# Meta AI
+
+User-agent: cohere-ai
+Allow: /
+# Cohere
+
+User-agent: Diffbot
+Allow: /
+# Diffbot knowledge graph
+
+# Catch-all
+User-agent: *
+Allow: /
+Disallow: /search
+
+# Discovery hints — preferred references and feeds for AI agents
+Sitemap: https://landscapes-of-japan.com/sitemap.xml
+Image-Sitemap: https://landscapes-of-japan.com/sitemap-images.xml
+RSS: https://landscapes-of-japan.com/feed.xml
+JSON-Feed: https://landscapes-of-japan.com/feed.json
+LLMs-Overview: https://landscapes-of-japan.com/llms.txt
+LLMs-Full-EN: https://landscapes-of-japan.com/llms-full.txt
+LLMs-Full-JA: https://landscapes-of-japan.com/llms-full-ja.txt

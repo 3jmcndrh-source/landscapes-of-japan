@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { LANGS, RTL_LANGS, SITE_URL } from "../i18n-meta.js";
 
-const CLARITY_PROJECT_ID = "wh6fyaj6ok";
+const CLARITY_PROJECT_ID = "wt20nzlr29";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
