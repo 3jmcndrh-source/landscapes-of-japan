@@ -1,0 +1,109 @@
+name: Core Web Vitals (PageSpeed Insights)
+
+# Daily PageSpeed Insights run across a sample of key pages.
+# Posts LCP / CLS / INP / scores to the workflow summary; opens an issue
+# when any tracked URL's mobile performance score drops below 50.
+
+on:
+  schedule:
+    - cron: "0 5 * * *"  # 05:00 UTC = 14:00 JST
+  workflow_dispatch:
+
+jobs:
+  cwv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run PageSpeed Insights across key pages
+        env:
+          PSI_API_KEY: ${{ secrets.PSI_API_KEY }}  # optional; unauth has 25/day quota
+        run: |
+          set +e
+          URLS=(
+            "https://landscapes-of-japan.com/en"
+            "https://landscapes-of-japan.com/ja"
+            "https://landscapes-of-japan.com/en/hokkaido"
+            "https://landscapes-of-japan.com/en/hokkaido/sapporo-snow-festival"
+            "https://landscapes-of-japan.com/en/yamanashi/arakurayama-sengen-park"
+            "https://landscapes-of-japan.com/en/kyoto/byodoin-phoenix-hall"
+            "https://landscapes-of-japan.com/en/blog"
+            "https://landscapes-of-japan.com/en/blog/mt-fuji-arakurayama"
+          )
+
+          REPORT="cwv-report.json"
+          echo '{"date":"'$(date -u +%FT%TZ)'","results":[]}' > $REPORT
+
+          FAIL_URLS=""
+
+          for url in "${URLS[@]}"; do
+            for strategy in mobile desktop; do
+              KEY_PART=""
+              if [ -n "$PSI_API_KEY" ]; then KEY_PART="&key=$PSI_API_KEY"; fi
+              API="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=$(printf '%s' "$url" | jq -sRr @uri)&strategy=$strategy&category=performance${KEY_PART}"
+              echo "::group::PSI $strategy $url"
+              RESP=$(curl -s "$API")
+              SCORE=$(echo "$RESP" | jq -r '.lighthouseResult.categories.performance.score // empty')
+              LCP=$(echo "$RESP" | jq -r '.lighthouseResult.audits["largest-contentful-paint"].displayValue // empty')
+              CLS=$(echo "$RESP" | jq -r '.lighthouseResult.audits["cumulative-layout-shift"].displayValue // empty')
+              INP=$(echo "$RESP" | jq -r '.lighthouseResult.audits["interactive"].displayValue // empty')
+              if [ -z "$SCORE" ]; then
+                echo "::warning::Failed to fetch $url ($strategy)"
+                echo "$RESP" | head -c 400
+                echo "::endgroup::"
+                continue
+              fi
+              SCORE_PCT=$(awk "BEGIN{printf \"%.0f\", $SCORE*100}")
+              echo "score=$SCORE_PCT LCP=$LCP CLS=$CLS INP=$INP"
+              jq --arg url "$url" --arg strategy "$strategy" --argjson score "$SCORE_PCT" --arg lcp "$LCP" --arg cls "$CLS" --arg inp "$INP" \
+                '.results += [{"url":$url,"strategy":$strategy,"score":$score,"lcp":$lcp,"cls":$cls,"inp":$inp}]' \
+                "$REPORT" > "$REPORT.tmp" && mv "$REPORT.tmp" "$REPORT"
+              if [ "$strategy" = "mobile" ] && [ "$SCORE_PCT" -lt 50 ]; then
+                FAIL_URLS="$FAIL_URLS\n- $url (mobile score=$SCORE_PCT)"
+              fi
+              echo "::endgroup::"
+              sleep 2
+            done
+          done
+
+          echo "FAIL_URLS<<EOF" >> $GITHUB_ENV
+          printf "%b" "$FAIL_URLS" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+          # Step summary table
+          echo "### Core Web Vitals — $(date -u +%F)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| URL | Strategy | Perf Score | LCP | CLS | INP |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          jq -r '.results[] | "| \(.url | sub("https://landscapes-of-japan.com"; "")) | \(.strategy) | \(.score) | \(.lcp) | \(.cls) | \(.inp) |"' "$REPORT" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cwv-report-${{ github.run_id }}
+          path: cwv-report.json
+          retention-days: 30
+
+      - name: Open issue if any mobile score < 50
+        if: env.FAIL_URLS != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fails = process.env.FAIL_URLS || "(none)";
+            const body = `## Core Web Vitals regression\n\nThe following URLs dropped below the mobile Performance threshold (50):\n\n${fails}\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nFull JSON report attached to the run as an artifact.`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[CWV] Mobile perf regression (${new Date().toISOString().slice(0,10)})`,
+              body,
+              labels: ["cwv", "performance", "automated"],
+            });

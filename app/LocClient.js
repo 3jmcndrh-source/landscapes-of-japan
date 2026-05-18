@@ -7,6 +7,7 @@ import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import { POSTS, getPostTitle } from "./content/blog/posts.js";
 import { getLocInfo } from "./loc-info.js";
+import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
@@ -181,7 +182,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
               >
                 <img
                   src={getUrl(photo, imgSizes.thumbW)}
-                  alt={locLocal + " - " + prefLocal + " | Landscapes of Japan"}
+                  alt={richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang })}
                   loading="lazy"
                   decoding="async"
                   draggable="false"
@@ -381,7 +382,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
         >
           <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>←</button>
           <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} style={{ position: "relative" }}>
-            <img src={cur.url} alt={locLocal + " - " + prefLocal + " | Landscapes of Japan"} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
+            <img src={cur.url} alt={richAlt({ locName: locLocal, prefName: prefLocal, locJp, lang })} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
             <div className="cin-lb-wm">Landscapes of Japan</div>
           </div>
           <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>→</button>

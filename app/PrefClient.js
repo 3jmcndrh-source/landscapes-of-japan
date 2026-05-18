@@ -5,6 +5,7 @@ import { SITE_URL, HREFLANG } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
+import { richAlt } from "./title-keywords.js";
 
 export default function PrefClient({ lang, prefJp, desc, faqs, definition, highlights, quickAnswers }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
@@ -197,7 +198,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
               >
                 <img
                   src={getUrl(photo, imgSizes.thumbW)}
-                  alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + prefLocal + " | Landscapes of Japan"}
+                  alt={richAlt({ locName: photo.loc ? getLocName(photo.loc, lang) : "", prefName: prefLocal, year: photo.year, locJp: photo.loc, lang })}
                   loading="lazy"
                   decoding="async"
                   draggable="false"
@@ -264,7 +265,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
         >
           <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>←</button>
           <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} style={{ position: "relative" }}>
-            <img src={cur.url} alt={(cur.loc ? getLocName(cur.loc, lang) + " - " : "") + prefLocal + " | Landscapes of Japan"} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
+            <img src={cur.url} alt={richAlt({ locName: cur.loc ? getLocName(cur.loc, lang) : "", prefName: prefLocal, year: cur.year, locJp: cur.loc, lang })} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
             <div className="cin-lb-wm">Landscapes of Japan</div>
           </div>
           <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>→</button>

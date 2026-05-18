@@ -5,6 +5,7 @@ import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
+import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 
 const VIEW_ALL = {
@@ -988,7 +989,7 @@ export default function PageClient({ initialLang = "ja" }) {
                     return (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
-                        <img src={getUrl(photo, thumbW)} alt={(photo.loc ? getLocName(photo.loc, lang) + " - " : "") + getPrefName(pf.pref, lang) + " | Landscapes of Japan"} loading="lazy" decoding="async" draggable="false" />
+                        <img src={getUrl(photo, thumbW)} alt={richAlt({ locName: photo.loc ? getLocName(photo.loc, lang) : "", prefName: getPrefName(pf.pref, lang), year: photo.year, locJp: photo.loc, lang })} loading="lazy" decoding="async" draggable="false" />
                         {photo.loc && (
                           locSlug && prefSlug ? (
                             <a
@@ -1089,7 +1090,7 @@ export default function PageClient({ initialLang = "ja" }) {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
             </button>
             <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}>
-              <img src={cur.url} alt={(cur.loc ? getLocName(cur.loc, lang) + " - " : "") + getPrefName(cur.pref, lang) + " | Landscapes of Japan"} draggable="false" />
+              <img src={cur.url} alt={richAlt({ locName: cur.loc ? getLocName(cur.loc, lang) : "", prefName: getPrefName(cur.pref, lang), year: cur.year, locJp: cur.loc, lang })} draggable="false" />
               <div className="cin-lb-wm">Landscapes of Japan</div>
             </div>
             <button

@@ -62,7 +62,9 @@ Strengths:
 
 ## Optional
 
-- [RSS feed](https://landscapes-of-japan.com/feed.xml) — latest 50 photos
+- [RSS feed (XML)](https://landscapes-of-japan.com/feed.xml) — latest 50 photos
+- [JSON Feed](https://landscapes-of-japan.com/feed.json) — same as above in JSON Feed 1.1 format
 - [Blog index](https://landscapes-of-japan.com/en/blog) — long-form photography guides
 - [Image sitemap](https://landscapes-of-japan.com/sitemap-images.xml) — for image search engines
-- [Full detailed reference](https://landscapes-of-japan.com/llms-full.txt) — every prefecture and location with photographer notes
+- [Full detailed reference (EN)](https://landscapes-of-japan.com/llms-full.txt) — every prefecture and location with photographer notes
+- [Full detailed reference (JA)](https://landscapes-of-japan.com/llms-full-ja.txt) — 日本語版の詳細リファレンス

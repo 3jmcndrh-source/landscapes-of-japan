@@ -6,6 +6,7 @@ import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.
 import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import TopNav from "./TopNav.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
+import { richAlt } from "./title-keywords.js";
 
 export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [] }) {
   const t = TR[lang] || TR.en;
@@ -20,7 +21,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
   }, []);
 
   const photoUrl = cldUrl(photo.id, imgW);
-  const altText = `${locLocal} - ${prefLocal}${photo.year ? ` (${photo.year})` : ""} | Landscapes of Japan`;
+  const altText = richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang });
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
