@@ -107,13 +107,25 @@ export default async function Page({ params }) {
         inDefinedTermSet: `${SITE_URL}/${lang}#prefectures`,
       },
       // A14: AI Overview対応 — quickAnswers は QAPage で AI 引用候補化
+      // GSC 検証エラー対策 (2026-05-18): QAPage は forum-style 想定で answerCount /
+      // text / author / datePublished が必須。site 単独編集のため authorName と
+      // 公開日を埋める。
       quickAnswers.length > 0 && {
         "@type": "QAPage",
         "@id": `${SITE_URL}/${lang}/${prefSlug}#qa`,
         mainEntity: quickAnswers.map((qa) => ({
           "@type": "Question",
           name: qa.q,
-          acceptedAnswer: { "@type": "Answer", text: qa.a },
+          text: qa.q,
+          answerCount: 1,
+          author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
+          datePublished: "2026-01-01",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: qa.a,
+            author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
+            datePublished: "2026-01-01",
+          },
         })),
       },
       // 既存FAQはFAQPageで(quickAnswersと別物として並立)

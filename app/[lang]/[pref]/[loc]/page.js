@@ -120,13 +120,24 @@ export default async function Page({ params }) {
         description: definition,
         inDefinedTermSet: `${SITE_URL}/${lang}#locations`,
       },
+      // GSC 検証エラー対策 (2026-05-18): QAPage の Question は answerCount /
+      // text / author / datePublished が必須。
       quickAnswers.length > 0 && {
         "@type": "QAPage",
         "@id": `${SITE_URL}/${lang}/${prefSlug}/${locSlug}#qa`,
         mainEntity: quickAnswers.map((qa) => ({
           "@type": "Question",
           name: qa.q,
-          acceptedAnswer: { "@type": "Answer", text: qa.a },
+          text: qa.q,
+          answerCount: 1,
+          author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
+          datePublished: "2026-01-01",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: qa.a,
+            author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
+            datePublished: "2026-01-01",
+          },
         })),
       },
       faqs.length > 0 && {
