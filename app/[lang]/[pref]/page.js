@@ -106,36 +106,27 @@ export default async function Page({ params }) {
         description: definition,
         inDefinedTermSet: `${SITE_URL}/${lang}#prefectures`,
       },
-      // A14: AI Overview対応 — quickAnswers は QAPage で AI 引用候補化
-      // GSC 検証エラー対策 (2026-05-18): QAPage は forum-style 想定で answerCount /
-      // text / author / datePublished が必須。site 単独編集のため authorName と
-      // 公開日を埋める。
-      quickAnswers.length > 0 && {
-        "@type": "QAPage",
-        "@id": `${SITE_URL}/${lang}/${prefSlug}#qa`,
-        mainEntity: quickAnswers.map((qa) => ({
-          "@type": "Question",
-          name: qa.q,
-          text: qa.q,
-          answerCount: 1,
-          author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
-          datePublished: "2026-01-01",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: qa.a,
-            author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
-            datePublished: "2026-01-01",
-          },
-        })),
-      },
-      // 既存FAQはFAQPageで(quickAnswersと別物として並立)
-      faqs.length > 0 && {
+      // GSC 検証エラー対策 (2026-05-18 ②回目):
+      // QAPage と FAQPage を同一ページに並立すると Google が
+      // 「mainEntity が重複」と判定して両方失敗する。
+      // 両 Q&A 系コンテンツを 1 つの FAQPage に統合。
+      // FAQPage の Question は answerCount / text / datePublished / author
+      // を要求しないので、schema 警告も解消される。
+      (faqs.length > 0 || quickAnswers.length > 0) && {
         "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
+        "@id": `${SITE_URL}/${lang}/${prefSlug}#faq`,
+        mainEntity: [
+          ...quickAnswers.map((qa) => ({
+            "@type": "Question",
+            name: qa.q,
+            acceptedAnswer: { "@type": "Answer", text: qa.a },
+          })),
+          ...faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        ],
       },
       {
         "@type": "BreadcrumbList",

@@ -120,33 +120,23 @@ export default async function Page({ params }) {
         description: definition,
         inDefinedTermSet: `${SITE_URL}/${lang}#locations`,
       },
-      // GSC 検証エラー対策 (2026-05-18): QAPage の Question は answerCount /
-      // text / author / datePublished が必須。
-      quickAnswers.length > 0 && {
-        "@type": "QAPage",
-        "@id": `${SITE_URL}/${lang}/${prefSlug}/${locSlug}#qa`,
-        mainEntity: quickAnswers.map((qa) => ({
-          "@type": "Question",
-          name: qa.q,
-          text: qa.q,
-          answerCount: 1,
-          author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
-          datePublished: "2026-01-01",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: qa.a,
-            author: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
-            datePublished: "2026-01-01",
-          },
-        })),
-      },
-      faqs.length > 0 && {
+      // GSC 検証エラー対策 (2026-05-18 ②回目):
+      // QAPage + FAQPage 同居で「mainEntity 重複」エラー。両者を 1 FAQPage に統合。
+      (faqs.length > 0 || quickAnswers.length > 0) && {
         "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
+        "@id": `${SITE_URL}/${lang}/${prefSlug}/${locSlug}#faq`,
+        mainEntity: [
+          ...quickAnswers.map((qa) => ({
+            "@type": "Question",
+            name: qa.q,
+            acceptedAnswer: { "@type": "Answer", text: qa.a },
+          })),
+          ...faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        ],
       },
       {
         "@type": "BreadcrumbList",
