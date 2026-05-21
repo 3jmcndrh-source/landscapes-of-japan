@@ -27,7 +27,18 @@ export const TR = {
   uk:{name:"Українська",nav:{map:"Місця"},hero:{t:"Пейзажі Японії",s:"ー Японія у фокусі ー",d:"Колекція пейзажних фотографій, зроблених по всій Японії"},mapL:"Місця",mapH:"Натисніть на виділену префектуру → перегляд фото",backMap:"Назад",lang:"Мова",ft:"Будь ласка, звертайтеся з будь-якими запитаннями чи побажаннями.",scroll:"← Свайп / Прокрутка →",oki:"Окінава",tapHint:"Натисніть ще раз → фото",mapZoomOn:"Зведіть пальці для масштабу",mapZoomOff:"Вийти з масштабу",mapZoomReset:"Скинути",footer2:"Несанкціоноване копіювання заборонено.",contact:{title:"Контакти",name:"Ім'я",email:"Електронна пошта",msg:"Повідомлення",send:"Надіслати",sent:"Надіслано! Дякуємо.",err:"Помилка надсилання. Спробуйте ще раз."}},
 };
 
-export const cldUrl = (id, w) => "https://res.cloudinary.com/" + CLOUD + "/image/upload/w_" + w + ",f_auto,q_auto/" + encodeURIComponent(id) + ".jpg";
+export const cldUrl = (id, w) => {
+  // B3: thumbnails (w ≤ 800) use q_auto:eco for ~30% smaller payload — bandwidth
+  // matters more on mobile where most viewers are. Lightbox-sized images keep
+  // standard q_auto for fidelity.
+  const q = w && w <= 800 ? "q_auto:eco" : "q_auto";
+  return "https://res.cloudinary.com/" + CLOUD + "/image/upload/w_" + w + ",f_auto," + q + "/" + encodeURIComponent(id) + ".jpg";
+};
+
+// B1: low-quality image placeholder. 40px wide + heavy blur — loads in ~5KB and
+// fills the image slot before the real thumbnail arrives, so users see a soft
+// preview instead of a grey box.
+export const cldPlaceholder = (id) => "https://res.cloudinary.com/" + CLOUD + "/image/upload/w_40,e_blur:1000,f_auto,q_auto:eco/" + encodeURIComponent(id) + ".jpg";
 
 /* ── Prefecture name translations (47 prefs × 20 langs) ── */
 export const PREF_I18N = {

@@ -53,5 +53,37 @@
       "form_factor": "wide",
       "label": "Desktop view of Japanese landscape gallery"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Random photo",
+      "short_name": "Random",
+      "description": "View a random photograph",
+      "url": "/en/random",
+      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Photography Blog",
+      "short_name": "Blog",
+      "description": "Long-form photography guides",
+      "url": "/en/blog",
+      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Cherry Blossoms",
+      "short_name": "Sakura",
+      "description": "Cherry blossom photography collection",
+      "url": "/en/collections/cherry-blossoms",
+      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Snow & Winter",
+      "short_name": "Snow",
+      "description": "Snow and drift ice photography",
+      "url": "/en/collections/snow",
+      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": { "preferred_width": 480 }
 }

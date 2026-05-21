@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { TR, PREFECTURES, getPrefName, getLocName, getUrl } from "./data.js";
+import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
@@ -177,8 +177,9 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
                 key={photo.id + i}
                 className="cin-hcard"
                 onClick={() => openLightbox(getUrl(photo, imgSizes.lbW))}
+                onMouseEnter={() => { if (typeof window !== "undefined") { new window.Image().src = getUrl(photo, imgSizes.lbW); } }}
                 onContextMenu={(e) => e.preventDefault()}
-                style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111" }}
+                style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, backgroundColor: "#111", backgroundImage: `url(${cldPlaceholder(photo.id)})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
                 <img
                   src={getUrl(photo, imgSizes.thumbW)}
@@ -186,7 +187,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
                   loading="lazy"
                   decoding="async"
                   draggable="false"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", viewTransitionName: i === 0 ? `loc-photo-${photo.id}` : undefined }}
                 />
                 {photo.year && (
                   <div style={{ position: "absolute", top: 8, right: 8, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 8px", borderRadius: 3, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", zIndex: 3 }}>

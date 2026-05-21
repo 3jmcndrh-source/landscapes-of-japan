@@ -64,6 +64,12 @@ export default async function LangLayout({ children, params }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Landscapes of Japan" />
+        {/* Apple touch icons (PWA install on iOS) */}
+        <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_180,h_180,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_152,h_152,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_120,h_120,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
+        {/* A1: cross-document View Transitions (Chrome 126+, Safari 18+) — graceful fallback */}
+        <meta name="view-transition" content="same-origin" />
         {/* LCP最適化 (#22): ヒーロー背景画像preload (デバイス別) */}
         <link
           rel="preload"
@@ -81,6 +87,19 @@ export default async function LangLayout({ children, params }) {
         />
       </head>
       <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
+        {/* A2: scroll restoration — let the browser restore scroll on back/forward
+            and ensure forward navigation starts at the top. */}
+        <Script id="scroll-restoration" strategy="beforeInteractive">
+          {`if ("scrollRestoration" in history) history.scrollRestoration = "auto";`}
+        </Script>
+        {/* C2: service worker (stale-while-revalidate for HTML + cache-first for images) */}
+        <Script id="sw-register" strategy="lazyOnload">
+          {`if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+              navigator.serviceWorker.register("/sw.js").catch(() => {});
+            });
+          }`}
+        </Script>
         {/* Microsoft Clarity (#4): user behavior heatmap & session recording */}
         {/* A10: lazyOnload で LCP/INP に影響しない (load イベント後に実行) */}
         <Script id="ms-clarity" strategy="lazyOnload">

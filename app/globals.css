@@ -186,3 +186,56 @@ html{scroll-behavior:smooth}
   .cin-hero-title-jp{letter-spacing:.4em}
   .cin-pref{font-size:18px}
 }
+
+
+/* ===== A1: View Transitions API (Chrome 126+ / Safari 18+) ===== */
+/* Cross-document transitions enabled via <meta name="view-transition"> in layout. */
+/* Custom CSS adds a smoother crossfade than the default 250ms. */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: vt-fade-in;
+}
+
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* ===== B1: LQIP blur-up — image background placeholder fades out as full image loads ===== */
+.cin-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: #111;
+}
+.cin-img-wrap img {
+  transition: opacity 280ms ease;
+}
+.cin-img-wrap.is-loading img {
+  opacity: 0;
+}

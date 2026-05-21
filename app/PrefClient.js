@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl } from "./data.js";
+import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder } from "./data.js";
 import { SITE_URL, HREFLANG } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import TopNav from "./TopNav.js";
@@ -193,8 +193,9 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
                 key={photo.id + i}
                 className="cin-hcard"
                 onClick={() => openLightbox(getUrl(photo, imgSizes.lbW))}
+                onMouseEnter={() => { if (typeof window !== "undefined") { new window.Image().src = getUrl(photo, imgSizes.lbW); } }}
                 onContextMenu={(e) => e.preventDefault()}
-                style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111" }}
+                style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, backgroundColor: "#111", backgroundImage: `url(${cldPlaceholder(photo.id)})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
                 <img
                   src={getUrl(photo, imgSizes.thumbW)}
