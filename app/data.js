@@ -320,6 +320,17 @@ export const PREFECTURES = [
       { id: "teng87zgd3xcyqjjguqi", loc: "北竜町", year: 2024 },
       { id: "wcx3gxot0pin82crrgpq", loc: "北竜町", year: 2024 },
       { id: "mj6p8elxzj7zht0hrgir", loc: "北竜町", year: 2024 },
+      { id: "qaatwww4tnyi49h5y3hh", loc: "室蘭", year: 2026 },
+      { id: "gquuhranfb6znmof1uog", loc: "室蘭", year: 2026 },
+      { id: "era1yxvl2udxz2dxakej", loc: "室蘭", year: 2026 },
+      { id: "ff6dznjqogqlvedsg5l8", loc: "室蘭", year: 2026 },
+      { id: "maiet3of7npmi1mrufwu", loc: "室蘭", year: 2026 },
+      { id: "yqridgip0sf2kgwmtwkt", loc: "室蘭", year: 2026 },
+      { id: "wbpzbgh2pntfqfzxmubb", loc: "室蘭", year: 2026 },
+      { id: "xgkxwd7kejy2k6movluz", loc: "室蘭", year: 2026 },
+      { id: "cyroh2wkthu9znjrwhoy", loc: "支笏湖", year: 2026 },
+      { id: "fofeod17gsjfr0ghyfod", loc: "支笏湖", year: 2026 },
+      { id: "jkd1u5ggwpnozg5ibmh0", loc: "支笏湖", year: 2026 },
     ]
   },
   {
