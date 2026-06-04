@@ -41,6 +41,12 @@ export const LOC_SLUGS = {
   "支笏湖": "lake-shikotsu",
   "登別": "noboribetsu",
   "北竜町": "hokuryu",
+  "野付半島": "notsuke-peninsula",
+  "白糠": "shiranuka",
+  "釧路": "kushiro",
+  "日高": "hidaka",
+  "倶知安": "kutchan",
+  "積丹": "shakotan",
   /* Chiba */
   "鴨川シーワールド": "kamogawa-sea-world",
   /* Tokyo */
