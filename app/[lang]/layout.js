@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Noto_Sans_JP, Noto_Sans, Zen_Kaku_Gothic_New, Playfair_Display } from "next/font/google";
+import { Zen_Kaku_Gothic_New, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { notFound } from "next/navigation";
@@ -7,31 +7,17 @@ import { LANGS, RTL_LANGS, SITE_URL } from "../i18n-meta.js";
 
 const CLARITY_PROJECT_ID = "wt20nzlr29";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-noto-sans-jp",
-  display: "swap",
-});
-
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-noto-sans",
-  display: "swap",
-});
+// Only the two fonts actually referenced by CSS variables are self-hosted via
+// next/font. Cormorant Garamond, Noto Sans JP, and Noto Sans were previously
+// bundled but their --font-* variables are referenced 0 times — they generated
+// ~hundreds of woff2 files (Noto Sans JP especially, via CJK unicode-range
+// splitting) with no visual effect. Removed to cut the Cloudflare Pages
+// per-deploy file count. Quoted CSS fallbacks like 'Noto Sans JP' / 'Cormorant
+// Garamond' remain as system-font fallbacks (already the effective behaviour).
 
 const zenKaku = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
-  weight: ["300", "500", "700", "900"],
+  weight: ["300", "500"], // 700/900 dropped — 0 font-weight refs in CSS
   variable: "--font-zen-kaku",
   display: "swap",
 });
@@ -86,7 +72,7 @@ export default async function LangLayout({ children, params }) {
           media="(max-width: 768px)"
         />
       </head>
-      <body className={`${cormorant.variable} ${notoSansJP.variable} ${notoSans.variable} ${zenKaku.variable} ${playfair.variable}`}>
+      <body className={`${zenKaku.variable} ${playfair.variable}`}>
         {/* A2: scroll restoration — let the browser restore scroll on back/forward
             and ensure forward navigation starts at the top. */}
         <Script id="scroll-restoration" strategy="beforeInteractive">
