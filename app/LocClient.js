@@ -120,6 +120,31 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           )}
         </header>
 
+        {/* I-6: sticky section jump nav */}
+        {(() => {
+          const J = {
+            highlights: { ja: "見どころ", en: "Highlights", zh: "亮点", "zh-tw": "亮點", ko: "볼거리" },
+            photos: { ja: "写真", en: "Photos", zh: "照片", "zh-tw": "照片", ko: "사진" },
+            info: { ja: "実用情報", en: "Info", zh: "实用信息", "zh-tw": "實用資訊", ko: "실용 정보" },
+            related: { ja: "関連", en: "Related", zh: "相关", "zh-tw": "相關", ko: "관련" },
+          };
+          const lbl = (k) => J[k][lang] || J[k].en;
+          const items = [
+            ["highlights", (highlights || []).length > 0],
+            ["photos", true],
+            ["info", !!getLocInfo(locJp)],
+            ["related", true],
+          ].filter(([, ok]) => ok);
+          if (items.length < 2) return null;
+          return (
+            <nav className="loc-jumpnav" aria-label="Sections">
+              {items.map(([k]) => (
+                <a key={k} href={`#${k}`}>{lbl(k)}</a>
+              ))}
+            </nav>
+          );
+        })()}
+
         {/* 概要説明 (definition優先、なければ desc にフォールバック)
             以前は両方表示していたが内容が重複するため一本化 (desc は SEO meta/schema で使用) */}
         {(definition || desc) && (
@@ -132,7 +157,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
 
         {/* A14: highlights (5項目) */}
         {highlights && highlights.length > 0 && (
-          <section style={{ marginBottom: 40, maxWidth: 820 }}>
+          <section id="highlights" style={{ marginBottom: 40, maxWidth: 820, scrollMarginTop: 70 }}>
             <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 16 }}>
               {lang === "ja" ? "見どころ・特徴" : lang === "zh" ? "亮点与特色" : lang === "zh-tw" ? "亮點與特色" : lang === "ko" ? "하이라이트" : "Highlights"}
             </h2>
@@ -165,7 +190,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           </section>
         )}
 
-        <section>
+        <section id="photos" style={{ scrollMarginTop: 70 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
             {photos.slice(0, gridCount).map((photo, i) => (
               <div
@@ -210,7 +235,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           const fields = ["access", "parking", "fee", "duration", "bestTime"];
           const isJa = lang === "ja";
           return (
-            <section style={{ marginTop: 56, marginBottom: 24, padding: "24px 28px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8 }}>
+            <section id="info" style={{ marginTop: 56, marginBottom: 24, padding: "24px 28px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8, scrollMarginTop: 70 }}>
               <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.8)", marginBottom: 16 }}>
                 {lang === "ja" ? "実用情報" : "Practical Information"}
               </h2>
@@ -276,7 +301,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           const myPosts = POSTS.filter((p) => p.locs.includes(locJp));
           if (myColls.length === 0 && myTags.length === 0 && myTechs.length === 0 && myPosts.length === 0) return null;
           return (
-            <section style={{ marginTop: 64 }}>
+            <section id="related" style={{ marginTop: 64, scrollMarginTop: 70 }}>
               <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
                 {lang === "ja" ? "関連コンテンツ" : "Related Content"}
               </h2>

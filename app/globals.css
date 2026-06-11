@@ -288,3 +288,21 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 .photo-nav-arrow.right{right:14px}
 .photo-nav-count{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 70px);left:50%;transform:translateX(-50%);z-index:40;font-family:var(--font-zen-kaku),sans-serif;font-size:11px;letter-spacing:.18em;color:rgba(242,236,226,.7);background:rgba(15,13,11,.6);padding:5px 13px;border-radius:999px;backdrop-filter:blur(8px);pointer-events:none}
 @media(max-width:768px){.photo-nav-arrow{width:44px;height:44px;font-size:20px;top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 120px)}.photo-nav-arrow.left{left:10px}.photo-nav-arrow.right{right:10px}}
+
+/* ===== Round D: map pulse + back-to-top + sticky breadcrumb + jump nav ===== */
+@keyframes prefPulse{0%,100%{stroke-opacity:.45}50%{stroke-opacity:1}}
+.jp-pref-pulse{animation:prefPulse 3s ease-in-out infinite}
+.cin-map-box:hover .jp-pref-pulse{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.jp-pref-pulse{animation:none}}
+
+.back-top-fab{position:fixed;right:20px;bottom:24px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid rgba(220,190,100,.45);background:rgba(15,13,11,.8);color:rgba(242,236,226,.92);font-size:20px;cursor:pointer;backdrop-filter:blur(10px);transition:background .3s,transform .3s;display:flex;align-items:center;justify-content:center}
+.back-top-fab:hover{background:rgba(220,190,100,.25);transform:translateY(-2px)}
+@media(max-width:768px){.back-top-fab{right:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 72px);width:42px;height:42px}}
+
+.loc-jumpnav{position:sticky;top:10px;z-index:30;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:6px;margin:0 0 26px;background:rgba(14,12,10,.72);border:1px solid rgba(220,190,100,.18);border-radius:999px;backdrop-filter:blur(14px);width:fit-content;max-width:100%}
+.loc-jumpnav::-webkit-scrollbar{display:none}
+.loc-jumpnav a{flex-shrink:0;padding:7px 15px;border-radius:999px;color:rgba(232,228,223,.75);text-decoration:none;font-family:var(--font-zen-kaku),sans-serif;font-size:12px;letter-spacing:.08em;transition:background .3s,color .3s}
+.loc-jumpnav a:hover{background:rgba(220,190,100,.16);color:#f2ece2}
+
+.photo-breadcrumb-sticky{position:sticky;top:10px;z-index:30;background:rgba(14,12,10,.72);backdrop-filter:blur(14px);border:1px solid rgba(220,190,100,.15);border-radius:999px;padding:9px 18px;width:fit-content;max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.photo-breadcrumb-sticky::-webkit-scrollbar{display:none}

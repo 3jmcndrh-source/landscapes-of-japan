@@ -408,6 +408,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           const filter = isHL ? (isHovered || isActive ? "url(#goldGlowStrong)" : "url(#goldGlow)") : undefined;
           return (
             <path key={p.id} d={p.d}
+              className={isHL ? "jp-pref-pulse" : undefined}
               fill={fill}
               stroke={stroke}
               strokeWidth={isHL ? (isHovered || isActive ? 1.6 : 1.2) : 0.85}
@@ -504,6 +505,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
                 : (isHovered ? "rgba(232,228,223,0.55)" : "rgba(232,228,223,0.32)");
               return (
                 <path key={"oki" + p.id} d={p.d}
+                  className={isHL ? "jp-pref-pulse" : undefined}
                   fill={fill}
                   stroke={stroke}
                   strokeWidth={isHL ? (isHovered ? 1.4 : 1.0) : 0.75}

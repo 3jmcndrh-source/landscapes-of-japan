@@ -64,7 +64,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
       <TopNav lang={lang} t={t} />
 
       <main style={{ maxWidth: 1400, margin: "0 auto", padding: "100px 16px 80px" }}>
-        <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em", padding: "0 8px" }}>
+        <nav aria-label="breadcrumb" className="photo-breadcrumb-sticky" style={{ fontSize: 13, color: "rgba(232,228,223,.7)", marginBottom: 24, letterSpacing: ".05em" }}>
           <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
           <span style={{ margin: "0 10px" }}>›</span>
           <a href={`/${lang}/${prefSlug}`} style={{ color: "inherit", textDecoration: "none" }}>{prefLocal}</a>

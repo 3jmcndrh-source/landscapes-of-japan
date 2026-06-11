@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 
 const labels = {
   ja: { blog: "ブログ", collections: "コレクション", search: "検索", random: "ランダム" },
@@ -15,7 +16,25 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
   const isHome = !!scrollToMap;
   const mapHref = `/${lang}#map`;
   const contactHref = `/${lang}#contact`;
+
+  /* I-6: back-to-top FAB after 800px of scroll (every page using TopNav) */
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const fn = () => setShowTop(window.scrollY > 800);
+    fn();
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+
   return (
+    <>
+    {showTop && (
+      <button
+        className="back-top-fab"
+        aria-label="Back to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >↑</button>
+    )}
     <div className="top-nav">
       {isHome ? (
         <button className="top-nav-link" onClick={scrollToMap}>{t.nav.map}</button>
@@ -32,5 +51,6 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
         <a className="top-nav-link" href={contactHref}>{t.contact.title}</a>
       )}
     </div>
+    </>
   );
 }
