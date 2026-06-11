@@ -7,6 +7,7 @@ import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
 import Lightbox from "./Lightbox.js";
+import { useProgressiveReveal } from "./useProgressiveReveal.js";
 
 export default function PrefClient({ lang, prefJp, desc, faqs, definition, highlights, quickAnswers }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
@@ -32,6 +33,9 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
       year: p.year || null,
     }));
   }, [pf, prefJp, imgSizes.lbW]);
+
+  /* P3: staged grid rendering (24 + reveal-on-approach) */
+  const [gridCount, gridSentinelRef] = useProgressiveReveal(pf ? pf.photos.length : 0);
 
   const openLightbox = useCallback(
     (url) => setLightbox(allPhotos.findIndex((p) => p.url === url)),
@@ -187,7 +191,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
             {lang === "ja" ? `全ての写真 (${pf.photos.length})` : `All photos (${pf.photos.length})`}
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-            {pf.photos.map((photo, i) => (
+            {pf.photos.slice(0, gridCount).map((photo, i) => (
               <div
                 key={photo.id + i}
                 className="cin-hcard"
@@ -213,6 +217,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
               </div>
             ))}
           </div>
+          {gridCount < pf.photos.length && <div ref={gridSentinelRef} aria-hidden="true" style={{ height: 1 }} />}
         </section>
 
         {/* faqs はクイック情報と内容が重複するため UI から削除。

@@ -10,6 +10,7 @@ import { getLocInfo } from "./loc-info.js";
 import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
+import { useProgressiveReveal } from "./useProgressiveReveal.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 
@@ -33,6 +34,9 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
     if (!pf) return [];
     return pf.photos.filter((p) => p.loc === locJp);
   }, [pf, locJp]);
+
+  /* P3: staged grid rendering (24 + reveal-on-approach) */
+  const [gridCount, gridSentinelRef] = useProgressiveReveal(photos.length);
 
   const allPhotos = useMemo(
     () =>
@@ -163,7 +167,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
 
         <section>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-            {photos.map((photo, i) => (
+            {photos.slice(0, gridCount).map((photo, i) => (
               <div
                 key={photo.id + i}
                 className="cin-hcard"
@@ -178,7 +182,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
                   loading="lazy"
                   decoding="async"
                   draggable="false"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", viewTransitionName: i === 0 ? `loc-photo-${photo.id}` : undefined }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 {photo.year && (
                   <div style={{ position: "absolute", top: 8, right: 8, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 8px", borderRadius: 3, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", zIndex: 3 }}>
@@ -189,6 +193,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
               </div>
             ))}
           </div>
+          {gridCount < photos.length && <div ref={gridSentinelRef} aria-hidden="true" style={{ height: 1 }} />}
         </section>
 
         {/* 実用情報 (#10): アクセス・駐車場・料金・所要時間・ベスト時間帯 */}

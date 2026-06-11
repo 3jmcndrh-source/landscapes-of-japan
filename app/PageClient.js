@@ -626,6 +626,11 @@ export default function PageClient({ initialLang = "ja" }) {
       return next;
     });
   }, [allPhotos, updateHash]);
+  /* P3: per-row staged rendering on home — first 16 cards, more revealed as
+     the row is scrolled horizontally (sentinel observed with root=scroller). */
+  const [rowCounts, setRowCounts] = useState({});
+  const rowMaxFor = (pf) => Math.min(rowCounts[pf.pref] ?? 16, pf.photos.length);
+
   const [scrollY, setScrollY] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [hlPhoto, setHlPhoto] = useState(null);
@@ -700,6 +705,28 @@ export default function PageClient({ initialLang = "ja" }) {
         window.removeEventListener("mousemove", move);
         window.removeEventListener("mouseup", up);
       };
+    });
+    return () => cleanups.forEach((fn) => fn());
+  }, [lang]);
+
+  /* P3: reveal more cards when a row is actually scrolled near its right
+     edge. Scroll-distance based (not IO) so collapsed not-yet-loaded image
+     widths can't trigger a phantom reveal-all cascade. */
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const cleanups = Array.from(document.querySelectorAll(".cin-hscroll")).map((sc) => {
+      const pref = sc.dataset.pref;
+      if (!pref) return () => {};
+      const onScroll = () => {
+        if (sc.scrollWidth - sc.scrollLeft - sc.clientWidth < 1600) {
+          setRowCounts((c) => {
+            const cur = c[pref] ?? 16;
+            return { ...c, [pref]: cur + 24 };
+          });
+        }
+      };
+      sc.addEventListener("scroll", onScroll, { passive: true });
+      return () => sc.removeEventListener("scroll", onScroll);
     });
     return () => cleanups.forEach((fn) => fn());
   }, [lang]);
@@ -998,8 +1025,8 @@ export default function PageClient({ initialLang = "ja" }) {
                 <div className="cin-hwrap">
                   <button className="cin-hbtn left" aria-label="Scroll left" onClick={(e) => hscrollBy(e, -1)}>‹</button>
                   <button className="cin-hbtn right" aria-label="Scroll right" onClick={(e) => hscrollBy(e, 1)}>›</button>
-                <div className="cin-hscroll">
-                  {pf.photos.map((photo, idx) => {
+                <div className="cin-hscroll" data-pref={pf.pref}>
+                  {pf.photos.slice(0, rowMaxFor(pf)).map((photo, idx) => {
                     const locSlug = photo.loc ? LOC_SLUGS[photo.loc] : null;
                     return (
                     <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current || suppressClickRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>

@@ -248,7 +248,18 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
       <div className="cin-lb-bottom" onClick={(e) => e.stopPropagation()}>
         {photos.length > 1 && <span className="cin-lb-count">{index + 1} / {photos.length}</span>}
         {href && (
-          <a className="cin-lb-pagelink" href={href} onClick={(e) => e.stopPropagation()} onTouchEnd={(e) => e.stopPropagation()}>
+          <a
+            className="cin-lb-pagelink"
+            href={href}
+            onClick={(e) => {
+              e.stopPropagation();
+              // P2: name the lightbox image so the cross-document view
+              // transition morphs it into the photo page hero (vt-hero).
+              const im = innerRef.current?.querySelector("img");
+              if (im) im.style.viewTransitionName = "vt-hero";
+            }}
+            onTouchEnd={(e) => e.stopPropagation()}
+          >
             {pageLabel} →
           </a>
         )}

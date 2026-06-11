@@ -84,7 +84,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
             alt={altText}
             draggable="false"
             onContextMenu={(e) => e.preventDefault()}
-            style={{ width: "100%", height: "auto", display: "block", maxHeight: "85vh", objectFit: "contain", background: "#0a0a0a" }}
+            style={{ width: "100%", height: "auto", display: "block", maxHeight: "85vh", objectFit: "contain", background: "#0a0a0a", viewTransitionName: "vt-hero" }}
           />
           <div className="cin-watermark" style={{ position: "absolute", bottom: 12, right: 16, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: 14, color: "rgba(242,236,226,.55)", textShadow: "0 1px 4px rgba(0,0,0,.6)", pointerEvents: "none" }}>
             Landscapes of Japan
@@ -138,6 +138,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
                   href={`/${lang}/${prefSlug}/${locSlug}/${p.id}`}
                   className="cin-hcard"
                   onContextMenu={(e) => e.preventDefault()}
+                  onClick={(e) => { const im = e.currentTarget.querySelector("img"); if (im) im.style.viewTransitionName = "vt-hero"; }}
                   style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111", display: "block" }}
                 >
                   <img
@@ -184,6 +185,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
                     href={`/${lang}/${sPrefSlug}/${sLocSlug}/${p.id}`}
                     className="cin-hcard"
                     onContextMenu={(e) => e.preventDefault()}
+                    onClick={(e) => { const im = e.currentTarget.querySelector("img"); if (im) im.style.viewTransitionName = "vt-hero"; }}
                     style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111", display: "block", textDecoration: "none" }}
                   >
                     <img
