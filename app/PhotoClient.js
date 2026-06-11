@@ -8,7 +8,7 @@ import TopNav from "./TopNav.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { richAlt } from "./title-keywords.js";
 
-export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [] }) {
+export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [], prevHref = null, nextHref = null, position = null }) {
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
   const locSlug = LOC_SLUGS[locJp];
@@ -19,6 +19,29 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
   useEffect(() => {
     if (typeof window !== "undefined" && window.innerWidth <= 768) setImgW(1200);
   }, []);
+
+  /* I-1: ←/→ keyboard navigation between sibling photos (same loc) */
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+      if (e.key === "ArrowLeft" && prevHref) window.location.href = prevHref;
+      else if (e.key === "ArrowRight" && nextHref) window.location.href = nextHref;
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [prevHref, nextHref]);
+
+  /* I-1: horizontal swipe on the hero figure navigates siblings */
+  const swipeRef = useState(() => ({ x: 0, y: 0 }))[0];
+  const onFigTouchStart = (e) => { swipeRef.x = e.touches[0].clientX; swipeRef.y = e.touches[0].clientY; };
+  const onFigTouchEnd = (e) => {
+    const dx = e.changedTouches[0].clientX - swipeRef.x;
+    const dy = e.changedTouches[0].clientY - swipeRef.y;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      if (dx > 0 && prevHref) window.location.href = prevHref;
+      else if (dx < 0 && nextHref) window.location.href = nextHref;
+    }
+  };
 
   const photoUrl = cldUrl(photo.id, imgW);
   const altText = richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang });
@@ -50,7 +73,12 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
           {photo.year && (<><span style={{ margin: "0 10px" }}>›</span><span>{photo.year}</span></>)}
         </nav>
 
-        <figure style={{ margin: 0, marginBottom: 32, position: "relative", background: "#111", borderRadius: 4, overflow: "hidden" }}>
+        {prevHref && <a className="photo-nav-arrow left" href={prevHref} aria-label="Previous photo" rel="prev">‹</a>}
+        {nextHref && <a className="photo-nav-arrow right" href={nextHref} aria-label="Next photo" rel="next">›</a>}
+        {position && position.total > 1 && (
+          <div className="photo-nav-count">{position.idx + 1} / {position.total}</div>
+        )}
+        <figure style={{ margin: 0, marginBottom: 32, position: "relative", background: "#111", borderRadius: 4, overflow: "hidden" }} onTouchStart={onFigTouchStart} onTouchEnd={onFigTouchEnd}>
           <img
             src={photoUrl}
             alt={altText}

@@ -110,6 +110,15 @@ export default async function Page({ params }) {
   const sameLoc = pf.photos.filter((p) => p.loc === locJp && p.id !== photoId);
   const related = sameLoc.slice(0, 6);
 
+  // I-1: 同loc 内の前後ナビ (newest-first array order = gallery order)
+  const locPhotos = pf.photos.filter((p) => p.loc === locJp);
+  const photoIdx = locPhotos.findIndex((p) => p.id === photoId);
+  const prevPhoto = photoIdx > 0 ? locPhotos[photoIdx - 1] : null;
+  const nextPhoto = photoIdx >= 0 && photoIdx < locPhotos.length - 1 ? locPhotos[photoIdx + 1] : null;
+  const navBase = `/${lang}/${prefSlug}/${locSlug}`;
+  const prevHref = prevPhoto ? `${navBase}/${prevPhoto.id}` : null;
+  const nextHref = nextPhoto ? `${navBase}/${nextPhoto.id}` : null;
+
   // A13: この写真のタグ + 同タグを持つ別 loc の写真 (最大 6 枚)
   const photoTags = PHOTO_TAGS[photoId] || [];
   const similarByTag = [];
@@ -206,6 +215,9 @@ export default async function Page({ params }) {
         related={related}
         photoTags={photoTags}
         similarPhotos={similarPhotos}
+        prevHref={prevHref}
+        nextHref={nextHref}
+        position={photoIdx >= 0 ? { idx: photoIdx, total: locPhotos.length } : null}
       />
       {(locDesc || locHighlights.length > 0 || relatedPosts.length > 0) && (
         <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>

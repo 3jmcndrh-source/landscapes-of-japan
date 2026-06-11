@@ -9,6 +9,7 @@ import { POSTS, getPostTitle } from "./content/blog/posts.js";
 import { getLocInfo } from "./loc-info.js";
 import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
+import Lightbox from "./Lightbox.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 
@@ -36,6 +37,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
   const allPhotos = useMemo(
     () =>
       photos.map((p) => ({
+        id: p.id,
         url: getUrl(p, imgSizes.lbW),
         pref: prefJp,
         loc: locJp,
@@ -63,17 +65,6 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
     () => setLightbox((i) => (i >= allPhotos.length - 1 ? 0 : i + 1)),
     [allPhotos]
   );
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (lightbox === null) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") lbPrev();
-      if (e.key === "ArrowRight") lbNext();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, closeLightbox, lbPrev, lbNext]);
 
   if (!pf) return null;
 
@@ -376,18 +367,17 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
       </main>
 
       {lightbox !== null && cur && (
-        <div
-          className={"cin-lb" + (lbClosing ? " closing" : "")}
-          onClick={closeLightbox}
-          style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(10,10,10,.88)", backdropFilter: "blur(28px)", display: "flex", alignItems: "center", justifyContent: "center" }}
-        >
-          <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>←</button>
-          <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} style={{ position: "relative" }}>
-            <img src={cur.url} alt={richAlt({ locName: locLocal, prefName: prefLocal, locJp, lang })} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
-            <div className="cin-lb-wm">Landscapes of Japan</div>
-          </div>
-          <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>→</button>
-        </div>
+        <Lightbox
+          photos={allPhotos}
+          index={lightbox}
+          closing={lbClosing}
+          lang={lang}
+          onClose={closeLightbox}
+          onPrev={lbPrev}
+          onNext={lbNext}
+          labels={(p) => ({ prefName: prefLocal, locName: locLocal, alt: richAlt({ locName: locLocal, prefName: prefLocal, year: p.year, locJp, lang }) })}
+          photoHref={(p) => (prefSlug && locSlug && p.id ? `/${lang}/${prefSlug}/${locSlug}/${p.id}` : null)}
+        />
       )}
     </div>
   );

@@ -6,6 +6,7 @@ import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
+import Lightbox from "./Lightbox.js";
 
 export default function PrefClient({ lang, prefJp, desc, faqs, definition, highlights, quickAnswers }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
@@ -24,6 +25,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
   const allPhotos = useMemo(() => {
     if (!pf) return [];
     return pf.photos.map((p) => ({
+      id: p.id,
       url: getUrl(p, imgSizes.lbW),
       pref: prefJp,
       loc: p.loc || "",
@@ -52,12 +54,9 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
   );
 
   useEffect(() => {
-    const onKey = (e) => {
-      if (lightbox === null) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") lbPrev();
-      if (e.key === "ArrowRight") lbNext();
-    };
+    // keyboard handling moved into shared <Lightbox/>; effect kept as no-op
+    // mount guard to avoid disturbing hook order in this 275-line component.
+    const onKey = () => {};
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightbox, closeLightbox, lbPrev, lbNext]);
@@ -259,18 +258,17 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
       </main>
 
       {lightbox !== null && cur && (
-        <div
-          className={"cin-lb" + (lbClosing ? " closing" : "")}
-          onClick={closeLightbox}
-          style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(10,10,10,.88)", backdropFilter: "blur(28px)", display: "flex", alignItems: "center", justifyContent: "center" }}
-        >
-          <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>←</button>
-          <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} style={{ position: "relative" }}>
-            <img src={cur.url} alt={richAlt({ locName: cur.loc ? getLocName(cur.loc, lang) : "", prefName: prefLocal, year: cur.year, locJp: cur.loc, lang })} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
-            <div className="cin-lb-wm">Landscapes of Japan</div>
-          </div>
-          <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>→</button>
-        </div>
+        <Lightbox
+          photos={allPhotos}
+          index={lightbox}
+          closing={lbClosing}
+          lang={lang}
+          onClose={closeLightbox}
+          onPrev={lbPrev}
+          onNext={lbNext}
+          labels={(p) => ({ prefName: prefLocal, locName: p.loc ? getLocName(p.loc, lang) : "", alt: richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: prefLocal, year: p.year, locJp: p.loc, lang }) })}
+          photoHref={(p) => (prefSlug && p.loc && LOC_SLUGS[p.loc] && p.id ? `/${lang}/${prefSlug}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
+        />
       )}
     </div>
   );
