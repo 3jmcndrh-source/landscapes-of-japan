@@ -7,6 +7,7 @@ import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import TopNav from "./TopNav.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { richAlt } from "./title-keywords.js";
+import LangBar from "./LangBar.js";
 
 export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [], prevHref = null, nextHref = null, position = null }) {
   const t = TR[lang] || TR.en;
@@ -49,17 +50,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
       <div className="top-bar scrolled">
-        <div className="top-langs">
-          {Object.entries(TR).map(([c]) => (
-            <a
-              key={c}
-              href={`/${c}/${prefSlug}/${locSlug}/${photo.id}`}
-              className={"top-lang-btn" + (lang === c ? " active" : "")}
-            >
-              {TR[c].name}
-            </a>
-          ))}
-        </div>
+        <LangBar lang={lang} hrefFor={(c) => `/${c}/${prefSlug}/${locSlug}/${photo.id}`} />
       </div>
       <TopNav lang={lang} t={t} />
 

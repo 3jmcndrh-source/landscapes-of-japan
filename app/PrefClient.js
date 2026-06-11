@@ -7,6 +7,7 @@ import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
 import Lightbox from "./Lightbox.js";
+import LangBar from "./LangBar.js";
 import { useProgressiveReveal } from "./useProgressiveReveal.js";
 
 export default function PrefClient({ lang, prefJp, desc, faqs, definition, highlights, quickAnswers }) {
@@ -73,17 +74,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
       <div className={"top-bar scrolled"}>
-        <div className="top-langs">
-          {Object.entries(TR).map(([c]) => (
-            <a
-              key={c}
-              href={`/${c}/${prefSlug}`}
-              className={"top-lang-btn" + (lang === c ? " active" : "")}
-            >
-              {TR[c].name}
-            </a>
-          ))}
-        </div>
+        <LangBar lang={lang} hrefFor={(c) => `/${c}/${prefSlug}`} />
       </div>
       <TopNav lang={lang} t={t} />
 

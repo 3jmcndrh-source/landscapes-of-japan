@@ -10,6 +10,7 @@ import { getLocInfo } from "./loc-info.js";
 import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
+import LangBar from "./LangBar.js";
 import { useProgressiveReveal } from "./useProgressiveReveal.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
@@ -81,17 +82,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
       <div className="top-bar scrolled">
-        <div className="top-langs">
-          {Object.entries(TR).map(([c]) => (
-            <a
-              key={c}
-              href={`/${c}/${prefSlug}/${locSlug}`}
-              className={"top-lang-btn" + (lang === c ? " active" : "")}
-            >
-              {TR[c].name}
-            </a>
-          ))}
-        </div>
+        <LangBar lang={lang} hrefFor={(c) => `/${c}/${prefSlug}/${locSlug}`} />
       </div>
       <TopNav lang={lang} t={t} />
 

@@ -17,10 +17,18 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
   const mapHref = `/${lang}#map`;
   const contactHref = `/${lang}#contact`;
 
-  /* I-6: back-to-top FAB after 800px of scroll (every page using TopNav) */
+  /* I-6: back-to-top FAB + P6: auto-hide bottom nav while scrolling down */
   const [showTop, setShowTop] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
   useEffect(() => {
-    const fn = () => setShowTop(window.scrollY > 800);
+    let last = window.scrollY;
+    const fn = () => {
+      const y = window.scrollY;
+      setShowTop(y > 800);
+      if (y > 240 && y > last + 6) setNavHidden(true);
+      else if (y < last - 6 || y <= 240) setNavHidden(false);
+      if (Math.abs(y - last) > 6) last = y;
+    };
     fn();
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
@@ -35,7 +43,7 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >↑</button>
     )}
-    <div className="top-nav">
+    <div className={"top-nav" + (navHidden ? " nav-hidden" : "")}>
       {isHome ? (
         <button className="top-nav-link" onClick={scrollToMap}>{t.nav.map}</button>
       ) : (

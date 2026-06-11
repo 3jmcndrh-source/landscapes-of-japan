@@ -9,6 +9,7 @@ import { richAlt } from "./title-keywords.js";
 import { getCollectionName } from "./collections.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
+import LangBar from "./LangBar.js";
 
 /* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
 const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage"];
@@ -628,6 +629,24 @@ export default function PageClient({ initialLang = "ja" }) {
       return next;
     });
   }, [allPhotos, updateHash]);
+  /* I-4: return-visit language suggestion — if a previously chosen language
+     differs from the page language, offer a one-tap switch (session-dismissable). */
+  const [langSuggest, setLangSuggest] = useState(null);
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("lojLang");
+      if (saved && saved !== lang && TR[saved] && !sessionStorage.getItem("lojLangDismiss")) {
+        setLangSuggest(saved);
+      } else {
+        setLangSuggest(null);
+      }
+    } catch {}
+  }, [lang]);
+  const dismissLangSuggest = useCallback(() => {
+    try { sessionStorage.setItem("lojLangDismiss", "1"); } catch {}
+    setLangSuggest(null);
+  }, []);
+
   /* P3: per-row staged rendering on home — first 16 cards, more revealed as
      the row is scrolled horizontally (sentinel observed with root=scroller). */
   const [rowCounts, setRowCounts] = useState({});
@@ -908,11 +927,7 @@ export default function PageClient({ initialLang = "ja" }) {
 
       <div ref={cRef}>
         <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
-          <div className="top-langs">
-            {Object.entries(TR).map(([c, v]) => (
-              <a key={c} href={`/${c}`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{v.name}</a>
-            ))}
-          </div>
+          <LangBar lang={lang} hrefFor={(c) => `/${c}`} />
         </div>
         <TopNav lang={lang} t={t} scrollToMap={scrollToMap} scrollToContact={scrollToContact} />
 
@@ -1095,6 +1110,14 @@ export default function PageClient({ initialLang = "ja" }) {
 
         <footer className="cin-footer">© 2026 Landscapes of Japan<br/>{t.footer2}</footer>
       </div>
+      {langSuggest && (
+        <div className="lang-suggest" role="status">
+          <a href={`/${langSuggest}`} onClick={() => { try { localStorage.setItem("lojLang", langSuggest); } catch {} }}>
+            {TR[langSuggest].name} →
+          </a>
+          <button aria-label="Dismiss" onClick={dismissLangSuggest}>×</button>
+        </div>
+      )}
       {lightbox !== null && allPhotos[lightbox] && (
         <Lightbox
           photos={allPhotos}
