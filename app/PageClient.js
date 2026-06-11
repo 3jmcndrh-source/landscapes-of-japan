@@ -6,7 +6,12 @@ import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPref
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
+import { getCollectionName } from "./collections.js";
 import TopNav from "./TopNav.js";
+import Lightbox from "./Lightbox.js";
+
+/* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
+const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage"];
 
 const VIEW_ALL = {
   ja: "ガイド/詳細を見る", en: "Guide & details", zh: "查看指南与详情", "zh-tw": "查看指南與詳情",
@@ -659,6 +664,46 @@ export default function PageClient({ initialLang = "ja" }) {
     scrollers.forEach(el => { el.scrollLeft = 0; });
   }, []);
 
+  /* I-5: PC drag-to-scroll + edge-fade state for horizontal rows */
+  const suppressClickRef = useRef(false);
+  const hscrollBy = useCallback((e, dir) => {
+    e.stopPropagation();
+    const sc = e.currentTarget.closest(".cin-hwrap")?.querySelector(".cin-hscroll");
+    if (sc) sc.scrollBy({ left: dir * Math.round(sc.clientWidth * 0.85), behavior: "smooth" });
+  }, []);
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+    const cleanups = Array.from(document.querySelectorAll(".cin-hwrap")).map((wrap) => {
+      const sc = wrap.querySelector(".cin-hscroll");
+      if (!sc) return () => {};
+      const update = () => {
+        wrap.classList.toggle("can-left", sc.scrollLeft > 4);
+        wrap.classList.toggle("can-right", sc.scrollLeft < sc.scrollWidth - sc.clientWidth - 4);
+      };
+      update();
+      sc.addEventListener("scroll", update, { passive: true });
+      let dragging = false, startX = 0, startLeft = 0, moved = 0;
+      const down = (e) => { if (e.button !== 0) return; dragging = true; moved = 0; startX = e.clientX; startLeft = sc.scrollLeft; sc.classList.add("dragging"); };
+      const move = (e) => { if (!dragging) return; const dx = e.clientX - startX; moved = Math.max(moved, Math.abs(dx)); sc.scrollLeft = startLeft - dx; };
+      const up = () => {
+        if (!dragging) return;
+        dragging = false;
+        sc.classList.remove("dragging");
+        if (moved > 8) { suppressClickRef.current = true; setTimeout(() => { suppressClickRef.current = false; }, 60); }
+      };
+      sc.addEventListener("mousedown", down);
+      window.addEventListener("mousemove", move);
+      window.addEventListener("mouseup", up);
+      return () => {
+        sc.removeEventListener("scroll", update);
+        sc.removeEventListener("mousedown", down);
+        window.removeEventListener("mousemove", move);
+        window.removeEventListener("mouseup", up);
+      };
+    });
+    return () => cleanups.forEach((fn) => fn());
+  }, [lang]);
+
   /* Scroll-linked fade-in for sections (IntersectionObserver) */
   useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
@@ -675,49 +720,9 @@ export default function PageClient({ initialLang = "ja" }) {
     return () => io.disconnect();
   }, [lang]);
 
-  /* Keyboard navigation for lightbox */
-  useEffect(() => {
-    if (lightbox === null) return;
-    const handleKey = (e) => {
-      if (e.key === "ArrowLeft") lbPrev();
-      else if (e.key === "ArrowRight") lbNext();
-      else if (e.key === "Escape") closeLightbox();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [lightbox, lbPrev, lbNext]);
-
-  /* Preload adjacent lightbox images (±2 for faster swipe) */
-  useEffect(() => {
-    if (lightbox === null || !allPhotos.length) return;
-    const len = allPhotos.length;
-    const indices = [-2, -1, 1, 2].map(d => ((lightbox + d) % len + len) % len);
-    indices.forEach(i => { const img = new Image(); img.src = allPhotos[i].url; });
-  }, [lightbox, allPhotos]);
+  /* Keyboard / preload / scroll-lock now live inside shared <Lightbox/> */
 
   /* Lock body scroll while lightbox is open (iOS-safe via position:fixed) */
-  useEffect(() => {
-    if (lightbox === null) return;
-    const scrollY = window.scrollY;
-    const body = document.body;
-    const prev = { overflow: body.style.overflow, position: body.style.position, top: body.style.top, width: body.style.width };
-    body.style.overflow = "hidden";
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
-    return () => {
-      body.style.overflow = prev.overflow;
-      body.style.position = prev.position;
-      body.style.top = prev.top;
-      body.style.width = prev.width;
-      const html = document.documentElement;
-      const prevBehavior = html.style.scrollBehavior;
-      html.style.scrollBehavior = "auto";
-      window.scrollTo(0, scrollY);
-      requestAnimationFrame(() => { html.style.scrollBehavior = prevBehavior; });
-    };
-  }, [lightbox === null]);
-
   useEffect(() => {
     const fn = () => {
       setScrollY(window.scrollY);
@@ -887,6 +892,13 @@ export default function PageClient({ initialLang = "ja" }) {
           <div className="cin-hero-content" style={{ zIndex: 2 }}>
             <h1 className="cin-hero-title">{t.hero.t}</h1>
             <p className="cin-hero-desc">{t.hero.d}</p>
+            <nav className="cin-chips" aria-label="Collections">
+              {HERO_CHIP_SLUGS.map((slug) => (
+                <a key={slug} className="cin-chip" href={`/${lang}/collections/${slug}`}>
+                  {getCollectionName(slug, lang)}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
         <section className="cin-section">
@@ -983,11 +995,14 @@ export default function PageClient({ initialLang = "ja" }) {
                     <a href={`/${lang}/${prefSlug}`} className="cin-pref-viewall">{viewAllLabel} →</a>
                   )}
                 </div>
+                <div className="cin-hwrap">
+                  <button className="cin-hbtn left" aria-label="Scroll left" onClick={(e) => hscrollBy(e, -1)}>‹</button>
+                  <button className="cin-hbtn right" aria-label="Scroll right" onClick={(e) => hscrollBy(e, 1)}>›</button>
                 <div className="cin-hscroll">
                   {pf.photos.map((photo, idx) => {
                     const locSlug = photo.loc ? LOC_SLUGS[photo.loc] : null;
                     return (
-                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
+                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current || suppressClickRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
                         <img src={getUrl(photo, thumbW)} alt={richAlt({ locName: photo.loc ? getLocName(photo.loc, lang) : "", prefName: getPrefName(pf.pref, lang), year: photo.year, locJp: photo.loc, lang })} loading="lazy" decoding="async" draggable="false" />
                         {photo.loc && (
@@ -1010,6 +1025,12 @@ export default function PageClient({ initialLang = "ja" }) {
                     </div>
                     );
                   })}
+                  {prefSlug && pf.photos.length > 4 && (
+                    <a className="cin-endcard" href={`/${lang}/${prefSlug}`} onClick={(e) => e.stopPropagation()}>
+                      {viewAllLabel}<br />({pf.photos.length}) →
+                    </a>
+                  )}
+                </div>
                 </div>
                 {pf.photos.length > 1 && <div className="cin-scroll-indicator">{t.scroll}</div>}
               </div>
@@ -1045,65 +1066,27 @@ export default function PageClient({ initialLang = "ja" }) {
 
         <footer className="cin-footer">© 2026 Landscapes of Japan<br/>{t.footer2}</footer>
       </div>
-      {lightbox !== null && (() => {
-        const cur = allPhotos[lightbox];
-        if (!cur) return null;
-        let touchStartX = 0;
-        let touchStartY = 0;
-        let touchCount = 0;
-        const onTouchStart = (e) => { touchCount = e.touches.length; touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; };
-        const onTouchEnd = (e) => {
-          if (touchCount > 1) return;
-          const diffX = e.changedTouches[0].clientX - touchStartX;
-          const diffY = e.changedTouches[0].clientY - touchStartY;
-          if (diffX > 60 && Math.abs(diffX) > Math.abs(diffY)) { lbPrev(); return; }
-          if (diffX < -60 && Math.abs(diffX) > Math.abs(diffY)) { lbNext(); return; }
-          // Small movement = tap → close (controls stopPropagate their own touchend so won't reach here).
-          if (Math.abs(diffX) < 20 && Math.abs(diffY) < 20) closeLightbox();
-        };
-        const stopTouch = (fn) => (e) => { e.stopPropagation(); e.preventDefault(); fn(); };
-        return (
-          <div
-            className={"cin-lb" + (lbClosing ? " closing" : "")}
-            onContextMenu={e => e.preventDefault()}
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-            onClick={(e) => { if (e.target === e.currentTarget) closeLightbox(); }}
-          >
-            <button
-              className="cin-lb-close"
-              onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
-              onTouchEnd={stopTouch(closeLightbox)}
-              aria-label="Close"
-            >×</button>
-            <div className="cin-lb-info">
-              <div className="cin-lb-pref">{getPrefName(cur.pref, lang)}</div>
-              {cur.loc && <div className="cin-lb-loc">{getLocName(cur.loc, lang)}</div>}
-              {cur.year && <div className="cin-lb-year">{cur.year}</div>}
-            </div>
-            <button
-              className="cin-lb-arrow left"
-              onClick={(e) => { e.stopPropagation(); lbPrev(); }}
-              onTouchEnd={stopTouch(lbPrev)}
-              aria-label="Previous"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
-            </button>
-            <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }}>
-              <img src={cur.url} alt={richAlt({ locName: cur.loc ? getLocName(cur.loc, lang) : "", prefName: getPrefName(cur.pref, lang), year: cur.year, locJp: cur.loc, lang })} draggable="false" />
-              <div className="cin-lb-wm">Landscapes of Japan</div>
-            </div>
-            <button
-              className="cin-lb-arrow right"
-              onClick={(e) => { e.stopPropagation(); lbNext(); }}
-              onTouchEnd={stopTouch(lbNext)}
-              aria-label="Next"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
-            </button>
-          </div>
-        );
-      })()}
+      {lightbox !== null && allPhotos[lightbox] && (
+        <Lightbox
+          photos={allPhotos}
+          index={lightbox}
+          closing={lbClosing}
+          lang={lang}
+          onClose={closeLightbox}
+          onPrev={lbPrev}
+          onNext={lbNext}
+          labels={(p) => ({
+            prefName: getPrefName(p.pref, lang),
+            locName: p.loc ? getLocName(p.loc, lang) : "",
+            alt: richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: getPrefName(p.pref, lang), year: p.year, locJp: p.loc, lang }),
+          })}
+          photoHref={(p) => {
+            const ps = PREF_SLUGS[p.pref];
+            const ls = p.loc ? LOC_SLUGS[p.loc] : null;
+            return ps && ls && p.id ? `/${lang}/${ps}/${ls}/${p.id}` : null;
+          }}
+        />
+      )}
     </div>
   );
 }

@@ -56,6 +56,25 @@ export default async function LangLayout({ children, params }) {
         <link rel="apple-touch-icon" sizes="120x120" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_120,h_120,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
         {/* A1: cross-document View Transitions (Chrome 126+, Safari 18+) — graceful fallback */}
         <meta name="view-transition" content="same-origin" />
+        {/* P4: Speculation Rules — prerender same-origin pages on hover/pointerdown.
+            Chrome-family only; unknown script type is ignored elsewhere. Static
+            assets (xml/txt/json) excluded. Bandwidth is unmetered on CF Pages. */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [{
+                where: { and: [
+                  { href_matches: "/*" },
+                  { not: { href_matches: "/*.xml" } },
+                  { not: { href_matches: "/*.txt" } },
+                  { not: { href_matches: "/*.json" } },
+                ] },
+                eagerness: "moderate",
+              }],
+            }),
+          }}
+        />
         {/* LCP最適化 (#22): ヒーロー背景画像preload (デバイス別) */}
         <link
           rel="preload"
