@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/cleanup-export.mjs",
+    "build": "node scripts/build-search-index.mjs && next build && node scripts/cleanup-export.mjs",
     "start": "next start"
   },
   "dependencies": {

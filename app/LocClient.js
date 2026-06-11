@@ -194,8 +194,11 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
               >
                 <img
                   src={getUrl(photo, imgSizes.thumbW)}
+                  srcSet={`${getUrl(photo, 600)} 600w, ${getUrl(photo, 1200)} 1200w`}
+                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 380px"
                   alt={richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang })}
-                  loading="lazy"
+                  loading={i < 4 ? "eager" : "lazy"}
+                  fetchPriority={i < 2 ? "high" : undefined}
                   decoding="async"
                   draggable="false"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}

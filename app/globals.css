@@ -328,3 +328,17 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
   .top-nav{padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));transition:transform .32s cubic-bezier(.2,.8,.2,1)}
   .top-nav.nav-hidden{transform:translateY(120%)}
 }
+
+/* ===== Round F: quick search overlay ===== */
+.qsearch-overlay{position:fixed;inset:0;z-index:200;background:rgba(8,7,6,.72);backdrop-filter:blur(16px);display:flex;justify-content:center;align-items:flex-start;padding:max(12vh,70px) 16px 16px;animation:lbIn .22s ease}
+.qsearch-box{width:100%;max-width:560px}
+.qsearch-box input{width:100%;box-sizing:border-box;background:rgba(20,17,14,.92);border:1px solid rgba(220,190,100,.45);border-radius:14px;color:#f2ece2;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:17px;padding:16px 20px;outline:none}
+.qsearch-box input::placeholder{color:rgba(232,228,223,.4)}
+.qsearch-box input:focus{border-color:rgba(220,190,100,.8);box-shadow:0 0 0 3px rgba(220,190,100,.15)}
+.qsearch-results{list-style:none;margin:10px 0 0;padding:6px;background:rgba(20,17,14,.92);border:1px solid rgba(220,190,100,.25);border-radius:14px;backdrop-filter:blur(14px)}
+.qsearch-results a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:9px;text-decoration:none;color:#e8e4df;font-family:var(--font-zen-kaku),sans-serif;font-size:14px;transition:background .2s}
+.qsearch-results a:hover,.qsearch-results a.first{background:rgba(220,190,100,.13)}
+.qs-badge{flex-shrink:0;font-size:13px;opacity:.8}
+.qs-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qsearch-results small{color:rgba(232,212,148,.7);font-size:11px;background:rgba(220,190,100,.12);padding:2px 9px;border-radius:999px}
+.qsearch-empty{margin-top:10px;text-align:center;color:rgba(232,228,223,.45);font-family:var(--font-zen-kaku),sans-serif;font-size:13px;padding:14px}

@@ -72,7 +72,10 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
         <figure style={{ margin: 0, marginBottom: 32, position: "relative", background: "#111", borderRadius: 4, overflow: "hidden" }} onTouchStart={onFigTouchStart} onTouchEnd={onFigTouchEnd}>
           <img
             src={photoUrl}
+            srcSet={`${cldUrl(photo.id, 800)} 800w, ${cldUrl(photo.id, 1200)} 1200w, ${cldUrl(photo.id, 2400)} 2400w`}
+            sizes="(max-width: 768px) 100vw, min(1400px, 96vw)"
             alt={altText}
+            fetchPriority="high"
             draggable="false"
             onContextMenu={(e) => e.preventDefault()}
             style={{ width: "100%", height: "auto", display: "block", maxHeight: "85vh", objectFit: "contain", background: "#0a0a0a", viewTransitionName: "vt-hero" }}

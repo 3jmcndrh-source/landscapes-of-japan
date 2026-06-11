@@ -12,13 +12,18 @@
  * Cache names are versioned (-v1) so a future SW deployment can drop them.
  */
 
-const HTML_CACHE = "loj-html-v1";
-const STATIC_CACHE = "loj-static-v1";
+const HTML_CACHE = "loj-html-v2";
+const STATIC_CACHE = "loj-static-v2";
 const ALL_CACHES = [HTML_CACHE, STATIC_CACHE];
+const OFFLINE_URL = "/offline.html";
 
-self.addEventListener("install", () => {
+self.addEventListener("install", (event) => {
   // Take control immediately on first install / new SW.
   self.skipWaiting();
+  // Precache the offline fallback page (P7).
+  event.waitUntil(
+    caches.open(HTML_CACHE).then((c) => c.add(OFFLINE_URL)).catch(() => {})
+  );
 });
 
 self.addEventListener("activate", (event) => {
@@ -63,7 +68,8 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // HTML & everything else: stale-while-revalidate.
+  // HTML & everything else: stale-while-revalidate, offline.html as the
+  // final fallback for never-cached pages with no network.
   const isNavigate = req.mode === "navigate" || (req.headers.get("accept") || "").includes("text/html");
   if (isNavigate) {
     event.respondWith(
@@ -75,7 +81,7 @@ self.addEventListener("fetch", (event) => {
             if (res && res.ok) cache.put(req, res.clone());
             return res;
           })
-          .catch(() => cached);
+          .catch(async () => cached || (await cache.match(OFFLINE_URL)) || new Response("", { status: 504 }));
         return cached || network;
       })()
     );

@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import * as d3 from "d3";
+/* P7: d3 (~large) is code-split out of the main bundle and fetched on demand
+   the first time the map needs it. */
+let _d3Promise = null;
+const loadD3 = () => (_d3Promise ??= import("d3"));
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
@@ -188,32 +191,38 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  /* D3 zoom for mobile pinch-to-zoom */
+  /* D3 zoom for mobile pinch-to-zoom (d3 lazy-loaded) */
   useEffect(() => {
     if (!svgRef.current || !gRef.current) return;
-    const svg = d3.select(svgRef.current);
-    const g = d3.select(gRef.current);
-    const zoomBehavior = d3.zoom()
-      .scaleExtent([1, 5])
-      .on("zoom", (e) => {
-        g.attr("transform", e.transform);
-        setZoomScale(e.transform.k);
-      });
-    zoomRef.current = zoomBehavior;
-    if (isMobile && zoomEnabled) {
-      svg.call(zoomBehavior);
-      svg.style("touch-action", "none");
-    } else {
-      svg.on(".zoom", null);
-      svg.style("touch-action", "pan-y");
-      /* Reset zoom when disabling */
-      if (gRef.current) {
-        g.attr("transform", d3.zoomIdentity);
-        svg.call(zoomBehavior.transform, d3.zoomIdentity);
-        setZoomScale(1);
+    let alive = true;
+    let svgSel = null;
+    loadD3().then((d3) => {
+      if (!alive || !svgRef.current || !gRef.current) return;
+      const svg = d3.select(svgRef.current);
+      const g = d3.select(gRef.current);
+      svgSel = svg;
+      const zoomBehavior = d3.zoom()
+        .scaleExtent([1, 5])
+        .on("zoom", (e) => {
+          g.attr("transform", e.transform);
+          setZoomScale(e.transform.k);
+        });
+      zoomRef.current = zoomBehavior;
+      if (isMobile && zoomEnabled) {
+        svg.call(zoomBehavior);
+        svg.style("touch-action", "none");
+      } else {
+        svg.on(".zoom", null);
+        svg.style("touch-action", "pan-y");
+        /* Reset zoom when disabling */
+        if (gRef.current) {
+          g.attr("transform", d3.zoomIdentity);
+          svg.call(zoomBehavior.transform, d3.zoomIdentity);
+          setZoomScale(1);
+        }
       }
-    }
-    return () => { svg.on(".zoom", null); };
+    });
+    return () => { alive = false; if (svgSel) svgSel.on(".zoom", null); };
   }, [isMobile, zoomEnabled]);
 
   const photoPrefSet = useMemo(() => {
@@ -261,8 +270,13 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   /* Okinawa inset box dimensions within the SVG */
   const OKI_BOX = { x: 10, y: 140, w: 200, h: 130 };
 
-  const { paths, okiPaths, project, okiProject } = useMemo(() => {
-    if (!geoData) return { paths: [], okiPaths: [], project: () => ({ x: 0, y: 0 }), okiProject: () => ({ x: 0, y: 0 }) };
+  const [mapShapes, setMapShapes] = useState({ paths: [], okiPaths: [], project: () => ({ x: 0, y: 0 }), okiProject: () => ({ x: 0, y: 0 }) });
+  const { paths, okiPaths, project, okiProject } = mapShapes;
+  useEffect(() => {
+    if (!geoData) return;
+    let alive = true;
+    loadD3().then((d3) => {
+    if (!alive) return;
 
     /* Main projection */
     const projection = d3.geoMercator().center([137, 37.5]).scale(1800).translate([MW / 2, MH / 2]);
@@ -312,7 +326,9 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
 
     const proj = (lat, lng) => { const p = projection([lng, lat]); return p ? { x: p[0], y: p[1] } : { x: 0, y: 0 }; };
     const okiProjFn = (lat, lng) => { const p = okiProj([lng, lat]); return p ? { x: p[0] + OKI_BOX.x, y: p[1] + OKI_BOX.y } : { x: 0, y: 0 }; };
-    return { paths: ps, okiPaths: ops, project: proj, okiProject: okiProjFn };
+    setMapShapes({ paths: ps, okiPaths: ops, project: proj, okiProject: okiProjFn });
+    });
+    return () => { alive = false; };
   }, [geoData, photoPrefSet]);
 
   if (loading) {
@@ -540,10 +556,12 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
             <button
               className="map-zoom-btn"
               onClick={() => {
-                if (svgRef.current && zoomRef.current) {
-                  const svg = d3.select(svgRef.current);
-                  svg.transition().duration(300).call(zoomRef.current.transform, d3.zoomIdentity);
-                }
+                loadD3().then((d3) => {
+                  if (svgRef.current && zoomRef.current) {
+                    const svg = d3.select(svgRef.current);
+                    svg.transition().duration(300).call(zoomRef.current.transform, d3.zoomIdentity);
+                  }
+                });
               }}
               aria-label={t.mapZoomReset}
             >

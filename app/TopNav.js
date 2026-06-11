@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import QuickSearch from "./QuickSearch.js";
 
 const labels = {
   ja: { blog: "ブログ", collections: "コレクション", search: "検索", random: "ランダム" },
@@ -16,6 +17,19 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
   const isHome = !!scrollToMap;
   const mapHref = `/${lang}#map`;
   const contactHref = `/${lang}#contact`;
+
+  /* P5: quick search overlay — opened from the nav button or the "/" key */
+  const [searchOpen, setSearchOpen] = useState(false);
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "/" && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName || "")) {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   /* I-6: back-to-top FAB + P6: auto-hide bottom nav while scrolling down */
   const [showTop, setShowTop] = useState(false);
@@ -52,13 +66,14 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
       <a className="top-nav-link" href={`/${lang}/blog`}>{lab(lang, "blog")}</a>
       <a className="top-nav-link" href={`/${lang}/collections`}>{lab(lang, "collections")}</a>
       <a className="top-nav-link" href={`/${lang}/random`} rel="nofollow">🎲 {lab(lang, "random")}</a>
-      <a className="top-nav-link" href={`/${lang}/search`}>{lab(lang, "search")}</a>
+      <button className="top-nav-link" onClick={() => setSearchOpen(true)}>{lab(lang, "search")}</button>
       {isHome ? (
         <button className="top-nav-link" onClick={scrollToContact}>{t.contact.title}</button>
       ) : (
         <a className="top-nav-link" href={contactHref}>{t.contact.title}</a>
       )}
     </div>
+    <QuickSearch lang={lang} open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }
