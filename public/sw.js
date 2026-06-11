@@ -15,7 +15,7 @@
 const HTML_CACHE = "loj-html-v2";
 const STATIC_CACHE = "loj-static-v2";
 const ALL_CACHES = [HTML_CACHE, STATIC_CACHE];
-const OFFLINE_URL = "/offline.html";
+const OFFLINE_URL = "/offline"; // extensionless: CF Pages 308-redirects /offline.html, and a redirected cached response cannot be served for a navigation
 
 self.addEventListener("install", (event) => {
   // Take control immediately on first install / new SW.
