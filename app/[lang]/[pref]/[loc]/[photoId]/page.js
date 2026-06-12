@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import PhotoClient from "../../../../PhotoClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../../data.js";
-import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../../i18n-meta.js";
+import { HREFLANG, SITE_URL, PHOTO_LANGS } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc, getLocHighlights, getLocDefinition } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
@@ -10,13 +10,14 @@ import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../../title-keywor
 import { POSTS, getPostTitle, getPostExcerpt } from "../../../../content/blog/posts.js";
 import { ui } from "../../../../ui-strings.js";
 
-// Cloudflare Pages 静的エクスポート: 全 写真 × 25 言語 を build 時に pre-render
-// 約 400 photos × 25 langs = ~10,000 pages (Cloudflare Pages 20k file 上限内)
+// 2026-06: 写真個別ページは PHOTO_LANGS (7言語) のみ pre-render。
+// 587枚 × 25言語 = 14,675 ファイルが 20k 上限を圧迫していたため、
+// GSC 実データ上位 + 戦略言語に絞った (詳細は i18n-meta.js のコメント)。
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   const params = [];
-  for (const lang of LANGS) {
+  for (const lang of PHOTO_LANGS) {
     for (const pf of PREFECTURES) {
       const prefSlug = PREF_SLUGS[pf.pref];
       if (!prefSlug) continue;
@@ -63,7 +64,10 @@ export async function generateMetadata({ params }) {
     ? `${locLocal}, ${prefLocal} — ${desc.slice(0, 140)}`
     : `Photograph of ${locLocal}, ${prefLocal}, Japan${yearStr}.`;
 
-  const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photoId}`);
+  const languages = Object.fromEntries([
+    ...PHOTO_LANGS.map((l) => [HREFLANG[l] || l, `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photoId}`]),
+    ["x-default", `${SITE_URL}/en/${prefSlug}/${locSlug}/${photoId}`],
+  ]);
 
   const ogImage = cldUrl(photoId, 1200);
 

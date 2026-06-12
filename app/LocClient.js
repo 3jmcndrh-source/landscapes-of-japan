@@ -400,7 +400,7 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           onPrev={lbPrev}
           onNext={lbNext}
           labels={(p) => ({ prefName: prefLocal, locName: locLocal, alt: richAlt({ locName: locLocal, prefName: prefLocal, year: p.year, locJp, lang }) })}
-          photoHref={(p) => (prefSlug && locSlug && p.id ? `/${lang}/${prefSlug}/${locSlug}/${p.id}` : null)}
+          photoHref={(p) => (prefSlug && locSlug && p.id ? `/${photoLang(lang)}/${prefSlug}/${locSlug}/${p.id}` : null)}
         />
       )}
     </div>

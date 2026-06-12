@@ -1,4 +1,4 @@
-import { LANGS, HREFLANG, SITE_URL } from "../../i18n-meta.js";
+import { LANGS, HREFLANG, SITE_URL, PHOTO_LANGS } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS, COLLECTIONS } from "../../collections.js";
@@ -236,13 +236,14 @@ export async function GET(_req, { params }) {
       const locSlug = LOC_SLUGS[photo.loc];
       if (!locSlug) continue;
 
+      // 2026-06: 写真個別ページは PHOTO_LANGS (7言語) のみ生成・登載
       const photoLangs = {};
-      for (const l of LANGS) photoLangs[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photo.id}`;
+      for (const l of PHOTO_LANGS) photoLangs[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photo.id}`;
       photoLangs["x-default"] = `${SITE_URL}/en/${prefSlug}/${locSlug}/${photo.id}`;
 
       // 写真個別: lastmod は year-12-31 (撮影年末)
       const photoLastmod = yearLastmod(photo.year) || today;
-      for (const lang of LANGS) {
+      for (const lang of PHOTO_LANGS) {
         entries.push(buildUrlEntry({
           url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}/${photo.id}`,
           lastmod: photoLastmod, changefreq: "yearly", priority: "0.4",

@@ -27,18 +27,19 @@ export const TR = {
   uk:{name:"Українська",nav:{map:"Місця"},hero:{t:"Пейзажі Японії",s:"ー Японія у фокусі ー",d:"Колекція пейзажних фотографій, зроблених по всій Японії"},mapL:"Місця",mapH:"Натисніть на виділену префектуру → перегляд фото",backMap:"Назад",lang:"Мова",ft:"Будь ласка, звертайтеся з будь-якими запитаннями чи побажаннями.",scroll:"← Свайп / Прокрутка →",oki:"Окінава",tapHint:"Натисніть ще раз → фото",mapZoomOn:"Зведіть пальці для масштабу",mapZoomOff:"Вийти з масштабу",mapZoomReset:"Скинути",footer2:"Несанкціоноване копіювання заборонено.",contact:{title:"Контакти",name:"Ім'я",email:"Електронна пошта",msg:"Повідомлення",send:"Надіслати",sent:"Надіслано! Дякуємо.",err:"Помилка надсилання. Спробуйте ще раз."}},
 };
 
+/* 2026-06: 画像配信を Cloudinary → 自前 Cloudflare Pages (landscapes-images) に移行。
+   変換は scripts/generate-variants.mjs がローカル sharp で事前生成 (300/600/1200/2400 WebP
+   + 40px blur LQIP)。帯域無制限・無料。任意の w は生成済み幅へ切り上げて解決する。 */
+export const IMG_BASE = "https://landscapes-images.pages.dev";
+const IMG_WIDTHS = [300, 600, 1200, 2400];
+
 export const cldUrl = (id, w) => {
-  // B3: thumbnails (w ≤ 800) use q_auto:eco for ~30% smaller payload — bandwidth
-  // matters more on mobile where most viewers are. Lightbox-sized images keep
-  // standard q_auto for fidelity.
-  const q = w && w <= 800 ? "q_auto:eco" : "q_auto";
-  return "https://res.cloudinary.com/" + CLOUD + "/image/upload/w_" + w + ",f_auto," + q + "/" + encodeURIComponent(id) + ".jpg";
+  const pick = IMG_WIDTHS.find((x) => x >= (w || 1200)) || 2400;
+  return `${IMG_BASE}/${encodeURIComponent(id)}_w${pick}.webp`;
 };
 
-// B1: low-quality image placeholder. 40px wide + heavy blur — loads in ~5KB and
-// fills the image slot before the real thumbnail arrives, so users see a soft
-// preview instead of a grey box.
-export const cldPlaceholder = (id) => "https://res.cloudinary.com/" + CLOUD + "/image/upload/w_40,e_blur:1000,f_auto,q_auto:eco/" + encodeURIComponent(id) + ".jpg";
+// B1: low-quality image placeholder — 40px + blur の事前生成版 (~2KB)。
+export const cldPlaceholder = (id) => `${IMG_BASE}/${encodeURIComponent(id)}_w40b.webp`;
 
 /* ── Prefecture name translations (47 prefs × 20 langs) ── */
 export const PREF_I18N = {

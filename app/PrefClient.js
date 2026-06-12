@@ -1,7 +1,7 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder } from "./data.js";
-import { SITE_URL, HREFLANG } from "./i18n-meta.js";
+import { SITE_URL, HREFLANG, photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import TopNav from "./TopNav.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
@@ -266,7 +266,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
           onPrev={lbPrev}
           onNext={lbNext}
           labels={(p) => ({ prefName: prefLocal, locName: p.loc ? getLocName(p.loc, lang) : "", alt: richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: prefLocal, year: p.year, locJp: p.loc, lang }) })}
-          photoHref={(p) => (prefSlug && p.loc && LOC_SLUGS[p.loc] && p.id ? `/${lang}/${prefSlug}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
+          photoHref={(p) => (prefSlug && p.loc && LOC_SLUGS[p.loc] && p.id ? `/${photoLang(lang)}/${prefSlug}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
         />
       )}
     </div>

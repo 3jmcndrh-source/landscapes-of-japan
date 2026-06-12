@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import LocClient from "../../../LocClient.js";
-import { PREFECTURES, getPrefName, getLocName } from "../../../data.js";
+import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../slugs.js";
 import { getLocDesc, getLocFaqs, getLocDefinition, getLocHighlights, getLocQuickAnswers } from "../../../content/descriptions.js";
@@ -109,7 +109,7 @@ export default async function Page({ params }) {
           ...(getPrefSameAs(prefJp).length > 0 && { sameAs: getPrefSameAs(prefJp) }),
         },
         image: photos.slice(0, 10).map(
-          (p) => `https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/${encodeURIComponent(p.id)}.jpg`
+          (p) => cldUrl(p.id, 1200)
         ),
       },
       // A14: AI Overview対応 — DefinedTerm + QAPage (loc向け、AI Overview/Featured Snippet 直撃)
@@ -166,7 +166,7 @@ export default async function Page({ params }) {
             name: ev.placeName,
             address: { "@type": "PostalAddress", addressRegion: getPrefName(prefJp, "en"), addressCountry: "JP" },
           },
-          image: photos.slice(0, 4).map((p) => `https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/${encodeURIComponent(p.id)}.jpg`),
+          image: photos.slice(0, 4).map((p) => cldUrl(p.id, 1200)),
           organizer: { "@type": "Organization", name: "Landscapes of Japan", url: SITE_URL },
           performer: { "@type": "Organization", name: performerName },
           offers: {

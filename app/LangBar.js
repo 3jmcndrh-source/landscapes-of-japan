@@ -9,7 +9,7 @@ import { TR } from "./data.js";
  * - remembers the chosen language in localStorage (PageClient reads it on
  *   the home page to offer "continue in X?" on return visits)
  */
-export default function LangBar({ lang, hrefFor }) {
+export default function LangBar({ lang, hrefFor, langs }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -25,9 +25,10 @@ export default function LangBar({ lang, hrefFor }) {
     try { localStorage.setItem("lojLang", code); } catch {}
   };
 
+  const codes = langs || Object.keys(TR);
   return (
     <div className="top-langs" ref={ref}>
-      {Object.keys(TR).map((c) => (
+      {codes.map((c) => (
         <a
           key={c}
           href={hrefFor(c)}

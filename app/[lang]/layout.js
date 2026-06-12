@@ -42,8 +42,8 @@ export default async function LangLayout({ children, params }) {
   return (
     <html lang={htmlLang} dir={dir}>
       <head>
-        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://landscapes-images.pages.dev" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://landscapes-images.pages.dev" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="Landscapes of Japan — Latest Photos" href="/feed.xml" />
         <meta name="theme-color" content="#dcbe64" />
@@ -51,9 +51,9 @@ export default async function LangLayout({ children, params }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Landscapes of Japan" />
         {/* Apple touch icons (PWA install on iOS) */}
-        <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_180,h_180,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
-        <link rel="apple-touch-icon" sizes="152x152" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_152,h_152,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
-        <link rel="apple-touch-icon" sizes="120x120" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_120,h_120,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://landscapes-images.pages.dev/icon_180.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://landscapes-images.pages.dev/icon_152.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://landscapes-images.pages.dev/icon_120.png" />
         {/* A1: cross-document View Transitions (Chrome 126+, Safari 18+) — graceful fallback */}
         <meta name="view-transition" content="same-origin" />
         {/* P4: Speculation Rules — PREFETCH (document only) rather than prerender:
@@ -81,14 +81,14 @@ export default async function LangLayout({ children, params }) {
           rel="preload"
           as="image"
           fetchPriority="high"
-          href="https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,h_1080,c_fill,e_grayscale,f_auto,q_auto/hero_landscape.jpg"
+          href="https://landscapes-images.pages.dev/hero_landscape_gray_w1920.webp"
           media="(min-width: 769px)"
         />
         <link
           rel="preload"
           as="image"
           fetchPriority="high"
-          href="https://res.cloudinary.com/dr53c12fo/image/upload/w_768,h_1024,c_fill,e_grayscale,f_auto,q_auto/hero_portrait.jpg"
+          href="https://landscapes-images.pages.dev/hero_portrait_gray_w1080.webp"
           media="(max-width: 768px)"
         />
       </head>

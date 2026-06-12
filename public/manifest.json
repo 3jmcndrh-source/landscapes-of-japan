@@ -11,7 +11,12 @@
   "theme_color": "#dcbe64",
   "lang": "en",
   "dir": "ltr",
-  "categories": ["photography", "travel", "art", "lifestyle"],
+  "categories": [
+    "photography",
+    "travel",
+    "art",
+    "lifestyle"
+  ],
   "icons": [
     {
       "src": "/favicon.ico",
@@ -20,19 +25,19 @@
       "purpose": "any"
     },
     {
-      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "src": "https://landscapes-images.pages.dev/icon_192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_512,h_512,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "src": "https://landscapes-images.pages.dev/icon_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_512,h_512,c_pad,b_rgb:0a0a0a,f_png,q_auto/DSC07601_cocitq.jpg",
+      "src": "https://landscapes-images.pages.dev/icon_512_pad.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -40,16 +45,16 @@
   ],
   "screenshots": [
     {
-      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_1080,h_1920,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "src": "https://landscapes-images.pages.dev/shot_narrow.jpg",
       "sizes": "1080x1920",
-      "type": "image/png",
+      "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "Mobile view of Japanese landscape gallery"
     },
     {
-      "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_1920,h_1080,c_fill,f_png,q_auto/DSC07601_cocitq.jpg",
+      "src": "https://landscapes-images.pages.dev/shot_wide.jpg",
       "sizes": "1920x1080",
-      "type": "image/png",
+      "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Desktop view of Japanese landscape gallery"
     }
@@ -60,30 +65,52 @@
       "short_name": "Random",
       "description": "View a random photograph",
       "url": "/en/random",
-      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "https://landscapes-images.pages.dev/icon_192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Photography Blog",
       "short_name": "Blog",
       "description": "Long-form photography guides",
       "url": "/en/blog",
-      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "https://landscapes-images.pages.dev/icon_192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Cherry Blossoms",
       "short_name": "Sakura",
       "description": "Cherry blossom photography collection",
       "url": "/en/collections/cherry-blossoms",
-      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "https://landscapes-images.pages.dev/icon_192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Snow & Winter",
       "short_name": "Snow",
       "description": "Snow and drift ice photography",
       "url": "/en/collections/snow",
-      "icons": [{ "src": "https://res.cloudinary.com/dr53c12fo/image/upload/w_192,h_192,c_fill,f_png,q_auto/DSC07601_cocitq.jpg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "https://landscapes-images.pages.dev/icon_192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
   "prefer_related_applications": false,
-  "edge_side_panel": { "preferred_width": 480 }
+  "edge_side_panel": {
+    "preferred_width": 480
+  }
 }

@@ -1,10 +1,17 @@
 export const SITE_URL = "https://landscapes-of-japan.com";
-export const OG_IMAGE = "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/DSC07601_cocitq.jpg";
+export const OG_IMAGE = "https://landscapes-images.pages.dev/og.jpg";
 export const DEFAULT_LANG = "en";
 
 export const LANGS = ["ja","en","zh","zh-tw","ko","es","fr","de","pt","it","ru","ar","hi","th","vi","id","tr","nl","pl","sv","fa","he","bn","tl","uk"];
 
 export const RTL_LANGS = new Set(["ar","fa","he"]);
+
+/* 2026-06: 写真個別ページのみ 7 言語に制限 (Cloudflare Pages 20k ファイル上限対策)。
+   選定根拠: GSC 実測 top5 (ja/en/zh-tw/de/es) + 写真ページ実績 1 位の ar + 訪日 #1
+   かつ Naver 展開予定の ko。loc/pref/blog 等は従来通り全 25 言語。
+   写真ページへのリンクは PHOTO_LANGS 外の言語からは en 版へフォールバックする。 */
+export const PHOTO_LANGS = ["ja", "en", "zh-tw", "de", "es", "ar", "ko"];
+export const photoLang = (lang) => (PHOTO_LANGS.includes(lang) ? lang : "en");
 
 export const HREFLANG = {
   ja:"ja", en:"en", zh:"zh-Hans", "zh-tw":"zh-Hant", ko:"ko",

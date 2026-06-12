@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import PrefClient from "../../PrefClient.js";
-import { PREFECTURES, PREF_I18N, getPrefName } from "../../data.js";
+import { PREFECTURES, PREF_I18N, getPrefName, cldUrl } from "../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
 import { getPrefDesc, getPrefFaqs, getPrefDefinition, getPrefHighlights, getPrefQuickAnswers } from "../../content/descriptions.js";
@@ -94,7 +94,7 @@ export default async function Page({ params }) {
         },
         image: pf.photos.slice(0, 10).map((p) => ({
           "@type": "Photograph",
-          contentUrl: `https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/${encodeURIComponent(p.id)}.jpg`,
+          contentUrl: cldUrl(p.id, 1200),
           name: (p.loc ? p.loc + " - " : "") + prefJp,
         })),
       },

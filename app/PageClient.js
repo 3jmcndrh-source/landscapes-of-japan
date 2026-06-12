@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
    the first time the map needs it. */
 let _d3Promise = null;
 const loadD3 = () => (_d3Promise ??= import("d3"));
-import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG } from "./i18n-meta.js";
+import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG, photoLang } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
@@ -923,7 +923,7 @@ export default function PageClient({ initialLang = "ja" }) {
                   name: p.loc ? getLocName(p.loc, lang) : getPrefName(pf.pref, lang),
                   address: { "@type": "PostalAddress", addressRegion: getPrefName(pf.pref, lang), addressCountry: "JP" },
                 },
-                image: "https://res.cloudinary.com/dr53c12fo/image/upload/w_1200,f_auto,q_auto/" + encodeURIComponent(p.id) + ".jpg",
+                image: cldUrl(p.id, 1200),
                 dateCreated: p.year ? String(p.year) : undefined,
                 author: { "@id": personId },
               }))),
@@ -1153,7 +1153,7 @@ export default function PageClient({ initialLang = "ja" }) {
           photoHref={(p) => {
             const ps = PREF_SLUGS[p.pref];
             const ls = p.loc ? LOC_SLUGS[p.loc] : null;
-            return ps && ls && p.id ? `/${lang}/${ps}/${ls}/${p.id}` : null;
+            return ps && ls && p.id ? `/${photoLang(lang)}/${ps}/${ls}/${p.id}` : null;
           }}
         />
       )}

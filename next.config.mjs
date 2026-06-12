@@ -9,6 +9,7 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "landscapes-images.pages.dev" },
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },

@@ -71,29 +71,35 @@ No trailing slashes on any URL — Next.js static export emits `/ja.html` and th
 - `getPrefName(pref, lang)` / `getLocName(loc, lang)` — localize names
 - `MAP_PINS` — first photo per prefecture for tooltip thumb
 
-## Cloudinary
+## Images (self-hosted — 2026-06 Cloudinary 脱出済み)
 
-- **Cloud Name:** `dr53c12fo`
-- **URL pattern:** `https://res.cloudinary.com/dr53c12fo/image/upload/w_{width},f_auto,q_auto/{public_id}.jpg`
-- **Responsive widths:** thumbnail 600/1200px, lightbox 800/2400px (mobile/desktop)
-- **API creds** in `.env` (gitignored). Needed only by upload/sort/add-years scripts.
+Cloudinary は無料枠超過 (帯域48GB/月=220%) のため 2026-06 に完全離脱。画像は
+**専用 Cloudflare Pages プロジェクト `landscapes-images`** から配信 (帯域無制限・$0)。
+
+- **URL pattern:** `https://landscapes-images.pages.dev/{id}_w{300|600|1200|2400}.webp` / LQIP `{id}_w40b.webp`
+- 特殊: `og.jpg`, `icon_{120..512}.png`, `hero_{landscape,portrait}_gray_w*.webp`, `shot_*.jpg`
+- 生成元: `scripts/generate-variants.mjs` (sharp, webp q80, 拡大なし)。任意の幅は `cldUrl(id,w)` が生成済み幅へ切り上げ解決
+- **原本マスター庫:** `C:/Users/3jmcn/Pictures/cloudinary-originals/` (7.4GB+。サイトには2400px版までしか載らないので必ずバックアップ対象に)
+- 容量: 20k ファイル/デプロイ ÷ 5変換 ≈ **写真5,000枚** まで。1枚のサイズ制限なし (旧10MB制限消滅)
+- 旧 Cloudinary アカウント (dr53c12fo) は 2026-06-19 停止予定のまま放置で OK
 
 ## Photo Management Workflow
 
 Capture One exports strip GPS, so location must be passed manually.
+**フル画質書き出しで OK (10MB 制限なし)。**
 
 ```bash
-# Upload N photos to a prefecture/location
-node upload.mjs path1.jpg path2.jpg --pref 京都府 --loc 清水寺
+# 追加はこれ 1 コマンド: EXIF 日時をローカルで読み、原本コピー → WebP 変換 →
+# data.js へ撮影日降順で正位置挿入 → landscapes-images へ差分デプロイ まで自動
+node upload.mjs path1.jpg path2.jpg --pref 北海道 --loc 積丹
 
-# After adding new photos, run these once:
-node add-years.mjs     # Pulls year from EXIF per Cloudinary resource
-node sort-photos.mjs   # Re-sorts photos within each prefecture by EXIF date (newest left)
-
-# Then commit/push, build, and deploy
-git add app/page.js && git commit -m "..." && git push
+# 本体サイトの反映
 npm run build && npx wrangler pages deploy out --project-name=landscapes-of-japan --branch=cloudflare-migration --commit-dirty=true
+git add app/data.js && git commit -m "..." && git push
 ```
+
+旧 `add-years.mjs` / `sort-photos.mjs` は **不要になった** (EXIF はアップロード時に
+確定挿入)。Cloudinary 版 upload は `upload-cloudinary-legacy.mjs.bak` に保管。
 
 **Important:** prefecture order in the PREFECTURES array is manually maintained in ISO order (北海道, 千葉県, 東京都, 神奈川県, 石川県, 岐阜県, 愛知県, 三重県, 京都府, 兵庫県, 奈良県, 徳島県, 香川県, 愛媛県, 高知県, 福岡県, 大分県, 沖縄県). `sort-photos.mjs` only sorts within a prefecture; it doesn't reorder the prefectures themselves.
 
@@ -161,7 +167,7 @@ Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras lan
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
-2. **Cloudinary 10MB upload limit:** Large JPEGs (>10MB) fail upload. User re-exports at lower quality — watch for `_1.jpg` suffix.
+2. **(解消済 2026-06)** 旧 Cloudinary 10MB 制限は画像セルフホスト化で消滅。フル画質 (30MB+) で書き出して良い。Large JPEGs (>10MB) fail upload. User re-exports at lower quality — watch for `_1.jpg` suffix.
 3. **Capture One strips GPS** on export. Don't rely on EXIF GPS for auto-location.
 4. **Mobile click sometimes doesn't fire after touchend** on iOS Safari with `filter`/`transform` elements. Lightbox controls now have BOTH `onClick` and `onTouchEnd` with `stopPropagation` + `preventDefault`.
 5. **`sort-photos.mjs` regex** depends on `year:` being present. Run `add-years.mjs` first if adding photos.
