@@ -56,14 +56,15 @@ export default async function LangLayout({ children, params }) {
         <link rel="apple-touch-icon" sizes="120x120" href="https://res.cloudinary.com/dr53c12fo/image/upload/w_120,h_120,c_fill,f_png,q_auto/DSC07601_cocitq.jpg" />
         {/* A1: cross-document View Transitions (Chrome 126+, Safari 18+) — graceful fallback */}
         <meta name="view-transition" content="same-origin" />
-        {/* P4: Speculation Rules — prerender same-origin pages on hover/pointerdown.
-            Chrome-family only; unknown script type is ignored elsewhere. Static
-            assets (xml/txt/json) excluded. Bandwidth is unmetered on CF Pages. */}
+        {/* P4: Speculation Rules — PREFETCH (document only) rather than prerender:
+            prerender speculatively loads every image on the target page, which
+            multiplied Cloudinary bandwidth (the metered resource). Prefetched
+            HTML is free on CF Pages and still gives near-instant navigations. */}
         <script
           type="speculationrules"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              prerender: [{
+              prefetch: [{
                 where: { and: [
                   { href_matches: "/*" },
                   { not: { href_matches: "/*.xml" } },
