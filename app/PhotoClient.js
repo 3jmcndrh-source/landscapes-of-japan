@@ -67,11 +67,11 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
       <main style={{ maxWidth: 1400, margin: "0 auto", padding: "100px 16px 80px" }}>
         <nav aria-label="breadcrumb" className="photo-breadcrumb-sticky" style={{ fontSize: 13, color: "rgba(232,228,223,.7)", marginBottom: 24, letterSpacing: ".05em" }}>
           <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
-          <span style={{ margin: "0 10px" }}>›</span>
+          <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
           <a href={`/${lang}/${prefSlug}`} style={{ color: "inherit", textDecoration: "none" }}>{prefLocal}</a>
-          <span style={{ margin: "0 10px" }}>›</span>
+          <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
           <a href={`/${lang}/${prefSlug}/${locSlug}`} style={{ color: "inherit", textDecoration: "none" }}>{locLocal}</a>
-          {photo.year && (<><span style={{ margin: "0 10px" }}>›</span><span>{photo.year}</span></>)}
+          {photo.year && (<><span className="bc-sep" style={{ margin: "0 10px" }}>›</span><span>{photo.year}</span></>)}
         </nav>
 
         {prevHref && <a className="photo-nav-arrow left" href={prevHref} aria-label="Previous photo" rel="prev">‹</a>}

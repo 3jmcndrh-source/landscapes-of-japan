@@ -13,11 +13,26 @@ import { getCollectionName } from "./collections.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
+import HeroRotation from "./HeroRotation.js";
+import PhotoOfTheDay from "./PhotoOfTheDay.js";
 import { ui } from "./ui-strings.js";
 import LangBar from "./LangBar.js";
 
 /* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
 const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage"];
+
+/* T8: ヒーローローテーション — シグネチャー写真 (タグ・構図データから選定)。
+   差し替えはこの配列を編集するだけ。順序 = 表示順。 */
+const HERO_ROTATION = [
+  "wcrs6gq9eutte8fwrzpp", // 新倉山浅間公園 — 桜×五重塔×富士 (春)
+  "sgqomcwsuq18xc1oyr3g", // 知床 — 断崖の海岸線 (夏)
+  "DSC07290_sz6x7s",      // 金閣寺 — 金×紅葉 (秋)
+  "qvsgt1aw6o4iwewvhmdc", // 白川郷 — 雪の合掌造り (冬)
+  "bxt5gtw3rnuqxrx46ppl", // 阿智村 天空の楽園 — 星空
+  "u5izvsliyoqm6rr0xnzh", // 松本城 — 漆黒の城
+  "wt6ow9shewohl0dm0lnj", // 宮古島 — エメラルドの海
+  "usvnljzznwmqu93sftg1", // さっぽろ雪まつり — 夜の雪像
+];
 
 const VIEW_ALL = {
   ja: "ガイド/詳細を見る", en: "Guide & details", zh: "查看指南与详情", "zh-tw": "查看指南與詳情",
@@ -955,6 +970,7 @@ export default function PageClient({ initialLang = "ja" }) {
 
         <div className="cin-hero">
           <div className={"cin-hero-bg" + (loaded ? " loaded" : "")} />
+          <HeroRotation ids={HERO_ROTATION} />
           <div className="cin-hero-content" style={{ zIndex: 2 }}>
             <h1 className="cin-hero-title">{t.hero.t}</h1>
             <p className="cin-hero-desc">{t.hero.d}</p>
@@ -1048,6 +1064,7 @@ export default function PageClient({ initialLang = "ja" }) {
               )}
             </div>
           </div>
+          <PhotoOfTheDay lang={lang} />
           <div className="cin-gallery">
             {PREFECTURES.map((pf, pi) => {
               const prefSlug = PREF_SLUGS[pf.pref];

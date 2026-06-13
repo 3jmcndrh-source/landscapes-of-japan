@@ -3,6 +3,25 @@ html,body{background:#0a0a0a;color:#e8e4df}
 html{scroll-behavior:smooth}
 /* T2 ambient color: registered so the radial tint cross-fades between photos */
 @property --amb{syntax:'<color>';inherits:true;initial-value:rgba(0,0,0,0)}
+
+/* ===== T10 typography tokens & ja refinements =====
+   トークン: 新規 CSS はこれを参照する (既存の見た目は不変)。 */
+:root{
+  --lh-ja:1.85;        /* ja 本文の基準行間 */
+  --lh-latin:1.7;
+  --ls-label:.22em;    /* セクションラベル (uppercase) */
+  --space-section:72px;
+  --space-block:40px;
+}
+/* 見出しの行折り最適化 — :where() で詳細度ゼロ (既存クラス指定が常に勝つ) */
+:where(h1,h2,h3){text-wrap:balance}
+/* ja: 見出しの約物詰め (palt)。本文は文節折返し (対応ブラウザのみ) */
+html[lang="ja"] :where(h1,h2,h3){font-feature-settings:"palt" 1}
+html[lang="ja"] :where(p,li){line-height:var(--lh-ja)}
+@supports (word-break: auto-phrase){
+  html[lang="ja"] :where(p,li,h1,h2,h3,figcaption){word-break:auto-phrase}
+}
+::selection{background:rgba(220,190,100,.3);color:#f5ead2}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
 
 /* ===== Top bar & language switcher ===== */
@@ -51,6 +70,31 @@ html{scroll-behavior:smooth}
 @media (max-width:768px){
   .cin-hero-bg::after{background-image:url("https://landscapes-images.pages.dev/hero_portrait_gray_w1080.webp")}
 }
+/* T9 Photo of the Day (mount後描画なので .reveal ではなく自前フェード) */
+.potd-wrap{display:flex;justify-content:center;padding:0 20px;margin:8px 0 44px;animation:potdIn .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes potdIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.potd-card{display:flex;align-items:center;gap:16px;max-width:560px;width:100%;padding:12px 18px 12px 12px;border:1px solid rgba(220,190,100,.22);border-radius:14px;text-decoration:none;transition:border-color .35s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.potd-card:hover{border-color:rgba(220,190,100,.5);transform:translateY(-2px)}
+.potd-card img{width:104px;height:70px;object-fit:cover;border-radius:8px;flex-shrink:0;display:block}
+.potd-text{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.potd-label{font-family:var(--font-zen-kaku),sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(220,190,100,.85)}
+.potd-loc{font-family:var(--font-playfair),'Playfair Display',serif;font-style:italic;font-size:20px;color:#f2ece2;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.potd-sub{font-family:var(--font-zen-kaku),sans-serif;font-size:12px;color:rgba(232,228,223,.6);letter-spacing:.06em}
+.potd-year{font-family:var(--font-playfair),serif;font-style:italic;color:rgba(220,190,100,.75);margin-left:10px}
+.potd-arrow{color:rgba(220,190,100,.7);font-size:18px;flex-shrink:0;transition:transform .35s}
+.potd-card:hover .potd-arrow{transform:translateX(4px)}
+@media(max-width:600px){.potd-card img{width:84px;height:58px}.potd-loc{font-size:17px}}
+
+/* T8 hero rotation: full-color signature photos above the grayscale base */
+.cin-hero-rot{position:absolute;inset:0;z-index:1;overflow:hidden;animation:hrMount 2.4s ease forwards}
+.cin-hero-rot::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(8,8,10,.52),rgba(8,8,10,.30) 42%,rgba(10,10,10,.66));pointer-events:none}
+.hr-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.hr-in{z-index:1;animation:hrZoom 9s linear forwards}
+.hr-out{z-index:2;animation:hrFadeOut 2.6s ease forwards,hrZoomOut 2.6s linear forwards}
+@keyframes hrMount{from{opacity:0}to{opacity:1}}
+@keyframes hrZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+@keyframes hrFadeOut{from{opacity:1}to{opacity:0}}
+@keyframes hrZoomOut{from{transform:scale(1.06)}to{transform:scale(1.075)}}
 .cin-hero-content{position:relative;z-index:2;text-align:center}
 .cin-hero-title{font-family:var(--font-playfair),'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(42px,8.5vw,104px);color:#f2ece2;letter-spacing:.06em;line-height:1.05;opacity:0;filter:blur(8px);transform:translateY(14px);animation:heroTitleIn 1.4s cubic-bezier(.2,.8,.2,1) .35s forwards}
 .cin-hero-title-jp{display:block;margin-top:14px;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-style:normal;font-weight:300;font-size:clamp(18px,3vw,28px);letter-spacing:.55em;color:rgba(232,228,223,.68);opacity:0;transform:translateY(10px);animation:heroSubIn 1.4s cubic-bezier(.2,.8,.2,1) .9s forwards}
@@ -354,6 +398,31 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 
 .photo-breadcrumb-sticky{position:sticky;top:10px;z-index:30;background:rgba(14,12,10,.72);backdrop-filter:blur(14px);border:1px solid rgba(220,190,100,.15);border-radius:999px;padding:9px 18px;width:fit-content;max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 .photo-breadcrumb-sticky::-webkit-scrollbar{display:none}
+
+/* ===== T11 RTL mirroring (ar/fa/he — html[dir=rtl] は layout.js が付与) =====
+   レイアウトと矢印グリフを鏡像化。スワイプとキーボードの ←/→ は物理方向のまま。 */
+[dir="rtl"] .cin-lb-info{left:auto;right:24px;text-align:right}
+[dir="rtl"] .cin-lb-close{right:auto;left:22px}
+[dir="rtl"] .cin-lb-arrow.left{left:auto;right:20px}
+[dir="rtl"] .cin-lb-arrow.right{right:auto;left:20px}
+[dir="rtl"] .cin-lb-arrow svg{transform:scaleX(-1)}
+[dir="rtl"] .cin-lb-wm{right:auto;left:18px}
+[dir="rtl"] .photo-nav-arrow{transform:translateY(-50%) scaleX(-1)}
+[dir="rtl"] .photo-nav-arrow.left{left:auto;right:14px}
+[dir="rtl"] .photo-nav-arrow.right{right:auto;left:14px}
+[dir="rtl"] .bc-sep{display:inline-block;transform:scaleX(-1)}
+[dir="rtl"] .th-caption{left:auto;right:48px;text-align:right}
+[dir="rtl"] .th-close{right:auto;left:24px}
+[dir="rtl"] .th-wm{right:auto;left:22px}
+[dir="rtl"] .cin-watermark{right:auto;left:14px}
+@media(max-width:768px){
+  [dir="rtl"] .cin-lb-info{left:auto;right:16px}
+  [dir="rtl"] .cin-lb-close{right:auto;left:14px}
+  [dir="rtl"] .photo-nav-arrow.left{left:auto;right:10px}
+  [dir="rtl"] .photo-nav-arrow.right{right:auto;left:10px}
+  [dir="rtl"] .th-caption{left:auto;right:22px}
+  [dir="rtl"] .th-close{right:auto;left:14px}
+}
 
 /* ===== Round E: language suggest + mobile polish ===== */
 .lang-suggest{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 78px);left:50%;transform:translateX(-50%);z-index:70;display:flex;align-items:center;gap:4px;background:rgba(15,13,11,.85);border:1px solid rgba(220,190,100,.4);border-radius:999px;padding:4px 6px 4px 4px;backdrop-filter:blur(12px);animation:heroSubIn .6s ease}

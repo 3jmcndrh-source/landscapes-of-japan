@@ -81,7 +81,7 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
         <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
           <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
-          <span style={{ margin: "0 10px" }}>›</span>
+          <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
           <span>{prefLocal}</span>
         </nav>
 

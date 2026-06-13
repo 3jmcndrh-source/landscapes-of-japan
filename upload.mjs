@@ -8,9 +8,11 @@
  *   1. EXIF DateTimeOriginal をローカルで読む (exifr) — 旧 sort-photos の
  *      「アップ直後は EXIF 未処理」タイミング bug は原理的に消滅
  *   2. 原本を C:/Users/3jmcn/Pictures/cloudinary-originals/ へコピー (マスター庫)
- *   3. sharp で images-dist/ に 300/600/1200/2400 WebP + 40b LQIP を生成
+ *      + manifest.json に追記 (再生成スクリプト群が新写真を見失わないように)
+ *   3. sharp で images-dist/ に 300/600/1200/2400/3840 WebP + 40b LQIP を生成
  *   4. data.js の該当 pref に「撮影日時の降順位置」へ直接挿入 (year 付き)
- *   5. wrangler で landscapes-images へデプロイ (--skip-deploy で省略可)
+ *   5. photo-colors.js / photo-months.js を再生成 (T2 アンビエント + T5 季節)
+ *   6. wrangler で landscapes-images へデプロイ (--skip-deploy で省略可)
  *
  * 本体サイトの反映は従来どおり: npm run build && wrangler pages deploy out ...
  * 旧 Cloudinary 版は upload-cloudinary-legacy.mjs.bak に保管。
@@ -72,9 +74,21 @@ for (const [i, f] of files.entries()) {
   }
   await sharp(f, { failOn: "none" }).rotate().resize({ width: 40 }).blur(8).webp({ quality: 50 }).toFile(path.join(DIST, `${id}_w40b.webp`));
 
-  added.push({ id, year, dt: when.getTime() });
+  const meta = await sharp(f, { failOn: "none" }).metadata();
+  added.push({ id, year, dt: when.getTime(), format: ext.slice(1), bytes: readFileSync(f).length, w: meta.width || 0, h: meta.height || 0 });
   console.log(`[${i + 1}/${files.length}] ${path.basename(f)} → ${id} (year=${year})`);
 }
+
+// ---- manifest.json 追記 (generate-variants/colors/months の再生成対象に含める) ----
+const manifestPath = path.join(MASTERS, "manifest.json");
+const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
+for (const a of added) {
+  if (!manifest.some((m) => m.public_id === a.id)) {
+    manifest.push({ public_id: a.id, format: a.format, bytes: a.bytes, w: a.w, h: a.h });
+  }
+}
+writeFileSync(manifestPath, JSON.stringify(manifest, null, 1), "utf-8");
+console.log(`manifest.json: ${manifest.length} entries`);
 
 // ---- insert into data.js, sorted by capture datetime desc within the pref ----
 // 既存写真は year しか持たないため、新規は「自分の year より大きい year の既存」の
@@ -104,6 +118,11 @@ for (const a of added) {
 const rebuilt = merged.map((l) => `      ${l.text}`).join("\n");
 writeFileSync(DATA_JS, content.replace(prefRe, (_, p1, _2, p3) => `${p1}\n${rebuilt}${p3}`), "utf-8");
 console.log(`\ndata.js 更新: ${pref} に ${added.length} 枚挿入 (撮影日降順)`);
+
+// ---- アンビエント色 + 撮影月の生成ファイルを更新 (manifest 追記済みなので全量再生成) ----
+console.log("\nphoto-colors.js / photo-months.js 再生成中...");
+execSync("node scripts/generate-photo-colors.mjs", { stdio: "inherit" });
+execSync("node scripts/generate-photo-months.mjs", { stdio: "inherit" });
 
 // ---- deploy images project ----
 if (!skipDeploy) {

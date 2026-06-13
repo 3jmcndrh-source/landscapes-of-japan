@@ -76,11 +76,12 @@ No trailing slashes on any URL — Next.js static export emits `/ja.html` and th
 Cloudinary は無料枠超過 (帯域48GB/月=220%) のため 2026-06 に完全離脱。画像は
 **専用 Cloudflare Pages プロジェクト `landscapes-images`** から配信 (帯域無制限・$0)。
 
-- **URL pattern:** `https://landscapes-images.pages.dev/{id}_w{300|600|1200|2400}.webp` / LQIP `{id}_w40b.webp`
+- **URL pattern:** `https://landscapes-images.pages.dev/{id}_w{300|600|1200|2400|3840}.webp` / LQIP `{id}_w40b.webp` (3840 は 2026-06-13 T4 で追加)
 - 特殊: `og.jpg`, `icon_{120..512}.png`, `hero_{landscape,portrait}_gray_w*.webp`, `shot_*.jpg`
-- 生成元: `scripts/generate-variants.mjs` (sharp, webp q80, 拡大なし)。任意の幅は `cldUrl(id,w)` が生成済み幅へ切り上げ解決
-- **原本マスター庫:** `C:/Users/3jmcn/Pictures/cloudinary-originals/` (7.4GB+。サイトには2400px版までしか載らないので必ずバックアップ対象に)
-- 容量: 20k ファイル/デプロイ ÷ 5変換 ≈ **写真5,000枚** まで。1枚のサイズ制限なし (旧10MB制限消滅)
+- 生成元: `scripts/generate-variants.mjs` (sharp, webp q80, 拡大なし)。任意の幅は `cldUrl(id,w)` が生成済み幅へ切り上げ解決。Lightbox 幅は `lbWidth()` (data.js: mobile 800 / 通常 2400 / 4K級 3840)
+- **派生生成ファイル (コミット対象):** `app/photo-colors.js` (主要色 ←`scripts/generate-photo-colors.mjs`) / `app/photo-months.js` (EXIF撮影月 ←`scripts/generate-photo-months.mjs`)。どちらも manifest.json 起点・原本庫が必要なのでビルドチェーン外 (手動 or upload.mjs が自動実行)
+- **原本マスター庫:** `C:/Users/3jmcn/Pictures/cloudinary-originals/` (7.4GB+, manifest.json が台帳。サイトには3840px版までしか載らないので必ずバックアップ対象に)
+- 容量: 20k ファイル/デプロイ ÷ 6変換 ≈ **写真3,300枚** まで。1枚のサイズ制限なし (旧10MB制限消滅)。現在 4,009/20k
 - 旧 Cloudinary アカウント (dr53c12fo) は 2026-06-19 停止予定のまま放置で OK
 
 ## Photo Management Workflow
@@ -89,8 +90,9 @@ Capture One exports strip GPS, so location must be passed manually.
 **フル画質書き出しで OK (10MB 制限なし)。**
 
 ```bash
-# 追加はこれ 1 コマンド: EXIF 日時をローカルで読み、原本コピー → WebP 変換 →
-# data.js へ撮影日降順で正位置挿入 → landscapes-images へ差分デプロイ まで自動
+# 追加はこれ 1 コマンド: EXIF 日時をローカルで読み、原本コピー + manifest.json 追記 →
+# WebP 変換 (300-3840+LQIP) → data.js へ撮影日降順で正位置挿入 →
+# photo-colors.js / photo-months.js 再生成 → landscapes-images へ差分デプロイ まで自動
 node upload.mjs path1.jpg path2.jpg --pref 北海道 --loc 積丹
 
 # 本体サイトの反映
@@ -164,6 +166,17 @@ Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras lan
 - **Lightbox:** `backdrop-filter: blur(28px) saturate(1.3)`, `lbIn`/`lbOut` animations, glassmorphism arrows, `touch-action: manipulation` on controls
 - **Language bar:** flat text (no box) + gold underline `::after` on active/hover
 
+## 鑑賞体験機能 (2026-06-13 サイト価値向上スプリント T1-T11)
+
+- **T1 シアターモード** `app/Theater.js`: 全画面オーバーレイのスライドショー (8秒クロスフェード+Ken Burns、reduced-motion で無効)。▶ボタン = ホームhero (全587枚シャッフル)・locページ (#photos 右上)・コレクション (header)。コレクションは季節フィルタ追従。Esc/✕/スペース/←→。
+- **T2 アンビエントカラー** `app/photo-colors.js`: 全写真の主要色 ("r,g,b")。`ambient(id, alpha)`。Lightbox (`--amb` + `.cin-lb::before`、@property で0.8sクロスフェード)・写真ページ背景・シアター背景・今日の一枚カードを染める。
+- **T4 4K**: WIDTHS に 3840 追加 (generate-variants/upload/data.js/Lightbox lbW/写真ページ srcset)。
+- **T5 季節**: `app/photo-months.js` (id→撮影月)。locページ シーズンバー (`app/SeasonBar.js`, server計算で月渡し)・写真ページ「この場所の他の季節」(server計算 otherSeasons prop)・コレクション季節チップ (photo.month を server付与)。**月マップはクライアントバンドルに載せない方針。**
+- **T6 ゴールデンアワー** `app/sun.js` (NOAA近似, JST固定) + `app/SunTimes.js`: locページ Weather 横に日の出/日の入り/GH帯 (高度6°境界)。client mount 後計算 (SSGミスマッチ回避)。
+- **T8 ヒーロー生命化** `app/HeroRotation.js` + PageClient `HERO_ROTATION` 配列 (8枚、差替はこの配列編集のみ): フルカラー9秒クロスフェード+ズーム。1枚目ロード完了まで非表示 = grayscale静止画フォールバック維持。reduced-motion では起動しない。
+- **T9 今日の一枚** `app/PhotoOfTheDay.js`: JST日付のdjb2ハッシュで決定的選出。ホームのギャラリー直前。client mount後描画なので `.reveal` 禁止 (IO登録に乗らない) — 自前 potdIn アニメ。
+- **T11 RTL**: `[dir="rtl"]` ブロック (globals.css) で Lightbox info/close/矢印・photo-nav・パンくず区切り (`.bc-sep`)・シアター caption/close を鏡像化。スワイプ・←→キーは物理方向のまま。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
@@ -172,6 +185,9 @@ Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras lan
 4. **Mobile click sometimes doesn't fire after touchend** on iOS Safari with `filter`/`transform` elements. Lightbox controls now have BOTH `onClick` and `onTouchEnd` with `stopPropagation` + `preventDefault`.
 5. **`sort-photos.mjs` regex** depends on `year:` being present. Run `add-years.mjs` first if adding photos.
 6. **Prefecture reorder via script caution:** An earlier script using `prefEnd = content.indexOf("];\n", ...)` was unreliable. The current sort script uses bracket-depth tracking.
+7. **photoLang import 漏れ (FIXED 2026-06-13):** 7言語化の際 LocClient だけ `photoLang` の import が漏れ、loc ページの lightbox を開くと ReferenceError でページ全体が白画面になっていた (本番で約1日存在)。新しい client に photoHref を足すときは `import { photoLang } from "./i18n-meta.js"` を忘れない。
+8. **preview ウィンドウは hidden:** preview MCP のブラウザは `document.visibilityState === "hidden"` で動く環境があり、**CSSアニメーションのタイムラインが0で凍結**する (例: hero タイトルが opacity 0 のまま)。これはバグではない。検証は computed style / getAnimations() / DOM で行い、スクショ (タイムアウトする) やアニメ進行の目視には頼らない。
+9. **PowerShell 5.1 と git commit:** コミットメッセージに `"` (二重引用符) を含めるとネイティブ引数渡しで分解されて pathspec エラーになる。here-string を使っても `"` 自体を避ける。
 
 ## SEO / Discoverability Setup
 
