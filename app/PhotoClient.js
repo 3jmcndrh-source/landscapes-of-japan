@@ -10,8 +10,15 @@ import { richAlt } from "./title-keywords.js";
 import LangBar from "./LangBar.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
 import { ambient } from "./photo-colors.js";
+import { SEASONS, seasonLabel } from "./SeasonBar.js";
 
-export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [], prevHref = null, nextHref = null, position = null }) {
+const OTHER_SEASONS_TITLE = {
+  ja: "この場所の他の季節", en: "Other Seasons Here", zh: "此地的其他季节", "zh-tw": "此地的其他季節",
+  ko: "이 장소의 다른 계절", de: "Andere Jahreszeiten hier", es: "Otras estaciones aquí", ar: "فصول أخرى هنا",
+};
+const SEASON_ICON = Object.fromEntries(SEASONS.map((s) => [s.key, s.icon]));
+
+export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [], otherSeasons = [], prevHref = null, nextHref = null, position = null }) {
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
   const locSlug = LOC_SLUGS[locJp];
@@ -161,6 +168,45 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
               >
                 {lang === "ja" ? `${locLocal} すべての写真` : `View all ${locLocal} photos`}
               </a>
+            </div>
+          </section>
+        )}
+
+        {/* T5: この場所の他の季節 (同loc・別シーズン) */}
+        {otherSeasons.length > 0 && (
+          <section style={{ marginTop: 56, padding: "0 8px" }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 20 }}>
+              {OTHER_SEASONS_TITLE[lang] || OTHER_SEASONS_TITLE.en}
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
+              {otherSeasons.map((p) => (
+                <a
+                  key={`season-${p.id}`}
+                  href={`/${lang}/${prefSlug}/${locSlug}/${p.id}`}
+                  className="cin-hcard"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onClick={(e) => { const im = e.currentTarget.querySelector("img"); if (im) im.style.viewTransitionName = "vt-hero"; }}
+                  style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111", display: "block" }}
+                >
+                  <img
+                    src={cldUrl(p.id, 600)}
+                    alt={`${locLocal} - ${seasonLabel(p.season, lang)}`}
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                  <div style={{ position: "absolute", top: 8, left: 8, display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 10px", borderRadius: 999, fontFamily: "var(--font-zen-kaku),sans-serif", zIndex: 3 }}>
+                    <span style={{ fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" }}>{SEASON_ICON[p.season]}</span>
+                    {seasonLabel(p.season, lang)}
+                  </div>
+                  {p.year && (
+                    <div style={{ position: "absolute", top: 8, right: 8, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 8px", borderRadius: 3, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", zIndex: 3 }}>
+                      {p.year}
+                    </div>
+                  )}
+                </a>
+              ))}
             </div>
           </section>
         )}

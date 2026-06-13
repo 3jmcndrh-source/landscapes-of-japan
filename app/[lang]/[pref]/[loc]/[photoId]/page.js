@@ -9,6 +9,7 @@ import { TAGS, TAG_SLUGS, getTagName } from "../../../../tags.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../../title-keywords.js";
 import { POSTS, getPostTitle, getPostExcerpt } from "../../../../content/blog/posts.js";
 import { ui } from "../../../../ui-strings.js";
+import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
 
 // 2026-06: 写真個別ページは PHOTO_LANGS (7言語) のみ pre-render。
 // 587枚 × 25言語 = 14,675 ファイルが 20k 上限を圧迫していたため、
@@ -113,6 +114,19 @@ export default async function Page({ params }) {
   // 同loc の他写真 (現在の写真を除く) を 6枚まで
   const sameLoc = pf.photos.filter((p) => p.loc === locJp && p.id !== photoId);
   const related = sameLoc.slice(0, 6);
+
+  // T5: この場所の他の季節 (同loc・現在と違う季節、季節ごとに最大2枚、計6枚まで)
+  const curSeason = seasonOf(PHOTO_MONTHS[photoId]);
+  const bySeason = {};
+  for (const p of sameLoc) {
+    const s = seasonOf(PHOTO_MONTHS[p.id]);
+    if (!s || s === curSeason) continue;
+    (bySeason[s] = bySeason[s] || []).push(p);
+  }
+  const otherSeasons = ["spring", "summer", "autumn", "winter"]
+    .filter((s) => bySeason[s])
+    .flatMap((s) => bySeason[s].slice(0, 2).map((p) => ({ ...p, season: s })))
+    .slice(0, 6);
 
   // I-1: 同loc 内の前後ナビ (newest-first array order = gallery order)
   const locPhotos = pf.photos.filter((p) => p.loc === locJp);
@@ -219,6 +233,7 @@ export default async function Page({ params }) {
         related={related}
         photoTags={photoTags}
         similarPhotos={similarPhotos}
+        otherSeasons={otherSeasons}
         prevHref={prevHref}
         nextHref={nextHref}
         position={photoIdx >= 0 ? { idx: photoIdx, total: locPhotos.length } : null}

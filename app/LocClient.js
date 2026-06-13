@@ -17,8 +17,10 @@ import LangBar from "./LangBar.js";
 import { useProgressiveReveal } from "./useProgressiveReveal.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
+import SunTimes from "./SunTimes.js";
+import SeasonBar from "./SeasonBar.js";
 
-export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition, highlights, quickAnswers }) {
+export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition, highlights, quickAnswers, photoMonths = [] }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
@@ -109,8 +111,10 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
             )}
           </div>
           {pf?.lat && pf?.lng && (
-            <div style={{ marginTop: 20 }}>
+            <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 12, alignItems: "flex-start" }}>
               <Weather lat={pf.lat} lng={pf.lng} lang={lang} />
+              <SunTimes lat={pf.lat} lng={pf.lng} lang={lang} />
+              <SeasonBar months={photoMonths} lang={lang} />
             </div>
           )}
         </header>

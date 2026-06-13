@@ -9,6 +9,7 @@ import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../title-keywords.js";
 import { POSTS, getPostTitle, getPostExcerpt } from "../../../content/blog/posts.js";
 import { ui } from "../../../ui-strings.js";
+import { PHOTO_MONTHS } from "../../../photo-months.js";
 
 export const dynamicParams = false;
 
@@ -90,6 +91,9 @@ export default async function Page({ params }) {
   const definition = getLocDefinition(locJp, lang);
   const highlights = getLocHighlights(locJp, lang);
   const quickAnswers = getLocQuickAnswers(locJp, lang);
+
+  // T5: この loc で撮影実績のある月 (シーズンバー用、クライアントに月マップを載せない)
+  const photoMonths = [...new Set(photos.map((p) => PHOTO_MONTHS[p.id]).filter(Boolean))];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -190,7 +194,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} desc={desc} faqs={faqs} definition={definition} highlights={highlights} quickAnswers={quickAnswers} />
+      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} desc={desc} faqs={faqs} definition={definition} highlights={highlights} quickAnswers={quickAnswers} photoMonths={photoMonths} />
       {relatedPosts.length > 0 && (
         <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>

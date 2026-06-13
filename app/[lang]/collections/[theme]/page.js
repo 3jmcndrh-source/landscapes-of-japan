@@ -3,6 +3,7 @@ import CollectionClient from "../../../CollectionClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc, getCollectionPhotos, getCollectionGuide } from "../../../collections.js";
+import { PHOTO_MONTHS } from "../../../photo-months.js";
 
 export const dynamicParams = false;
 
@@ -51,7 +52,8 @@ export default async function Page({ params }) {
   const { lang, theme } = await params;
   if (!COLLECTIONS[theme]) notFound();
 
-  const photos = getCollectionPhotos(theme, PREFECTURES);
+  // T5: 季節フィルタ用に撮影月を付与 (クライアントに月マップ全体を載せない)
+  const photos = getCollectionPhotos(theme, PREFECTURES).map((p) => ({ ...p, month: PHOTO_MONTHS[p.id] || null }));
   if (photos.length === 0) notFound();
 
   const name = getCollectionName(theme, lang);

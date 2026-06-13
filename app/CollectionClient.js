@@ -9,6 +9,11 @@ import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
 import { photoLang } from "./i18n-meta.js";
+import { SEASONS, seasonLabel } from "./SeasonBar.js";
+
+/* T5: 月→季節 (photo-months.js の seasonOf と同義。月は server から photo.month で渡る) */
+const seasonOf = (m) => (!m ? null : m <= 2 || m === 12 ? "winter" : m <= 5 ? "spring" : m <= 8 ? "summer" : "autumn");
+const ALL_LABEL = { ja: "すべて", en: "All", zh: "全部", "zh-tw": "全部", ko: "전체", de: "Alle", es: "Todas", ar: "الكل" };
 
 // A8: ガイドセクションのラベル翻訳 (5 base langs + 15 langs は en fallback)
 const GUIDE_LABELS = {
@@ -46,9 +51,21 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
     if (lb !== 2400) setImgSizes({ thumbW: lb === 800 ? 600 : 1200, lbW: lb });
   }, []);
 
+  /* T5: 季節フィルタ */
+  const [seasonFilter, setSeasonFilter] = useState(null);
+  const seasonCounts = useMemo(() => {
+    const c = {};
+    for (const p of photos) { const s = seasonOf(p.month); if (s) c[s] = (c[s] || 0) + 1; }
+    return c;
+  }, [photos]);
+  const visible = useMemo(
+    () => (seasonFilter ? photos.filter((p) => seasonOf(p.month) === seasonFilter) : photos),
+    [photos, seasonFilter]
+  );
+
   const allPhotos = useMemo(
-    () => photos.map((p) => ({ ...p, url: cldUrl(p.id, imgSizes.lbW) })),
-    [photos, imgSizes.lbW]
+    () => visible.map((p) => ({ ...p, url: cldUrl(p.id, imgSizes.lbW) })),
+    [visible, imgSizes.lbW]
   );
 
   const [lightbox, setLightbox] = useState(null);
@@ -156,8 +173,47 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
         )}
 
         <section>
+          {/* T5: 季節フィルタチップ (2季節以上ある場合のみ) */}
+          {Object.keys(seasonCounts).length >= 2 && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+              <button
+                onClick={() => { setSeasonFilter(null); setLightbox(null); }}
+                style={{
+                  background: !seasonFilter ? "rgba(220,190,100,.22)" : "rgba(255,255,255,.04)",
+                  border: !seasonFilter ? "1px solid rgba(220,190,100,.55)" : "1px solid rgba(255,255,255,.12)",
+                  color: !seasonFilter ? "rgba(245,225,170,1)" : "rgba(232,228,223,.7)",
+                  borderRadius: 999, padding: "6px 16px", cursor: "pointer",
+                  fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, letterSpacing: ".05em",
+                  transition: "all .3s",
+                }}
+              >
+                {ALL_LABEL[lang] || ALL_LABEL.en} ({photos.length})
+              </button>
+              {SEASONS.filter((s) => seasonCounts[s.key]).map((s) => {
+                const active = seasonFilter === s.key;
+                return (
+                  <button
+                    key={s.key}
+                    onClick={() => { setSeasonFilter(active ? null : s.key); setLightbox(null); }}
+                    style={{
+                      display: "inline-flex", alignItems: "center", gap: 6,
+                      background: active ? "rgba(220,190,100,.22)" : "rgba(255,255,255,.04)",
+                      border: active ? "1px solid rgba(220,190,100,.55)" : "1px solid rgba(255,255,255,.12)",
+                      color: active ? "rgba(245,225,170,1)" : "rgba(232,228,223,.7)",
+                      borderRadius: 999, padding: "6px 16px", cursor: "pointer",
+                      fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, letterSpacing: ".05em",
+                      transition: "all .3s",
+                    }}
+                  >
+                    <span style={{ fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" }}>{s.icon}</span>
+                    {seasonLabel(s.key, lang)} ({seasonCounts[s.key]})
+                  </button>
+                );
+              })}
+            </div>
+          )}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-            {photos.map((photo, i) => (
+            {visible.map((photo, i) => (
               <div
                 key={photo.id + i}
                 className="cin-hcard"
@@ -267,7 +323,7 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
       )}
       {theater && (
         <Theater
-          photos={photos}
+          photos={visible}
           lang={lang}
           onClose={() => setTheater(false)}
           labels={(p) => ({ prefName: getPrefName(p.pref, lang), locName: getLocName(p.loc, lang) })}
