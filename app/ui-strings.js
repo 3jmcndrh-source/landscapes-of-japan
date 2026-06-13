@@ -28,6 +28,14 @@ export const UI_STRINGS = {
     nl: "Kenmerken", pl: "Kluczowe cechy", sv: "Höjdpunkter", fa: "ویژگی‌های کلیدی",
     he: "תכונות עיקריות", bn: "মূল বৈশিষ্ট্য", tl: "Mga pangunahing tampok", uk: "Ключові особливості",
   },
+  theater: {
+    ja: "シアター", en: "Theater", zh: "剧场", "zh-tw": "劇場", ko: "시어터",
+    es: "Teatro", fr: "Théâtre", de: "Theater", pt: "Teatro",
+    it: "Teatro", ru: "Театр", ar: "مسرح", hi: "थिएटर",
+    th: "โรงละคร", vi: "Trình chiếu", id: "Teater", tr: "Tiyatro",
+    nl: "Theater", pl: "Teatr", sv: "Teater", fa: "تئاتر",
+    he: "תיאטרון", bn: "থিয়েটার", tl: "Teatro", uk: "Театр",
+  },
 };
 
 export function ui(key, lang) {

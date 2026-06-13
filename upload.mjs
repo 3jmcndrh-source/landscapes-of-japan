@@ -25,7 +25,7 @@ import path from "path";
 const MASTERS = "C:/Users/3jmcn/Pictures/cloudinary-originals";
 const DIST = "images-dist";
 const DATA_JS = path.resolve("app", "data.js");
-const WIDTHS = [300, 600, 1200, 2400];
+const WIDTHS = [300, 600, 1200, 2400, 3840];
 
 const args = process.argv.slice(2);
 const getOpt = (name) => {

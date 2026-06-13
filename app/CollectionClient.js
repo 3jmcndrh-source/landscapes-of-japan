@@ -1,10 +1,14 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
+import { TR, getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionGuide } from "./collections.js";
 import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import TopNav from "./TopNav.js";
+import Lightbox from "./Lightbox.js";
+import Theater from "./Theater.js";
+import { ui } from "./ui-strings.js";
+import { photoLang } from "./i18n-meta.js";
 
 // A8: ガイドセクションのラベル翻訳 (5 base langs + 15 langs は en fallback)
 const GUIDE_LABELS = {
@@ -38,8 +42,8 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
 
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768)
-      setImgSizes({ thumbW: 600, lbW: 800 });
+    const lb = lbWidth();
+    if (lb !== 2400) setImgSizes({ thumbW: lb === 800 ? 600 : 1200, lbW: lb });
   }, []);
 
   const allPhotos = useMemo(
@@ -49,6 +53,7 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
 
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
+  const [theater, setTheater] = useState(false);
 
   const openLightbox = useCallback(
     (idx) => setLightbox(idx),
@@ -66,17 +71,6 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
     () => setLightbox((i) => (i >= allPhotos.length - 1 ? 0 : i + 1)),
     [allPhotos]
   );
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (lightbox === null) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") lbPrev();
-      if (e.key === "ArrowRight") lbNext();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, closeLightbox, lbPrev, lbNext]);
 
   const cur = lightbox !== null ? allPhotos[lightbox] : null;
 
@@ -119,6 +113,14 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
           <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.55)", marginTop: 10, letterSpacing: ".05em" }}>
             {photos.length} {lang === "ja" ? "枚" : "photos"} · {byPref.length} {lang === "ja" ? "都道府県" : "prefectures"}
           </div>
+          {photos.length > 1 && (
+            <div style={{ marginTop: 18 }}>
+              <button className="th-launch" onClick={() => setTheater(true)} aria-label={ui("theater", lang)}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
+                {ui("theater", lang)}
+              </button>
+            </div>
+          )}
         </header>
 
         {desc && (
@@ -251,14 +253,25 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
       </main>
 
       {lightbox !== null && cur && (
-        <div className={"cin-lb" + (lbClosing ? " closing" : "")} onClick={closeLightbox} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(10,10,10,.88)", backdropFilter: "blur(28px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>←</button>
-          <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} style={{ position: "relative" }}>
-            <img src={cur.url} alt={`${getLocName(cur.loc, lang)} - ${getPrefName(cur.pref, lang)}`} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
-            <div className="cin-lb-wm">Landscapes of Japan</div>
-          </div>
-          <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>→</button>
-        </div>
+        <Lightbox
+          photos={allPhotos}
+          index={lightbox}
+          closing={lbClosing}
+          lang={lang}
+          onClose={closeLightbox}
+          onPrev={lbPrev}
+          onNext={lbNext}
+          labels={(p) => ({ prefName: getPrefName(p.pref, lang), locName: getLocName(p.loc, lang), alt: `${getLocName(p.loc, lang)} - ${getPrefName(p.pref, lang)} | ${name}` })}
+          photoHref={(p) => (PREF_SLUGS[p.pref] && LOC_SLUGS[p.loc] && p.id ? `/${photoLang(lang)}/${PREF_SLUGS[p.pref]}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
+        />
+      )}
+      {theater && (
+        <Theater
+          photos={photos}
+          lang={lang}
+          onClose={() => setTheater(false)}
+          labels={(p) => ({ prefName: getPrefName(p.pref, lang), locName: getLocName(p.loc, lang) })}
+        />
       )}
     </div>
   );

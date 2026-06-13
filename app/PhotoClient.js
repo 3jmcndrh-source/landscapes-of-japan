@@ -9,6 +9,7 @@ import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import { richAlt } from "./title-keywords.js";
 import LangBar from "./LangBar.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
+import { ambient } from "./photo-colors.js";
 
 export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [], prevHref = null, nextHref = null, position = null }) {
   const t = TR[lang] || TR.en;
@@ -47,9 +48,10 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
 
   const photoUrl = cldUrl(photo.id, imgW);
   const altText = richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang });
+  const amb = ambient(photo.id, 0.14);
 
   return (
-    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+    <div style={{ background: amb ? `radial-gradient(120% 58% at 50% 0%, ${amb}, transparent 62%) #0a0a0a` : "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
       <div className="top-bar scrolled">
         <LangBar lang={lang} langs={PHOTO_LANGS} hrefFor={(c) => `/${c}/${prefSlug}/${locSlug}/${photo.id}`} />
       </div>
@@ -73,7 +75,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
         <figure style={{ margin: 0, marginBottom: 32, position: "relative", background: "#111", borderRadius: 4, overflow: "hidden" }} onTouchStart={onFigTouchStart} onTouchEnd={onFigTouchEnd}>
           <img
             src={photoUrl}
-            srcSet={`${cldUrl(photo.id, 800)} 800w, ${cldUrl(photo.id, 1200)} 1200w, ${cldUrl(photo.id, 2400)} 2400w`}
+            srcSet={`${cldUrl(photo.id, 800)} 800w, ${cldUrl(photo.id, 1200)} 1200w, ${cldUrl(photo.id, 2400)} 2400w, ${cldUrl(photo.id, 3840)} 3840w`}
             sizes="(max-width: 768px) 100vw, min(1400px, 96vw)"
             alt={altText}
             fetchPriority="high"

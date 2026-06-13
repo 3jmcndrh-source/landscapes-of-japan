@@ -1,8 +1,11 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
+import { TR, getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
 import TopNav from "./TopNav.js";
+import Lightbox from "./Lightbox.js";
+import { photoLang } from "./i18n-meta.js";
+import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 
 export default function TagClient({ lang, slug, photos, desc }) {
   const t = TR[lang] || TR.en;
@@ -10,8 +13,8 @@ export default function TagClient({ lang, slug, photos, desc }) {
 
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768)
-      setImgSizes({ thumbW: 600, lbW: 800 });
+    const lb = lbWidth();
+    if (lb !== 2400) setImgSizes({ thumbW: lb === 800 ? 600 : 1200, lbW: lb });
   }, []);
 
   const allPhotos = useMemo(
@@ -29,17 +32,6 @@ export default function TagClient({ lang, slug, photos, desc }) {
   }, []);
   const lbPrev = useCallback(() => setLightbox((i) => (i <= 0 ? allPhotos.length - 1 : i - 1)), [allPhotos]);
   const lbNext = useCallback(() => setLightbox((i) => (i >= allPhotos.length - 1 ? 0 : i + 1)), [allPhotos]);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (lightbox === null) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") lbPrev();
-      if (e.key === "ArrowRight") lbNext();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, closeLightbox, lbPrev, lbNext]);
 
   const cur = lightbox !== null ? allPhotos[lightbox] : null;
   const tagsLabel = lang === "ja" ? "タグ" : "Tags";
@@ -133,14 +125,17 @@ export default function TagClient({ lang, slug, photos, desc }) {
       </main>
 
       {lightbox !== null && cur && (
-        <div className={"cin-lb" + (lbClosing ? " closing" : "")} onClick={closeLightbox} style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(10,10,10,.88)", backdropFilter: "blur(28px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); lbPrev(); }}>←</button>
-          <div className="cin-lb-inner" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} style={{ position: "relative" }}>
-            <img src={cur.url} alt={`${getLocName(cur.loc, lang)} - ${getPrefName(cur.pref, lang)}`} draggable="false" style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain" }} onContextMenu={(e) => e.preventDefault()} />
-            <div className="cin-lb-wm">Landscapes of Japan</div>
-          </div>
-          <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); lbNext(); }}>→</button>
-        </div>
+        <Lightbox
+          photos={allPhotos}
+          index={lightbox}
+          closing={lbClosing}
+          lang={lang}
+          onClose={closeLightbox}
+          onPrev={lbPrev}
+          onNext={lbNext}
+          labels={(p) => ({ prefName: getPrefName(p.pref, lang), locName: getLocName(p.loc, lang), alt: `${getLocName(p.loc, lang)} - ${getPrefName(p.pref, lang)} | #${name}` })}
+          photoHref={(p) => (PREF_SLUGS[p.pref] && LOC_SLUGS[p.loc] && p.id ? `/${photoLang(lang)}/${PREF_SLUGS[p.pref]}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
+        />
       )}
     </div>
   );

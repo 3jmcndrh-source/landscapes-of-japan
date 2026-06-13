@@ -23,7 +23,7 @@ const OUT = "images-dist";
 mkdirSync(OUT, { recursive: true });
 
 const manifest = JSON.parse(readFileSync(path.join(SRC, "manifest.json"), "utf-8"));
-const WIDTHS = [300, 600, 1200, 2400];
+const WIDTHS = [300, 600, 1200, 2400, 3840];
 const HERO_ID = "DSC07601_cocitq";
 
 sharp.concurrency(4);

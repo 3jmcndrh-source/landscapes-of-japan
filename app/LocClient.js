@@ -1,6 +1,7 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder } from "./data.js";
+import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
+import { photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
 import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
@@ -10,6 +11,8 @@ import { getLocInfo } from "./loc-info.js";
 import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
+import Theater from "./Theater.js";
+import { ui } from "./ui-strings.js";
 import LangBar from "./LangBar.js";
 import { useProgressiveReveal } from "./useProgressiveReveal.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
@@ -25,10 +28,11 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
 
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
+  const [theater, setTheater] = useState(false);
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768)
-      setImgSizes({ thumbW: 600, lbW: 800 });
+    const lb = lbWidth();
+    if (lb !== 2400) setImgSizes({ thumbW: lb === 800 ? 600 : 1200, lbW: lb });
   }, []);
 
   const photos = useMemo(() => {
@@ -182,6 +186,14 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
         )}
 
         <section id="photos" style={{ scrollMarginTop: 70 }}>
+          {photos.length > 1 && (
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
+              <button className="th-launch" onClick={() => setTheater(true)} aria-label={ui("theater", lang)}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
+                {ui("theater", lang)}
+              </button>
+            </div>
+          )}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
             {photos.slice(0, gridCount).map((photo, i) => (
               <div
@@ -401,6 +413,14 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           onNext={lbNext}
           labels={(p) => ({ prefName: prefLocal, locName: locLocal, alt: richAlt({ locName: locLocal, prefName: prefLocal, year: p.year, locJp, lang }) })}
           photoHref={(p) => (prefSlug && locSlug && p.id ? `/${photoLang(lang)}/${prefSlug}/${locSlug}/${p.id}` : null)}
+        />
+      )}
+      {theater && (
+        <Theater
+          photos={photos.map((p) => ({ id: p.id, pref: prefJp, loc: locJp, year: p.year || null }))}
+          lang={lang}
+          onClose={() => setTheater(false)}
+          labels={() => ({ prefName: prefLocal, locName: locLocal })}
         />
       )}
     </div>

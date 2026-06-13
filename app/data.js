@@ -28,14 +28,24 @@ export const TR = {
 };
 
 /* 2026-06: 画像配信を Cloudinary → 自前 Cloudflare Pages (landscapes-images) に移行。
-   変換は scripts/generate-variants.mjs がローカル sharp で事前生成 (300/600/1200/2400 WebP
-   + 40px blur LQIP)。帯域無制限・無料。任意の w は生成済み幅へ切り上げて解決する。 */
+   変換は scripts/generate-variants.mjs がローカル sharp で事前生成 (300/600/1200/2400/3840
+   WebP + 40px blur LQIP)。帯域無制限・無料。任意の w は生成済み幅へ切り上げて解決する。 */
 export const IMG_BASE = "https://landscapes-images.pages.dev";
-const IMG_WIDTHS = [300, 600, 1200, 2400];
+const IMG_WIDTHS = [300, 600, 1200, 2400, 3840];
 
 export const cldUrl = (id, w) => {
-  const pick = IMG_WIDTHS.find((x) => x >= (w || 1200)) || 2400;
+  const pick = IMG_WIDTHS.find((x) => x >= (w || 1200)) || 3840;
   return `${IMG_BASE}/${encodeURIComponent(id)}_w${pick}.webp`;
+};
+
+/* T4: Lightbox 用の画像幅 — モバイルは 800、4K 級ディスプレイ (CSS幅1600px+ かつ
+   実効ピクセル 3200+ ) は 3840、それ以外は 2400。 */
+export const lbWidth = () => {
+  if (typeof window === "undefined") return 2400;
+  const w = window.innerWidth;
+  if (w <= 768) return 800;
+  if (w >= 1600 && w * (window.devicePixelRatio || 1) >= 3200) return 3840;
+  return 2400;
 };
 
 // B1: low-quality image placeholder — 40px + blur の事前生成版 (~2KB)。

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder } from "./data.js";
+import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { SITE_URL, HREFLANG, photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import TopNav from "./TopNav.js";
@@ -20,8 +20,8 @@ export default function PrefClient({ lang, prefJp, desc, faqs, definition, highl
   const [lbClosing, setLbClosing] = useState(false);
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768)
-      setImgSizes({ thumbW: 600, lbW: 800 });
+    const lb = lbWidth();
+    if (lb !== 2400) setImgSizes({ thumbW: lb === 800 ? 600 : 1200, lbW: lb });
   }, []);
 
   const allPhotos = useMemo(() => {

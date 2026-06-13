@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { ambient } from "./photo-colors.js";
 
 /**
  * Shared lightbox (Round B): one gesture/zoom/keyboard implementation for
@@ -209,7 +210,7 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       onClick={(e) => { if (e.target === e.currentTarget && !zoomed) onClose(); }}
-      style={{ touchAction: "none", overscrollBehavior: "contain" }}
+      style={{ touchAction: "none", overscrollBehavior: "contain", "--amb": ambient(cur.id, 0.16) || "rgba(0,0,0,0)" }}
     >
       <button className="cin-lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} onTouchEnd={stopTouch(onClose)} aria-label="Close">×</button>
       <div className="cin-lb-info">

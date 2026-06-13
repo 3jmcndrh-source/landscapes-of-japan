@@ -5,13 +5,15 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 let _d3Promise = null;
 const loadD3 = () => (_d3Promise ??= import("d3"));
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG, photoLang } from "./i18n-meta.js";
-import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH } from "./data.js";
+import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
 import { getCollectionName } from "./collections.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
+import Theater from "./Theater.js";
+import { ui } from "./ui-strings.js";
 import LangBar from "./LangBar.js";
 
 /* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
@@ -578,6 +580,7 @@ export default function PageClient({ initialLang = "ja" }) {
   const [lang, setLang] = useState(initialLang);
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
+  const [theaterOpen, setTheaterOpen] = useState(false);
   const closeLightbox = useCallback(() => {
     setLbClosing(true);
     setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
@@ -590,7 +593,8 @@ export default function PageClient({ initialLang = "ja" }) {
   /* Responsive image sizes (default to desktop for SSR, update on client) */
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
   useEffect(() => {
-    if (window.innerWidth <= 768) setImgSizes({ thumbW: 600, lbW: 800 });
+    const lb = lbWidth();
+    if (lb !== 2400) setImgSizes({ thumbW: lb === 800 ? 600 : 1200, lbW: lb });
   }, []);
   const { thumbW, lbW } = imgSizes;
 
@@ -961,6 +965,12 @@ export default function PageClient({ initialLang = "ja" }) {
                 </a>
               ))}
             </nav>
+            <div style={{ marginTop: 22, display: "flex", justifyContent: "center" }}>
+              <button className="th-launch" onClick={() => setTheaterOpen(true)} aria-label={ui("theater", lang)}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
+                {ui("theater", lang)}
+              </button>
+            </div>
           </div>
         </div>
         <section className="cin-section">
@@ -1155,6 +1165,15 @@ export default function PageClient({ initialLang = "ja" }) {
             const ls = p.loc ? LOC_SLUGS[p.loc] : null;
             return ps && ls && p.id ? `/${photoLang(lang)}/${ps}/${ls}/${p.id}` : null;
           }}
+        />
+      )}
+      {theaterOpen && (
+        <Theater
+          photos={allPhotos}
+          lang={lang}
+          onClose={() => setTheaterOpen(false)}
+          initialShuffle
+          labels={(p) => ({ prefName: getPrefName(p.pref, lang), locName: p.loc ? getLocName(p.loc, lang) : "" })}
         />
       )}
     </div>
