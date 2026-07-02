@@ -847,7 +847,9 @@ export default function PageClient({ initialLang = "ja" }) {
     const targets = document.querySelectorAll(".reveal");
     targets.forEach(el => io.observe(el));
     return () => io.disconnect();
-  }, [lang]);
+    // galleryMode を含める: 撮影日順↔地域別 の切替で .cin-pref-group.reveal が
+    // 再マウントされるため、オブザーバーを張り直さないと opacity:0 のまま残る。
+  }, [lang, galleryMode]);
 
   /* Keyboard / preload / scroll-lock now live inside shared <Lightbox/> */
 
