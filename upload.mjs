@@ -11,7 +11,7 @@
  *      + manifest.json に追記 (再生成スクリプト群が新写真を見失わないように)
  *   3. sharp で images-dist/ に 300/600/1200/2400/3840 WebP + 40b LQIP を生成
  *   4. data.js の該当 pref に「撮影日時の降順位置」へ直接挿入 (year 付き)
- *   5. photo-colors.js / photo-months.js を再生成 (T2 アンビエント + T5 季節)
+ *   5. photo-colors.js / photo-months.js / photo-dates.js を再生成 (色 + 季節 + 撮影日順)
  *   6. wrangler で landscapes-images へデプロイ (--skip-deploy で省略可)
  *
  * 本体サイトの反映は従来どおり: npm run build && wrangler pages deploy out ...
@@ -119,10 +119,11 @@ const rebuilt = merged.map((l) => `      ${l.text}`).join("\n");
 writeFileSync(DATA_JS, content.replace(prefRe, (_, p1, _2, p3) => `${p1}\n${rebuilt}${p3}`), "utf-8");
 console.log(`\ndata.js 更新: ${pref} に ${added.length} 枚挿入 (撮影日降順)`);
 
-// ---- アンビエント色 + 撮影月の生成ファイルを更新 (manifest 追記済みなので全量再生成) ----
-console.log("\nphoto-colors.js / photo-months.js 再生成中...");
+// ---- アンビエント色 + 撮影月 + 撮影日 の生成ファイルを更新 (manifest 追記済みなので全量再生成) ----
+console.log("\nphoto-colors.js / photo-months.js / photo-dates.js 再生成中...");
 execSync("node scripts/generate-photo-colors.mjs", { stdio: "inherit" });
 execSync("node scripts/generate-photo-months.mjs", { stdio: "inherit" });
+execSync("node scripts/generate-photo-dates.mjs", { stdio: "inherit" });
 
 // ---- deploy images project ----
 if (!skipDeploy) {

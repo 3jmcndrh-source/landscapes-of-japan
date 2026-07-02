@@ -176,6 +176,7 @@ Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras lan
 - **T8 ヒーロー生命化** `app/HeroRotation.js` + PageClient `HERO_ROTATION` 配列 (8枚、差替はこの配列編集のみ): フルカラー9秒クロスフェード+ズーム。1枚目ロード完了まで非表示 = grayscale静止画フォールバック維持。reduced-motion では起動しない。
 - **T9 今日の一枚** `app/PhotoOfTheDay.js`: JST日付のdjb2ハッシュで決定的選出。ホームのギャラリー直前。client mount後描画なので `.reveal` 禁止 (IO登録に乗らない) — 自前 potdIn アニメ。
 - **T11 RTL**: `[dir="rtl"]` ブロック (globals.css) で Lightbox info/close/矢印・photo-nav・パンくず区切り (`.bc-sep`)・シアター caption/close を鏡像化。スワイプ・←→キーは物理方向のまま。
+- **撮影日順ビュー (2026-07)** `app/photo-dates.js` (id→"YYYY-MM-DD" ←`scripts/generate-photo-dates.mjs`): ホームのギャラリーに「地域別 / 撮影日順」トグル (PageClient `galleryMode`)。撮影日順は全587枚を都道府県横断で新しい順に並べ、年月ごとに見出し (`.cin-dategrid`)。ライトボックスと共有要素は表示中の順 (`activePhotos`) に追従。日付グリッドは client mount 後にのみ表示され `.reveal` は使わない (IO 非登録で不可視化を回避)。月マップと同様にコミット済み生成物・ビルドチェーン外、upload.mjs が再生成。
 
 ## Known Gotchas & Historical Bugs
 

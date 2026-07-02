@@ -6,6 +6,7 @@ let _d3Promise = null;
 const loadD3 = () => (_d3Promise ??= import("d3"));
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG, photoLang } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH, lbWidth } from "./data.js";
+import { PHOTO_DATES } from "./photo-dates.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
@@ -41,6 +42,19 @@ const VIEW_ALL = {
   ru: "Гид и подробности", ar: "الدليل والتفاصيل", hi: "गाइड और विवरण",
   th: "คู่มือและรายละเอียด", vi: "Hướng dẫn & chi tiết", id: "Panduan & detail",
   tr: "Rehber ve ayrıntılar", nl: "Gids & details", pl: "Przewodnik i szczegóły", sv: "Guide & detaljer",
+};
+
+/* ギャラリー表示モード切替 (地域別 / 撮影日順) のラベル。未対応言語は en フォールバック */
+const GALLERY_MODE_LABELS = {
+  region: { ja: "地域別", en: "By region", zh: "按地区", "zh-tw": "按地區", ko: "지역별", es: "Por región", fr: "Par région", de: "Nach Region", pt: "Por região", it: "Per regione", ru: "По региону", ar: "حسب المنطقة", hi: "क्षेत्र अनुसार", th: "ตามภูมิภาค", vi: "Theo vùng", id: "Per wilayah", tr: "Bölgeye göre", nl: "Op regio", pl: "Wg regionu", sv: "Efter region" },
+  date: { ja: "撮影日順", en: "By date", zh: "按拍摄日期", "zh-tw": "按拍攝日期", ko: "촬영일순", es: "Por fecha", fr: "Par date", de: "Nach Datum", pt: "Por data", it: "Per data", ru: "По дате", ar: "حسب التاريخ", hi: "तिथि अनुसार", th: "ตามวันที่", vi: "Theo ngày", id: "Per tanggal", tr: "Tarihe göre", nl: "Op datum", pl: "Wg daty", sv: "Efter datum" },
+};
+const MONTH_EN = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthLabel = (year, month, lang) => {
+  if (!month) return String(year || "");
+  if (lang === "ja" || lang === "zh" || lang === "zh-tw") return `${year}年${month}月`;
+  if (lang === "ko") return `${year}년 ${month}월`;
+  return `${MONTH_EN[month]} ${year}`;
 };
 
 /* ── Embedded Japan GeoJSON — real lat/lng, D3 projects accurately ── */
@@ -596,6 +610,7 @@ export default function PageClient({ initialLang = "ja" }) {
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
   const [theaterOpen, setTheaterOpen] = useState(false);
+  const [galleryMode, setGalleryMode] = useState("region"); // "region" | "date"
   const closeLightbox = useCallback(() => {
     setLbClosing(true);
     setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
@@ -613,7 +628,7 @@ export default function PageClient({ initialLang = "ja" }) {
   }, []);
   const { thumbW, lbW } = imgSizes;
 
-  /* Flat list of all photos for lightbox navigation */
+  /* Flat list of all photos for lightbox navigation (region order) */
   const allPhotos = useMemo(() => {
     const list = [];
     PREFECTURES.forEach(pf => {
@@ -624,16 +639,28 @@ export default function PageClient({ initialLang = "ja" }) {
     return list;
   }, [lbW]);
 
+  /* 撮影日順の並び (都道府県をまたいだ厳密な時系列, 新しい順)。撮影日不明は年で代替。 */
+  const datePhotos = useMemo(() => {
+    return [...allPhotos].sort((a, b) => {
+      const da = PHOTO_DATES[a.id] || (a.year ? `${a.year}-00-00` : "0000-00-00");
+      const db = PHOTO_DATES[b.id] || (b.year ? `${b.year}-00-00` : "0000-00-00");
+      return db < da ? -1 : db > da ? 1 : 0; // desc
+    });
+  }, [allPhotos]);
+
+  /* ライトボックスと共有要素は現在の表示順に追従する */
+  const activePhotos = galleryMode === "date" ? datePhotos : allPhotos;
+
   const openLightbox = useCallback((url) => {
-    const idx = allPhotos.findIndex(p => p.url === url);
+    const idx = activePhotos.findIndex(p => p.url === url);
     const target = idx >= 0 ? idx : 0;
     setLightbox(target);
     // URL hash 設定 (#23: shareable photo URL)
-    const photoId = allPhotos[target]?.id;
+    const photoId = activePhotos[target]?.id;
     if (photoId && typeof window !== "undefined") {
       window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#photo=${photoId}`);
     }
-  }, [allPhotos]);
+  }, [activePhotos]);
 
   // 初回ロード時に #photo=xxx があれば該当ライトボックスを開く
   useEffect(() => {
@@ -641,31 +668,48 @@ export default function PageClient({ initialLang = "ja" }) {
     const m = window.location.hash.match(/^#photo=([a-zA-Z0-9_-]+)/);
     if (!m) return;
     const photoId = m[1];
-    const idx = allPhotos.findIndex(p => p.id === photoId);
+    const idx = activePhotos.findIndex(p => p.id === photoId);
     if (idx >= 0) setLightbox(idx);
-  }, [allPhotos]);
+  }, [activePhotos]);
 
   const updateHash = useCallback((idx) => {
     if (typeof window === "undefined") return;
-    const photoId = allPhotos[idx]?.id;
+    const photoId = activePhotos[idx]?.id;
     if (photoId) window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#photo=${photoId}`);
-  }, [allPhotos]);
+  }, [activePhotos]);
 
   const lbPrev = useCallback(() => {
     setLightbox(i => {
-      const next = i <= 0 ? allPhotos.length - 1 : i - 1;
+      const next = i <= 0 ? activePhotos.length - 1 : i - 1;
       updateHash(next);
       return next;
     });
-  }, [allPhotos, updateHash]);
+  }, [activePhotos, updateHash]);
 
   const lbNext = useCallback(() => {
     setLightbox(i => {
-      const next = i >= allPhotos.length - 1 ? 0 : i + 1;
+      const next = i >= activePhotos.length - 1 ? 0 : i + 1;
       updateHash(next);
       return next;
     });
-  }, [allPhotos, updateHash]);
+  }, [activePhotos, updateHash]);
+
+  /* 撮影日順表示: 年月ごとにグルーピング (新しい順) */
+  const dateGroups = useMemo(() => {
+    if (galleryMode !== "date") return [];
+    const groups = [];
+    let cur = null;
+    for (const p of datePhotos) {
+      const d = PHOTO_DATES[p.id];
+      const key = d ? d.slice(0, 7) : (p.year ? `${p.year}-00` : "0000-00");
+      if (!cur || cur.key !== key) {
+        cur = { key, year: d ? d.slice(0, 4) : (p.year || ""), month: d ? parseInt(d.slice(5, 7), 10) : 0, photos: [] };
+        groups.push(cur);
+      }
+      cur.photos.push(p);
+    }
+    return groups;
+  }, [galleryMode, datePhotos]);
   /* I-4: return-visit language suggestion — if a previously chosen language
      differs from the page language, offer a one-tap switch (session-dismissable). */
   const [langSuggest, setLangSuggest] = useState(null);
@@ -1065,6 +1109,54 @@ export default function PageClient({ initialLang = "ja" }) {
             </div>
           </div>
           <PhotoOfTheDay lang={lang} />
+
+          {/* 表示モード切替: 地域別 / 撮影日順 */}
+          <div className="cin-gallery-modes" role="tablist" aria-label="Gallery order">
+            {["region", "date"].map((m) => (
+              <button
+                key={m}
+                role="tab"
+                aria-selected={galleryMode === m}
+                className={"cin-gmode-btn" + (galleryMode === m ? " active" : "")}
+                onClick={() => setGalleryMode(m)}
+              >
+                {GALLERY_MODE_LABELS[m][lang] || GALLERY_MODE_LABELS[m].en}
+              </button>
+            ))}
+          </div>
+
+          {galleryMode === "date" ? (
+            <div className="cin-dategrid-wrap">
+              {dateGroups.map((g) => (
+                <section key={g.key} className="cin-datemonth">
+                  <h3 className="cin-datemonth-h">
+                    {monthLabel(g.year, g.month, lang)}
+                    <span className="cin-datemonth-n">{g.photos.length}</span>
+                  </h3>
+                  <div className="cin-dategrid">
+                    {g.photos.map((p) => (
+                      <div key={p.id} className="cin-datecard" onClick={() => openLightbox(p.url)} onContextMenu={(e) => e.preventDefault()}>
+                        <img
+                          src={cldUrl(p.id, thumbW)}
+                          alt={richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: getPrefName(p.pref, lang), year: p.year, locJp: p.loc, lang })}
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                        {p.loc && (
+                          <div className="cin-datecard-loc">
+                            {getLocName(p.loc, lang)}
+                            <span className="cin-datecard-pref">{getPrefName(p.pref, lang)}</span>
+                          </div>
+                        )}
+                        <div className="cin-watermark">Landscapes of Japan</div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          ) : (
           <div className="cin-gallery">
             {PREFECTURES.map((pf, pi) => {
               const prefSlug = PREF_SLUGS[pf.pref];
@@ -1126,6 +1218,7 @@ export default function PageClient({ initialLang = "ja" }) {
               );
             })}
           </div>
+          )}
         </section>
 
         {/* Contact Form */}
@@ -1163,9 +1256,9 @@ export default function PageClient({ initialLang = "ja" }) {
           <button aria-label="Dismiss" onClick={dismissLangSuggest}>×</button>
         </div>
       )}
-      {lightbox !== null && allPhotos[lightbox] && (
+      {lightbox !== null && activePhotos[lightbox] && (
         <Lightbox
-          photos={allPhotos}
+          photos={activePhotos}
           index={lightbox}
           closing={lbClosing}
           lang={lang}
