@@ -7,8 +7,6 @@ import { getLocDesc, getLocFaqs, getLocDefinition, getLocHighlights, getLocQuick
 import { getEvents } from "../../../events.js";
 import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../title-keywords.js";
-import { POSTS, getPostTitle, getPostExcerpt } from "../../../content/blog/posts.js";
-import { ui } from "../../../ui-strings.js";
 import { PHOTO_MONTHS } from "../../../photo-months.js";
 
 export const dynamicParams = false;
@@ -186,40 +184,10 @@ export default async function Page({ params }) {
     ].filter(Boolean),
   };
 
-  // Blog posts that reference this location — enables cross-linking from loc
-  // pages to long-form guides (addresses GSC "blog pages have zero referring
-  // URLs" diagnosis).
-  const relatedPosts = POSTS.filter((p) => p.locs && p.locs.includes(locJp));
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <LocClient lang={lang} prefJp={prefJp} locJp={locJp} desc={desc} faqs={faqs} definition={definition} highlights={highlights} quickAnswers={quickAnswers} photoMonths={photoMonths} />
-      {relatedPosts.length > 0 && (
-        <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <h2 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(24px,3.2vw,36px)", color: "#f2ece2", margin: "0 0 32px", letterSpacing: ".01em" }}>
-              {ui("relatedGuides", lang)}
-            </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
-              {relatedPosts.map((p) => (
-                <a
-                  key={p.slug}
-                  href={`/${lang}/blog/${p.slug}`}
-                  style={{ display: "block", padding: 20, background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 6, textDecoration: "none", color: "#e8e4df" }}
-                >
-                  <h3 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontWeight: 500, fontSize: 16, margin: "0 0 10px", color: "#f2ece2", lineHeight: 1.4 }}>
-                    {getPostTitle(p, lang)}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(232,228,223,.65)", margin: 0, lineHeight: 1.6 }}>
-                    {getPostExcerpt(p, lang)}
-                  </p>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
     </>
   );
 }

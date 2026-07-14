@@ -36,11 +36,8 @@ RTL: アラビア語(ar)、ペルシア語(fa)、ヘブライ語(he)
 | `/{lang}/{pref}` | `/ja/hokkaido` | 都道府県ランディングページ |
 | `/{lang}/{pref}/{loc}` | `/ja/hokkaido/sapporo-snow-festival` | 撮影地ランディングページ |
 | `/{lang}/{pref}/{loc}/{photoId}` | `/ja/yamanashi/arakurayama-sengen-park/abc` | 個別写真ページ + Photograph schema |
-| `/{lang}/blog` | `/ja/blog` | 撮影ガイド記事一覧 |
-| `/{lang}/blog/{slug}` | `/ja/blog/mt-fuji-arakurayama` | 長編記事 |
 | `/{lang}/collections/{theme}` | `/ja/collections/cherry-blossoms` | テーマ別コレクション |
 | `/{lang}/tags/{slug}` | `/ja/tags/blue-hour` | 撮影テーマ別 |
-| `/{lang}/techniques/{slug}` | `/ja/techniques/long-exposure` | 撮影技法ガイド |
 
 都道府県スラッグ (英語): hokkaido, chiba, tokyo, kanagawa, ishikawa, yamanashi, nagano, gifu, aichi, mie, kyoto, hyogo, nara, tokushima, kagawa, ehime, kochi, fukuoka, oita, okinawa
 

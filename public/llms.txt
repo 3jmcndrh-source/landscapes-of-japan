@@ -25,12 +25,8 @@ Strengths:
 - `/{lang}/{pref}` — Prefecture page (e.g. /ja/hokkaido, /en/nagano)
 - `/{lang}/{pref}/{loc}` — Location page (e.g. /en/yamanashi/arakurayama-sengen-park)
 - `/{lang}/{pref}/{loc}/{photoId}` — Individual photo with full metadata + Photograph schema
-- `/{lang}/blog` — Photography guide articles
-- `/{lang}/blog/{slug}` — Blog post (e.g. /en/blog/mt-fuji-arakurayama)
 - `/{lang}/collections/{theme}` — Themed collections (cherry-blossoms, snow, castles, temples-shrines, hot-springs, coastal, night-views, waterfalls, lakes, autumn-foliage)
 - `/{lang}/tags/{slug}` — 30 photographic facets (sunrise, blue-hour, reflection, long-exposure, mt-fuji, sakura, etc.)
-- `/{lang}/techniques/{slug}` — Photography technique pages (long-exposure, blue-hour, golden-hour, etc.)
-- `/{lang}/seasons/{spring|summer|autumn|winter}` — Seasonal collections (coming soon)
 - `/{lang}/search` — Site search
 - `/{lang}/random` — Random photo redirect
 - `/feed.xml` — RSS feed of latest 50 photos
@@ -48,10 +44,7 @@ Strengths:
 
 ## Sample Resources
 
-- [Mt. Fuji + Chureito Pagoda + Cherry Blossoms guide](https://landscapes-of-japan.com/en/blog/mt-fuji-arakurayama)
-- [Sapporo Snow Festival photographer's guide](https://landscapes-of-japan.com/en/blog/sapporo-snow-festival)
-- [Lake Suwa Omiwatari winter ice ridges](https://landscapes-of-japan.com/en/blog/lake-suwa-omiwatari)
-- [Achi Village stargazing (Japan's #1 starry sky)](https://landscapes-of-japan.com/en/blog/achi-stargazing)
+- [Mt. Fuji + Chureito Pagoda + Cherry Blossoms](https://landscapes-of-japan.com/en/yamanashi/arakurayama-sengen-park)
 - [Byodo-in Phoenix Hall (featured on Japan's 10-yen coin)](https://landscapes-of-japan.com/en/kyoto/byodo-in)
 - [Furano lavender fields (Hokkaido summer)](https://landscapes-of-japan.com/en/hokkaido/furano)
 - [Cherry Blossoms collection](https://landscapes-of-japan.com/en/collections/cherry-blossoms)
@@ -64,7 +57,6 @@ Strengths:
 
 - [RSS feed (XML)](https://landscapes-of-japan.com/feed.xml) — latest 50 photos
 - [JSON Feed](https://landscapes-of-japan.com/feed.json) — same as above in JSON Feed 1.1 format
-- [Blog index](https://landscapes-of-japan.com/en/blog) — long-form photography guides
 - [Image sitemap](https://landscapes-of-japan.com/sitemap-images.xml) — for image search engines
 - [Full detailed reference (EN)](https://landscapes-of-japan.com/llms-full.txt) — every prefecture and location with photographer notes
 - [Full detailed reference (JA)](https://landscapes-of-japan.com/llms-full-ja.txt) — 日本語版の詳細リファレンス

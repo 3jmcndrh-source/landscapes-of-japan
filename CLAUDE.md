@@ -25,7 +25,7 @@ app/
   PageClient.js           # Client component (~1558 lines): old page.js, now takes initialLang prop
   i18n-meta.js            # LANGS, HREFLANG (BCP 47), SEO_META per lang, SITE_URL, OG_IMAGE, RTL_LANGS
   sitemap.xml/route.js    # Sitemap index → /sitemap/0.xml + per-prefecture /sitemap/{1..N}.xml
-  sitemap/[id]/route.js   # Split sitemap (id=0: root+pref+loc+blog+...; id=N: photo URLs of pref N-1)
+  sitemap/[id]/route.js   # Split sitemap (id=0: root+pref+loc+collections+tags; id=N: photo URLs of pref N-1)
   sitemap-images.xml/route.js  # Google image sitemap (canonical /ja/ URLs only)
   globals.css             # All styles (dark theme, glassmorphism, gold accents, reveal animations)
   favicon.ico
@@ -177,6 +177,15 @@ Last audited: all 47 prefectures × 25, all 78 locations × 25, all 5 extras lan
 - **T9 今日の一枚** `app/PhotoOfTheDay.js`: JST日付のdjb2ハッシュで決定的選出。ホームのギャラリー直前。client mount後描画なので `.reveal` 禁止 (IO登録に乗らない) — 自前 potdIn アニメ。
 - **T11 RTL**: `[dir="rtl"]` ブロック (globals.css) で Lightbox info/close/矢印・photo-nav・パンくず区切り (`.bc-sep`)・シアター caption/close を鏡像化。スワイプ・←→キーは物理方向のまま。
 - **撮影日順ビュー (2026-07)** `app/photo-dates.js` (id→"YYYY-MM-DD" ←`scripts/generate-photo-dates.mjs`): ホームのギャラリーに「地域別 / 撮影日順」トグル (PageClient `galleryMode`)。撮影日順は全587枚を都道府県横断で新しい順に並べ、年月ごとに見出し (`.cin-dategrid`)。ライトボックスと共有要素は表示中の順 (`activePhotos`) に追従。日付グリッドは client mount 後にのみ表示され `.reveal` は使わない (IO 非登録で不可視化を回避)。月マップと同様にコミット済み生成物・ビルドチェーン外、upload.mjs が再生成。
+
+## コンテンツ削減 (2026-07-14 ユーザー指示)
+
+**ブログ (`/blog`, 18記事)・撮影技法 (`/techniques`)・写真ページの関連カテゴリーセクションをページごと全削除。**
+AI生成コンテンツを削ぎ落として純粋な写真サイトへ。コレクション・タグページは存続。
+- 削除: `app/[lang]/blog/`, `app/[lang]/techniques/`, `app/content/blog/posts.js`, `app/techniques.js`, `app/howTo.js`
+- 導線撤去: TopNav・loc/pref/photo ページの blog リンク・撮影技法ブロック・photo の関連カテゴリー・SearchClient索引・sitemap・llms*.txt・CWV workflow
+- インデックス済み旧URLは `public/_redirects` で `/:lang/blog*`・`/:lang/techniques/*` → `/:lang` 301
+- **PowerShell の罠**: `Remove-Item "app\[lang]\blog"` は `[lang]` がワイルドカード解釈され黙って失敗する。`-LiteralPath` 必須。
 
 ## Known Gotchas & Historical Bugs
 

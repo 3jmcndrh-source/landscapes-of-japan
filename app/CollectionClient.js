@@ -2,8 +2,7 @@
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionGuide } from "./collections.js";
-import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
+import { COLLECTION_SLUGS, getCollectionName, getCollectionGuide } from "./collections.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
@@ -243,30 +242,6 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
             ))}
           </div>
         </section>
-
-        {/* A15: 関連テクニック (このコレクションの被写体に役立つ撮影技法) */}
-        {(() => {
-          const colLocs = new Set(COLLECTIONS[theme].locs);
-          const relatedTechs = TECHNIQUE_SLUGS.filter((s) => {
-            const techLocs = TECHNIQUES[s].locs;
-            return techLocs.some((l) => colLocs.has(l));
-          });
-          if (relatedTechs.length === 0) return null;
-          return (
-            <section style={{ marginTop: 72 }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-                {lang === "ja" ? "関連の撮影技法" : "Related Photography Techniques"}
-              </h2>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
-                {relatedTechs.slice(0, 8).map((s) => (
-                  <a key={s} href={`/${lang}/techniques/${s}`} style={{ background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.22)", borderRadius: 8, padding: "12px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14 }}>
-                    ▸ {getTechniqueName(s, lang)}
-                  </a>
-                ))}
-              </div>
-            </section>
-          );
-        })()}
 
         {/* A15: 注目ロケーション (このコレクションの主要な撮影地) */}
         {(() => {

@@ -141,9 +141,6 @@ export default function NotFound() {
           </section>
 
           <section style={{ marginTop: 56, textAlign: "center", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 24 }}>
-            <Link href="/en/blog" style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none", borderBottom: "1px solid rgba(220,190,100,.4)", paddingBottom: 2 }}>
-              Photography guides (Blog)
-            </Link>
             <Link href="/sitemap.xml" style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none", borderBottom: "1px solid rgba(220,190,100,.4)", paddingBottom: 2 }}>
               Sitemap
             </Link>

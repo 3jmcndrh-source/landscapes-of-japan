@@ -776,7 +776,24 @@ export default function PageClient({ initialLang = "ja" }) {
   const hscrollBy = useCallback((e, dir) => {
     e.stopPropagation();
     const sc = e.currentTarget.closest(".cin-hwrap")?.querySelector(".cin-hscroll");
-    if (sc) sc.scrollBy({ left: dir * Math.round(sc.clientWidth * 0.85), behavior: "smooth" });
+    if (!sc) return;
+    // 写真の切れ目に合わせる: 約1ページ先で最も近いカード左端へスナップ
+    const cards = Array.from(sc.querySelectorAll(".cin-hcard, .cin-endcard"));
+    if (!cards.length) { sc.scrollBy({ left: dir * Math.round(sc.clientWidth * 0.85), behavior: "smooth" }); return; }
+    const base = cards[0].offsetLeft; // 先頭カードの位置 = scrollLeft 0 相当
+    const target = sc.scrollLeft + dir * sc.clientWidth * 0.85;
+    let bestIdx = 0, bestD = Infinity;
+    cards.forEach((c, i) => {
+      const d = Math.abs((c.offsetLeft - base) - target);
+      if (d < bestD) { bestD = d; bestIdx = i; }
+    });
+    // 現在位置と同じカードに丸まった場合は最低1枚ぶん進める
+    let left = cards[bestIdx].offsetLeft - base;
+    if (Math.abs(left - sc.scrollLeft) < 8) {
+      const next = cards[bestIdx + dir];
+      if (next) left = next.offsetLeft - base;
+    }
+    sc.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
   }, []);
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia("(hover:hover) and (pointer:fine)").matches) return;
@@ -788,6 +805,14 @@ export default function PageClient({ initialLang = "ja" }) {
         wrap.classList.toggle("can-right", sc.scrollLeft < sc.scrollWidth - sc.clientWidth - 4);
       };
       update();
+      // 画像ロードで scrollWidth が伸びても scroll イベントは発火しない —
+      // 未ロード画像の load と保険のタイマーでも再評価する (初回マウントと
+      // 撮影日順↔地域別トグル直後に矢印が出ないバグの本修正)。
+      sc.querySelectorAll("img").forEach((im) => {
+        if (!im.complete) im.addEventListener("load", update, { once: true });
+      });
+      const updateTimer = setTimeout(update, 1200);
+      window.addEventListener("resize", update);
       sc.addEventListener("scroll", update, { passive: true });
       let dragging = false, startX = 0, startLeft = 0, moved = 0;
       const down = (e) => { if (e.button !== 0) return; dragging = true; moved = 0; startX = e.clientX; startLeft = sc.scrollLeft; sc.classList.add("dragging"); };
@@ -802,6 +827,8 @@ export default function PageClient({ initialLang = "ja" }) {
       window.addEventListener("mousemove", move);
       window.addEventListener("mouseup", up);
       return () => {
+        clearTimeout(updateTimer);
+        window.removeEventListener("resize", update);
         sc.removeEventListener("scroll", update);
         sc.removeEventListener("mousedown", down);
         window.removeEventListener("mousemove", move);
@@ -809,7 +836,9 @@ export default function PageClient({ initialLang = "ja" }) {
       };
     });
     return () => cleanups.forEach((fn) => fn());
-  }, [lang]);
+    // galleryMode を含める: トグルで .cin-hwrap が再マウントされるため、
+    // can-left/can-right (矢印表示) とドラッグを張り直す。
+  }, [lang, galleryMode]);
 
   /* P3: reveal more cards when a row is actually scrolled near its right
      edge. Scroll-distance based (not IO) so collapsed not-yet-loaded image
@@ -831,7 +860,8 @@ export default function PageClient({ initialLang = "ja" }) {
       return () => sc.removeEventListener("scroll", onScroll);
     });
     return () => cleanups.forEach((fn) => fn());
-  }, [lang]);
+    // galleryMode: トグル後の再マウントでも行の段階展開が効くように張り直す。
+  }, [lang, galleryMode]);
 
   /* Scroll-linked fade-in for sections (IntersectionObserver) */
   useEffect(() => {

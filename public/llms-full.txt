@@ -38,12 +38,8 @@ Hreflang variants supported: en-US, en-GB, en-CA, en-AU, zh-HK, zh-MO, es-MX, es
 | `/{lang}/{pref}` | `/en/hokkaido` | Prefecture landing page |
 | `/{lang}/{pref}/{loc}` | `/en/hokkaido/sapporo-snow-festival` | Location landing |
 | `/{lang}/{pref}/{loc}/{photoId}` | `/en/yamanashi/arakurayama-sengen-park/abc123` | Individual photo |
-| `/{lang}/blog` | `/en/blog` | Photography guide index |
-| `/{lang}/blog/{slug}` | `/en/blog/mt-fuji-arakurayama` | Long-form article |
 | `/{lang}/collections/{theme}` | `/en/collections/cherry-blossoms` | Themed collection |
 | `/{lang}/tags/{slug}` | `/en/tags/blue-hour` | Photographic facet |
-| `/{lang}/techniques/{slug}` | `/en/techniques/long-exposure` | Technique guide |
-| `/{lang}/seasons/{season}` | `/en/seasons/winter` | Seasonal collection |
 
 Prefecture slugs (English): hokkaido, chiba, tokyo, kanagawa, ishikawa, yamanashi, nagano, gifu, aichi, mie, kyoto, hyogo, nara, tokushima, kagawa, ehime, kochi, fukuoka, oita, okinawa
 
@@ -183,12 +179,6 @@ Composition: reflection, long-exposure, panorama, silhouette, leading-lines
 Subject: mt-fuji, sakura, momiji, snow, ice, mist, stars, milky-way, flowers
 Architecture: castle, temple, shrine, pagoda, bridge, lighthouse
 Nature: waterfall, lake, coast, mountain, forest, field
-
-## Techniques
-
-long-exposure, blue-hour, golden-hour, panorama, low-light, hdr, focus-stacking, star-trails, milky-way, etc. — guides per technique, each cross-linked to relevant photos.
-
----
 
 ## Common Questions (English, derived from in-site FAQ data)
 

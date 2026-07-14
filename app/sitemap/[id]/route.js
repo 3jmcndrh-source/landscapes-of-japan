@@ -2,9 +2,7 @@ import { LANGS, HREFLANG, SITE_URL, PHOTO_LANGS } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS, COLLECTIONS } from "../../collections.js";
-import { POSTS, POST_SLUGS } from "../../content/blog/posts.js";
 import { TAGS, TAG_SLUGS } from "../../tags.js";
-import { TECHNIQUES, TECHNIQUE_SLUGS } from "../../techniques.js";
 
 // Cloudflare Pages 静的エクスポート対応 — id=0 + id=1..N (per-pref) を build 時 SSG
 export const dynamic = "force-static";
@@ -112,35 +110,6 @@ export async function GET(_req, { params }) {
       }
     }
 
-    // blog index — 最新 post date
-    const latestPostDate = POSTS.length > 0
-      ? [...POSTS].sort((a, b) => b.date.localeCompare(a.date))[0].date
-      : today;
-    const blogIdxLangs = {};
-    for (const l of LANGS) blogIdxLangs[HREFLANG[l]] = `${SITE_URL}/${l}/blog`;
-    blogIdxLangs["x-default"] = `${SITE_URL}/en/blog`;
-    for (const lang of LANGS) {
-      entries.push(buildUrlEntry({
-        url: `${SITE_URL}/${lang}/blog`,
-        lastmod: latestPostDate, changefreq: "weekly", priority: "0.7",
-        alternates: blogIdxLangs,
-      }));
-    }
-
-    // blog posts — lastmod は post.date
-    for (const post of POSTS) {
-      const pLangs = {};
-      for (const l of LANGS) pLangs[HREFLANG[l]] = `${SITE_URL}/${l}/blog/${post.slug}`;
-      pLangs["x-default"] = `${SITE_URL}/en/blog/${post.slug}`;
-      for (const lang of LANGS) {
-        entries.push(buildUrlEntry({
-          url: `${SITE_URL}/${lang}/blog/${post.slug}`,
-          lastmod: post.date, changefreq: "monthly", priority: "0.55",
-          alternates: pLangs,
-        }));
-      }
-    }
-
     // all-prefectures index (1 × 20 langs = 20 URLs)
     const allPrefLangs = {};
     for (const l of LANGS) allPrefLangs[HREFLANG[l]] = `${SITE_URL}/${l}/all-prefectures`;
@@ -151,22 +120,6 @@ export async function GET(_req, { params }) {
         lastmod: today, changefreq: "monthly", priority: "0.6",
         alternates: allPrefLangs,
       }));
-    }
-
-    // techniques (8 topics × 20 langs = 160 URLs)
-    for (const slug of TECHNIQUE_SLUGS) {
-      const tcLangs = {};
-      for (const l of LANGS) tcLangs[HREFLANG[l]] = `${SITE_URL}/${l}/techniques/${slug}`;
-      tcLangs["x-default"] = `${SITE_URL}/en/techniques/${slug}`;
-      const tcMaxYear = maxYearForLocList(TECHNIQUES[slug]?.locs || []);
-      const tcLastmod = yearLastmod(tcMaxYear) || today;
-      for (const lang of LANGS) {
-        entries.push(buildUrlEntry({
-          url: `${SITE_URL}/${lang}/techniques/${slug}`,
-          lastmod: tcLastmod, changefreq: "monthly", priority: "0.6",
-          alternates: tcLangs,
-        }));
-      }
     }
 
     // tags — lastmod は含まれる写真の最新年

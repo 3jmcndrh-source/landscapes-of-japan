@@ -5,7 +5,6 @@ import { TR, PREFECTURES, PREF_I18N, LOC_I18N, getPrefName, getLocName, cldUrl }
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc } from "./collections.js";
 import { TAGS, TAG_SLUGS, getTagName, getTagDesc } from "./tags.js";
-import { POSTS, getPostTitle, getPostExcerpt } from "./content/blog/posts.js";
 import TopNav from "./TopNav.js";
 
 function normalize(s) { return String(s || "").toLowerCase(); }
@@ -73,20 +72,6 @@ function buildIndex(lang) {
       title: getTagName(slug, lang),
       subtitle: lang === "ja" ? "タグ" : "Tag",
       searchText: [slug, ...names].map(normalize).join(" "),
-    });
-  }
-
-  // Blog posts
-  for (const post of POSTS) {
-    const titles = Object.values(post.title || {});
-    const excerpts = Object.values(post.excerpt || {});
-    items.push({
-      type: "post",
-      url: `/${lang}/blog/${post.slug}`,
-      title: getPostTitle(post, lang),
-      subtitle: lang === "ja" ? "ブログ記事" : "Blog post",
-      hero: post.hero,
-      searchText: [post.slug, ...titles, ...excerpts].map(normalize).join(" "),
     });
   }
 

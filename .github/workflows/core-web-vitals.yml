@@ -36,8 +36,7 @@ jobs:
             "https://landscapes-of-japan.com/en/hokkaido/sapporo-snow-festival"
             "https://landscapes-of-japan.com/en/yamanashi/arakurayama-sengen-park"
             "https://landscapes-of-japan.com/en/kyoto/byodoin-phoenix-hall"
-            "https://landscapes-of-japan.com/en/blog"
-            "https://landscapes-of-japan.com/en/blog/mt-fuji-arakurayama"
+            "https://landscapes-of-japan.com/en/collections/cherry-blossoms"
           )
 
           REPORT="cwv-report.json"

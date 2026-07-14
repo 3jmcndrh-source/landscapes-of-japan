@@ -124,7 +124,6 @@ export default async function LangLayout({ children, params }) {
             </p>
             <ul style={{ marginTop: 16, fontSize: 15, lineHeight: 2 }}>
               <li><a href={`/${lang}`} style={{ color: "#dcbe64" }}>Home (current language)</a></li>
-              <li><a href={`/${lang}/blog`} style={{ color: "#dcbe64" }}>Blog — 20 photography guides</a></li>
               <li><a href={`/${lang}/collections/cherry-blossoms`} style={{ color: "#dcbe64" }}>Collections (Cherry Blossoms, Snow, Castles, ...)</a></li>
               <li><a href="/sitemap.xml" style={{ color: "#dcbe64" }}>Site map (all 13,000+ pages)</a></li>
               <li><a href="/feed.xml" style={{ color: "#dcbe64" }}>RSS feed (latest 50 photos)</a></li>

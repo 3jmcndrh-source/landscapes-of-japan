@@ -2,10 +2,8 @@
 import { useState, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
-import { TECHNIQUES, TECHNIQUE_SLUGS, getTechniqueName } from "./techniques.js";
 import TopNav from "./TopNav.js";
-import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
+import { TAGS, getTagName } from "./tags.js";
 import { richAlt } from "./title-keywords.js";
 import LangBar from "./LangBar.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
@@ -254,44 +252,6 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
           </section>
         )}
 
-        {/* A13: 関連の撮影技法 (この loc に該当する techniques) */}
-        {(() => {
-          const locTechs = TECHNIQUE_SLUGS.filter((s) => TECHNIQUES[s].locs.includes(locJp));
-          if (locTechs.length === 0) return null;
-          return (
-            <section style={{ marginTop: 56, padding: "0 8px" }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 16 }}>
-                {lang === "ja" ? "撮影技法ガイド" : "Photography Techniques"}
-              </h2>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {locTechs.slice(0, 5).map((s) => (
-                  <a key={`tech-${s}`} href={`/${lang}/techniques/${s}`} style={{ background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.22)", borderRadius: 8, padding: "8px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}>
-                    ▸ {getTechniqueName(s, lang)}
-                  </a>
-                ))}
-              </div>
-            </section>
-          );
-        })()}
-
-        {/* Related collections + tags (内部リンク強化 #18) */}
-        <section style={{ marginTop: 56, padding: "0 8px" }}>
-          <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 16 }}>
-            {lang === "ja" ? "関連カテゴリー" : "Related Categories"}
-          </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {COLLECTION_SLUGS.filter((s) => COLLECTIONS[s].locs.includes(locJp)).slice(0, 4).map((s) => (
-              <a key={`c-${s}`} href={`/${lang}/collections/${s}`} style={{ background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
-                {getCollectionName(s, lang)}
-              </a>
-            ))}
-            {TAG_SLUGS.filter((s) => TAGS[s].locs.includes(locJp)).slice(0, 6).map((s) => (
-              <a key={`t-${s}`} href={`/${lang}/tags/${s}`} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(220,190,100,.15)", borderRadius: 999, padding: "6px 14px", color: "rgba(232,228,223,.85)", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
-                #{getTagName(s, lang)}
-              </a>
-            ))}
-          </div>
-        </section>
       </main>
     </div>
   );

@@ -7,7 +7,6 @@ import { getLocDesc, getLocHighlights, getLocDefinition } from "../../../../cont
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
 import { TAGS, TAG_SLUGS, getTagName } from "../../../../tags.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../../title-keywords.js";
-import { POSTS, getPostTitle, getPostExcerpt } from "../../../../content/blog/posts.js";
 import { ui } from "../../../../ui-strings.js";
 import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
 
@@ -216,11 +215,9 @@ export default async function Page({ params }) {
 
   // SEO content enrichment — photo pages are currently very thin (image +
   // breadcrumb + related thumbnails). Adding the location description and
-  // its highlights gives Google substantial unique text per location, and
-  // cross-linking blog posts gives those posts inbound link signals.
+  // its highlights gives Google substantial unique text per location.
   const locDesc = getLocDesc(locJp, lang);
   const locHighlights = getLocHighlights(locJp, lang);
-  const relatedPosts = POSTS.filter((p) => p.locs && p.locs.includes(locJp));
 
   return (
     <>
@@ -238,7 +235,7 @@ export default async function Page({ params }) {
         nextHref={nextHref}
         position={photoIdx >= 0 ? { idx: photoIdx, total: locPhotos.length } : null}
       />
-      {(locDesc || locHighlights.length > 0 || relatedPosts.length > 0) && (
+      {(locDesc || locHighlights.length > 0) && (
         <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>
           <div style={{ maxWidth: 980, margin: "0 auto" }}>
             {locDesc && (
@@ -261,25 +258,6 @@ export default async function Page({ params }) {
                     <li key={i} style={{ marginBottom: 10 }}>{h}</li>
                   ))}
                 </ul>
-              </>
-            )}
-            {relatedPosts.length > 0 && (
-              <>
-                <h3 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "#f2ece2", margin: "0 0 16px" }}>
-                  {ui("relatedGuides", lang)}
-                </h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
-                  {relatedPosts.map((p) => (
-                    <a key={p.slug} href={`/${lang}/blog/${p.slug}`} style={{ display: "block", padding: 18, background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 6, textDecoration: "none", color: "#e8e4df" }}>
-                      <h4 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontWeight: 500, fontSize: 15, margin: "0 0 8px", color: "#f2ece2", lineHeight: 1.4 }}>
-                        {getPostTitle(p, lang)}
-                      </h4>
-                      <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "rgba(232,228,223,.65)", margin: 0, lineHeight: 1.6 }}>
-                        {getPostExcerpt(p, lang)}
-                      </p>
-                    </a>
-                  ))}
-                </div>
               </>
             )}
           </div>

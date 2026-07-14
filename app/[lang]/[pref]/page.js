@@ -6,9 +6,6 @@ import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
 import { getPrefDesc, getPrefFaqs, getPrefDefinition, getPrefHighlights, getPrefQuickAnswers } from "../../content/descriptions.js";
 import { getPrefSameAs } from "../../wikidata.js";
 import { getPrefTitleKw, getPrefTitleKwEnFallback } from "../../title-keywords.js";
-import { POSTS, getPostTitle, getPostExcerpt } from "../../content/blog/posts.js";
-import { ui } from "../../ui-strings.js";
-
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -138,41 +135,10 @@ export default async function Page({ params }) {
     ].filter(Boolean),
   };
 
-  // Collect all unique location names in this prefecture, then find blog
-  // posts whose `locs` array references any of them. Cross-link from pref
-  // page to those long-form guides.
-  const prefLocs = new Set(pf.photos.map((p) => p.loc).filter(Boolean));
-  const relatedPosts = POSTS.filter((p) => p.locs && p.locs.some((l) => prefLocs.has(l)));
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PrefClient lang={lang} prefJp={prefJp} desc={desc} faqs={faqs} definition={definition} highlights={highlights} quickAnswers={quickAnswers} />
-      {relatedPosts.length > 0 && (
-        <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <h2 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(24px,3.2vw,36px)", color: "#f2ece2", margin: "0 0 32px", letterSpacing: ".01em" }}>
-              {ui("relatedGuides", lang)}
-            </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
-              {relatedPosts.map((p) => (
-                <a
-                  key={p.slug}
-                  href={`/${lang}/blog/${p.slug}`}
-                  style={{ display: "block", padding: 20, background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 6, textDecoration: "none", color: "#e8e4df" }}
-                >
-                  <h3 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontWeight: 500, fontSize: 16, margin: "0 0 10px", color: "#f2ece2", lineHeight: 1.4 }}>
-                    {getPostTitle(p, lang)}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(232,228,223,.65)", margin: 0, lineHeight: 1.6 }}>
-                    {getPostExcerpt(p, lang)}
-                  </p>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
     </>
   );
 }

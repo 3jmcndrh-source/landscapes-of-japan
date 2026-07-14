@@ -7,3 +7,8 @@
 
 # 古い旧 URL からの redirect (将来用、必要なら追加)
 # /old-path  /en/new-path  301
+
+# 2026-07: ブログ・撮影技法ページを削除 — インデックス済み URL は言語ホームへ 301
+/:lang/blog/*  /:lang  301
+/:lang/blog  /:lang  301
+/:lang/techniques/*  /:lang  301
