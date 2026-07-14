@@ -47,6 +47,12 @@ export const LOC_SLUGS = {
   "日高": "hidaka",
   "倶知安": "kutchan",
   "積丹": "shakotan",
+  "ウトナイ湖": "lake-utonai",
+  "円山動物園": "maruyama-zoo",
+  "中標津町": "nakashibetsu",
+  "清里町": "kiyosato",
+  "弟子屈町": "teshikaga",
+  "大空町": "ozora",
   /* Chiba */
   "鴨川シーワールド": "kamogawa-sea-world",
   /* Tokyo */
@@ -119,6 +125,8 @@ export const LOC_SLUGS = {
   /* Okinawa */
   "宮古島": "miyakojima",
   "沖縄": "okinawa-main",
+  "石垣島": "ishigakijima",
+  "竹富島": "taketomijima",
 };
 
 /* Reverse lookups */

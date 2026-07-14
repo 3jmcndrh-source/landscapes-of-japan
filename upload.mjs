@@ -37,6 +37,7 @@ const getOpt = (name) => {
 const pref = getOpt("pref");
 const loc = getOpt("loc");
 const skipDeploy = args.includes("--skip-deploy");
+const skipRegen = args.includes("--skip-regen"); // 連続実行時は最後に1回だけ再生成する
 const files = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--pref" && args[i - 1] !== "--loc");
 
 if (!pref || !loc || files.length === 0) {
@@ -120,10 +121,12 @@ writeFileSync(DATA_JS, content.replace(prefRe, (_, p1, _2, p3) => `${p1}\n${rebu
 console.log(`\ndata.js 更新: ${pref} に ${added.length} 枚挿入 (撮影日降順)`);
 
 // ---- アンビエント色 + 撮影月 + 撮影日 の生成ファイルを更新 (manifest 追記済みなので全量再生成) ----
-console.log("\nphoto-colors.js / photo-months.js / photo-dates.js 再生成中...");
-execSync("node scripts/generate-photo-colors.mjs", { stdio: "inherit" });
-execSync("node scripts/generate-photo-months.mjs", { stdio: "inherit" });
-execSync("node scripts/generate-photo-dates.mjs", { stdio: "inherit" });
+if (!skipRegen) {
+  console.log("\nphoto-colors.js / photo-months.js / photo-dates.js 再生成中...");
+  execSync("node scripts/generate-photo-colors.mjs", { stdio: "inherit" });
+  execSync("node scripts/generate-photo-months.mjs", { stdio: "inherit" });
+  execSync("node scripts/generate-photo-dates.mjs", { stdio: "inherit" });
+}
 
 // ---- deploy images project ----
 if (!skipDeploy) {

@@ -105,7 +105,11 @@ git add app/data.js && git commit -m "..." && git push
 
 **Important:** prefecture order in the PREFECTURES array is manually maintained in ISO order (北海道, 千葉県, 東京都, 神奈川県, 石川県, 岐阜県, 愛知県, 三重県, 京都府, 兵庫県, 奈良県, 徳島県, 香川県, 愛媛県, 高知県, 福岡県, 大分県, 沖縄県). `sort-photos.mjs` only sorts within a prefecture; it doesn't reorder the prefectures themselves.
 
-## Current Photo Coverage (398 total, 18 prefectures)
+## Current Photo Coverage (709 total as of 2026-07-15 — 下表は2026-04時点で古い。正は data.js)
+
+2026-07-15 追加分: ウトナイ湖/円山動物園/中標津町/清里町/弟子屈町/大空町 (北海道 新loc)、石垣島/竹富島 (沖縄県 新loc) +122枚。
+
+## (旧) Photo Coverage (398 total, 18 prefectures)
 
 | Prefecture | Count | Locations |
 |---|---|---|
