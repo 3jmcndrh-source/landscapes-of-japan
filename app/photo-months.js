@@ -781,7 +781,9 @@ export const PHOTO_MONTHS = {
 "dsc05888-84edc8":7,
 "dsc05907-4235f3":7,
 "dsc05922-6deca0":7,
-"dsc05986_2-1741dc":7
+"dsc05986_2-1741dc":7,
+"dsc03078-ad66fa":6,
+"dsc03189-b78c09":6
 };
 
 /** id の撮影月 (1-12, 不明は null) */

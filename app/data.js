@@ -878,6 +878,8 @@ export const PREFECTURES = [
     pref: "沖縄県",
     lat: 26.34, lng: 127.77,
     photos: [
+      { id: "dsc03189-b78c09", loc: "竹富島", year: 2026 },
+      { id: "dsc03078-ad66fa", loc: "竹富島", year: 2026 },
       { id: "dsc04956-e28c11", loc: "竹富島", year: 2026 },
       { id: "dsc04936-ca2e77", loc: "竹富島", year: 2026 },
       { id: "dsc04934-2e5bc1", loc: "竹富島", year: 2026 },
