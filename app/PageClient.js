@@ -20,7 +20,7 @@ import { ui } from "./ui-strings.js";
 import LangBar from "./LangBar.js";
 
 /* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
-const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage"];
+const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage", "birds", "animals"];
 
 /* T8: ヒーローローテーション — シグネチャー写真 (タグ・構図データから選定)。
    差し替えはこの配列を編集するだけ。順序 = 表示順。 */
