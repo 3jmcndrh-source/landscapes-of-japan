@@ -17,7 +17,9 @@
  * - river: 川
  * - waterfall: 滝
  * - mountain: 山岳
- * - animal: 動物
+ * - animal: 動物 (鳥以外)
+ * - bird: 鳥 (2026-07 追加)
+ * - landscape: 汎用風景 (どのコレクションにも属さないことを明示、loc フォールバック除外用)
  * - flower-field: 花畑(ラベンダー、ひまわり等)
  * - rural: 田園・農村
  * - urban: 都市・ビル
@@ -141,24 +143,24 @@ export const PHOTO_TAGS = {
 
   // ── 札幌 (北海道、27枚) ──
   // 野幌森林公園の野鳥(コゲラ・ゴジュウカラ・クマゲラ)、幌見峠ラベンダー、藻岩山夜景
-  "softyjlanqcbgshlzo9w": ["animal"],
-  "ubtkpbv0t0vqp6mmgww7": ["animal"],
-  "jwati7zcdj7ctipmonwa": ["animal"],
-  "yfkhhrtc4lzhtdsn0yk7": ["animal"],
-  "bhkmoyskvqwypxp3gcuj": ["animal"],
-  "y0vh9qsl6exl3cwjvp4n": ["animal"],
-  "bx39jxhwcpjicx4mbif4": ["animal"],
-  "ymfqvkrt8gpxhqlceo9w": ["animal"],
-  "pttbtrtbyyqtrnxbugur": ["animal"],
-  "fxe4nsjpar0tkocgjftf": ["animal"],
-  "jgmcsj3io9kle9pvo5dx": ["animal"],
-  "kwwsvawt7qpth5g0luhs": ["animal"],
-  "twwgiayzit8kqxfmghtx": ["animal"],
-  "sxmtareqehuc5nlr2wvf": ["animal"],
-  "mjwdtvn6eaxh2wkpmvgs": ["animal"],
-  "pixyahpx1kgkivfdefny": ["animal"],
-  "pa02u0isj9xximnvp7bu": ["animal"],
-  "rkmlqi18ra5o0dcutace": ["animal"],
+  "softyjlanqcbgshlzo9w": ["bird"],
+  "ubtkpbv0t0vqp6mmgww7": ["bird"],
+  "jwati7zcdj7ctipmonwa": ["bird"],
+  "yfkhhrtc4lzhtdsn0yk7": ["bird"],
+  "bhkmoyskvqwypxp3gcuj": ["bird"],
+  "y0vh9qsl6exl3cwjvp4n": ["bird"],
+  "bx39jxhwcpjicx4mbif4": ["bird"],
+  "ymfqvkrt8gpxhqlceo9w": ["bird"],
+  "pttbtrtbyyqtrnxbugur": ["bird"],
+  "fxe4nsjpar0tkocgjftf": ["bird"],
+  "jgmcsj3io9kle9pvo5dx": ["bird"],
+  "kwwsvawt7qpth5g0luhs": ["bird"],
+  "twwgiayzit8kqxfmghtx": ["bird"],
+  "sxmtareqehuc5nlr2wvf": ["bird"],
+  "mjwdtvn6eaxh2wkpmvgs": ["bird"],
+  "pixyahpx1kgkivfdefny": ["bird"],
+  "pa02u0isj9xximnvp7bu": ["bird"],
+  "rkmlqi18ra5o0dcutace": ["bird"],
   "lhhheuwpth3ljujvqyub": ["urban"],
   "fy9x8yjintsr8qsoujzb": ["flower-field"],
   "wkfty1tifq11h9pggdou": ["urban"],
@@ -185,10 +187,10 @@ export const PHOTO_TAGS = {
   "fmkvychabpy0nkfsy7ct": ["animal"],
   "iruajiykij2sfoqdxxgm": ["animal"],
   "yfbqyipnasg0ccxfn9c8": ["animal"],
-  "smx4ztgstf905vdrbmvc": ["animal"],
-  "q1mzddbwimo7vypffpak": ["animal"],
+  "smx4ztgstf905vdrbmvc": ["bird"],
+  "q1mzddbwimo7vypffpak": ["bird"],
   "uwefhpwm7e85ewi68tgp": ["animal"],
-  "cemg184iixgrlutqlkkr": ["animal"],
+  "cemg184iixgrlutqlkkr": ["cherry", "lake"], // 2026-07-17 修正: 池+桜+ボートの風景で動物は写っていない
   "cfnt5wcgast0i0c9ha5h": ["animal"],
   "ciehvlktddmfmao1zhj4": ["animal"],
   "gswfddvq2q8c0t8saclg": ["animal"],
@@ -197,7 +199,7 @@ export const PHOTO_TAGS = {
 
   // ── 鳥羽水族館 (三重県、18枚) ── 海洋生物中心、外観2枚
   "elpprz829ghgpuvgh9c1": ["urban"],     // 水族館外観
-  "dbexqjaj5yoy7tugr6nv": ["animal"],
+  "dbexqjaj5yoy7tugr6nv": ["coastal"], // 2026-07-17 修正: 鳥羽湾のフェリー風景で動物は写っていない
   "nze6lvbizsyc2rdoeksi": ["animal"],
   "v0pbwtscokak0sfnz9lc": ["animal"],
   "gvswuk8pqczrhib2fo0d": ["animal"],
@@ -212,7 +214,7 @@ export const PHOTO_TAGS = {
   "rfzr79edmgjca6opnljt": ["animal"],
   "ndtofmydaitspbsburef": ["animal"],
   "ysiak3am7dmste2sldb4": ["animal"],
-  "xbhrwavgo6wbsuu5jl9k": ["animal"],
+  "xbhrwavgo6wbsuu5jl9k": ["coastal"], // 2026-07-17 修正: 港とフェリーの風景で動物は写っていない
   "uouqy7tcwrewlt34ai6z": ["urban"],     // 水族館外観
 
   // ── 宮古島 (沖縄県、38枚中 8枚 sample 確認) ── 残り30枚は loc fallback
@@ -264,10 +266,10 @@ export const PHOTO_TAGS = {
 
   // ── 旭山動物園 (北海道、6枚) ── 全て動物
   "gueqzi2t9iacfrcz9fxh": ["animal"],   // 猿+夕日
-  "dayk8svfgi7qvyogccli": ["animal"],
-  "nynaw9ykoregt6zml4ob": ["animal"],
-  "o2mawg9skfvhayynvnio": ["animal"],
-  "tdn43okylfpfvipei9ct": ["animal"],
+  "dayk8svfgi7qvyogccli": ["bird"],
+  "nynaw9ykoregt6zml4ob": ["bird"],
+  "o2mawg9skfvhayynvnio": ["bird"],
+  "tdn43okylfpfvipei9ct": ["bird"],
   "vebkeapnmubqy4fkka6n": ["animal"],
 
   // ── 富良野 (北海道、6枚) ── 全て花畑
@@ -722,6 +724,171 @@ export const PHOTO_TAGS = {
   "opof4iv0ksb7hyyxwd0g": ["waterfall", "river"],
   // 名越屋沈下橋: 仁淀川
   "cpucwtmknaneef6uw8en": ["river"],
+
+  // ═══ 2026-07-17 コレクション精査 (全711枚を目視レビューしてタグ付け) ═══
+  // ── 北海道/大空町 — メルヘンの丘の田園 (2026-07) ──
+  "dsc05986_2-1741dc": ["rural"],
+  // ── 北海道/弟子屈町 — 摩周湖外輪の湖景 (2026-07) ──
+  "dsc05922-6deca0": ["lake"],
+  // ── 北海道/清里町 — 神の子池 (2026-07) ──
+  "dsc05907-4235f3": ["lake"],
+  "dsc05888-84edc8": ["lake"],
+  // ── 北海道/中標津町 — 開陽台の丘陵 (2026-07) ──
+  "dsc05866-8abe1e": ["rural"],
+  // ── 北海道/知床 (2026-07) — シマフクロウ/海鳥/クジラ/山景。夏撮影で雪要素なし ──
+  "dsc08629-2b9a68": ["bird"],
+  "dsc08628-339db5": ["bird"],
+  "dsc08626-8ce506": ["bird"],
+  "dsc08502-c979a4": ["bird"],
+  "dsc08364-836e2d": ["bird"],
+  "dsc08357-50800f": ["bird"],
+  "dsc07492-f891ad": ["bird"],
+  "dsc07215-b0c931": ["bird"],
+  "dsc07171-f149f3": ["bird"],
+  "dsc07099-071459": ["bird"],
+  "dsc06481-0d7900": ["bird"],
+  "dsc06233-4cdd94": ["bird"],
+  "dsc05842-3fdfab": ["bird"],
+  "dsc04971_1-4f4763": ["bird"],
+  "dsc04890-ade6f8": ["coastal"],
+  "dsc04859-66c4cf": ["bird"],
+  "dsc04802-ca49ce": ["animal", "coastal"],
+  "dsc04746-826d5b": ["animal", "coastal"],
+  "dsc04650-f8ac4b": ["animal", "coastal"],
+  "dsc04308-c43e2c": ["bird", "coastal"],
+  "dsc04290-344c4e": ["bird"],
+  "dsc05804_1-8afcf7": ["mountain"],
+  "dsc05781-13a80c": ["mountain"],
+  "sojdfqipubvwy1quj9m6": ["coastal"],
+  "nzhepp8vtvbreupxhwui": ["coastal"],
+  // ── 北海道/室蘭 (2026-06) — 港と夕景 ──
+  "dsc05762-55eaf1": ["coastal"],
+  "dsc05760-80bb8c": ["coastal"],
+  "dsc05759-82555d": ["coastal"],
+  "dsc05755-bc9fbb": ["coastal"],
+  "dsc05752-2850b5": ["coastal"],
+  "dsc05750-1ead40": ["coastal"],
+  "dsc05735-4b2665": ["coastal"],
+  // ── 北海道/札幌 (2026-06) — 円山公園のシジュウカラ/エゾリス ──
+  "dsc04638-8920ae": ["bird"],
+  "dsc04512_1-36998b": ["bird"],
+  "dsc04468_1-a96c89": ["bird"],
+  "dsc04422_1-c6796a": ["bird"],
+  "dsc04405-687bf5": ["animal"],
+  "dsc04393-cf0405": ["animal"],
+  "dsc04298-4d8618": ["bird"],
+  "dsc04190-e55ef2": ["bird"],
+  "dsc04161-4f3720": ["bird"],
+  // ── 北海道/円山動物園 — レッサーパンダ ──
+  "dsc03267-a56e21": ["animal"],
+  // ── 北海道/ウトナイ湖 — エゾリスと小鳥 ──
+  "dsc02908-16f86e": ["animal"],
+  "dsc02821-67cd7a": ["bird"],
+  // ── 北海道/日高 — 牧場の馬 ──
+  "hcsltentnzeumoowxxf6": ["animal"],
+  "vinj8hdcaeez9frlcizw": ["animal"],
+  "u8llnztyyzea0nmrrrje": ["animal"],
+  "b63td9s7qs9ucpkuxnl2": ["animal"],
+  "cneqqmdvanlk11m8pqqb": ["animal"],
+  "dkirzk1rznk1vgtidffu": ["animal"],
+  "uq5lt1br4oa0wcf0dimv": ["animal"],
+  // ── 北海道/釧路 — タンチョウ ──
+  "v01eip2yfquvyscww6xk": ["bird"],
+  // ── 北海道/阿寒 — オジロワシ ──
+  "l5qnakiz4wrslrubtw9m": ["bird"],
+  "ctmabk2ddav1vvm6x2lq": ["bird"],
+  // ── 北海道/野付半島 — 湿原 (被写体タグなし) ──
+  "zuhu8nqkk0hjukederqn": ["landscape"],
+  // ── 千葉県/鴨川シーワールド — 海獣とペンギン ──
+  "vycpckuc4d1pkrekbkbr": ["animal"],
+  "r48cniybwcnflzt5q1v2": ["animal"],
+  "mjst5py48ye0frgtbqox": ["bird"],
+  "nh3pmwcc3xmuv5foi5wb": ["bird"],
+  "ns1l4akfkoeskandkivi": ["animal"],
+  "y7ua0to15lr4lh88img9": ["animal"],
+  // ── 福岡県 — 川沿いの夕景 (夜景ではないので night フォールバック除外) ──
+  "dcl947scp21g2dn0uy2d": ["landscape"],
+  // ── 大分県/湯布院 — 辻馬車 ──
+  "wqeix2pmuahsic4m6nuo": ["animal"],
+  // ── 沖縄県/竹富島 (2026-06) — 水牛/アカショウビン/サギ/ビーチ/天の川 ──
+  "dsc03189-b78c09": ["animal"],
+  "dsc03078-ad66fa": ["bird"],
+  "dsc04956-e28c11": ["coastal"],
+  "dsc04936-ca2e77": ["coastal"],
+  "dsc04934-2e5bc1": ["coastal"],
+  "dsc04932-cb9641": ["street"],
+  "dsc04930-8ae69f": ["street"],
+  "dsc04914-da3224": ["coastal"],
+  "dsc04913-dcc880": ["coastal"],
+  "dsc04910-7adbbc": ["coastal"],
+  "dsc04908-35a8d6": ["coastal"],
+  "dsc04907-a9aae9": ["coastal"],
+  "dsc04904-ce415c": ["coastal"],
+  "dsc04902-5d0ad3": ["coastal"],
+  "dsc04871-727734": ["night", "coastal"],
+  "dsc04862-086897": ["night", "coastal"],
+  "dsc04858-a1baf2": ["night", "coastal"],
+  "dsc04851-4bd0fe": ["night", "coastal"],
+  "dsc04838-550933": ["night", "coastal"],
+  "dsc03043-4752c1": ["bird"],
+  "dsc03030-5f74cc": ["bird"],
+  "dsc04791-c79210": ["coastal"],
+  "dsc04785-92d2da": ["coastal"],
+  "dsc04782-864502": ["coastal"],
+  "dsc04780-c629be": ["coastal"],
+  "dsc04776-0319e7": ["coastal"],
+  "dsc04773-de4278": ["street"],
+  "dsc04769-4bf0f9": ["coastal"],
+  // ── 沖縄県/石垣島 (2026-06) — 野底岳/川平湾/御神埼/キジ ──
+  "dsc05201-13d704": ["mountain", "coastal"],
+  "dsc05199-78d207": ["mountain", "coastal"],
+  "dsc05196-434560": ["mountain", "coastal"],
+  "dsc05193-4ace9b": ["mountain", "coastal"],
+  "dsc05191-7fc818": ["mountain", "coastal"],
+  "dsc05190-ef34a3": ["mountain", "coastal"],
+  "dsc05169-49577d": ["mountain", "coastal"],
+  "dsc05164-9d9c7c": ["mountain", "coastal"],
+  "dsc05162-8c5e81": ["mountain", "coastal"],
+  "dsc05158-fd07db": ["mountain"],
+  "dsc05147-9a347e": ["mountain"],
+  "dsc05125-1bf210": ["mountain", "coastal"],
+  "dsc05122-dba998": ["landscape"],
+  "dsc05115-278052": ["coastal"],
+  "dsc05089-101752": ["night", "coastal"],
+  "dsc05064-1c3d80": ["coastal", "mountain"],
+  "dsc05058-fcd4cb": ["coastal"],
+  "dsc05055-7a824e": ["coastal"],
+  "dsc05047-801e07": ["coastal"],
+  "dsc05036-143527": ["coastal"],
+  "dsc05032-3bef27": ["coastal"],
+  "dsc05031-7d86c7": ["coastal"],
+  "dsc05022-302a07": ["coastal"],
+  "dsc05013-5effd7": ["coastal"],
+  "dsc05009-dfb77a": ["coastal"],
+  "dsc05002-e81c2a": ["coastal"],
+  "dsc05000-39e55f": ["coastal"],
+  "dsc04997-7dcd05": ["coastal"],
+  "dsc04994-f7fb2b": ["coastal"],
+  "dsc04992-e74634": ["landscape"],
+  "dsc04990-8f837f": ["landscape"],
+  "dsc04989-66fddf": ["landscape"],
+  "dsc04984-a31b25": ["landscape"],
+  "dsc03382-d92d8a": ["bird"],
+  "dsc04976-c4b28d": ["coastal"],
+  "dsc04964-e11e65": ["coastal"],
+  "dsc04963-ddd2b6": ["coastal"],
+  "dsc04962-16ed8c": ["coastal"],
+  "dsc04960-6c7d98": ["coastal"],
+  "dsc04765-5466a1": ["coastal"],
+  "dsc04756-821f49": ["coastal"],
+  "dsc04749-536d11": ["coastal"],
+  "dsc04747-52e6e4": ["coastal"],
+  "dsc04744-5049f9": ["coastal"],
+  "dsc04735-562f8f": ["coastal"],
+  "dsc04730-c3e083": ["coastal"],
+  "dsc04721-8821d7": ["coastal"],
+  "dsc04718-db3539": ["coastal"],
+  "dsc04711-608e95": ["coastal"],
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
@@ -736,6 +903,8 @@ export const COLLECTION_TAGS = {
   "night-views": ["night"],
   "waterfalls": ["waterfall"],
   "lakes": ["lake"],
+  "birds": ["bird"],
+  "animals": ["animal"],
 };
 
 // 写真IDからタグを取得(未タグ付け写真は空配列)

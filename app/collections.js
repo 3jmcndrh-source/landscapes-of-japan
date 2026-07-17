@@ -562,6 +562,45 @@ export const COLLECTIONS = {
       },
     },
   },
+  "birds": {
+    // 2026-07-17 追加。写真タグ (bird) のみで抽出 — loc フォールバックなし。
+    // 全711枚を目視レビューして振り分け (photo-tags.js 参照)。
+    locs: [],
+    name: {
+      ja: "鳥", en: "Birds", zh: "鸟类", "zh-tw": "鳥類",
+      ko: "새", es: "Aves", fr: "Oiseaux", de: "Vögel",
+      pt: "Aves", it: "Uccelli", ru: "Птицы",
+      ar: "الطيور", hi: "पक्षी", th: "นก", vi: "Chim",
+      id: "Burung", tr: "Kuşlar", nl: "Vogels",
+      pl: "Ptaki", sv: "Fåglar",
+    },
+    desc: {
+      ja: "日本で出会った鳥たち。知床のシマフクロウとオジロワシ、釧路のタンチョウ、札幌の森のクマゲラ・アカゲラ・ゴジュウカラ、竹富島のアカショウビンと朝焼けのサギ、動物園の猛禽まで、野鳥観察の記録。",
+      en: "Birds encountered across Japan — Blakiston's fish owl and white-tailed eagles in Shiretoko, red-crowned cranes in Kushiro, black woodpeckers and nuthatches in Sapporo's forests, the ruddy kingfisher and golden-hour egrets of Taketomi Island, and zoo raptors.",
+      zh: "在日本邂逅的鸟类。知床的毛腿渔鸮与白尾海雕、钏路的丹顶鹤、札幌森林的黑啄木鸟与五十雀、竹富岛的赤翡翠与朝霞中的白鹭、动物园的猛禽等观鸟记录。",
+      "zh-tw": "在日本邂逅的鳥類。知床的毛腿漁鴞與白尾海鵰、釧路的丹頂鶴、札幌森林的黑啄木鳥與五十雀、竹富島的赤翡翠與朝霞中的白鷺、動物園的猛禽等賞鳥記錄。",
+      ko: "일본에서 만난 새들. 시레토코의 시마후쿠로우(부엉이)와 흰꼬리수리, 구시로의 두루미, 삿포로 숲의 딱따구리와 동고비, 다케토미섬의 호반새와 아침노을 속 백로, 동물원의 맹금류까지 — 탐조 기록.",
+    },
+  },
+  "animals": {
+    // 2026-07-17 追加。写真タグ (animal) のみで抽出 — loc フォールバックなし。
+    locs: [],
+    name: {
+      ja: "動物", en: "Animals", zh: "动物", "zh-tw": "動物",
+      ko: "동물", es: "Animales", fr: "Animaux", de: "Tiere",
+      pt: "Animais", it: "Animali", ru: "Животные",
+      ar: "الحيوانات", hi: "जानवर", th: "สัตว์", vi: "Động vật",
+      id: "Hewan", tr: "Hayvanlar", nl: "Dieren",
+      pl: "Zwierzęta", sv: "Djur",
+    },
+    desc: {
+      ja: "野生動物と動物園・水族館の仲間たち。知床沖のクジラ、日高の牧場の馬、阿寒のエゾシカ、円山公園のエゾリス、竹富島の水牛、コアラやトラ、ラッコやジンベエザメまで。",
+      en: "Wildlife and zoo residents — whales off the Shiretoko coast, ranch horses in Hidaka, Ezo deer in Akan, squirrels of Maruyama Park, Taketomi's water buffalo, koalas and tigers, sea otters and whale sharks.",
+      zh: "野生动物与动物园、水族馆的伙伴们。知床海域的鲸鱼、日高牧场的马、阿寒的虾夷鹿、圆山公园的虾夷松鼠、竹富岛的水牛、考拉与老虎、海獭与鲸鲨。",
+      "zh-tw": "野生動物與動物園、水族館的夥伴們。知床海域的鯨魚、日高牧場的馬、阿寒的蝦夷鹿、圓山公園的蝦夷松鼠、竹富島的水牛、無尾熊與老虎、海獺與鯨鯊。",
+      ko: "야생동물과 동물원·수족관의 친구들. 시레토코 앞바다의 고래, 히다카 목장의 말, 아칸의 에조사슴, 마루야마 공원의 다람쥐, 다케토미섬의 물소, 코알라와 호랑이, 해달과 고래상어까지.",
+    },
+  },
 };
 
 export const COLLECTION_SLUGS = Object.keys(COLLECTIONS);
