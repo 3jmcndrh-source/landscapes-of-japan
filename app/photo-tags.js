@@ -889,6 +889,11 @@ export const PHOTO_TAGS = {
   "dsc04721-8821d7": ["coastal"],
   "dsc04718-db3539": ["coastal"],
   "dsc04711-608e95": ["coastal"],
+  // ── 北海道/札幌 中島公園 (2026-07-23) — カワセミ4枚 (全て目視確認) ──
+  "dsc06431-b34733": ["bird"],
+  "dsc06438-b71083": ["bird"],
+  "dsc06471-90457a": ["bird"],
+  "dsc06502-520e05": ["bird"],
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)

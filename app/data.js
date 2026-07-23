@@ -211,6 +211,10 @@ export const PREFECTURES = [
     pref: "北海道",
     lat: 43.06, lng: 141.35,
     photos: [
+      { id: "dsc06502-520e05", loc: "札幌", year: 2026 },
+      { id: "dsc06471-90457a", loc: "札幌", year: 2026 },
+      { id: "dsc06438-b71083", loc: "札幌", year: 2026 },
+      { id: "dsc06431-b34733", loc: "札幌", year: 2026 },
       { id: "dsc05986_2-1741dc", loc: "大空町", year: 2026 },
       { id: "dsc05922-6deca0", loc: "弟子屈町", year: 2026 },
       { id: "dsc05907-4235f3", loc: "清里町", year: 2026 },
