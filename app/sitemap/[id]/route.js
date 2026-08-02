@@ -2,7 +2,6 @@ import { LANGS, HREFLANG, SITE_URL, PHOTO_LANGS } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS, COLLECTIONS } from "../../collections.js";
-import { TAGS, TAG_SLUGS } from "../../tags.js";
 
 // Cloudflare Pages 静的エクスポート対応 — id=0 + id=1..N (per-pref) を build 時 SSG
 export const dynamic = "force-static";
@@ -120,22 +119,6 @@ export async function GET(_req, { params }) {
         lastmod: today, changefreq: "monthly", priority: "0.6",
         alternates: allPrefLangs,
       }));
-    }
-
-    // tags — lastmod は含まれる写真の最新年
-    for (const slug of TAG_SLUGS) {
-      const tLangs = {};
-      for (const l of LANGS) tLangs[HREFLANG[l]] = `${SITE_URL}/${l}/tags/${slug}`;
-      tLangs["x-default"] = `${SITE_URL}/en/tags/${slug}`;
-      const tMaxYear = maxYearForLocList(TAGS[slug]?.locs || []);
-      const tLastmod = yearLastmod(tMaxYear) || today;
-      for (const lang of LANGS) {
-        entries.push(buildUrlEntry({
-          url: `${SITE_URL}/${lang}/tags/${slug}`,
-          lastmod: tLastmod, changefreq: "monthly", priority: "0.55",
-          alternates: tLangs,
-        }));
-      }
     }
 
     for (const pf of PREFECTURES) {

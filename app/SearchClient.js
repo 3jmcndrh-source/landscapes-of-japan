@@ -4,7 +4,6 @@ import { useSearchParams } from "next/navigation";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc } from "./collections.js";
-import { TAGS, TAG_SLUGS, getTagName, getTagDesc } from "./tags.js";
 import TopNav from "./TopNav.js";
 
 function normalize(s) { return String(s || "").toLowerCase(); }
@@ -58,19 +57,6 @@ function buildIndex(lang) {
       url: `/${lang}/collections/${slug}`,
       title: getCollectionName(slug, lang),
       subtitle: lang === "ja" ? "コレクション" : "Collection",
-      searchText: [slug, ...names].map(normalize).join(" "),
-    });
-  }
-
-  // Tags
-  for (const slug of TAG_SLUGS) {
-    const t = TAGS[slug];
-    const names = Object.values(t.name || {});
-    items.push({
-      type: "tag",
-      url: `/${lang}/tags/${slug}`,
-      title: getTagName(slug, lang),
-      subtitle: lang === "ja" ? "タグ" : "Tag",
       searchText: [slug, ...names].map(normalize).join(" "),
     });
   }

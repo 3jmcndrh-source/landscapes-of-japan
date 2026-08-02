@@ -3,7 +3,7 @@ import LocClient from "../../../LocClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../slugs.js";
-import { getLocDesc, getLocFaqs, getLocDefinition, getLocHighlights, getLocQuickAnswers } from "../../../content/descriptions.js";
+import { getLocDesc, getLocFaqs } from "../../../content/descriptions.js";
 import { getEvents } from "../../../events.js";
 import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../title-keywords.js";
@@ -84,11 +84,9 @@ export default async function Page({ params }) {
   const photos = pf.photos.filter((p) => p.loc === locJp);
   if (photos.length === 0) notFound();
 
+  // desc/faqs は UI からは 2026-07 に削除済み。SEO meta + JSON-LD 用にのみ残す。
   const desc = getLocDesc(locJp, lang);
   const faqs = getLocFaqs(locJp, lang);
-  const definition = getLocDefinition(locJp, lang);
-  const highlights = getLocHighlights(locJp, lang);
-  const quickAnswers = getLocQuickAnswers(locJp, lang);
 
   // T5: この loc で撮影実績のある月 (シーズンバー用、クライアントに月マップを載せない)
   const photoMonths = [...new Set(photos.map((p) => PHOTO_MONTHS[p.id]).filter(Boolean))];
@@ -114,31 +112,14 @@ export default async function Page({ params }) {
           (p) => cldUrl(p.id, 1200)
         ),
       },
-      // A14: AI Overview対応 — DefinedTerm + QAPage (loc向け、AI Overview/Featured Snippet 直撃)
-      definition && {
-        "@type": "DefinedTerm",
-        "@id": `${SITE_URL}/${lang}/${prefSlug}/${locSlug}#definition`,
-        name: getLocName(locJp, lang),
-        description: definition,
-        inDefinedTermSet: `${SITE_URL}/${lang}#locations`,
-      },
-      // GSC 検証エラー対策 (2026-05-18 ②回目):
-      // QAPage + FAQPage 同居で「mainEntity 重複」エラー。両者を 1 FAQPage に統合。
-      (faqs.length > 0 || quickAnswers.length > 0) && {
+      faqs.length > 0 && {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/${lang}/${prefSlug}/${locSlug}#faq`,
-        mainEntity: [
-          ...quickAnswers.map((qa) => ({
-            "@type": "Question",
-            name: qa.q,
-            acceptedAnswer: { "@type": "Answer", text: qa.a },
-          })),
-          ...faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        ],
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -187,7 +168,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} desc={desc} faqs={faqs} definition={definition} highlights={highlights} quickAnswers={quickAnswers} photoMonths={photoMonths} />
+      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} photoMonths={photoMonths} />
     </>
   );
 }

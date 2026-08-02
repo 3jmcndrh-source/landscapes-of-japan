@@ -4,8 +4,6 @@ import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholde
 import { photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
-import { TAGS, TAG_SLUGS, getTagName } from "./tags.js";
-import { getLocInfo } from "./loc-info.js";
 import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
@@ -18,7 +16,7 @@ import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
 import SeasonBar from "./SeasonBar.js";
 
-export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition, highlights, quickAnswers, photoMonths = [] }) {
+export default function LocClient({ lang, prefJp, locJp, photoMonths = [] }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
@@ -117,76 +115,6 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           )}
         </header>
 
-        {/* I-6: sticky section jump nav */}
-        {(() => {
-          const J = {
-            highlights: { ja: "見どころ", en: "Highlights", zh: "亮点", "zh-tw": "亮點", ko: "볼거리" },
-            photos: { ja: "写真", en: "Photos", zh: "照片", "zh-tw": "照片", ko: "사진" },
-            info: { ja: "実用情報", en: "Info", zh: "实用信息", "zh-tw": "實用資訊", ko: "실용 정보" },
-            related: { ja: "関連", en: "Related", zh: "相关", "zh-tw": "相關", ko: "관련" },
-          };
-          const lbl = (k) => J[k][lang] || J[k].en;
-          const items = [
-            ["highlights", (highlights || []).length > 0],
-            ["photos", true],
-            ["info", !!getLocInfo(locJp)],
-            ["related", true],
-          ].filter(([, ok]) => ok);
-          if (items.length < 2) return null;
-          return (
-            <nav className="loc-jumpnav" aria-label="Sections">
-              {items.map(([k]) => (
-                <a key={k} href={`#${k}`}>{lbl(k)}</a>
-              ))}
-            </nav>
-          );
-        })()}
-
-        {/* 概要説明 (definition優先、なければ desc にフォールバック)
-            以前は両方表示していたが内容が重複するため一本化 (desc は SEO meta/schema で使用) */}
-        {(definition || desc) && (
-          <div style={{ marginBottom: 32, padding: "20px 24px", background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 8, maxWidth: 820 }}>
-            <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 16, lineHeight: 1.85, color: "rgba(232,228,223,.95)", margin: 0 }}>
-              {definition || desc}
-            </p>
-          </div>
-        )}
-
-        {/* A14: highlights (5項目) */}
-        {highlights && highlights.length > 0 && (
-          <section id="highlights" style={{ marginBottom: 40, maxWidth: 820, scrollMarginTop: 70 }}>
-            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 16 }}>
-              {lang === "ja" ? "見どころ・特徴" : lang === "zh" ? "亮点与特色" : lang === "zh-tw" ? "亮點與特色" : lang === "ko" ? "하이라이트" : "Highlights"}
-            </h2>
-            <ul style={{ margin: 0, paddingLeft: 22, fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 15.5, lineHeight: 1.9, color: "rgba(232,228,223,.88)" }}>
-              {highlights.map((h, i) => (
-                <li key={i} style={{ marginBottom: 8 }}>{h}</li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {/* A14: quickAnswers (3 Q&A) */}
-        {quickAnswers && quickAnswers.length > 0 && (
-          <section style={{ marginBottom: 40, maxWidth: 820 }}>
-            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 16 }}>
-              {lang === "ja" ? "クイック情報" : lang === "zh" ? "快速问答" : lang === "zh-tw" ? "快速問答" : lang === "ko" ? "빠른 답변" : "Quick Answers"}
-            </h2>
-            <div>
-              {quickAnswers.map((qa, i) => (
-                <div key={i} style={{ marginBottom: 18, paddingBottom: 14, borderBottom: i < quickAnswers.length - 1 ? "1px solid rgba(220,190,100,.1)" : "none" }}>
-                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 15, fontWeight: 500, color: "#f2ece2", marginBottom: 6 }}>
-                    {qa.q}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 14, lineHeight: 1.75, color: "rgba(232,228,223,.82)" }}>
-                    {qa.a}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         <section id="photos" style={{ scrollMarginTop: 70 }}>
           {photos.length > 1 && (
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
@@ -229,43 +157,6 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           {gridCount < photos.length && <div ref={gridSentinelRef} aria-hidden="true" style={{ height: 1 }} />}
         </section>
 
-        {/* 実用情報 (#10): アクセス・駐車場・料金・所要時間・ベスト時間帯 */}
-        {(() => {
-          const info = getLocInfo(locJp);
-          if (!info) return null;
-          const labels = {
-            access:   { ja: "アクセス", en: "Access" },
-            parking:  { ja: "駐車場", en: "Parking" },
-            fee:      { ja: "料金", en: "Admission" },
-            duration: { ja: "所要時間", en: "Duration" },
-            bestTime: { ja: "ベスト時間帯", en: "Best Time" },
-          };
-          const fields = ["access", "parking", "fee", "duration", "bestTime"];
-          const isJa = lang === "ja";
-          return (
-            <section id="info" style={{ marginTop: 56, marginBottom: 24, padding: "24px 28px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8, scrollMarginTop: 70 }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.8)", marginBottom: 16 }}>
-                {lang === "ja" ? "実用情報" : "Practical Information"}
-              </h2>
-              <dl style={{ margin: 0, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, lineHeight: 1.7 }}>
-                {fields.map((f) => (
-                  <div key={f} style={{ display: "grid", gridTemplateColumns: "min-content 1fr", gap: 18, marginBottom: 10 }}>
-                    <dt style={{ minWidth: 100, color: "rgba(220,190,100,.85)", fontWeight: 500, whiteSpace: "nowrap" }}>
-                      {labels[f][isJa ? "ja" : "en"]}
-                    </dt>
-                    <dd style={{ margin: 0, color: "rgba(232,228,223,.92)" }}>
-                      {info[f][isJa ? "ja" : "en"]}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </section>
-          );
-        })()}
-
-        {/* faqs はクイック情報と内容が重複するため UI から削除。
-            データは FAQPage JSON-LD schema 用にサーバ側で使用 */}
-
         {siblings.length > 0 && (
           <section style={{ marginTop: 72 }}>
             <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
@@ -301,36 +192,22 @@ export default function LocClient({ lang, prefJp, locJp, desc, faqs, definition,
           </section>
         )}
 
-        {/* Related categories: collections + tags (A15 内部リンク強化。blog/techniques は 2026-07 削除) */}
+        {/* Related collections (tags は 2026-07 全廃) */}
         {(() => {
           const myColls = COLLECTION_SLUGS.filter((s) => COLLECTIONS[s].locs.includes(locJp));
-          const myTags = TAG_SLUGS.filter((s) => TAGS[s].locs.includes(locJp));
-          if (myColls.length === 0 && myTags.length === 0) return null;
+          if (myColls.length === 0) return null;
           return (
             <section id="related" style={{ marginTop: 64, scrollMarginTop: 70 }}>
               <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-                {lang === "ja" ? "関連コンテンツ" : "Related Content"}
+                {lang === "ja" ? "コレクション" : "Collections"}
               </h2>
-
-              {(myColls.length > 0 || myTags.length > 0) && (
-                <div>
-                  <div style={{ fontSize: 11, color: "rgba(220,190,100,.5)", textTransform: "uppercase", letterSpacing: ".2em", marginBottom: 8 }}>
-                    {lang === "ja" ? "コレクション・タグ" : "Collections & Tags"}
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                    {myColls.slice(0, 5).map((s) => (
-                      <a key={`c-${s}`} href={`/${lang}/collections/${s}`} style={{ background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
-                        {getCollectionName(s, lang)}
-                      </a>
-                    ))}
-                    {myTags.slice(0, 8).map((s) => (
-                      <a key={`t-${s}`} href={`/${lang}/tags/${s}`} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(220,190,100,.15)", borderRadius: 999, padding: "6px 14px", color: "rgba(232,228,223,.85)", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
-                        #{getTagName(s, lang)}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {myColls.slice(0, 5).map((s) => (
+                  <a key={`c-${s}`} href={`/${lang}/collections/${s}`} style={{ background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
+                    {getCollectionName(s, lang)}
+                  </a>
+                ))}
+              </div>
             </section>
           );
         })()}

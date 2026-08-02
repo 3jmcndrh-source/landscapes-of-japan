@@ -191,6 +191,17 @@ AI生成コンテンツを削ぎ落として純粋な写真サイトへ。コレ
 - インデックス済み旧URLは `public/_redirects` で `/:lang/blog*`・`/:lang/techniques/*` → `/:lang` 301
 - **PowerShell の罠**: `Remove-Item "app\[lang]\blog"` は `[lang]` がワイルドカード解釈され黙って失敗する。`-LiteralPath` 必須。
 
+### 第2弾 (2026-07-18 ユーザー指示) — AIテキスト全消し + タグ機能全廃
+
+**loc/pref ページの説明文・見どころ・特徴・クイック情報・実用情報、写真ページの「この撮影地について」「撮影ポイント」「被写体」タグ表示を全部削除。**
+loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリッド + コレクション + 近隣」だけの純粋な写真ページに。
+- **タグ機能ごと全廃**: `app/tags.js` (30タグ)・`app/TagClient.js`・`app/[lang]/tags/`・`app/loc-info.js` を削除。理由は雪景色と同じ**loc単位判定の構造的欠陥** (例: `drift-ice` タグが知床の夏写真55枚を全部拾う)。代替は目視精査済みのコレクション。
+- 旧URLは `/:lang/tags/*` → `/:lang/collections` 301
+- **`app/photo-tags.js` は残す** — これはコレクション用の写真単位タグ (目視精査済み)。tags.js とは別物なので混同しないこと。
+- `content/descriptions.js` の definition/highlights/quickAnswers は**UI から切り離しただけ**でデータは残存 (未使用)。desc/faqs は SEO meta + FAQPage JSON-LD で引き続き使用。
+- JSON-LD からは DefinedTerm と quickAnswers 由来の Question を除去 (FAQPage は faqs のみ)。
+- **踏んだ罠**: UI を消しただけだと JSON-LD 側が削除済み変数を参照して `ReferenceError: definition is not defined` でページ500。props を削るときは同ファイル内の jsonLd も必ず grep すること。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.

@@ -3,11 +3,9 @@ import PhotoClient from "../../../../PhotoClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../../data.js";
 import { HREFLANG, SITE_URL, PHOTO_LANGS } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
-import { getLocDesc, getLocHighlights, getLocDefinition } from "../../../../content/descriptions.js";
+import { getLocDesc } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
-import { TAGS, TAG_SLUGS, getTagName } from "../../../../tags.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../../title-keywords.js";
-import { ui } from "../../../../ui-strings.js";
 import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
 
 // 2026-06: 写真個別ページは PHOTO_LANGS (7言語) のみ pre-render。
@@ -174,7 +172,7 @@ export default async function Page({ params }) {
         encodingFormat: "image/jpeg",
         width: { "@type": "QuantitativeValue", value: 2400, unitCode: "E37" },
         height: { "@type": "QuantitativeValue", value: 1600, unitCode: "E37" },
-        keywords: [getLocName(locJp, "en"), getPrefName(prefJp, "en"), "Japanese landscape", "landscape photography", "Japan", photo.year ? String(photo.year) : null, ...((PHOTO_TAGS[photoId] || []).map((tag) => TAGS[tag] ? getTagName(tag, "en") : tag))].filter(Boolean).join(", "),
+        keywords: [getLocName(locJp, "en"), getPrefName(prefJp, "en"), "Japanese landscape", "landscape photography", "Japan", photo.year ? String(photo.year) : null].filter(Boolean).join(", "),
         creator: {
           "@type": "Person",
           name: "Landscapes of Japan",
@@ -213,12 +211,6 @@ export default async function Page({ params }) {
     ],
   };
 
-  // SEO content enrichment — photo pages are currently very thin (image +
-  // breadcrumb + related thumbnails). Adding the location description and
-  // its highlights gives Google substantial unique text per location.
-  const locDesc = getLocDesc(locJp, lang);
-  const locHighlights = getLocHighlights(locJp, lang);
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -228,41 +220,12 @@ export default async function Page({ params }) {
         locJp={locJp}
         photo={photo}
         related={related}
-        photoTags={photoTags}
         similarPhotos={similarPhotos}
         otherSeasons={otherSeasons}
         prevHref={prevHref}
         nextHref={nextHref}
         position={photoIdx >= 0 ? { idx: photoIdx, total: locPhotos.length } : null}
       />
-      {(locDesc || locHighlights.length > 0) && (
-        <section style={{ background: "#0a0a0a", color: "#e8e4df", padding: "60px 16px", borderTop: "1px solid rgba(220,190,100,.15)" }}>
-          <div style={{ maxWidth: 980, margin: "0 auto" }}>
-            {locDesc && (
-              <>
-                <h2 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(22px,3vw,32px)", color: "#f2ece2", margin: "0 0 18px", letterSpacing: ".01em" }}>
-                  {ui("aboutThisLocation", lang)}: {locLocal}
-                </h2>
-                <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 15, color: "rgba(232,228,223,.78)", lineHeight: 1.85, margin: "0 0 36px" }}>
-                  {locDesc}
-                </p>
-              </>
-            )}
-            {locHighlights.length > 0 && (
-              <>
-                <h3 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "#f2ece2", margin: "0 0 16px" }}>
-                  {ui("keyFeatures", lang)}
-                </h3>
-                <ul style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.72)", lineHeight: 1.75, paddingLeft: 22, margin: "0 0 40px" }}>
-                  {locHighlights.slice(0, 5).map((h, i) => (
-                    <li key={i} style={{ marginBottom: 10 }}>{h}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </div>
-        </section>
-      )}
     </>
   );
 }

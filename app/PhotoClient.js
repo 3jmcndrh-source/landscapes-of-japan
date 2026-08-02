@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import TopNav from "./TopNav.js";
-import { TAGS, getTagName } from "./tags.js";
 import { richAlt } from "./title-keywords.js";
 import LangBar from "./LangBar.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
@@ -16,7 +15,7 @@ const OTHER_SEASONS_TITLE = {
 };
 const SEASON_ICON = Object.fromEntries(SEASONS.map((s) => [s.key, s.icon]));
 
-export default function PhotoClient({ lang, prefJp, locJp, photo, related, photoTags = [], similarPhotos = [], otherSeasons = [], prevHref = null, nextHref = null, position = null }) {
+export default function PhotoClient({ lang, prefJp, locJp, photo, related, similarPhotos = [], otherSeasons = [], prevHref = null, nextHref = null, position = null }) {
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
   const locSlug = LOC_SLUGS[locJp];
@@ -111,21 +110,6 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, photo
             )}
           </div>
 
-          {/* A13: フォトタグ表示 (この写真の被写体属性) */}
-          {photoTags.length > 0 && (
-            <div style={{ marginTop: 18, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
-              <span style={{ fontSize: 11, color: "rgba(220,190,100,.5)", textTransform: "uppercase", letterSpacing: ".15em", marginRight: 4 }}>
-                {lang === "ja" ? "被写体" : lang === "ko" ? "피사체" : lang === "zh" ? "主题" : lang === "zh-tw" ? "主題" : "Subjects"}
-              </span>
-              {photoTags.map((tag) => (
-                TAGS[tag] ? (
-                  <a key={tag} href={`/${lang}/tags/${tag}`} style={{ background: "rgba(220,190,100,.10)", border: "1px solid rgba(220,190,100,.28)", borderRadius: 999, padding: "4px 12px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 11 }}>
-                    #{getTagName(tag, lang)}
-                  </a>
-                ) : null
-              ))}
-            </div>
-          )}
         </header>
 
         {related.length > 0 && (

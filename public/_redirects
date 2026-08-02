@@ -12,3 +12,7 @@
 /:lang/blog/*  /:lang  301
 /:lang/blog  /:lang  301
 /:lang/techniques/*  /:lang  301
+
+# 2026-07: タグ機能を全廃 (loc 単位判定で誤混入が構造的だったため)。
+# 代替はコレクション (写真単位で目視精査済み)。
+/:lang/tags/*  /:lang/collections  301
