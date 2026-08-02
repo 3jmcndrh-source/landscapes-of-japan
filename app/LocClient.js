@@ -3,7 +3,7 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import { getCollectionName } from "./collections.js";
 import { richAlt } from "./title-keywords.js";
 import TopNav from "./TopNav.js";
 import Lightbox from "./Lightbox.js";
@@ -16,7 +16,7 @@ import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
 import SeasonBar from "./SeasonBar.js";
 
-export default function LocClient({ lang, prefJp, locJp, photoMonths = [] }) {
+export default function LocClient({ lang, prefJp, locJp, photoMonths = [], collections = [] }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
@@ -192,25 +192,23 @@ export default function LocClient({ lang, prefJp, locJp, photoMonths = [] }) {
           </section>
         )}
 
-        {/* Related collections (tags は 2026-07 全廃) */}
-        {(() => {
-          const myColls = COLLECTION_SLUGS.filter((s) => COLLECTIONS[s].locs.includes(locJp));
-          if (myColls.length === 0) return null;
-          return (
-            <section id="related" style={{ marginTop: 64, scrollMarginTop: 70 }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-                {lang === "ja" ? "コレクション" : "Collections"}
-              </h2>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {myColls.slice(0, 5).map((s) => (
-                  <a key={`c-${s}`} href={`/${lang}/collections/${s}`} style={{ background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
-                    {getCollectionName(s, lang)}
-                  </a>
-                ))}
-              </div>
-            </section>
-          );
-        })()}
+        {/* この撮影地の写真が実際に入っているコレクション (server 側で写真単位に集計。
+            旧実装は collection.locs の loc 単位判定で、写真タグ由来の鳥/動物が出なかった) */}
+        {collections.length > 0 && (
+          <section id="related" style={{ marginTop: 64, scrollMarginTop: 70 }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
+              {lang === "ja" ? "コレクション" : "Collections"}
+            </h2>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {collections.map((c) => (
+                <a key={`c-${c.slug}`} href={`/${lang}/collections/${c.slug}`} style={{ display: "inline-flex", alignItems: "baseline", gap: 7, background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
+                  {getCollectionName(c.slug, lang)}
+                  <span style={{ fontSize: 10.5, color: "rgba(220,190,100,.75)" }}>{c.count}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* A19: PageRank流通最適化 — 同地方の他pref へのリンク */}
         {(() => {
