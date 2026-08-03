@@ -8,7 +8,7 @@ import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
 import { photoLang } from "./i18n-meta.js";
-import { SEASONS, seasonLabel } from "./SeasonBar.js";
+import { SEASONS, seasonLabel } from "./seasons.js";
 
 /* T5: 月→季節 (photo-months.js の seasonOf と同義。月は server から photo.month で渡る) */
 const seasonOf = (m) => (!m ? null : m <= 2 || m === 12 ? "winter" : m <= 5 ? "spring" : m <= 8 ? "summer" : "autumn");

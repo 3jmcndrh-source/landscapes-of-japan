@@ -7,7 +7,6 @@ import { getLocDesc, getLocFaqs } from "../../../content/descriptions.js";
 import { getEvents } from "../../../events.js";
 import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../title-keywords.js";
-import { PHOTO_MONTHS } from "../../../photo-months.js";
 import { COLLECTION_SLUGS, getCollectionPhotos } from "../../../collections.js";
 
 export const dynamicParams = false;
@@ -88,9 +87,6 @@ export default async function Page({ params }) {
   // desc/faqs は UI からは 2026-07 に削除済み。SEO meta + JSON-LD 用にのみ残す。
   const desc = getLocDesc(locJp, lang);
   const faqs = getLocFaqs(locJp, lang);
-
-  // T5: この loc で撮影実績のある月 (シーズンバー用、クライアントに月マップを載せない)
-  const photoMonths = [...new Set(photos.map((p) => PHOTO_MONTHS[p.id]).filter(Boolean))];
 
   // この loc の写真が実際に入っているコレクションを写真単位で集計 (枚数の多い順)。
   // collection.locs による loc 単位判定では、写真タグ由来の鳥/動物が拾えなかった。
@@ -180,7 +176,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} photoMonths={photoMonths} collections={collections} />
+      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} collections={collections} />
     </>
   );
 }

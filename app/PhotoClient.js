@@ -7,7 +7,7 @@ import { richAlt } from "./title-keywords.js";
 import LangBar from "./LangBar.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
 import { ambient } from "./photo-colors.js";
-import { SEASONS, seasonLabel } from "./SeasonBar.js";
+import { SEASONS, seasonLabel } from "./seasons.js";
 
 const OTHER_SEASONS_TITLE = {
   ja: "この場所の他の季節", en: "Other Seasons Here", zh: "此地的其他季节", "zh-tw": "此地的其他季節",

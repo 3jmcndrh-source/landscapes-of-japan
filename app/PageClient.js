@@ -35,13 +35,14 @@ const HERO_ROTATION = [
   "usvnljzznwmqu93sftg1", // さっぽろ雪まつり — 夜の雪像
 ];
 
+/* 「ガイド」は 2026-07 のコンテンツ削減でガイド文自体が無くなったため文言から除去 */
 const VIEW_ALL = {
-  ja: "ガイド/詳細を見る", en: "Guide & details", zh: "查看指南与详情", "zh-tw": "查看指南與詳情",
-  ko: "가이드/자세히 보기", es: "Guía y detalles", fr: "Guide & détails",
-  de: "Reiseführer & Details", pt: "Guia e detalhes", it: "Guida e dettagli",
-  ru: "Гид и подробности", ar: "الدليل والتفاصيل", hi: "गाइड और विवरण",
-  th: "คู่มือและรายละเอียด", vi: "Hướng dẫn & chi tiết", id: "Panduan & detail",
-  tr: "Rehber ve ayrıntılar", nl: "Gids & details", pl: "Przewodnik i szczegóły", sv: "Guide & detaljer",
+  ja: "詳細を見る", en: "View details", zh: "查看详情", "zh-tw": "查看詳情",
+  ko: "자세히 보기", es: "Ver detalles", fr: "Voir les détails",
+  de: "Details ansehen", pt: "Ver detalhes", it: "Vedi dettagli",
+  ru: "Подробнее", ar: "عرض التفاصيل", hi: "विवरण देखें",
+  th: "ดูรายละเอียด", vi: "Xem chi tiết", id: "Lihat detail",
+  tr: "Ayrıntıları gör", nl: "Details bekijken", pl: "Zobacz szczegóły", sv: "Visa detaljer",
 };
 
 /* ギャラリー表示モード切替 (地域別 / 撮影日順) のラベル。未対応言語は en フォールバック */
