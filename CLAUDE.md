@@ -202,6 +202,16 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - JSON-LD からは DefinedTerm と quickAnswers 由来の Question を除去 (FAQPage は faqs のみ)。
 - **踏んだ罠**: UI を消しただけだと JSON-LD 側が削除済み変数を参照して `ReferenceError: definition is not defined` でページ500。props を削るときは同ファイル内の jsonLd も必ず grep すること。
 
+## 新しい都道府県を追加する手順 (2026-08-12 群馬県で実施)
+
+`upload.mjs` は **data.js に pref が既存であること** を前提とする (無いと `✗ data.js に pref が見つかりません` で停止)。
+新県の写真を入れる前に、この順で登録すること:
+1. `app/data.js` の `PREFECTURES` に `{ pref, lat, lng, photos: [] }` を地理順の位置へ追加
+2. `app/slugs.js` の `PREF_SLUGS` に slug、`LOC_SLUGS` に撮影地 slug
+3. `app/data.js` の `LOC_I18N` に撮影地の24言語訳 (pref 名の `PREF_I18N` は**47県すべて登録済み**なので不要)
+4. `regions.js` / `wikidata.js` / `all-prefectures` も**47県分すべて既存**なので触らなくてよい
+- **座標**は原則 県庁所在地だが、群馬県は唯一の撮影地が草津温泉(標高1,200m)で前橋とは気温が約10℃違うため草津の座標を採用。loc ページの天気/日の出はこの pref 座標で引く。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.

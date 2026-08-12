@@ -4,6 +4,7 @@ export const PREF_SLUGS = {
   "千葉県": "chiba",
   "東京都": "tokyo",
   "神奈川県": "kanagawa",
+  "群馬県": "gunma",
   "石川県": "ishikawa",
   "山梨県": "yamanashi",
   "長野県": "nagano",
@@ -61,6 +62,8 @@ export const LOC_SLUGS = {
   /* Kanagawa */
   "横浜": "yokohama",
   "鎌倉": "kamakura",
+  /* Gunma */
+  "草津温泉": "kusatsu-onsen",
   /* Ishikawa */
   "金沢": "kanazawa",
   /* Yamanashi */
