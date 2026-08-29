@@ -221,6 +221,19 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - 実装は `app/[lang]/layout.js` の `GA4_MEASUREMENT_ID`。**空文字にすればタグごと出力されない**。
 - 全ページがフルページ遷移なので `gtag("config")` だけで page_view が正しく飛ぶ (SPA 用処理は不要)。
 
+### 毎朝の訪問者レポート (2026-08-29 設定)
+`node scripts/analytics/daily-report.mjs` で GA4 + Clarity を1本の日本語サマリーにする。
+毎朝8時に**ローカルの定期タスク** `landscapes-daily-analytics` が実行 (`~/.claude/scheduled-tasks/`)。
+- **クラウド実行は不可**: 認証情報 (`.env` / `gsc-service-account.json`) が gitignore 済みのローカルファイルなので、
+  クラウドагент では読めない。スケジュールをクラウドへ移すなら鍵の受け渡しから設計し直すこと。
+- アプリが閉じていた時刻の分は**次回起動時に実行**される (PCが落ちていると当日分は飛ぶ)。
+- GA4 Data API は サービスアカウント `gsc-sitemap-bot@` に**プロパティ「閲覧者」権限**を付与済み +
+  GCP プロジェクト `landscapes-gsc` で Analytics Data API を有効化済み。
+- **Clarity API は 1プロジェクト1日10回まで**。スクリプトは1実行=1コール。失敗してもリトライを回さないこと。
+  この制限があるので `daily-report.mjs` は直接実行時のみ API を叩く (import では叩かない)。
+- `--date=YYYY-MM-DD` で対象日を上書き可 (動作確認・過去分の再出力)。
+- 新規プロパティは標準レポートへの反映が最大48時間遅れる。導入直後の 0 は異常ではない (リアルタイムAPIでは出る)。
+
 ### CSP の罠 (同日に3件発覚・修正)
 `public/_headers` の CSP が実際に効く方 (`next.config.mjs` の headers() は static export で無効)。
 外部スクリプトを足すときは **script-src / connect-src / img-src の3つ**を確認すること。
