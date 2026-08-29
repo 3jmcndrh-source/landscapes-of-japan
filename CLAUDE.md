@@ -212,6 +212,22 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 4. `regions.js` / `wikidata.js` / `all-prefectures` も**47県分すべて既存**なので触らなくてよい
 - **座標**は原則 県庁所在地だが、群馬県は唯一の撮影地が草津温泉(標高1,200m)で前橋とは気温が約10℃違うため草津の座標を採用。loc ページの天気/日の出はこの pref 座標で引く。
 
+## アクセス解析 (2026-08-29 導入)
+
+**「実際に何人来たか」は GA4 で見る。Cloudflare の数字は Bot 込みなので別物。**
+- GA4 測定ID `G-SZG99MQG5Z` / プロパティ `Landscapes of Japan` (552016515)
+  / アカウント `Default Account for Firebase` (386715020)。JST・JPY・イベント保持14か月。
+- 既存の `code-12a66` プロパティは Firebase が自動生成した**別物**。写真サイトの数字を入れないこと。
+- 実装は `app/[lang]/layout.js` の `GA4_MEASUREMENT_ID`。**空文字にすればタグごと出力されない**。
+- 全ページがフルページ遷移なので `gtag("config")` だけで page_view が正しく飛ぶ (SPA 用処理は不要)。
+
+### CSP の罠 (同日に3件発覚・修正)
+`public/_headers` の CSP が実際に効く方 (`next.config.mjs` の headers() は static export で無効)。
+外部スクリプトを足すときは **script-src / connect-src / img-src の3つ**を確認すること。
+- `font-src` に `self` が無く、**自前配信の next/font が全部ブロックされていた** (システムフォント表示になっていた)
+- Clarity は `www.clarity.ms` だけ許可され、本体の `scripts.clarity.ms` と計測ピクセル `c.clarity.ms`・`c.bing.com` が弾かれ**完全に無効**だった
+- Vercel 時代の `@vercel/analytics` が残り `/_vercel/insights/script.js` を毎回 404 で叩いていた → 撤去
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
