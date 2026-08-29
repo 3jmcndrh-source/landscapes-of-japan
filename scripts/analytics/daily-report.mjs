@@ -116,7 +116,7 @@ async function collectClarity() {
 const pct = (a, b) => (b === 0 ? (a === 0 ? "±0" : "新規") : `${a >= b ? "+" : ""}${Math.round(((a - b) / b) * 100)}%`);
 const mmss = (s) => `${Math.floor(s / 60)}分${String(Math.round(s % 60)).padStart(2, "0")}秒`;
 
-function render(g, c, cErr) {
+export function render(g, c, cErr) {
   const L = [];
   L.push(`Landscapes of Japan — ${g.date} の訪問者`);
   L.push("");
@@ -173,13 +173,18 @@ function render(g, c, cErr) {
   return L.join("\n");
 }
 
-/* ── main ── */
-const g = await collectGA4();
-let c = null, cErr = null;
-try { c = await collectClarity(); } catch (e) { cErr = e.message.slice(0, 80); }
+/* ── main ──
+   直接実行されたときだけ API を叩く。import しただけで走ると
+   Clarity の「1プロジェクト1日10回」を無駄に消費するため。 */
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
+if (isMain) {
+  const g = await collectGA4();
+  let c = null, cErr = null;
+  try { c = await collectClarity(); } catch (e) { cErr = e.message.slice(0, 80); }
 
-if (process.argv.includes("--json")) {
-  console.log(JSON.stringify({ ga4: g, clarity: c, clarityError: cErr }, null, 2));
-} else {
-  console.log(render(g, c, cErr));
+  if (process.argv.includes("--json")) {
+    console.log(JSON.stringify({ ga4: g, clarity: c, clarityError: cErr }, null, 2));
+  } else {
+    console.log(render(g, c, cErr));
+  }
 }
