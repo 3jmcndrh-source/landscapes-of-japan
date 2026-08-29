@@ -54,6 +54,8 @@ export const LOC_SLUGS = {
   "清里町": "kiyosato",
   "弟子屈町": "teshikaga",
   "大空町": "ozora",
+  "美瑛町": "biei",
+  "長沼町": "naganuma",
   /* Chiba */
   "鴨川シーワールド": "kamogawa-sea-world",
   /* Tokyo */

@@ -986,6 +986,68 @@ export const PHOTO_TAGS = {
   "dsc07542-b90bd8": ["coastal"],
   "dsc07565-68c284": ["coastal"],
   "dsc07576-199873": ["coastal"],   // 鳥影は小さく主題ではないので bird は付けない
+
+  // ── 北海道/札幌 中島公園 (2026-08-14、4枚 全て目視確認) ──
+  // 札幌は night-views.locs 入り。無タグだと野鳥が夜景コレクションに混入する
+  "dsc07793-d6c457": ["bird"],   // カワセミ
+  "dsc07806-4596a7": ["bird"],   // カワセミ
+  "dsc07851-93a3da": ["bird"],   // カワセミ
+  "dsc07928-653608": ["bird"],   // ヒヨドリ
+
+  // ── 北海道/長沼町 (2026-08-16、1枚) ──
+  "dsc07994-5fad19": ["landscape", "rural"],   // 丘から石狩平野の眺望
+
+  // ── 北海道/美瑛町 (2026-08-22、36枚 全て目視確認) ──
+  // 早朝の丘 14枚 + 四季彩の丘の花畑 22枚
+  "dsc07998-bdf46f": ["landscape", "mountain", "rural"],   // 朝靄の丘と十勝岳連峰
+  "dsc07999-7006bb": ["landscape", "rural"],
+  "dsc08000-7b868d": ["landscape", "mountain", "rural"],
+  "dsc08009-80fafb": ["landscape", "rural"],               // 日の出
+  "dsc08028-aaca78": ["landscape", "rural"],
+  "dsc08036-d34805": ["landscape", "mountain"],
+  "dsc08039-7d4db0": ["landscape", "rural"],               // 白樺と丘の農道
+  "dsc08052-c2394c": ["landscape", "mountain", "rural"],
+  "dsc08059-be9d81": ["landscape", "rural"],               // 麦稈ロールと一本木
+  "dsc08062-9e96f1": ["landscape", "rural"],
+  "dsc08068-ca8649": ["landscape", "mountain", "rural"],
+  "dsc08076-3e76e4": ["landscape", "rural"],
+  "dsc08128-86f0a7": ["landscape", "rural"],               // 丘の砂利道
+  "dsc08133-af2616": ["landscape", "rural"],
+  "dsc08149-c1e65e": ["flower-field"],                     // 四季彩の丘
+  "dsc08152-bb2f1b": ["flower-field"],
+  "dsc08153-6f136d": ["flower-field"],                     // かかしと花畑
+  "dsc08154-d0832f": ["flower-field"],
+  "dsc08155-bb3f6b": ["flower-field"],
+  "dsc08156-9536e5": ["flower-field"],
+  "dsc08161-0b0e67": ["flower-field"],                     // トラクターバス
+  "dsc08168-b84158": ["flower-field"],
+  "dsc08172-f1afa3": ["flower-field"],
+  "dsc08175-3bb717": ["flower-field"],                     // ひまわりと縞畑
+  "dsc08179-74aa67": ["flower-field"],                     // コスモス
+  "dsc08184-3c4f7c": ["flower-field"],                     // ひまわり畑
+  "dsc08190-6a9436": ["flower-field"],
+  "dsc08193-605c24": ["flower-field"],
+  "dsc08200-6d2bc0": ["flower-field"],
+  "dsc08206-53a73d": ["flower-field"],                     // コキア
+  "dsc08208-c5f83f": ["flower-field"],
+  "dsc08217-56515e": ["flower-field"],
+  "dsc08224-655d5d": ["flower-field"],
+  "dsc08225-9abc5b": ["flower-field"],
+  "dsc08235-4cbbfa": ["flower-field"],
+  "dsc08237-5162a1": ["flower-field"],
+
+  // ── 北海道/富良野 (2026-08-22、7枚 全て目視確認) ──
+  "dsc08239-97d4e0": ["flower-field"],                     // ファーム富田
+  "dsc08240-d63d1f": ["flower-field"],
+  "dsc08242-fef996": ["flower-field"],
+  "dsc08243-5c820b": ["street"],                           // ラベンダーソフト
+  "dsc08246-127cda": ["landscape", "rural"],               // 夕日の丘
+  "dsc08251-84afb1": ["landscape", "rural"],
+  "dsc08255-449d02": ["landscape", "mountain", "rural"],
+
+  // ── 北海道/美唄 (2026-08-22、2枚) ── 旧三菱美唄炭鉱の遺構
+  "dsc08272-82e7fb": ["landscape"],   // 立坑櫓
+  "dsc08277-cf2b5d": ["landscape"],   // 旧炭鉱施設
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
