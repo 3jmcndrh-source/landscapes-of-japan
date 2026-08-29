@@ -1,11 +1,15 @@
 import { Zen_Kaku_Gothic_New, Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { LANGS, RTL_LANGS, SITE_URL } from "../i18n-meta.js";
 
 const CLARITY_PROJECT_ID = "wt20nzlr29";
+
+// GA4 測定ID (G-XXXXXXXXXX)。空文字なら GA4 のタグを一切出力しない。
+// Cloudflare は Bot 込みの全 HTTP アクセスを数えるのに対し、GA4 はブラウザで
+// JS を実行した訪問者だけを数えるため、実際の閲覧者数はこちらが近い。
+const GA4_MEASUREMENT_ID = "";
 
 // Only the two fonts actually referenced by CSS variables are self-hosted via
 // next/font. Cormorant Garamond, Noto Sans JP, and Noto Sans were previously
@@ -106,6 +110,24 @@ export default async function LangLayout({ children, params }) {
             });
           }`}
         </Script>
+        {/* GA4: 実際の閲覧者数の計測。全ページがフルページ遷移なので
+            ページごとに page_view が自然に発火する (SPA 用の追加処理は不要)。
+            afterInteractive = ハイドレーション後・LCP の後に読み込む。 */}
+        {GA4_MEASUREMENT_ID && (
+          <>
+            <Script
+              id="ga4-src"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag("js", new Date());
+              gtag("config", "${GA4_MEASUREMENT_ID}");`}
+            </Script>
+          </>
+        )}
         {/* Microsoft Clarity (#4): user behavior heatmap & session recording */}
         {/* A10: lazyOnload で LCP/INP に影響しない (load イベント後に実行) */}
         <Script id="ms-clarity" strategy="lazyOnload">
@@ -133,7 +155,6 @@ export default async function LangLayout({ children, params }) {
             </p>
           </div>
         </noscript>
-        <Analytics />
       </body>
     </html>
   );

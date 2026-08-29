@@ -3,7 +3,7 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: default-src 'self'; img-src 'self' landscapes-images.pages.dev res.cloudinary.com images.unsplash.com data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.clarity.ms static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; connect-src 'self' formspree.io raw.githubusercontent.com api.open-meteo.com *.clarity.ms c.bing.com cloudflareinsights.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; img-src 'self' landscapes-images.pages.dev res.cloudinary.com images.unsplash.com www.google-analytics.com www.googletagmanager.com data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.clarity.ms scripts.clarity.ms www.googletagmanager.com static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; connect-src 'self' formspree.io raw.githubusercontent.com api.open-meteo.com *.clarity.ms c.bing.com cloudflareinsights.com www.googletagmanager.com www.google-analytics.com *.google-analytics.com *.analytics.google.com; frame-ancestors 'none'
 
 # 静的アセット (Next.js _next/) は長期キャッシュ
 /_next/static/*
