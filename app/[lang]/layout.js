@@ -9,7 +9,7 @@ const CLARITY_PROJECT_ID = "wt20nzlr29";
 // GA4 測定ID (G-XXXXXXXXXX)。空文字なら GA4 のタグを一切出力しない。
 // Cloudflare は Bot 込みの全 HTTP アクセスを数えるのに対し、GA4 はブラウザで
 // JS を実行した訪問者だけを数えるため、実際の閲覧者数はこちらが近い。
-const GA4_MEASUREMENT_ID = "";
+const GA4_MEASUREMENT_ID = "G-SZG99MQG5Z";
 
 // Only the two fonts actually referenced by CSS variables are self-hosted via
 // next/font. Cormorant Garamond, Noto Sans JP, and Noto Sans were previously
