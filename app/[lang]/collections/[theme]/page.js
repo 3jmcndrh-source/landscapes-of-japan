@@ -106,7 +106,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <CollectionClient lang={lang} theme={theme} photos={photos} desc={desc} />
+      <CollectionClient lang={lang} theme={theme} photos={photos} />
     </>
   );
 }

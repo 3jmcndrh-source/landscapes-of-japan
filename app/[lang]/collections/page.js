@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREFECTURES, TR, cldUrl, getPrefName, getLocName } from "../../data.js";
-import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc, getCollectionPhotos } from "../../collections.js";
+import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionPhotos } from "../../collections.js";
 import TopNav from "../../TopNav.js";
 
 export const dynamicParams = false;
@@ -43,7 +43,6 @@ export default async function CollectionsIndex({ params }) {
     return {
       slug,
       name: getCollectionName(slug, lang),
-      desc: getCollectionDesc(slug, lang),
       heroId: photos[0]?.id || null,
       count: photos.length,
     };
@@ -156,9 +155,6 @@ export default async function CollectionsIndex({ params }) {
                   <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "rgba(220,190,100,.7)", marginBottom: 10, letterSpacing: ".1em" }}>
                     {c.count} {lang === "ja" ? "枚" : lang === "ko" ? "장" : (lang === "zh" || lang === "zh-tw") ? "张" : "photos"}
                   </div>
-                  <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13.5, lineHeight: 1.7, color: "rgba(232,228,223,.75)", margin: 0 }}>
-                    {c.desc.length > 140 ? c.desc.slice(0, 140) + "…" : c.desc}
-                  </p>
                 </div>
               </a>
             ))}

@@ -14,7 +14,7 @@ import { SEASONS, seasonLabel } from "./seasons.js";
 const seasonOf = (m) => (!m ? null : m <= 2 || m === 12 ? "winter" : m <= 5 ? "spring" : m <= 8 ? "summer" : "autumn");
 const ALL_LABEL = { ja: "すべて", en: "All", zh: "全部", "zh-tw": "全部", ko: "전체", de: "Alle", es: "Todas", ar: "الكل" };
 
-export default function CollectionClient({ lang, theme, photos, desc }) {
+export default function CollectionClient({ lang, theme, photos }) {
   const t = TR[lang] || TR.en;
   const name = getCollectionName(theme, lang);
 
@@ -112,12 +112,6 @@ export default function CollectionClient({ lang, theme, photos, desc }) {
             </div>
           )}
         </header>
-
-        {desc && (
-          <p style={{ fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif", fontSize: 17, lineHeight: 1.85, color: "rgba(232,228,223,.9)", marginBottom: 48, maxWidth: 820 }}>
-            {desc}
-          </p>
-        )}
 
         <section>
           {/* T5: 季節フィルタチップ (2季節以上ある場合のみ) */}
