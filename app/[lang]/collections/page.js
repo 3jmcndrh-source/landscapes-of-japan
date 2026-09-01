@@ -109,17 +109,6 @@ export default async function CollectionsIndex({ params }) {
             <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(40px,6vw,68px)", margin: 0, color: "#f2ece2", lineHeight: 1 }}>
               {titleLabel}
             </h1>
-            <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 16, color: "rgba(232,228,223,.7)", marginTop: 16, lineHeight: 1.7, maxWidth: 820 }}>
-              {lang === "ja"
-                ? "桜・紅葉・雪・城・寺社・温泉・海岸・夜景・滝・湖など、テーマごとに日本の風景を整理しました。"
-                : lang === "zh"
-                ? "按主题整理日本风景:樱花、红叶、雪、城、寺社、温泉、海岸、夜景、瀑布、湖泊。"
-                : lang === "zh-tw"
-                ? "按主題整理日本風景:櫻花、紅葉、雪、城、寺社、溫泉、海岸、夜景、瀑布、湖泊。"
-                : lang === "ko"
-                ? "벚꽃·단풍·눈·성·사찰·온천·해안·야경·폭포·호수 등 테마별로 정리한 일본 풍경 컬렉션."
-                : "Themed collections of Japanese landscapes — cherry blossoms, autumn foliage, snow, castles, temples & shrines, hot springs, coast, night views, waterfalls, and lakes."}
-            </p>
           </header>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 24 }}>
