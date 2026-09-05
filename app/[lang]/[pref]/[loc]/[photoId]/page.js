@@ -5,8 +5,46 @@ import { HREFLANG, SITE_URL, PHOTO_LANGS } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
-import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../../title-keywords.js";
 import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
+import { PHOTO_DATES } from "../../../../photo-dates.js";
+import { COLLECTION_TAGS } from "../../../../photo-tags.js";
+import { getCollectionName } from "../../../../collections.js";
+
+/* 写真詳細タイトル用のヘルパー。
+   被写体語は「コレクション名」の既存翻訳をそのまま再利用する (新しい訳語を書き足さないため)。
+   collection に対応しないタグ (landscape / rural / urban / mountain など) の写真には
+   被写体語を付けない。 */
+const TAG_TO_COLLECTION = (() => {
+  const m = {};
+  for (const [slug, tags] of Object.entries(COLLECTION_TAGS)) for (const t of tags) if (!(t in m)) m[t] = slug;
+  return m;
+})();
+/* 複数タグを持つ写真の優先順。季節や被写体そのものが主題になりやすい順に並べている。 */
+const SUBJECT_PRIORITY = ["cherry", "autumn", "snow", "castle", "temple", "shrine", "onsen", "waterfall", "lake", "coastal", "bird", "animal", "night"];
+const INTL_LOCALE = { ja: "ja-JP", en: "en-US", "zh-tw": "zh-Hant-TW", de: "de-DE", es: "es-ES", ar: "ar", ko: "ko-KR" };
+
+function captureYearMonth(photoId, lang) {
+  const iso = PHOTO_DATES[photoId];
+  if (!iso) return "";                    // 撮影日が無い写真は推測で補わない
+  const [y, m] = iso.split("-");
+  return new Intl.DateTimeFormat(INTL_LOCALE[lang] || "en-US", { year: "numeric", month: "long", timeZone: "UTC" })
+    .format(new Date(Date.UTC(+y, +m - 1, 1)));
+}
+/* coastal / lake は「何を撮ったか」ではなく「どこで撮ったか」を表すタグで、
+   単独なら主被写体だが、都市景観 (urban) と同居すると主題がどちらか決まらない。
+   実測で、同じ tags[urban,coastal] でも お台場の砂浜は「海岸」が妥当なのに対し
+   自由の女神とビル群には不適切だった。タグだけでは判別できないので、
+   この組み合わせでは被写体語を省いて「撮影地 + 撮影年月」にする。
+   night / castle / temple / shrine などは都市にあっても被写体そのものなので対象外。 */
+const SETTING_TAGS = new Set(["coastal", "lake"]);
+function subjectWord(photoId, lang) {
+  const tags = PHOTO_TAGS[photoId];
+  if (!tags) return "";                   // 未タグの写真には被写体語を付けない
+  const hit = SUBJECT_PRIORITY.find((t) => tags.includes(t));
+  if (!hit) return "";
+  if (SETTING_TAGS.has(hit) && tags.includes("urban")) return "";
+  return getCollectionName(TAG_TO_COLLECTION[hit], lang);
+}
 
 // 2026-06: 写真個別ページは PHOTO_LANGS (7言語) のみ pre-render。
 // 587枚 × 25言語 = 14,675 ファイルが 20k 上限を圧迫していたため、
@@ -46,18 +84,14 @@ export async function generateMetadata({ params }) {
   const desc = getLocDesc(locJp, lang);
   const yearStr = photo.year ? ` (${photo.year})` : "";
 
-  // Use loc title keyword (en/ja native, others EN parens fallback) so photo
-  // pages also surface high-impression search terms.
-  const titleKw = getLocTitleKw(locJp, lang);
-  const titleKwEN = getLocTitleKwEnFallback(locJp);
-  let title;
-  if (titleKw) {
-    title = `${locLocal}${yearStr}: ${titleKw} | Landscapes of Japan`;
-  } else if (titleKwEN && lang !== "en") {
-    title = `${locLocal}${yearStr} (${titleKwEN}) - ${prefLocal} | Landscapes of Japan`;
-  } else {
-    title = `${locLocal}${yearStr} - ${prefLocal} | Landscapes of Japan`;
-  }
+  /* タイトルは「撮影地 + 撮影年月 + 被写体」で写真の中身が分かる形にする。
+     以前は撮影地キーワード固定だったため、同じ撮影地の写真が全て同一タイトルになっていた
+     (例: /ja の石垣島 49ページが同一)。撮影日やタグが無い写真はその部分を省くだけで、
+     番号や写真IDのような無関係な語は足さない (一意化そのものは目的にしない)。 */
+  const ymLocal = captureYearMonth(photoId, lang);
+  const subject = subjectWord(photoId, lang);
+  const head = [locLocal, ymLocal || (photo.year ? String(photo.year) : ""), subject].filter(Boolean).join(" ");
+  const title = `${head} - ${prefLocal} | Landscapes of Japan`;
   const description = desc
     ? `${locLocal}, ${prefLocal} — ${desc.slice(0, 140)}`
     : `Photograph of ${locLocal}, ${prefLocal}, Japan${yearStr}.`;

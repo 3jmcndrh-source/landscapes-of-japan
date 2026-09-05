@@ -1,7 +1,7 @@
 "use client";
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
-import { photoLang } from "./i18n-meta.js";
+import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { getCollectionName } from "./collections.js";
 import { richAlt } from "./title-keywords.js";
@@ -10,7 +10,6 @@ import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
 import LangBar from "./LangBar.js";
-import { useProgressiveReveal } from "./useProgressiveReveal.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
@@ -37,8 +36,11 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
     return pf.photos.filter((p) => p.loc === locJp);
   }, [pf, locJp]);
 
-  /* P3: staged grid rendering (24 + reveal-on-approach) */
-  const [gridCount, gridSentinelRef] = useProgressiveReveal(photos.length);
+  /* 以前は 24枚ずつの段階表示だったが、初期HTMLに載らない写真の詳細ページへ
+     リンクが張れないため全件描画に変更 (画像は loading="lazy" のまま)。
+     写真詳細ページは PHOTO_LANGS の7言語ぶんしか生成していない。
+     ここが false の言語では写真カードをリンクにしない (存在しないURLを作らないため)。 */
+  const hasPhotoPages = PHOTO_LANGS.includes(lang);
 
   const allPhotos = useMemo(
     () =>
@@ -123,15 +125,26 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
             </div>
           )}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-            {photos.slice(0, gridCount).map((photo, i) => (
-              <div
-                key={photo.id + i}
-                className="cin-hcard"
-                onClick={() => openLightbox(getUrl(photo, imgSizes.lbW))}
-                onMouseEnter={() => { if (typeof window !== "undefined") { new window.Image().src = getUrl(photo, imgSizes.lbW); } }}
-                onContextMenu={(e) => e.preventDefault()}
-                style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, backgroundColor: "#111", backgroundImage: `url(${cldPlaceholder(photo.id)})`, backgroundSize: "cover", backgroundPosition: "center" }}
-              >
+            {photos.map((photo, i) => {
+              /* 写真詳細ページが存在する言語だけ実リンクにする。
+                 存在しない18言語では href を作らず、従来どおり div + Lightbox のまま。 */
+              const detailHref = hasPhotoPages && prefSlug && locSlug && photo.id
+                ? `/${lang}/${prefSlug}/${locSlug}/${photo.id}`
+                : null;
+              const cardStyle = { cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, backgroundColor: "#111", backgroundImage: `url(${cldPlaceholder(photo.id)})`, backgroundSize: "cover", backgroundPosition: "center" };
+              const preload = () => { if (typeof window !== "undefined") { new window.Image().src = getUrl(photo, imgSizes.lbW); } };
+              /* 通常の左クリックだけ Lightbox に差し替える。Ctrl/Cmd/Shift/Alt・中クリックは
+                 ブラウザ既定のリンク動作に任せる。
+                 右クリックは変更前と同じく抑止しているため、コンテキストメニュー経由では開けない。 */
+              const onCardClick = (e) => {
+                if (detailHref) {
+                  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                  e.preventDefault();
+                }
+                openLightbox(getUrl(photo, imgSizes.lbW));
+              };
+              const inner = (
+                <>
                 <img
                   src={getUrl(photo, imgSizes.thumbW)}
                   srcSet={`${getUrl(photo, 600)} 600w, ${getUrl(photo, 1200)} 1200w`}
@@ -149,10 +162,36 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
                   </div>
                 )}
                 <div className="cin-watermark">Landscapes of Japan</div>
-              </div>
-            ))}
+                </>
+              );
+              /* 見た目は div 版と同一。a は既定の下線・色を打ち消し、
+                 リンクテキストは img の alt がそのまま担う (別途ラベルを足さない)。 */
+              return detailHref ? (
+                <a
+                  key={photo.id + i}
+                  href={detailHref}
+                  className="cin-hcard"
+                  onClick={onCardClick}
+                  onMouseEnter={preload}
+                  onContextMenu={(e) => e.preventDefault()}
+                  style={{ ...cardStyle, display: "block", textDecoration: "none", color: "inherit" }}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div
+                  key={photo.id + i}
+                  className="cin-hcard"
+                  onClick={onCardClick}
+                  onMouseEnter={preload}
+                  onContextMenu={(e) => e.preventDefault()}
+                  style={cardStyle}
+                >
+                  {inner}
+                </div>
+              );
+            })}
           </div>
-          {gridCount < photos.length && <div ref={gridSentinelRef} aria-hidden="true" style={{ height: 1 }} />}
         </section>
 
         {siblings.length > 0 && (
