@@ -241,6 +241,34 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - Clarity は `www.clarity.ms` だけ許可され、本体の `scripts.clarity.ms` と計測ピクセル `c.clarity.ms`・`c.bing.com` が弾かれ**完全に無効**だった
 - Vercel 時代の `@vercel/analytics` が残り `/_vercel/insights/script.js` を毎回 404 で叩いていた → 撤去
 
+## 写真詳細タイトル + 撮影地→写真詳細リンク (公開 2026-09-05)
+
+**Search Console の比較起点 = 2026-09-05 19:11 JST (デプロイ `a3aecf03` / commit `d467372`)。**
+これ以前と以後で、写真詳細ページの指標を比較すること。
+
+- **写真詳細タイトル** = 撮影地 + 撮影年月 + 被写体語。
+  年月は `photo-dates.js` の EXIF 日付を `Intl.DateTimeFormat` で各言語化。
+  被写体語は**コレクション名の既訳を再利用**(新しい訳語は書かない)。
+  撮影日やタグが無ければその部分を省くだけ。番号・写真IDでの一意化はしない
+  (ja でユニーク 95→167 / 最大重複 41。**一意にはならないのが仕様**)。
+- **coastal / lake は「どこで撮ったか」タグ**。`urban` と同居したら被写体語を省く。
+  同じ tags[urban,coastal] でもお台場の砂浜は「海岸」が妥当、自由の女神+ビル群は不適切で、
+  **タグだけでは判別できない**ことを実測で確認したため (15枚 = 105URL が該当)。
+  night / castle / temple / shrine は都市にあっても被写体なので対象外。
+- **撮影地ページの写真カードは `<a href>`**。通常の左クリックだけ preventDefault して Lightbox。
+  修飾キー・中クリックはブラウザ既定。**右クリック抑止は従来どおり維持**(a と div の両分岐に付与)。
+- **段階表示 (24枚ずつ) は廃止し全件描画**。初期HTMLに無いカードにはリンクを張れないため。
+  代償は LQIP が増えるだけ (知床で +31枚 = 3.8KB、本画像は 4枚のまま、load 205→206ms)。
+- 写真詳細が無い 18言語は `<div>` のまま。**存在しないURLへのリンクを作らないこと**。
+
+### 計測時の落とし穴 (実際に踏んだ)
+- 写真IDには `_` と大文字が入る (`DSC07337_kaejdo`, `dsc05986_2-1741dc`)。
+  `[a-z0-9-]+` で href を数えると取りこぼし、「リンクが無い」と誤判定する。`[A-Za-z0-9_-]+` を使う。
+- シェルの `*/*/*/*` はスラッシュ3個以上に一致するので、撮影地ページが写真詳細に混ざる
+  (843 が 929 に見えた)。パス深さ (`awk -F/ NF==5`) で数えること。
+- **非表示のブラウザパネルでは描画が凍結**し、画像が naturalWidth=0 で「壊れ」に見え、
+  クリック/スクロールは30秒でタイムアウトする。実操作の確認には使えない (gotcha #8 と同根)。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
