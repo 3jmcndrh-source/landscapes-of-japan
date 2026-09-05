@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
 import { PREFECTURES, TR, cldUrl, getPrefName, getLocName } from "../../data.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionPhotos } from "../../collections.js";
-import TopNav from "../../TopNav.js";
+import SiteHeader from "../../SiteHeader.js";
 
 export const dynamicParams = false;
 
@@ -89,14 +89,7 @@ export default async function CollectionsIndex({ params }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-        <div className="top-bar scrolled">
-          <div className="top-langs">
-            {Object.entries(TR).map(([c]) => (
-              <a key={c} href={`/${c}/collections`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
-            ))}
-          </div>
-        </div>
-        <TopNav lang={lang} t={TR[lang] || TR.en} />
+        <SiteHeader lang={lang} langHrefTemplate="/{lang}/collections" />
 
         <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>

@@ -3,11 +3,10 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { SITE_URL, HREFLANG, photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import TopNav from "./TopNav.js";
+import SiteHeader from "./SiteHeader.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
 import Lightbox from "./Lightbox.js";
-import LangBar from "./LangBar.js";
 import { useProgressiveReveal } from "./useProgressiveReveal.js";
 
 export default function PrefClient({ lang, prefJp }) {
@@ -73,10 +72,7 @@ export default function PrefClient({ lang, prefJp }) {
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-      <div className={"top-bar scrolled"}>
-        <LangBar lang={lang} hrefFor={(c) => `/${c}/${prefSlug}`} />
-      </div>
-      <TopNav lang={lang} t={t} />
+      <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/${prefSlug}`} />
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
         <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>

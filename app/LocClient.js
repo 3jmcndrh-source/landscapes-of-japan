@@ -5,11 +5,11 @@ import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { getCollectionName } from "./collections.js";
 import { richAlt } from "./title-keywords.js";
-import TopNav from "./TopNav.js";
+import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
-import LangBar from "./LangBar.js";
+import { useOriginRect } from "./useViewTransition.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
@@ -41,6 +41,8 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
      写真詳細ページは PHOTO_LANGS の7言語ぶんしか生成していない。
      ここが false の言語では写真カードをリンクにしない (存在しないURLを作らないため)。 */
   const hasPhotoPages = PHOTO_LANGS.includes(lang);
+  /* ③ 押したサムネイルの位置を覚えて、拡大表示をそこから開く */
+  const origin = useOriginRect();
 
   const allPhotos = useMemo(
     () =>
@@ -84,10 +86,7 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-      <div className="top-bar scrolled">
-        <LangBar lang={lang} hrefFor={(c) => `/${c}/${prefSlug}/${locSlug}`} />
-      </div>
-      <TopNav lang={lang} t={t} />
+      <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/${prefSlug}/${locSlug}`} />
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
         <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
@@ -141,6 +140,8 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
                   if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                   e.preventDefault();
                 }
+                /* ③ 押したサムネイルの矩形を記録してから開く (拡大表示がそこから広がる) */
+                origin.capture(e.currentTarget.querySelector("img"));
                 openLightbox(getUrl(photo, imgSizes.lbW));
               };
               const inner = (
@@ -288,6 +289,7 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
 
       {lightbox !== null && cur && (
         <Lightbox
+          originRect={origin.peek()}
           photos={allPhotos}
           index={lightbox}
           closing={lbClosing}

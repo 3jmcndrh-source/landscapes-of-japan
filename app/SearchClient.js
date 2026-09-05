@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc } from "./collections.js";
-import TopNav from "./TopNav.js";
+import SiteHeader from "./SiteHeader.js";
 
 function normalize(s) { return String(s || "").toLowerCase(); }
 
@@ -166,16 +166,7 @@ export default function SearchClient({ lang }) {
   const t = TR[lang] || TR.en;
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-      <div className="top-bar scrolled">
-        <div className="top-langs">
-          {Object.entries(TR).map(([c]) => (
-            <a key={c} href={`/${c}/search`} className={"top-lang-btn" + (lang === c ? " active" : "")}>
-              {TR[c].name}
-            </a>
-          ))}
-        </div>
-      </div>
-      <TopNav lang={lang} t={t} />
+      <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/search`} />
       <Suspense fallback={<div style={{ minHeight: "calc(100vh - 80px)" }} />}>
         <SearchInner lang={lang} />
       </Suspense>

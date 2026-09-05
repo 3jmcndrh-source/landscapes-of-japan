@@ -3,7 +3,7 @@ import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js"
 import { PREFECTURES, PREF_I18N, getPrefName, getLocName, cldUrl } from "../../data.js";
 import { PREF_SLUGS } from "../../slugs.js";
 import { TR } from "../../data.js";
-import TopNav from "../../TopNav.js";
+import SiteHeader from "../../SiteHeader.js";
 
 // 47都道府県のISO標準順 (写真有無問わず)
 const ALL_PREFS_ORDERED = [
@@ -111,14 +111,7 @@ export default async function AllPrefecturesPage({ params }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-        <div className="top-bar scrolled">
-          <div className="top-langs">
-            {Object.entries(TR).map(([c]) => (
-              <a key={c} href={`/${c}/all-prefectures`} className={"top-lang-btn" + (lang === c ? " active" : "")}>{TR[c].name}</a>
-            ))}
-          </div>
-        </div>
-        <TopNav lang={lang} t={TR[lang] || TR.en} />
+        <SiteHeader lang={lang} langHrefTemplate="/{lang}/all-prefectures" />
 
         <main style={{ maxWidth: 1100, margin: "0 auto", padding: "100px 24px 80px" }}>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>

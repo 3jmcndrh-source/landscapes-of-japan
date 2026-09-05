@@ -126,6 +126,9 @@ if (!skipRegen) {
   execSync("node scripts/generate-photo-colors.mjs", { stdio: "inherit" });
   execSync("node scripts/generate-photo-months.mjs", { stdio: "inherit" });
   execSync("node scripts/generate-photo-dates.mjs", { stdio: "inherit" });
+  /* ⑤ 色検索用のパレット。id + 元画像の更新時刻 でキャッシュするので、
+     追加した写真だけが解析され、既存分は再計算されない。 */
+  execSync("node scripts/generate-photo-palette.mjs", { stdio: "inherit" });
 }
 
 // ---- deploy images project ----

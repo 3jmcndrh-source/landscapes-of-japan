@@ -11,13 +11,13 @@ import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
 import { getCollectionName } from "./collections.js";
-import TopNav from "./TopNav.js";
+import SiteHeader from "./SiteHeader.js";
+import ExploreSection from "./ExploreSection.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import HeroRotation from "./HeroRotation.js";
 import PhotoOfTheDay from "./PhotoOfTheDay.js";
 import { ui } from "./ui-strings.js";
-import LangBar from "./LangBar.js";
 
 /* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
 const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage", "birds", "animals"];
@@ -742,6 +742,12 @@ export default function PageClient({ initialLang = "ja" }) {
   const cRef = useRef(null);
   const mapRef = useRef(null);
   const contactRef = useRef(null);
+  const exploreRef = useRef(null);
+  /* ⑤ 色検索の対象はサイト全体の掲載写真 (言語別URLで重複させない) */
+  const allSitePhotos = useMemo(
+    () => PREFECTURES.flatMap((pf) => pf.photos.map((p) => ({ ...p, pref: pf.pref }))),
+    []
+  );
   const photoRefs = useRef({});
   const navigatingRef = useRef(false);
   const [formName, setFormName] = useState("");
@@ -895,6 +901,9 @@ export default function PageClient({ initialLang = "ja" }) {
   }, []);
 
   const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
+  const scrollToExplore = useCallback(() => {
+    exploreRef.current && exploreRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
   const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
 
   useEffect(() => {
@@ -1040,31 +1049,45 @@ export default function PageClient({ initialLang = "ja" }) {
       })()) }} />
 
       <div ref={cRef}>
-        <div className={"top-bar" + (scrollY > 80 ? " scrolled" : "")}>
-          <LangBar lang={lang} hrefFor={(c) => `/${c}`} />
-        </div>
-        <TopNav lang={lang} t={t} scrollToMap={scrollToMap} scrollToContact={scrollToContact} />
+        <SiteHeader lang={lang} langHrefFor={(c) => `/${c}`} onExplore={scrollToExplore} />
 
+        {/* ② ヒーロー: 斜体をやめ、左下に置く。文字の背後だけ局所的に落とす */}
         <div className="cin-hero">
           <div className={"cin-hero-bg" + (loaded ? " loaded" : "")} />
           <HeroRotation ids={HERO_ROTATION} />
-          <div className="cin-hero-content" style={{ zIndex: 2 }}>
-            <h1 className="cin-hero-title">{t.hero.t}</h1>
-            <p className="cin-hero-desc">{t.hero.d}</p>
-            <nav className="cin-chips" aria-label="Collections">
-              {HERO_CHIP_SLUGS.map((slug) => (
-                <a key={slug} className="cin-chip" href={`/${lang}/collections/${slug}`}>
-                  {getCollectionName(slug, lang)}
-                </a>
-              ))}
-            </nav>
-            <div style={{ marginTop: 22, display: "flex", justifyContent: "center" }}>
-              <button className="th-launch" onClick={() => setTheaterOpen(true)} aria-label={ui("theater", lang)}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
+          <div className="hero-scrim" />
+          <div className="cin-hero-content hero-left" style={{ zIndex: 2 }}>
+            <h1 className="hero-title-plain">{t.hero.t}</h1>
+            <p className="hero-sub-plain">{t.hero.d}</p>
+            {/* ① 主なボタンは2つに整理。カテゴリ類は探索エリアへ移設した */}
+            <div className="hero-cta">
+              <a className="primary" href="#explore" onClick={(e) => { e.preventDefault(); scrollToExplore(); }}>
+                {ui("findPhotos", lang)}
+              </a>
+              <button className="secondary" type="button" onClick={() => setTheaterOpen(true)}>
                 {ui("theater", lang)}
               </button>
             </div>
           </div>
+        </div>
+
+        {/* ⑤ ヒーロー直下の探索エリア: 地域から / 色から */}
+        <div ref={exploreRef}>
+          <ExploreSection
+            lang={lang}
+            photos={allSitePhotos}
+            regionSlot={
+              <nav className="cin-chips" aria-label="Collections">
+                {HERO_CHIP_SLUGS.map((slug) => (
+                  <a key={slug} className="cin-chip" href={`/${lang}/collections/${slug}`}>
+                    {getCollectionName(slug, lang)}
+                  </a>
+                ))}
+                <a className="cin-chip" href={`/${lang}/all-prefectures`}>{ui("byRegion", lang)}</a>
+                <a className="cin-chip" href={`/${lang}/random`} rel="nofollow">{ui("random", lang)}</a>
+              </nav>
+            }
+          />
         </div>
         <section className="cin-section">
           <div className="cin-map-wrap reveal" id="map" ref={mapRef}>

@@ -56,3 +56,4 @@ gsc-service-account.json
 next-env.d.ts
 
 .vercel
+scripts/.palette-cache.json

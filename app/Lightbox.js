@@ -1,4 +1,5 @@
 "use client";
+import { animateFromRect } from "./useViewTransition.js";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ambient } from "./photo-colors.js";
 
@@ -24,7 +25,7 @@ import { ambient } from "./photo-colors.js";
 const HINT_LABEL = { ja: "スワイプで前後の写真へ", zh: "滑动浏览照片", "zh-tw": "滑動瀏覽照片", ko: "스와이프로 사진 넘기기" };
 const PAGE_LABEL = { ja: "写真ページ", zh: "照片页", "zh-tw": "照片頁", ko: "사진 페이지" };
 
-export default function Lightbox({ photos, index, closing, lang, onClose, onPrev, onNext, labels, photoHref }) {
+export default function Lightbox({ photos, index, closing, lang, onClose, onPrev, onNext, labels, photoHref, originRect = null }) {
   const cur = photos[index];
   const [zoom, setZoom] = useState({ s: 1, tx: 0, ty: 0 });
   const [gesturing, setGesturing] = useState(false);
@@ -227,6 +228,8 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
         onClick={(e) => { e.stopPropagation(); if (mouseRef.current?.moved > 8) return; if (!zoomed) scheduleTapClose(); }}
         onDoubleClick={(e) => { e.stopPropagation(); cancelTapClose(); toggleZoomAt(e.clientX, e.clientY); }}
       >
+        {/* ③ サムネイルと同じ transition 名を付けて、拡大表示へ「つながって」見せる。
+            zoom 中は transform が走るので名前を外す (二重変形を避ける)。 */}
         <img
           src={cur.url}
           alt={alt}
@@ -237,6 +240,14 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
             transition: gesturing ? "none" : "transform .28s cubic-bezier(.2,.8,.2,1)",
             cursor: zoomed ? "grab" : "zoom-in",
             willChange: "transform",
+          }}
+          ref={(el) => {
+            /* ③ 開いた直後だけ、サムネイルの位置から本来の位置へ戻す。
+               別の写真へ移動したあとは originRect を使わない (無関係な写真へ変形させない) */
+            if (el && !el.dataset.flipped) {
+              el.dataset.flipped = "1";
+              animateFromRect(el, originRect);
+            }
           }}
         />
         <div className="cin-lb-wm">Landscapes of Japan</div>

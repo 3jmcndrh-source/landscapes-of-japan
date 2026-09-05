@@ -489,3 +489,162 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
 .qs-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .qsearch-results small{color:rgba(232,212,148,.7);font-size:11px;background:rgba(220,190,100,.12);padding:2px 9px;border-radius:999px}
 .qsearch-empty{margin-top:10px;text-align:center;color:rgba(232,228,223,.45);font-family:var(--font-zen-kaku),sans-serif;font-size:13px;padding:14px}
+
+/* ============================================================
+   ② デザイントークン — 色・余白・文字サイズ・角丸・動作時間を一元管理
+   ============================================================ */
+:root{
+  --ink:#f2ece2;            /* 見出し */
+  --ink-2:rgba(232,228,223,.78);  /* 本文 */
+  --ink-3:rgba(232,228,223,.55);  /* 補助 */
+  --bg:#0a0a0a;
+  --bg-2:#121212;           /* チャコール (バー・パネル) */
+  --line:rgba(232,228,223,.12);
+  --gold:#dcbe64;           /* 現在地・選択・フォーカスのみ */
+  --gold-soft:rgba(220,190,100,.16);
+  --r-sm:4px; --r-md:8px; --r-pill:999px;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:40px;
+  --t-fast:160ms; --t-mid:260ms; --t-slow:340ms;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --header-h:60px;
+}
+@media(max-width:768px){ :root{ --header-h:56px } }
+
+/* ① 上部バー ------------------------------------------------ */
+.sh{position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:120;
+  display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);
+  padding:0 var(--sp-5);background:rgba(12,12,12,.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.sh-brand{font-family:var(--font-playfair),serif;font-size:15px;letter-spacing:.06em;
+  color:var(--ink);text-decoration:none;white-space:nowrap;opacity:.92}
+.sh-brand:hover{opacity:1}
+.sh-nav{display:flex;align-items:center;gap:var(--sp-2)}
+.sh-link{font-family:var(--font-zen-kaku),sans-serif;font-size:13px;letter-spacing:.04em;
+  color:var(--ink-2);text-decoration:none;padding:8px 12px;border-radius:var(--r-sm);
+  background:none;border:0;cursor:pointer;transition:color var(--t-fast) var(--ease)}
+.sh-link:hover{color:var(--ink)}
+.sh-link[aria-current="page"]{color:var(--gold)}
+.sh-mobile{display:none;align-items:center;gap:var(--sp-1)}
+.sh-icon{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;
+  background:none;border:0;color:var(--ink-2);cursor:pointer;border-radius:var(--r-sm)}
+.sh-icon:hover{color:var(--ink)}
+@media(max-width:768px){
+  .sh{padding:0 var(--sp-4)}
+  .sh-nav{display:none}
+  .sh-mobile{display:flex}
+  .sh-brand{font-size:14px}
+}
+/* 上部バーのぶんだけ本文を下げる。見出し・アンカー先が隠れないように */
+body{--sh-offset:var(--header-h)}
+[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
+
+/* 言語メニュー ------------------------------------------------ */
+.lm-wrap{position:relative}
+.lm-btn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;
+  font-family:var(--font-zen-kaku),sans-serif;font-size:13px;color:var(--ink-2);
+  background:none;border:1px solid var(--line);border-radius:var(--r-pill);cursor:pointer;
+  transition:border-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+.lm-btn:hover{color:var(--ink);border-color:rgba(232,228,223,.28)}
+.lm-btn[aria-expanded="true"]{color:var(--gold);border-color:rgba(220,190,100,.5)}
+.lm-caret{font-size:10px;opacity:.7}
+.lm-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;margin:0;padding:6px;
+  list-style:none;min-width:190px;max-height:min(60vh,420px);overflow-y:auto;
+  background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r-md);
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.8);z-index:130}
+.lm-item{display:block;padding:9px 12px;font-family:var(--font-zen-kaku),sans-serif;font-size:13px;
+  color:var(--ink-2);text-decoration:none;border-radius:var(--r-sm)}
+.lm-item:hover{background:rgba(255,255,255,.05);color:var(--ink)}
+.lm-item.active{color:var(--gold);background:var(--gold-soft)}
+
+/* モバイルメニュー -------------------------------------------- */
+.sh-panel{position:fixed;inset:var(--header-h) 0 auto 0;z-index:119;
+  background:var(--bg-2);border-bottom:1px solid var(--line);
+  padding:var(--sp-3) var(--sp-4) calc(var(--sp-4) + env(safe-area-inset-bottom));
+  max-height:calc(100vh - var(--header-h));overflow-y:auto}
+.sh-panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sp-2)}
+.sh-panel-title{font-family:var(--font-zen-kaku),sans-serif;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-3)}
+.sh-panel-link{display:block;min-height:44px;line-height:44px;
+  font-family:var(--font-zen-kaku),sans-serif;font-size:15px;color:var(--ink);text-decoration:none;
+  border-bottom:1px solid var(--line)}
+.sh-panel-lang{padding-top:var(--sp-3)}
+.sh-panel-lang .lm-list{position:static;margin-top:var(--sp-2);min-width:0;max-height:44vh}
+
+/* ③ 動きを減らす設定 ------------------------------------------ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
+
+/* ⑤ 探索エリア + 色検索 ---------------------------------------- */
+.ex{max-width:1200px;margin:0 auto;padding:var(--sp-6) var(--sp-5);position:relative;z-index:1}
+.ex-tabs{display:flex;gap:var(--sp-1);margin-bottom:var(--sp-5)}
+.ex-tab{min-height:40px;padding:9px 20px;border:1px solid var(--line);background:none;
+  border-radius:var(--r-pill);cursor:pointer;color:var(--ink-3);
+  font-family:var(--font-zen-kaku),sans-serif;font-size:13px;letter-spacing:.04em;
+  transition:color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)}
+.ex-tab:hover{color:var(--ink-2)}
+.ex-tab.on{color:var(--gold);border-color:rgba(220,190,100,.5);background:var(--gold-soft)}
+
+.cs-swatches{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.cs-sw{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:7px 14px 7px 8px;
+  border:1px solid var(--line);background:none;border-radius:var(--r-pill);cursor:pointer;
+  color:var(--ink-3);font-family:var(--font-zen-kaku),sans-serif;font-size:13px;
+  transition:color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease)}
+.cs-sw:hover{color:var(--ink-2)}
+/* 選択状態は色だけでなく輪郭とチェックでも示す */
+.cs-sw.on{color:var(--ink);border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.cs-sw.on .cs-dot::after{content:"";position:absolute;inset:0;border-radius:50%;
+  box-shadow:inset 0 0 0 2px rgba(0,0,0,.55)}
+.cs-sw.on .cs-name::after{content:" ✓";color:var(--gold)}
+.cs-dot{position:relative;width:22px;height:22px;border-radius:50%;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);flex:0 0 auto}
+.cs-bar{display:flex;align-items:center;gap:var(--sp-3);margin:var(--sp-4) 0 var(--sp-3)}
+.cs-count{font-family:var(--font-zen-kaku),sans-serif;font-size:13px;color:var(--gold)}
+.cs-clear{min-height:36px;padding:6px 14px;border:1px solid var(--line);background:none;
+  border-radius:var(--r-pill);cursor:pointer;color:var(--ink-3);
+  font-family:var(--font-zen-kaku),sans-serif;font-size:12px}
+.cs-clear:hover{color:var(--ink-2)}
+.cs-empty,.cs-note{font-family:var(--font-zen-kaku),sans-serif;font-size:13px;color:var(--ink-3);margin:var(--sp-4) 0}
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--sp-3);margin-top:var(--sp-3)}
+.cs-card{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:var(--r-sm);
+  background:#111;display:block;text-decoration:none}
+.cs-loc{position:absolute;left:10px;bottom:8px;z-index:2;
+  font-family:var(--font-zen-kaku),sans-serif;font-size:11px;color:rgba(255,255,255,.85);
+  text-shadow:0 1px 3px rgba(0,0,0,.7);pointer-events:none}
+
+/* ② ヒーローの文字組み — 斜体をやめ、左下に置く ------------------ */
+.hero-title-plain{font-family:var(--font-playfair),serif;font-style:normal;font-weight:400;
+  font-size:clamp(34px,6vw,76px);line-height:1.08;letter-spacing:.01em;color:var(--ink);
+  max-width:min(16ch,90%);margin:0}
+.hero-sub-plain{font-family:var(--font-zen-kaku),sans-serif;font-weight:300;
+  font-size:clamp(12px,1.6vw,15px);letter-spacing:.22em;color:var(--ink-2);margin-top:14px}
+/* 文字の背後だけ局所的に落とす。写真全体は暗くしない */
+.hero-scrim{position:absolute;inset:auto 0 0 0;height:56%;pointer-events:none;z-index:1;
+  background:linear-gradient(to top,rgba(8,8,10,.72),rgba(8,8,10,.28) 45%,transparent)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-5)}
+.hero-cta a,.hero-cta button{min-height:44px;padding:12px 24px;border-radius:var(--r-pill);
+  font-family:var(--font-zen-kaku),sans-serif;font-size:14px;letter-spacing:.06em;cursor:pointer;
+  text-decoration:none;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+.hero-cta .primary{background:var(--gold);color:#141005;border:1px solid var(--gold)}
+.hero-cta .primary:hover{background:#e8ce78}
+.hero-cta .secondary{background:none;color:var(--ink);border:1px solid rgba(232,228,223,.35)}
+.hero-cta .secondary:hover{border-color:var(--ink)}
+[dir="rtl"] .hero-title-plain,[dir="rtl"] .hero-sub-plain{text-align:right}
+
+/* ② ヒーローの文字を左下へ。写真の主題と重ならないよう最大幅を持たせる */
+.cin-hero{align-items:flex-end;justify-content:flex-start}
+.cin-hero-content.hero-left{text-align:left;width:100%;max-width:1200px;
+  margin:0 auto;padding:0 var(--sp-5) clamp(48px,9vh,110px)}
+[dir="rtl"] .cin-hero-content.hero-left{text-align:right}
+@media(max-width:768px){
+  .cin-hero-content.hero-left{padding:0 var(--sp-4) clamp(40px,10vh,80px)}
+  .hero-title-plain{max-width:100%}   /* 自然に折り返す。無理に広げない */
+  .hero-cta a,.hero-cta button{flex:1 1 auto;text-align:center}
+}
+
+/* ③ View Transition の動作時間 (短く控えめに)。回転やバウンドは付けない */
+::view-transition-old(vt-lightbox),::view-transition-new(vt-lightbox){
+  animation-duration:280ms;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+::view-transition-image-pair(vt-lightbox){isolation:auto}

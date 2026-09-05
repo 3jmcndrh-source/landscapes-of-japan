@@ -2,9 +2,8 @@
 import { useState, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import TopNav from "./TopNav.js";
+import SiteHeader from "./SiteHeader.js";
 import { richAlt } from "./title-keywords.js";
-import LangBar from "./LangBar.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
 import { ambient } from "./photo-colors.js";
 import { SEASONS, seasonLabel } from "./seasons.js";
@@ -56,10 +55,11 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
 
   return (
     <div style={{ background: amb ? `radial-gradient(120% 58% at 50% 0%, ${amb}, transparent 62%) #0a0a0a` : "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-      <div className="top-bar scrolled">
-        <LangBar lang={lang} langs={PHOTO_LANGS} hrefFor={(c) => `/${c}/${prefSlug}/${locSlug}/${photo.id}`} />
-      </div>
-      <TopNav lang={lang} t={t} />
+      {/* 写真詳細は7言語ぶんしか存在しない。他18言語は同じ言語の撮影地ページ (実在) へ送り 404 を作らない */}
+      <SiteHeader
+        lang={lang}
+        langHrefFor={(c) => (PHOTO_LANGS.includes(c) ? `/${c}/${prefSlug}/${locSlug}/${photo.id}` : `/${c}/${prefSlug}/${locSlug}`)}
+      />
 
       <main style={{ maxWidth: 1400, margin: "0 auto", padding: "100px 16px 80px" }}>
         <nav aria-label="breadcrumb" className="photo-breadcrumb-sticky" style={{ fontSize: 13, color: "rgba(232,228,223,.7)", marginBottom: 24, letterSpacing: ".05em" }}>

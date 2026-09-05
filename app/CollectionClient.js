@@ -3,7 +3,7 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTION_SLUGS, getCollectionName } from "./collections.js";
-import TopNav from "./TopNav.js";
+import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
@@ -76,16 +76,7 @@ export default function CollectionClient({ lang, theme, photos }) {
 
   return (
     <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
-      <div className="top-bar scrolled">
-        <div className="top-langs">
-          {Object.entries(TR).map(([c]) => (
-            <a key={c} href={`/${c}/collections/${theme}`} className={"top-lang-btn" + (lang === c ? " active" : "")}>
-              {TR[c].name}
-            </a>
-          ))}
-        </div>
-        </div>
-        <TopNav lang={lang} t={t} />
+      <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/collections/${theme}`} />
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
         <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
