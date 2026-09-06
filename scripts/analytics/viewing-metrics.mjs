@@ -41,6 +41,10 @@ const GA_SCOPE = "https://www.googleapis.com/auth/analytics.readonly";
  * ---------------------------------------------------------------------- */
 const MEASUREMENT_START = process.env.VIEWING_METRICS_START || env.VIEWING_METRICS_START || "";
 
+/* 公開当日は 22:33 JST から計測が始まっている。丸一日ぶんではないので、
+   他の日と横並びで比較しないこと (率は使えるが、件数は少なく出る)。 */
+const START_TIME_JST = "22:33";
+
 /* ---- 本番ホストへの限定 --------------------------------------------------
  * 2026-09-05 と 09-06 に、ローカル検証 (http://localhost:4173) のアクセスが
  * 本番プロパティへ入っている。GA4 は hostName ディメンションで区別できるので、
@@ -255,6 +259,10 @@ function report(sessions, entries, sub) {
     console.log(`集計可能な期間: なし — 指定期間はすべて計測開始 (${MEASUREMENT_START}) より前。`);
   } else {
     console.log(`集計可能な期間: ${START} 〜 ${TO}` + (PARTIAL ? `  ※ 指定期間のうち ${FROM} 〜 前日は計測開始前のため未計測` : ""));
+    if (MEASUREMENT_START >= START && MEASUREMENT_START <= TO) {
+      console.log(`   ※ ${MEASUREMENT_START} は公開当日。${START_TIME_JST} JST から計測開始のため丸一日ぶんではない。`);
+      console.log("     率の比較には使えるが、件数を他の日と横並びにしないこと。");
+    }
     console.log(`対象セッション: ${sessions}`);
   }
   if (contaminated.length) {
