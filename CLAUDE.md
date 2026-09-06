@@ -269,6 +269,27 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - **非表示のブラウザパネルでは描画が凍結**し、画像が naturalWidth=0 で「壊れ」に見え、
   クリック/スクロールは30秒でタイムアウトする。実操作の確認には使えない (gotcha #8 と同根)。
 
+## デザイン改修 + 色検索 (公開 2026-09-06)
+
+**9月5日のSEO改修 (`d467372`) とは別の変更日。指標を見るときは混同しないこと。**
+デプロイ `f396e357` / commit `5116b0a` (+ `291fd0b`) / 2026-09-06 15:13 JST。
+
+- **① 上部バー** `app/SiteHeader.js` + `app/LangMenu.js`。右側固定メニューと常時25言語バーを廃止。
+  言語メニューは**閉じていても25本の `<a href>` が初期HTMLにある** (hidden で隠すだけ)。
+  写真詳細では、写真ページが無い18言語は**同じ言語の撮影地ページ**へ送る (404を作らない)。
+- **② 文字組み** ヒーローの斜体を廃止し左下配置。デザイントークンは `globals.css` の `:root`。
+- **③ 開閉の動き** `app/useViewTransition.js`。**View Transition API は不採用**:
+  React 19 が startViewTransition 内で状態を同期反映せず、flushSync を足すと Lightbox が開かなくなった (実測)。
+  Web Animations API の FLIP に切替。閉じる先は「**今表示中の写真**」のIDで引くので、
+  Lightbox内で移動しても無関係な写真へ変形しない。画面外ならフェード。
+  **罠**: ref 発火時は画像が未読込で矩形が 0×0。load と rAF を待たないと動きが出ない。
+- **⑤ 色検索** `app/ColorSearch.js` + `app/photo-palette.js` (自動生成・コミット対象)。
+  生成は `scripts/generate-photo-palette.mjs`、**upload.mjs が写真追加時に自動実行**。
+  `photo-colors.js` は**流用不可** (アンビエント用に彩度/明度を正規化した1色。雪も夜景も潰れる)。
+  入力は `images-dist/{id}_w300.webp`。**閾値は共通ルール**で、無彩色を色相より先に判定する
+  (しないと雪が blue、夜景が brown に流れる)。検索の最低占有率は 8%、並びは占有率降順。
+  **色データ (82KB) は動的 import**。「色から」を開くまで初期JSに載せない (1024→945KB)。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
