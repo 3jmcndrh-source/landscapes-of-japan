@@ -5,6 +5,7 @@ import { HREFLANG, SITE_URL, PHOTO_LANGS } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
+import { relatedPhotos } from "../../../../related.js";
 import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
 import { PHOTO_DATES } from "../../../../photo-dates.js";
 import { COLLECTION_TAGS } from "../../../../photo-tags.js";
@@ -168,25 +169,11 @@ export default async function Page({ params }) {
   const prevHref = prevPhoto ? `${navBase}/${prevPhoto.id}` : null;
   const nextHref = nextPhoto ? `${navBase}/${nextPhoto.id}` : null;
 
-  // A13: この写真のタグ + 同タグを持つ別 loc の写真 (最大 6 枚)
-  const photoTags = PHOTO_TAGS[photoId] || [];
-  const similarByTag = [];
-  if (photoTags.length > 0) {
-    for (const otherPf of PREFECTURES) {
-      for (const otherPhoto of otherPf.photos) {
-        if (otherPhoto.id === photoId) continue;
-        if (otherPhoto.loc === locJp) continue; // 同locは別セクションなのでスキップ
-        const otherTags = PHOTO_TAGS[otherPhoto.id] || [];
-        const sharedCount = otherTags.filter((tag) => photoTags.includes(tag)).length;
-        if (sharedCount > 0) {
-          similarByTag.push({ ...otherPhoto, pref: otherPf.pref, sharedCount });
-        }
-      }
-    }
-    // 共通タグ数が多い順でソートし、上位 6 件
-    similarByTag.sort((a, b) => b.sharedCount - a.sharedCount);
-  }
-  const similarPhotos = similarByTag.slice(0, 6);
+  /* ⑥ 似た雰囲気の写真。共通タグ → 色の近さ の順で選び、1つの撮影地から
+     最大2枚までにする (以前は共通タグ数だけで並べていたため、上位6枚が
+     すべて同じ撮影地になっていた)。規則は related.js に集約。 */
+  const allPhotosFlat = PREFECTURES.flatMap((p) => p.photos.map((ph) => ({ ...ph, pref: p.pref })));
+  const similarPhotos = relatedPhotos(photoId, locJp, allPhotosFlat, 6);
 
   const photoUrl = cldUrl(photoId, 2400);
   const photoUrlLarge = cldUrl(photoId, 1200);

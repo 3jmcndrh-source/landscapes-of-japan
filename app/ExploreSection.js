@@ -7,6 +7,10 @@ import { ui } from "./ui-strings.js";
    「色から」を開いた人だけが取得するよう遅延読み込みにする。 */
 const ColorSearch = dynamic(() => import("./ColorSearch.js"), { ssr: false });
 
+/* ③ 保存内容はブラウザにしかないので、サーバー描画しない。
+   タブを開いた人だけが読み込む (関係のないページの初期JSを増やさない)。 */
+const SavedPhotos = dynamic(() => import("./SavedPhotos.js"), { ssr: false });
+
 /**
  * ヒーロー直下の探索エリア。
  * ①でヒーロー中央にあったカテゴリ類と、右固定メニューのランダムをここへ集約した。
@@ -30,6 +34,12 @@ export default function ExploreSection({ lang, photos, regionSlot }) {
           className={"ex-tab" + (tab === "color" ? " on" : "")}
           onClick={() => setTab("color")}
         >{ui("byColor", lang)}</button>
+        <button
+          type="button" role="tab" id="ex-tab-saved"
+          aria-selected={tab === "saved"} aria-controls="ex-panel-saved"
+          className={"ex-tab" + (tab === "saved" ? " on" : "")}
+          onClick={() => setTab("saved")}
+        >{ui("favorites", lang)}</button>
       </div>
 
       <div id="ex-panel-region" role="tabpanel" aria-labelledby="ex-tab-region" hidden={tab !== "region"}>
@@ -37,6 +47,10 @@ export default function ExploreSection({ lang, photos, regionSlot }) {
       </div>
       <div id="ex-panel-color" role="tabpanel" aria-labelledby="ex-tab-color" hidden={tab !== "color"}>
         {tab === "color" && <ColorSearch lang={lang} photos={photos} />}
+      </div>
+      {/* ③ お気に入り と 最近見た写真 の入口。上部バーのボタンは増やさない */}
+      <div id="ex-panel-saved" role="tabpanel" aria-labelledby="ex-tab-saved" hidden={tab !== "saved"}>
+        {tab === "saved" && <SavedPhotos lang={lang} />}
       </div>
     </section>
   );

@@ -2,6 +2,9 @@
 import { animateFromRect } from "./useViewTransition.js";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ambient } from "./photo-colors.js";
+import { ui } from "./ui-strings.js";
+import PhotoActions from "./PhotoActions.js";
+import { pushHistory } from "./local-store.js";
 
 /**
  * Shared lightbox (Round B): one gesture/zoom/keyboard implementation for
@@ -23,7 +26,6 @@ import { ambient } from "./photo-colors.js";
  */
 
 const HINT_LABEL = { ja: "スワイプで前後の写真へ", zh: "滑动浏览照片", "zh-tw": "滑動瀏覽照片", ko: "스와이프로 사진 넘기기" };
-const PAGE_LABEL = { ja: "写真ページ", zh: "照片页", "zh-tw": "照片頁", ko: "사진 페이지" };
 
 export default function Lightbox({ photos, index, closing, lang, onClose, onPrev, onNext, labels, photoHref, originRect = null }) {
   const cur = photos[index];
@@ -31,6 +33,8 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
   const [gesturing, setGesturing] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const innerRef = useRef(null);
+  const rootRef = useRef(null);
+  const closeBtnRef = useRef(null);
   const touchRef = useRef({});
   const tapTimerRef = useRef(null);
   const zoomRef = useRef(zoom);
@@ -42,12 +46,36 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
   /* index change → reset zoom */
   useEffect(() => { resetZoom(); }, [index, resetZoom]);
 
+  /* ③ 最近見た写真。ここで記録するのは「実際に開いて表示している1枚」だけで、
+     サムネイルの表示や先読み (下の ±2 プリロード) では記録しない。 */
+  const shownId = photos[index]?.id;
+  useEffect(() => { if (shownId) pushHistory(shownId); }, [shownId]);
+
+  /* ⑧ 開いたら閉じるボタンへフォーカスを移し、閉じたら元の位置へ戻す。
+     キーボードだけで見ている人が、閉じたあとに写真一覧の同じ場所へ帰れるようにする。 */
+  useEffect(() => {
+    const prev = typeof document !== "undefined" ? document.activeElement : null;
+    const t = setTimeout(() => closeBtnRef.current?.focus(), 0);
+    return () => {
+      clearTimeout(t);
+      try { if (prev && prev.focus && document.contains(prev)) prev.focus(); } catch {}
+    };
+  }, []);
+
   /* keyboard */
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
       else if (e.key === "ArrowLeft") onPrev();
       else if (e.key === "ArrowRight") onNext();
+      else if (e.key === "Tab") {
+        /* ⑧ 開いている間、フォーカスがダイアログの外へ出ないようにする */
+        const f = rootRef.current?.querySelectorAll("button, a[href]");
+        if (!f || !f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -200,11 +228,15 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
   if (!cur) return null;
   const { prefName, locName, alt } = labels(cur);
   const href = photoHref ? photoHref(cur) : null;
-  const pageLabel = PAGE_LABEL[lang] || "Photo page";
+  const pageLabel = ui("photoPage", lang);
   const stopTouch = (fn) => (e) => { e.stopPropagation(); e.preventDefault(); fn(); };
 
   return (
     <div
+      ref={rootRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={[locName, prefName].filter(Boolean).join(" — ")}
       className={"cin-lb" + (closing ? " closing" : "")}
       onContextMenu={(e) => e.preventDefault()}
       onTouchStart={onTouchStart}
@@ -213,14 +245,14 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
       onClick={(e) => { if (e.target === e.currentTarget && !zoomed) onClose(); }}
       style={{ touchAction: "none", overscrollBehavior: "contain", "--amb": ambient(cur.id, 0.16) || "rgba(0,0,0,0)" }}
     >
-      <button className="cin-lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} onTouchEnd={stopTouch(onClose)} aria-label="Close">×</button>
+      <button ref={closeBtnRef} className="cin-lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} onTouchEnd={stopTouch(onClose)} aria-label={ui("close", lang)}>×</button>
       <div className="cin-lb-info">
         <div className="cin-lb-pref">{prefName}</div>
         {locName && <div className="cin-lb-loc">{locName}</div>}
         {cur.year && <div className="cin-lb-year">{cur.year}</div>}
       </div>
       {photos.length > 1 && (
-        <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); onPrev(); }} onTouchEnd={stopTouch(onPrev)} aria-label="Previous">
+        <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); onPrev(); }} onTouchEnd={stopTouch(onPrev)} aria-label={ui("previousPhoto", lang)}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
       )}
@@ -256,12 +288,14 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
         <div className="cin-lb-wm">Landscapes of Japan</div>
       </div>
       {photos.length > 1 && (
-        <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); onNext(); }} onTouchEnd={stopTouch(onNext)} aria-label="Next">
+        <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); onNext(); }} onTouchEnd={stopTouch(onNext)} aria-label={ui("nextPhoto", lang)}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
         </button>
       )}
       <div className="cin-lb-bottom" onClick={(e) => e.stopPropagation()}>
         {photos.length > 1 && <span className="cin-lb-count">{index + 1} / {photos.length}</span>}
+        {/* ③④⑦ 対象は「いま表示している写真」。次へ移動すればこちらも切り替わる */}
+        <PhotoActions photoId={cur.id} lang={lang} entry="lightbox" />
         {href && (
           <a
             className="cin-lb-pagelink"

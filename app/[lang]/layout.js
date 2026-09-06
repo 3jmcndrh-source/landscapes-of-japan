@@ -114,24 +114,40 @@ export default async function LangLayout({ children, params }) {
             ページごとに page_view が自然に発火する (SPA 用の追加処理は不要)。
             afterInteractive = ハイドレーション後・LCP の後に読み込む。 */}
         {GA4_MEASUREMENT_ID && (
-          <>
-            <Script
-              id="ga4-src"
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag("js", new Date());
-              gtag("config", "${GA4_MEASUREMENT_ID}");`}
-            </Script>
-          </>
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`(function () {
+              /* ⑨ 本番ホスト以外 (ローカルビルド・プレビュー) では計測しない。
+                 検証で本番の計測データを汚さないため。gtag が生えないので
+                 analytics.js の送信はすべて no-op になり、画面の動作は変わらない。 */
+              if (location.hostname !== "landscapes-of-japan.com") return;
+
+              var s = document.createElement("script");
+              s.async = true;
+              s.src = "https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}";
+              document.head.appendChild(s);
+
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = function () { window.dataLayer.push(arguments); };
+              window.gtag("js", new Date());
+
+              /* 検索語を GA4 に送らない。検索ページには /{lang}/search?q=... で
+                 入ってくることがあり (JSON-LD の SearchAction とブラウザの検索欄)、
+                 GA4 の拡張計測機能「サイト内検索」は既定で q= を search_term と
+                 page_location に取り込む。自由入力なので、報告する URL から q= を
+                 落としてから config する。ページ側の q= の機能は変えない。
+                 公開時に GA4 管理画面の「サイト内検索」も無効にする。 */
+              var loc = location.href;
+              try { var u = new URL(location.href); u.searchParams.delete("q"); loc = u.toString(); } catch (e) {}
+              window.gtag("config", "${GA4_MEASUREMENT_ID}", { page_location: loc });
+            })();`}
+          </Script>
         )}
         {/* Microsoft Clarity (#4): user behavior heatmap & session recording */}
         {/* A10: lazyOnload で LCP/INP に影響しない (load イベント後に実行) */}
         <Script id="ms-clarity" strategy="lazyOnload">
           {`(function(c,l,a,r,i,t,y){
+              /* ⑨ GA4 と同じく、本番ホスト以外では計測しない (検証で本番データを汚さない) */
+              if (l.location.hostname !== "landscapes-of-japan.com") return;
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);

@@ -7,6 +7,10 @@ import { richAlt } from "./title-keywords.js";
 import { PHOTO_LANGS } from "./i18n-meta.js";
 import { ambient } from "./photo-colors.js";
 import { SEASONS, seasonLabel } from "./seasons.js";
+import { ui } from "./ui-strings.js";
+import PhotoActions from "./PhotoActions.js";
+import { pushHistory } from "./local-store.js";
+import { track } from "./analytics.js";
 
 const OTHER_SEASONS_TITLE = {
   ja: "この場所の他の季節", en: "Other Seasons Here", zh: "此地的其他季节", "zh-tw": "此地的其他季節",
@@ -25,6 +29,13 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
   useEffect(() => {
     if (typeof window !== "undefined" && window.innerWidth <= 768) setImgW(1200);
   }, []);
+
+  /* ③ このページを開いた時点で、その1枚を実際に鑑賞している。
+     ⑨ 一覧から開いた photo_open とは別のイベントにして、区別できるようにする。 */
+  useEffect(() => {
+    pushHistory(photo.id);
+    track("photo_view_direct", { photo_id: photo.id }, photo.id);
+  }, [photo.id]);
 
   /* I-1: ←/→ keyboard navigation between sibling photos (same loc) */
   useEffect(() => {
@@ -62,7 +73,7 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
       />
 
       <main style={{ maxWidth: 1400, margin: "0 auto", padding: "100px 16px 80px" }}>
-        <nav aria-label="breadcrumb" className="photo-breadcrumb-sticky" style={{ fontSize: 13, color: "rgba(232,228,223,.7)", marginBottom: 24, letterSpacing: ".05em" }}>
+        <nav aria-label={ui("breadcrumb", lang)} className="photo-breadcrumb-sticky" style={{ fontSize: 13, color: "rgba(232,228,223,.7)", marginBottom: 24, letterSpacing: ".05em" }}>
           <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
           <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
           <a href={`/${lang}/${prefSlug}`} style={{ color: "inherit", textDecoration: "none" }}>{prefLocal}</a>
@@ -71,8 +82,8 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
           {photo.year && (<><span className="bc-sep" style={{ margin: "0 10px" }}>›</span><span>{photo.year}</span></>)}
         </nav>
 
-        {prevHref && <a className="photo-nav-arrow left" href={prevHref} aria-label="Previous photo" rel="prev">‹</a>}
-        {nextHref && <a className="photo-nav-arrow right" href={nextHref} aria-label="Next photo" rel="next">›</a>}
+        {prevHref && <a className="photo-nav-arrow left" href={prevHref} aria-label={ui("previousPhoto", lang)} rel="prev">‹</a>}
+        {nextHref && <a className="photo-nav-arrow right" href={nextHref} aria-label={ui("nextPhoto", lang)} rel="next">›</a>}
         {position && position.total > 1 && (
           <div className="photo-nav-count">{position.idx + 1} / {position.total}</div>
         )}
@@ -110,6 +121,8 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
             )}
           </div>
 
+          {/* ③④⑦ この写真への操作 (お気に入り / 共有 / 問い合わせ)。Lightbox と同じ部品 */}
+          <PhotoActions photoId={photo.id} lang={lang} entry="photo_page" className="pa-bar-page" />
         </header>
 
         {related.length > 0 && (
@@ -210,7 +223,10 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
                     href={`/${lang}/${sPrefSlug}/${sLocSlug}/${p.id}`}
                     className="cin-hcard"
                     onContextMenu={(e) => e.preventDefault()}
-                    onClick={(e) => { const im = e.currentTarget.querySelector("img"); if (im) im.style.viewTransitionName = "vt-hero"; }}
+                    onClick={(e) => {
+                      const im = e.currentTarget.querySelector("img"); if (im) im.style.viewTransitionName = "vt-hero";
+                      track("photo_open", { photo_id: p.id, entry: "related" }, p.id + "|related");
+                    }}
                     style={{ position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111", display: "block", textDecoration: "none" }}
                   >
                     <img

@@ -8,6 +8,7 @@ import { richAlt } from "./title-keywords.js";
 import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
+import { track } from "./analytics.js";
 import { ui } from "./ui-strings.js";
 import { useOriginRect, animateToRect } from "./useViewTransition.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
@@ -60,10 +61,30 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
     [photos, prefJp, locJp, imgSizes.lbW]
   );
 
-  const openLightbox = useCallback(
-    (url) => setLightbox(allPhotos.findIndex((p) => p.url === url)),
-    [allPhotos]
-  );
+  const openLightbox = useCallback((url, entry = "loc") => {
+    const i = allPhotos.findIndex((p) => p.url === url);
+    setLightbox(i);
+    /* ⑨ 実際に開いたときだけ。サムネイル表示や先読みでは送らない */
+    if (allPhotos[i]) track("photo_open", { photo_id: allPhotos[i].id, entry }, allPhotos[i].id + "|" + entry);
+  }, [allPhotos]);
+
+  /* ④ 写真詳細ページが無い言語では、共有リンクが
+     /{lang}/{pref}/{loc}?photo={id} で届く。その写真を開いた状態にする。
+     無効・削除済みのIDのときは、何もせず通常の撮影地ページのままにする。
+     戻る/進むでも同じ状態に戻す。 */
+  const openFromUrl = useCallback(() => {
+    try {
+      const id = new URLSearchParams(window.location.search).get("photo");
+      if (!id) return;
+      const i = allPhotos.findIndex((p) => p.id === id);
+      if (i >= 0) setLightbox(i);
+    } catch {}
+  }, [allPhotos]);
+  useEffect(() => {
+    openFromUrl();
+    window.addEventListener("popstate", openFromUrl);
+    return () => window.removeEventListener("popstate", openFromUrl);
+  }, [openFromUrl]);
   const closeLightbox = useCallback(() => {
     /* ③ 「今 Lightbox に出ている写真」のサムネイルへ戻す。
        Lightbox 内で別写真へ移動していた場合も、戻り先はその写真のカードになるので
@@ -106,7 +127,7 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
       <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/${prefSlug}/${locSlug}`} />
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
-        <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
+        <nav aria-label={ui("breadcrumb", lang)} style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
           <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
           <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
           <a href={`/${lang}/${prefSlug}`} style={{ color: "inherit", textDecoration: "none" }}>{prefLocal}</a>
@@ -134,7 +155,7 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
         <section id="photos" style={{ scrollMarginTop: 70 }}>
           {photos.length > 1 && (
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
-              <button className="th-launch" onClick={() => setTheater(true)} aria-label={ui("theater", lang)}>
+              <button className="th-launch" onClick={() => { setTheater(true); track("theater_open", { from: "loc" }, "loc"); }} aria-label={ui("theater", lang)}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
                 {ui("theater", lang)}
               </button>
@@ -324,7 +345,9 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
           onPrev={lbPrev}
           onNext={lbNext}
           labels={(p) => ({ prefName: prefLocal, locName: locLocal, alt: richAlt({ locName: locLocal, prefName: prefLocal, year: p.year, locJp, lang }) })}
-          photoHref={(p) => (prefSlug && locSlug && p.id ? `/${photoLang(lang)}/${prefSlug}/${locSlug}/${p.id}` : null)}
+          /* ④ 写真詳細ページはPHOTO_LANGSの言語にしかない。無い言語では
+             存在しないURLも作らず、英語ページへも切り替えず、リンク自体を出さない。 */
+          photoHref={(p) => (hasPhotoPages && prefSlug && locSlug && p.id ? `/${lang}/${prefSlug}/${locSlug}/${p.id}` : null)}
         />
       )}
       {theater && (

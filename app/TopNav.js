@@ -1,4 +1,5 @@
 "use client";
+import { ui } from "./ui-strings.js";
 import { useState, useEffect } from "react";
 import QuickSearch from "./QuickSearch.js";
 
@@ -53,7 +54,7 @@ export default function TopNav({ lang, t, scrollToMap, scrollToContact }) {
     {showTop && (
       <button
         className="back-top-fab"
-        aria-label="Back to top"
+        aria-label={ui("backToTop", lang)}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >↑</button>
     )}

@@ -11,7 +11,7 @@
  *      + manifest.json に追記 (再生成スクリプト群が新写真を見失わないように)
  *   3. sharp で images-dist/ に 300/600/1200/2400/3840 WebP + 40b LQIP を生成
  *   4. data.js の該当 pref に「撮影日時の降順位置」へ直接挿入 (year 付き)
- *   5. photo-colors.js / photo-months.js / photo-dates.js を再生成 (色 + 季節 + 撮影日順)
+ *   5. photo-colors/months/dates/palette/added を再生成 (色 + 季節 + 撮影日順 + 色検索 + 掲載日)
  *   6. wrangler で landscapes-images へデプロイ (--skip-deploy で省略可)
  *
  * 本体サイトの反映は従来どおり: npm run build && wrangler pages deploy out ...
@@ -122,13 +122,17 @@ console.log(`\ndata.js 更新: ${pref} に ${added.length} 枚挿入 (撮影日�
 
 // ---- アンビエント色 + 撮影月 + 撮影日 の生成ファイルを更新 (manifest 追記済みなので全量再生成) ----
 if (!skipRegen) {
-  console.log("\nphoto-colors.js / photo-months.js / photo-dates.js 再生成中...");
+  console.log("\nphoto-colors.js / photo-months.js / photo-dates.js / palette / added 再生成中...");
   execSync("node scripts/generate-photo-colors.mjs", { stdio: "inherit" });
   execSync("node scripts/generate-photo-months.mjs", { stdio: "inherit" });
   execSync("node scripts/generate-photo-dates.mjs", { stdio: "inherit" });
   /* ⑤ 色検索用のパレット。id + 元画像の更新時刻 でキャッシュするので、
      追加した写真だけが解析され、既存分は再計算されない。 */
   execSync("node scripts/generate-photo-palette.mjs", { stdio: "inherit" });
+  /* ⑤ 掲載日。data.js への追加が済んだ後に実行する。
+     まだコミット前なので、今回追加した写真には実行時刻が入る。
+     既存写真の記録は書き換えない。 */
+  execSync("node scripts/generate-photo-added.mjs", { stdio: "inherit" });
 }
 
 // ---- deploy images project ----

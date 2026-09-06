@@ -2,11 +2,12 @@
 import { useState, useMemo, useRef, useLayoutEffect } from "react";
 import { PHOTO_PALETTE, PALETTE_COLORS } from "./photo-palette.js";
 import { getUrl, getPrefName, getLocName } from "./data.js";
-import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
+import { photoLang } from "./i18n-meta.js";
 import { ui, colorLabel } from "./ui-strings.js";
 import { richAlt } from "./title-keywords.js";
 import { flipGrid, captureGridRects } from "./useViewTransition.js";
+import { photoPath } from "./photo-ref.js";
+import { track } from "./analytics.js";
 
 /**
  * ⑤ 色で写真を探す。
@@ -32,6 +33,8 @@ export default function ColorSearch({ lang, photos }) {
   const pickColor = (c) => {
     prevRects.current = captureGridRects(gridRef.current);
     setActive(c);
+    /* ⑨ 色を選んだ操作。解除 (null) は送らない */
+    if (c) track("color_select", { color: c }, c);
   };
   useLayoutEffect(() => {
     if (prevRects.current.size || active) flipGrid(gridRef.current, prevRects.current);
@@ -50,7 +53,6 @@ export default function ColorSearch({ lang, photos }) {
   /* 未解析 = パレットに存在しない写真。件数として正直に出す */
   const unanalysed = useMemo(() => photos.filter((p) => !PHOTO_PALETTE[p.id]).length, [photos]);
 
-  const hasPhotoPages = PHOTO_LANGS.includes(lang);
 
   return (
     <div className="cs">
@@ -90,9 +92,9 @@ export default function ColorSearch({ lang, photos }) {
       {active && results.length > 0 && (
         <div className="cs-grid" ref={gridRef}>
           {results.map((p) => {
-            const prefSlug = PREF_SLUGS[p.pref];
-            const locSlug = p.loc ? LOC_SLUGS[p.loc] : null;
-            const href = hasPhotoPages && prefSlug && locSlug ? `/${lang}/${prefSlug}/${locSlug}/${p.id}` : null;
+            /* ④ リンク先の解決は photo-ref.js に集約。写真詳細ページが無い言語では
+               撮影地ページ + ?photo=ID になる (存在しないURLは作らない)。 */
+            const href = photoPath(p.id, lang);
             const locName = p.loc ? getLocName(p.loc, lang) : "";
             const alt = richAlt({ locName, prefName: getPrefName(p.pref, lang), year: p.year, locJp: p.loc, lang });
             const card = (
@@ -112,7 +114,12 @@ export default function ColorSearch({ lang, photos }) {
             );
             /* 右クリック抑止は既存カードと同じ対象・範囲で維持する */
             return href ? (
-              <a key={p.id} data-pid={p.id} className="cin-hcard cs-card" href={href} onContextMenu={(e) => e.preventDefault()}>
+              <a
+                key={p.id} data-pid={p.id} className="cin-hcard cs-card" href={href}
+                onContextMenu={(e) => e.preventDefault()}
+                /* ⑨ 流入元は「いまこの操作が始まった場所」= 色検索 */
+                onClick={() => track("photo_open", { photo_id: p.id, entry: "color" }, p.id + "|color")}
+              >
                 {card}
               </a>
             ) : (

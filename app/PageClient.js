@@ -7,6 +7,9 @@ const loadD3 = () => (_d3Promise ??= import("d3"));
 import { SEO_META, SITE_URL, OG_IMAGE, HREFLANG, photoLang } from "./i18n-meta.js";
 import { TR, PREFECTURES, PREF_I18N, LOC_I18N, MAP_PINS, cldUrl, getUrl, getPrefName, getLocName, GEOJSON_URLS, MW, MH, lbWidth } from "./data.js";
 import { PHOTO_DATES } from "./photo-dates.js";
+import { PHOTO_ADDED } from "./photo-added.js";
+import { photoById, photoUrl as photoRefUrl, photoLabel, hasPhotoPages } from "./photo-ref.js";
+import { track } from "./analytics.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
@@ -611,7 +614,7 @@ export default function PageClient({ initialLang = "ja" }) {
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
   const [theaterOpen, setTheaterOpen] = useState(false);
-  const [galleryMode, setGalleryMode] = useState("region"); // "region" | "date"
+  const [galleryMode, setGalleryMode] = useState("region"); // "region" | "date" | "added"
   const closeLightbox = useCallback(() => {
     setLbClosing(true);
     setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
@@ -649,13 +652,25 @@ export default function PageClient({ initialLang = "ja" }) {
     });
   }, [allPhotos]);
 
-  /* ライトボックスと共有要素は現在の表示順に追従する */
-  const activePhotos = galleryMode === "date" ? datePhotos : allPhotos;
+  /* ⑤ 新着 = 掲載日 (サイトに追加された日時) の新しい順。撮影日とは別データなので、
+     何年も前に撮った写真でも、いま追加すればここに出る。
+     掲載日が確認できない写真 (リポジトリ履歴の最初から在ったもの) は新着に出さない。 */
+  const addedPhotos = useMemo(
+    () => allPhotos
+      .filter((p) => PHOTO_ADDED[p.id])
+      .sort((a, b) => (PHOTO_ADDED[b.id] < PHOTO_ADDED[a.id] ? -1 : PHOTO_ADDED[b.id] > PHOTO_ADDED[a.id] ? 1 : 0)),
+    [allPhotos]
+  );
 
-  const openLightbox = useCallback((url) => {
+  /* ライトボックスと共有要素は現在の表示順に追従する */
+  const activePhotos = galleryMode === "date" ? datePhotos : galleryMode === "added" ? addedPhotos : allPhotos;
+
+  const openLightbox = useCallback((url, entry = "home") => {
     const idx = activePhotos.findIndex(p => p.url === url);
     const target = idx >= 0 ? idx : 0;
     setLightbox(target);
+    /* ⑨ 実際に開く操作をしたときだけ。entry はこの操作が始まった場所そのもの */
+    if (activePhotos[target]) track("photo_open", { photo_id: activePhotos[target].id, entry }, activePhotos[target].id + "|" + entry);
     // URL hash 設定 (#23: shareable photo URL)
     const photoId = activePhotos[target]?.id;
     if (photoId && typeof window !== "undefined") {
@@ -695,7 +710,7 @@ export default function PageClient({ initialLang = "ja" }) {
     });
   }, [activePhotos, updateHash]);
 
-  /* 撮影日順表示: 年月ごとにグルーピング (新しい順) */
+  /* 撮影日順 / 新着 表示: 年月ごとにグルーピング (新しい順)。同じ見た目を使い回す */
   const dateGroups = useMemo(() => {
     if (galleryMode !== "date") return [];
     const groups = [];
@@ -711,6 +726,21 @@ export default function PageClient({ initialLang = "ja" }) {
     }
     return groups;
   }, [galleryMode, datePhotos]);
+
+  const addedGroups = useMemo(() => {
+    if (galleryMode !== "added") return [];
+    const groups = [];
+    let cur = null;
+    for (const p of addedPhotos) {
+      const key = PHOTO_ADDED[p.id].slice(0, 7);
+      if (!cur || cur.key !== key) {
+        cur = { key, year: key.slice(0, 4), month: parseInt(key.slice(5, 7), 10), photos: [] };
+        groups.push(cur);
+      }
+      cur.photos.push(p);
+    }
+    return groups;
+  }, [galleryMode, addedPhotos]);
   /* I-4: return-visit language suggestion — if a previously chosen language
      differs from the page language, offer a one-tap switch (session-dismissable). */
   const [langSuggest, setLangSuggest] = useState(null);
@@ -755,6 +785,18 @@ export default function PageClient({ initialLang = "ja" }) {
   const [formMsg, setFormMsg] = useState("");
   const [formStatus, setFormStatus] = useState(null);
   const [formSending, setFormSending] = useState(false);
+
+  /* ⑦ 写真を指定した問い合わせ。/{lang}?photo_ref=ID#contact で入ってくる。
+     URLから受け取るのは写真IDだけで、写真の情報は data.js から引き直す
+     (外部から渡されたURLやHTMLをそのまま扱わない)。存在しないIDは無視する。
+     読み取りは初回だけ。再レンダーで入力済みの本文を消さない。 */
+  const [contactPhoto, setContactPhoto] = useState(null);
+  useEffect(() => {
+    try {
+      const id = new URLSearchParams(window.location.search).get("photo_ref");
+      if (id && photoById(id)) setContactPhoto(id);
+    } catch {}
+  }, []);
   const t = TR[lang];
 
   const handleSubmit = useCallback(() => {
@@ -763,12 +805,24 @@ export default function PageClient({ initialLang = "ja" }) {
     fetch("https://formspree.io/f/xzdjzyeo", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: formName, email: formEmail, message: formMsg }),
+      /* ⑦ 画面に出しているだけでなく、実際の送信内容にも写真の識別子を入れる */
+      body: JSON.stringify({
+        name: formName,
+        email: formEmail,
+        message: formMsg,
+        ...(contactPhoto ? { photo_id: contactPhoto, photo_url: photoRefUrl(contactPhoto, lang) || "" } : {}),
+      }),
     })
-      .then(r => { if (r.ok) { setFormStatus("ok"); setFormName(""); setFormEmail(""); setFormMsg(""); } else { setFormStatus("ng"); } })
+      .then(r => {
+        if (r.ok) {
+          setFormStatus("ok"); setFormName(""); setFormEmail(""); setFormMsg("");
+          /* ⑨ 送信できたときだけ。本文・氏名・メールは送らない */
+          track("contact_submit", { with_photo: !!contactPhoto }, "contact");
+        } else { setFormStatus("ng"); }
+      })
       .catch(() => setFormStatus("ng"))
       .finally(() => setFormSending(false));
-  }, [formName, formEmail, formMsg]);
+  }, [formName, formEmail, formMsg, contactPhoto, lang]);
 
   useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
 
@@ -1064,7 +1118,7 @@ export default function PageClient({ initialLang = "ja" }) {
               <a className="primary" href="#explore" onClick={(e) => { e.preventDefault(); scrollToExplore(); }}>
                 {ui("findPhotos", lang)}
               </a>
-              <button className="secondary" type="button" onClick={() => setTheaterOpen(true)}>
+              <button className="secondary" type="button" onClick={() => { setTheaterOpen(true); track("theater_open", { from: "home" }, "home"); }}>
                 {ui("theater", lang)}
               </button>
             </div>
@@ -1077,7 +1131,7 @@ export default function PageClient({ initialLang = "ja" }) {
             lang={lang}
             photos={allSitePhotos}
             regionSlot={
-              <nav className="cin-chips" aria-label="Collections">
+              <nav className="cin-chips" aria-label={ui("collections", lang)}>
                 {HERO_CHIP_SLUGS.map((slug) => (
                   <a key={slug} className="cin-chip" href={`/${lang}/collections/${slug}`}>
                     {getCollectionName(slug, lang)}
@@ -1167,8 +1221,8 @@ export default function PageClient({ initialLang = "ja" }) {
           <PhotoOfTheDay lang={lang} />
 
           {/* 表示モード切替: 地域別 / 撮影日順 */}
-          <div className="cin-gallery-modes" role="tablist" aria-label="Gallery order">
-            {["region", "date"].map((m) => (
+          <div className="cin-gallery-modes" role="tablist" aria-label={ui("galleryOrder", lang)}>
+            {["region", "date", "added"].map((m) => (
               <button
                 key={m}
                 role="tab"
@@ -1176,14 +1230,14 @@ export default function PageClient({ initialLang = "ja" }) {
                 className={"cin-gmode-btn" + (galleryMode === m ? " active" : "")}
                 onClick={() => setGalleryMode(m)}
               >
-                {GALLERY_MODE_LABELS[m][lang] || GALLERY_MODE_LABELS[m].en}
+                {m === "added" ? ui("newArrivals", lang) : (GALLERY_MODE_LABELS[m][lang] || GALLERY_MODE_LABELS[m].en)}
               </button>
             ))}
           </div>
 
-          {galleryMode === "date" ? (
+          {galleryMode === "date" || galleryMode === "added" ? (
             <div className="cin-dategrid-wrap">
-              {dateGroups.map((g) => (
+              {(galleryMode === "added" ? addedGroups : dateGroups).map((g) => (
                 <section key={g.key} className="cin-datemonth">
                   <h3 className="cin-datemonth-h">
                     {monthLabel(g.year, g.month, lang)}
@@ -1191,7 +1245,7 @@ export default function PageClient({ initialLang = "ja" }) {
                   </h3>
                   <div className="cin-dategrid">
                     {g.photos.map((p) => (
-                      <div key={p.id} className="cin-datecard" onClick={() => openLightbox(p.url)} onContextMenu={(e) => e.preventDefault()}>
+                      <div key={p.id} className="cin-datecard" onClick={() => openLightbox(p.url, galleryMode === "added" ? "new" : "date")} onContextMenu={(e) => e.preventDefault()}>
                         <img
                           src={cldUrl(p.id, thumbW)}
                           alt={richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: getPrefName(p.pref, lang), year: p.year, locJp: p.loc, lang })}
@@ -1233,8 +1287,8 @@ export default function PageClient({ initialLang = "ja" }) {
                   )}
                 </div>
                 <div className="cin-hwrap">
-                  <button className="cin-hbtn left" aria-label="Scroll left" onClick={(e) => hscrollBy(e, -1)}>‹</button>
-                  <button className="cin-hbtn right" aria-label="Scroll right" onClick={(e) => hscrollBy(e, 1)}>›</button>
+                  <button className="cin-hbtn left" aria-label={ui("scrollLeft", lang)} onClick={(e) => hscrollBy(e, -1)}>‹</button>
+                  <button className="cin-hbtn right" aria-label={ui("scrollRight", lang)} onClick={(e) => hscrollBy(e, 1)}>›</button>
                 <div className="cin-hscroll" data-pref={pf.pref}>
                   {pf.photos.slice(0, rowMaxFor(pf)).map((photo, idx) => {
                     const locSlug = photo.loc ? LOC_SLUGS[photo.loc] : null;
@@ -1282,17 +1336,28 @@ export default function PageClient({ initialLang = "ja" }) {
         <div className="contact-section reveal" id="contact" ref={contactRef}>
           <h2 className="contact-title">{t.contact.title}</h2>
           <div className="contact-form">
+            {/* ⑦ どの写真についての問い合わせかを、送信前に確認・解除できるようにする */}
+            {contactPhoto && (
+              <div className="contact-photo">
+                <img src={cldUrl(contactPhoto, 300)} alt="" draggable="false" onContextMenu={e => e.preventDefault()} />
+                <span className="contact-photo-t">
+                  <b>{ui("photoInQuestion", lang)}</b>
+                  {photoLabel(contactPhoto, lang)}
+                </span>
+                <button type="button" className="pa-btn" aria-label={ui("clearFilter", lang)} onClick={() => setContactPhoto(null)}>×</button>
+              </div>
+            )}
             <div className="contact-field">
-              <label className="contact-label">{t.contact.name}</label>
-              <input className="contact-input" type="text" value={formName} onChange={e => setFormName(e.target.value)} />
+              <label className="contact-label" htmlFor="contact-name">{t.contact.name}</label>
+              <input id="contact-name" className="contact-input" type="text" value={formName} onChange={e => setFormName(e.target.value)} />
             </div>
             <div className="contact-field">
-              <label className="contact-label">{t.contact.email}</label>
-              <input className="contact-input" type="email" value={formEmail} onChange={e => setFormEmail(e.target.value)} />
+              <label className="contact-label" htmlFor="contact-email">{t.contact.email}</label>
+              <input id="contact-email" className="contact-input" type="email" value={formEmail} onChange={e => setFormEmail(e.target.value)} />
             </div>
             <div className="contact-field">
-              <label className="contact-label">{t.contact.msg}</label>
-              <textarea className="contact-textarea" value={formMsg} onChange={e => setFormMsg(e.target.value)} />
+              <label className="contact-label" htmlFor="contact-msg">{t.contact.msg}</label>
+              <textarea id="contact-msg" className="contact-textarea" value={formMsg} onChange={e => setFormMsg(e.target.value)} />
             </div>
             <button className="contact-send" disabled={formSending || !formName.trim() || !formEmail.trim() || !formMsg.trim()} onClick={handleSubmit}>
               {formSending ? "..." : t.contact.send}
@@ -1309,7 +1374,7 @@ export default function PageClient({ initialLang = "ja" }) {
           <a href={`/${langSuggest}`} onClick={() => { try { localStorage.setItem("lojLang", langSuggest); } catch {} }}>
             {TR[langSuggest].name} →
           </a>
-          <button aria-label="Dismiss" onClick={dismissLangSuggest}>×</button>
+          <button aria-label={ui("dismiss", lang)} onClick={dismissLangSuggest}>×</button>
         </div>
       )}
       {lightbox !== null && activePhotos[lightbox] && (
@@ -1326,10 +1391,12 @@ export default function PageClient({ initialLang = "ja" }) {
             locName: p.loc ? getLocName(p.loc, lang) : "",
             alt: richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: getPrefName(p.pref, lang), year: p.year, locJp: p.loc, lang }),
           })}
+          /* ④ 写真詳細ページはPHOTO_LANGSの言語にしかない。無い言語では
+             存在しないURLも作らず、英語ページへも切り替えず、リンクを出さない。 */
           photoHref={(p) => {
             const ps = PREF_SLUGS[p.pref];
             const ls = p.loc ? LOC_SLUGS[p.loc] : null;
-            return ps && ls && p.id ? `/${photoLang(lang)}/${ps}/${ls}/${p.id}` : null;
+            return hasPhotoPages(lang) && ps && ls && p.id ? `/${lang}/${ps}/${ls}/${p.id}` : null;
           }}
         />
       )}

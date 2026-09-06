@@ -1,4 +1,5 @@
 "use client";
+import { ui } from "./ui-strings.js";
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { SITE_URL, HREFLANG, photoLang } from "./i18n-meta.js";
@@ -75,7 +76,7 @@ export default function PrefClient({ lang, prefJp }) {
       <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/${prefSlug}`} />
 
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
-        <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
+        <nav aria-label={ui("breadcrumb", lang)} style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
           <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
           <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
           <span>{prefLocal}</span>
@@ -217,7 +218,9 @@ export default function PrefClient({ lang, prefJp }) {
           onPrev={lbPrev}
           onNext={lbNext}
           labels={(p) => ({ prefName: prefLocal, locName: p.loc ? getLocName(p.loc, lang) : "", alt: richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: prefLocal, year: p.year, locJp: p.loc, lang }) })}
-          photoHref={(p) => (prefSlug && p.loc && LOC_SLUGS[p.loc] && p.id ? `/${photoLang(lang)}/${prefSlug}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
+          /* ④ 写真詳細ページはPHOTO_LANGSの言語にしかない。無い言語では
+             存在しないURLも作らず、英語ページへも切り替えず、リンク自体を出さない。 */
+          photoHref={(p) => (hasPhotoPages(lang) && prefSlug && p.loc && LOC_SLUGS[p.loc] && p.id ? `/${lang}/${prefSlug}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
         />
       )}
     </div>
