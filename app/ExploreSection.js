@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
-import ColorSearch from "./ColorSearch.js";
+import dynamic from "next/dynamic";
 import { ui } from "./ui-strings.js";
+
+/* 色検索は写真843枚ぶんの色データ (約95KB) を読む。
+   「色から」を開いた人だけが取得するよう遅延読み込みにする。 */
+const ColorSearch = dynamic(() => import("./ColorSearch.js"), { ssr: false });
 
 /**
  * ヒーロー直下の探索エリア。
@@ -32,7 +36,7 @@ export default function ExploreSection({ lang, photos, regionSlot }) {
         {regionSlot}
       </div>
       <div id="ex-panel-color" role="tabpanel" aria-labelledby="ex-tab-color" hidden={tab !== "color"}>
-        <ColorSearch lang={lang} photos={photos} />
+        {tab === "color" && <ColorSearch lang={lang} photos={photos} />}
       </div>
     </section>
   );

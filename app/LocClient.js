@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
@@ -9,7 +9,7 @@ import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
-import { useOriginRect } from "./useViewTransition.js";
+import { useOriginRect, animateToRect } from "./useViewTransition.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
@@ -43,6 +43,10 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
   const hasPhotoPages = PHOTO_LANGS.includes(lang);
   /* ③ 押したサムネイルの位置を覚えて、拡大表示をそこから開く */
   const origin = useOriginRect();
+  /* 閉じるとき「今表示している写真」のサムネイルへ戻すため、カードをIDで引けるようにする */
+  const cardRefs = useRef(new Map());
+  const lightboxRef = useRef(null);
+  useEffect(() => { lightboxRef.current = lightbox; }, [lightbox]);
 
   const allPhotos = useMemo(
     () =>
@@ -61,12 +65,25 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
     [allPhotos]
   );
   const closeLightbox = useCallback(() => {
+    /* ③ 「今 Lightbox に出ている写真」のサムネイルへ戻す。
+       Lightbox 内で別写真へ移動していた場合も、戻り先はその写真のカードになるので
+       無関係な写真へ変形しない。画面外なら rect が取れないのでフェードになる。 */
+    const idx = lightboxRef.current;
+    const curId = idx !== null && allPhotos[idx] ? allPhotos[idx].id : null;
+    const card = curId ? cardRefs.current.get(curId) : null;
+    let rect = null;
+    if (card) {
+      const r = card.getBoundingClientRect();
+      const inView = r.bottom > 0 && r.top < window.innerHeight;
+      if (inView) rect = r;
+    }
+    const lbImg = document.querySelector(".cin-lb-inner img");
     setLbClosing(true);
-    setTimeout(() => {
+    animateToRect(lbImg, rect, () => {
       setLightbox(null);
       setLbClosing(false);
-    }, 340);
-  }, []);
+    });
+  }, [allPhotos]);
   const lbPrev = useCallback(
     () => setLightbox((i) => (i <= 0 ? allPhotos.length - 1 : i - 1)),
     [allPhotos]
@@ -167,9 +184,16 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
               );
               /* 見た目は div 版と同一。a は既定の下線・色を打ち消し、
                  リンクテキストは img の alt がそのまま担う (別途ラベルを足さない)。 */
+              /* 閉じるときの戻り先を写真IDで引けるよう、カード自身を登録する */
+              const setCardRef = (el) => {
+                if (el) cardRefs.current.set(photo.id, el);
+                else cardRefs.current.delete(photo.id);
+              };
               return detailHref ? (
                 <a
                   key={photo.id + i}
+                  ref={setCardRef}
+                  data-pid={photo.id}
                   href={detailHref}
                   className="cin-hcard"
                   onClick={onCardClick}
@@ -182,6 +206,8 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
               ) : (
                 <div
                   key={photo.id + i}
+                  ref={setCardRef}
+                  data-pid={photo.id}
                   className="cin-hcard"
                   onClick={onCardClick}
                   onMouseEnter={preload}

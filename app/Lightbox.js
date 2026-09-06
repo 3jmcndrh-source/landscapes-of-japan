@@ -244,10 +244,13 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
           ref={(el) => {
             /* ③ 開いた直後だけ、サムネイルの位置から本来の位置へ戻す。
                別の写真へ移動したあとは originRect を使わない (無関係な写真へ変形させない) */
-            if (el && !el.dataset.flipped) {
-              el.dataset.flipped = "1";
-              animateFromRect(el, originRect);
-            }
+            if (!el || el.dataset.flipped) return;
+            el.dataset.flipped = "1";
+            /* ref が呼ばれた時点では画像が未読込で矩形が 0×0 のことがある。
+               その状態で測ると動きが出ないので、読込とレイアウト確定を待つ。 */
+            const go = () => requestAnimationFrame(() => animateFromRect(el, originRect));
+            if (el.complete && el.naturalWidth) go();
+            else el.addEventListener("load", go, { once: true });
           }}
         />
         <div className="cin-lb-wm">Landscapes of Japan</div>

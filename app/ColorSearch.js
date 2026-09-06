@@ -1,11 +1,12 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useLayoutEffect } from "react";
 import { PHOTO_PALETTE, PALETTE_COLORS } from "./photo-palette.js";
 import { getUrl, getPrefName, getLocName } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
 import { ui, colorLabel } from "./ui-strings.js";
 import { richAlt } from "./title-keywords.js";
+import { flipGrid, captureGridRects } from "./useViewTransition.js";
 
 /**
  * ⑤ 色で写真を探す。
@@ -24,6 +25,17 @@ const MIN_SHARE = 0.08;   // この色が写真の8%未満なら「その色の�
 
 export default function ColorSearch({ lang, photos }) {
   const [active, setActive] = useState(null);
+  /* 絞り込みの前後で写真の位置を比べ、残った写真は移動・新規はフェードで見せる。
+     鍵は写真ID なので、別の写真が同じカードとして変形することはない。 */
+  const gridRef = useRef(null);
+  const prevRects = useRef(new Map());
+  const pickColor = (c) => {
+    prevRects.current = captureGridRects(gridRef.current);
+    setActive(c);
+  };
+  useLayoutEffect(() => {
+    if (prevRects.current.size || active) flipGrid(gridRef.current, prevRects.current);
+  }, [active]);
 
   /* 選択色の占有率で降順。同率は元の並び (撮影日降順) を保つ */
   const results = useMemo(() => {
@@ -51,7 +63,7 @@ export default function ColorSearch({ lang, photos }) {
               type="button"
               className={"cs-sw" + (on ? " on" : "")}
               aria-pressed={on}
-              onClick={() => setActive(on ? null : c)}
+              onClick={() => pickColor(on ? null : c)}
             >
               <span className="cs-dot" style={{ background: SWATCH[c] }} aria-hidden="true" />
               <span className="cs-name">{colorLabel(c, lang)}</span>
@@ -65,7 +77,7 @@ export default function ColorSearch({ lang, photos }) {
           <span className="cs-count">
             {colorLabel(active, lang)} · {results.length}
           </span>
-          <button type="button" className="cs-clear" onClick={() => setActive(null)}>
+          <button type="button" className="cs-clear" onClick={() => pickColor(null)}>
             {ui("clearColor", lang)}
           </button>
         </div>
@@ -76,7 +88,7 @@ export default function ColorSearch({ lang, photos }) {
       )}
 
       {active && results.length > 0 && (
-        <div className="cs-grid">
+        <div className="cs-grid" ref={gridRef}>
           {results.map((p) => {
             const prefSlug = PREF_SLUGS[p.pref];
             const locSlug = p.loc ? LOC_SLUGS[p.loc] : null;
@@ -100,11 +112,11 @@ export default function ColorSearch({ lang, photos }) {
             );
             /* 右クリック抑止は既存カードと同じ対象・範囲で維持する */
             return href ? (
-              <a key={p.id} className="cin-hcard cs-card" href={href} onContextMenu={(e) => e.preventDefault()}>
+              <a key={p.id} data-pid={p.id} className="cin-hcard cs-card" href={href} onContextMenu={(e) => e.preventDefault()}>
                 {card}
               </a>
             ) : (
-              <div key={p.id} className="cin-hcard cs-card" onContextMenu={(e) => e.preventDefault()}>
+              <div key={p.id} data-pid={p.id} className="cin-hcard cs-card" onContextMenu={(e) => e.preventDefault()}>
                 {card}
               </div>
             );
