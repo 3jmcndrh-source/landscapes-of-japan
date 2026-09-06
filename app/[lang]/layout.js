@@ -130,15 +130,23 @@ export default async function LangLayout({ children, params }) {
               window.gtag = function () { window.dataLayer.push(arguments); };
               window.gtag("js", new Date());
 
-              /* 検索語を GA4 に送らない。検索ページには /{lang}/search?q=... で
-                 入ってくることがあり (JSON-LD の SearchAction とブラウザの検索欄)、
-                 GA4 の拡張計測機能「サイト内検索」は既定で q= を search_term と
-                 page_location に取り込む。自由入力なので、報告する URL から q= を
-                 落としてから config する。ページ側の q= の機能は変えない。
-                 公開時に GA4 管理画面の「サイト内検索」も無効にする。 */
-              var loc = location.href;
-              try { var u = new URL(location.href); u.searchParams.delete("q"); loc = u.toString(); } catch (e) {}
-              window.gtag("config", "${GA4_MEASUREMENT_ID}", { page_location: loc });
+              /* 検索語を GA4 に送らない。
+                 検索ページには /{lang}/search?q=... で入ってくることがある
+                 (JSON-LD の SearchAction、ブラウザの検索欄、共有されたURL)。
+                 GA4 は自由入力の q= を次の2つに載せてしまう:
+                   page_location  … その検索ページ自身のURL
+                   page_referrer  … 検索ページから別ページへ移った次のページのURL
+                 どちらからも q= を落としてから config する。
+                 ページ側の q= の機能 (URLからの検索状態の復元) は変えない。
+                 公開時に GA4 管理画面側でも「サイト内検索」の無効化と、
+                 URLクエリパラメータのデータ編集で q を対象にする設定を適用する。 */
+              var strip = function (href) {
+                try { var u = new URL(href); u.searchParams.delete("q"); return u.toString(); }
+                catch (e) { return href; }
+              };
+              var params = { page_location: strip(location.href) };
+              if (document.referrer) params.page_referrer = strip(document.referrer);
+              window.gtag("config", "${GA4_MEASUREMENT_ID}", params);
             })();`}
           </Script>
         )}
