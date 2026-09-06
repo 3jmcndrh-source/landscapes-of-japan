@@ -4,6 +4,9 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { SITE_URL, HREFLANG, photoLang } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+/* ④ 写真詳細ページの有無は photo-ref.js の1か所で判定する
+   (PHOTO_LANGS の7言語だけに存在。無い言語では詳細URLを作らない) */
+import { hasPhotoPages } from "./photo-ref.js";
 import SiteHeader from "./SiteHeader.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
