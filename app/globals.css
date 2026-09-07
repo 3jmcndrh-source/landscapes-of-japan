@@ -773,3 +773,14 @@ body{--sh-offset:var(--header-h)}
 .al-ops button:focus-visible{outline:2px solid rgba(220,190,100,.9);outline-offset:2px}
 .al-add{margin-top:28px}
 .al-add ul{list-style:none;margin:0;padding:0}
+
+/* ⑤ 地域×テーマ ギャラリー。短い見出しと写真が中心 */
+.gal-bc{font-family:var(--font-zen-kaku),sans-serif;font-size:12px;color:rgba(232,228,223,.55);margin-bottom:14px}
+.gal-bc a{color:inherit;text-decoration:none}
+.gal-bc a:hover{color:rgba(220,190,100,.9)}
+.gal-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.gal-head h1{font-family:var(--font-playfair),serif;font-style:italic;font-size:clamp(28px,4vw,46px);margin:0;color:#f2ece2;line-height:1.1}
+.gal-n{font-family:var(--font-zen-kaku),sans-serif;font-size:13px;color:rgba(232,228,223,.5)}
+.gal-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.gal-links a{background:rgba(255,255,255,.04);border:1px solid rgba(220,190,100,.2);color:rgba(232,228,223,.8);border-radius:999px;padding:6px 15px;text-decoration:none;font-family:var(--font-zen-kaku),sans-serif;font-size:12px}
+.gal-links a:hover{border-color:rgba(220,190,100,.5);color:#f2ece2}
