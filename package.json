@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint .",
     "check:data": "node scripts/check-data.mjs",
-    "check": "npm run lint && npm run check:data"
+    "check": "npm run lint && npm run check:data",
+    "check:pages": "node scripts/check-pages.mjs",
+    "check:galleries": "node scripts/check-galleries.mjs",
+    "gen:vectors": "node scripts/generate-photo-vectors.mjs"
   },
   "dependencies": {
     "cloudinary": "^2.9.0",

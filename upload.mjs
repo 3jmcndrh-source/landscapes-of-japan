@@ -133,6 +133,30 @@ if (!skipRegen) {
      まだコミット前なので、今回追加した写真には実行時刻が入る。
      既存写真の記録は書き換えない。 */
   execSync("node scripts/generate-photo-added.mjs", { stdio: "inherit" });
+  /* ④ 実寸 (縦横の判定と width/height に使う)。manifest から読むだけなので速い */
+  execSync("node scripts/generate-photo-dims.mjs", { stdio: "inherit" });
+  /* ⑦ 画像特徴 → 似た写真・概念スコア。
+     更新時刻とサイズでキャッシュしているので、追加した写真だけが解析される
+     (843枚の全解析でも9秒だが、毎回全部やらない作りにしてある)。
+     初回だけモデル85MBを取得する。取得できない環境では既存の生成物を
+     そのまま残す (ここで落として写真追加を止めない)。 */
+  try {
+    execSync("node scripts/generate-photo-vectors.mjs", { stdio: "inherit" });
+  } catch {
+    console.warn("! 画像特徴の再生成に失敗しました。似た写真・見た目の検索は前回の内容のままです");
+  }
+  /* ② 撮影地の座標。新しい撮影地が増えたときだけ追記される */
+  try {
+    execSync("node scripts/generate-loc-points.mjs", { stdio: "inherit" });
+  } catch {
+    console.warn("! 撮影地座標の再生成に失敗しました。地図は前回の内容のままです");
+  }
+  /* ⑤ 地域×テーマ ギャラリーの実測値を確認する (枚数が減って空になっていないか) */
+  try {
+    execSync("node scripts/check-galleries.mjs", { stdio: "inherit" });
+  } catch {
+    console.warn("! ギャラリーの点検で問題が見つかりました。app/galleries.js を確認してください");
+  }
 }
 
 // ---- deploy images project ----

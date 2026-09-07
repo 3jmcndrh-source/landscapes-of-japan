@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { dimsFor } from "../../photo-dims-server.js";
 import PrefClient from "../../PrefClient.js";
 import { PREFECTURES, PREF_I18N, getPrefName, cldUrl } from "../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js";
@@ -115,7 +116,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PrefClient lang={lang} prefJp={prefJp} />
+      <PrefClient lang={lang} prefJp={prefJp} dims={dimsFor(pf.photos)} />
     </>
   );
 }

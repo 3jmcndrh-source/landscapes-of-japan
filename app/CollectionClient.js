@@ -1,11 +1,13 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
+import PhotoImage from "./PhotoImage.js";
 import { TR, getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 /* ④ 写真詳細ページの有無は photo-ref.js の1か所で判定する
    (PHOTO_LANGS の7言語だけに存在。無い言語では詳細URLを作らない) */
 import { hasPhotoPages } from "./photo-ref.js";
-import { COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+/* ④ 画面は軽いほうを読む (紹介文・撮影のコツを初期JSに載せない) */
+import { COLLECTION_SLUGS, getCollectionName } from "./collections-meta.js";
 import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
@@ -19,7 +21,7 @@ const seasonOf = (m) => (!m ? null : m <= 2 || m === 12 ? "winter" : m <= 5 ? "s
 const PREF_SLUGS_REV = Object.fromEntries(Object.entries(PREF_SLUGS).map(([jp, sl]) => [sl, jp]));
 const ALL_LABEL = { ja: "すべて", en: "All", zh: "全部", "zh-tw": "全部", ko: "전체", de: "Alle", es: "Todas", ar: "الكل" };
 
-export default function CollectionClient({ lang, theme, photos }) {
+export default function CollectionClient({ lang, theme, photos, dims = {} }) {
   const t = TR[lang] || TR.en;
   const name = getCollectionName(theme, lang);
 
@@ -239,12 +241,13 @@ export default function CollectionClient({ lang, theme, photos }) {
                 onContextMenu={(e) => e.preventDefault()}
                 style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111" }}
               >
-                <img
-                  src={cldUrl(photo.id, imgSizes.thumbW)}
+                <PhotoImage
+                  id={photo.id}
                   alt={`${getLocName(photo.loc, lang)} - ${getPrefName(photo.pref, lang)} | ${name}`}
-                  loading="lazy"
-                  decoding="async"
-                  draggable="false"
+                  dims={dims[photo.id] || null}
+                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 300px"
+                  widths="grid"
+                  priority={i < 2}
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 12px 8px", background: "linear-gradient(to top, rgba(0,0,0,.8), transparent)", color: "#f2ece2", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, letterSpacing: ".03em", pointerEvents: "none" }}>

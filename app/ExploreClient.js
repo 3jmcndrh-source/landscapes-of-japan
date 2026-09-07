@@ -12,7 +12,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { PREFECTURES, getLocName, getPrefName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { COLLECTIONS, getCollectionName } from "./collections.js";
+import { COLLECTION_SLUGS, COLLECTION_META, getCollectionName } from "./collections-meta.js";
 import { COLLECTION_TAGS } from "./photo-tags.js";
 import { SEASONS, seasonLabel } from "./seasons.js";
 import { ui, colorLabel } from "./ui-strings.js";
@@ -62,7 +62,7 @@ export default function ExploreClient({ lang }) {
   const lookTimer = useRef(null);
 
   const themeLocs = useMemo(
-    () => Object.fromEntries(Object.entries(COLLECTIONS).map(([s, c]) => [s, c.locs || []])),
+    () => Object.fromEntries(COLLECTION_SLUGS.map((s) => [s, COLLECTION_META[s].locs || []])),
     []
   );
   const opts = useMemo(() => ({ themeTags: COLLECTION_TAGS, themeLocs, locPoints: LOC_POINTS }), [themeLocs]);
@@ -87,9 +87,14 @@ export default function ExploreClient({ lang }) {
   useEffect(() => {
     const q0 = readQueryFromParams(window.location.search);
     setQuery(q0);
-    loadFacets().then(() => setReady(true));
-    /* URL に概念が入っていれば、その場で画像特徴データも読む */
-    if (q0.concept.length) ensureConcepts();
+    (async () => {
+      await loadFacets();
+      /* URL に概念が入っているときは、画像特徴データが届くまで
+         「準備完了」にしない。先に絞り込むと、判定材料が無いので
+         0件になってしまう (共有された ?concept= のURLで実際に起きた) */
+      if (q0.concept.length) await ensureConcepts();
+      setReady(true);
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -185,7 +190,10 @@ export default function ExploreClient({ lang }) {
   const facets = ready ? getFacets() : null;
   const results = useMemo(
     () => (ready ? selectPhotos(query, opts) : []),
-    [ready, query, opts]
+    /* conceptState も見る。画像特徴データは後から届くので、
+       届いた時点で数え直さないと古い結果が残る */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ready, query, opts, conceptState]
   );
   const visible = results.slice(0, shown);
   const conditions = activeConditions(query);
@@ -195,7 +203,8 @@ export default function ExploreClient({ lang }) {
     if (!ready) return null;
     const q2 = { ...query, [field]: [value] };
     return selectPhotos(q2, opts).length;
-  }, [ready, query, opts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, query, opts, conceptState]);
 
   /* ---- 拡大表示 ---- */
   const origin = useOriginRect();
@@ -298,7 +307,7 @@ export default function ExploreClient({ lang }) {
             </Group>
           )}
           <Group title={ui("theme", lang)}>
-            {Object.keys(COLLECTIONS).map((s) => chip(query.theme.includes(s), getCollectionName(s, lang), countFor("theme", s), () => toggle("theme", s), s))}
+            {COLLECTION_SLUGS.map((s) => chip(query.theme.includes(s), getCollectionName(s, lang), countFor("theme", s), () => toggle("theme", s), s))}
           </Group>
           <Group title={ui("season", lang)}>
             {SEASONS.map((s) => chip(query.season.includes(s.key), `${s.icon} ${seasonLabel(s.key, lang)}`, countFor("season", s.key), () => toggle("season", s.key), s.key))}
@@ -393,7 +402,7 @@ export default function ExploreClient({ lang }) {
             </div>
             {shown < results.length && (
               <div className="ex-more">
-                <button type="button" onClick={() => setShown((v) => v + PAGE)}>
+                <button type="button" aria-label={ui("showMore", lang)} onClick={() => setShown((v) => v + PAGE)}>
                   {results.length - shown}
                 </button>
               </div>

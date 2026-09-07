@@ -23,6 +23,16 @@
  *                     ※ 受け手が実際に見たことの証拠ではない
  *   photo_contact_open  「この写真について問い合わせる」を押した (送信ではない)
  *   contact_submit    問い合わせフォームを送信した (with_photo= 真偽値)
+ *
+ * 今回の追加 (①〜⑦):
+ *   explore_filter    探索画面で条件を切り替えた (field= 条件の種類, on= 真偽値)
+ *   map_pick_loc      地図で撮影地を選んだ (撮影地名。自由入力ではない)
+ *   look_search       見た目から探すを使った (hits= 当たった概念の数)
+ *                     ※ 入力された言葉そのものは送らない
+ *   compare_open      2枚を並べて比較を開いた
+ *   compare_swap      比較の左右を入れ替えた
+ *   album_share       共有アルバムの共有操作を始めた (count= 枚数)
+ *   album_share_done  共有シート完了 / リンクのコピーに成功した
  */
 
 const recent = new Map();

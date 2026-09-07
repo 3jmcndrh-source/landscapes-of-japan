@@ -13,7 +13,7 @@ import { track } from "./analytics.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { REGIONS } from "./regions.js";
 import { richAlt } from "./title-keywords.js";
-import { getCollectionName } from "./collections.js";
+import { getCollectionName } from "./collections-meta.js";
 import SiteHeader from "./SiteHeader.js";
 import ExploreSection from "./ExploreSection.js";
 import Lightbox from "./Lightbox.js";

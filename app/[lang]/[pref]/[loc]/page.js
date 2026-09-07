@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { dimsFor } from "../../../photo-dims-server.js";
 import LocClient from "../../../LocClient.js";
 import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
@@ -176,7 +177,7 @@ export default async function Page({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} collections={collections} />
+      <LocClient lang={lang} prefJp={prefJp} locJp={locJp} collections={collections} dims={dimsFor(pf.photos.filter((p) => p.loc === locJp))} />
     </>
   );
 }

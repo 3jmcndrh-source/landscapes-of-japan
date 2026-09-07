@@ -1,5 +1,6 @@
 "use client";
-import { ui } from "./ui-strings.js";
+import { ui } from "./ui-strings.js";
+import PhotoImage from "./PhotoImage.js";
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { SITE_URL, HREFLANG, photoLang } from "./i18n-meta.js";
@@ -13,7 +14,7 @@ import { richAlt } from "./title-keywords.js";
 import Lightbox from "./Lightbox.js";
 import { useProgressiveReveal } from "./useProgressiveReveal.js";
 
-export default function PrefClient({ lang, prefJp }) {
+export default function PrefClient({ lang, prefJp, dims = {} }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
   const t = TR[lang] || TR.en;
   const prefLocal = getPrefName(prefJp, lang);
@@ -146,15 +147,13 @@ export default function PrefClient({ lang, prefJp }) {
                 onContextMenu={(e) => e.preventDefault()}
                 style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, backgroundColor: "#111", backgroundImage: `url(${cldPlaceholder(photo.id)})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
-                <img
-                  src={getUrl(photo, imgSizes.thumbW)}
-                  srcSet={`${getUrl(photo, 600)} 600w, ${getUrl(photo, 1200)} 1200w`}
-                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 380px"
+                <PhotoImage
+                  id={photo.id}
                   alt={richAlt({ locName: photo.loc ? getLocName(photo.loc, lang) : "", prefName: prefLocal, year: photo.year, locJp: photo.loc, lang })}
-                  loading={i < 4 ? "eager" : "lazy"}
-                  fetchPriority={i < 2 ? "high" : undefined}
-                  decoding="async"
-                  draggable="false"
+                  dims={dims[photo.id] || null}
+                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 380px"
+                  widths="grid"
+                  priority={i < 2}
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 {photo.loc && (

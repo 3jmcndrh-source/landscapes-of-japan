@@ -7,9 +7,13 @@
  *   app/photo-concepts.js へ書き出す。タグの部分一致ではない。
  *
  * 概念の出どころは3種類:
- *   from: "collection"  既存のコレクション名を使う (20言語。5言語は英語表示)
- *   from: "season"      既存の季節ラベルを使う (8言語。17言語は英語表示)
- *   from: "own"         ここで語を持つ。25言語すべて用意した
+ *   from: "collection"  既存のコレクション名を使う
+ *   from: "season"      既存の季節ラベルを使う
+ *   from: "own"         ここで語を持つ
+ *
+ * いずれも25言語すべてに自言語の表示名がある (2026-09-08 に不足分を補った)。
+ * 英語で代用しているものは conceptHasLang が false を返すので、
+ * 「対応済み」と数えずに済む。
  *
  * prompt は英語で固定する。CLIP の文章側は英語で学習されているため、
  * 利用者が入力した文をそのままモデルへ渡す方式は採っていない。
@@ -17,7 +21,7 @@
  * どの言語がどこまで自分の言葉で引けるかは conceptHasLang で判定でき、
  * 実測値は docs/search-languages.md に残す。
  */
-import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName } from "./collections.js";
+import { COLLECTION_META, COLLECTION_SLUGS, getCollectionName } from "./collections-meta.js";
 import { SEASONS, SEASON_LABELS, seasonLabel } from "./seasons.js";
 
 /** コレクション由来の概念に与える英語の説明文 */
@@ -125,7 +129,7 @@ export function conceptLabel(key, lang) {
 export function conceptHasLang(key, lang) {
   const c = CONCEPT_BY_KEY[key];
   if (!c) return false;
-  if (c.from === "collection") return Boolean(COLLECTIONS[key]?.name?.[lang]);
+  if (c.from === "collection") return Boolean(COLLECTION_META[key]?.name?.[lang]);
   if (c.from === "season") return Boolean(SEASON_LABELS[c.season]?.[lang]);
   return Boolean(c.label[lang]);
 }

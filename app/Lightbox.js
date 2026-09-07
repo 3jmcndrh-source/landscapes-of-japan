@@ -6,8 +6,23 @@ import { cldUrl } from "./data.js";
 import { ui } from "./ui-strings.js";
 import PhotoActions from "./PhotoActions.js";
 import { pushHistory } from "./local-store.js";
-import { PHOTO_DIMS } from "./photo-dims.js";
 import { nativeWidthFor } from "./PhotoImage.js";
+
+/* ④ 実寸データ (91KB) は等倍表示を使うときだけ読み込む。
+   Lightbox はほぼ全ページに載るので、初期JSには入れない。
+   読み込めなかった場合は実寸の基準が無いので 2倍で拡大する
+   (拡大そのものは動く。「実寸」と偽らないだけ)。 */
+let _dims = null;
+let _dimsReq = null;
+function ensureDims() {
+  if (_dims) return Promise.resolve(_dims);
+  if (!_dimsReq) {
+    _dimsReq = import("./photo-dims.js")
+      .then((m) => { _dims = m.PHOTO_DIMS; return _dims; })
+      .catch(() => null);
+  }
+  return _dimsReq;
+}
 
 /**
  * Shared lightbox (Round B): one gesture/zoom/keyboard implementation for
@@ -65,13 +80,16 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
     if (!el) return 2;
     const shown = el.getBoundingClientRect().width;
     if (!shown) return 2;
-    const dims = PHOTO_DIMS[photos[index]?.id];
+    const dims = _dims ? _dims[photos[index]?.id] : null;
     const deliverable = nativeWidthFor(dims);
     return Math.max(1, Math.min(6, deliverable / shown));
   }, [index, photos]);
 
   const toggleNative = useCallback(() => {
-    setZoom((z) => (z.s > 1.05 ? { s: 1, tx: 0, ty: 0 } : { s: nativeScale(), tx: 0, ty: 0 }));
+    if (zoomRef.current.s > 1.05) { setZoom({ s: 1, tx: 0, ty: 0 }); return; }
+    /* 実寸データが届いてから倍率を決める。届かなければ nativeScale が
+       既定の2倍を返すので、拡大操作そのものは失敗しない */
+    ensureDims().then(() => setZoom({ s: nativeScale(), tx: 0, ty: 0 }));
   }, [nativeScale]);
 
   /* ③ 全画面 (対応している環境でのみ) */
@@ -314,7 +332,7 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
         <img
           /* ③ 等倍のときは、いちばん大きい配信画像に切り替える。
              小さい画像を引き伸ばしたものを等倍とは呼ばないため。 */
-          src={zoomed ? cldUrl(cur.id, nativeWidthFor(PHOTO_DIMS[cur.id])) : cur.url}
+          src={zoomed ? cldUrl(cur.id, nativeWidthFor(_dims ? _dims[cur.id] : null)) : cur.url}
           alt={alt}
           draggable="false"
           style={{

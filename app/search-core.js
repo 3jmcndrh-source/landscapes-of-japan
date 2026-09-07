@@ -6,7 +6,7 @@
 import { PREFECTURES, PREF_I18N, LOC_I18N } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { LANGS } from "./i18n-meta.js";
-import { COLLECTIONS } from "./collections.js";
+import { COLLECTION_META } from "./collections-meta.js";
 import { PREF_ALIASES, LOC_ALIASES, COLLECTION_ALIASES } from "./search-alias.js";
 
 /* 1件 = 1つの行き先。同じ場所の25言語版を別々の結果として並べない。
@@ -44,7 +44,7 @@ export function buildEntries() {
     }
   }
 
-  for (const [slug, col] of Object.entries(COLLECTIONS)) {
+  for (const [slug, col] of Object.entries(COLLECTION_META)) {
     const names = LANGS.map((l) => col.name?.[l]).filter(Boolean);
     if (!names.length) continue;
     entries.push({

@@ -118,7 +118,7 @@ export default function AlbumClient({ lang }) {
             <button type="button" className="ex-toggle" onClick={share}>{ui("shareAlbum", lang)}</button>
           )}
           {photos.length >= 2 && (
-            <button type="button" className="ex-chip" onClick={() => setCompare(ids.slice(0, 2))}>
+            <button type="button" className="ex-chip" onClick={() => { track("compare_open", { count: 2 }, "album"); setCompare(ids.slice(0, 2)); }}>
               {ui("compare", lang)}
             </button>
           )}
@@ -126,7 +126,7 @@ export default function AlbumClient({ lang }) {
         </div>
 
         {/* 共有URLであることを短く示す。「本人しか見られない」とは書かない */}
-        <p className="al-note">{ui("storedInThisBrowser", lang)} · {ALBUM_MAX}</p>
+        <p className="al-note">{ui("storedInThisBrowser", lang)} · {ui("albumLimit", lang)} {ALBUM_MAX}</p>
 
         {ready && photos.length === 0 && <p className="ex-empty">{ui("noResults", lang)}</p>}
 

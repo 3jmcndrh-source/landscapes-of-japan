@@ -17,7 +17,8 @@ import { existsSync, readFileSync } from "node:fs";
 import { PREFECTURES, LOC_I18N, PREF_I18N } from "../app/data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../app/slugs.js";
 import { LANGS } from "../app/i18n-meta.js";
-import { COLLECTIONS } from "../app/collections.js";
+import { COLLECTIONS, COLLECTION_SLUGS } from "../app/collections.js";
+import { COLLECTION_META, COLLECTION_SLUGS as META_SLUGS } from "../app/collections-meta.js";
 import { COLLECTION_TAGS } from "../app/photo-tags.js";
 
 const photos = PREFECTURES.flatMap((pf) => pf.photos.map((p) => ({ ...p, pref: pf.pref })));
@@ -120,6 +121,28 @@ if (existsSync("app/loc-points.js")) {
   }
 } else {
   notes.push("app/loc-points.js が無い (②地図は撮影地マーカーを出せない)");
+}
+
+/* ---- ④ collections-meta.js が collections.js とずれていないか ----
+   画面側は軽いほう (collections-meta.js) を読むので、名前や撮影地が
+   古いままだと「一覧には出るのにコレクションページには無い」といった
+   食い違いが起きる。作り直しは
+   node scripts/generate-collections-meta.mjs */
+{
+  const diffs = [];
+  if (META_SLUGS.join(",") !== COLLECTION_SLUGS.join(",")) diffs.push("テーマの並びが違う");
+  for (const slug of COLLECTION_SLUGS) {
+    const a = COLLECTIONS[slug], b = COLLECTION_META[slug];
+    if (!b) { diffs.push(slug + " が collections-meta.js に無い"); continue; }
+    if (JSON.stringify(a.locs || []) !== JSON.stringify(b.locs || [])) diffs.push(slug + " の撮影地が違う");
+    if (JSON.stringify(a.name || {}) !== JSON.stringify(b.name || {})) diffs.push(slug + " の名前が違う");
+  }
+  if (diffs.length) {
+    fatal.push(
+      "app/collections-meta.js が古い (" + diffs.join(" / ") + ") — " +
+      "node scripts/generate-collections-meta.mjs で作り直してください"
+    );
+  }
 }
 
 /* ---- 出力 ---- */

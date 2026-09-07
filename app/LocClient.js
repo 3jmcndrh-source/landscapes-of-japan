@@ -1,9 +1,10 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import PhotoImage from "./PhotoImage.js";
 import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
 import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { getCollectionName } from "./collections.js";
+import { getCollectionName } from "./collections-meta.js";
 import { richAlt } from "./title-keywords.js";
 import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
@@ -15,7 +16,7 @@ import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
 
-export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
+export default function LocClient({ lang, prefJp, locJp, collections = [], dims = {} }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
   const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
@@ -184,15 +185,13 @@ export default function LocClient({ lang, prefJp, locJp, collections = [] }) {
               };
               const inner = (
                 <>
-                <img
-                  src={getUrl(photo, imgSizes.thumbW)}
-                  srcSet={`${getUrl(photo, 600)} 600w, ${getUrl(photo, 1200)} 1200w`}
-                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 380px"
+                <PhotoImage
+                  id={photo.id}
                   alt={richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang })}
-                  loading={i < 4 ? "eager" : "lazy"}
-                  fetchPriority={i < 2 ? "high" : undefined}
-                  decoding="async"
-                  draggable="false"
+                  dims={dims[photo.id] || null}
+                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 380px"
+                  widths="grid"
+                  priority={i < 2}
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 {photo.year && (
