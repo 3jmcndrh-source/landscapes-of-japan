@@ -57,3 +57,7 @@ next-env.d.ts
 
 .vercel
 scripts/.palette-cache.json
+
+# ⑦ ビルド時だけ使う CLIP モデル (配信物には含めない)
+.model-cache/
+scripts/.vector-cache.json

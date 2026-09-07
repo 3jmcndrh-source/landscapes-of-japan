@@ -12,11 +12,11 @@ export const SEASONS = [
   { key: "winter", icon: "❄", months: [12, 1, 2] },
 ];
 
-/* 写真ページ対応 7言語 (ja,en,zh-tw,de,es,ar,ko) + zh。他言語は en フォールバック */
+/* 25言語すべて。2026-09-08 に不足17言語を補った (⑦の概念語でも使う) */
 export const SEASON_LABELS = {
-  spring: { ja: "春", en: "Spring", zh: "春", "zh-tw": "春", ko: "봄", de: "Frühling", es: "Primavera", ar: "الربيع" },
-  summer: { ja: "夏", en: "Summer", zh: "夏", "zh-tw": "夏", ko: "여름", de: "Sommer", es: "Verano", ar: "الصيف" },
-  autumn: { ja: "秋", en: "Autumn", zh: "秋", "zh-tw": "秋", ko: "가을", de: "Herbst", es: "Otoño", ar: "الخريف" },
-  winter: { ja: "冬", en: "Winter", zh: "冬", "zh-tw": "冬", ko: "겨울", de: "Winter", es: "Invierno", ar: "الشتاء" },
+  spring: { ja: "春", en: "Spring", zh: "春", "zh-tw": "春", ko: "봄", de: "Frühling", es: "Primavera", ar: "الربيع" , fr: "Printemps", pt: "Primavera", it: "Primavera", ru: "Весна", hi: "वसंत", th: "ฤดูใบไม้ผลิ", vi: "Mùa xuân", id: "Musim semi", tr: "İlkbahar", nl: "Lente", pl: "Wiosna", sv: "Vår", fa: "بهار", he: "אביב", bn: "বসন্ত", tl: "Tagsibol", uk: "Весна" },
+  summer: { ja: "夏", en: "Summer", zh: "夏", "zh-tw": "夏", ko: "여름", de: "Sommer", es: "Verano", ar: "الصيف" , fr: "Été", pt: "Verão", it: "Estate", ru: "Лето", hi: "ग्रीष्म", th: "ฤดูร้อน", vi: "Mùa hè", id: "Musim panas", tr: "Yaz", nl: "Zomer", pl: "Lato", sv: "Sommar", fa: "تابستان", he: "קיץ", bn: "গ্রীষ্ম", tl: "Tag-init", uk: "Літо" },
+  autumn: { ja: "秋", en: "Autumn", zh: "秋", "zh-tw": "秋", ko: "가을", de: "Herbst", es: "Otoño", ar: "الخريف" , fr: "Automne", pt: "Outono", it: "Autunno", ru: "Осень", hi: "शरद", th: "ฤดูใบไม้ร่วง", vi: "Mùa thu", id: "Musim gugur", tr: "Sonbahar", nl: "Herfst", pl: "Jesień", sv: "Höst", fa: "پاییز", he: "סתיו", bn: "শরৎ", tl: "Taglagas", uk: "Осінь" },
+  winter: { ja: "冬", en: "Winter", zh: "冬", "zh-tw": "冬", ko: "겨울", de: "Winter", es: "Invierno", ar: "الشتاء" , fr: "Hiver", pt: "Inverno", it: "Inverno", ru: "Зима", hi: "शीत", th: "ฤดูหนาว", vi: "Mùa đông", id: "Musim dingin", tr: "Kış", nl: "Winter", pl: "Zima", sv: "Vinter", fa: "زمستان", he: "חורף", bn: "শীত", tl: "Taglamig", uk: "Зима" },
 };
 export const seasonLabel = (key, lang) => SEASON_LABELS[key]?.[lang] || SEASON_LABELS[key]?.en || key;

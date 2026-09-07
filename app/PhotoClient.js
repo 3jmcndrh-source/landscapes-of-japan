@@ -206,11 +206,13 @@ export default function PhotoClient({ lang, prefJp, locJp, photo, related, simil
           </section>
         )}
 
-        {/* A13: 同タグの別 loc 写真 ("Similar style") */}
+        {/* ⑦ 似た写真。選定は写真の画像特徴で、サーバー側 (similar.js) で確定済み。
+            見出しは25言語ある ui("similarPhotos") を使う
+            (以前は5言語の分岐で、残り20言語は英語のままだった) */}
         {similarPhotos.length > 0 && (
           <section style={{ marginTop: 56, padding: "0 8px" }}>
             <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.65)", marginBottom: 20 }}>
-              {lang === "ja" ? "似た雰囲気の写真" : lang === "ko" ? "비슷한 분위기의 사진" : lang === "zh" ? "相似氛围的照片" : lang === "zh-tw" ? "相似氛圍的照片" : "Similar Style Photos"}
+              {ui("similarPhotos", lang)}
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
               {similarPhotos.map((p) => {

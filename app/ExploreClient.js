@@ -18,8 +18,10 @@ import { SEASONS, seasonLabel } from "./seasons.js";
 import { ui, colorLabel } from "./ui-strings.js";
 import { PALETTE_COLORS_ORDER, SWATCH } from "./color-meta.js";
 import {
-  selectPhotos, loadFacets, getFacets, activeConditions,
+  selectPhotos, loadFacets, loadConcepts, getFacets, activeConditions,
 } from "./photo-model.js";
+import { CONCEPTS, conceptLabel } from "./concepts.js";
+import { matchConcepts } from "./concept-search.js";
 import { readQueryFromParams, makeUrlWriter, queryToString } from "./explore-state.js";
 import PhotoCard from "./PhotoCard.js";
 import Lightbox from "./Lightbox.js";
@@ -35,7 +37,7 @@ const ORIENTATIONS = ["landscape", "portrait", "square"];
 const PAGE = 60;   /* 段階表示。初期表示で最大画像を全部取りに行かないため */
 
 export default function ExploreClient({ lang }) {
-  const [query, setQuery] = useState(() => ({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], bbox: null, sort: "region" }));
+  const [query, setQuery] = useState(() => ({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], bbox: null, sort: "region" }));
   const [ready, setReady] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
   const [shown, setShown] = useState(PAGE);
@@ -50,16 +52,45 @@ export default function ExploreClient({ lang }) {
   const writer = useRef(null);
   if (!writer.current && typeof window !== "undefined") writer.current = makeUrlWriter();
 
+  /* ⑦ 見た目から探す。
+     入力はこのブラウザの中だけで概念へ変換する。入力そのものは
+     URL・GA4・Clarity のどれにも送らない (URL に載るのは概念キーだけ)。
+     conceptState: "idle" 未読込 / "loading" / "ready" / "error"
+     読み込めなかった場合は「使えない」と表示し、0件とは区別する。 */
+  const [lookText, setLookText] = useState("");
+  const [conceptState, setConceptState] = useState("idle");
+  const lookTimer = useRef(null);
+
   const themeLocs = useMemo(
     () => Object.fromEntries(Object.entries(COLLECTIONS).map(([s, c]) => [s, c.locs || []])),
     []
   );
   const opts = useMemo(() => ({ themeTags: COLLECTION_TAGS, themeLocs, locPoints: LOC_POINTS }), [themeLocs]);
 
+
+  /* 画像特徴データ (169KB) は使うときだけ読み込む。初期表示には載せない */
+  const conceptReq = useRef(null);
+  const ensureConcepts = useCallback(async () => {
+    /* 読み込み中に何度呼ばれても1回にまとめ、待っている側には結果を返す
+       (状態変数で判定すると、読み込み中の呼び出しが false を受け取ってしまう) */
+    if (!conceptReq.current) {
+      setConceptState("loading");
+      conceptReq.current = loadConcepts().then((c) => {
+        setConceptState(c ? "ready" : "error");
+        return Boolean(c);
+      });
+    }
+    return conceptReq.current;
+  }, []);
+
   /* ---- 起動時: URL から条件を読み、絞り込み用のデータを読み込む ---- */
   useEffect(() => {
-    setQuery(readQueryFromParams(window.location.search));
+    const q0 = readQueryFromParams(window.location.search);
+    setQuery(q0);
     loadFacets().then(() => setReady(true));
+    /* URL に概念が入っていれば、その場で画像特徴データも読む */
+    if (q0.concept.length) ensureConcepts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* 戻る・進むで条件を復元する */
@@ -89,7 +120,8 @@ export default function ExploreClient({ lang }) {
   }, []);
 
   const clearAll = useCallback(() => {
-    update({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], bbox: null, sort: query.sort });
+    setLookText("");
+    update({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], bbox: null, sort: query.sort });
   }, [update, query.sort]);
 
   /* 地図の範囲は連続して変わるので履歴に積まない。条件としては他と同じ扱い */
@@ -114,6 +146,35 @@ export default function ExploreClient({ lang }) {
     });
     setShown(PAGE);
   }, []);
+
+  /* ⑦ 入力された言葉を概念へ変換して条件に入れる。
+     - 変換はこのブラウザの中だけ。入力文はどこへも送らない
+     - 履歴は増やさない (入力のたびに戻るが効かなくなるのを避ける) */
+  const onLook = useCallback((text) => {
+    setLookText(text);
+    if (lookTimer.current) clearTimeout(lookTimer.current);
+    lookTimer.current = setTimeout(async () => {
+      const ok = await ensureConcepts();
+      if (!ok) return;                        /* 読めなければ既存の条件はそのまま */
+      const keys = matchConcepts(text, lang).map((h) => h.key);
+      setQuery((prev) => {
+        if (prev.concept.join(",") === keys.join(",")) return prev;
+        const next = { ...prev, concept: keys };
+        writer.current?.write(next, "replace");
+        return next;
+      });
+      setShown(PAGE);
+      /* 送るのは「使われたかどうか」と当たった数だけ。入力語は送らない */
+      track("look_search", { hits: keys.length }, "look");
+    }, 250);
+  }, [ensureConcepts, lang]);
+
+  const toggleConcept = useCallback(async (key) => {
+    const ok = await ensureConcepts();
+    if (!ok) return;
+    setLookText("");
+    toggle("concept", key);
+  }, [ensureConcepts, toggle]);
 
   const removeOne = useCallback((type, value) => {
     if (type === "bbox") return update({ ...query, bbox: null });
@@ -249,6 +310,37 @@ export default function ExploreClient({ lang }) {
                 style={{ background: SWATCH[c] }} onClick={() => toggle("color", c)} />
             ))}
           </Group>
+          {/* ⑦ 見た目から探す。写真の画像特徴で選ぶ (タグの一致ではない)。
+              入力欄の文字はこのブラウザの中だけで概念に変換し、送信しない */}
+          <Group title={ui("byLook", lang)}>
+            <div className="ex-look">
+              <input
+                type="search"
+                className="ex-look-in"
+                value={lookText}
+                onChange={(e) => onLook(e.target.value)}
+                onFocus={ensureConcepts}
+                placeholder={ui("lookPlaceholder", lang)}
+                aria-label={ui("byLook", lang)}
+                autoComplete="off"
+                enterKeyHint="search"
+                inputMode="search"
+              />
+            </div>
+            {conceptState === "error" && <p className="ex-note" role="status">{ui("lookUnavailable", lang)}</p>}
+            {conceptState === "ready" && lookText.trim() && query.concept.length === 0 && (
+              <p className="ex-note" role="status">{ui("lookNoMatch", lang)}</p>
+            )}
+            <div className="ex-group-b">
+              {CONCEPTS.map((c) => chip(
+                query.concept.includes(c.key),
+                conceptLabel(c.key, lang),
+                conceptState === "ready" ? countFor("concept", c.key) : null,
+                () => toggleConcept(c.key),
+                c.key
+              ))}
+            </div>
+          </Group>
           <Group title={ui("orientation", lang)}>
             {ORIENTATIONS.map((o) => chip(query.orientation.includes(o), ui(`orientation_${o}`, lang), countFor("orientation", o), () => toggle("orientation", o), o))}
           </Group>
@@ -349,6 +441,7 @@ function labelOf(c, lang) {
     case "season": return seasonLabel(c.value, lang);
     case "color": return colorLabel(c.value, lang);
     case "orientation": return ui(`orientation_${c.value}`, lang);
+    case "concept": return conceptLabel(c.value, lang);
     case "month": return `${c.value}`;
     case "bbox": return ui("mapArea", lang);
     default: return String(c.value);

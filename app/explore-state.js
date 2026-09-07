@@ -16,6 +16,8 @@
 const KEYS = {
   pref: "pref", loc: "loc", theme: "theme", season: "season",
   month: "month", color: "color", orientation: "o", sort: "sort",
+  /* ⑦ URL に載るのは概念キーだけ。利用者が書いた文そのものは載せない */
+  concept: "concept",
 };
 
 const list = (v) => (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
@@ -55,6 +57,7 @@ export function readQueryFromParams(search) {
     month: arr(KEYS.month).map(Number).filter((n) => n >= 1 && n <= 12),
     color: arr(KEYS.color),
     orientation: arr(KEYS.orientation),
+    concept: arr(KEYS.concept),
     bbox: bbox && bbox.length === 4 && bbox.every((n) => Number.isFinite(n)) ? bbox : null,
     sort: p.get(KEYS.sort) || "region",
   };

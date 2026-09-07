@@ -97,13 +97,32 @@ export async function loadFacets() {
       safe(() => import("./photo-palette.js").then((m) => m.PHOTO_PALETTE)),
       safe(() => import("./photo-added.js").then((m) => m.PHOTO_ADDED)),
     ]);
-    _facets = { dates, months, tags, dims, palette, added };
+    _facets = { dates, months, tags, dims, palette, added, concepts: null };
     return _facets;
   })();
   return _facetsPromise;
 }
 /** 読み込み済みのファセット (未読なら空). サーバー側から注入する場合にも使う */
-export const getFacets = () => _facets || { dates: null, months: null, tags: null, dims: null, palette: null, added: null };
+export const getFacets = () => _facets || { dates: null, months: null, tags: null, dims: null, palette: null, added: null, concepts: null };
+
+/**
+ * ⑦ 画像特徴のデータ (169KB) は「見た目から探す」を使うときだけ読み込む。
+ * 初期表示では読まない。読み込めなければ null のままにし、
+ * 呼び出し側が「使えない」と「0件」を区別できるようにする。
+ */
+let _conceptPromise = null;
+export async function loadConcepts() {
+  const f = await loadFacets();
+  if (f.concepts) return f.concepts;
+  if (!_conceptPromise) {
+    _conceptPromise = import("./photo-concepts.js")
+      .then((m) => ({ scores: m.PHOTO_CONCEPTS, keys: m.CONCEPT_KEYS, threshold: m.CONCEPT_THRESHOLD, model: m.CONCEPT_MODEL }))
+      .catch(() => null);
+  }
+  const c = await _conceptPromise;
+  if (c) f.concepts = c;
+  return c;
+}
 export const setFacets = (f) => { _facets = f; };
 
 /* ------------------------------------------------------------------ *
@@ -136,6 +155,7 @@ export function normalizeQuery(q = {}) {
     orientation: asArray(q.orientation),
     bbox: Array.isArray(q.bbox) && q.bbox.length === 4 ? q.bbox.map(Number) : null,
     ids: asArray(q.ids),
+    concept: asArray(q.concept),
     sort: q.sort || "region",
   };
 }
@@ -143,7 +163,8 @@ export function normalizeQuery(q = {}) {
 export const isEmptyQuery = (q) => {
   const n = normalizeQuery(q);
   return !n.pref.length && !n.loc.length && !n.theme.length && !n.season.length &&
-         !n.month.length && !n.color.length && !n.orientation.length && !n.bbox && !n.ids.length;
+         !n.month.length && !n.color.length && !n.orientation.length && !n.bbox &&
+         !n.ids.length && !n.concept.length;
 };
 
 /** 条件の個数 (画面に「選択中の条件」を出すため) */
@@ -157,6 +178,7 @@ export function activeConditions(q, ctx = {}) {
   for (const v of n.month) out.push({ type: "month", value: v });
   for (const v of n.color) out.push({ type: "color", value: v });
   for (const v of n.orientation) out.push({ type: "orientation", value: v });
+  for (const v of n.concept) out.push({ type: "concept", value: v });
   if (n.bbox) out.push({ type: "bbox", value: "map" });
   if (n.ids.length) out.push({ type: "ids", value: `${n.ids.length}` });
   return out;
@@ -207,6 +229,21 @@ function matches(p, n, f, themeTags, locPoints, opts_themeLocs) {
     if (!o || !n.orientation.includes(o)) return false;
   }
 
+  if (n.concept.length) {
+    /* ⑦ 画像特徴。その概念のしきい値 (平均+1.6σ) 以上なら当てはまるとみなす。
+       データが読めていなければ「判定できない」ので通さない
+       (呼び出し側で 0件 と 使えない を区別する) */
+    const c = f.concepts;
+    if (!c) return false;
+    const row = c.scores[p.id];
+    if (!row) return false;
+    const ok = n.concept.some((key) => {
+      const i = c.keys.indexOf(key);
+      return i >= 0 && row[i] >= (c.threshold[key] ?? Infinity);
+    });
+    if (!ok) return false;
+  }
+
   if (n.bbox) {
     const pt = locPoints && p.loc ? locPoints[p.loc] : null;
     if (!pt) return false;
@@ -222,6 +259,25 @@ function matches(p, n, f, themeTags, locPoints, opts_themeLocs) {
  * ------------------------------------------------------------------ */
 
 export const SORTS = ["region", "date", "added"];
+
+/** ⑦ 概念を選んでいるときの並び。近いものほど上へ */
+function sortByConcept(list, keys, f) {
+  const c = f.concepts;
+  if (!c) return list;
+  const idx = keys.map((k) => c.keys.indexOf(k)).filter((i) => i >= 0);
+  if (!idx.length) return list;
+  /* しきい値からどれだけ上かで比べる。概念ごとに水準が違うため、
+     生の類似度をそのまま足すと水準の高い概念だけが効いてしまう */
+  const base = keys.map((k) => c.threshold[k] ?? 0);
+  const score = (p) => {
+    const row = c.scores[p.id];
+    if (!row) return -Infinity;
+    let best = -Infinity;
+    idx.forEach((i, k) => { const v = row[i] - base[k]; if (v > best) best = v; });
+    return best;
+  };
+  return [...list].sort((a, b) => score(b) - score(a));
+}
 
 function sortPhotos(list, sort, f) {
   if (sort === "date") {
@@ -258,6 +314,9 @@ export function selectPhotos(q, opts = {}) {
   const f = opts.facets || getFacets();
   const src = opts.source || allPhotos();
   const filtered = src.filter((p) => matches(p, n, f, opts.themeTags, opts.locPoints, opts.themeLocs));
+  /* 概念を選んでいるときは「近い順」を既定にする。
+     利用者が並びを明示的に変えた場合はそちらを優先する */
+  if (n.concept.length && !q.sort) return sortByConcept(filtered, n.concept, f);
   return sortPhotos(filtered, n.sort, f);
 }
 

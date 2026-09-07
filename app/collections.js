@@ -19,6 +19,12 @@ export const COLLECTIONS = {
       ar: "أزهار الكرز", hi: "चेरी के फूल", th: "ดอกซากุระ", vi: "Hoa anh đào",
       id: "Bunga Sakura", tr: "Kiraz Çiçekleri", nl: "Kersenbloesem",
       pl: "Kwitnące wiśnie", sv: "Körsbärsblommor",
+    
+      fa: "شکوفه‌های گیلاس",
+      he: "פריחת הדובדבן",
+      bn: "চেরি ফুল",
+      tl: "Bulaklak ng Cherry",
+      uk: "Цвітіння сакури",
     },
     desc: {
       ja: "日本の春を象徴する桜の名所。新倉山浅間公園の富士山+五重塔+桜の三段構図、天下第一と称される高遠城址公園、樹齢400年超の駒つなぎの一本桜、松本の弘法山古墳と城山公園(さくら名所100選)、樹齢百年のしだれ桜が美しい安養寺、諏訪湖畔の高島公園など、4月の絶景を集めました。",
@@ -75,6 +81,12 @@ export const COLLECTIONS = {
       ar: "أوراق الخريف", hi: "शरद पर्णसमूह", th: "ใบไม้เปลี่ยนสี", vi: "Lá thu",
       id: "Dedaunan Musim Gugur", tr: "Sonbahar Yaprakları", nl: "Herfstkleuren",
       pl: "Jesienne liście", sv: "Höstlöv",
+    
+      fa: "برگ‌های پاییزی",
+      he: "שלכת הסתיו",
+      bn: "শরতের পাতা",
+      tl: "Dahon ng Taglagas",
+      uk: "Осіннє листя",
     },
     desc: {
       ja: "日本の秋を象徴する紅葉の名所。京都・東福寺の通天橋から眺める2,000本のモミジ、清水寺の紅葉ライトアップ、金閣寺の朱と金が織りなす11月の絶景を掲載。",
@@ -130,6 +142,12 @@ export const COLLECTIONS = {
       ar: "الثلوج", hi: "बर्फ़", th: "หิมะ", vi: "Tuyết",
       id: "Salju", tr: "Kar Manzaraları", nl: "Sneeuwlandschappen",
       pl: "Śnieg", sv: "Snölandskap",
+    
+      fa: "مناظر برفی",
+      he: "נופי שלג",
+      bn: "তুষার দৃশ্য",
+      tl: "Tanawing Niyebe",
+      uk: "Засніжені краєвиди",
     },
     desc: {
       ja: "雪国・日本の冬。札幌雪まつりの巨大雪像、世界遺産・白川郷の合掌造りに降り積もる雪、知床の流氷、摩周湖と洞爺湖の冠雪、ガス灯が灯る雪の小樽運河など、白銀の絶景を集めました。",
@@ -185,6 +203,12 @@ export const COLLECTIONS = {
       ar: "القلاع", hi: "किले", th: "ปราสาท", vi: "Lâu đài",
       id: "Kastil", tr: "Kaleler", nl: "Kastelen",
       pl: "Zamki", sv: "Slott",
+    
+      fa: "قلعه‌ها",
+      he: "טירות",
+      bn: "দুর্গ",
+      tl: "Mga Kastilyo",
+      uk: "Замки",
     },
     desc: {
       ja: "日本の城。世界遺産・姫路城（白鷺城）、国宝・松本城（烏城）、現存12天守の松山城・高知城、桜の名所・高遠城址公園、諏訪の浮城・高島公園、加賀百万石の金沢城下町など、武家文化と建築美を集めました。",
@@ -241,6 +265,12 @@ export const COLLECTIONS = {
       ar: "المعابد والأضرحة", hi: "मंदिर और तीर्थ", th: "วัดและศาลเจ้า", vi: "Đền chùa",
       id: "Kuil dan Wihara", tr: "Tapınaklar ve Türbeler", nl: "Tempels en heiligdommen",
       pl: "Świątynie i sanktuaria", sv: "Tempel och helgedomar",
+    
+      fa: "معابد و زیارتگاه‌ها",
+      he: "מקדשים ומקדשי שינטו",
+      bn: "মন্দির ও উপাসনালয়",
+      tl: "Mga Templo at Dambana",
+      uk: "Храми та святині",
     },
     desc: {
       ja: "日本の信仰文化を伝える寺社。世界遺産・清水寺の舞台と紅葉、金閣寺の金箔、平等院鳳凰堂、紅葉の東福寺、伊勢神宮の聖域、世界最古の木造建築・法隆寺、夫婦岩の鳥居など、千年を超える祈りの風景。",
@@ -296,6 +326,12 @@ export const COLLECTIONS = {
       ar: "الينابيع الساخنة", hi: "गर्म झरने", th: "ออนเซ็น", vi: "Suối nước nóng",
       id: "Pemandian Air Panas", tr: "Kaplıcalar", nl: "Warmwaterbronnen",
       pl: "Gorące źródła", sv: "Varma källor",
+    
+      fa: "چشمه‌های آب گرم",
+      he: "מעיינות חמים",
+      bn: "উষ্ণ প্রস্রবণ",
+      tl: "Mainit na Bukal",
+      uk: "Гарячі джерела",
     },
     desc: {
       ja: "湯けむりの風景。日本最古の道後温泉、九州随一の湧出量を誇る別府の地獄、由布岳を望む湯布院、火山と海に囲まれた登別と洞爺湖。日本人の暮らしに根付く湯の風景。",
@@ -351,6 +387,12 @@ export const COLLECTIONS = {
       ar: "السواحل", hi: "तट", th: "ชายฝั่ง", vi: "Bờ biển",
       id: "Pesisir", tr: "Sahiller", nl: "Kustlandschappen",
       pl: "Wybrzeża", sv: "Kuster",
+    
+      fa: "سواحل",
+      he: "חופים",
+      bn: "সমুদ্রতট",
+      tl: "Baybayin",
+      uk: "Узбережжя",
     },
     desc: {
       ja: "日本の海岸線。「日本のウユニ塩湖」と呼ばれる父母ヶ浜の夕景、坂本龍馬像が見守る桂浜、宮古ブルーの宮古島と沖縄の珊瑚礁、夫婦岩の鳥居と日の出、鳴門の渦潮、しまなみ海道の橋など、太平洋から東シナ海まで。",
@@ -406,6 +448,12 @@ export const COLLECTIONS = {
       ar: "المناظر الليلية", hi: "रात्रि दृश्य", th: "วิวกลางคืน", vi: "Quang cảnh đêm",
       id: "Pemandangan Malam", tr: "Gece Manzaraları", nl: "Nachtaanzichten",
       pl: "Widoki nocne", sv: "Nattvyer",
+    
+      fa: "مناظر شبانه",
+      he: "נופי לילה",
+      bn: "রাতের দৃশ্য",
+      tl: "Tanawin sa Gabi",
+      uk: "Нічні краєвиди",
     },
     desc: {
       ja: "灯りに包まれる日本の夜。横浜みなとみらいの摩天楼と赤レンガ倉庫、立石公園から眺める諏訪市の宝石箱、松本中町通りの蔵に灯る街灯、東京・品川の鉄道夜景、藻岩山から見る札幌の新3大夜景。",
@@ -461,6 +509,12 @@ export const COLLECTIONS = {
       ar: "الشلالات", hi: "जलप्रपात", th: "น้ำตก", vi: "Thác nước",
       id: "Air Terjun", tr: "Şelaleler", nl: "Watervallen",
       pl: "Wodospady", sv: "Vattenfall",
+    
+      fa: "آبشارها",
+      he: "מפלים",
+      bn: "জলপ্রপাত",
+      tl: "Mga Talon",
+      uk: "Водоспади",
     },
     desc: {
       ja: "清流と滝の風景。北海道の三段滝公園、エメラルドグリーンの淵で知られる高知のにこ淵など、日本の水の表情を集めました。",
@@ -516,6 +570,12 @@ export const COLLECTIONS = {
       ar: "البحيرات", hi: "झीलें", th: "ทะเลสาบ", vi: "Hồ",
       id: "Danau", tr: "Göller", nl: "Meren",
       pl: "Jeziora", sv: "Sjöar",
+    
+      fa: "دریاچه‌ها",
+      he: "אגמים",
+      bn: "হ্রদ",
+      tl: "Mga Lawa",
+      uk: "Озера",
     },
     desc: {
       ja: "日本の湖。世界一級の透明度を誇る北海道・摩周湖、羊蹄山と花火の洞爺湖、富士山を映す河口湖、御神渡りで知られる諏訪湖。火山と祈りが生んだ静寂の水景。",
@@ -573,6 +633,12 @@ export const COLLECTIONS = {
       ar: "الطيور", hi: "पक्षी", th: "นก", vi: "Chim",
       id: "Burung", tr: "Kuşlar", nl: "Vogels",
       pl: "Ptaki", sv: "Fåglar",
+    
+      fa: "پرندگان",
+      he: "ציפורים",
+      bn: "পাখি",
+      tl: "Mga Ibon",
+      uk: "Птахи",
     },
     desc: {
       ja: "日本で出会った鳥たち。知床のシマフクロウとオジロワシ、釧路のタンチョウ、札幌の森のクマゲラ・アカゲラ・ゴジュウカラ、竹富島のアカショウビンと朝焼けのサギ、動物園の猛禽まで、野鳥観察の記録。",
@@ -592,6 +658,12 @@ export const COLLECTIONS = {
       ar: "الحيوانات", hi: "जानवर", th: "สัตว์", vi: "Động vật",
       id: "Hewan", tr: "Hayvanlar", nl: "Dieren",
       pl: "Zwierzęta", sv: "Djur",
+    
+      fa: "حیوانات",
+      he: "חיות",
+      bn: "প্রাণী",
+      tl: "Mga Hayop",
+      uk: "Тварини",
     },
     desc: {
       ja: "野生動物と動物園・水族館の仲間たち。知床沖のクジラ、日高の牧場の馬、阿寒のエゾシカ、円山公園のエゾリス、竹富島の水牛、コアラやトラ、ラッコやジンベエザメまで。",

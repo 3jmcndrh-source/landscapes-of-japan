@@ -5,7 +5,7 @@ import { HREFLANG, SITE_URL, PHOTO_LANGS } from "../../../../i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS, prefFromSlug, locFromSlug } from "../../../../slugs.js";
 import { getLocDesc } from "../../../../content/descriptions.js";
 import { PHOTO_TAGS } from "../../../../photo-tags.js";
-import { relatedPhotos } from "../../../../related.js";
+import { similarPhotos } from "../../../../similar.js";
 import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
 import { PHOTO_DATES } from "../../../../photo-dates.js";
 import { COLLECTION_TAGS } from "../../../../photo-tags.js";
@@ -169,11 +169,15 @@ export default async function Page({ params }) {
   const prevHref = prevPhoto ? `${navBase}/${prevPhoto.id}` : null;
   const nextHref = nextPhoto ? `${navBase}/${nextPhoto.id}` : null;
 
-  /* ⑥ 似た雰囲気の写真。共通タグ → 色の近さ の順で選び、1つの撮影地から
+  /* ⑦ 似た写真。写真そのものの画像特徴 (CLIP) で選ぶ。タグの一致ではない。
+     画像特徴が無い写真だけ、従来のタグ+色の規則へ落とす (規則は similar.js)。
+     選定はサーバー側で確定するので、閲覧者はモデルも特徴データも読み込まない。
+
+     以前の説明 — ⑥ 似た雰囲気の写真。共通タグ → 色の近さ の順で選び、1つの撮影地から
      最大2枚までにする (以前は共通タグ数だけで並べていたため、上位6枚が
      すべて同じ撮影地になっていた)。規則は related.js に集約。 */
   const allPhotosFlat = PREFECTURES.flatMap((p) => p.photos.map((ph) => ({ ...ph, pref: p.pref })));
-  const similarPhotos = relatedPhotos(photoId, locJp, allPhotosFlat, 6);
+  const similar = similarPhotos(photoId, locJp, allPhotosFlat, 6);
 
   const photoUrl = cldUrl(photoId, 2400);
   const photoUrlLarge = cldUrl(photoId, 1200);
@@ -241,7 +245,7 @@ export default async function Page({ params }) {
         locJp={locJp}
         photo={photo}
         related={related}
-        similarPhotos={similarPhotos}
+        similarPhotos={similar.items}
         otherSeasons={otherSeasons}
         prevHref={prevHref}
         nextHref={nextHref}
