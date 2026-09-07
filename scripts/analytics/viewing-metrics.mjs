@@ -151,6 +151,43 @@ async function optional(label, fn) {
   }
 }
 
+/* ---- カスタム定義の値が実際に付いているかを見る ------------------------
+   GA4 のカスタム定義は登録した時点より前に収集されたイベントには
+   遡って適用されない。その期間のイベントは値が "(not set)" になり、
+   値で絞り込む問い合わせは必ず 0 件になる。
+   これを「実際に0件だった」と読み違えないための確認。
+     https://support.google.com/analytics/answer/14239696 */
+async function paramCoverage(eventName, paramName) {
+  try {
+    const res = await ga({
+      dimensions: [{ name: `customEvent:${paramName}` }],
+      metrics: [{ name: "eventCount" }],
+      dimensionFilter: withHost(eventIs(eventName)),
+    });
+    let total = 0, withValue = 0;
+    for (const r of res.rows || []) {
+      const v = r.dimensionValues[0].value;
+      const c = n(r.metricValues[0].value);
+      total += c;
+      if (v && v !== "(not set)") withValue += c;
+    }
+    return { ok: true, total, withValue };
+  } catch (e) {
+    return { ok: false, reason: String(e.message).slice(0, 120) };
+  }
+}
+
+/** 値が1件も付いていないなら、分子は「未取得」として扱う */
+function coverageBlocks(label, cov, paramName) {
+  if (!cov.ok) { unavailable.push(`${label}: 取得エラー (${cov.reason})`); return true; }
+  if (cov.total > 0 && cov.withValue === 0) {
+    unavailable.push(`${label}: 対象イベントは ${cov.total} 件あるが customEvent:${paramName} の値がすべて (not set)。` +
+      `カスタム定義の登録より前に収集されたぶんには値が付かない (遡って適用されない)`);
+    return true;
+  }
+  return false;
+}
+
 const M = [];
 function push(name, def, num, den, basis) {
   let value;
@@ -197,10 +234,10 @@ async function main() {
 
   /* 3. 色検索からの鑑賞率 — 分母は色検索を使ったセッションで、全セッションではない */
   const colorUsed = await sessionsWith("color_select");
-  const colorOpen = await optional(
-    "色検索からの鑑賞 (customEvent:entry)",
-    () => sessionsWith("photo_open", paramFilter("entry", "color"))
-  );
+  const entryCov = await paramCoverage("photo_open", "entry");
+  const colorOpen = coverageBlocks("色検索からの鑑賞 (customEvent:entry)", entryCov, "entry")
+    ? null
+    : await optional("色検索からの鑑賞 (customEvent:entry)", () => sessionsWith("photo_open", paramFilter("entry", "color")));
   push(
     "色検索からの鑑賞率",
     "entry=color の photo_open が1回以上あった重複なしのセッション数 ÷ color_select が1回以上あった重複なしのセッション数",
@@ -211,10 +248,10 @@ async function main() {
         「1回の検索」= 入力が800msとまり、IME変換中でなく、
         直前に数えた語と違う語になったとき。1文字ごとには数えない。 */
   const searches = await eventsWith("site_search");
-  const zero = await optional(
-    "0件検索 (customEvent:has_results)",
-    () => eventsWith("site_search", paramFilter("has_results", "false"))
-  );
+  const hrCov = await paramCoverage("site_search", "has_results");
+  const zero = coverageBlocks("0件検索 (customEvent:has_results)", hrCov, "has_results")
+    ? null
+    : await optional("0件検索 (customEvent:has_results)", () => eventsWith("site_search", paramFilter("has_results", "false")));
   push(
     "検索0件率",
     "has_results=false の site_search イベント件数 ÷ 有効な site_search イベント件数。1回の検索 = 入力が800ms止まり、IME変換中でなく、直前に数えた語と違う語になったとき",
@@ -290,7 +327,11 @@ function report(sessions, entries, sub) {
   console.log("■ 写真を開いた操作の流入元の内訳 (photo_open のイベント数。割合ではない)");
   if (entries === null) console.log("   未取得");
   else if (!entries.length) console.log("   0件");
-  else for (const e of entries) console.log(`   ${e.entry}: ${e.count}`);
+  else {
+    for (const e of entries) console.log(`   ${e.entry}: ${e.count}`);
+    if (entries.every((e) => e.entry === "(not set)"))
+      console.log("   ※ すべて (not set)。カスタム定義の登録より前に収集されたイベントには値が付かない");
+  }
 
   if (unavailable.length) {
     console.log("\n取得できなかったもの (「利用が0件」ではない):");

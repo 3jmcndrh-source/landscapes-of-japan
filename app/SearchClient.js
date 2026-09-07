@@ -12,8 +12,28 @@ import SiteHeader from "./SiteHeader.js";
  * ヘッダーの QuickSearch と共通。同じ語に対して両者の順位が食い違わない。
  * 種別ごとの見出しで区切ると順位が壊れるので、1本の順位つき一覧にする。
  */
-/* 検索語の一時保管先。URLではなくこのタブのメモリに置く */
-const SS_KEY = "loj.search.q";
+/* 検索語の置き場所。
+   URLには置かない (Clarity は URL をクエリ文字列ごと記録し、公式FAQによると
+   URLパラメータのマスキングはサポートへの依頼が必要なうえ、参照元URL・
+   クリック先URLは対象外。つまり Clarity 側の設定だけでは止めきれない)。
+   代わりに history.state に「その履歴項目の検索語」として持たせる。
+   sessionStorage はタブに1つしか持てず、履歴を戻ったときに新しい検索語が
+   古い履歴項目を上書きしてしまうため使わない。 */
+
+/** Next.js のルーティング情報を壊さないよう、既存の state に足すだけにする */
+function readStateQ() {
+  try {
+    const v = window.history.state && window.history.state.lojQ;
+    return typeof v === "string" ? v : "";
+  } catch { return ""; }
+}
+function writeStateQ(value, url) {
+  try {
+    const prev = window.history.state || {};
+    if (url === undefined && (prev.lojQ || "") === (value || "")) return;
+    window.history.replaceState({ ...prev, lojQ: value || "" }, "", url);
+  } catch { /* 保存できない環境でも検索そのものは動く */ }
+}
 
 function SearchInner({ lang }) {
   const sp = useSearchParams();
@@ -22,38 +42,38 @@ function SearchInner({ lang }) {
   const [composing, setComposing] = useState(false);
 
   /* ⑨ 検索語をURLに残さない。
-     Microsoft Clarity は URL をクエリ文字列ごと記録する。公式FAQによると
-     URLパラメータのマスキングはサポートへの依頼が必要で、しかも
-     参照元URL・クリック先URLはマスキングの対象外。
-     つまり Clarity 側の設定だけでは検索語を止めきれない。
-     そこで、そもそも検索語をURLに置かない形にする。
-       - ?q= で来た場合は読み取ってすぐURLから外す
-         (JSON-LD の SearchAction や共有された ?q= リンクは従来どおり動く)
-       - 入力内容はこのタブの sessionStorage に持ち、再読み込みでは復元する
-       - URLに残らないので、次のページの参照元URLにも載らない
-     GA4 の page_location / page_referrer からの除去は layout.js 側で行っている
-     (こちらは二重の備え)。 */
+     - ?q= で来た場合は読み取って、同じ replaceState でURLから外しつつ
+       その履歴項目の state に検索語を移す
+       (JSON-LD の SearchAction や共有された ?q= リンクは従来どおり動く)
+     - それ以外は、その履歴項目に記録された検索語を復元する
+     - URLに残らないので、次のページの参照元URLにも載らない */
   useEffect(() => {
     try {
       const u = new URL(window.location.href);
       const fromUrl = u.searchParams.get("q");
       if (fromUrl !== null) {
         u.searchParams.delete("q");
-        window.history.replaceState(null, "", u.pathname + u.search + u.hash);
-        sessionStorage.setItem(SS_KEY, fromUrl);
+        writeStateQ(fromUrl, u.pathname + u.search + u.hash);
       } else {
-        const saved = sessionStorage.getItem(SS_KEY);
+        const saved = readStateQ();
         if (saved) setQ(saved);
       }
-    } catch { /* 保存できない環境でも検索そのものは動く */ }
+    } catch {}
   }, []);
 
-  /* 入力を保持し、再読み込みで同じ検索状態に戻す (URLには出さない) */
+  /* 戻る・進むで、その履歴項目の検索語に戻す */
   useEffect(() => {
-    try {
-      if (q) sessionStorage.setItem(SS_KEY, q);
-      else sessionStorage.removeItem(SS_KEY);
-    } catch {}
+    const onPop = () => setQ(readStateQ());
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  /* 入力が落ち着いたら、いま見ている履歴項目に検索語を記録する。
+     replaceState なので履歴項目は増えない。空にしたら空で記録するので、
+     消した語が再読み込みで復活することはない。 */
+  useEffect(() => {
+    const t = setTimeout(() => writeStateQ(q), 400);
+    return () => clearTimeout(t);
   }, [q]);
 
   const index = useMemo(() => buildEntries(), []);
