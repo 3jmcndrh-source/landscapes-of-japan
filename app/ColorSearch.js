@@ -4,6 +4,7 @@ import { PHOTO_PALETTE, PALETTE_COLORS } from "./photo-palette.js";
 import { getUrl, getPrefName, getLocName } from "./data.js";
 import { photoLang } from "./i18n-meta.js";
 import { ui, colorLabel } from "./ui-strings.js";
+import { SWATCH } from "./color-meta.js";   /* 見本の色は統合探索と共有 */
 import { richAlt } from "./title-keywords.js";
 import { flipGrid, captureGridRects } from "./useViewTransition.js";
 import { photoPath } from "./photo-ref.js";
@@ -17,11 +18,7 @@ import { track } from "./analytics.js";
  * 言語に依存しないデータを 25言語で共有し、同じ写真を言語別に重複表示しない
  * (対象は写真ID単位。カードのリンク先だけ言語ごとに解決する)。
  */
-const SWATCH = {
-  red: "#c0392b", orange: "#d97a28", yellow: "#d8b62c", green: "#3f8f4a",
-  blue: "#2f6fb0", purple: "#7a5aa8", pink: "#c96b93", brown: "#7a5334",
-  white: "#efeae2", gray: "#8d8d8d", black: "#1a1a1a",
-};
+
 const MIN_SHARE = 0.08;   // この色が写真の8%未満なら「その色の写真」とはみなさない
 
 export default function ColorSearch({ lang, photos }) {

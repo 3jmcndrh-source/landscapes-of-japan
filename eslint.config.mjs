@@ -14,6 +14,7 @@
 import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
+import react from "eslint-plugin-react";
 
 export default [
   {
@@ -33,7 +34,7 @@ export default [
     files: ["app/**/*.js", "scripts/**/*.mjs", "*.mjs", "proxy.js"],
     /* コード中の eslint-disable コメントが参照しているプラグインを登録しておく
        (未登録だと「そのルールは存在しない」で落ちる) */
-    plugins: { "react-hooks": reactHooks },
+    plugins: { "react-hooks": reactHooks, react },
     languageOptions: {
       ecmaVersion: 2024,
       sourceType: "module",
@@ -43,6 +44,9 @@ export default [
     rules: {
       /* 本命。未定義の参照は公開前に止める */
       "no-undef": "error",
+      /* JSX で使っている変数を「未使用」と誤検知させない */
+      "react/jsx-uses-vars": "error",
+      "react/jsx-uses-react": "error",
       /* import したのに使っていない / 変数の消し忘れ。args は無視 */
       "no-unused-vars": ["warn", { args: "none", varsIgnorePattern: "^_" }],
       /* 実害のあるものだけ error に残す */
