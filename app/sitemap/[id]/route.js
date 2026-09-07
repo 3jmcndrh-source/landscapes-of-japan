@@ -2,6 +2,7 @@ import { LANGS, HREFLANG, SITE_URL, PHOTO_LANGS } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { COLLECTION_SLUGS, COLLECTIONS } from "../../collections.js";
+import { GALLERIES } from "../../galleries.js";
 
 // Cloudflare Pages 静的エクスポート対応 — id=0 + id=1..N (per-pref) を build 時 SSG
 export const dynamic = "force-static";
@@ -105,6 +106,24 @@ export async function GET(_req, { params }) {
           url: `${SITE_URL}/${lang}/collections/${slug}`,
           lastmod: cLastmod, changefreq: "monthly", priority: "0.65",
           alternates: cLangs,
+        }));
+      }
+    }
+
+    /* ⑤ 地域×テーマ ギャラリー。
+       索引に載せる設定 (index, follow + canonical + hreflang) にしてあるので、
+       サイトマップにも載せる。探索画面 (/explore) と共有アルバム (/album) は
+       noindex なので、ここには入れない。 */
+    for (const g of GALLERIES) {
+      const gLangs = {};
+      for (const l of LANGS) gLangs[HREFLANG[l]] = `${SITE_URL}/${l}/gallery/${g.slug}`;
+      gLangs["x-default"] = `${SITE_URL}/en/gallery/${g.slug}`;
+      const gLastmod = yearLastmod(maxYearForLocList(COLLECTIONS[g.theme]?.locs || [])) || today;
+      for (const lang of LANGS) {
+        entries.push(buildUrlEntry({
+          url: `${SITE_URL}/${lang}/gallery/${g.slug}`,
+          lastmod: gLastmod, changefreq: "monthly", priority: "0.6",
+          alternates: gLangs,
         }));
       }
     }
