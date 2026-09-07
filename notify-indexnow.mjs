@@ -55,7 +55,7 @@ async function notify(urls) {
 
 async function main() {
   const args = process.argv.slice(2);
-  let urls = [];
+  let urls;   /* 以降の分岐で必ず代入される */
 
   if (args.length === 0) {
     console.log("使い方:");
