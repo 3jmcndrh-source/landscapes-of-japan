@@ -2,9 +2,12 @@
 import { animateFromRect } from "./useViewTransition.js";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ambient } from "./photo-colors.js";
+import { cldUrl } from "./data.js";
 import { ui } from "./ui-strings.js";
 import PhotoActions from "./PhotoActions.js";
 import { pushHistory } from "./local-store.js";
+import { PHOTO_DIMS } from "./photo-dims.js";
+import { nativeWidthFor } from "./PhotoImage.js";
 
 /**
  * Shared lightbox (Round B): one gesture/zoom/keyboard implementation for
@@ -32,6 +35,9 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
   const [zoom, setZoom] = useState({ s: 1, tx: 0, ty: 0 });
   const [gesturing, setGesturing] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  /* ③ 操作表示を隠す (写真だけを見る) */
+  const [bare, setBare] = useState(false);
+  const [isFull, setIsFull] = useState(false);
   const innerRef = useRef(null);
   const rootRef = useRef(null);
   const closeBtnRef = useRef(null);
@@ -42,6 +48,72 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
 
   const zoomed = zoom.s > 1.05;
   const resetZoom = useCallback(() => setZoom({ s: 1, tx: 0, ty: 0 }), []);
+
+  const clampPan = useCallback((s, tx, ty) => {
+    const el = innerRef.current?.querySelector("img");
+    const r = el ? el.getBoundingClientRect() : { width: 800, height: 600 };
+    const mx = (r.width * (s - 1)) / 2 / (zoomRef.current.s || 1) + 40;
+    const my = (r.height * (s - 1)) / 2 / (zoomRef.current.s || 1) + 40;
+    return { s, tx: Math.max(-mx, Math.min(mx, tx)), ty: Math.max(-my, Math.min(my, ty)) };
+  }, []);
+
+  /* ③ 等倍表示。基準は「公開している配信画像の実寸」で、
+     原寸データや RAW を出すわけではない。実寸を超えて引き伸ばしたものを
+     高画質とは呼ばないため、倍率は実寸/表示幅で決める。 */
+  const nativeScale = useCallback(() => {
+    const el = innerRef.current?.querySelector("img");
+    if (!el) return 2;
+    const shown = el.getBoundingClientRect().width;
+    if (!shown) return 2;
+    const dims = PHOTO_DIMS[photos[index]?.id];
+    const deliverable = nativeWidthFor(dims);
+    return Math.max(1, Math.min(6, deliverable / shown));
+  }, [index, photos]);
+
+  const toggleNative = useCallback(() => {
+    setZoom((z) => (z.s > 1.05 ? { s: 1, tx: 0, ty: 0 } : { s: nativeScale(), tx: 0, ty: 0 }));
+  }, [nativeScale]);
+
+  /* ③ 全画面 (対応している環境でのみ) */
+  const toggleFull = useCallback(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    try {
+      if (!document.fullscreenElement) el.requestFullscreen?.().then(() => setIsFull(true)).catch(() => {});
+      else document.exitFullscreen?.().then(() => setIsFull(false)).catch(() => {});
+    } catch { /* 非対応環境では何もしない */ }
+  }, []);
+  useEffect(() => {
+    const onFs = () => setIsFull(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", onFs);
+    return () => document.removeEventListener("fullscreenchange", onFs);
+  }, []);
+
+  /* keyboard */
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowLeft") onPrev();
+      else if (e.key === "ArrowRight") onNext();
+      /* ③ PCでの明示的な拡大・縮小。入力欄では拾わない */
+      else if (e.key === "+" || e.key === "=") { e.preventDefault(); setZoom((z) => clampPan(Math.min(6, z.s * 1.4), z.tx, z.ty)); }
+      else if (e.key === "-") { e.preventDefault(); setZoom((z) => (z.s / 1.4 <= 1.05 ? { s: 1, tx: 0, ty: 0 } : clampPan(z.s / 1.4, z.tx, z.ty))); }
+      else if (e.key === "0") { e.preventDefault(); resetZoom(); }
+      else if (e.key === "1") { e.preventDefault(); toggleNative(); }
+      else if (e.key === "f" || e.key === "F") { e.preventDefault(); toggleFull(); }
+      else if (e.key === "h" || e.key === "H") { e.preventDefault(); setBare((v) => !v); }
+      else if (e.key === "Tab") {
+        /* ⑧ 開いている間、フォーカスがダイアログの外へ出ないようにする */
+        const f = rootRef.current?.querySelectorAll("button, a[href]");
+        if (!f || !f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, onPrev, onNext, clampPan, resetZoom, toggleNative, toggleFull]);
 
   /* index change → reset zoom */
   useEffect(() => { resetZoom(); }, [index, resetZoom]);
@@ -62,24 +134,7 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
     };
   }, []);
 
-  /* keyboard */
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") onClose();
-      else if (e.key === "ArrowLeft") onPrev();
-      else if (e.key === "ArrowRight") onNext();
-      else if (e.key === "Tab") {
-        /* ⑧ 開いている間、フォーカスがダイアログの外へ出ないようにする */
-        const f = rootRef.current?.querySelectorAll("button, a[href]");
-        if (!f || !f.length) return;
-        const first = f[0], last = f[f.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose, onPrev, onNext]);
+
 
   /* preload ±2 */
   useEffect(() => {
@@ -120,13 +175,7 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
     return () => clearTimeout(t);
   }, [photos.length]);
 
-  const clampPan = useCallback((s, tx, ty) => {
-    const el = innerRef.current?.querySelector("img");
-    const r = el ? el.getBoundingClientRect() : { width: 800, height: 600 };
-    const mx = (r.width * (s - 1)) / 2 / (zoomRef.current.s || 1) + 40;
-    const my = (r.height * (s - 1)) / 2 / (zoomRef.current.s || 1) + 40;
-    return { s, tx: Math.max(-mx, Math.min(mx, tx)), ty: Math.max(-my, Math.min(my, ty)) };
-  }, []);
+
 
   const toggleZoomAt = useCallback((clientX, clientY) => {
     const z = zoomRef.current;
@@ -245,13 +294,13 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
       onClick={(e) => { if (e.target === e.currentTarget && !zoomed) onClose(); }}
       style={{ touchAction: "none", overscrollBehavior: "contain", "--amb": ambient(cur.id, 0.16) || "rgba(0,0,0,0)" }}
     >
-      <button ref={closeBtnRef} className="cin-lb-close" onClick={(e) => { e.stopPropagation(); onClose(); }} onTouchEnd={stopTouch(onClose)} aria-label={ui("close", lang)}>×</button>
-      <div className="cin-lb-info">
+      <button ref={closeBtnRef} className="cin-lb-close" hidden={bare} onClick={(e) => { e.stopPropagation(); onClose(); }} onTouchEnd={stopTouch(onClose)} aria-label={ui("close", lang)}>×</button>
+      <div className="cin-lb-info" hidden={bare}>
         <div className="cin-lb-pref">{prefName}</div>
         {locName && <div className="cin-lb-loc">{locName}</div>}
         {cur.year && <div className="cin-lb-year">{cur.year}</div>}
       </div>
-      {photos.length > 1 && (
+      {photos.length > 1 && !zoomed && !bare && (
         <button className="cin-lb-arrow left" onClick={(e) => { e.stopPropagation(); onPrev(); }} onTouchEnd={stopTouch(onPrev)} aria-label={ui("previousPhoto", lang)}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
@@ -263,7 +312,9 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
         {/* ③ サムネイルと同じ transition 名を付けて、拡大表示へ「つながって」見せる。
             zoom 中は transform が走るので名前を外す (二重変形を避ける)。 */}
         <img
-          src={cur.url}
+          /* ③ 等倍のときは、いちばん大きい配信画像に切り替える。
+             小さい画像を引き伸ばしたものを等倍とは呼ばないため。 */
+          src={zoomed ? cldUrl(cur.id, nativeWidthFor(PHOTO_DIMS[cur.id])) : cur.url}
           alt={alt}
           draggable="false"
           style={{
@@ -287,13 +338,32 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
         />
         <div className="cin-lb-wm">Landscapes of Japan</div>
       </div>
-      {photos.length > 1 && (
+      {photos.length > 1 && !zoomed && !bare && (
         <button className="cin-lb-arrow right" onClick={(e) => { e.stopPropagation(); onNext(); }} onTouchEnd={stopTouch(onNext)} aria-label={ui("nextPhoto", lang)}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
         </button>
       )}
-      <div className="cin-lb-bottom" onClick={(e) => e.stopPropagation()}>
+      {bare && (
+        <button type="button" className="cin-lb-unbare" onClick={(e) => { e.stopPropagation(); setBare(false); }}
+          aria-label={ui("showControls", lang)} title={ui("showControls", lang)}>▣</button>
+      )}
+      <div className="cin-lb-bottom" hidden={bare} onClick={(e) => e.stopPropagation()}>
         {photos.length > 1 && <span className="cin-lb-count">{index + 1} / {photos.length}</span>}
+        {/* ③ 等倍・全画面・操作表示の切替 */}
+        <button type="button" className="pa-btn" onClick={(e) => { e.stopPropagation(); toggleNative(); }}
+          aria-pressed={zoomed} aria-label={ui("actualSize", lang)} title={ui("actualSize", lang)}>1:1</button>
+        <button type="button" className="pa-btn" onClick={(e) => { e.stopPropagation(); toggleFull(); }}
+          aria-pressed={isFull} aria-label={ui("fullscreen", lang)} title={ui("fullscreen", lang)}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
+          </svg>
+        </button>
+        <button type="button" className="pa-btn" onClick={(e) => { e.stopPropagation(); setBare(true); }}
+          aria-label={ui("hideControls", lang)} title={ui("hideControls", lang)}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" /><circle cx="12" cy="12" r="3" />
+          </svg>
+        </button>
         {/* ③④⑦ 対象は「いま表示している写真」。次へ移動すればこちらも切り替わる */}
         <PhotoActions photoId={cur.id} lang={lang} entry="lightbox" />
         {href && (

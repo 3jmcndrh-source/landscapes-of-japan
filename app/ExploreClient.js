@@ -10,7 +10,7 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { PREFECTURES, getLocName, getPrefName } from "./data.js";
+import { PREFECTURES, getLocName, getPrefName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, getCollectionName } from "./collections.js";
 import { COLLECTION_TAGS } from "./photo-tags.js";
@@ -43,6 +43,9 @@ export default function ExploreClient({ lang }) {
   const [lbClosing, setLbClosing] = useState(false);
   /* ② 一覧と地図の切り替え。切り替えても条件は同じものを使うので選択は失われない */
   const [view, setView] = useState("list");
+  /* 拡大表示に渡す画像幅。画面に合わせて選ぶ (一覧の小さい画像を使い回さない) */
+  const [lbW, setLbW] = useState(2400);
+  useEffect(() => { setLbW(lbWidth()); }, []);
 
   const writer = useRef(null);
   if (!writer.current && typeof window !== "undefined") writer.current = makeUrlWriter();
@@ -140,8 +143,8 @@ export default function ExploreClient({ lang }) {
   useEffect(() => { lbRef.current = lightbox; }, [lightbox]);
 
   const lbPhotos = useMemo(
-    () => visible.map((p) => ({ id: p.id, url: null, pref: p.pref, loc: p.loc, year: p.year })),
-    [visible]
+    () => visible.map((p) => ({ id: p.id, url: cldUrl(p.id, lbW), pref: p.pref, loc: p.loc, year: p.year })),
+    [visible, lbW]
   );
 
   const openAt = useCallback((photo) => {

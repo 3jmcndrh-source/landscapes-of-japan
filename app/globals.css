@@ -748,3 +748,16 @@ body{--sh-offset:var(--header-h)}
   /* 狭い画面では地図と写真を並べず、切り替えて使う */
   .pmap-svg{max-height:52vh}
 }
+
+/* ③ 2枚比較。それぞれの全体が見えることを優先する (重ねない) */
+.cmp{position:fixed;inset:0;z-index:210;background:rgba(8,7,6,.97);display:flex;flex-direction:column}
+.cmp-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(220,190,100,.16)}
+.cmp-body{flex:1;display:flex;gap:8px;padding:10px;min-height:0}
+.cmp-body.stack{flex-direction:column}
+.cmp-item{flex:1;margin:0;min-height:0;min-width:0;display:flex;flex-direction:column;background:#111;border-radius:6px;overflow:hidden}
+.cmp-item img{flex:1;min-height:0}
+.cmp-cap{display:flex;align-items:center;gap:10px;padding:6px 10px;font-family:var(--font-zen-kaku),sans-serif;font-size:12px;color:rgba(232,228,223,.75);background:rgba(0,0,0,.4)}
+.cmp-cap a{color:rgba(220,190,100,.9);text-decoration:none;margin-left:auto}
+.cmp-cap button{background:none;border:0;color:rgba(232,228,223,.7);cursor:pointer;font-size:15px}
+/* ③ 操作を隠したときに戻すための小さなボタン */
+.cin-lb-unbare{position:absolute;top:14px;right:14px;z-index:6;background:rgba(20,17,14,.6);border:0;color:rgba(242,236,226,.8);border-radius:999px;width:36px;height:36px;cursor:pointer}
