@@ -12,11 +12,49 @@ import SiteHeader from "./SiteHeader.js";
  * ヘッダーの QuickSearch と共通。同じ語に対して両者の順位が食い違わない。
  * 種別ごとの見出しで区切ると順位が壊れるので、1本の順位つき一覧にする。
  */
+/* 検索語の一時保管先。URLではなくこのタブのメモリに置く */
+const SS_KEY = "loj.search.q";
+
 function SearchInner({ lang }) {
   const sp = useSearchParams();
   const [q, setQ] = useState(sp.get("q") || "");
   /* IME変換中は入力の途中。検索の確定として数えない */
   const [composing, setComposing] = useState(false);
+
+  /* ⑨ 検索語をURLに残さない。
+     Microsoft Clarity は URL をクエリ文字列ごと記録する。公式FAQによると
+     URLパラメータのマスキングはサポートへの依頼が必要で、しかも
+     参照元URL・クリック先URLはマスキングの対象外。
+     つまり Clarity 側の設定だけでは検索語を止めきれない。
+     そこで、そもそも検索語をURLに置かない形にする。
+       - ?q= で来た場合は読み取ってすぐURLから外す
+         (JSON-LD の SearchAction や共有された ?q= リンクは従来どおり動く)
+       - 入力内容はこのタブの sessionStorage に持ち、再読み込みでは復元する
+       - URLに残らないので、次のページの参照元URLにも載らない
+     GA4 の page_location / page_referrer からの除去は layout.js 側で行っている
+     (こちらは二重の備え)。 */
+  useEffect(() => {
+    try {
+      const u = new URL(window.location.href);
+      const fromUrl = u.searchParams.get("q");
+      if (fromUrl !== null) {
+        u.searchParams.delete("q");
+        window.history.replaceState(null, "", u.pathname + u.search + u.hash);
+        sessionStorage.setItem(SS_KEY, fromUrl);
+      } else {
+        const saved = sessionStorage.getItem(SS_KEY);
+        if (saved) setQ(saved);
+      }
+    } catch { /* 保存できない環境でも検索そのものは動く */ }
+  }, []);
+
+  /* 入力を保持し、再読み込みで同じ検索状態に戻す (URLには出さない) */
+  useEffect(() => {
+    try {
+      if (q) sessionStorage.setItem(SS_KEY, q);
+      else sessionStorage.removeItem(SS_KEY);
+    } catch {}
+  }, [q]);
 
   const index = useMemo(() => buildEntries(), []);
   const results = useMemo(
