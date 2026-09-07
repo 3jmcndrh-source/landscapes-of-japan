@@ -9,6 +9,7 @@
  * 画面に出す文字は最小限: 件数・選択中の条件・「絞り込み」の開閉だけ。
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { PREFECTURES, getLocName, getPrefName } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { COLLECTIONS, getCollectionName } from "./collections.js";
@@ -25,6 +26,10 @@ import Lightbox from "./Lightbox.js";
 import SiteHeader from "./SiteHeader.js";
 import { track } from "./analytics.js";
 import { useOriginRect, animateToRect } from "./useViewTransition.js";
+import { LOC_POINTS } from "./loc-points.js";
+
+/* ② 地図は開いた人だけが読み込む (地図の形と d3 を初期表示に載せない) */
+const PhotoMap = dynamic(() => import("./PhotoMap.js"), { ssr: false });
 
 const ORIENTATIONS = ["landscape", "portrait", "square"];
 const PAGE = 60;   /* 段階表示。初期表示で最大画像を全部取りに行かないため */
@@ -36,6 +41,8 @@ export default function ExploreClient({ lang }) {
   const [shown, setShown] = useState(PAGE);
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
+  /* ② 一覧と地図の切り替え。切り替えても条件は同じものを使うので選択は失われない */
+  const [view, setView] = useState("list");
 
   const writer = useRef(null);
   if (!writer.current && typeof window !== "undefined") writer.current = makeUrlWriter();
@@ -44,7 +51,7 @@ export default function ExploreClient({ lang }) {
     () => Object.fromEntries(Object.entries(COLLECTIONS).map(([s, c]) => [s, c.locs || []])),
     []
   );
-  const opts = useMemo(() => ({ themeTags: COLLECTION_TAGS, themeLocs }), [themeLocs]);
+  const opts = useMemo(() => ({ themeTags: COLLECTION_TAGS, themeLocs, locPoints: LOC_POINTS }), [themeLocs]);
 
   /* ---- 起動時: URL から条件を読み、絞り込み用のデータを読み込む ---- */
   useEffect(() => {
@@ -81,6 +88,29 @@ export default function ExploreClient({ lang }) {
   const clearAll = useCallback(() => {
     update({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], bbox: null, sort: query.sort });
   }, [update, query.sort]);
+
+  /* 地図の範囲は連続して変わるので履歴に積まない。条件としては他と同じ扱い */
+  const setBBox = useCallback((bbox) => {
+    setQuery((prev) => {
+      const same = JSON.stringify(prev.bbox) === JSON.stringify(bbox);
+      if (same) return prev;
+      const next = { ...prev, bbox };
+      writer.current?.write(next, "replace");
+      return next;
+    });
+    setShown(PAGE);
+  }, []);
+
+  const pickLoc = useCallback((loc) => {
+    setQuery((prev) => {
+      const cur = prev.loc || [];
+      const next = { ...prev, loc: cur.includes(loc) ? cur.filter((l) => l !== loc) : [...cur, loc] };
+      writer.current?.immediate(next, "push");
+      track("map_pick_loc", {}, loc);
+      return next;
+    });
+    setShown(PAGE);
+  }, []);
 
   const removeOne = useCallback((type, value) => {
     if (type === "bbox") return update({ ...query, bbox: null });
@@ -167,6 +197,15 @@ export default function ExploreClient({ lang }) {
           <span className="ex-count" aria-live="polite">
             {ready ? results.length : ""}
           </span>
+          <div className="ex-view" role="tablist" aria-label={ui("explore", lang)}>
+            {["list", "map"].map((v) => (
+              <button key={v} type="button" role="tab" aria-selected={view === v}
+                className={"ex-chip" + (view === v ? " on" : "")}
+                onClick={() => setView(v)}>
+                {v === "list" ? ui("byRegion", lang) : ui("mapArea", lang)}
+              </button>
+            ))}
+          </div>
           {conditions.length > 0 && (
             <button type="button" className="flt-clear" onClick={clearAll}>{ui("clearFilter", lang)}</button>
           )}
@@ -227,6 +266,17 @@ export default function ExploreClient({ lang }) {
             <span>{ui("noResults", lang)}</span>
             <button type="button" className="flt-clear" onClick={clearAll}>{ui("clearFilter", lang)}</button>
           </div>
+        )}
+
+        {ready && view === "map" && (
+          <PhotoMap
+            lang={lang}
+            photos={results}
+            selectedLocs={query.loc}
+            bbox={query.bbox}
+            onPickLoc={pickLoc}
+            onBBox={setBBox}
+          />
         )}
 
         {ready && results.length > 0 && (

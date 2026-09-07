@@ -729,3 +729,22 @@ body{--sh-offset:var(--header-h)}
   .ex-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
   .ex-panel{max-height:60vh;overflow-y:auto}
 }
+
+/* ② 撮影地マップ (外部タイル配信は使わない。既存の日本地図と同じ投影) */
+.pmap{position:relative;border:1px solid rgba(220,190,100,.18);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)}
+.pmap-svg{width:100%;height:auto;display:block;max-height:70vh;touch-action:none;cursor:grab}
+.pmap-svg:active{cursor:grabbing}
+.pmap-land path{fill:rgba(232,228,223,.06);stroke:rgba(220,190,100,.25);stroke-width:.5;vector-effect:non-scaling-stroke}
+.pmap-pin circle{fill:rgba(220,190,100,.85);stroke:rgba(10,10,10,.7);stroke-width:1;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill var(--t-fast,.18s) var(--ease,ease)}
+.pmap-pin:hover circle,.pmap-pin.on circle{fill:rgba(245,225,170,1)}
+.pmap-pin.on circle{stroke:#fff;stroke-width:2}
+.pmap-pin text{fill:#0a0a0a;text-anchor:middle;font-family:var(--font-zen-kaku),sans-serif;pointer-events:none;font-weight:500}
+.pmap-pin:focus-visible circle{stroke:rgba(220,190,100,1);stroke-width:3}
+.pmap-bar{display:flex;align-items:center;gap:10px;padding:8px 12px;border-top:1px solid rgba(220,190,100,.14);font-family:var(--font-zen-kaku),sans-serif;font-size:12px}
+.pmap-hint{margin-left:auto;color:rgba(232,228,223,.5)}
+.map-fail{color:rgba(232,228,223,.55);font-family:var(--font-zen-kaku),sans-serif;padding:30px 0}
+.ex-view{display:flex;gap:6px}
+@media (max-width:600px){
+  /* 狭い画面では地図と写真を並べず、切り替えて使う */
+  .pmap-svg{max-height:52vh}
+}
