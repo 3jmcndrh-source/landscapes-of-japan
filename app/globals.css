@@ -761,3 +761,15 @@ body{--sh-offset:var(--header-h)}
 .cmp-cap button{background:none;border:0;color:rgba(232,228,223,.7);cursor:pointer;font-size:15px}
 /* ③ 操作を隠したときに戻すための小さなボタン */
 .cin-lb-unbare{position:absolute;top:14px;right:14px;z-index:6;background:rgba(20,17,14,.6);border:0;color:rgba(242,236,226,.8);border-radius:999px;width:36px;height:36px;cursor:pointer}
+
+/* ⑥ 共有アルバム */
+.al-note{font-family:var(--font-zen-kaku),sans-serif;font-size:11px;color:rgba(232,228,223,.45);margin:0 0 14px}
+.al-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;counter-reset:al}
+.al-list li{position:relative}
+.al-list li::before{counter-increment:al;content:counter(al);position:absolute;top:6px;left:6px;z-index:3;background:rgba(10,10,10,.7);color:rgba(245,225,170,.95);font-family:var(--font-zen-kaku),sans-serif;font-size:11px;padding:2px 7px;border-radius:999px}
+.al-ops{display:flex;gap:4px;justify-content:center;margin-top:4px}
+.al-ops button{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:rgba(232,228,223,.8);border-radius:6px;width:30px;height:26px;cursor:pointer;font-size:12px}
+.al-ops button:disabled{opacity:.3;cursor:default}
+.al-ops button:focus-visible{outline:2px solid rgba(220,190,100,.9);outline-offset:2px}
+.al-add{margin-top:28px}
+.al-add ul{list-style:none;margin:0;padding:0}
