@@ -176,6 +176,35 @@ const note = (s) => notes.push(s);
   }
 }
 
+/* ---- 5c. 写真詳細へのリンクが、実在するページだけを指していること ----
+   写真IDには大文字と `_` が入る (DSC07337_kaejdo, dsc05986_2-1741dc)。
+   `[a-z0-9-]+` で数えると取りこぼして「リンクが無い」と誤判定する。
+   深さも見る (スラッシュ3個以上に一致させると撮影地ページが混ざる)。
+   件数は固定しない。LANGS と PHOTO_LANGS と出力ファイルの実在から判定する。 */
+{
+  const pf = PREFECTURES.find((p) => p.pref === "北海道");
+  const locJp = pf.photos.find((p) => p.loc)?.loc;
+  const prefSlug = PREF_SLUGS[pf.pref];
+  const locSlug = LOC_SLUGS[locJp];
+  const bad = [];
+  let checkedLangs = 0, totalLinks = 0;
+  for (const l of LANGS) {
+    const h = page(`${l}/${prefSlug}/${locSlug}`);
+    if (!h) { bad.push(`${l}: 撮影地ページが無い`); continue; }
+    checkedLangs++;
+    const ids = [...new Set(
+      [...h.matchAll(new RegExp(`href="/${l}/[a-z0-9-]+/[a-z0-9-]+/([A-Za-z0-9_-]+)"`, "g"))].map((m) => m[1])
+    )];
+    totalLinks += ids.length;
+    const missing = ids.filter((id) => !page(`${l}/${prefSlug}/${locSlug}/${id}`));
+    if (missing.length) bad.push(`${l}: リンク先が無い ${missing.length}件 (${missing[0]})`);
+    if (PHOTO_LANGS.includes(l) && ids.length === 0) bad.push(`${l}: 写真詳細があるはずなのにリンクが1本も無い`);
+    if (!PHOTO_LANGS.includes(l) && ids.length > 0) bad.push(`${l}: 写真詳細を出さない言語なのにリンクが ${ids.length}本ある`);
+  }
+  check(`写真詳細リンクが実在ページだけを指す (${checkedLangs}言語 / 計${totalLinks}本)`,
+    bad.length === 0, bad.slice(0, 3).join(" / "));
+}
+
 /* ---- 6. 計測が本番ホスト以外で動かない仕掛けが残っていること ---- */
 {
   const h = page("ja") || "";
@@ -217,6 +246,19 @@ const note = (s) => notes.push(s);
     }
     return { n: new Set(srcs).size, kb: Math.round(raw / 1024), gzkb: Math.round(gz / 1024) };
   };
+
+  /* hidden 属性が効く状態で出力されていること。
+     ブラウザ既定の [hidden]{display:none} はクラスの display 宣言に負ける。
+     実際 Lightbox の「操作を隠す」がこれで機能していなかった。
+     出力された CSS に打ち消しの規則が入っているかを見る。 */
+  {
+    const cssFiles = readdirSync(path.join(OUT, "_next/static/chunks"))
+      .filter((f) => f.endsWith(".css"))
+      .map((f) => readFileSync(path.join(OUT, "_next/static/chunks", f), "utf-8"));
+    const has = cssFiles.some((c) => /\[hidden\]\{display:none!important\}/.test(c.replace(/\s+/g, "")));
+    check("hidden 属性がクラスの display に負けない", has,
+      has ? "" : "globals.css の [hidden]{display:none!important} が出力に見当たらない");
+  }
 
   /* フォントの先読み。
      next/font は既定で宣言した書体の分割片を全部 preload する。

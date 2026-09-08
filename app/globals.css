@@ -1,4 +1,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
+/* hidden 属性を必ず効かせる。
+   ブラウザ既定の [hidden]{display:none} はクラスの display 宣言に負ける。
+   実際、Lightbox の「操作を隠す」で .cin-lb-close と .cin-lb-bottom が
+   display:flex のまま残り、代わりに出る「操作を表示」が閉じるボタンに
+   覆われて押せなくなっていた (2026-09-09 に実測)。
+   個別に直すと同じ間違いがまた起きるので、まとめてここで押さえる。 */
+[hidden]{display:none!important}
 html,body{background:#0a0a0a;color:#e8e4df}
 html{scroll-behavior:smooth}
 /* T2 ambient color: registered so the radial tint cross-fades between photos */
