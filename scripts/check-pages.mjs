@@ -11,6 +11,7 @@
  * fatal (exit 1) と note (報告のみ) を分ける。
  */
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { gzipSync } from "node:zlib";
 import path from "node:path";
 import { LANGS, SITE_URL, PHOTO_LANGS } from "../app/i18n-meta.js";
 import { PREFECTURES } from "../app/data.js";
@@ -199,18 +200,54 @@ const note = (s) => notes.push(s);
   note(`出力 ${files} ファイル (HTML ${html})`);
   if (files > 19000) fatal.push(`ファイル数 ${files} が Cloudflare Pages の 20,000 に近い`);
 
-  /* 初期JS (最初のHTMLが読む script の合計) */
+  /* 初期JS (最初のHTMLが読む script の合計)。
+     展開後 (ファイルの大きさ) と、実際に流れる量 (gzip後) を分けて出す。
+     前者だけを見ると、実際の待ち時間の3倍を見て焦ることになる。 */
   const measure = (rel) => {
     const h = page(rel);
     if (!h) return null;
     const srcs = [...h.matchAll(/<script src="(\/_next\/[^"]+)"/g)].map((m) => m[1]);
-    let sum = 0;
+    let raw = 0, gz = 0;
     for (const s of new Set(srcs)) {
       const f = path.join(OUT, s);
-      if (existsSync(f)) sum += statSync(f).size;
+      if (!existsSync(f)) continue;
+      const b = readFileSync(f);
+      raw += b.length;
+      gz += gzipSync(b, { level: 9 }).length;
     }
-    return { n: new Set(srcs).size, kb: Math.round(sum / 1024) };
+    return { n: new Set(srcs).size, kb: Math.round(raw / 1024), gzkb: Math.round(gz / 1024) };
   };
+
+  /* フォントの先読み。
+     next/font は既定で宣言した書体の分割片を全部 preload する。
+     和文書体は Google Fonts 側で約120枚に切られているため、既定のままだと
+     **どのページでも 120ファイル・約1.4MB** を先読みしてしまう (2026-09-09 に実測)。
+     preload:false にして必要な分だけ取りに行かせた。ここはその見張り。 */
+  {
+    const worst = [];
+    for (const rel of ["ja", "ja/explore", "en/explore", "ar/explore"]) {
+      const h = page(rel);
+      if (!h) continue;
+      const hrefs = [...h.matchAll(/<link[^>]*rel="preload"[^>]*as="font"[^>]*>/g)]
+        .map((m) => (m[0].match(/href="([^"]+)"/) || [])[1])
+        .filter(Boolean);
+      let bytes = 0;
+      for (const u of hrefs) {
+        const f = path.join(OUT, u);
+        if (existsSync(f)) bytes += statSync(f).size;
+      }
+      worst.push({ rel, n: hrefs.length, kb: Math.round(bytes / 1024) });
+    }
+    const max = worst.reduce((a, b) => (b.n > a.n ? b : a), { n: 0, kb: 0, rel: "-" });
+    check("フォントの先読みが必要最小限", max.n <= 8,
+      `最多 ${max.rel} で ${max.n}ファイル ${max.kb}KB`);
+    if (max.n > 8) {
+      fatal.push(
+        `フォントを ${max.n} ファイル (${max.kb}KB) 先読みしている (${max.rel})。` +
+        `app/[lang]/layout.js の next/font で preload:false が外れていないか確認`
+      );
+    }
+  }
   const pfs = PREF_SLUGS["北海道"];
   const locJp = PREFECTURES.find((p) => p.pref === "北海道").photos.find((p) => p.loc).loc;
   for (const [name, rel] of [
@@ -221,7 +258,7 @@ const note = (s) => notes.push(s);
     ["ギャラリー", `ja/gallery/${GALLERIES[0].slug}`],
   ]) {
     const m = measure(rel);
-    note(`初期JS ${name.padEnd(6)} ${m ? `${m.kb} KB (${m.n}本)` : "測れず"}`);
+    note(`初期JS ${name.padEnd(6)} 実転送 ${m ? `${m.gzkb} KB (gzip後) / 展開後 ${m.kb} KB / ${m.n}本` : "測れず"}`);
   }
 }
 

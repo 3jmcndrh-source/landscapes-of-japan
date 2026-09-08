@@ -19,11 +19,19 @@ const GA4_MEASUREMENT_ID = "G-SZG99MQG5Z";
 // per-deploy file count. Quoted CSS fallbacks like 'Noto Sans JP' / 'Cormorant
 // Garamond' remain as system-font fallbacks (already the effective behaviour).
 
+// preload:false が要点。この書体は Google Fonts 側で CJK を約120枚に切って
+// 配信するため、既定の preload だと **どのページでも 120ファイル・約1.4MB** を
+// 先読みしていた (実測: /ja/explore の初回転送 2,848KB のうち 1,378KB)。
+// 実際に要るのは、そのページの文字が入っている数枚だけ。
+// preload を外すと、ブラウザが unicode-range を見て必要な分だけ取りに行く。
+// display:"swap" があるので文字が消える時間は無く、代替書体で出てから差し替わる。
+// Playfair は Latin で枚数が少なく、見出し (LCP になりやすい) に使うので先読みを残す。
 const zenKaku = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
   weight: ["300", "500"], // 700/900 dropped — 0 font-weight refs in CSS
   variable: "--font-zen-kaku",
   display: "swap",
+  preload: false,
 });
 
 const playfair = Playfair_Display({
