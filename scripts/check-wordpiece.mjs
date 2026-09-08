@@ -10,11 +10,13 @@
  * ビルド前に必ず通す。
  */
 import { readFileSync } from "node:fs";
+import { gunzipSync } from "node:zlib";
 import { env, AutoTokenizer } from "@xenova/transformers";
 import { createTokenizer } from "../app/wordpiece.js";
 env.cacheDir = "./.model-cache";
 
-const vocabList = readFileSync("public/models/mclip/vocab.txt", "utf-8").split("\n");
+/* 配信ファイルは gzip 済み (Pages が octet-stream を圧縮しないため)。ここで戻して読む */
+const vocabList = gunzipSync(readFileSync("public/models/mclip/vocab.txt.gz")).toString("utf-8").split("\n");
 const mine = createTokenizer(vocabList);
 const ref = await AutoTokenizer.from_pretrained("sentence-transformers/clip-ViT-B-32-multilingual-v1");
 console.log(`語彙 ${mine.size} 件`);

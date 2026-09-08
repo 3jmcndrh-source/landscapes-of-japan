@@ -30,7 +30,7 @@
  */
 import {
   TEXT_MODEL_BASE, TEXT_MODEL_PARTS, TEXT_MODEL_TOTAL_BYTES, TEXT_DOWNLOAD_BYTES,
-  TEXT_MODEL_ASSET_BYTES, ORT_WASM_BYTES,
+  TEXT_MODEL_ASSET_BYTES, ORT_WASM_BYTES, TEXT_MODEL_RAW_BYTES,
   TEXT_MODEL_VERSION, TEXT_HIDDEN, TEXT_OUT, TEXT_MODEL_LANGS,
 } from "./text-model-meta.js";
 
@@ -39,7 +39,7 @@ export const canUseFreeText = (lang) => TEXT_MODEL_LANGS.includes(lang);
 export { TEXT_MODEL_LANGS };
 
 const STORE = `mclip-${TEXT_MODEL_VERSION}`;
-const ASSET_NAMES = [...TEXT_MODEL_PARTS, "dense.bin", "vocab.txt"];
+const ASSET_NAMES = [...TEXT_MODEL_PARTS, "dense.bin.gz", "vocab.txt.gz"];
 
 let worker = null;
 let readyPromise = null;
@@ -90,6 +90,7 @@ export function loadTextModel(cb = {}) {
         out: TEXT_OUT,
         total: TEXT_DOWNLOAD_BYTES,
         version: TEXT_MODEL_VERSION,
+        rawBytes: TEXT_MODEL_RAW_BYTES,
       });
     } catch {
       reset();
