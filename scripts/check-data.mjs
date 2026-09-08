@@ -19,6 +19,7 @@ import { PREF_SLUGS, LOC_SLUGS } from "../app/slugs.js";
 import { LANGS } from "../app/i18n-meta.js";
 import { COLLECTIONS, COLLECTION_SLUGS } from "../app/collections.js";
 import { COLLECTION_META, COLLECTION_SLUGS as META_SLUGS } from "../app/collections-meta.js";
+import { VERIFIED_LOC_QID, VERIFIED_PREF_QID } from "../app/wikidata-verified.js";
 import { COLLECTION_TAGS } from "../app/photo-tags.js";
 
 const photos = PREFECTURES.flatMap((pf) => pf.photos.map((p) => ({ ...p, pref: pf.pref })));
@@ -142,6 +143,47 @@ if (existsSync("app/loc-points.js")) {
       "app/collections-meta.js が古い (" + diffs.join(" / ") + ") — " +
       "node scripts/generate-collections-meta.mjs で作り直してください"
     );
+  }
+}
+
+/* ---- sameAs: 検証済み対応表と、監査結果のずれ ----
+   app/wikidata-verified.js は scripts/audit-wikidata.mjs の生成物。
+   手で書き換えたり、監査をやり直さずに撮影地だけ増やしたりすると、
+   確認していない値が sameAs に出てしまう。毎ビルドで突き合わせる。 */
+{
+  const auditPath = "docs/wikidata-audit.json";
+  if (!existsSync(auditPath)) {
+    notes.push("docs/wikidata-audit.json が無い (sameAs の根拠を確認できない)");
+  } else {
+    const audit = JSON.parse(readFileSync(auditPath, "utf-8"));
+    const expectLoc = {}, expectPref = {};
+    for (const r of audit.明細 || []) {
+      if (!r.採用Q) continue;
+      (r.種別 === "撮影地" ? expectLoc : expectPref)[r.撮影地] = r.採用Q;
+    }
+    const diff = [];
+    const cmp = (label, actual, expect) => {
+      for (const [k, v] of Object.entries(actual)) {
+        if (expect[k] !== v) diff.push(`${label} ${k}: 出力 ${v} / 監査 ${expect[k] || "なし"}`);
+      }
+      for (const [k, v] of Object.entries(expect)) {
+        if (actual[k] !== v) diff.push(`${label} ${k}: 監査は ${v} だが出力に無い`);
+      }
+    };
+    cmp("撮影地", VERIFIED_LOC_QID, expectLoc);
+    cmp("都道府県", VERIFIED_PREF_QID, expectPref);
+    if (diff.length) {
+      fatal.push(
+        `sameAs の対応表が監査結果とずれている (${diff.length}件: ${diff.slice(0, 3).join(" / ")}) — ` +
+        `node scripts/audit-wikidata.mjs --apply で作り直してください`
+      );
+    }
+    /* 掲載中で sameAs を出せない撮影地は、件数だけ知らせる (異常ではない) */
+    const usedLocs2 = [...new Set(photos.map((p) => p.loc).filter(Boolean))];
+    const noSame = usedLocs2.filter((l) => !VERIFIED_LOC_QID[l]);
+    if (noSame.length) {
+      notes.push(`sameAs を出さない撮影地 ${noSame.length}件 (同一性を確認できていないため省略): ${noSame.slice(0, 5).join(", ")}${noSame.length > 5 ? " ほか" : ""}`);
+    }
   }
 }
 

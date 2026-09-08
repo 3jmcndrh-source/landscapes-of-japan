@@ -16,6 +16,7 @@ import { LANGS, SITE_URL, PHOTO_LANGS } from "../app/i18n-meta.js";
 import { PREFECTURES } from "../app/data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../app/slugs.js";
 import { GALLERIES } from "../app/galleries.js";
+import { VERIFIED_LOC_QID, VERIFIED_PREF_QID } from "../app/wikidata-verified.js";
 
 const OUT = "out";
 const fatal = [];
@@ -112,6 +113,66 @@ const note = (s) => notes.push(s);
   const shouldNot = LANGS.filter((l) => !PHOTO_LANGS.includes(l))
     .filter((l) => page(`${l}/${PREF_SLUGS[pf.pref]}/${LOC_SLUGS[ph.loc]}/${ph.id}`));
   check("写真詳細が対象外の言語に出ていない", shouldNot.length === 0, shouldNot.join(","));
+}
+
+/* ---- 5b. sameAs: 出力HTMLの JSON-LD を実際にパースして照合 ----
+   Q-ID の形が正しい・URLが200を返す、では同一性の確認にならない。
+   ここでは「検証済みの表に載っている値だけが出ているか」を見る。
+   配列・@graph・入れ子のどこにある sameAs も拾う。 */
+{
+  const allowed = new Set([
+    ...Object.values(VERIFIED_LOC_QID).map((q) => `https://www.wikidata.org/wiki/${q}`),
+    ...Object.values(VERIFIED_PREF_QID).map((q) => `https://www.wikidata.org/wiki/${q}`),
+  ]);
+  const collectSameAs = (node, out = []) => {
+    if (Array.isArray(node)) { for (const n of node) collectSameAs(n, out); return out; }
+    if (node && typeof node === "object") {
+      for (const [k, v] of Object.entries(node)) {
+        if (k === "sameAs") { for (const s of [].concat(v)) out.push(String(s)); }
+        else collectSameAs(v, out);
+      }
+    }
+    return out;
+  };
+
+  const pf = PREFECTURES.find((p) => p.pref === "北海道");
+  const locJp = pf.photos.find((p) => p.loc)?.loc;
+  const samples = [
+    `ja/${PREF_SLUGS[pf.pref]}`,
+    `ja/${PREF_SLUGS[pf.pref]}/${LOC_SLUGS[locJp]}`,
+    `ja/${PREF_SLUGS["京都府"]}/${LOC_SLUGS["金閣寺"]}`,
+    `en/${PREF_SLUGS["京都府"]}/${LOC_SLUGS["金閣寺"]}`,
+    `ar/${PREF_SLUGS["北海道"]}/${LOC_SLUGS["知床"]}`,
+  ].filter(Boolean);
+
+  let parsed = 0, found = 0;
+  const bad = [];
+  for (const rel of samples) {
+    const h = page(rel);
+    if (!h) { bad.push(`${rel} が無い`); continue; }
+    for (const m of h.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
+      let json;
+      try { json = JSON.parse(m[1]); } catch (e) { bad.push(`${rel} の JSON-LD が壊れている: ${String(e.message).slice(0, 60)}`); continue; }
+      parsed++;
+      for (const s of collectSameAs(json)) {
+        found++;
+        if (!allowed.has(s)) bad.push(`${rel}: 検証済みでない sameAs ${s}`);
+      }
+    }
+  }
+  check("JSON-LD をパースできる", parsed > 0, `${parsed}件`);
+  check("出力の sameAs はすべて検証済みの値", bad.length === 0, bad.slice(0, 3).join(" / "));
+  note(`sameAs 出力 ${found}件 / 検証済み ${allowed.size}件 (撮影地 ${Object.keys(VERIFIED_LOC_QID).length} + 都道府県 ${Object.keys(VERIFIED_PREF_QID).length})`);
+
+  /* 同一性を確認できなかった撮影地では sameAs ごと出ていないこと */
+  const omitted = "阿寒";
+  const hOmit = page(`ja/${PREF_SLUGS["北海道"]}/${LOC_SLUGS[omitted]}`);
+  if (hOmit) {
+    const ldSameAs = [...hOmit.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+      .flatMap((m) => { try { return collectSameAs(JSON.parse(m[1])); } catch { return []; } });
+    const locLevel = ldSameAs.filter((s) => s !== `https://www.wikidata.org/wiki/${VERIFIED_PREF_QID["北海道"]}`);
+    check(`確認できない撮影地 (${omitted}) は sameAs を出さない`, locLevel.length === 0, locLevel.join(","));
+  }
 }
 
 /* ---- 6. 計測が本番ホスト以外で動かない仕掛けが残っていること ---- */
