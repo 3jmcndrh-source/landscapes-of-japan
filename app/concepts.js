@@ -4,7 +4,7 @@
  * 何をしているか:
  *   写真そのものの特徴 (CLIP の画像ベクトル) と、ここに並べた概念文の特徴を
  *   突き合わせ、その近さを scripts/generate-photo-vectors.mjs が
- *   app/photo-concepts.js へ書き出す。タグの部分一致ではない。
+ *   public/search-phrases.bin へ書き出す。タグの部分一致ではない。
  *
  * 概念の出どころは3種類:
  *   from: "collection"  既存のコレクション名を使う
@@ -100,6 +100,50 @@ const OWN = [
     label: { ja: "橋", en: "bridge", zh: "桥", "zh-tw": "橋", ko: "다리", es: "puente", fr: "pont", de: "Brücke", pt: "ponte", it: "ponte", ru: "мост", ar: "جسر", hi: "पुल", th: "สะพาน", vi: "cầu", id: "jembatan", tr: "köprü", nl: "brug", pl: "most", sv: "bro", fa: "پل", he: "גשר", bn: "সেতু", tl: "tulay", uk: "міст" },
   },
 ];
+
+/**
+ * 複合語を1つの文にするときの短い名詞句。
+ * 「霧のかかった山」を mist と mountain の AND ではなく、
+ * 「霧と霧に覆われた山の写真」という1つの文として画像と突き合わせるために使う。
+ * 実測で、AND より入力に合う写真が上位に来た
+ * (AND では富良野の花畑や石垣島が混ざっていた)。
+ */
+const NOUN = {
+ "cherry-blossoms": "cherry blossom trees in bloom",
+ "autumn-foliage": "red and orange autumn leaves",
+ "snow": "deep snow",
+ "castles": "a Japanese castle",
+ "temples-shrines": "a Japanese temple or shrine",
+ "hot-springs": "a steaming hot spring",
+ "coastal": "the sea coast",
+ "night-views": "city lights at night",
+ "waterfalls": "a waterfall",
+ "lakes": "a calm lake",
+ "birds": "a wild bird",
+ "animals": "a wild animal",
+ "season-spring": "fresh spring green",
+ "season-summer": "deep summer green",
+ "season-autumn": "warm autumn colours",
+ "season-winter": "a bare winter landscape",
+ "sunset": "an orange sunset sky",
+ "sunrise": "a sunrise over the horizon",
+ "starry-sky": "a sky full of stars",
+ "mist": "mist and fog",
+ "mountain": "a mountain",
+ "forest": "a forest of trees",
+ "river": "a river",
+ "flowers": "colourful flowers",
+ "reflection": "a reflection on still water",
+ "bridge": "a bridge"
+};
+
+/** 単独の概念文 / 2つを組み合わせた文 */
+export const conceptPhrase = (keys) => {
+  const ns = keys.map((k) => NOUN[k]).filter(Boolean);
+  if (!ns.length) return null;
+  if (ns.length === 1) return CONCEPT_BY_KEY[keys[0]]?.prompt || ("a photo of " + ns[0]);
+  return "a photo of " + ns.slice(0, 3).join(" with ");
+};
 
 export const CONCEPTS = [
   ...COLLECTION_SLUGS.filter((s) => COLLECTION_PROMPT[s]).map((s) => ({

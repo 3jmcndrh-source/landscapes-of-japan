@@ -61,3 +61,8 @@ scripts/.palette-cache.json
 # ⑦ ビルド時だけ使う CLIP モデル (配信物には含めない)
 .model-cache/
 scripts/.vector-cache.json
+
+# ⑦ 自由文検索の文章モデル (配信物。scripts/package-text-model.mjs が作る)
+# 141MB あるので git には入れず、デプロイ時に生成して out/ へ載せる
+public/models/
+public/ort/

@@ -22,6 +22,7 @@ import {
 } from "./photo-model.js";
 import { CONCEPTS, conceptLabel } from "./concepts.js";
 import { matchConcepts } from "./concept-search.js";
+import { canUseFreeText, TOTAL_BYTES as FREE_BYTES } from "./text-encoder.js";
 import { readQueryFromParams, makeUrlWriter, queryToString } from "./explore-state.js";
 import PhotoCard from "./PhotoCard.js";
 import Lightbox from "./Lightbox.js";
@@ -37,7 +38,7 @@ const ORIENTATIONS = ["landscape", "portrait", "square"];
 const PAGE = 60;   /* 段階表示。初期表示で最大画像を全部取りに行かないため */
 
 export default function ExploreClient({ lang }) {
-  const [query, setQuery] = useState(() => ({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], bbox: null, sort: "region" }));
+  const [query, setQuery] = useState(() => ({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], conceptAll: [], bbox: null, sort: "" }));
   const [ready, setReady] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
   const [shown, setShown] = useState(PAGE);
@@ -60,6 +61,19 @@ export default function ExploreClient({ lang }) {
   const [lookText, setLookText] = useState("");
   const [conceptState, setConceptState] = useState("idle");
   const lookTimer = useRef(null);
+
+  /* ⑦ 自由文で探す。概念語に当てはまらない表現を、文章モデルで直接評価する。
+     モデルは大きい (約141MB) ので、押したときだけ取りに行く。
+     通常の閲覧・概念語検索では取得しない。読み込み中も失敗時も、
+     概念語の検索と写真の閲覧はそのまま使える。
+     結果は URL に載せない (入力文を URL へ置かないため)。
+     freeState: "idle" / "loading" / "ready" / "error"
+     freeResult: { order: Map<id,順位>, ids: Set<id>, count } | null */
+  const [freeState, setFreeState] = useState("idle");
+  const [freeProgress, setFreeProgress] = useState(0);
+  const [freeResult, setFreeResult] = useState(null);
+  /* いま画面に入っている言葉。遅れて返った結果を捨てる判定に使う */
+  const lookRef = useRef("");
 
   const themeLocs = useMemo(
     () => Object.fromEntries(COLLECTION_SLUGS.map((s) => [s, COLLECTION_META[s].locs || []])),
@@ -92,7 +106,7 @@ export default function ExploreClient({ lang }) {
       /* URL に概念が入っているときは、画像特徴データが届くまで
          「準備完了」にしない。先に絞り込むと、判定材料が無いので
          0件になってしまう (共有された ?concept= のURLで実際に起きた) */
-      if (q0.concept.length) await ensureConcepts();
+      if (q0.concept.length || q0.conceptAll.length) await ensureConcepts();
       setReady(true);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -126,7 +140,9 @@ export default function ExploreClient({ lang }) {
 
   const clearAll = useCallback(() => {
     setLookText("");
-    update({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], bbox: null, sort: query.sort });
+    setFreeResult(null);
+    setFreeState("idle");
+    update({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], conceptAll: [], bbox: null, sort: query.sort });
   }, [update, query.sort]);
 
   /* 地図の範囲は連続して変わるので履歴に積まない。条件としては他と同じ扱い */
@@ -157,14 +173,26 @@ export default function ExploreClient({ lang }) {
      - 履歴は増やさない (入力のたびに戻るが効かなくなるのを避ける) */
   const onLook = useCallback((text) => {
     setLookText(text);
+    lookRef.current = text.trim();
+    /* 入力が変わったら前の自由文の結果は捨てる。
+       遅れて返った古い検索が新しい入力を上書きしないようにする */
+    setFreeResult(null);
+    setFreeState("idle");
     if (lookTimer.current) clearTimeout(lookTimer.current);
     lookTimer.current = setTimeout(async () => {
       const ok = await ensureConcepts();
       if (!ok) return;                        /* 読めなければ既存の条件はそのまま */
-      const keys = matchConcepts(text, lang).map((h) => h.key);
+      /* 入力文から取り出した語は「全部に当てはまる」条件にする。
+         「霧のかかった山」は 霧 と 山 の和ではなく、両方に合う写真のこと。
+         絞り込みボタンの複数選択 (concept) とは別の欄に入れるので、
+         北海道と沖縄を同時に選ぶような使い方は今までどおり両方出る。
+         上位2語までを使う (組み合わせた文をビルド時に用意してある範囲)。 */
+      const keys = matchConcepts(text, lang).map((h) => h.key).slice(0, 2);
       setQuery((prev) => {
-        if (prev.concept.join(",") === keys.join(",")) return prev;
-        const next = { ...prev, concept: keys };
+        const nextAll = keys.length >= 2 ? keys : [];
+        const nextOne = keys.length === 1 ? keys : [];
+        if (prev.conceptAll.join(",") === nextAll.join(",") && prev.concept.join(",") === nextOne.join(",")) return prev;
+        const next = { ...prev, concept: nextOne, conceptAll: nextAll };
         writer.current?.write(next, "replace");
         return next;
       });
@@ -174,12 +202,68 @@ export default function ExploreClient({ lang }) {
     }, 250);
   }, [ensureConcepts, lang]);
 
+  /* 絞り込みボタンの選択は従来どおり「どれかに当てはまる」。
+     入力欄で作った複合条件があれば、それは解除する (混ざると分かりにくい) */
   const toggleConcept = useCallback(async (key) => {
     const ok = await ensureConcepts();
     if (!ok) return;
     setLookText("");
-    toggle("concept", key);
-  }, [ensureConcepts, toggle]);
+    setFreeResult(null);
+    setFreeState("idle");
+    setQuery((prev) => {
+      const cur = prev.concept || [];
+      const has = cur.includes(key);
+      const next = {
+        ...prev,
+        concept: has ? cur.filter((v) => v !== key) : [...cur, key],
+        conceptAll: [],
+      };
+      writer.current?.immediate(next, "push");
+      track("explore_filter", { field: "concept", on: !has }, `concept:${key}`);
+      return next;
+    });
+    setShown(PAGE);
+  }, [ensureConcepts]);
+
+  /* ⑦ 自由文で探す。押したときだけモデルを取りに行く。
+     入力文は端末の中だけで扱い、URL・GA4・Clarity のどれにも送らない。
+     画面にも入力欄以外へ出さない (画面記録に残さないため)。 */
+  const runFreeSearch = useCallback(async () => {
+    const text = lookText.trim();
+    if (!text || !canUseFreeText(lang)) return;
+    setFreeState("loading");
+    setFreeProgress(0);
+    try {
+      const [{ loadTextModel, encodeText }, vs] = await Promise.all([
+        import("./text-encoder.js"),
+        (async () => { await ensureConcepts(); return import("./vector-search.js"); })(),
+      ]);
+      const ok = await loadTextModel((loaded, total) => setFreeProgress(Math.min(1, loaded / total)));
+      if (!ok) { setFreeState("error"); return; }
+      const vec = await encodeText(text);
+      /* 遅れて返った古い問い合わせで、新しい入力を上書きしない */
+      if (lookRef.current !== text) return;
+      const scores = vec ? vs.scoresForVector(vec) : null;
+      if (!scores) { setFreeState("error"); return; }
+      /* しきい値は概念語と同じ考え方 (この問い合わせでの平均 + 1.6σ)。
+         合う写真が無ければ 0件。関係のない写真で枠を埋めない。 */
+      const vals = [...scores.values()];
+      const m = vals.reduce((a, b) => a + b, 0) / vals.length;
+      const sd = Math.sqrt(vals.reduce((a, b) => a + (b - m) ** 2, 0) / vals.length);
+      const th = m + 1.6 * sd;
+      const ranked = [...scores.entries()].filter(([, s]) => s >= th).sort((a, b) => b[1] - a[1]);
+      const order = new Map(ranked.map(([id], i) => [id, i]));
+      setFreeResult({ order, ids: new Set(order.keys()), count: order.size });
+      setFreeState("ready");
+      setShown(PAGE);
+      /* 送るのは使われたことと件数だけ。入力語は送らない */
+      track("free_text_search", { results: order.size }, "free");
+    } catch {
+      setFreeState("error");
+    }
+  }, [lookText, lang, ensureConcepts]);
+
+  const clearFree = useCallback(() => { setFreeResult(null); setFreeState("idle"); setShown(PAGE); }, []);
 
   const removeOne = useCallback((type, value) => {
     if (type === "bbox") return update({ ...query, bbox: null });
@@ -188,13 +272,21 @@ export default function ExploreClient({ lang }) {
 
   /* ---- 絞り込み結果 ---- */
   const facets = ready ? getFacets() : null;
-  const results = useMemo(
-    () => (ready ? selectPhotos(query, opts) : []),
+  const results = useMemo(() => {
+    if (!ready) return [];
+    /* 自由文の結果があるときは、地域などの明示条件で絞ったうえで
+       入力文に近い順に並べる。明示条件は今までどおり効く。 */
+    if (freeResult) {
+      const base = selectPhotos({ ...query, sort: "region" }, opts);
+      return base
+        .filter((p) => freeResult.ids.has(p.id))
+        .sort((a, b) => freeResult.order.get(a.id) - freeResult.order.get(b.id));
+    }
+    return selectPhotos(query, opts);
     /* conceptState も見る。画像特徴データは後から届くので、
        届いた時点で数え直さないと古い結果が残る */
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [ready, query, opts, conceptState]
-  );
+  }, [ready, query, opts, conceptState, freeResult]);
   const visible = results.slice(0, shown);
   const conditions = activeConditions(query);
 
@@ -279,13 +371,21 @@ export default function ExploreClient({ lang }) {
               </button>
             ))}
           </div>
-          {conditions.length > 0 && (
+          {(conditions.length > 0 || freeResult) && (
             <button type="button" className="flt-clear" onClick={clearAll}>{ui("clearFilter", lang)}</button>
           )}
         </div>
 
-        {conditions.length > 0 && (
+        {(conditions.length > 0 || freeResult) && (
           <ul className="ex-active">
+            {freeResult && (
+              <li key="free">
+                <button type="button" onClick={clearFree}
+                  aria-label={`${ui("freeChip", lang)} — ${ui("clearFilter", lang)}`}>
+                  {ui("freeChip", lang)} <span aria-hidden="true">×</span>
+                </button>
+              </li>
+            )}
             {conditions.map((c) => (
               <li key={`${c.type}-${c.value}`}>
                 <button type="button" onClick={() => removeOne(c.type, c.value)}
@@ -337,7 +437,23 @@ export default function ExploreClient({ lang }) {
               />
             </div>
             {conceptState === "error" && <p className="ex-note" role="status">{ui("lookUnavailable", lang)}</p>}
-            {conceptState === "ready" && lookText.trim() && query.concept.length === 0 && (
+            {/* ⑦ 概念語に当てはまらない言葉は、押したときだけモデルを取りに行って探す。
+                入力した言葉そのものは画面の他の場所へ出さない (画面記録に残さないため) */}
+            {lookText.trim() && !freeResult && (
+              canUseFreeText(lang) ? (
+                <p className="ex-note">
+                  <button type="button" className="ex-chip" onClick={runFreeSearch} disabled={freeState === "loading"}>
+                    {freeState === "loading"
+                      ? `${ui("freeLoading", lang)} ${Math.round(freeProgress * 100)}%`
+                      : `${ui("freeSearch", lang)} (${Math.round(FREE_BYTES / 1048576)} MB)`}
+                  </button>
+                </p>
+              ) : (
+                <p className="ex-note" role="status">{ui("freeUnsupported", lang)}</p>
+              )
+            )}
+            {freeState === "error" && <p className="ex-note" role="status">{ui("freeUnavailable", lang)}</p>}
+            {conceptState === "ready" && lookText.trim() && !freeResult && query.concept.length === 0 && query.conceptAll.length === 0 && (
               <p className="ex-note" role="status">{ui("lookNoMatch", lang)}</p>
             )}
             <div className="ex-group-b">
@@ -355,8 +471,8 @@ export default function ExploreClient({ lang }) {
           </Group>
           <Group title={ui("galleryOrder", lang)}>
             {["region", "date", "added"].map((s) => (
-              <button key={s} type="button" className={"ex-chip" + (query.sort === s ? " on" : "")}
-                aria-pressed={query.sort === s} onClick={() => update({ ...query, sort: s })}>
+              <button key={s} type="button" className={"ex-chip" + ((query.sort || "region") === s ? " on" : "")}
+                aria-pressed={(query.sort || "region") === s} onClick={() => update({ ...query, sort: s })}>
                 {s === "region" ? ui("byRegion", lang) : s === "date" ? ui("byDate", lang) : ui("newArrivals", lang)}
               </button>
             ))}
@@ -451,6 +567,7 @@ function labelOf(c, lang) {
     case "color": return colorLabel(c.value, lang);
     case "orientation": return ui(`orientation_${c.value}`, lang);
     case "concept": return conceptLabel(c.value, lang);
+    case "conceptAll": return conceptLabel(c.value, lang);
     case "month": return `${c.value}`;
     case "bbox": return ui("mapArea", lang);
     default: return String(c.value);

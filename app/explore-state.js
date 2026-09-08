@@ -16,8 +16,13 @@
 const KEYS = {
   pref: "pref", loc: "loc", theme: "theme", season: "season",
   month: "month", color: "color", orientation: "o", sort: "sort",
-  /* ⑦ URL に載るのは概念キーだけ。利用者が書いた文そのものは載せない */
+  /* ⑦ URL に載るのは概念キーだけ。利用者が書いた文そのものは載せない。
+     concept    = どれか1つでも当てはまれば可 (絞り込みボタンの複数選択)。
+                  以前の共有URLもこの形なので、意味を変えない。
+     conceptAll = 入力文から取り出した複合条件。全部に当てはまるもの。
+                  「霧のかかった山」と「霧または山」を区別するために分けている。 */
   concept: "concept",
+  conceptAll: "conceptAll",
 };
 
 const list = (v) => (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
@@ -58,8 +63,12 @@ export function readQueryFromParams(search) {
     color: arr(KEYS.color),
     orientation: arr(KEYS.orientation),
     concept: arr(KEYS.concept),
+    conceptAll: arr(KEYS.conceptAll),
     bbox: bbox && bbox.length === 4 && bbox.every((n) => Number.isFinite(n)) ? bbox : null,
-    sort: p.get(KEYS.sort) || "region",
+    /* 並びは「利用者が明示的に選んだときだけ」値を入れる。
+       ここで既定値 region を埋めると、画像特徴で並べたい場面でも
+       地域順が優先され、入力に合う写真が下へ埋もれる (実機で確認した不具合)。 */
+    sort: p.get(KEYS.sort) || "",
   };
 }
 

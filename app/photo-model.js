@@ -115,8 +115,11 @@ export async function loadConcepts() {
   const f = await loadFacets();
   if (f.concepts) return f.concepts;
   if (!_conceptPromise) {
-    _conceptPromise = import("./photo-concepts.js")
-      .then((m) => ({ scores: m.PHOTO_CONCEPTS, keys: m.CONCEPT_KEYS, threshold: m.CONCEPT_THRESHOLD, model: m.CONCEPT_MODEL }))
+    _conceptPromise = import("./vector-search.js")
+      .then(async (m) => {
+        const v = await m.loadVectors();
+        return v ? m : null;
+      })
       .catch(() => null);
   }
   const c = await _conceptPromise;
@@ -155,7 +158,13 @@ export function normalizeQuery(q = {}) {
     orientation: asArray(q.orientation),
     bbox: Array.isArray(q.bbox) && q.bbox.length === 4 ? q.bbox.map(Number) : null,
     ids: asArray(q.ids),
+    /* concept    どれか1つでも当てはまれば可 (絞り込みボタンの複数選択と、
+                  concept=… の共有URL。従来の意味を変えない) */
     concept: asArray(q.concept),
+    /* conceptAll 入力文から取り出した複合条件。
+                  組み合わせた文と写真を直接比べる (AND を別に持つのは、
+                  地域の複数選択などを一律 AND にしないため) */
+    conceptAll: asArray(q.conceptAll),
     sort: q.sort || "region",
   };
 }
@@ -164,7 +173,7 @@ export const isEmptyQuery = (q) => {
   const n = normalizeQuery(q);
   return !n.pref.length && !n.loc.length && !n.theme.length && !n.season.length &&
          !n.month.length && !n.color.length && !n.orientation.length && !n.bbox &&
-         !n.ids.length && !n.concept.length;
+         !n.ids.length && !n.concept.length && !n.conceptAll.length;
 };
 
 /** 条件の個数 (画面に「選択中の条件」を出すため) */
@@ -179,6 +188,7 @@ export function activeConditions(q, ctx = {}) {
   for (const v of n.color) out.push({ type: "color", value: v });
   for (const v of n.orientation) out.push({ type: "orientation", value: v });
   for (const v of n.concept) out.push({ type: "concept", value: v });
+  for (const v of n.conceptAll) out.push({ type: "conceptAll", value: v });
   if (n.bbox) out.push({ type: "bbox", value: "map" });
   if (n.ids.length) out.push({ type: "ids", value: `${n.ids.length}` });
   return out;
@@ -189,7 +199,7 @@ export function activeConditions(q, ctx = {}) {
  * facets が無い種類の条件は「判定できない」ので、その条件は無視せず
  * 「満たさない」と扱う (勝手に通さない)。ただし条件が指定されていなければ素通し。
  */
-function matches(p, n, f, themeTags, locPoints, opts_themeLocs) {
+function matches(p, n, f, themeTags, locPoints, opts_themeLocs, vs) {
   if (n.ids.length && !n.ids.includes(p.id)) return false;
   if (n.pref.length && !n.pref.includes(p.pref)) return false;
   if (n.loc.length && !n.loc.includes(p.loc)) return false;
@@ -229,19 +239,18 @@ function matches(p, n, f, themeTags, locPoints, opts_themeLocs) {
     if (!o || !n.orientation.includes(o)) return false;
   }
 
+  /* ⑦ 画像特徴。判定に使うスコアは selectPhotos が1回だけ計算して渡す。
+     データが読めていなければ「判定できない」ので通さない
+     (呼び出し側で 0件 と 使えない を区別する) */
   if (n.concept.length) {
-    /* ⑦ 画像特徴。その概念のしきい値 (平均+1.6σ) 以上なら当てはまるとみなす。
-       データが読めていなければ「判定できない」ので通さない
-       (呼び出し側で 0件 と 使えない を区別する) */
-    const c = f.concepts;
-    if (!c) return false;
-    const row = c.scores[p.id];
-    if (!row) return false;
-    const ok = n.concept.some((key) => {
-      const i = c.keys.indexOf(key);
-      return i >= 0 && row[i] >= (c.threshold[key] ?? Infinity);
-    });
+    if (!vs) return false;
+    /* どれか1つでも当てはまれば可 */
+    const ok = vs.or.some(({ scores, th }) => (scores.get(p.id) ?? -Infinity) >= th);
     if (!ok) return false;
+  }
+  if (n.conceptAll.length) {
+    if (!vs || !vs.all) return false;
+    if (!vs.all.every(({ scores, th }) => (scores.get(p.id) ?? -Infinity) >= th)) return false;
   }
 
   if (n.bbox) {
@@ -260,23 +269,54 @@ function matches(p, n, f, themeTags, locPoints, opts_themeLocs) {
 
 export const SORTS = ["region", "date", "added"];
 
-/** ⑦ 概念を選んでいるときの並び。近いものほど上へ */
-function sortByConcept(list, keys, f) {
-  const c = f.concepts;
-  if (!c) return list;
-  const idx = keys.map((k) => c.keys.indexOf(k)).filter((i) => i >= 0);
-  if (!idx.length) return list;
-  /* しきい値からどれだけ上かで比べる。概念ごとに水準が違うため、
-     生の類似度をそのまま足すと水準の高い概念だけが効いてしまう */
-  const base = keys.map((k) => c.threshold[k] ?? 0);
+/**
+ * ⑦ 画像特徴を使っているときの並び。入力に近いものほど上へ。
+ * しきい値からどれだけ上かで比べる。文ごとに類似度の水準が違うので、
+ * 生の値をそのまま比べると水準の高い文だけが効いてしまう。
+ * 複合条件 (conceptAll) は、組み合わせた文1つとの近さで並べる。
+ */
+function sortByConcept(list, vs) {
+  if (!vs) return list;
+  const use = vs.all && vs.all.length ? vs.all : vs.or;
+  if (!use || !use.length) return list;
   const score = (p) => {
-    const row = c.scores[p.id];
-    if (!row) return -Infinity;
     let best = -Infinity;
-    idx.forEach((i, k) => { const v = row[i] - base[k]; if (v > best) best = v; });
+    for (const { scores, th } of use) {
+      const v = (scores.get(p.id) ?? -Infinity) - th;
+      if (v > best) best = v;
+    }
     return best;
   };
   return [...list].sort((a, b) => score(b) - score(a));
+}
+
+/**
+ * 画像特徴のスコアを、この検索で1回だけ計算する。
+ * conceptAll は「組み合わせた文」を1つ用意できればそれを使い、
+ * 用意できない (3語以上など) ときは、各語のANDに落とす。
+ */
+function vectorContext(n, f) {
+  const m = f.concepts;
+  if (!m || (!n.concept.length && !n.conceptAll.length)) return null;
+  const one = (key) => {
+    const pi = m.phraseIndex([key]);
+    const scores = m.scoresForPhrase(pi);
+    return scores ? { scores, th: m.phraseThreshold(pi) } : null;
+  };
+  const or = n.concept.map(one).filter(Boolean);
+  let all = null;
+  if (n.conceptAll.length) {
+    const pi = n.conceptAll.length <= 2 ? m.phraseIndex(n.conceptAll) : -1;
+    if (pi >= 0) {
+      const scores = m.scoresForPhrase(pi);
+      if (scores) all = [{ scores, th: m.phraseThreshold(pi) }];
+    }
+    if (!all) all = n.conceptAll.map(one).filter(Boolean);
+    if (all.length !== (n.conceptAll.length <= 2 && m.phraseIndex(n.conceptAll) >= 0 ? 1 : n.conceptAll.length)) all = null;
+  }
+  if (n.concept.length && or.length !== n.concept.length) return null;
+  if (n.conceptAll.length && !all) return null;
+  return { or, all };
 }
 
 function sortPhotos(list, sort, f) {
@@ -313,10 +353,12 @@ export function selectPhotos(q, opts = {}) {
   const n = normalizeQuery(q);
   const f = opts.facets || getFacets();
   const src = opts.source || allPhotos();
-  const filtered = src.filter((p) => matches(p, n, f, opts.themeTags, opts.locPoints, opts.themeLocs));
-  /* 概念を選んでいるときは「近い順」を既定にする。
+  const vs = vectorContext(n, f);
+  const filtered = src.filter((p) => matches(p, n, f, opts.themeTags, opts.locPoints, opts.themeLocs, vs));
+  /* 画像特徴を使っているときは「近い順」を既定にする。
+     地域順が既定のままだと、入力に合う写真が下へ埋もれる。
      利用者が並びを明示的に変えた場合はそちらを優先する */
-  if (n.concept.length && !q.sort) return sortByConcept(filtered, n.concept, f);
+  if ((n.concept.length || n.conceptAll.length) && !q.sort) return sortByConcept(filtered, vs);
   return sortPhotos(filtered, n.sort, f);
 }
 
@@ -328,7 +370,8 @@ export function facetCounts(q, opts = {}) {
   const count = (type, value) => {
     const q2 = { ...n, [type]: [value] };
     /* 同じ種類の条件は置き換えて数える (その選択肢を選んだときの件数) */
-    return src.filter((p) => matches(p, normalizeQuery(q2), f, opts.themeTags, opts.locPoints, opts.themeLocs)).length;
+    const n2 = normalizeQuery(q2);
+    return src.filter((p) => matches(p, n2, f, opts.themeTags, opts.locPoints, opts.themeLocs, vectorContext(n2, f))).length;
   };
   return count;
 }

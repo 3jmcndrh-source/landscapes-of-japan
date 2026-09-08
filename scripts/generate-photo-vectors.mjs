@@ -32,13 +32,13 @@ import {
   CLIPTextModelWithProjection, CLIPVisionModelWithProjection,
 } from "@xenova/transformers";
 import { PREFECTURES } from "../app/data.js";
-import { CONCEPTS } from "../app/concepts.js";
+import { CONCEPTS, conceptPhrase } from "../app/concepts.js";
 
 const MODEL = "Xenova/clip-vit-base-patch32";
 const MODEL_VERSION = "clip-b32-proj-1";
 const DIST = "images-dist";
 const OUT_SIM = path.resolve("app", "photo-similar.js");
-const OUT_CON = path.resolve("app", "photo-concepts.js");
+
 const CACHE = path.resolve("scripts", ".vector-cache.json");
 const TOP_N = 12;              /* 保存する類似写真の数 (画面では6枚使う) */
 const PER_LOC_CAP = 2;         /* 同じ撮影地からは最大2枚 */
@@ -212,26 +212,11 @@ CONCEPTS.forEach((c, i) => {
   thresholds[c.key] = Math.round((m + THRESH_K * sd) * 1e4) / 1e4;
 });
 
-const conIds = Object.keys(concepts).sort();
-writeFileSync(
-  OUT_CON,
-  `// 自動生成: node scripts/generate-photo-vectors.mjs (手で編集しない)\n` +
-  `// ⑦ 写真と概念の近さ。値は画像特徴と概念文の類似度で、タグの部分一致ではない。\n` +
-  `// 概念語と各言語の表示名は app/concepts.js。\n` +
-  `// CONCEPT_THRESHOLD は「その概念に当てはまる」と扱う下限 (平均 + ${THRESH_K}σ)。\n` +
-  `// モデル: ${MODEL} (${MODEL_VERSION})\n` +
-  `export const CONCEPT_KEYS = ${JSON.stringify(CONCEPTS.map((c) => c.key))};\n` +
-  `export const CONCEPT_THRESHOLD = ${JSON.stringify(thresholds)};\n` +
-  `export const PHOTO_CONCEPTS = {\n` +
-  conIds.map((id) => `"${id}":[${CONCEPTS.map((c) => concepts[id][c.key]).join(",")}]`).join(",\n") +
-  `\n};\n` +
-  `export const CONCEPT_MODEL = ${JSON.stringify(MODEL_VERSION)};\n`,
-  "utf-8"
-);
-
-console.log(`[vectors] 似た写真 ${simIds.length} 件 / 概念スコア ${conIds.length} 件`);
+/* app/photo-concepts.js は出さなくなった。
+   概念ごとのスコアは、配信するベクトルから閲覧側で求める
+   (単独の概念も「概念文」の1つとして同じ仕組みで扱うため)。 */
+console.log(`[vectors] 似た写真 ${simIds.length} 件`);
 console.log(`  app/photo-similar.js  ${(statSync(OUT_SIM).size / 1024).toFixed(0)} KB`);
-console.log(`  app/photo-concepts.js ${(statSync(OUT_CON).size / 1024).toFixed(0)} KB`);
 if (missing.length) console.log(`  特徴を作れなかった写真 ${missing.length} 件: ${missing.slice(0, 5).join(",")}`);
 const noSim = withVec.filter((id) => !similar[id]);
 if (noSim.length) console.log(`  似た写真が ${MIN_SIM} 以上で見つからなかった写真 ${noSim.length} 件`);
