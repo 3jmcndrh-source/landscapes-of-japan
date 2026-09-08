@@ -114,6 +114,14 @@ writeFileSync(
   `export const ORT_WASM_BYTES = ${typicalWasm};\n` +
   `/** 初回に取得する量のめやす (モデル + Dense + トークナイザ + 実行部1つ) */\n` +
   `export const TEXT_MODEL_TOTAL_BYTES = ${modelBytes + denseBytes + tokBytes + typicalWasm};\n` +
+  `/** 進捗の分母。閲覧側が自分で数えられる分だけ (実行部は ORT が読むので数えられない) */\n` +
+  `export const TEXT_DOWNLOAD_BYTES = ${modelBytes + denseBytes + tokBytes};\n` +
+  `/** ファイルごとの大きさ。取得済みを差し引いて「あと何MB要るか」を出すために使う */\n` +
+  `export const TEXT_MODEL_ASSET_BYTES = ${JSON.stringify(
+    Object.fromEntries([...parts.map((p) => [p.name, p.bytes]), ["dense.bin", denseBytes], ["vocab.txt", tokBytes]])
+  )};\n` +
+  `/** 取得済みの置き場を分ける鍵。モデルを入れ替えると値が変わる */\n` +
+  `export const TEXT_MODEL_VERSION = ${JSON.stringify(`${modelBytes}-${denseBytes}-${tokBytes}`)};\n` +
   `export const TEXT_VOCAB_SIZE = ${vocabList.length};\n` +
   `export const TEXT_HIDDEN = 768;\n` +
   `export const TEXT_OUT = 512;\n` +
@@ -150,18 +158,55 @@ ${wordpiece}
 
 let session = null, tokenizer = null, dense = null, HIDDEN = 768, OUT = 512;
 
+/* 取得済みの分を置いておく場所。
+   2回目以降はここから読むので、通信は起きない (HTTPキャッシュ任せにしない)。
+   使えない環境 (プライベートウィンドウなど) では素の fetch へ落とす。 */
+async function openStore(version) {
+  try {
+    if (typeof caches === "undefined") return null;
+    return await caches.open("mclip-" + version);
+  } catch (e) { return null; }
+}
+
 async function init(msg) {
   HIDDEN = msg.hidden; OUT = msg.out;
   ort.env.wasm.wasmPaths = "/ort/";
   ort.env.wasm.numThreads = 1;
+  const store = await openStore(msg.version);
   let loaded = 0;
+  /* 進捗は実際に受け取ったバイト数だけで出す。残り秒数は出さない */
   const bump = (n) => { loaded += n; self.postMessage({ type: "progress", loaded, total: msg.total }); };
   const grab = async (name) => {
-    const res = await fetch(msg.base + "/" + name);
+    const url = msg.base + "/" + name;
+    if (store) {
+      const hit = await store.match(url);
+      if (hit) { const b = await hit.arrayBuffer(); bump(b.byteLength); return b; }
+    }
+    const res = await fetch(url);
     if (!res.ok) throw new Error(name + ": " + res.status);
-    const buf = await res.arrayBuffer();
-    bump(buf.byteLength);
-    return buf;
+    let bytes;
+    if (res.body && res.body.getReader) {
+      /* 少しずつ数えて進捗を動かす (20MB単位で飛ばない) */
+      const reader = res.body.getReader();
+      const got = [];
+      let n = 0;
+      for (;;) {
+        const r = await reader.read();
+        if (r.done) break;
+        got.push(r.value); n += r.value.length; bump(r.value.length);
+      }
+      bytes = new Uint8Array(n);
+      let at = 0;
+      for (const c of got) { bytes.set(c, at); at += c.length; }
+    } else {
+      bytes = new Uint8Array(await res.arrayBuffer());
+      bump(bytes.length);
+    }
+    if (store) {
+      /* 完全に受け取れた分だけ残す。途中で止めた分は残さない */
+      try { await store.put(url, new Response(bytes.slice().buffer)); } catch (e) {}
+    }
+    return bytes.buffer;
   };
   const chunks = [];
   for (const p of msg.parts) chunks.push(new Uint8Array(await grab(p)));
@@ -172,11 +217,11 @@ async function init(msg) {
   chunks.length = 0;
   dense = new Float32Array(await grab("dense.bin"));
   if (dense.length !== OUT * HIDDEN) throw new Error("Dense の大きさが目次と合わない");
-  const vres = await fetch(msg.base + "/vocab.txt");
-  if (!vres.ok) throw new Error("vocab: " + vres.status);
-  const vtext = await vres.text();
-  bump(vtext.length);
-  tokenizer = createTokenizer(vtext.split("\\n"));
+  const vbuf = await grab("vocab.txt");
+  tokenizer = createTokenizer(new TextDecoder().decode(vbuf).split("\\n"));
+  /* ここから先は総量が分からない (実行部の読み込みと初期化)。
+     割合を作らず「準備中」として伝える */
+  self.postMessage({ type: "phase", phase: "prepare" });
   session = await ort.InferenceSession.create(model, { executionProviders: ["wasm"] });
 }
 

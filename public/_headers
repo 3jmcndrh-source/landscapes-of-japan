@@ -13,6 +13,21 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
+# ⑦ 自由文検索のモデル。分割片は内容が変わらないので長めに持たせる。
+# 閲覧側は取れた分を Cache Storage にも置くので、通常はここまで来ない
+# (Cache Storage が使えない環境での取り直しを減らすための保険)。
+/models/*
+  Cache-Control: public, max-age=2592000
+
+# onnxruntime-web の実行部。onnxruntime-web のバージョンを上げない限り変わらない。
+# これは ORT 自身が読むので Cache Storage に入れられない。ここで持たせないと
+# 再読み込みのたびに 9.6MB を取り直す (実測で確認)。
+# ワイルドカードに頼らず実ファイル名で指定する。
+/ort/ort-wasm-simd.wasm
+  Cache-Control: public, max-age=2592000
+/ort/ort-wasm.wasm
+  Cache-Control: public, max-age=2592000
+
 # Sitemap/Feed は中程度キャッシュ
 /sitemap*.xml
   Cache-Control: public, max-age=3600

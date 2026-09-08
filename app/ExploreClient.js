@@ -22,7 +22,11 @@ import {
 } from "./photo-model.js";
 import { CONCEPTS, conceptLabel } from "./concepts.js";
 import { matchConcepts } from "./concept-search.js";
-import { canUseFreeText, TOTAL_BYTES as FREE_BYTES } from "./text-encoder.js";
+import {
+  canUseFreeText, TOTAL_BYTES as FREE_BYTES,
+  loadTextModel, encodeText, abortTextModel, textModelStatus,
+} from "./text-encoder.js";
+import { freeView, initialFree, isBusy } from "./free-search-state.js";
 import { readQueryFromParams, makeUrlWriter, queryToString } from "./explore-state.js";
 import PhotoCard from "./PhotoCard.js";
 import Lightbox from "./Lightbox.js";
@@ -67,13 +71,23 @@ export default function ExploreClient({ lang }) {
      通常の閲覧・概念語検索では取得しない。読み込み中も失敗時も、
      概念語の検索と写真の閲覧はそのまま使える。
      結果は URL に載せない (入力文を URL へ置かないため)。
-     freeState: "idle" / "loading" / "ready" / "error"
-     freeResult: { order: Map<id,順位>, ids: Set<id>, count } | null */
-  const [freeState, setFreeState] = useState("idle");
-  const [freeProgress, setFreeProgress] = useState(0);
-  const [freeResult, setFreeResult] = useState(null);
-  /* いま画面に入っている言葉。遅れて返った結果を捨てる判定に使う */
-  const lookRef = useRef("");
+
+     状態は app/free-search-state.js で1か所にまとめてある。
+     未実行・取得中・準備中・推論中・完了0件・中止・失敗を混ぜないこと。
+     free: { phase, pct, result: { order: Map<id,順位>, ids: Set<id>, count } | null } */
+  const [free, setFree] = useState(initialFree);
+  /* モデルの取得状況。初回に何MB要るかを案内に出すため。
+     中止したあとは、残っている分だけを出す (毎回 141MB とは言わない) */
+  const [model, setModel] = useState({ cached: false, pendingBytes: FREE_BYTES });
+  /* 実行ごとの通し番号。遅れて返った古い検索が、今の入力を上書きしないようにする */
+  const runId = useRef(0);
+  const cancelledRun = useRef(-1);
+  const alive = useRef(true);
+  useEffect(() => () => { alive.current = false; }, []);
+
+  const refreshCached = useCallback(() => {
+    textModelStatus().then((s2) => { if (alive.current) setModel(s2); }).catch(() => {});
+  }, []);
 
   const themeLocs = useMemo(
     () => Object.fromEntries(COLLECTION_SLUGS.map((s) => [s, COLLECTION_META[s].locs || []])),
@@ -140,8 +154,8 @@ export default function ExploreClient({ lang }) {
 
   const clearAll = useCallback(() => {
     setLookText("");
-    setFreeResult(null);
-    setFreeState("idle");
+    runId.current++;
+    setFree(initialFree);
     update({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], conceptAll: [], bbox: null, sort: query.sort });
   }, [update, query.sort]);
 
@@ -173,11 +187,12 @@ export default function ExploreClient({ lang }) {
      - 履歴は増やさない (入力のたびに戻るが効かなくなるのを避ける) */
   const onLook = useCallback((text) => {
     setLookText(text);
-    lookRef.current = text.trim();
     /* 入力が変わったら前の自由文の結果は捨てる。
-       遅れて返った古い検索が新しい入力を上書きしないようにする */
-    setFreeResult(null);
-    setFreeState("idle");
+       遅れて返った古い検索が新しい入力を上書きしないようにする。
+       取得中はその表示を残す (通信は続いているので、中止操作を隠さない) */
+    runId.current++;
+    setFree((f) => (isBusy(f.phase) ? { ...f, result: null } : initialFree));
+    if (text.trim()) refreshCached();
     if (lookTimer.current) clearTimeout(lookTimer.current);
     lookTimer.current = setTimeout(async () => {
       const ok = await ensureConcepts();
@@ -200,7 +215,7 @@ export default function ExploreClient({ lang }) {
       /* 送るのは「使われたかどうか」と当たった数だけ。入力語は送らない */
       track("look_search", { hits: keys.length }, "look");
     }, 250);
-  }, [ensureConcepts, lang]);
+  }, [ensureConcepts, lang, refreshCached]);
 
   /* 絞り込みボタンの選択は従来どおり「どれかに当てはまる」。
      入力欄で作った複合条件があれば、それは解除する (混ざると分かりにくい) */
@@ -208,8 +223,8 @@ export default function ExploreClient({ lang }) {
     const ok = await ensureConcepts();
     if (!ok) return;
     setLookText("");
-    setFreeResult(null);
-    setFreeState("idle");
+    runId.current++;
+    setFree(initialFree);
     setQuery((prev) => {
       const cur = prev.concept || [];
       const has = cur.includes(key);
@@ -227,24 +242,52 @@ export default function ExploreClient({ lang }) {
 
   /* ⑦ 自由文で探す。押したときだけモデルを取りに行く。
      入力文は端末の中だけで扱い、URL・GA4・Clarity のどれにも送らない。
-     画面にも入力欄以外へ出さない (画面記録に残さないため)。 */
+     画面にも入力欄以外へ出さない (画面記録に残さないため)。
+
+     状態の移り変わり:
+       downloading → preparing → running → done / empty
+       途中で 中止 なら aborted、通信・初期化・推論の失敗なら failed。
+     どれも「0件」とは別物として扱う。 */
   const runFreeSearch = useCallback(async () => {
     const text = lookText.trim();
     if (!text || !canUseFreeText(lang)) return;
-    setFreeState("loading");
-    setFreeProgress(0);
+    if (isBusy(free.phase)) return;          /* 連打しても同じ取得を二重に走らせない */
+    const my = ++runId.current;
+    /* この実行が中止されたか。中止後は表示済みの「中止」を上書きしない */
+    const gone = () => !alive.current || cancelledRun.current === my;
+    setFree({ phase: "downloading", pct: 0, result: null });
     try {
-      const [{ loadTextModel, encodeText }, vs] = await Promise.all([
-        import("./text-encoder.js"),
-        (async () => { await ensureConcepts(); return import("./vector-search.js"); })(),
-      ]);
-      const ok = await loadTextModel((loaded, total) => setFreeProgress(Math.min(1, loaded / total)));
-      if (!ok) { setFreeState("error"); return; }
+      const vs = await (async () => { await ensureConcepts(); return import("./vector-search.js"); })();
+      /* 取得の進み具合は、この実行だけのものではなくモデル全体のもの。
+         入力を書き換えても通信は続くので、通し番号では止めない
+         (止めると割合が途中で凍りついて、実際と違う値を見せてしまう)。
+         いま取得中の表示を出しているときだけ書き換える。 */
+      const r = await loadTextModel({
+        onProgress: (loaded, total) => {
+          if (!alive.current) return;
+          setFree((f) => (f.phase === "downloading" ? { ...f, pct: total ? loaded / total : 0 } : f));
+        },
+        onPhase: (p) => {
+          if (!alive.current) return;
+          if (p === "prepare") setFree((f) => (f.phase === "downloading" ? { ...f, phase: "preparing" } : f));
+        },
+      });
+      refreshCached();
+      if (gone()) return;
+      if (runId.current !== my) {
+        /* 入力が変わったあとに終わった取得。取得中の表示だけ畳む */
+        setFree((f) => (isBusy(f.phase) ? initialFree : f));
+        return;
+      }
+      if (!r.ok) {
+        setFree({ phase: r.reason === "aborted" ? "aborted" : "failed", pct: 0, result: null });
+        return;
+      }
+      setFree((f) => ({ ...f, phase: "running", pct: 1 }));
       const vec = await encodeText(text);
-      /* 遅れて返った古い問い合わせで、新しい入力を上書きしない */
-      if (lookRef.current !== text) return;
+      if (gone() || runId.current !== my) return;
       const scores = vec ? vs.scoresForVector(vec) : null;
-      if (!scores) { setFreeState("error"); return; }
+      if (!scores) { setFree({ phase: "failed", pct: 0, result: null }); return; }
       /* しきい値は概念語と同じ考え方 (この問い合わせでの平均 + 1.6σ)。
          合う写真が無ければ 0件。関係のない写真で枠を埋めない。 */
       const vals = [...scores.values()];
@@ -253,17 +296,26 @@ export default function ExploreClient({ lang }) {
       const th = m + 1.6 * sd;
       const ranked = [...scores.entries()].filter(([, s]) => s >= th).sort((a, b) => b[1] - a[1]);
       const order = new Map(ranked.map(([id], i) => [id, i]));
-      setFreeResult({ order, ids: new Set(order.keys()), count: order.size });
-      setFreeState("ready");
+      setFree(order.size
+        ? { phase: "done", pct: 1, result: { order, ids: new Set(order.keys()), count: order.size } }
+        : { phase: "empty", pct: 1, result: null });
       setShown(PAGE);
       /* 送るのは使われたことと件数だけ。入力語は送らない */
       track("free_text_search", { results: order.size }, "free");
     } catch {
-      setFreeState("error");
+      if (!gone() && runId.current === my) setFree({ phase: "failed", pct: 0, result: null });
     }
-  }, [lookText, lang, ensureConcepts]);
+  }, [lookText, lang, ensureConcepts, free.phase, refreshCached]);
 
-  const clearFree = useCallback(() => { setFreeResult(null); setFreeState("idle"); setShown(PAGE); }, []);
+  /* 取得を止める。表示を消すだけにせず、Worker ごと終了させて通信も止める */
+  const cancelFree = useCallback(() => {
+    cancelledRun.current = runId.current;
+    abortTextModel();
+    setFree({ phase: "aborted", pct: 0, result: null });
+    refreshCached();
+  }, [refreshCached]);
+
+  const clearFree = useCallback(() => { runId.current++; setFree(initialFree); setShown(PAGE); }, []);
 
   const removeOne = useCallback((type, value) => {
     if (type === "bbox") return update({ ...query, bbox: null });
@@ -276,19 +328,27 @@ export default function ExploreClient({ lang }) {
     if (!ready) return [];
     /* 自由文の結果があるときは、地域などの明示条件で絞ったうえで
        入力文に近い順に並べる。明示条件は今までどおり効く。 */
-    if (freeResult) {
+    if (free.result) {
       const base = selectPhotos({ ...query, sort: "region" }, opts);
       return base
-        .filter((p) => freeResult.ids.has(p.id))
-        .sort((a, b) => freeResult.order.get(a.id) - freeResult.order.get(b.id));
+        .filter((p) => free.result.ids.has(p.id))
+        .sort((a, b) => free.result.order.get(a.id) - free.result.order.get(b.id));
     }
     return selectPhotos(query, opts);
     /* conceptState も見る。画像特徴データは後から届くので、
        届いた時点で数え直さないと古い結果が残る */
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready, query, opts, conceptState, freeResult]);
+  }, [ready, query, opts, conceptState, free.result]);
   const visible = results.slice(0, shown);
   const conditions = activeConditions(query);
+
+  /* いま自由文の欄に何を出すか。判断は1か所 (free-search-state.js) に寄せる */
+  const fv = freeView({
+    free,
+    text: lookText.trim(),
+    supported: canUseFreeText(lang),
+    cached: model.cached,
+  });
 
   /* 選択肢は条件で消さない。件数だけを添える (選択が勝手に外れないようにするため) */
   const countFor = useCallback((field, value) => {
@@ -371,14 +431,14 @@ export default function ExploreClient({ lang }) {
               </button>
             ))}
           </div>
-          {(conditions.length > 0 || freeResult) && (
+          {(conditions.length > 0 || free.result) && (
             <button type="button" className="flt-clear" onClick={clearAll}>{ui("clearFilter", lang)}</button>
           )}
         </div>
 
-        {(conditions.length > 0 || freeResult) && (
+        {(conditions.length > 0 || free.result) && (
           <ul className="ex-active">
-            {freeResult && (
+            {free.result && (
               <li key="free">
                 <button type="button" onClick={clearFree}
                   aria-label={`${ui("freeChip", lang)} — ${ui("clearFilter", lang)}`}>
@@ -438,23 +498,30 @@ export default function ExploreClient({ lang }) {
             </div>
             {conceptState === "error" && <p className="ex-note" role="status">{ui("lookUnavailable", lang)}</p>}
             {/* ⑦ 概念語に当てはまらない言葉は、押したときだけモデルを取りに行って探す。
-                入力した言葉そのものは画面の他の場所へ出さない (画面記録に残さないため) */}
-            {lookText.trim() && !freeResult && (
-              canUseFreeText(lang) ? (
-                <p className="ex-note">
-                  <button type="button" className="ex-chip" onClick={runFreeSearch} disabled={freeState === "loading"}>
-                    {freeState === "loading"
-                      ? `${ui("freeLoading", lang)} ${Math.round(freeProgress * 100)}%`
-                      : `${ui("freeSearch", lang)} (${Math.round(FREE_BYTES / 1048576)} MB)`}
-                  </button>
-                </p>
-              ) : (
-                <p className="ex-note" role="status">{ui("freeUnsupported", lang)}</p>
-              )
+                入力した言葉そのものは画面の他の場所へ出さない (画面記録に残さないため)。
+                どれを出すかは app/free-search-state.js が決める。
+                探す前に「見つからない」と言わないこと (これが直した不具合)。 */}
+            {fv.note === "unsupported" && <p className="ex-note" role="status">{ui("freeUnsupported", lang)}</p>}
+            {fv.note === "aborted" && <p className="ex-note" role="status">{ui("freeAborted", lang)}</p>}
+            {fv.note === "failed" && <p className="ex-note" role="status">{ui("freeUnavailable", lang)}</p>}
+            {fv.note === "empty" && <p className="ex-note" role="status">{ui("freeNoResults", lang)}</p>}
+            {(fv.showRun || fv.showRetry) && (
+              <p className="ex-note">
+                <button type="button" className="ex-chip" onClick={runFreeSearch}>
+                  {fv.showRetry ? ui("freeRetry", lang) : ui("freeSearch", lang)}
+                  {fv.showBytes ? ` (${Math.round(model.pendingBytes / 1048576)} MB)` : ""}
+                </button>
+              </p>
             )}
-            {freeState === "error" && <p className="ex-note" role="status">{ui("freeUnavailable", lang)}</p>}
-            {conceptState === "ready" && lookText.trim() && !freeResult && query.concept.length === 0 && query.conceptAll.length === 0 && (
-              <p className="ex-note" role="status">{ui("lookNoMatch", lang)}</p>
+            {fv.showCancel && (
+              <p className="ex-note">
+                {/* 割合は読み上げに載せない (数字が動くたびに読み直されるため) */}
+                <span role="status">
+                  {fv.pct == null ? ui("freeLoading", lang) : ui("freeDownloading", lang)}
+                </span>
+                {fv.pct != null && <span aria-hidden="true">{` ${Math.round(fv.pct * 100)}%`}</span>}{" "}
+                <button type="button" className="ex-chip" onClick={cancelFree}>{ui("freeCancel", lang)}</button>
+              </p>
             )}
             <div className="ex-group-b">
               {CONCEPTS.map((c) => chip(
