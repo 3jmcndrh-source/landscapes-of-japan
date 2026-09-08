@@ -220,7 +220,11 @@ async function init(msg) {
      展開後の大きさで数えると、実際より速く進んでいるように見えてしまう。 */
   const bump = (n) => { loaded += n; self.postMessage({ type: "progress", loaded, total: msg.total }); };
   const grab = async (name) => {
-    const url = msg.base + "/" + name;
+    /* URL に版を付ける。ファイル名を据え置いたまま30日キャッシュすると、
+       モデルを入れ替えたときに古い実体と新しいコードが混ざる。
+       版が変わればURLも変わるので、その事故が起きない。
+       Pages の _headers はクエリを無視するのでキャッシュ規則はそのまま効く。 */
+    const url = msg.base + "/" + name + "?v=" + msg.version;
     let bytes = null;
     if (store) {
       const hit = await store.match(url);

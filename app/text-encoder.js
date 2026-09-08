@@ -40,6 +40,9 @@ export { TEXT_MODEL_LANGS };
 
 const STORE = `mclip-${TEXT_MODEL_VERSION}`;
 const ASSET_NAMES = [...TEXT_MODEL_PARTS, "dense.bin.gz", "vocab.txt.gz"];
+/* URL に版を付ける。ファイル名は据え置きで30日キャッシュしているので、
+   版を付けないとモデル更新時に古い実体が使われうる。Worker 側も同じ形で作る。 */
+const assetUrl = (n) => `${TEXT_MODEL_BASE}/${n}?v=${TEXT_MODEL_VERSION}`;
 
 let worker = null;
 let readyPromise = null;
@@ -167,7 +170,7 @@ export async function textModelStatus() {
     /* 問い合わせるだけで置き場を作らない (open は無い場合に作ってしまう) */
     if (!(await caches.has(STORE))) return all;
     const store = await caches.open(STORE);
-    const hits = await Promise.all(ASSET_NAMES.map((n) => store.match(`${TEXT_MODEL_BASE}/${n}`)));
+    const hits = await Promise.all(ASSET_NAMES.map((n) => store.match(assetUrl(n))));
     const missing = ASSET_NAMES.filter((_, i) => !hits[i]);
     if (!missing.length) return { cached: true, pendingBytes: 0 };
     const bytes = missing.reduce((a, n) => a + (TEXT_MODEL_ASSET_BYTES[n] || 0), 0);
