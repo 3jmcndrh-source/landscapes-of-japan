@@ -31,7 +31,7 @@
 import {
   TEXT_MODEL_BASE, TEXT_MODEL_PARTS, TEXT_MODEL_TOTAL_BYTES, TEXT_DOWNLOAD_BYTES,
   TEXT_MODEL_ASSET_BYTES, ORT_WASM_BYTES, TEXT_MODEL_RAW_BYTES,
-  TEXT_MODEL_VERSION, TEXT_HIDDEN, TEXT_OUT, TEXT_MODEL_LANGS,
+  TEXT_MODEL_VERSION, TEXT_WORKER_VERSION, TEXT_HIDDEN, TEXT_OUT, TEXT_MODEL_LANGS,
 } from "./text-model-meta.js";
 
 export const TOTAL_BYTES = TEXT_MODEL_TOTAL_BYTES;
@@ -54,7 +54,7 @@ function ensureWorker() {
   /* 自前配信の古典 Worker。onnxruntime-web は importScripts で読む。
      (ES モジュールの Worker だと束ね方によって ORT が動かないため。
       中身は scripts/package-text-model.mjs が app/wordpiece.js から生成する) */
-  worker = new Worker("/ort/text-worker.js");
+  worker = new Worker(`/ort/text-worker.js?v=${TEXT_WORKER_VERSION}`);
   worker.onmessage = (e) => {
     const m = e.data || {};
     if (m.type === "progress") { pending.get("__progress")?.(m.loaded, m.total); return; }

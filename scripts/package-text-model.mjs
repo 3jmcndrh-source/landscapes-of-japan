@@ -23,8 +23,9 @@
  * 対応言語は scripts/eval-mclip-languages.mjs の実測で決めた13言語だけ。
  * それ以外の言語では自由文をモデルへ渡さず、概念語だけで検索する。
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync, statSync, copyFileSync } from "node:fs";
+import { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, readdirSync, unlinkSync, statSync, copyFileSync } from "node:fs";
 import { gzipSync } from "node:zlib";
+import { createHash } from "node:crypto";
 import path from "node:path";
 
 const SRC = ".model-cache/mclip";
@@ -327,3 +328,17 @@ self.onmessage = async (e) => {
 `;
 writeFileSync(path.join(ORT_OUT, "text-worker.js"), workerBody, "utf-8");
 console.log(`[model] Worker: ${ORT_OUT}/text-worker.js (${(statSync(path.join(ORT_OUT, "text-worker.js")).size / 1024).toFixed(0)} KB) + ort.min.js ${(statSync(path.join(ORT_OUT, "ort.min.js")).size / 1024).toFixed(0)} KB`);
+
+/* ---- Worker の版 ----
+   text-worker.js はファイル名が固定で、既定のキャッシュが4時間ある。
+   版を付けないと、公開してから最大4時間、古い Worker と新しい本体が
+   同時に動く (2026-09-09 に本番で実測。Worker だけ旧版が返っていた)。
+   中身のハッシュを URL に付けて、変われば必ず別URLになるようにする。 */
+const workerVer = createHash("md5").update(workerBody).digest("hex").slice(0, 12);
+appendFileSync(
+  "app/text-model-meta.js",
+  `/** Worker の版。中身が変わると値が変わる。取得URLに付けて古い版を掴まないようにする */\n` +
+  `export const TEXT_WORKER_VERSION = ${JSON.stringify(workerVer)};\n`,
+  "utf-8"
+);
+console.log(`[model] Worker の版 ${workerVer} (URL に付けて古い版を掴まないようにする)`);

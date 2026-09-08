@@ -27,3 +27,5 @@ export const TEXT_OUT = 512;
 /** 実測で自由文検索を有効にする言語 (docs/search-languages.md)。
  *  ここに無い言語では自由文をモデルへ渡さず、概念語だけで検索する。 */
 export const TEXT_MODEL_LANGS = ["ja","en","zh","zh-tw","es","fr","de","pt","it","ru","vi","nl","uk"];
+/** Worker の版。中身が変わると値が変わる。取得URLに付けて古い版を掴まないようにする */
+export const TEXT_WORKER_VERSION = "bc1bb867bd70";
