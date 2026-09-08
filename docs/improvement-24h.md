@@ -291,3 +291,85 @@ Cloudflare が**さらにもう一度 gzip して**返した (1,460,339 → 1,46
 
 **再発防止**: `check-pages.mjs` に「出力CSSに `[hidden]{display:none!important}` があること」を追加。
 
+
+### D-3. 表示面の確認 (320px / 長い言語 / RTL)
+
+内蔵ブラウザペインで viewport 320×640 に設定。
+
+| 条件 | 横スクロール | 画面外へはみ出す要素 | 24px 未満の操作 |
+|---|---|---|---|
+| ja `/ja/explore` (絞り込みを開いた状態) | なし | 0 | 0 |
+| de `/de/explore` (語が長い) | なし | 0 | — |
+| ar `/ar/explore` (RTL、`dir=rtl` 維持) | なし | 0 | — |
+
+**実機ではない** (エミュレーション)。実機での確認は A2 と同じ理由で未実施。
+
+### D-4. 古いキャッシュの掃除 ✔採用
+
+C の圧縮対応で Cache Storage の鍵が
+`mclip-135377779-1572864-995525` → `mclip-gz-90351278-1460339-547105` に変わる。
+そのままだと、以前に自由文検索を使った人の端末に**旧版 131MB が残り続ける**。
+
+`textModelStatus()` の中で、1ページにつき1回だけ `mclip-` で始まる別の鍵を消すようにした。
+
+**確認**: 旧鍵の置き場を手で作った状態でページを開き、入力欄に文字を入れると
+`caches.keys()` が `[]` になる (旧置き場が消える) ことを実測。
+
+---
+
+## E. 再発防止・画像SEO・計測
+
+### E1. 壊れた状態を公開しない仕組み
+
+既存の仕組みを確認して再利用した。**未定義変数・import漏れは `eslint.config.mjs` で
+`no-undef: error` として既に押さえられている** (過去3件の本番不具合がこの型だったことも
+設定ファイルに記録済み)。ここは重複して作らない。
+
+**今回追加した3つ** (いずれも対象を絞ったもの):
+
+| 追加 | 何を防ぐか |
+|---|---|
+| フォント先読みの上限 (8ファイル) | `preload:false` が外れて1.4MBの先読みが復活すること |
+| `[hidden]{display:none!important}` の存在確認 | hidden がクラスの display に負ける状態で公開されること |
+| 写真詳細リンクの実在確認 (25言語) | 存在しないURLへのリンク。**写真IDの大文字と `_` を取りこぼさない** `[A-Za-z0-9_-]+` を使い、パス深さも見る。件数は `LANGS`/`PHOTO_LANGS`/出力ファイルから取り、843や5,901のような固定値を使わない |
+
+あわせて `check-pages.mjs` の初期JS表示を「**実転送 (gzip後) / 展開後**」の併記に変更。
+
+**自動操作の確認**: 主要経路 (D-1) は今回すべて実ブラウザで通したが、
+**自動化はしていない**。ヘッドレスブラウザ (Playwright 等) の追加が必要で、
+「関係のない依存関係の追加はしない」方針に反するため見送った。
+
+**生成処理の再現性**: `scripts/package-text-model.mjs` は `.model-cache/mclip/` の
+原本から `public/models/mclip/*.gz` と `app/text-model-meta.js` を毎回作り直す。
+原本の取得手順は README 相当の記述が `docs/round-2026-09-08.md` にある。
+写真追加・削除の処理 (`upload.mjs`) には**触れていない**。
+
+### E2. 写真が検索エンジンから正しく見えるか
+
+今回の変更 (フォント先読み・モデル配信・CSS の hidden) は画像配信とページ構成を変えていない。
+壊していないことだけを確認した。
+
+| 確認 | 結果 |
+|---|---|
+| OG画像 | `https://landscapes-images.pages.dev/og.jpg` あり |
+| sitemap.xml | あり (索引22件)。先頭20URLはすべて実ファイルが存在 |
+| sitemap-images.xml | あり (画像1,849件) |
+| 撮影地ページ | `<img>` 55枚 / `<canvas>` 0 (CSS背景やcanvasへの置き換えなし) |
+| alt が空の img | 0件 |
+| srcset / width+height | 55枚すべてにあり。一覧の srcset に 2400/3840 を混ぜていない |
+| robots.txt | あり |
+| sameAs / canonical / hreflang | `check-pages` の既存項目がすべて合格 (再監査はしていない) |
+
+### E3. 計測
+
+- **今回の変更差分に `track` / `gtag` / `clarity` は一切含まれない** (`git diff` で確認)。
+  計測イベントは増減なし。
+- 自由入力の検索語は従来どおり送っていない。`track("look_search",{hits})` と
+  `track("free_text_search",{results})` は**件数だけ**。URLにも載らない (実測で `location.search` が空)。
+- 検証はすべて `localhost` の隔離配信で行ったため、**本番の計測に検証アクセスは混ざっていない**
+  (GA4/Clarity は `location.hostname !== "landscapes-of-japan.com"` で止まる。出力にこの判定が
+  残っていることは `check-pages` が毎回確認)。
+- **GA4 / Search Console / Clarity の読み取りは行っていない。** 今回の変更は転送量と表示の改善で、
+  効果は field data が貯まってから見るもの。1日・少数のアクセスから順位や離脱の因果は結論づけない。
+  `scripts/analytics/daily-report.mjs` には触れていない。
+

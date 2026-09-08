@@ -141,10 +141,29 @@ export const isLoadingTextModel = () => Boolean(readyPromise);
  *                実行部 (wasm) は ORT が読むので有無を確かめられない。
  *                揃っていないときだけ、要るものとして足しておく。
  */
+let _swept = false;
+/**
+ * 古い版の置き場を消す。
+ * モデルの入れ替えや配信方法の変更で鍵が変わると、前の版が端末に残り続ける
+ * (2026-09-09 の圧縮対応で 131MB の置き場が孤立するところだった)。
+ * 1ページにつき1回だけ、今の鍵以外の mclip- を消す。
+ */
+async function sweepOldStores() {
+  if (_swept) return;
+  _swept = true;
+  try {
+    if (typeof caches === "undefined") return;
+    for (const k of await caches.keys()) {
+      if (k.startsWith("mclip-") && k !== STORE) await caches.delete(k);
+    }
+  } catch { /* 消せなくても支障はない */ }
+}
+
 export async function textModelStatus() {
   const all = { cached: false, pendingBytes: TEXT_MODEL_TOTAL_BYTES };
   try {
     if (typeof caches === "undefined") return all;
+    await sweepOldStores();
     /* 問い合わせるだけで置き場を作らない (open は無い場合に作ってしまう) */
     if (!(await caches.has(STORE))) return all;
     const store = await caches.open(STORE);
