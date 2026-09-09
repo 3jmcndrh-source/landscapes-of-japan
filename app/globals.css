@@ -701,7 +701,7 @@ body{--sh-offset:var(--header-h)}
 
 /* ① 統合探索。常時見えるのは 件数・選択中の条件・絞り込みの開閉 だけ */
 .ex-page{background:#0a0a0a;color:#e8e4df;min-height:100vh;font-family:'Cormorant Garamond',Georgia,serif}
-.ex-main{max-width:1400px;margin:0 auto;padding:calc(var(--header-h,64px) + 24px) 16px 80px}
+.ex-main{max-width:1400px;margin:0 auto;padding:calc(var(--header-h,64px) + 24px) var(--ex-pad,16px) 80px}
 .ex-bar{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-family:var(--font-zen-kaku),sans-serif;font-size:13px;position:sticky;top:var(--header-h,64px);z-index:5;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);padding:10px 0}
 .ex-toggle{background:rgba(255,255,255,.05);border:1px solid rgba(220,190,100,.35);color:#e8e4df;border-radius:999px;padding:7px 18px;cursor:pointer;font:inherit;letter-spacing:.05em}
 .ex-toggle[aria-expanded="true"]{background:rgba(220,190,100,.18);border-color:rgba(220,190,100,.6)}
@@ -719,7 +719,10 @@ body{--sh-offset:var(--header-h)}
 .ex-n{margin-left:6px;font-size:10px;opacity:.6}
 .ex-swatch{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.18);cursor:pointer;padding:0}
 .ex-swatch.on{border-color:rgba(220,190,100,.95);box-shadow:0 0 0 3px rgba(220,190,100,.2)}
-.ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+/* 一覧の列幅・間隔・左右余白。**ExploreClient がこの値を読んで「画面に入る枚数」を
+   数え、その分だけ先に読み込む**。CSS と JS で二重に持たないよう、ここだけを正とする。 */
+:root{--ex-col:230px;--ex-gap:10px;--ex-pad:16px}
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--ex-col),1fr));gap:var(--ex-gap)}
 .ex-empty{color:rgba(232,228,223,.55);font-family:var(--font-zen-kaku),sans-serif;font-size:14px;padding:40px 0}
 .ex-more{text-align:center;margin-top:24px}
 .ex-more button{background:none;border:1px solid rgba(220,190,100,.35);color:rgba(220,190,100,.85);border-radius:999px;padding:10px 28px;cursor:pointer;font-family:var(--font-zen-kaku),sans-serif;font-size:13px}
@@ -732,8 +735,8 @@ body{--sh-offset:var(--header-h)}
 .pc-pref{opacity:.7;margin-left:7px}
 
 @media (max-width:600px){
-  .ex-main{padding-left:10px;padding-right:10px}
-  .ex-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+  /* 変数だけを上書きする (.ex-grid / .ex-main の指定は共通のまま) */
+  :root{--ex-col:150px;--ex-gap:6px;--ex-pad:10px}
   .ex-panel{max-height:60vh;overflow-y:auto}
 }
 

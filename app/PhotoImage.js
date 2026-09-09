@@ -39,11 +39,13 @@ export const WIDTH_SETS = {
  * @param dims     [幅, 高さ] (photo-dims.js。無ければ縦横比を出さない)
  * @param sizes    CSS の sizes 属性。表示幅を正しく伝えるほど無駄な取得が減る
  * @param widths   WIDTH_SETS のキー、または幅の配列
- * @param priority 最初に見える重要な画像だけ true
+ * @param priority 最初に見える重要な画像だけ true (同期デコードまで含む)
+ * @param eager    画面に入っている画像。すぐ取りに行くが、デコードは非同期のまま。
+ *                 大量に同期デコードさせると描画が詰まるので priority とは分ける。
  */
 export default function PhotoImage({
   id, alt = "", dims = null, sizes = "100vw", widths = "grid",
-  priority = false, className, style, draggable = false, onContextMenu, ...rest
+  priority = false, eager = false, className, style, draggable = false, onContextMenu, ...rest
 }) {
   const set = Array.isArray(widths) ? widths : (WIDTH_SETS[widths] || WIDTH_SETS.grid);
   const srcSet = set.map((w) => `${srcFor(id, w)} ${w}w`).join(", ");
@@ -61,8 +63,8 @@ export default function PhotoImage({
       sizes={sizes}
       alt={alt}
       {...dim}
-      loading={priority ? "eager" : "lazy"}
-      fetchPriority={priority ? "high" : "auto"}
+      loading={priority || eager ? "eager" : "lazy"}
+      fetchPriority={priority || eager ? "high" : "auto"}
       decoding={priority ? "sync" : "async"}
       draggable={draggable ? undefined : "false"}
       onContextMenu={onContextMenu}

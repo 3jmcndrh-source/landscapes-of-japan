@@ -18,7 +18,7 @@ import { SEASONS, seasonLabel } from "./seasons.js";
 import { ui, colorLabel } from "./ui-strings.js";
 import { PALETTE_COLORS_ORDER, SWATCH } from "./color-meta.js";
 import {
-  selectPhotos, loadFacets, loadConcepts, getFacets, activeConditions,
+  selectPhotos, loadFacets, loadConcepts, getFacets, activeConditions, needsFacets,
 } from "./photo-model.js";
 import { CONCEPTS, conceptLabel } from "./concepts.js";
 import { matchConcepts } from "./concept-search.js";
@@ -43,7 +43,45 @@ const PAGE = 60;   /* 段階表示。初期表示で最大画像を全部取り�
 
 export default function ExploreClient({ lang }) {
   const [query, setQuery] = useState(() => ({ pref: [], loc: [], theme: [], season: [], month: [], color: [], orientation: [], concept: [], conceptAll: [], bbox: null, sort: "" }));
-  const [ready, setReady] = useState(false);
+  /* 一覧を出してよいかは2つに分ける。
+       restored    … URL の条件を読んで反映した (履歴復元より前の一覧を出さないため)
+       facetsReady … 絞り込み用の付随データが届いた
+     条件なしの一覧は付随データを見ないので、届く前に出してよい。
+     条件つきのときだけ待つ (無条件の一覧を一瞬見せない)。 */
+  const [restored, setRestored] = useState(false);
+  const [facetsReady, setFacetsReady] = useState(false);
+  /* いま一覧を「確定したもの」として出してよいか。
+     付随データが要る条件のときは届くまで出さない。
+     初期化中に条件を変えられた場合もここで受け止めるので、
+     データが無いまま判定して 0件 と見せてしまうことがない。 */
+  const ready = restored && (!needsFacets(query) || facetsReady);
+
+  /* 画面に入っている写真だけを先に読み込む枚数。
+     4枚固定では1行 (実測で5列) すら埋まらず、実際に最大要素になる写真が
+     遅延読み込みのまま後回しになっていた (1240x800 で20枚見えていて LCP は14枚目)。
+     画面外まで広げると、見えている写真から帯域を奪うので広げすぎない。
+     列幅・間隔・余白は globals.css の :root 変数を読む (値を二重に持たない)。
+     一覧は hydration 後にしか描かれないので、ここで window を見てよい。 */
+  const eagerCount = useMemo(() => {
+    if (typeof window === "undefined") return 4;
+    try {
+      const cs = getComputedStyle(document.documentElement);
+      const px = (name, dflt) => {
+        const v = parseFloat(cs.getPropertyValue(name));
+        return Number.isFinite(v) && v > 0 ? v : dflt;
+      };
+      const col = px("--ex-col", 230), gap = px("--ex-gap", 10), pad = px("--ex-pad", 16);
+      /* .ex-main は max-width:1400px + 左右 --ex-pad */
+      const w = Math.min(window.innerWidth, 1400) - pad * 2;
+      const cols = Math.max(1, Math.floor((w + gap) / (col + gap)));
+      /* .pc は aspect-ratio 3/2 */
+      const rowH = ((w - gap * (cols - 1)) / cols) / 1.5 + gap;
+      /* 一覧が始まる位置 = 上部バー + 余白 + 操作列。おおよそで足りる (誤差は1行未満) */
+      const top = px("--header-h", 64) + 88;
+      const rows = Math.max(1, Math.ceil((window.innerHeight - top) / rowH));
+      return Math.min(PAGE, Math.max(4, cols * rows));
+    } catch { return 4; }
+  }, []);
   const [panelOpen, setPanelOpen] = useState(false);
   const [shown, setShown] = useState(PAGE);
   const [lightbox, setLightbox] = useState(null);
@@ -116,13 +154,16 @@ export default function ExploreClient({ lang }) {
   useEffect(() => {
     const q0 = readQueryFromParams(window.location.search);
     setQuery(q0);
+    /* 条件の復元はここで完了している (同期に読める)。
+       付随データを見ない条件なら、この時点で一覧を出せる。 */
+    setRestored(true);
     (async () => {
       await loadFacets();
       /* URL に概念が入っているときは、画像特徴データが届くまで
          「準備完了」にしない。先に絞り込むと、判定材料が無いので
          0件になってしまう (共有された ?concept= のURLで実際に起きた) */
       if (q0.concept.length || q0.conceptAll.length) await ensureConcepts();
-      setReady(true);
+      setFacetsReady(true);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -324,7 +365,7 @@ export default function ExploreClient({ lang }) {
   }, [query, update]);
 
   /* ---- 絞り込み結果 ---- */
-  const facets = ready ? getFacets() : null;
+  const facets = facetsReady ? getFacets() : null;
   const results = useMemo(() => {
     if (!ready) return [];
     /* 自由文の結果があるときは、地域などの明示条件で絞ったうえで
@@ -339,7 +380,7 @@ export default function ExploreClient({ lang }) {
     /* conceptState も見る。画像特徴データは後から届くので、
        届いた時点で数え直さないと古い結果が残る */
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready, query, opts, conceptState, free.result]);
+  }, [ready, facetsReady, query, opts, conceptState, free.result]);
   const visible = results.slice(0, shown);
   const conditions = activeConditions(query);
 
@@ -353,11 +394,14 @@ export default function ExploreClient({ lang }) {
 
   /* 選択肢は条件で消さない。件数だけを添える (選択が勝手に外れないようにするため) */
   const countFor = useCallback((field, value) => {
-    if (!ready) return null;
+    if (!restored) return null;
     const q2 = { ...query, [field]: [value] };
+    /* その選択肢の判定に付随データが要るなら、届くまで件数を出さない。
+       ここで 0 を出すと「該当なし」と読めてしまう (実際は未読込)。 */
+    if (needsFacets(q2) && !facetsReady) return null;
     return selectPhotos(q2, opts).length;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready, query, opts, conceptState]);
+  }, [restored, facetsReady, query, opts, conceptState]);
 
   /* ---- 拡大表示 ---- */
   const origin = useOriginRect();
@@ -579,6 +623,7 @@ export default function ExploreClient({ lang }) {
                     sizes="(max-width: 600px) 45vw, (max-width: 1100px) 30vw, 22vw"
                     widths="grid"
                     priority={i < 4}
+                    eager={i < eagerCount}
                     onOpen={openAt}
                   />
                 </div>

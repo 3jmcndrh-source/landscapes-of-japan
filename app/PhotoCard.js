@@ -14,7 +14,7 @@ import PhotoImage from "./PhotoImage.js";
 import { richAlt } from "./title-keywords.js";
 
 export default function PhotoCard({
-  photo, lang, dims = null, sizes, widths = "grid", priority = false,
+  photo, lang, dims = null, sizes, widths = "grid", priority = false, eager = false,
   onOpen, showLoc = true, className = "",
 }) {
   const locName = photo.loc ? getLocName(photo.loc, lang) : "";
@@ -31,6 +31,7 @@ export default function PhotoCard({
         sizes={sizes}
         widths={widths}
         priority={priority}
+        eager={eager}
         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
       />
       {showLoc && locName && (

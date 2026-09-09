@@ -337,6 +337,27 @@ function sortPhotos(list, sort, f) {
   return list;  /* region = data.js の並び (都道府県 → 撮影日降順) */
 }
 
+/**
+ * この条件を判定・並べ替えするのに、付随データ (ファセット) が要るか。
+ *
+ * **matches() と sortPhotos() が f を見る箇所と1対1で対応させること。**
+ * 対応が崩れると、データが無いまま判定して 0件 を出してしまう。
+ *   theme          → f.tags
+ *   season / month → f.months
+ *   color          → f.palette
+ *   orientation    → f.dims
+ *   concept        → 画像特徴 (loadConcepts)
+ *   sort=date      → f.dates      /  sort=added → f.added
+ * pref・loc・ids・bbox は data.js と loc-points.js だけで判定できるので要らない。
+ */
+export function needsFacets(q) {
+  if (!q) return false;
+  const has = (k) => Array.isArray(q[k]) && q[k].length > 0;
+  return has("theme") || has("season") || has("month") || has("color")
+    || has("orientation") || has("concept") || has("conceptAll")
+    || q.sort === "date" || q.sort === "added";
+}
+
 /* ------------------------------------------------------------------ *
  * 5. 入口
  * ------------------------------------------------------------------ */
