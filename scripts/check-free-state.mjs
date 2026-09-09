@@ -10,7 +10,8 @@
  *   - 取得中は中止でき、0件とも成功とも区別される
  *   - 表示の有効・無効と、機能の有効・無効が同じ一覧を見ている
  */
-import { freeView, initialFree, isBusy } from "../app/free-search-state.js";
+import { freeView, initialFree, isBusy, formatSizeMB } from "../app/free-search-state.js";
+import { TEXT_MODEL_TOTAL_BYTES, TEXT_DOWNLOAD_BYTES, ORT_WASM_BYTES } from "../app/text-model-meta.js";
 import { TEXT_MODEL_LANGS, canUseFreeText } from "../app/text-encoder.js";
 import { LANGS } from "../app/i18n-meta.js";
 import { UI_STRINGS } from "../app/ui-strings.js";
@@ -120,6 +121,24 @@ const view = (over = {}) =>
   check("韓国語の未対応文が『확인』ではない", !un.ko.includes("확인"), un.ko);
   check("未対応文が代わりの探し方に触れている",
     un.ja.includes("絞り込み") && /filter/i.test(un.en), `${un.ja} / ${un.en}`);
+}
+
+/* ---- 7. 容量表示の単位 ----
+   画面に出す「MB」は十進 (1 MB = 1,000,000 B)。
+   以前は 1,048,576 で割った値 (実体は MiB) を「MB」と書いていた。 */
+{
+  check("1 MB = 1,000,000 B で丸める", formatSizeMB(95_166_365) === "95 MB", formatSizeMB(95_166_365));
+  check("MiB 換算の値を出していない", formatSizeMB(95_166_365) !== "91 MB");
+  check("2進で割っていない (1,048,576 B は 1 MB)", formatSizeMB(1_048_576) === "1 MB", formatSizeMB(1_048_576));
+  check("四捨五入 (既存方針)", formatSizeMB(1_500_000) === "2 MB" && formatSizeMB(1_400_000) === "1 MB",
+    `${formatSizeMB(1_500_000)} / ${formatSizeMB(1_400_000)}`);
+  check("0 と壊れた値で落ちない", formatSizeMB(0) === "0 MB" && formatSizeMB(undefined) === "0 MB");
+  check("単位は MB とだけ書く (MiB を画面に出さない)", !formatSizeMB(1).includes("MiB"));
+
+  /* 進捗の分母は Worker が数えられる分だけ。表示単位を変えるために wasm を足さない */
+  check("進捗の分母に実行部 wasm を含めない",
+    TEXT_DOWNLOAD_BYTES + ORT_WASM_BYTES === TEXT_MODEL_TOTAL_BYTES && TEXT_DOWNLOAD_BYTES < TEXT_MODEL_TOTAL_BYTES,
+    `分母 ${TEXT_DOWNLOAD_BYTES} + wasm ${ORT_WASM_BYTES} = 案内 ${TEXT_MODEL_TOTAL_BYTES}`);
 }
 
 /* ---- 出力 ---- */

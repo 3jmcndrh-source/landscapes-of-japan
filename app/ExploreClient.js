@@ -26,7 +26,7 @@ import {
   canUseFreeText, TOTAL_BYTES as FREE_BYTES,
   loadTextModel, encodeText, abortTextModel, textModelStatus,
 } from "./text-encoder.js";
-import { freeView, initialFree, isBusy } from "./free-search-state.js";
+import { freeView, initialFree, isBusy, formatSizeMB } from "./free-search-state.js";
 import { readQueryFromParams, makeUrlWriter, queryToString } from "./explore-state.js";
 import PhotoCard from "./PhotoCard.js";
 import Lightbox from "./Lightbox.js";
@@ -67,7 +67,7 @@ export default function ExploreClient({ lang }) {
   const lookTimer = useRef(null);
 
   /* ⑦ 自由文で探す。概念語に当てはまらない表現を、文章モデルで直接評価する。
-     モデルは大きい (約141MB) ので、押したときだけ取りに行く。
+     モデルは大きい (圧縮後で約95MB) ので、押したときだけ取りに行く。
      通常の閲覧・概念語検索では取得しない。読み込み中も失敗時も、
      概念語の検索と写真の閲覧はそのまま使える。
      結果は URL に載せない (入力文を URL へ置かないため)。
@@ -77,7 +77,8 @@ export default function ExploreClient({ lang }) {
      free: { phase, pct, result: { order: Map<id,順位>, ids: Set<id>, count } | null } */
   const [free, setFree] = useState(initialFree);
   /* モデルの取得状況。初回に何MB要るかを案内に出すため。
-     中止したあとは、残っている分だけを出す (毎回 141MB とは言わない) */
+     中止したあとは、残っている分だけを出す (毎回 全量とは言わない)。
+     単位は十進 MB。formatSizeMB() が唯一の出どころ */
   const [model, setModel] = useState({ cached: false, pendingBytes: FREE_BYTES });
   /* 実行ごとの通し番号。遅れて返った古い検索が、今の入力を上書きしないようにする */
   const runId = useRef(0);
@@ -509,7 +510,7 @@ export default function ExploreClient({ lang }) {
               <p className="ex-note">
                 <button type="button" className="ex-chip" onClick={runFreeSearch}>
                   {fv.showRetry ? ui("freeRetry", lang) : ui("freeSearch", lang)}
-                  {fv.showBytes ? ` (${Math.round(model.pendingBytes / 1048576)} MB)` : ""}
+                  {fv.showBytes ? ` (${formatSizeMB(model.pendingBytes)})` : ""}
                 </button>
               </p>
             )}

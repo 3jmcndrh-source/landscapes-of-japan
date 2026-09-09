@@ -75,3 +75,18 @@ export function freeView({ free, text, supported, cached }) {
 }
 
 const clamp01 = (n) => (Number.isFinite(n) ? Math.min(1, Math.max(0, n)) : 0);
+
+/**
+ * 画面に出す容量。**十進の MB (1 MB = 1,000,000 B)** で丸める。
+ *
+ * 以前は 1,048,576 で割った値 (実体は MiB) を「MB」と書いていた。
+ * NIST の定義では 1 MB = 10^6 B、1 MiB = 2^20 B なので、
+ * 表示単位を「MB」のままにするなら十進で計算するのが正しい。
+ * https://physics.nist.gov/cuu/Units/binary.html
+ *
+ * 丸めは既存方針どおり `Math.round` (整数)。小数は出さない。
+ * ここに渡すのは「これから取りに行く見込みの量」で、
+ * 実際の通信量は配信側の圧縮やブラウザの再利用で変わりうる。
+ * 技術記録では実バイト数と MiB を併記するが、画面には出さない。
+ */
+export const formatSizeMB = (bytes) => `${Math.round((Number(bytes) || 0) / 1e6)} MB`;

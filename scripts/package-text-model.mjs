@@ -71,7 +71,7 @@ for (let i = 0, n = 0; i < buf.length; i += CHUNK, n++) {
   parts.push(putGz(`model.onnx.${String(n).padStart(3, "0")}`, slice));
 }
 const partsGz = parts.reduce((a, p) => a + p.bytes, 0);
-console.log(`[model] ONNX ${(buf.length / 1048576).toFixed(1)} MB → ${parts.length} 分割 → gzip 後 ${(partsGz / 1048576).toFixed(1)} MB (${Math.round(100 * partsGz / buf.length)}%)`);
+console.log(`[model] ONNX ${(buf.length / 1048576).toFixed(1)} MiB → ${parts.length} 分割 → gzip 後 ${(partsGz / 1048576).toFixed(1)} MiB (${Math.round(100 * partsGz / buf.length)}%)`);
 
 /* ---- Dense(768→512, bias なし) を素の float32 で出す ---- */
 const sBuf = readFileSync(path.join(SRC, "2_Dense_model.safetensors"));
@@ -84,7 +84,7 @@ if (!w || w.dtype !== "F32" || w.shape[0] !== 512 || w.shape[1] !== 768) {
 }
 const [d0, d1] = w.data_offsets;
 const denseEntry = putGz("dense.bin", sBuf.subarray(8 + hLen + d0, 8 + hLen + d1));
-console.log(`[model] Dense ${w.shape.join("x")} → ${denseEntry.name} ${(denseEntry.bytes / 1048576).toFixed(2)} MB (展開後 ${(denseEntry.raw / 1048576).toFixed(2)} MB)`);
+console.log(`[model] Dense ${w.shape.join("x")} → ${denseEntry.name} ${(denseEntry.bytes / 1048576).toFixed(2)} MiB (展開後 ${(denseEntry.raw / 1048576).toFixed(2)} MiB)`);
 
 /* ---- トークナイザ ----
    閲覧側が要るのは語彙だけなので、tokenizer.json (1.9MB) ではなく
@@ -99,7 +99,7 @@ const vocabList = [];
 for (const [tokStr, id] of Object.entries(tj.model.vocab)) vocabList[id] = tokStr;
 for (let i = 0; i < vocabList.length; i++) if (vocabList[i] === undefined) vocabList[i] = "[UNK]";
 const vocabEntry = putGz("vocab.txt", Buffer.from(vocabList.join("\n"), "utf-8"));
-console.log(`[model] トークナイザ → ${vocabEntry.name} ${(vocabEntry.bytes / 1048576).toFixed(2)} MB (展開後 ${(vocabEntry.raw / 1048576).toFixed(2)} MB)`);
+console.log(`[model] トークナイザ → ${vocabEntry.name} ${(vocabEntry.bytes / 1048576).toFixed(2)} MiB (展開後 ${(vocabEntry.raw / 1048576).toFixed(2)} MiB)`);
 
 /* ---- onnxruntime-web の実行部 ----
    端末の対応に応じて1つだけ取得される (simd / threads の有無で選ばれる)。
@@ -111,7 +111,7 @@ for (const f of readdirSync(ORT_OUT)) if (f.endsWith(".wasm") && !wasms.includes
 for (const f of wasms) copyFileSync(path.join(ORT_SRC, f), path.join(ORT_OUT, f));
 const wasmSizes = wasms.map((f) => ({ name: f, bytes: statSync(path.join(ORT_OUT, f)).size }));
 console.log(`[model] onnxruntime-web の wasm ${wasms.length} 種 (実行時は1つだけ取得): ` +
-  wasmSizes.map((w2) => `${w2.name} ${(w2.bytes / 1048576).toFixed(1)}MB`).join(", "));
+  wasmSizes.map((w2) => `${w2.name} ${(w2.bytes / 1048576).toFixed(1)}MiB`).join(", "));
 
 /* ---- 目次 ----
    「実際に流れる量 (gzip後)」と「展開後の大きさ」を分けて持つ。
@@ -120,7 +120,6 @@ const tokBytes = vocabEntry.bytes;          /* 配信される大きさ (gzip後
 const denseBytes = denseEntry.bytes;
 const modelBytes = parts.reduce((a, p) => a + p.bytes, 0);
 const rawModelBytes = parts.reduce((a, p) => a + p.raw, 0);   /* 展開後 = 元の ONNX の大きさ */
-const typicalWasm = Math.max(...wasmSizes.map((w2) => w2.bytes));
 /* 実行部は Cloudflare が brotli で圧縮して配る (実測)。
    画面に出すめやすは、実際に流れる量に近い gzip 後の値を使う。
    2種のうち **多くのブラウザが取るのは SIMD 版 (大きいほう)**。
@@ -165,11 +164,13 @@ writeFileSync(
 );
 
 const total = modelBytes + denseBytes + tokBytes + wasmOnWire;
-console.log(`[model] 初回に流れる量のめやす ${(total / 1048576).toFixed(1)} MB ` +
+console.log(`[model] 初回に流れる量のめやす ${(total / 1e6).toFixed(1)} MB (十進) = ${(total / 1048576).toFixed(1)} MiB ` +
+  `  ← 画面の案内はこの十進 MB を丸めた値
+  内訳(MiB) ` +
   `(ONNX ${(modelBytes / 1048576).toFixed(1)} + Dense ${(denseBytes / 1048576).toFixed(1)} + ` +
   `トークナイザ ${(tokBytes / 1048576).toFixed(1)} + 実行部 ${(wasmOnWire / 1048576).toFixed(1)})`);
-console.log(`[model] 展開後は ${((rawModelBytes + denseEntry.raw + vocabEntry.raw) / 1048576).toFixed(1)} MB ` +
-  `→ 圧縮して配ることで ${((rawModelBytes + denseEntry.raw + vocabEntry.raw - modelBytes - denseBytes - tokBytes) / 1048576).toFixed(1)} MB 減らしている`);
+console.log(`[model] 展開後は ${((rawModelBytes + denseEntry.raw + vocabEntry.raw) / 1048576).toFixed(1)} MiB ` +
+  `→ 圧縮して配ることで ${((rawModelBytes + denseEntry.raw + vocabEntry.raw - modelBytes - denseBytes - tokBytes) / 1048576).toFixed(1)} MiB 減らしている`);
 console.log(`[model] 自由文検索を有効にする言語 ${ENABLED_LANGS.length}/25: ${ENABLED_LANGS.join(", ")}`);
 
 const tooBig = readdirSync(OUT).filter((f) => statSync(path.join(OUT, f)).size > 25 * 1024 * 1024);
