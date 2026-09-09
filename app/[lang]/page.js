@@ -43,5 +43,26 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { lang } = await params;
-  return <PageClient initialLang={lang} />;
+  return (
+    <>
+      {/* ヒーロー背景画像の preload。**ヒーローがあるのはこのトップページだけ**なので、
+          全ルート共通の layout ではなくここに置く。React が <head> へ引き上げる。
+          media で縦横を出し分け、実際に表示する1枚だけを取りに行かせる。 */}
+      <link
+        rel="preload"
+        as="image"
+        fetchPriority="high"
+        href="https://landscapes-images.pages.dev/hero_landscape_gray_w1920.webp"
+        media="(min-width: 769px)"
+      />
+      <link
+        rel="preload"
+        as="image"
+        fetchPriority="high"
+        href="https://landscapes-images.pages.dev/hero_portrait_gray_w1080.webp"
+        media="(max-width: 768px)"
+      />
+      <PageClient initialLang={lang} />
+    </>
+  );
 }

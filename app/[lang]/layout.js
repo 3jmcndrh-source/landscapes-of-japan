@@ -88,21 +88,12 @@ export default async function LangLayout({ children, params }) {
             }),
           }}
         />
-        {/* LCP最適化 (#22): ヒーロー背景画像preload (デバイス別) */}
-        <link
-          rel="preload"
-          as="image"
-          fetchPriority="high"
-          href="https://landscapes-images.pages.dev/hero_landscape_gray_w1920.webp"
-          media="(min-width: 769px)"
-        />
-        <link
-          rel="preload"
-          as="image"
-          fetchPriority="high"
-          href="https://landscapes-images.pages.dev/hero_portrait_gray_w1080.webp"
-          media="(max-width: 768px)"
-        />
+        {/* ヒーロー背景画像の preload は **トップページ (app/[lang]/page.js) へ移した**。
+            ここは全ルート共通の layout なので、ヒーローが無いページ
+            (/explore・都道府県・撮影地・写真詳細・コレクション・ギャラリー) でも
+            264,402 B を高い優先度で取りに行っていた。実測 (4,000 kbit/s / RTT 100ms /
+            CPU 4倍遅く、各3回) で 写真詳細ページの LCP 中央値 4,506ms → 3,044ms。
+            経緯は docs/improvement-24h.md */}
       </head>
       <body className={`${zenKaku.variable} ${playfair.variable}`}>
         {/* A2: scroll restoration — let the browser restore scroll on back/forward
