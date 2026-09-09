@@ -156,8 +156,20 @@ async function sweepOldStores() {
   _swept = true;
   try {
     if (typeof caches === "undefined") return;
+    /* 1. 別の鍵の置き場ごと消す (モデルの入れ替え・配信方法の変更) */
     for (const k of await caches.keys()) {
       if (k.startsWith("mclip-") && k !== STORE) await caches.delete(k);
+    }
+    /* 2. 今の置き場の中で、いま使うURLでないものを消す。
+       取得URLの形を変えたとき (版を付けた等)、古い形の項目が
+       同じ置き場に残り続ける。実際に公開直後の本番で、版なし9件と
+       版付き9件が同居しているのを確認した。 */
+    if (!(await caches.has(STORE))) return;
+    const store = await caches.open(STORE);
+    const want = new Set(ASSET_NAMES.map(assetUrl));
+    for (const req of await store.keys()) {
+      const p = new URL(req.url).pathname + new URL(req.url).search;
+      if (!want.has(p)) await store.delete(req);
     }
   } catch { /* 消せなくても支障はない */ }
 }
