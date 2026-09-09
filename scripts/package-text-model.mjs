@@ -122,8 +122,11 @@ const modelBytes = parts.reduce((a, p) => a + p.bytes, 0);
 const rawModelBytes = parts.reduce((a, p) => a + p.raw, 0);   /* 展開後 = 元の ONNX の大きさ */
 const typicalWasm = Math.max(...wasmSizes.map((w2) => w2.bytes));
 /* 実行部は Cloudflare が brotli で圧縮して配る (実測)。
-   画面に出すめやすは、実際に流れる量に近い gzip 後の値を使う。 */
-const wasmOnWire = Math.min(...wasms.map((f) => gzip(readFileSync(path.join(ORT_OUT, f))).length));
+   画面に出すめやすは、実際に流れる量に近い gzip 後の値を使う。
+   2種のうち **多くのブラウザが取るのは SIMD 版 (大きいほう)**。
+   min を取ると少なめに見積もることになるので max を使う
+   (2026-09-09 の照合で 2.52MiB と出ていたのを 2.68MiB へ)。 */
+const wasmOnWire = Math.max(...wasms.map((f) => gzip(readFileSync(path.join(ORT_OUT, f))).length));
 
 writeFileSync(
   "app/text-model-meta.js",

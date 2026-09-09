@@ -9,9 +9,9 @@ export const TEXT_MODEL_PARTS = ["model.onnx.000.gz","model.onnx.001.gz","model.
 export const TEXT_MODEL_BYTES = 90351278;
 export const TEXT_DENSE_BYTES = 1460339;
 export const TEXT_TOKENIZER_BYTES = 547105;
-export const ORT_WASM_BYTES = 2641535;
+export const ORT_WASM_BYTES = 2807643;
 /** 初回に流れる量のめやす (gzip後のモデル + Dense + トークナイザ + 実行部1つ) */
-export const TEXT_MODEL_TOTAL_BYTES = 95000257;
+export const TEXT_MODEL_TOTAL_BYTES = 95166365;
 /** 進捗の分母。閲覧側が自分で数えられる分だけ (実行部は ORT が読むので数えられない)。
  *  gzip 後の値。画面の割合は「実際に受け取ったバイト数」で動く。 */
 export const TEXT_DOWNLOAD_BYTES = 92358722;
