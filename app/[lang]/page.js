@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: getKeywords(lang),
+    keywords: await getKeywords(lang),
     alternates: {
       canonical: `${SITE_URL}/${lang}`,
       languages,

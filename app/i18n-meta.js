@@ -33,21 +33,31 @@ export const HREFLANG_VARIANTS = {
 
 /**
  * GSC API から取得した動的キーワード (#15)
- * fetch-keywords.mjs が月次更新する seo-extras.js を import
- * 失敗しても build 通るよう dynamic import で fallback
+ * fetch-keywords.mjs が月次更新する seo-extras.js を読む。
+ * 失敗しても build が通るよう dynamic import で握りつぶす。
+ *
+ * **トップレベルで await しないこと。**
+ * このファイルは photo-model.js / photo-ref.js 経由で**閲覧側にも入る**ため、
+ * トップレベル await にすると、hydration の途中で seo-extras の取得を
+ * 待つ通信が1往復挟まる (実測: /ja/explore で 1,394→1,584ms を占め、
+ * 一覧の描画がその後になっていた)。
+ * 使うのは generateMetadata (ビルド時) だけなので、そこで await すれば足りる。
  */
-let TOP_QUERIES_BY_LANG = {};
-try {
-  // synchronous import via require-style — top-level await would slow build
-  const mod = await import("./seo-extras.js");
-  TOP_QUERIES_BY_LANG = mod.TOP_QUERIES_BY_LANG || {};
-} catch {
-  TOP_QUERIES_BY_LANG = {};
+let _topQueries = null;
+async function topQueries() {
+  if (_topQueries) return _topQueries;
+  try {
+    const mod = await import("./seo-extras.js");
+    _topQueries = mod.TOP_QUERIES_BY_LANG || {};
+  } catch {
+    _topQueries = {};
+  }
+  return _topQueries;
 }
 
-export function getKeywords(lang) {
+export async function getKeywords(lang) {
   const base = SEO_META[lang]?.keywords || [];
-  const dynamic = TOP_QUERIES_BY_LANG[lang] || [];
+  const dynamic = (await topQueries())[lang] || [];
   return [...new Set([...base, ...dynamic])].slice(0, 50);
 }
 
