@@ -384,6 +384,20 @@ export default function ExploreClient({ lang }) {
   const visible = results.slice(0, shown);
   const conditions = activeConditions(query);
 
+  /* 絞り込み待ち中 (!ready) に、直前まで出ていた一覧をそのまま残す。
+     以前は !ready の間 .ex-grid ごとアンマウントして .ex-empty (数行の文字) に
+     差し替えていたため、60枚ぶんの高さが一瞬で消え、実測で CLS 0.6 台の
+     急な詰まりが起きていた (春などファセット依存の条件を選んだ直後、
+     ファセットが届くまでの数秒間)。ここでは直前の一覧を inert のまま残し、
+     淡く表示して「まだ確定していない」ことを示す。件数 (.ex-count) は
+     従来どおり届くまで出さない。一覧ビューだけが対象 (地図は対象外)。 */
+  const lastGoodGridRef = useRef({ items: [], key: "" });
+  if (ready && view === "list" && !free.result && results.length > 0) {
+    lastGoodGridRef.current = { items: visible, key: JSON.stringify(query) };
+  }
+  const pendingGrid = !ready && view === "list" && !free.result && lastGoodGridRef.current.items.length > 0;
+  const gridItems = pendingGrid ? lastGoodGridRef.current.items : visible;
+
   /* いま自由文の欄に何を出すか。判断は1か所 (free-search-state.js) に寄せる */
   const fv = freeView({
     free,
@@ -611,11 +625,14 @@ export default function ExploreClient({ lang }) {
           />
         )}
 
-        {ready && results.length > 0 && (
+        {((ready && results.length > 0) || pendingGrid) && (
           <>
-            <div className="ex-grid">
-              {visible.map((p, i) => (
-                <div key={p.id} ref={(el) => { if (el) cardRefs.current.set(p.id, el); else cardRefs.current.delete(p.id); }}>
+            {/* pendingGrid のときは直前の一覧を inert のまま残す (旧一覧と分かる淡さ +
+                操作不能)。件数 (.ex-count) は変えていないので「確定した新しい結果」とは
+                見せない。inert はクリック・タブ移動・支援技術のどちらからも届かなくする */}
+            <div className={pendingGrid ? "ex-grid ex-grid-pending" : "ex-grid"} inert={pendingGrid || undefined}>
+              {gridItems.map((p, i) => (
+                <div key={p.id} ref={pendingGrid ? undefined : (el) => { if (el) cardRefs.current.set(p.id, el); else cardRefs.current.delete(p.id); }}>
                   <PhotoCard
                     photo={p}
                     lang={lang}
@@ -629,7 +646,7 @@ export default function ExploreClient({ lang }) {
                 </div>
               ))}
             </div>
-            {shown < results.length && (
+            {!pendingGrid && shown < results.length && (
               <div className="ex-more">
                 <button type="button" aria-label={ui("showMore", lang)} onClick={() => setShown((v) => v + PAGE)}>
                   {results.length - shown}
