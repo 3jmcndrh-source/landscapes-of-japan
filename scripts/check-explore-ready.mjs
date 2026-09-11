@@ -14,7 +14,7 @@
  *
  * 実装のなぞりはしない。「同じ条件で、付随データの有無だけを変えて結果を比べる」だけ。
  */
-import { selectPhotos, needsFacets, loadFacets, getFacets } from "../app/photo-model.js";
+import { selectPhotos, needsFacets, loadFacets, getFacets, requiredFacets, missingFacets } from "../app/photo-model.js";
 import { readQueryFromParams } from "../app/explore-state.js";
 import { COLLECTION_TAGS } from "../app/photo-tags.js";
 import { COLLECTION_SLUGS, COLLECTION_META } from "../app/collections-meta.js";
@@ -85,6 +85,32 @@ for (const [name, search] of CASES) {
   check("条件なしは付随データを要求しない", needsFacets(q) === false);
   check("条件なしの並びは data.js の順のまま",
     ids(selectPhotos(q, { ...base, facets: EMPTY })) === ids(selectPhotos(q, { ...base, facets: real })));
+}
+
+/* ---- 取得に失敗した種類を「該当なし」と取り違えないこと ----
+   loadFacets() は失敗を握りつぶして null を返す。null のまま判定すると
+   matches() が全件を弾き、画面が「該当する写真がありません」と言ってしまう。
+   requiredFacets/missingFacets がその取り違えを防ぐ唯一の仕組みなので、
+   条件の種類と必要データの対応がずれていないかをここで見る。 */
+{
+  const need = [
+    ["?season=spring", "months"], ["?month=3", "months"], ["?color=blue", "palette"],
+    ["?o=portrait", "dims"], ["?sort=date", "dates"], ["?sort=added", "added"],
+    [`?theme=${COLLECTION_SLUGS[0]}`, "tags"],
+  ];
+  for (const [search, key] of need) {
+    const q = readQueryFromParams(search);
+    check(`${search} は ${key} を要求する`, requiredFacets(q).includes(key), requiredFacets(q).join(","));
+    /* その種類だけ欠けている状態 = 判定できない。0件と扱ってはいけない */
+    const holed = { ...real, [key]: null };
+    check(`${search}: ${key} が無ければ「判定できない」と分かる`, missingFacets(q, holed).includes(key));
+  }
+  const none = readQueryFromParams("");
+  check("条件なしは何も要求しない", requiredFacets(none).length === 0);
+  check("条件なしは欠けようがない", missingFacets(none, EMPTY).length === 0);
+  /* 揃っていれば欠けは無い */
+  check("全部揃っていれば欠けなし",
+    need.every(([search]) => missingFacets(readQueryFromParams(search), real).length === 0));
 }
 
 console.log(`[check-explore-ready] 通った ${pass.length}件`);

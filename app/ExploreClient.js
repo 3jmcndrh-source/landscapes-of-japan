@@ -19,6 +19,7 @@ import { ui, colorLabel } from "./ui-strings.js";
 import { PALETTE_COLORS_ORDER, SWATCH } from "./color-meta.js";
 import {
   selectPhotos, loadFacets, loadConcepts, getFacets, activeConditions, needsFacets,
+  missingFacets,
 } from "./photo-model.js";
 import { CONCEPTS, conceptLabel } from "./concepts.js";
 import { matchConcepts } from "./concept-search.js";
@@ -54,7 +55,12 @@ export default function ExploreClient({ lang }) {
      付随データが要る条件のときは届くまで出さない。
      初期化中に条件を変えられた場合もここで受け止めるので、
      データが無いまま判定して 0件 と見せてしまうことがない。 */
-  const ready = restored && (!needsFacets(query) || facetsReady);
+  /* 取得できなかった付随データ。**null は「該当なし」ではなく「判定できない」**。
+     ここが空でないまま結果を出すと、実際は読み込めていないのに
+     「該当する写真がありません」と言ってしまう (実測で確認した不具合)。 */
+  const facetGap = facetsReady ? missingFacets(query) : [];
+  const facetFailed = facetGap.length > 0;
+  const ready = restored && (!needsFacets(query) || (facetsReady && !facetFailed));
 
   /* 画面に入っている写真だけを先に読み込む枚数。
      4枚固定では1行 (実測で5列) すら埋まらず、実際に最大要素になる写真が
@@ -166,6 +172,15 @@ export default function ExploreClient({ lang }) {
       setFacetsReady(true);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /* 付随データを取り直す (取得に失敗したあとの復旧手段)。
+     **動的 import は一度失敗すると、同じ指定子で呼び直しても再取得されない**
+     (失敗がモジュールマップに残る。実測: 再試行しても chunk への要求が増えなかった)。
+     確実に取り直すには読み込み直すしかない。条件は URL に入っているので、
+     いまの絞り込みはそのまま復元される。 */
+  const retryFacets = useCallback(() => {
+    if (typeof window !== "undefined") window.location.reload();
   }, []);
 
   /* 戻る・進むで条件を復元する */
@@ -407,13 +422,30 @@ export default function ExploreClient({ lang }) {
   });
 
   /* 選択肢は条件で消さない。件数だけを添える (選択が勝手に外れないようにするため) */
+  /* 直前に出せていた件数。**場所だけを確保する**ために覚えておく。
+     出せない間にバッジごと消すと、選択肢の幅が縮んで折り返しが1行減り、
+     届いた瞬間に下の選択肢群がまとめて 35px 下がる (実測 CLS 0.6478)。 */
+  const lastCounts = useRef(new Map());
+
+  /**
+   * 選択肢に添える件数。
+   *   { n: 数値, shown: true }   … 確定した件数
+   *   { n: 直前の値, shown: false } … まだ判定できない。**数字は見せず**、場所だけ残す
+   *   null                      … 一度も出せていない (場所も作らない)
+   * 未取得を仮の 0 で埋めることはしない。
+   */
   const countFor = useCallback((field, value) => {
     if (!restored) return null;
+    const key = field + ":" + value;
     const q2 = { ...query, [field]: [value] };
-    /* その選択肢の判定に付随データが要るなら、届くまで件数を出さない。
-       ここで 0 を出すと「該当なし」と読めてしまう (実際は未読込)。 */
-    if (needsFacets(q2) && !facetsReady) return null;
-    return selectPhotos(q2, opts).length;
+    const blocked = (needsFacets(q2) && !facetsReady) || missingFacets(q2).length > 0;
+    if (blocked) {
+      const prev = lastCounts.current.get(key);
+      return prev == null ? null : { n: prev, shown: false };
+    }
+    const n = selectPhotos(q2, opts).length;
+    lastCounts.current.set(key, n);
+    return { n, shown: true };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [restored, facetsReady, query, opts, conceptState]);
 
@@ -464,7 +496,14 @@ export default function ExploreClient({ lang }) {
 
   const chip = (on, label, count, onClick, key) => (
     <button key={key} type="button" className={"ex-chip" + (on ? " on" : "")} aria-pressed={on} onClick={onClick}>
-      {label}{count != null && <span className="ex-n">{count}</span>}
+      {label}
+      {count != null && (
+        /* shown が false のときは visibility:hidden。数字は見えず、幅だけ残るので
+           届いた瞬間に折り返しが変わらない。読み上げからも外す */
+        <span className={"ex-n" + (count.shown ? "" : " ex-n-wait")} aria-hidden={count.shown ? undefined : "true"}>
+          {count.n}
+        </span>
+      )}
     </button>
   );
 
@@ -605,7 +644,17 @@ export default function ExploreClient({ lang }) {
           </Group>
         </div>
 
-        {!ready && <p className="ex-empty">{ui("loading", lang)}</p>}
+        {/* 状態の通知先。**中身が変わる前から置いておく** (後から現れる要素は読み上げられない)。
+            inert の外にあるので、待機中でも読み上げと操作が届く。
+            完了は既存の .ex-count (aria-live) が件数で伝えるので、ここでは繰り返さない。 */}
+        <p className="ex-status" role="status">
+          {facetFailed ? ui("filterUnavailable", lang) : !ready ? ui("loading", lang) : ""}
+        </p>
+        {facetFailed && (
+          <p className="ex-empty">
+            <button type="button" className="ex-chip ex-retry" onClick={retryFacets}>{ui("freeRetry", lang)}</button>
+          </p>
+        )}
 
         {ready && results.length === 0 && (
           <div className="flt-empty">

@@ -88,6 +88,9 @@ export async function loadFacets() {
   if (_facets) return _facets;
   if (_facetsPromise) return _facetsPromise;
   _facetsPromise = (async () => {
+    /* 取れなかったものは null になる。**null は「失敗」か「未提供」であって、
+       「該当なし」ではない**。呼び出し側が両者を取り違えないよう、
+       判定に必要な種類が揃っているかは missingFacets() で見る。 */
     const safe = async (fn) => { try { return await fn(); } catch { return null; } };
     const [dates, months, tags, dims, palette, added] = await Promise.all([
       safe(() => import("./photo-dates.js").then((m) => m.PHOTO_DATES)),
@@ -351,12 +354,40 @@ function sortPhotos(list, sort, f) {
  * pref・loc・ids・bbox は data.js と loc-points.js だけで判定できるので要らない。
  */
 export function needsFacets(q) {
-  if (!q) return false;
-  const has = (k) => Array.isArray(q[k]) && q[k].length > 0;
-  return has("theme") || has("season") || has("month") || has("color")
-    || has("orientation") || has("concept") || has("conceptAll")
-    || q.sort === "date" || q.sort === "added";
+  return requiredFacets(q).length > 0 || hasConceptCond(q);
 }
+
+const hasConceptCond = (q) => !!q && ((q.concept || []).length > 0 || (q.conceptAll || []).length > 0);
+
+/**
+ * この条件の判定に必要な**付随データの種類**を返す。
+ * matches() / sortPhotos() が f の何を見るかと1対1で対応させること。
+ * 画像特徴 (concepts) は loadFacets とは別経路 (loadConcepts) なので含めない。
+ */
+export function requiredFacets(q) {
+  if (!q) return [];
+  const has = (k) => Array.isArray(q[k]) && q[k].length > 0;
+  const need = [];
+  if (has("theme")) need.push("tags");
+  if (has("season") || has("month")) need.push("months");
+  if (has("color")) need.push("palette");
+  if (has("orientation")) need.push("dims");
+  if (q.sort === "date") need.push("dates");
+  if (q.sort === "added") need.push("added");
+  return need;
+}
+
+/**
+ * 必要なのに**手元に無い**種類を返す。空でなければ、その条件は判定できない。
+ * ここが空でないまま結果を出すと「該当する写真がありません」と
+ * 言ってしまうが、実際は取得できていないだけ。呼び出し側はそれを区別すること。
+ */
+export function missingFacets(q, f = getFacets()) {
+  return requiredFacets(q).filter((k) => !f || !f[k]);
+}
+
+/** 取得し直せるようにする (失敗したあとの再試行用) */
+export function resetFacets() { _facets = null; _facetsPromise = null; }
 
 /* ------------------------------------------------------------------ *
  * 5. 入口

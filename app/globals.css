@@ -717,6 +717,8 @@ body{--sh-offset:var(--header-h)}
 .ex-chip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:rgba(232,228,223,.75);border-radius:999px;padding:5px 14px;cursor:pointer;font-family:var(--font-zen-kaku),sans-serif;font-size:12px;transition:background var(--t-fast,.18s) var(--ease,ease),border-color var(--t-fast,.18s) var(--ease,ease)}
 .ex-chip.on{background:rgba(220,190,100,.22);border-color:rgba(220,190,100,.55);color:rgba(245,225,170,1)}
 .ex-n{margin-left:6px;font-size:10px;opacity:.6}
+/* まだ判定できない件数。**数字は見せずに幅だけ残す** (消すと折り返しが変わる) */
+.ex-n-wait{visibility:hidden}
 .ex-swatch{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.18);cursor:pointer;padding:0}
 .ex-swatch.on{border-color:rgba(220,190,100,.95);box-shadow:0 0 0 3px rgba(220,190,100,.2)}
 /* 一覧の列幅・間隔・左右余白。**ExploreClient がこの値を読んで「画面に入る枚数」を
@@ -725,6 +727,11 @@ body{--sh-offset:var(--header-h)}
 .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--ex-col),1fr));gap:var(--ex-gap)}
 .ex-grid-pending{opacity:.4}
 .ex-empty{color:rgba(232,228,223,.55);font-family:var(--font-zen-kaku),sans-serif;font-size:14px;padding:0 0 16px}
+/* 状態の通知先。中身が空でも**要素は残す** (display:none にすると
+   支援技術から消えてしまい、後から入れた文言が読み上げられない)。
+   空のときだけ高さを持たせない。 */
+.ex-status{color:rgba(232,228,223,.55);font-family:var(--font-zen-kaku),sans-serif;font-size:14px;padding:0 0 16px;margin:0}
+.ex-status:empty{padding:0;height:0;overflow:hidden}
 .ex-more{text-align:center;margin-top:24px}
 .ex-more button{background:none;border:1px solid rgba(220,190,100,.35);color:rgba(220,190,100,.85);border-radius:999px;padding:10px 28px;cursor:pointer;font-family:var(--font-zen-kaku),sans-serif;font-size:13px}
 
