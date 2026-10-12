@@ -82,7 +82,7 @@ export const VERIFIED_LOC_QID = {
  "網走": "Q305640",
  "遠軽": "Q1348788",
  "層雲峡": "Q3511708",
- "旭川": "Q200740"
+ "東川町": "Q1357210"
 };
 
 export const VERIFIED_PREF_QID = {

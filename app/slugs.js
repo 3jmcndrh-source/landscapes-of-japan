@@ -54,7 +54,7 @@ export const LOC_SLUGS = {
   "清里町": "kiyosato",
   "弟子屈町": "teshikaga",
   "大空町": "ozora",
-  "旭川": "asahikawa",
+  "東川町": "higashikawa",
   "層雲峡": "sounkyo",
   "遠軽": "engaru",
   "網走": "abashiri",
