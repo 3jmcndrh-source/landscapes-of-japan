@@ -1048,6 +1048,108 @@ export const PHOTO_TAGS = {
   // ── 北海道/美唄 (2026-08-22、2枚) ── 旧三菱美唄炭鉱の遺構
   "dsc08272-82e7fb": ["landscape"],   // 立坑櫓
   "dsc08277-cf2b5d": ["landscape"],   // 旧炭鉱施設
+
+  // ── 北海道/旭川 (2026-09-18〜20、25枚 全て目視確認) ── 旭岳・大雪山の高原
+  // 秋色は「紅葉・草紅葉が画面の主要素」の写真だけ autumn。ハイマツの緑が主の写真は付けない
+  "dsc09069-20f7b0": ["mountain", "autumn"],              // 高原の草紅葉
+  "dsc09067-785fdf": ["mountain"],                        // 高原 (秋色は控えめ)
+  "dsc09064-36edf9": ["mountain", "autumn"],              // 池畔の紅葉
+  "dsc09059-bae41e": ["mountain", "autumn"],              // 噴気の旭岳と紅葉
+  "dsc09057-b2511d": ["mountain", "autumn"],              // 噴気の旭岳・草紅葉と遊歩道
+  "dsc09052-86b4ff": ["mountain", "autumn"],              // 登山道沿いの紅葉
+  "dsc09045-36b2ac": ["mountain", "autumn"],              
+  "dsc09039-e186ac": ["mountain", "lake"],                // 池に映る旭岳
+  "dsc09021-8c7941": ["mountain", "autumn"],              // 沢筋の紅葉
+  "dsc09018-bc8f1f": ["mountain"],                        // ハイマツ帯
+  "dsc09017-8cf387": ["mountain"],                        
+  "dsc09015-859cbb": ["mountain"],                        
+  "dsc09014-85c71d": ["mountain"],                        
+  "dsc09013-bf9fd1": ["mountain"],                        
+  "dsc09011-700a0a": ["mountain", "autumn"],              // 斜面の紅葉
+  "dsc09009-5feb8f": ["mountain"],                        // 草地 (秋色は主役ではない)
+  "dsc09008-dc6b05": ["mountain", "lake"],                // 池と稜線
+  "dsc09004-01f47c": ["mountain", "lake", "autumn"],      // 池と前景の紅葉
+  "dsc08999-4da2b8": ["mountain"],                        
+  "dsc08996-85a849": ["mountain"],                        
+  "dsc08987-ef4ec4": ["mountain", "lake"],                // 小さな池とハイマツ
+  "dsc08984-6366c0": ["mountain", "autumn"],              // チングルマの綿毛と紅葉
+  "dsc08982-2a9706": ["mountain", "autumn"],              
+  "dsc08977-59b25f": ["mountain"],                        // 赤い株はあるが主役ではない
+  "dsc08972-8699be": ["mountain", "autumn"],              // 前景の紅葉
+
+  // ── 北海道/層雲峡 (2026-09-19頃、5枚 全て目視確認) ──
+  "dsc09114-85c134": ["mountain"],                        // 峡谷を見下ろす山並み
+  "dsc09109-29fd0b": ["mountain"],                        
+  "dsc09102-b980a8": ["mountain", "autumn"],              // 前景の紅葉
+  "dsc09100-dcc101": ["mountain", "autumn"],              
+  "dsc09080-b0df52": ["mountain", "waterfall"],           // 断崖の二筋の滝
+
+  // ── 北海道/遠軽 (2026-09、5枚 全て目視確認) ── コスモス
+  "dsc09184-728c97": ["flower-field"],                    
+  "dsc09173-0755d3": ["flower-field"],                    
+  "dsc09168-6b0bfc": ["flower-field"],                    
+  "dsc09159-d062ca": ["flower-field"],                    
+  "dsc09139-581c62": ["flower-field"],                    
+
+  // ── 北海道/網走 (2026-09、5枚 全て目視確認) ──
+  "dsc09226-7ebe13": ["landscape", "rural"],              // 夕景の畑
+  "dsc09212-bd1644": ["landscape", "rural"],              
+  "dsc09204-6546f9": ["autumn"],                          // サンゴ草の群落 (秋に赤く色づく)
+  "dsc09198-681a56": ["autumn"],                          // サンゴ草
+  "dsc09192-8a0823": ["autumn"],                          // サンゴ草
+
+  // ── 北海道/室蘭 (2026-09-22、7枚 全て目視確認) ── 浜と岩の朝夕
+  "dsc09333_1-4ed906": ["coastal"],                       
+  "dsc09316_1-023735": ["coastal"],                       
+  "dsc09314_1-165125": ["coastal"],                       
+  "dsc09308_1-237874": ["coastal"],                       
+  "dsc09304_1-eb40b2": ["coastal"],                       
+  "dsc09300_1-f92d5a": ["coastal"],                       
+  "dsc09295_1-97aa58": ["coastal"],                       
+
+  // ── 北海道/札幌 (2026-09-13〜10-12、40枚 全て目視確認) ──
+  // 真駒内公園の野鳥・エゾリス・満月 / 豊平峡ダムの紅葉。
+  // 鳥の背景に黄葉・赤い葉が写っていても主題は鳥なので autumn は付けない
+  "dsc05762-8d9311": ["bird"],                            // ゴジュウカラ
+  "dsc05740-377a44": ["bird"],                            // ゴジュウカラ
+  "dsc05718-5d66c7": ["bird"],                            // ヒヨドリ (黄葉の背景)
+  "dsc05685-08b87f": ["bird"],                            // コゲラ
+  "dsc05639-0398e7": ["bird"],                            // キツツキ
+  "dsc05605-e2cb6d": ["bird"],                            // ヒヨドリ
+  "dsc05566-35ba62": ["bird"],                            // コゲラ
+  "dsc05543-df02d9": ["bird"],                            // カラ類 (松ぼっくり)
+  "dsc05518-343812": ["bird"],                            // キツツキ
+  "dsc05505-1d4673": ["bird"],                            // ヤマゲラ
+  "dsc05502-56a715": ["bird"],                            // ヤマゲラ
+  "dsc05486-2f3745": ["mountain", "autumn"],              // 豊平峡 渓谷の紅葉と虹
+  "dsc05484-46a614": ["mountain", "autumn"],              // 豊平峡 渓谷の紅葉
+  "dsc05474-8f41a2": ["mountain", "autumn"],              // 豊平峡 岩峰と紅葉
+  "dsc05470-b79227": ["lake", "mountain", "autumn"],      // 豊平峡ダムの湖と紅葉の山肌
+  "dsc05467-98929e": ["waterfall", "autumn"],             // 黄葉の中の滝
+  "dsc05466-194502": ["autumn"],                          // 紅葉の森
+  "dsc01472-7ff0f2": ["landscape"],                       // 満月 (夜景・ライトアップではないので night にしない)
+  "dsc01359-b2ceb7": ["animal"],                          // エゾリス
+  "dsc01332-1c354e": ["animal"],                          // エゾリス
+  "dsc00695-de7d93": ["bird"],                            // ヤマセミ
+  "dsc00640-d4d403": ["bird"],                            // ヤマセミ
+  "dsc00617-c00347": ["bird"],                            // サギ
+  "dsc00572-47ab23": ["bird"],                            // サギ
+  "dsc00359-83b1e2": ["bird"],                            // ホオジロ
+  "dsc00211-e39797": ["bird"],                            // ホオジロ
+  "dsc00162-b1dac1": ["bird"],                            // ホオジロ
+  "dsc00075-324fde": ["bird"],                            // キツツキ
+  "dsc00035-603abd": ["bird"],                            // キツツキ
+  "dsc09933-c58da0": ["bird"],                            // キツツキ
+  "dsc09797-e3400c": ["bird"],                            // コゲラ
+  "dsc09720-ce5d63": ["bird"],                            // コゲラ
+  "dsc09689-b4c037": ["bird"],                            // コゲラ (赤い葉の背景)
+  "dsc09664-b41c03": ["bird"],                            // コゲラ
+  "dsc09643-94964b": ["bird"],                            // シジュウカラ
+  "dsc09578-1f5032": ["bird"],                            // コゲラ
+  "dsc09533-9e680a": ["bird"],                            // コゲラ
+  "dsc08947-0353a9": ["bird"],                            // ホオジロ
+  "dsc08675-15ddc5": ["bird"],                            // ヤマセミ
+  "dsc08607-ef4202": ["bird"],                            // ヤマセミ
 };
 
 // Collection slug → tag のマッピング(1コレクションは1〜複数タグでフィルタ)
