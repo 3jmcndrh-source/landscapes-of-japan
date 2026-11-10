@@ -18,6 +18,7 @@
  * 旧 Cloudinary 版は upload-cloudinary-legacy.mjs.bak に保管。
  */
 import sharp from "sharp";
+import { wideGamutOf, keepColor } from "./scripts/lib/wide-gamut.mjs";
 import exifr from "exifr";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { execSync } from "child_process";
@@ -70,14 +71,17 @@ for (const [i, f] of files.entries()) {
   const ext = path.extname(f).toLowerCase() || ".jpg";
   copyFileSync(f, path.join(MASTERS, `${id}${ext}`));
 
+  /* 原本が Display P3 などの広色域なら、その色を配信画像まで残す (scripts/lib/wide-gamut.mjs)。
+     sRGB で書き出した写真は従来どおり。 */
+  const wide = await wideGamutOf(f);
   for (const w of WIDTHS) {
-    await sharp(f, { failOn: "none" }).rotate().resize({ width: w, withoutEnlargement: true }).webp({ quality: 80 }).toFile(path.join(DIST, `${id}_w${w}.webp`));
+    await keepColor(sharp(f, { failOn: "none" }).rotate().resize({ width: w, withoutEnlargement: true }), wide).webp({ quality: 80 }).toFile(path.join(DIST, `${id}_w${w}.webp`));
   }
   await sharp(f, { failOn: "none" }).rotate().resize({ width: 40 }).blur(8).webp({ quality: 50 }).toFile(path.join(DIST, `${id}_w40b.webp`));
 
   const meta = await sharp(f, { failOn: "none" }).metadata();
   added.push({ id, year, dt: when.getTime(), format: ext.slice(1), bytes: readFileSync(f).length, w: meta.width || 0, h: meta.height || 0 });
-  console.log(`[${i + 1}/${files.length}] ${path.basename(f)} → ${id} (year=${year})`);
+  console.log(`[${i + 1}/${files.length}] ${path.basename(f)} → ${id} (year=${year})${wide ? ` [${wide} のまま出力]` : ""}`);
 }
 
 // ---- manifest.json 追記 (generate-variants/colors/months の再生成対象に含める) ----
@@ -135,6 +139,10 @@ if (!skipRegen) {
   execSync("node scripts/generate-photo-added.mjs", { stdio: "inherit" });
   /* ④ 実寸 (縦横の判定と width/height に使う)。manifest から読むだけなので速い */
   execSync("node scripts/generate-photo-dims.mjs", { stdio: "inherit" });
+  /* 一覧の縦横・アクセント色。dims と palette から作るので、その2つの後に実行する。
+     data.js の並び順に詰めた生成物なので、写真を足したら必ず作り直す
+     (食い違ったままだと scripts/check-data.mjs がビルド前に止める)。 */
+  execSync("node scripts/generate-photo-lite.mjs", { stdio: "inherit" });
   /* ⑦ 画像特徴 → 似た写真・概念スコア。
      更新時刻とサイズでキャッシュしているので、追加した写真だけが解析される
      (843枚の全解析でも9秒だが、毎回全部やらない作りにしてある)。
@@ -142,8 +150,19 @@ if (!skipRegen) {
      そのまま残す (ここで落として写真追加を止めない)。 */
   try {
     execSync("node scripts/generate-photo-vectors.mjs", { stdio: "inherit" });
+    /* 「見た目から探す」が閲覧時に読む2ファイル (search-vectors.bin / vector-meta.js) を、
+       いまの掲載写真に合わせて書き出す。上の生成は「似た写真」までしか書かないので、
+       これを忘れると追加した写真が見た目の検索に出ない (2026-10-12 の87枚で実際に起きた)。 */
+    execSync("node scripts/export-search-vectors.mjs", { stdio: "inherit" });
   } catch {
     console.warn("! 画像特徴の再生成に失敗しました。似た写真・見た目の検索は前回の内容のままです");
+  }
+  /* 俯瞰ビュー (/overview) のサムネイル一覧と並べ替え用データ。
+     画像特徴 (上) と色・撮影月を使うので、それらの後に実行する。約10秒 */
+  try {
+    execSync("node scripts/generate-overview.mjs", { stdio: "inherit" });
+  } catch {
+    console.warn("! 俯瞰ビューの再生成に失敗しました。/overview は前回の内容のままです (今回追加した写真は出ません)");
   }
   /* ② 撮影地の座標。新しい撮影地が増えたときだけ追記される */
   try {

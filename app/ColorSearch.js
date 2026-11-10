@@ -2,13 +2,14 @@
 import { useState, useMemo, useRef, useLayoutEffect } from "react";
 import { PHOTO_PALETTE, PALETTE_COLORS } from "./photo-palette.js";
 import { getUrl, getPrefName, getLocName } from "./data.js";
-import { photoLang } from "./i18n-meta.js";
 import { ui, colorLabel } from "./ui-strings.js";
 import { SWATCH } from "./color-meta.js";   /* 見本の色は統合探索と共有 */
 import { richAlt } from "./title-keywords.js";
 import { flipGrid, captureGridRects } from "./useViewTransition.js";
 import { photoPath } from "./photo-ref.js";
 import { track } from "./analytics.js";
+import { isPortrait } from "./photo-meta.js";
+import { usePhotoViewer, isPlainClick } from "./usePhotoViewer.js";
 
 /**
  * ⑤ 色で写真を探す。
@@ -46,6 +47,11 @@ export default function ColorSearch({ lang, photos }) {
       .sort((a, b) => b.share - a.share)
       .map((x) => x.p);
   }, [active, photos]);
+
+  /* 写真を押すと、他の一覧と同じビューアがその場で開く (前後はこの色の結果の並び)。
+     以前はここだけ写真詳細ページへ移動していて、色の結果を続けて見られなかった。 */
+  const viewer = usePhotoViewer(lang, { entry: "color" });
+  const resultIds = useMemo(() => results.map((p) => p.id), [results]);
 
   /* 未解析 = パレットに存在しない写真。件数として正直に出す */
   const unanalysed = useMemo(() => photos.filter((p) => !PHOTO_PALETTE[p.id]).length, [photos]);
@@ -87,7 +93,7 @@ export default function ColorSearch({ lang, photos }) {
       )}
 
       {active && results.length > 0 && (
-        <div className="cs-grid" ref={gridRef}>
+        <div className="cs-grid jg" ref={gridRef}>
           {results.map((p) => {
             /* ④ リンク先の解決は photo-ref.js に集約。写真詳細ページが無い言語では
                撮影地ページ + ?photo=ID になる (存在しないURLは作らない)。 */
@@ -102,25 +108,27 @@ export default function ColorSearch({ lang, photos }) {
                   loading="lazy"
                   decoding="async"
                   draggable="false"
-                  width="600"
-                  height="400"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 {locName && <span className="cs-loc">{locName}</span>}
               </>
             );
             /* 右クリック抑止は既存カードと同じ対象・範囲で維持する */
+            const cls = "jg-item cs-card" + (isPortrait(p.id) ? " tall" : "");
+            /* 通常の左クリックだけビューアに差し替える。修飾キー・中クリックはリンクのまま。
+               計測 (photo_open, entry=color) はビューアを開く側が送る */
+            const openIt = (e) => {
+              if (!isPlainClick(e)) return;
+              if (viewer.open(resultIds, p.id, e.currentTarget)) e.preventDefault();
+            };
             return href ? (
-              <a
-                key={p.id} data-pid={p.id} className="cin-hcard cs-card" href={href}
-                onContextMenu={(e) => e.preventDefault()}
-                /* ⑨ 流入元は「いまこの操作が始まった場所」= 色検索 */
-                onClick={() => track("photo_open", { photo_id: p.id, entry: "color" }, p.id + "|color")}
-              >
+              <a key={p.id} data-pid={p.id} className={cls} href={href} onContextMenu={(e) => e.preventDefault()} onClick={openIt}>
                 {card}
               </a>
             ) : (
-              <div key={p.id} data-pid={p.id} className="cin-hcard cs-card" onContextMenu={(e) => e.preventDefault()}>
+              <div key={p.id} data-pid={p.id} className={cls} role="button" tabIndex={0} onContextMenu={(e) => e.preventDefault()}
+                onClick={openIt}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); viewer.open(resultIds, p.id, e.currentTarget); } }}>
                 {card}
               </div>
             );
@@ -131,6 +139,7 @@ export default function ColorSearch({ lang, photos }) {
       {unanalysed > 0 && active && (
         <p className="cs-note">{unanalysed} / {photos.length}</p>
       )}
+      {viewer.element}
     </div>
   );
 }

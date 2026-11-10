@@ -2,9 +2,8 @@
 
 import { useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
-import { PREFECTURES } from "../../data.js";
-import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
 import { LANGS } from "../../i18n-meta.js";
+import { allPhotos, photoPath } from "../../photo-ref.js";
 
 export default function RandomRedirect() {
   const router = useRouter();
@@ -13,22 +12,17 @@ export default function RandomRedirect() {
 
   useEffect(() => {
     const langSafe = LANGS.includes(lang) ? lang : "en";
-    const all = [];
-    for (const pf of PREFECTURES) {
-      for (const photo of pf.photos) {
-        if (!photo.loc) continue;
-        const prefSlug = PREF_SLUGS[pf.pref];
-        const locSlug = LOC_SLUGS[photo.loc];
-        if (!prefSlug || !locSlug) continue;
-        all.push({ id: photo.id, prefSlug, locSlug });
-      }
-    }
-    if (all.length === 0) {
+    /* 行き先は photo-ref.js の photoPath に任せる。
+       写真詳細ページがあるのは PHOTO_LANGS の7言語だけで、以前はここで
+       /{lang}/{pref}/{loc}/{id} を直に組み立てていたため、残り18言語では
+       存在しないURLへ飛んで 404 になっていた。photoPath は その言語に
+       詳細ページが無ければ 撮影地ページ + ?photo=ID (そこで拡大表示が開く) を返す。 */
+    const paths = allPhotos().map((p) => photoPath(p.id, langSafe)).filter(Boolean);
+    if (paths.length === 0) {
       router.replace(`/${langSafe}`);
       return;
     }
-    const pick = all[Math.floor(Math.random() * all.length)];
-    router.replace(`/${langSafe}/${pick.prefSlug}/${pick.locSlug}/${pick.id}`);
+    router.replace(paths[Math.floor(Math.random() * paths.length)]);
   }, [lang, router]);
 
   return (
@@ -39,11 +33,10 @@ export default function RandomRedirect() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      fontFamily: "var(--font-playfair),Georgia,serif",
-      fontStyle: "italic",
-      fontSize: 24,
+      fontFamily: "var(--font-mincho),Georgia,serif",
+      fontSize: 20,
     }}>
-      Finding a random photo…
+      …
     </div>
   );
 }

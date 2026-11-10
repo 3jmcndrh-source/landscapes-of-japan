@@ -70,7 +70,9 @@ export function animateFromRect(el, from) {
  * done() は必ず呼ぶ。アニメーションが失敗しても半透明のまま残さない。
  */
 export function animateToRect(el, to, done) {
-  const finish = () => { try { done && done(); } catch {} };
+  /* done は1回だけ呼ぶ (アニメーションの完了と、下の保険のタイマーの両方から来る) */
+  let called = false;
+  const finish = () => { if (called) return; called = true; try { done && done(); } catch {} };
   if (!el || prefersReducedMotion() || typeof el.animate !== "function") { finish(); return; }
   let from = el.getBoundingClientRect();
   if ((!from.width || !from.height) && el.parentElement) from = el.parentElement.getBoundingClientRect();
@@ -79,6 +81,9 @@ export function animateToRect(el, to, done) {
   if (!to || !to.width || !to.height) {
     const a = el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, easing: EASE });
     a.finished.then(finish, finish);
+    /* 保険: タブが裏にある間などアニメーションが進まないときも、開いたままにしない。
+       (移動つきの閉じ方には元からあったが、フェードだけの閉じ方に無かった) */
+    setTimeout(finish, 140 + 250);
     return;
   }
   const scale = Math.max(to.width / from.width, to.height / from.height);

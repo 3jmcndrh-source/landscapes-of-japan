@@ -162,3 +162,7 @@ export function colorLabel(key, lang) {
   const m = COLOR_LABELS[key];
   return m ? (m[lang] || m.en || key) : key;
 }
+
+/* 俯瞰ビュー (/overview) で追加した UI 文言 (25言語)。上部バーのリンク名と、並べ方の切替に使う。 */
+UI_STRINGS.overview = { "ja": "俯瞰", "en": "Overview", "zh": "全览", "zh-tw": "全覽", "ko": "한눈에 보기", "es": "Vista general", "fr": "Vue d'ensemble", "de": "Überblick", "pt": "Visão geral", "it": "Panoramica", "ru": "Панорама", "ar": "نظرة شاملة", "hi": "एक नज़र में", "th": "ภาพรวม", "vi": "Toàn cảnh", "id": "Ikhtisar", "tr": "Genel bakış", "nl": "Overzicht", "pl": "Przegląd", "sv": "Översikt", "fa": "نمای کلی", "he": "מבט כולל", "bn": "একনজরে", "tl": "Kabuuang tanaw", "uk": "Панорама" };
+UI_STRINGS.map = { "ja": "地図", "en": "Map", "zh": "地图", "zh-tw": "地圖", "ko": "지도", "es": "Mapa", "fr": "Carte", "de": "Karte", "pt": "Mapa", "it": "Mappa", "ru": "Карта", "ar": "خريطة", "hi": "नक्शा", "th": "แผนที่", "vi": "Bản đồ", "id": "Peta", "tr": "Harita", "nl": "Kaart", "pl": "Mapa", "sv": "Karta", "fa": "نقشه", "he": "מפה", "bn": "মানচিত্র", "tl": "Mapa", "uk": "Карта" };

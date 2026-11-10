@@ -110,18 +110,18 @@ export default async function AllPrefecturesPage({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+      <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "var(--font-sans)" }}>
         <SiteHeader lang={lang} langHrefTemplate="/{lang}/all-prefectures" />
 
         <main style={{ maxWidth: 1100, margin: "0 auto", padding: "100px 24px 80px" }}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 14, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
             <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
             <span style={{ margin: "0 10px" }}>›</span>
             <span>{titleLabel}</span>
           </nav>
 
           <header style={{ marginBottom: 48 }}>
-            <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(36px,5vw,56px)", margin: 0, color: "#f2ece2", lineHeight: 1.1 }}>
+            <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(36px,5vw,56px)", margin: 0, color: "#f2ece2", lineHeight: 1.1 }}>
               {titleLabel}
             </h1>
             <p style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 16, color: "rgba(232,228,223,.7)", marginTop: 16, lineHeight: 1.7, maxWidth: 820 }}>
@@ -133,7 +133,7 @@ export default async function AllPrefecturesPage({ params }) {
 
           {REGIONS.map((region) => (
             <section key={region.name.en} style={{ marginBottom: 48 }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 16, paddingBottom: 8, borderBottom: "1px solid rgba(220,190,100,.15)" }}>
+              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".08em", color: "color-mix(in srgb,var(--accent) 70%,transparent)", marginBottom: 16, paddingBottom: 8, borderBottom: "1px solid color-mix(in srgb,var(--accent) 15%,transparent)" }}>
                 {region.name[lang === "ja" ? "ja" : "en"] || region.name.en}
               </h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 8 }}>
@@ -145,7 +145,7 @@ export default async function AllPrefecturesPage({ params }) {
                     const pf = PREFECTURES.find((p) => p.pref === prefJp);
                     const heroId = pf?.photos[0]?.id;
                     return (
-                      <a key={prefJp} href={`/${lang}/${slug}`} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8, textDecoration: "none", color: "#e8e4df" }}>
+                      <a key={prefJp} href={`/${lang}/${slug}`} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "color-mix(in srgb,var(--accent) 6%,transparent)", border: "1px solid color-mix(in srgb,var(--accent) 20%,transparent)", borderRadius: 8, textDecoration: "none", color: "#e8e4df" }}>
                         {heroId && (
                           <img src={cldUrl(heroId, 100)} alt="" loading="lazy" style={{ width: 40, height: 40, objectFit: "cover", borderRadius: 4, flexShrink: 0 }} />
                         )}
@@ -153,7 +153,7 @@ export default async function AllPrefecturesPage({ params }) {
                           <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "#f2ece2" }}>
                             {getPrefName(prefJp, lang)}
                           </div>
-                          <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 11, color: "rgba(232,228,223,.5)" }}>
+                          <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "rgba(232,228,223,.5)" }}>
                             {cnt} {lang === "ja" ? "枚" : "photos"}
                           </div>
                         </div>
@@ -163,7 +163,7 @@ export default async function AllPrefecturesPage({ params }) {
                   return (
                     <div key={prefJp} style={{ padding: "10px 14px", background: "rgba(255,255,255,.02)", border: "1px solid rgba(232,228,223,.08)", borderRadius: 8, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.4)" }}>
                       {getPrefName(prefJp, lang)}
-                      <span style={{ fontSize: 10, marginLeft: 8, opacity: .6 }}>
+                      <span style={{ fontSize: 12, marginLeft: 8, opacity: .6 }}>
                         {lang === "ja" ? "撮影予定" : "coming soon"}
                       </span>
                     </div>
@@ -173,8 +173,8 @@ export default async function AllPrefecturesPage({ params }) {
             </section>
           ))}
 
-          <section style={{ marginTop: 64, padding: "24px", background: "rgba(220,190,100,.05)", border: "1px solid rgba(220,190,100,.15)", borderRadius: 8 }}>
-            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 12 }}>
+          <section style={{ marginTop: 64, padding: "24px", background: "color-mix(in srgb,var(--accent) 5%,transparent)", border: "1px solid color-mix(in srgb,var(--accent) 15%,transparent)", borderRadius: 8 }}>
+            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".08em", color: "color-mix(in srgb,var(--accent) 70%,transparent)", marginBottom: 12 }}>
               {lang === "ja" ? "撮影状況" : "Coverage stats"}
             </h2>
             <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.85)", lineHeight: 1.7 }}>

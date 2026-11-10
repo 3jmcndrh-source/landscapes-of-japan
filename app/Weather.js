@@ -77,19 +77,19 @@ export default function Weather({ lat, lng, lang = "en" }) {
   const dailyMax = daily.temperature_2m_max || [];
   const dailyMin = daily.temperature_2m_min || [];
 
-  const labelStyle = { color: "rgba(220,190,100,.85)", fontSize: 11, fontWeight: 500, letterSpacing: ".05em", minWidth: 116 };
-  const rowStyle = { display: "flex", alignItems: "center", gap: 12, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(232,228,223,.85)" };
-  const emojiStyle = { fontSize: 18, fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" };
+  const labelStyle = { color: "color-mix(in srgb,var(--accent) 85%,transparent)", fontSize: 12, fontWeight: 500, letterSpacing: ".05em", minWidth: 116 };
+  const rowStyle = { display: "flex", alignItems: "center", gap: 12, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.85)" };
+  const emojiStyle = { fontSize: 16, fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" };
 
   return (
-    <div style={{ display: "inline-flex", flexDirection: "column", gap: 8, padding: "12px 16px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 12 }}>
+    <div style={{ display: "inline-flex", flexDirection: "column", gap: 8, padding: "12px 16px", background: "color-mix(in srgb,var(--accent) 6%,transparent)", border: "1px solid color-mix(in srgb,var(--accent) 20%,transparent)", borderRadius: 12 }}>
       {/* 現在 */}
       <div style={rowStyle}>
         <span style={labelStyle}>{isJa ? "現在の現地の天気" : "Now (local)"}</span>
         <span style={emojiStyle}>{emoji(cur.weather_code)}</span>
         <span>{wmo(cur.weather_code, lang)}</span>
-        <span style={{ color: "rgba(220,190,100,.85)", fontWeight: 500 }}>{Math.round(cur.temperature_2m)}°C</span>
-        <span style={{ color: "rgba(232,228,223,.5)", fontSize: 11 }}>
+        <span style={{ color: "color-mix(in srgb,var(--accent) 85%,transparent)", fontWeight: 500 }}>{Math.round(cur.temperature_2m)}°C</span>
+        <span style={{ color: "rgba(232,228,223,.5)", fontSize: 12 }}>
           {isJa ? "湿度" : "humidity"} {Math.round(cur.relative_humidity_2m)}% · {isJa ? "風" : "wind"} {Math.round(cur.wind_speed_10m)} km/h
         </span>
       </div>
@@ -100,7 +100,7 @@ export default function Weather({ lat, lng, lang = "en" }) {
           <span style={labelStyle}>{isJa ? "明日の現地の天気" : "Tomorrow (local)"}</span>
           <span style={emojiStyle}>{emoji(dailyCodes[1])}</span>
           <span>{wmo(dailyCodes[1], lang)}</span>
-          <span style={{ color: "rgba(220,190,100,.85)", fontWeight: 500 }}>{Math.round(dailyMax[1])}° / {Math.round(dailyMin[1])}°</span>
+          <span style={{ color: "color-mix(in srgb,var(--accent) 85%,transparent)", fontWeight: 500 }}>{Math.round(dailyMax[1])}° / {Math.round(dailyMin[1])}°</span>
         </div>
       )}
 
@@ -110,7 +110,7 @@ export default function Weather({ lat, lng, lang = "en" }) {
           <span style={labelStyle}>{isJa ? "明後日の現地の天気" : "Day after (local)"}</span>
           <span style={emojiStyle}>{emoji(dailyCodes[2])}</span>
           <span>{wmo(dailyCodes[2], lang)}</span>
-          <span style={{ color: "rgba(220,190,100,.85)", fontWeight: 500 }}>{Math.round(dailyMax[2])}° / {Math.round(dailyMin[2])}°</span>
+          <span style={{ color: "color-mix(in srgb,var(--accent) 85%,transparent)", fontWeight: 500 }}>{Math.round(dailyMax[2])}° / {Math.round(dailyMin[2])}°</span>
         </div>
       )}
     </div>

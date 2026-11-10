@@ -88,7 +88,7 @@ function SearchInner({ lang }) {
 
   return (
     <main style={{ maxWidth: 900, margin: "0 auto", padding: "100px 24px 80px" }}>
-      <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(36px,5vw,56px)", margin: 0, color: "#f2ece2", lineHeight: 1, marginBottom: 24 }}>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(36px,5vw,56px)", margin: 0, color: "#f2ece2", lineHeight: 1, marginBottom: 24 }}>
         {ui("search", lang)}
       </h1>
 
@@ -102,31 +102,31 @@ function SearchInner({ lang }) {
         onCompositionStart={() => setComposing(true)}
         onCompositionEnd={() => setComposing(false)}
         placeholder={ui("findPhotos", lang)}
-        style={{ width: "100%", padding: "14px 18px", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 16, background: "rgba(255,255,255,.05)", border: "1px solid rgba(220,190,100,.3)", borderRadius: 8, color: "#f2ece2", outline: "none" }}
+        style={{ width: "100%", padding: "14px 18px", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 16, background: "rgba(255,255,255,.05)", border: "1px solid color-mix(in srgb,var(--accent) 30%,transparent)", borderRadius: 8, color: "#f2ece2", outline: "none" }}
       />
 
       {q.trim() && (
-        <div style={{ marginTop: 16, fontSize: 13, color: "rgba(232,228,223,.55)" }} aria-live="polite">
+        <div style={{ marginTop: 16, fontSize: 14, color: "rgba(232,228,223,.55)" }} aria-live="polite">
           {results.length}
         </div>
       )}
 
       {q.trim() && results.length === 0 && (
-        <p style={{ marginTop: 32, fontSize: 15, color: "rgba(232,228,223,.6)" }}>{ui("noResults", lang)}</p>
+        <p style={{ marginTop: 32, fontSize: 14, color: "rgba(232,228,223,.6)" }}>{ui("noResults", lang)}</p>
       )}
 
       {results.length > 0 && (
         <ul style={{ listStyle: "none", padding: 0, margin: "32px 0 0" }}>
           {results.map((r) => (
-            <li key={`${r.t}-${r.p || ""}-${r.l || r.s || ""}`} style={{ borderBottom: "1px solid rgba(220,190,100,.08)" }}>
+            <li key={`${r.t}-${r.p || ""}-${r.l || r.s || ""}`} style={{ borderBottom: "1px solid color-mix(in srgb,var(--accent) 8%,transparent)" }}>
               <a href={entryHref(r, lang)} style={{ display: "flex", alignItems: "center", gap: 16, padding: "14px 0", color: "#e8e4df", textDecoration: "none" }}>
-                <span aria-hidden="true" style={{ opacity: .8, fontSize: 13 }}>
+                <span aria-hidden="true" style={{ opacity: .8, fontSize: 14 }}>
                   {r.t === "loc" ? "📍" : r.t === "pref" ? "🗾" : "✦"}
                 </span>
-                <span style={{ flex: 1, minWidth: 0, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 15, color: "#f2ece2", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                <span style={{ flex: 1, minWidth: 0, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "#f2ece2", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {r.name}
                 </span>
-                {r.c ? <small style={{ color: "rgba(232,212,148,.7)", fontSize: 11 }}>{r.c}</small> : null}
+                {r.c ? <small style={{ color: "color-mix(in srgb,var(--accent-hi) 70%,transparent)", fontSize: 12 }}>{r.c}</small> : null}
               </a>
             </li>
           ))}
@@ -138,7 +138,7 @@ function SearchInner({ lang }) {
 
 export default function SearchClient({ lang }) {
   return (
-    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "var(--font-sans)" }}>
       <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/search`} />
       <Suspense fallback={<div style={{ minHeight: "calc(100vh - 80px)" }} />}>
         <SearchInner lang={lang} />

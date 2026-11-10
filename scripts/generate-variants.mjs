@@ -17,6 +17,7 @@
 import sharp from "sharp";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
+import { wideGamutOf, keepColor } from "./lib/wide-gamut.mjs";
 
 const SRC = "C:/Users/3jmcn/Pictures/cloudinary-originals";
 const OUT = "images-dist";
@@ -28,7 +29,7 @@ const HERO_ID = "DSC07601_cocitq";
 
 sharp.concurrency(4);
 
-let made = 0, skipped = 0, failed = [];
+let made = 0, skipped = 0, failed = [], wideCount = 0;
 
 async function gen(input, output, pipeline) {
   if (existsSync(path.join(OUT, output))) { skipped++; return; }
@@ -44,8 +45,13 @@ async function gen(input, output, pipeline) {
 for (const r of manifest) {
   const input = path.join(SRC, `${r.public_id}.${r.format}`);
   if (!existsSync(input)) { failed.push({ output: r.public_id, err: "source missing" }); continue; }
+  /* 原本が Display P3 などの広色域なら、その色を配信画像まで残す (sRGB の原本は従来どおり)。
+     既にある配信画像は作り直さない。書き出し直した写真に反映するには、
+     images-dist の該当ファイルを消してから実行する。 */
+  const wide = WIDTHS.some((w) => !existsSync(path.join(OUT, `${r.public_id}_w${w}.webp`))) ? await wideGamutOf(input) : null;
+  if (wide) wideCount++;
   for (const w of WIDTHS) {
-    await gen(input, `${r.public_id}_w${w}.webp`, (s) => s.rotate().resize({ width: w, withoutEnlargement: true }).webp({ quality: 80 }));
+    await gen(input, `${r.public_id}_w${w}.webp`, (s) => keepColor(s.rotate().resize({ width: w, withoutEnlargement: true }), wide).webp({ quality: 80 }));
   }
   await gen(input, `${r.public_id}_w40b.webp`, (s) => s.rotate().resize({ width: 40 }).blur(8).webp({ quality: 50 }));
 }
@@ -75,5 +81,5 @@ writeFileSync(path.join(OUT, "_headers"), `/*
   Access-Control-Allow-Origin: *
 `);
 
-console.log(`[done] made=${made} skipped=${skipped} failed=${failed.length}`);
+console.log(`[done] made=${made} skipped=${skipped} failed=${failed.length}` + (wideCount ? ` 広色域のまま出力=${wideCount}枚` : ""));
 if (failed.length) console.log(JSON.stringify(failed.slice(0, 10), null, 1));

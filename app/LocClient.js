@@ -1,8 +1,8 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import PhotoImage from "./PhotoImage.js";
-import { TR, PREFECTURES, getPrefName, getLocName, getUrl, cldUrl, cldPlaceholder, lbWidth } from "./data.js";
-import { photoLang, PHOTO_LANGS } from "./i18n-meta.js";
+import { PREFECTURES, getPrefName, getLocName, getUrl, cldPlaceholder, lbWidth } from "./data.js";
+import { PHOTO_LANGS } from "./i18n-meta.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 import { getCollectionName } from "./collections-meta.js";
 import { richAlt } from "./title-keywords.js";
@@ -12,13 +12,14 @@ import Theater from "./Theater.js";
 import { track } from "./analytics.js";
 import { ui } from "./ui-strings.js";
 import { useOriginRect, animateToRect } from "./useViewTransition.js";
+import { thumbRectOf } from "./usePhotoViewer.js";
+import { isPortrait, accentStyle } from "./photo-meta.js";
 import { getRegionOfPref, getSiblingPrefs } from "./regions.js";
 import Weather from "./Weather.js";
 import SunTimes from "./SunTimes.js";
 
 export default function LocClient({ lang, prefJp, locJp, collections = [], dims = {} }) {
   const pf = PREFECTURES.find((p) => p.pref === prefJp);
-  const t = TR[lang] || TR.en;
   const prefSlug = PREF_SLUGS[prefJp];
   const locSlug = LOC_SLUGS[locJp];
   const prefLocal = getPrefName(prefJp, lang);
@@ -45,8 +46,6 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
   const hasPhotoPages = PHOTO_LANGS.includes(lang);
   /* ③ 押したサムネイルの位置を覚えて、拡大表示をそこから開く */
   const origin = useOriginRect();
-  /* 閉じるとき「今表示している写真」のサムネイルへ戻すため、カードをIDで引けるようにする */
-  const cardRefs = useRef(new Map());
   const lightboxRef = useRef(null);
   useEffect(() => { lightboxRef.current = lightbox; }, [lightbox]);
 
@@ -72,8 +71,12 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
   /* ④ 写真詳細ページが無い言語では、共有リンクが
      /{lang}/{pref}/{loc}?photo={id} で届く。その写真を開いた状態にする。
      無効・削除済みのIDのときは、何もせず通常の撮影地ページのままにする。
-     戻る/進むでも同じ状態に戻す。 */
-  const openFromUrl = useCallback(() => {
+     読むのは最初の1回だけ。開いたあとの「戻る」(= 閉じる) と URL の書き換えは
+     Lightbox が扱うので、ここで popstate を見て開き直すことはしない。 */
+  const urlRead = useRef(false);
+  useEffect(() => {
+    if (urlRead.current) return;
+    urlRead.current = true;
     try {
       const id = new URLSearchParams(window.location.search).get("photo");
       if (!id) return;
@@ -81,27 +84,15 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
       if (i >= 0) setLightbox(i);
     } catch {}
   }, [allPhotos]);
-  useEffect(() => {
-    openFromUrl();
-    window.addEventListener("popstate", openFromUrl);
-    return () => window.removeEventListener("popstate", openFromUrl);
-  }, [openFromUrl]);
+
   const closeLightbox = useCallback(() => {
     /* ③ 「今 Lightbox に出ている写真」のサムネイルへ戻す。
        Lightbox 内で別写真へ移動していた場合も、戻り先はその写真のカードになるので
        無関係な写真へ変形しない。画面外なら rect が取れないのでフェードになる。 */
     const idx = lightboxRef.current;
     const curId = idx !== null && allPhotos[idx] ? allPhotos[idx].id : null;
-    const card = curId ? cardRefs.current.get(curId) : null;
-    let rect = null;
-    if (card) {
-      const r = card.getBoundingClientRect();
-      const inView = r.bottom > 0 && r.top < window.innerHeight;
-      if (inView) rect = r;
-    }
-    const lbImg = document.querySelector(".cin-lb-inner img");
     setLbClosing(true);
-    animateToRect(lbImg, rect, () => {
+    animateToRect(document.querySelector(".cin-lb-inner img"), thumbRectOf(curId), () => {
       setLightbox(null);
       setLbClosing(false);
     });
@@ -122,54 +113,64 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
     .map((p) => p.loc)
     .filter((l) => l && l !== locJp)
     .filter((l, i, arr) => arr.indexOf(l) === i);
+  const enName = getLocName(locJp, "en");
 
   return (
-    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+    /* アクセント色はこの撮影地の写真から作る (紅葉の名所なら朱、海なら青に寄る) */
+    <div className="page-root" data-accent="" style={accentStyle(photos.map((p) => p.id))}>
       <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/${prefSlug}/${locSlug}`} />
 
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
-        <nav aria-label={ui("breadcrumb", lang)} style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
-          <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
-          <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
-          <a href={`/${lang}/${prefSlug}`} style={{ color: "inherit", textDecoration: "none" }}>{prefLocal}</a>
-          <span className="bc-sep" style={{ margin: "0 10px" }}>›</span>
+      <main className="pg">
+        <nav aria-label={ui("breadcrumb", lang)} className="bc">
+          <a href={`/${lang}`}>Landscapes of Japan</a>
+          <span className="bc-sep">›</span>
+          <a href={`/${lang}/${prefSlug}`}>{prefLocal}</a>
+          <span className="bc-sep">›</span>
           <span>{locLocal}</span>
         </nav>
 
-        <header style={{ marginBottom: 40 }}>
-          <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(40px,6vw,68px)", margin: 0, color: "#f2ece2", lineHeight: 1 }}>
-            {locLocal}
-          </h1>
-          <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 15, color: "rgba(232,228,223,.55)", marginTop: 10, letterSpacing: ".05em" }}>
-            {prefLocal}{lang !== "en" && getLocName(locJp, "en") !== locLocal && (
-              <span style={{ marginLeft: 12, opacity: .6 }}>· {getLocName(locJp, "en")}</span>
+        {/* 地名を主役にする: 日本語の地名を明朝の縦組みで大きく置き、各言語の地名は小さく添える。
+            日本語ページでは縦組みそのものが見出し (h1)。他の言語では縦組みは飾りで、
+            その言語の地名が h1 になる (検索結果とページ見出しの言語をそろえる)。 */}
+        <header className="ph">
+          {lang === "ja"
+            ? <h1 className="ph-tate" lang="ja" style={{ "--n": [...locJp].length }}>{locJp}</h1>
+            : <div className="ph-tate" lang="ja" aria-hidden="true" style={{ "--n": [...locJp].length }}>{locJp}</div>}
+          <div className="ph-side">
+            {lang !== "ja"
+              ? <h1 className="ph-name">{locLocal}</h1>
+              : enName !== locJp && <div className="ph-name">{enName}</div>}
+            <div className="ph-meta">
+              <a href={`/${lang}/${prefSlug}`}>{prefLocal}</a>
+              <span>{photos.length}</span>
+            </div>
+            {photos.length > 1 && (
+              <button className="th-launch" onClick={() => { setTheater(true); track("theater_open", { from: "loc" }, "loc"); }} aria-label={ui("theater", lang)}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
+                {ui("theater", lang)}
+              </button>
             )}
           </div>
+          {/* 天気と日の出は題の横 (PC) / 題の下に全幅 (スマホ)。狭い列に押し込むとはみ出す */}
           {pf?.lat && pf?.lng && (
-            <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 12, alignItems: "flex-start" }}>
+            <div className="ph-info">
               <Weather lat={pf.lat} lng={pf.lng} lang={lang} />
               <SunTimes lat={pf.lat} lng={pf.lng} lang={lang} />
             </div>
           )}
         </header>
 
-        <section id="photos" style={{ scrollMarginTop: 70 }}>
-          {photos.length > 1 && (
-            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
-              <button className="th-launch" onClick={() => { setTheater(true); track("theater_open", { from: "loc" }, "loc"); }} aria-label={ui("theater", lang)}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
-                {ui("theater", lang)}
-              </button>
-            </div>
-          )}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
+        <section id="photos">
+          {/* 縦位置の写真も切らずに並べる (.jg = 行の高さをそろえて全体を見せる並べ方) */}
+          <div className="jg">
             {photos.map((photo, i) => {
               /* 写真詳細ページが存在する言語だけ実リンクにする。
                  存在しない18言語では href を作らず、従来どおり div + Lightbox のまま。 */
               const detailHref = hasPhotoPages && prefSlug && locSlug && photo.id
                 ? `/${lang}/${prefSlug}/${locSlug}/${photo.id}`
                 : null;
-              const cardStyle = { cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, backgroundColor: "#111", backgroundImage: `url(${cldPlaceholder(photo.id)})`, backgroundSize: "cover", backgroundPosition: "center" };
+              const cls = "jg-item" + (isPortrait(photo.id) ? " tall" : "");
+              const cardStyle = { backgroundImage: `url(${cldPlaceholder(photo.id)})` };
               const preload = () => { if (typeof window !== "undefined") { new window.Image().src = getUrl(photo, imgSizes.lbW); } };
               /* 通常の左クリックだけ Lightbox に差し替える。Ctrl/Cmd/Shift/Alt・中クリックは
                  ブラウザ既定のリンク動作に任せる。
@@ -184,52 +185,39 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
                 openLightbox(getUrl(photo, imgSizes.lbW));
               };
               const inner = (
-                <>
                 <PhotoImage
                   id={photo.id}
                   alt={richAlt({ locName: locLocal, prefName: prefLocal, year: photo.year, locJp, lang })}
                   dims={dims[photo.id] || null}
-                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 380px"
+                  sizes="(max-width: 600px) 48vw, (max-width: 1024px) 32vw, 300px"
                   widths="grid"
                   priority={i < 2}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
-                {photo.year && (
-                  <div style={{ position: "absolute", top: 8, right: 8, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 8px", borderRadius: 3, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", zIndex: 3 }}>
-                    {photo.year}
-                  </div>
-                )}
-                <div className="cin-watermark">Landscapes of Japan</div>
-                </>
               );
-              /* 見た目は div 版と同一。a は既定の下線・色を打ち消し、
-                 リンクテキストは img の alt がそのまま担う (別途ラベルを足さない)。 */
-              /* 閉じるときの戻り先を写真IDで引けるよう、カード自身を登録する */
-              const setCardRef = (el) => {
-                if (el) cardRefs.current.set(photo.id, el);
-                else cardRefs.current.delete(photo.id);
-              };
+              /* a は既定の下線・色を打ち消し、リンクテキストは img の alt がそのまま担う
+                 (別途ラベルを足さない)。data-pid は閉じるときの戻り先を引くための印。 */
               return detailHref ? (
                 <a
                   key={photo.id + i}
-                  ref={setCardRef}
                   data-pid={photo.id}
                   href={detailHref}
-                  className="cin-hcard"
+                  className={cls}
                   onClick={onCardClick}
                   onMouseEnter={preload}
                   onContextMenu={(e) => e.preventDefault()}
-                  style={{ ...cardStyle, display: "block", textDecoration: "none", color: "inherit" }}
+                  style={cardStyle}
                 >
                   {inner}
                 </a>
               ) : (
                 <div
                   key={photo.id + i}
-                  ref={setCardRef}
                   data-pid={photo.id}
-                  className="cin-hcard"
+                  className={cls}
+                  role="button"
+                  tabIndex={0}
                   onClick={onCardClick}
+                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onCardClick(e); } }}
                   onMouseEnter={preload}
                   onContextMenu={(e) => e.preventDefault()}
                   style={cardStyle}
@@ -242,33 +230,16 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
         </section>
 
         {siblings.length > 0 && (
-          <section style={{ marginTop: 72 }}>
-            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-              {lang === "ja" ? `${prefLocal}の他の場所` : `More in ${prefLocal}`}
-            </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
+          <section className="sec">
+            <h2 className="sec-h">{lang === "ja" ? `${prefLocal}の他の場所` : `More in ${prefLocal}`}</h2>
+            <div className="chips scroll">
               {siblings.map((loc) => {
                 const slugV = LOC_SLUGS[loc];
                 if (!slugV) return null;
                 const cnt = pf.photos.filter((p) => p.loc === loc).length;
                 return (
-                  <a
-                    key={loc}
-                    href={`/${lang}/${prefSlug}/${slugV}`}
-                    style={{
-                      background: "rgba(255,255,255,.03)",
-                      border: "1px solid rgba(220,190,100,.15)",
-                      borderRadius: 8,
-                      padding: "14px 16px",
-                      color: "#e8e4df",
-                      textDecoration: "none",
-                      fontFamily: "var(--font-zen-kaku),sans-serif",
-                    }}
-                  >
-                    <div style={{ fontSize: 15, fontWeight: 500 }}>{getLocName(loc, lang)}</div>
-                    <div style={{ fontSize: 11, color: "rgba(232,228,223,.45)", marginTop: 4 }}>
-                      {cnt} {lang === "ja" ? "枚" : "photos"}
-                    </div>
+                  <a key={loc} className="chip" href={`/${lang}/${prefSlug}/${slugV}`}>
+                    {getLocName(loc, lang)}<span className="chip-n">{cnt}</span>
                   </a>
                 );
               })}
@@ -279,15 +250,12 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
         {/* この撮影地の写真が実際に入っているコレクション (server 側で写真単位に集計。
             旧実装は collection.locs の loc 単位判定で、写真タグ由来の鳥/動物が出なかった) */}
         {collections.length > 0 && (
-          <section id="related" style={{ marginTop: 64, scrollMarginTop: 70 }}>
-            <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-              {lang === "ja" ? "コレクション" : "Collections"}
-            </h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <section id="related" className="sec">
+            <h2 className="sec-h">{ui("collections", lang)}</h2>
+            <div className="chips">
               {collections.map((c) => (
-                <a key={`c-${c.slug}`} href={`/${lang}/collections/${c.slug}`} style={{ display: "inline-flex", alignItems: "baseline", gap: 7, background: "rgba(220,190,100,.08)", border: "1px solid rgba(220,190,100,.25)", borderRadius: 999, padding: "6px 14px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12 }}>
-                  {getCollectionName(c.slug, lang)}
-                  <span style={{ fontSize: 10.5, color: "rgba(220,190,100,.75)" }}>{c.count}</span>
+                <a key={`c-${c.slug}`} className="chip" href={`/${lang}/collections/${c.slug}`}>
+                  {getCollectionName(c.slug, lang)}<span className="chip-n">{c.count}</span>
                 </a>
               ))}
             </div>
@@ -297,27 +265,20 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
         {/* A19: PageRank流通最適化 — 同地方の他pref へのリンク */}
         {(() => {
           const region = getRegionOfPref(prefJp);
-          const siblings = getSiblingPrefs(prefJp);
-          if (!region || siblings.length === 0) return null;
-          const siblingsCovered = siblings
+          const sibs = getSiblingPrefs(prefJp);
+          if (!region || sibs.length === 0) return null;
+          const covered = sibs
             .map((s) => ({ jp: s, pf: PREFECTURES.find((p) => p.pref === s), slug: PREF_SLUGS[s] }))
             .filter((x) => x.pf && x.slug);
-          if (siblingsCovered.length === 0) return null;
+          if (covered.length === 0) return null;
           const regionLocal = lang === "ja" ? region.nameJa : region.nameEn;
           return (
-            <section style={{ marginTop: 64 }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-                {lang === "ja" ? `${regionLocal}地方の他の都道府県` : `Other prefectures in ${regionLocal}`}
-              </h2>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {siblingsCovered.map(({ jp, pf, slug }) => (
-                  <a
-                    key={jp}
-                    href={`/${lang}/${slug}`}
-                    style={{ background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 999, padding: "8px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}
-                  >
-                    {getPrefName(jp, lang)}
-                    <span style={{ marginLeft: 8, opacity: .55, fontSize: 11 }}>({pf.photos.length})</span>
+            <section className="sec">
+              <h2 className="sec-h">{lang === "ja" ? `${regionLocal}地方の他の都道府県` : `Other prefectures in ${regionLocal}`}</h2>
+              <div className="chips">
+                {covered.map(({ jp, pf: p2, slug }) => (
+                  <a key={jp} className="chip" href={`/${lang}/${slug}`}>
+                    {getPrefName(jp, lang)}<span className="chip-n">{p2.photos.length}</span>
                   </a>
                 ))}
               </div>
@@ -326,8 +287,8 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
         })()}
 
         {/* 47都道府県すべてを見るリンク (常に表示) */}
-        <div style={{ marginTop: 32 }}>
-          <a href={`/${lang}/all-prefectures`} style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(220,190,100,.85)", textDecoration: "none" }}>
+        <div className="sec">
+          <a className="more-link" href={`/${lang}/all-prefectures`}>
             {lang === "ja" ? "47都道府県すべてを見る →" : "View all 47 prefectures →"}
           </a>
         </div>

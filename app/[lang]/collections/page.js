@@ -88,18 +88,18 @@ export default async function CollectionsIndex({ params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+      <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "var(--font-sans)" }}>
         <SiteHeader lang={lang} langHrefTemplate="/{lang}/collections" />
 
         <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
+          <nav aria-label="breadcrumb" style={{ fontSize: 14, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
             <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
             <span style={{ margin: "0 10px" }}>›</span>
             <span>{titleLabel}</span>
           </nav>
 
           <header style={{ marginBottom: 48 }}>
-            <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(40px,6vw,68px)", margin: 0, color: "#f2ece2", lineHeight: 1 }}>
+            <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(40px,6vw,68px)", margin: 0, color: "#f2ece2", lineHeight: 1 }}>
               {titleLabel}
             </h1>
           </header>
@@ -112,7 +112,7 @@ export default async function CollectionsIndex({ params }) {
                 style={{
                   display: "block",
                   background: "rgba(255,255,255,.03)",
-                  border: "1px solid rgba(220,190,100,.15)",
+                  border: "1px solid color-mix(in srgb,var(--accent) 15%,transparent)",
                   borderRadius: 8,
                   overflow: "hidden",
                   textDecoration: "none",
@@ -131,10 +131,10 @@ export default async function CollectionsIndex({ params }) {
                   />
                 )}
                 <div style={{ padding: "20px 22px" }}>
-                  <h2 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: 24, margin: "0 0 8px", color: "#f2ece2", lineHeight: 1.2 }}>
+                  <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 20, margin: "0 0 8px", color: "#f2ece2", lineHeight: 1.2 }}>
                     {c.name}
                   </h2>
-                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "rgba(220,190,100,.7)", marginBottom: 10, letterSpacing: ".1em" }}>
+                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "color-mix(in srgb,var(--accent) 70%,transparent)", marginBottom: 10, letterSpacing: ".1em" }}>
                     {c.count} {lang === "ja" ? "枚" : lang === "ko" ? "장" : (lang === "zh" || lang === "zh-tw") ? "张" : "photos"}
                   </div>
                 </div>

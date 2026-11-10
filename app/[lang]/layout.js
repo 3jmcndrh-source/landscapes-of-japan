@@ -1,4 +1,4 @@
-import { Zen_Kaku_Gothic_New, Playfair_Display } from "next/font/google";
+import { Zen_Kaku_Gothic_New, Shippori_Mincho } from "next/font/google";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -25,7 +25,9 @@ const GA4_MEASUREMENT_ID = "G-SZG99MQG5Z";
 // 実際に要るのは、そのページの文字が入っている数枚だけ。
 // preload を外すと、ブラウザが unicode-range を見て必要な分だけ取りに行く。
 // display:"swap" があるので文字が消える時間は無く、代替書体で出てから差し替わる。
-// Playfair は Latin で枚数が少なく、見出し (LCP になりやすい) に使うので先読みを残す。
+// 見出しと地名の明朝 (Shippori Mincho) も同じ理由で preload しない。地名は数文字なので、
+// 実際に取りに行くのは数枚で済む。以前の Playfair Display (斜体の欧文) は使うのをやめた:
+// 地名を日本語の明朝で見せる組み方に変えたため。
 const zenKaku = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
   weight: ["300", "500"], // 700/900 dropped — 0 font-weight refs in CSS
@@ -34,12 +36,12 @@ const zenKaku = Zen_Kaku_Gothic_New({
   preload: false,
 });
 
-const playfair = Playfair_Display({
+const mincho = Shippori_Mincho({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  weight: ["500"],
+  variable: "--font-mincho",
   display: "swap",
+  preload: false,
 });
 
 export const metadata = {
@@ -58,7 +60,7 @@ export default async function LangLayout({ children, params }) {
         <link rel="dns-prefetch" href="https://landscapes-images.pages.dev" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="Landscapes of Japan — Latest Photos" href="/feed.xml" />
-        <meta name="theme-color" content="#dcbe64" />
+        <meta name="theme-color" content="#0a0a0a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Landscapes of Japan" />
@@ -95,7 +97,7 @@ export default async function LangLayout({ children, params }) {
             CPU 4倍遅く、各3回) で 写真詳細ページの LCP 中央値 4,506ms → 3,044ms。
             経緯は docs/improvement-24h.md */}
       </head>
-      <body className={`${zenKaku.variable} ${playfair.variable}`}>
+      <body className={`${zenKaku.variable} ${mincho.variable}`}>
         {/* A2: scroll restoration — let the browser restore scroll on back/forward
             and ensure forward navigation starts at the top. */}
         <Script id="scroll-restoration" strategy="beforeInteractive">
@@ -163,17 +165,17 @@ export default async function LangLayout({ children, params }) {
         {children}
         <noscript>
           <div style={{ position: "fixed", inset: 0, background: "#0a0a0a", color: "#e8e4df", padding: "40px 24px", overflowY: "auto", zIndex: 9999, fontFamily: "Georgia, 'Noto Sans JP', sans-serif" }}>
-            <h1 style={{ fontStyle: "italic", fontSize: 32, color: "#f2ece2" }}>Landscapes of Japan</h1>
-            <p style={{ marginTop: 16, fontSize: 15, lineHeight: 1.7 }}>
+            <h1 style={{ fontSize: 32, color: "#f2ece2" }}>Landscapes of Japan</h1>
+            <p style={{ marginTop: 16, fontSize: 14, lineHeight: 1.7 }}>
               JavaScript is disabled. The interactive map and lightbox require JavaScript, but you can still browse our content directly:
             </p>
-            <ul style={{ marginTop: 16, fontSize: 15, lineHeight: 2 }}>
-              <li><a href={`/${lang}`} style={{ color: "#dcbe64" }}>Home (current language)</a></li>
-              <li><a href={`/${lang}/collections/cherry-blossoms`} style={{ color: "#dcbe64" }}>Collections (Cherry Blossoms, Snow, Castles, ...)</a></li>
-              <li><a href="/sitemap.xml" style={{ color: "#dcbe64" }}>Site map (all 13,000+ pages)</a></li>
-              <li><a href="/feed.xml" style={{ color: "#dcbe64" }}>RSS feed (latest 50 photos)</a></li>
+            <ul style={{ marginTop: 16, fontSize: 14, lineHeight: 2 }}>
+              <li><a href={`/${lang}`} style={{ color: "var(--accent)" }}>Home (current language)</a></li>
+              <li><a href={`/${lang}/collections/cherry-blossoms`} style={{ color: "var(--accent)" }}>Collections (Cherry Blossoms, Snow, Castles, ...)</a></li>
+              <li><a href="/sitemap.xml" style={{ color: "var(--accent)" }}>Site map (all 13,000+ pages)</a></li>
+              <li><a href="/feed.xml" style={{ color: "var(--accent)" }}>RSS feed (latest 50 photos)</a></li>
             </ul>
-            <p style={{ marginTop: 24, fontSize: 13, color: "rgba(232,228,223,.6)" }}>
+            <p style={{ marginTop: 24, fontSize: 14, color: "rgba(232,228,223,.6)" }}>
               For the full experience with interactive map and gallery, please enable JavaScript.
             </p>
           </div>

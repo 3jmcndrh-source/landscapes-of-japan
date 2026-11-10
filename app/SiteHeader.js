@@ -8,7 +8,7 @@ import { ui } from "./ui-strings.js";
  * ① 細い上部バー。右側の固定縦メニュー + 常時25言語バーをここへ統合した。
  *
  * 移設元 → 移設先
- *   右固定メニュー「撮影地」   → Explore (トップの探索エリアへのリンク)
+ *   右固定メニュー「撮影地」   → Explore (絞り込み画面 /explore へのリンク)
  *   右固定メニュー「コレクション」→ Collections (従来どおり別ページ)
  *   右固定メニュー「ランダム」  → Explore 内 (トップ) / モバイルメニュー
  *   右固定メニュー「検索」     → 上部バーの検索ボタン (QuickSearch、"/" キーも従来どおり)
@@ -21,7 +21,7 @@ import { ui } from "./ui-strings.js";
  * langHrefFor: 関数 (クライアントから) または "/{lang}/collections" のようなテンプレート文字列
  * (サーバーコンポーネントからは関数を渡せないため)。{lang} を言語コードに差し替える。
  */
-export default function SiteHeader({ lang, langHrefFor, langHrefTemplate, exploreHref, onExplore }) {
+export default function SiteHeader({ lang, langHrefFor, langHrefTemplate }) {
   const hrefFor =
     typeof langHrefFor === "function"
       ? langHrefFor
@@ -62,10 +62,16 @@ export default function SiteHeader({ lang, langHrefFor, langHrefTemplate, explor
   }, [menuOpen]);
 
   const home = `/${lang}`;
-  const explore = exploreHref || `${home}#explore`;
-  const onExploreClick = (e) => {
-    if (onExplore) { e.preventDefault(); onExplore(); }
-  };
+  /* 「探す」は絞り込み画面 (/explore) へ。以前はトップの #explore へのページ内リンクで、
+     /explore を開いている人が押してもトップの途中へ戻されていた。 */
+  const explore = `${home}/explore`;
+  /* いま居る場所を aria-current で示す (描画後に判定。初期HTMLとは食い違わせない) */
+  const [here, setHere] = useState("");
+  useEffect(() => {
+    const seg = window.location.pathname.split("/")[2] || "";
+    setHere(seg);
+  }, []);
+  const cur = (seg) => (here === seg ? "page" : undefined);
 
   return (
     <>
@@ -73,8 +79,9 @@ export default function SiteHeader({ lang, langHrefFor, langHrefTemplate, explor
         <a className="sh-brand" href={home}>Landscapes of Japan</a>
 
         <nav className="sh-nav" aria-label={ui("menu", lang)}>
-          <a className="sh-link" href={explore} onClick={onExploreClick}>{ui("explore", lang)}</a>
-          <a className="sh-link" href={`${home}/collections`}>{ui("collections", lang)}</a>
+          <a className="sh-link" href={explore} aria-current={cur("explore")}>{ui("explore", lang)}</a>
+          <a className="sh-link" href={`${home}/collections`} aria-current={cur("collections")}>{ui("collections", lang)}</a>
+          <a className="sh-link" href={`${home}/overview`} aria-current={cur("overview")}>{ui("overview", lang)}</a>
           <button type="button" className="sh-link sh-btn" onClick={() => setSearchOpen(true)}>
             {ui("search", lang)}
           </button>
@@ -114,8 +121,10 @@ export default function SiteHeader({ lang, langHrefFor, langHrefTemplate, explor
             </svg>
           </button>
         </div>
-        <a className="sh-panel-link" href={explore} onClick={(e) => { setMenuOpen(false); onExploreClick(e); }}>{ui("explore", lang)}</a>
-        <a className="sh-panel-link" href={`${home}/collections`}>{ui("collections", lang)}</a>
+        <a className="sh-panel-link" href={explore} aria-current={cur("explore")}>{ui("explore", lang)}</a>
+        <a className="sh-panel-link" href={`${home}/collections`} aria-current={cur("collections")}>{ui("collections", lang)}</a>
+        <a className="sh-panel-link" href={`${home}/overview`} aria-current={cur("overview")}>{ui("overview", lang)}</a>
+        <a className="sh-panel-link" href={`${home}/album`} aria-current={cur("album")}>{ui("album", lang)}</a>
         <a className="sh-panel-link" href={`${home}#contact`} onClick={() => setMenuOpen(false)}>{ui("contact", lang)}</a>
         <div className="sh-panel-lang">
           <LangMenu lang={lang} hrefFor={hrefFor} />

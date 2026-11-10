@@ -17,6 +17,9 @@ import { getCollectionName } from "./collections-meta.js";
 import SiteHeader from "./SiteHeader.js";
 import ExploreSection from "./ExploreSection.js";
 import Lightbox from "./Lightbox.js";
+import { useOriginRect, animateToRect } from "./useViewTransition.js";
+import { thumbRectOf } from "./usePhotoViewer.js";
+import { isPortrait, accentStyle } from "./photo-meta.js";
 import Theater from "./Theater.js";
 import HeroRotation from "./HeroRotation.js";
 import PhotoOfTheDay from "./PhotoOfTheDay.js";
@@ -25,18 +28,60 @@ import { ui } from "./ui-strings.js";
 /* I-7: hero 直下のコレクション導線 (サイトの中身が 3 秒で分かる) */
 const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines", "hot-springs", "coastal", "night-views", "autumn-foliage", "birds", "animals"];
 
-/* T8: ヒーローローテーション — シグネチャー写真 (タグ・構図データから選定)。
-   差し替えはこの配列を編集するだけ。順序 = 表示順。 */
-const HERO_ROTATION = [
-  "wcrs6gq9eutte8fwrzpp", // 新倉山浅間公園 — 桜×五重塔×富士 (春)
-  "sgqomcwsuq18xc1oyr3g", // 知床 — 断崖の海岸線 (夏)
-  "DSC07290_sz6x7s",      // 金閣寺 — 金×紅葉 (秋)
-  "qvsgt1aw6o4iwewvhmdc", // 白川郷 — 雪の合掌造り (冬)
-  "bxt5gtw3rnuqxrx46ppl", // 阿智村 天空の楽園 — 星空
-  "u5izvsliyoqm6rr0xnzh", // 松本城 — 漆黒の城
-  "wt6ow9shewohl0dm0lnj", // 宮古島 — エメラルドの海
-  "usvnljzznwmqu93sftg1", // さっぽろ雪まつり — 夜の雪像
-];
+/* ヒーロー (表紙) は「いまの季節に撮った写真」を出す。季節は閲覧時の日本時間の月で決める。
+   以前は季節を問わない8枚の固定リストを巡回していて、真夏に雪景色が表紙になっていた。
+
+   候補は scripts/suggest-hero.mjs が撮影月 (photo-months.js)・縦横・タグから出し、
+   その一覧画像を目で見て選んだもの。差し替えはこの表を編集するだけ。順序 = 表示順。
+   選ぶ基準: 横位置 / 全画面で主題が分かる / 左下の題字と重なる位置に主題が無い。
+   冬は掲載写真そのものが少ない (12〜2月撮影は6枚)。白川郷は11月の初雪だが
+   雪景色なので冬に入れている。 */
+const HERO_BY_SEASON = {
+  spring: [
+    "wcrs6gq9eutte8fwrzpp", // 新倉山浅間公園 — 桜×五重塔×富士
+    "ygqe7593bqgt1ehxfxqa", // 河口湖 — 桜越しの富士
+    "ubnattnp6rlf4wtv61mi", // 新倉山浅間公園 — 横位置 (1枚目は縦位置で、横長の画面には出ない)
+    "m2gdhydxlmqu3itlta9v", // 松本城 — 桜と天守
+    "rnlyiorswvgfwgyvu6uj", // 北竜町 — 菜の花畑
+    "xcgllidnf2ywtsmqresk", // 安養寺 — しだれ桜の水鏡
+    "qh8ijx3ahxvfceqbod9q", // 高島城 — 桜と天守
+    "uogey3f0zr0sqnd6hnhe", // 沖縄 — ハートロックの浜
+    "bxt5gtw3rnuqxrx46ppl", // 天空の楽園 — 春の星空
+  ],
+  summer: [
+    "sgqomcwsuq18xc1oyr3g", // 知床 — 断崖の海岸線
+    "dsc05922-6deca0",      // 弟子屈 — 摩周湖の青
+    "dsc04910-7adbbc",      // 竹富島 — 白い浜
+    "dsc08239-97d4e0",      // 富良野 — 花畑
+    "dsc05907-4235f3",      // 清里町 — 神の子池
+    "wt6ow9shewohl0dm0lnj", // 宮古島 — エメラルドの海
+    "dsc05986_2-1741dc",    // 大空町 — 丘の並木
+    "dsc04851-4bd0fe",      // 竹富島 — 天の川
+  ],
+  autumn: [
+    "DSC07290_sz6x7s",      // 金閣寺 — 金×紅葉
+    "DSC07451_s1rhpd",      // 東福寺 — 紅葉
+    "dsc09059-bae41e",      // 東川町 — 旭岳の紅葉と噴気
+    "DSC07563_icizbb",      // 清水寺 — 夕景の舞台
+    "dsc09204-6546f9",      // 網走 — 能取湖のサンゴ草
+    "DSC07173_ogwql9",      // 姫路城 — 紅葉
+    "qsn9a5qfmcav4ufkwehz", // 父母ヶ浜 — 夕暮れの水鏡
+    "iqzmqcxvlmzmpxb3e8nl", // 金沢 — 紅葉のライトアップ
+  ],
+  winter: [
+    "qvsgt1aw6o4iwewvhmdc", // 白川郷 — 雪の合掌集落
+    "y4l6gy5xwtz8d3fvvjb0", // 白川郷 — 合掌造り
+    "usvnljzznwmqu93sftg1", // さっぽろ雪まつり — 雪像
+    "ake8ymyn7d0qnybyzihw", // 白川郷
+    "vnvzv0ztfpwvvrvl5lfn", // 白川郷
+    "rj0whx4syklikykwjq6z", // さっぽろ雪まつり
+  ],
+};
+/* 日本時間の月 → 季節 (3-5 春 / 6-8 夏 / 9-11 秋 / 12-2 冬) */
+const seasonNowJst = () => {
+  const m = new Date(Date.now() + 9 * 3600e3).getUTCMonth() + 1;
+  return m >= 3 && m <= 5 ? "spring" : m >= 6 && m <= 8 ? "summer" : m >= 9 && m <= 11 ? "autumn" : "winter";
+};
 
 /* 「ガイド」は 2026-07 のコンテンツ削減でガイド文自体が無くなったため文言から除去 */
 const VIEW_ALL = {
@@ -53,155 +98,14 @@ const GALLERY_MODE_LABELS = {
   region: { ja: "地域別", en: "By region", zh: "按地区", "zh-tw": "按地區", ko: "지역별", es: "Por región", fr: "Par région", de: "Nach Region", pt: "Por região", it: "Per regione", ru: "По региону", ar: "حسب المنطقة", hi: "क्षेत्र अनुसार", th: "ตามภูมิภาค", vi: "Theo vùng", id: "Per wilayah", tr: "Bölgeye göre", nl: "Op regio", pl: "Wg regionu", sv: "Efter region" },
   date: { ja: "撮影日順", en: "By date", zh: "按拍摄日期", "zh-tw": "按拍攝日期", ko: "촬영일순", es: "Por fecha", fr: "Par date", de: "Nach Datum", pt: "Por data", it: "Per data", ru: "По дате", ar: "حسب التاريخ", hi: "तिथि अनुसार", th: "ตามวันที่", vi: "Theo ngày", id: "Per tanggal", tr: "Tarihe göre", nl: "Op datum", pl: "Wg daty", sv: "Efter datum" },
 };
+/* 縦組みの地名は「都・府・県」を外して短く見せる (北海道はそのまま)。表示だけの加工 */
+const jaShort = (pref) => (pref === "北海道" ? pref : pref.replace(/[都府県]$/, ""));
 const MONTH_EN = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const monthLabel = (year, month, lang) => {
   if (!month) return String(year || "");
   if (lang === "ja" || lang === "zh" || lang === "zh-tw") return `${year}年${month}月`;
   if (lang === "ko") return `${year}년 ${month}월`;
   return `${MONTH_EN[month]} ${year}`;
-};
-
-/* ── Embedded Japan GeoJSON — real lat/lng, D3 projects accurately ── */
-/* Format: GeoJSON [longitude, latitude] per spec */
-const JP_GEO = {type:"FeatureCollection",features:[
-{type:"Feature",properties:{name:"Hokkaido"},geometry:{type:"Polygon",coordinates:[[
-[140.07,41.43],[140.10,41.50],[140.05,41.58],[140.08,41.65],[140.15,41.70],[140.25,41.74],
-[140.40,41.76],[140.58,41.77],[140.73,41.77],[140.82,41.78],[140.95,41.80],[141.05,41.80],
-[141.17,41.80],[141.20,41.75],[141.10,41.70],[140.95,41.72],[140.80,41.73],[140.60,41.72],
-[140.45,41.78],[140.30,41.82],[140.25,41.80],[140.18,41.88],[140.12,42.00],[140.10,42.08],
-[140.15,42.15],[140.20,42.25],[140.13,42.38],[140.10,42.50],[140.20,42.60],[140.32,42.72],
-[140.45,42.82],[140.55,42.92],[140.68,43.00],[140.78,43.08],[140.85,43.15],[140.95,43.20],
-[140.72,43.25],[140.52,43.28],[140.35,43.30],[140.32,43.25],[140.45,43.18],[140.55,43.05],
-[140.72,42.98],[140.60,42.90],[140.38,42.85],[140.25,42.80],[140.38,42.68],[140.15,42.55],
-[140.08,42.45],[140.12,42.35],[140.22,42.30],[140.15,42.20],[140.10,42.10],[140.08,42.00],
-[140.55,43.08],[140.75,43.12],[140.90,43.18],[141.00,43.25],[141.05,43.32],[141.10,43.40],
-[141.18,43.48],[141.30,43.58],[141.42,43.68],[141.50,43.78],[141.58,43.85],[141.65,43.95],
-[141.70,44.08],[141.72,44.20],[141.73,44.35],[141.70,44.50],[141.72,44.65],[141.75,44.80],
-[141.78,44.92],[141.80,45.05],[141.75,45.18],[141.78,45.28],[141.93,45.42],[142.08,45.50],
-[142.22,45.48],[142.42,45.42],[142.60,45.33],[142.78,45.22],[142.95,45.10],[143.12,44.95],
-[143.28,44.82],[143.48,44.68],[143.68,44.52],[143.85,44.40],[144.10,44.28],[144.35,44.18],
-[144.55,44.15],[144.78,44.18],[144.95,44.25],[145.12,44.35],[145.22,44.38],[145.35,44.33],
-[145.48,44.25],[145.55,44.12],[145.58,43.98],[145.60,43.85],[145.65,43.72],[145.78,43.55],
-[145.80,43.40],[145.60,43.33],[145.42,43.28],[145.22,43.18],[145.05,43.08],[144.85,43.00],
-[144.60,42.95],[144.38,42.90],[144.12,42.82],[143.85,42.72],[143.60,42.58],[143.38,42.45],
-[143.22,42.32],[143.15,42.18],[143.08,42.05],[143.20,41.92],[143.15,42.00],[142.85,42.05],
-[142.55,42.18],[142.25,42.32],[141.95,42.45],[141.70,42.55],[141.50,42.60],[141.35,42.58],
-[141.15,42.52],[140.98,42.45],[141.05,42.38],[140.95,42.30],[140.82,42.25],[140.72,42.18],
-[140.60,42.08],[140.48,42.00],[140.35,41.90],[140.28,41.82],[140.20,41.72],[140.15,41.60],
-[140.10,41.50],[140.07,41.43]
-]]}},
-{type:"Feature",properties:{name:"Honshu"},geometry:{type:"Polygon",coordinates:[[
-[140.20,41.25],[140.35,41.15],[140.48,41.08],[140.65,41.02],[140.85,41.02],[140.95,41.08],
-[141.05,41.15],[141.18,41.25],[141.28,41.30],[141.35,41.25],[141.28,41.15],[141.18,41.08],
-[141.08,41.00],[141.15,40.92],[141.30,40.82],[141.42,40.68],[141.52,40.55],[141.62,40.40],
-[141.72,40.25],[141.82,40.08],[141.88,39.90],[141.95,39.72],[142.05,39.55],[142.08,39.38],
-[142.00,39.22],[141.92,39.05],[141.80,38.85],[141.65,38.70],[141.50,38.55],[141.35,38.42],
-[141.15,38.32],[141.00,38.18],[140.95,38.05],[140.92,37.85],[140.95,37.65],[141.00,37.45],
-[141.05,37.22],[141.02,37.05],[140.98,36.85],[140.92,36.65],[140.82,36.48],[140.72,36.35],
-[140.62,36.25],[140.55,36.12],[140.65,35.98],[140.78,35.85],[140.85,35.75],[140.82,35.65],
-[140.65,35.58],[140.42,35.55],[140.22,35.52],[140.05,35.55],[139.92,35.50],[139.85,35.42],
-[139.82,35.30],[139.80,35.18],[139.85,35.05],[139.78,34.98],[139.65,35.02],[139.55,35.08],
-[139.48,35.22],[139.50,35.38],[139.58,35.48],[139.68,35.55],[139.72,35.62],[139.65,35.68],
-[139.55,35.60],[139.42,35.50],[139.32,35.40],[139.22,35.32],[139.12,35.18],[139.05,35.08],
-[138.98,34.98],[138.92,34.88],[138.88,34.78],[138.82,34.70],[138.72,34.65],[138.55,34.62],
-[138.32,34.62],[138.05,34.65],[137.78,34.68],[137.55,34.65],[137.25,34.62],[137.02,34.58],
-[136.90,34.50],[136.82,34.40],[136.72,34.30],[136.60,34.18],[136.48,34.08],[136.35,34.00],
-[136.15,33.90],[135.95,33.78],[135.82,33.65],[135.75,33.50],[135.65,33.45],[135.50,33.42],
-[135.38,33.48],[135.22,33.55],[135.12,33.68],[135.05,33.82],[135.02,33.98],[135.08,34.12],
-[135.10,34.28],[135.12,34.42],[135.15,34.52],[135.08,34.58],[135.02,34.65],[134.85,34.68],
-[134.62,34.68],[134.38,34.68],[134.12,34.62],[133.88,34.55],[133.62,34.50],[133.35,34.42],
-[133.08,34.35],[132.78,34.30],[132.48,34.22],[132.22,34.18],[131.95,34.08],[131.65,34.00],
-[131.38,33.98],[131.08,33.95],[130.98,33.98],[130.95,34.05],[130.98,34.15],[131.02,34.28],
-[131.12,34.42],[131.30,34.55],[131.48,34.65],[131.72,34.75],[131.92,34.85],[132.12,34.98],
-[132.28,35.10],[132.52,35.22],[132.72,35.32],[132.95,35.42],[133.15,35.50],[133.35,35.55],
-[133.55,35.55],[133.78,35.55],[133.98,35.60],[134.15,35.62],[134.32,35.60],[134.52,35.62],
-[134.72,35.60],[134.88,35.58],[135.05,35.62],[135.22,35.68],[135.38,35.72],[135.55,35.68],
-[135.72,35.65],[135.88,35.68],[135.98,35.78],[136.05,35.90],[136.18,36.02],[136.35,36.12],
-[136.52,36.25],[136.62,36.38],[136.68,36.52],[136.72,36.68],[136.70,36.82],[136.68,36.95],
-[136.72,37.05],[136.82,37.15],[136.95,37.25],[137.08,37.35],[137.22,37.45],[137.30,37.52],
-[137.20,37.48],[137.05,37.38],[136.92,37.28],[136.85,37.18],[136.92,37.12],[137.05,37.12],
-[137.18,37.22],[137.35,37.32],[137.58,37.42],[137.85,37.55],[138.08,37.68],[138.30,37.78],
-[138.55,37.88],[138.78,37.95],[139.00,38.05],[139.22,38.15],[139.42,38.28],[139.55,38.38],
-[139.65,38.50],[139.72,38.62],[139.80,38.78],[139.85,38.92],[139.90,39.08],[139.95,39.25],
-[139.98,39.42],[140.02,39.58],[140.00,39.72],[139.98,39.88],[139.95,40.02],[139.95,40.18],
-[139.98,40.35],[140.00,40.52],[140.00,40.68],[140.02,40.82],[140.05,40.95],[140.08,41.08],
-[140.15,41.18],[140.20,41.25]
-]]}},
-{type:"Feature",properties:{name:"Shikoku"},geometry:{type:"Polygon",coordinates:[[
-[134.62,34.28],[134.38,34.25],[134.18,34.22],[133.88,34.18],[133.62,34.12],[133.35,34.05],
-[133.05,33.92],[132.88,33.78],[132.75,33.62],[132.68,33.48],[132.58,33.32],[132.55,33.18],
-[132.60,33.05],[132.72,32.98],[132.82,32.95],[132.95,33.00],[133.12,33.02],[133.28,33.02],
-[133.48,33.05],[133.65,33.02],[133.82,33.02],[133.98,33.08],[134.12,33.18],[134.22,33.28],
-[134.35,33.40],[134.48,33.52],[134.58,33.62],[134.65,33.72],[134.72,33.82],[134.75,33.95],
-[134.72,34.05],[134.68,34.15],[134.62,34.28]
-]]}},
-{type:"Feature",properties:{name:"Kyushu"},geometry:{type:"Polygon",coordinates:[[
-[130.88,33.95],[130.72,33.82],[130.55,33.68],[130.40,33.55],[130.28,33.42],[130.18,33.28],
-[130.05,33.15],[129.92,33.02],[129.82,32.88],[129.75,32.72],[129.78,32.55],[129.82,32.42],
-[129.88,32.28],[129.95,32.15],[130.05,32.02],[130.18,31.88],[130.30,31.75],[130.42,31.62],
-[130.55,31.50],[130.58,31.38],[130.52,31.25],[130.55,31.15],[130.68,31.08],[130.82,31.05],
-[130.95,31.08],[131.02,31.18],[130.88,31.28],[130.78,31.38],[130.72,31.48],[130.85,31.55],
-[131.02,31.42],[131.15,31.35],[131.28,31.38],[131.42,31.48],[131.48,31.62],[131.55,31.78],
-[131.60,31.95],[131.65,32.12],[131.70,32.30],[131.75,32.48],[131.78,32.65],[131.72,32.82],
-[131.62,32.98],[131.55,33.12],[131.58,33.25],[131.55,33.32],[131.42,33.42],[131.25,33.48],
-[131.08,33.52],[130.95,33.62],[130.92,33.75],[130.88,33.95]
-]]}},
-{type:"Feature",properties:{name:"Sado"},geometry:{type:"Polygon",coordinates:[[
-[138.22,38.35],[138.18,38.22],[138.25,38.08],[138.38,37.95],[138.48,37.90],[138.55,38.00],
-[138.52,38.15],[138.42,38.28],[138.32,38.35],[138.22,38.35]
-]]}},
-{type:"Feature",properties:{name:"Awaji"},geometry:{type:"Polygon",coordinates:[[
-[134.85,34.62],[134.80,34.52],[134.82,34.40],[134.90,34.32],[134.98,34.38],[134.98,34.52],
-[134.92,34.60],[134.85,34.62]
-]]}},
-{type:"Feature",properties:{name:"Tsushima"},geometry:{type:"Polygon",coordinates:[[
-[129.42,34.72],[129.30,34.60],[129.25,34.45],[129.30,34.28],[129.42,34.18],[129.52,34.28],
-[129.55,34.45],[129.50,34.62],[129.42,34.72]
-]]}},
-{type:"Feature",properties:{name:"Yakushima"},geometry:{type:"Polygon",coordinates:[[
-[130.35,30.45],[130.28,30.35],[130.30,30.25],[130.45,30.22],[130.55,30.30],[130.55,30.42],
-[130.45,30.48],[130.35,30.45]
-]]}},
-{type:"Feature",properties:{name:"Tanegashima"},geometry:{type:"Polygon",coordinates:[[
-[131.00,30.75],[130.92,30.62],[130.95,30.45],[131.02,30.40],[131.08,30.55],[131.08,30.68],
-[131.00,30.75]
-]]}},
-{type:"Feature",properties:{name:"Okinawa"},geometry:{type:"Polygon",coordinates:[[
-[128.25,26.88],[128.12,26.78],[127.95,26.62],[127.82,26.48],[127.75,26.35],[127.70,26.22],
-[127.68,26.10],[127.72,26.08],[127.78,26.15],[127.85,26.28],[127.92,26.42],[128.00,26.55],
-[128.08,26.68],[128.18,26.78],[128.25,26.88]
-]]}},
-{type:"Feature",properties:{name:"Miyako"},geometry:{type:"Polygon",coordinates:[[
-[125.38,24.82],[125.22,24.75],[125.18,24.72],[125.28,24.72],[125.38,24.78],[125.42,24.82],
-[125.38,24.82]
-]]}},
-{type:"Feature",properties:{name:"Ishigaki"},geometry:{type:"Polygon",coordinates:[[
-[124.22,24.45],[124.12,24.38],[124.15,24.32],[124.28,24.35],[124.30,24.42],[124.22,24.45]
-]]}},
-]};
-
-/* ── Location names (20 langs) ── */
-const LOC = {
-  ja:{l1:"富士山",l2:"京都・嵐山",l3:"厳島神社",l4:"奈良公園",l5:"白川郷",l6:"渋谷"},
-  en:{l1:"Mt. Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  zh:{l1:"富士山",l2:"京都",l3:"严岛",l4:"奈良",l5:"白川乡",l6:"涩谷"},
-  "zh-tw":{l1:"富士山",l2:"京都",l3:"嚴島",l4:"奈良",l5:"白川鄉",l6:"澀谷"},
-  ko:{l1:"후지산",l2:"교토",l3:"이쓰쿠시마",l4:"나라",l5:"시라카와고",l6:"시부야"},
-  es:{l1:"Monte Fuji",l2:"Kioto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  fr:{l1:"Mont Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  de:{l1:"Berg Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  pt:{l1:"Monte Fuji",l2:"Quioto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  it:{l1:"Monte Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  ru:{l1:"Фудзи",l2:"Киото",l3:"Ицукусима",l4:"Нара",l5:"Сиракава-го",l6:"Сибуя"},
-  ar:{l1:"فوجي",l2:"كيوتو",l3:"إتسوكوشيما",l4:"نارا",l5:"شيراكاوا",l6:"شيبويا"},
-  hi:{l1:"फूजी",l2:"क्योटो",l3:"इत्सुकुशिमा",l4:"नारा",l5:"शिराकावा-गो",l6:"शिबुया"},
-  th:{l1:"ฟูจิ",l2:"เกียวโต",l3:"อิสึกุชิมะ",l4:"นารา",l5:"ชิราคาวา",l6:"ชิบุย่า"},
-  vi:{l1:"Phú Sĩ",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  id:{l1:"G. Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  tr:{l1:"Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  nl:{l1:"Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  pl:{l1:"Fuji",l2:"Kioto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
-  sv:{l1:"Fuji",l2:"Kyoto",l3:"Itsukushima",l4:"Nara",l5:"Shirakawa-go",l6:"Shibuya"},
 };
 
 /* ── Translations (20 langs, compact) ── */
@@ -399,50 +303,35 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
   return (
     <div className="cin-map-responsive">
       <div style={{ textAlign: "center", marginBottom: 14 }}>
-        <span style={{ fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 20, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(232,228,223,.7)", fontWeight: 500, border: "1px solid rgba(232,228,223,.3)", padding: "8px 24px", display: "inline-block" }}>{t.mapL}</span>
+        <span style={{ fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 20, letterSpacing: ".08em", color: "rgba(232,228,223,.7)", fontWeight: 500, border: "1px solid rgba(232,228,223,.3)", padding: "8px 24px", display: "inline-block" }}>{t.mapL}</span>
         <div style={{ marginTop: 10 }}>
-          <span style={{ fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 14, color: "rgba(220,190,100,.5)", letterSpacing: ".05em" }}>{t.mapH}</span>
+          <span style={{ fontFamily: "'Noto Sans JP','Noto Sans',sans-serif", fontSize: 14, color: "color-mix(in srgb,var(--accent) 50%,transparent)", letterSpacing: ".05em" }}>{t.mapH}</span>
         </div>
       </div>
       <svg ref={svgRef} viewBox={"0 0 " + MW + " " + MH} style={{ width: "100%", height: "auto", display: "block" }} onClick={handleSvgClick}>
         <defs>
           <radialGradient id="goldGrad" cx="50%" cy="50%" r="65%">
-            <stop offset="0%" stopColor="rgba(240,205,130,0.58)" />
-            <stop offset="55%" stopColor="rgba(220,190,100,0.38)" />
-            <stop offset="100%" stopColor="rgba(150,120,60,0.18)" />
+            <stop offset="0%" stopColor="color-mix(in srgb,var(--accent-hi) 58%,transparent)" />
+            <stop offset="55%" stopColor="color-mix(in srgb,var(--accent) 38%,transparent)" />
+            <stop offset="100%" stopColor="color-mix(in srgb,var(--accent) 18%,transparent)" />
           </radialGradient>
           <radialGradient id="goldGradHover" cx="50%" cy="50%" r="70%">
-            <stop offset="0%" stopColor="rgba(255,225,160,0.78)" />
-            <stop offset="60%" stopColor="rgba(232,200,120,0.55)" />
-            <stop offset="100%" stopColor="rgba(180,150,80,0.25)" />
+            <stop offset="0%" stopColor="color-mix(in srgb,var(--accent-hi) 78%,transparent)" />
+            <stop offset="60%" stopColor="color-mix(in srgb,var(--accent-hi) 55%,transparent)" />
+            <stop offset="100%" stopColor="color-mix(in srgb,var(--accent) 25%,transparent)" />
           </radialGradient>
           <linearGradient id="pathNeutral" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="rgba(232,228,223,0.22)" />
             <stop offset="100%" stopColor="rgba(232,228,223,0.10)" />
           </linearGradient>
-          <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b" />
-            <feMerge>
-              <feMergeNode in="b" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <filter id="goldGlowStrong" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b" />
-            <feColorMatrix in="b" type="matrix" values="1 0 0 0 0.15  0 1 0 0 0.08  0 0 1 0 0.02  0 0 0 1 0" result="c" />
-            <feMerge>
-              <feMergeNode in="c" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
           <filter id="tipBlur" x="-10%" y="-10%" width="120%" height="120%">
             <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
           </filter>
           <linearGradient id="okiFade" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(220,190,100,0)" />
-            <stop offset="20%" stopColor="rgba(220,190,100,0.28)" />
-            <stop offset="80%" stopColor="rgba(220,190,100,0.22)" />
-            <stop offset="100%" stopColor="rgba(220,190,100,0)" />
+            <stop offset="0%" stopColor="color-mix(in srgb,var(--accent) 0%,transparent)" />
+            <stop offset="20%" stopColor="color-mix(in srgb,var(--accent) 28%,transparent)" />
+            <stop offset="80%" stopColor="color-mix(in srgb,var(--accent) 22%,transparent)" />
+            <stop offset="100%" stopColor="color-mix(in srgb,var(--accent) 0%,transparent)" />
           </linearGradient>
         </defs>
         <g ref={gRef}>
@@ -455,18 +344,15 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
             ? (isHovered || isActive ? "url(#goldGradHover)" : "url(#goldGrad)")
             : (isHovered ? "rgba(232,228,223,0.30)" : "url(#pathNeutral)");
           const stroke = isHL
-            ? (isHovered || isActive ? "rgba(255,225,160,0.9)" : "rgba(220,190,100,0.55)")
+            ? (isHovered || isActive ? "color-mix(in srgb,var(--accent-hi) 90%,transparent)" : "color-mix(in srgb,var(--accent) 55%,transparent)")
             : (isHovered ? "rgba(232,228,223,0.55)" : "rgba(232,228,223,0.32)");
-          const filter = isHL ? (isHovered || isActive ? "url(#goldGlowStrong)" : "url(#goldGlow)") : undefined;
           return (
             <path key={p.id} d={p.d}
-              className={isHL ? "jp-pref-pulse" : undefined}
               fill={fill}
               stroke={stroke}
               strokeWidth={isHL ? (isHovered || isActive ? 1.6 : 1.2) : 0.85}
               strokeLinejoin="round"
-              filter={filter}
-              style={{ cursor: isHL ? "pointer" : "default", transition: "fill .6s cubic-bezier(.2,.8,.2,1), stroke .5s, stroke-width .4s, filter .4s, opacity .4s", transformOrigin: "center", transformBox: "fill-box" }}
+              style={{ cursor: isHL ? "pointer" : "default", transition: "fill .3s, stroke .3s, stroke-width .3s" }}
               onClick={(e) => { e.stopPropagation(); if (isHL) { handlePrefInteraction(p.name); } else if (isMobile) { setTapped(p.name); setHov(p.name); } }}
               onMouseEnter={() => !isMobile && p.name && setHov(p.name)}
               onMouseLeave={() => !isMobile && setHov(null)}
@@ -506,12 +392,12 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
             const tipTap = isMobile ? (e) => { e.stopPropagation(); handlePrefInteraction(activeHov); } : undefined;
             return (
               <g style={{ pointerEvents: isMobile ? "auto" : "none", cursor: isMobile ? "pointer" : "default" }} onClick={tipTap}>
-                <rect x={tx} y={ty} width={tipW} height={tipH} rx={10} fill="rgba(14,12,10,.82)" stroke="rgba(220,190,100,.38)" strokeWidth=".6" />
-                <rect x={tx} y={ty} width={tipW} height={tipH} rx={10} fill="none" stroke="rgba(255,235,200,.15)" strokeWidth="1" filter="url(#tipBlur)" />
+                <rect x={tx} y={ty} width={tipW} height={tipH} rx={10} fill="rgba(14,12,10,.82)" stroke="color-mix(in srgb,var(--accent) 38%,transparent)" strokeWidth=".6" />
+                <rect x={tx} y={ty} width={tipW} height={tipH} rx={10} fill="none" stroke="color-mix(in srgb,var(--accent-hi) 15%,transparent)" strokeWidth="1" filter="url(#tipBlur)" />
                 <clipPath id={clipId}><rect x={tx + 7} y={ty + 8} width={46} height={32} rx={6} /></clipPath>
                 <image href={pin.thumb} x={tx + 7} y={ty + 8} width={46} height={32} clipPath={"url(#" + clipId + ")"} preserveAspectRatio="xMidYMid slice" />
                 <text x={tx + 62} y={ty + 24} fill="#f2ece2" fontSize="11.5" fontFamily="var(--font-zen-kaku), 'Noto Sans JP', sans-serif" fontWeight="500" letterSpacing=".04em">{getPrefName(activeHov, lang)}</text>
-                <text x={tx + 62} y={ty + 44} fill="rgba(220,190,100,.72)" fontSize="8.5" fontFamily="var(--font-zen-kaku), 'Noto Sans JP', sans-serif" letterSpacing=".08em">{t.tapHint}</text>
+                <text x={tx + 62} y={ty + 44} fill="color-mix(in srgb,var(--accent) 72%,transparent)" fontSize="8.5" fontFamily="var(--font-zen-kaku), 'Noto Sans JP', sans-serif" letterSpacing=".08em">{t.tapHint}</text>
               </g>
             );
           } else {
@@ -536,7 +422,7 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
           <line x1={OKI_BOX.x} y1={OKI_BOX.y + 6} x2={OKI_BOX.x + OKI_BOX.w} y2={OKI_BOX.y + 6}
             stroke="url(#okiFade)" strokeWidth=".8" />
           <text x={OKI_BOX.x + OKI_BOX.w / 2} y={OKI_BOX.y + 16} fill="rgba(232,228,223,.42)" fontSize="9"
-            fontFamily="var(--font-playfair), 'Playfair Display', serif" fontStyle="italic" textAnchor="middle" letterSpacing=".18em">{t.oki}</text>
+            fontFamily="var(--font-serif)" textAnchor="middle" letterSpacing=".18em">{t.oki}</text>
           <g transform={"translate(" + OKI_BOX.x + "," + OKI_BOX.y + ")"} clipPath="url(#okiClip)">
             <rect
               x={0} y={0} width={OKI_BOX.w} height={OKI_BOX.h}
@@ -553,17 +439,15 @@ function JapanMap({ lang, photos, onPinClick, hlId }) {
                 ? (isHovered ? "url(#goldGradHover)" : "url(#goldGrad)")
                 : (isHovered ? "rgba(232,228,223,0.30)" : "url(#pathNeutral)");
               const stroke = isHL
-                ? (isHovered ? "rgba(255,225,160,0.9)" : "rgba(220,190,100,0.55)")
+                ? (isHovered ? "color-mix(in srgb,var(--accent-hi) 90%,transparent)" : "color-mix(in srgb,var(--accent) 55%,transparent)")
                 : (isHovered ? "rgba(232,228,223,0.55)" : "rgba(232,228,223,0.32)");
               return (
                 <path key={"oki" + p.id} d={p.d}
-                  className={isHL ? "jp-pref-pulse" : undefined}
                   fill={fill}
                   stroke={stroke}
                   strokeWidth={isHL ? (isHovered ? 1.4 : 1.0) : 0.75}
                   strokeLinejoin="round"
-                  filter={isHL ? (isHovered ? "url(#goldGlowStrong)" : "url(#goldGlow)") : undefined}
-                  style={{ cursor: isHL ? "pointer" : "default", transition: "fill .6s cubic-bezier(.2,.8,.2,1), stroke .5s, filter .4s" }}
+                  style={{ cursor: isHL ? "pointer" : "default", transition: "fill .3s, stroke .3s" }}
                   onClick={(e) => { e.stopPropagation(); if (isHL) { handlePrefInteraction(p.name); } else if (isMobile) { setTapped(p.name); setHov(p.name); } }}
                   onMouseEnter={() => !isMobile && p.name && setHov(p.name)}
                   onMouseLeave={() => !isMobile && setHov(null)}
@@ -615,14 +499,23 @@ export default function PageClient({ initialLang = "ja" }) {
   const [lbClosing, setLbClosing] = useState(false);
   const [theaterOpen, setTheaterOpen] = useState(false);
   const [galleryMode, setGalleryMode] = useState("region"); // "region" | "date" | "added"
+  /* 閉じるときは「いま表示している写真」のサムネイルへ戻す (画面に無ければフェード)。
+     URL と履歴は Lightbox が扱う (開くと写真のURLになり、戻るで閉じて元のURLへ戻る)。
+     以前ここで書いていた #photo=ID は履歴に積まれず、スマホの「戻る」で
+     ビューアが閉じずに前のページへ飛んでいた。 */
+  const lightboxRef = useRef(null);
+  useEffect(() => { lightboxRef.current = lightbox; }, [lightbox]);
+  const activeRef = useRef([]);
   const closeLightbox = useCallback(() => {
+    const i = lightboxRef.current;
+    const id = i !== null && activeRef.current[i] ? activeRef.current[i].id : null;
     setLbClosing(true);
-    setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
-    // URL hash クリア (#23: shareable photo URL)
-    if (typeof window !== "undefined" && window.location.hash.startsWith("#photo=")) {
-      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-    }
+    animateToRect(document.querySelector(".cin-lb-inner img"), thumbRectOf(id), () => {
+      setLightbox(null);
+      setLbClosing(false);
+    });
   }, []);
+  const origin = useOriginRect();
 
   /* Responsive image sizes (default to desktop for SSR, update on client) */
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
@@ -665,51 +558,38 @@ export default function PageClient({ initialLang = "ja" }) {
 
   /* ライトボックスと共有要素は現在の表示順に追従する */
   const activePhotos = galleryMode === "date" ? datePhotos : galleryMode === "added" ? addedPhotos : allPhotos;
+  activeRef.current = activePhotos;
 
-  const openLightbox = useCallback((url, entry = "home") => {
+  const openLightbox = useCallback((url, entry = "home", el = null) => {
     const idx = activePhotos.findIndex(p => p.url === url);
     const target = idx >= 0 ? idx : 0;
+    /* 押したサムネイルの矩形を覚えてから開く (拡大表示がそこから広がる) */
+    origin.capture(el ? el.querySelector("img") : null);
     setLightbox(target);
     /* ⑨ 実際に開く操作をしたときだけ。entry はこの操作が始まった場所そのもの */
     if (activePhotos[target]) track("photo_open", { photo_id: activePhotos[target].id, entry }, activePhotos[target].id + "|" + entry);
-    // URL hash 設定 (#23: shareable photo URL)
-    const photoId = activePhotos[target]?.id;
-    if (photoId && typeof window !== "undefined") {
-      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#photo=${photoId}`);
-    }
-  }, [activePhotos]);
+  }, [activePhotos, origin]);
 
-  // 初回ロード時に #photo=xxx があれば該当ライトボックスを開く
+  /* 以前の共有リンク (/{lang}#photo=ID) は引き続き開ける。読むのは最初の1回だけで、
+     読んだら URL から外す (並び替えのたびに開き直さないため)。 */
+  const hashRead = useRef(false);
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (hashRead.current || typeof window === "undefined") return;
+    hashRead.current = true;
     const m = window.location.hash.match(/^#photo=([a-zA-Z0-9_-]+)/);
     if (!m) return;
-    const photoId = m[1];
-    const idx = activePhotos.findIndex(p => p.id === photoId);
+    const idx = activePhotos.findIndex(p => p.id === m[1]);
+    try { window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search); } catch {}
     if (idx >= 0) setLightbox(idx);
   }, [activePhotos]);
 
-  const updateHash = useCallback((idx) => {
-    if (typeof window === "undefined") return;
-    const photoId = activePhotos[idx]?.id;
-    if (photoId) window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#photo=${photoId}`);
+  const lbPrev = useCallback(() => {
+    setLightbox(i => (i <= 0 ? activePhotos.length - 1 : i - 1));
   }, [activePhotos]);
 
-  const lbPrev = useCallback(() => {
-    setLightbox(i => {
-      const next = i <= 0 ? activePhotos.length - 1 : i - 1;
-      updateHash(next);
-      return next;
-    });
-  }, [activePhotos, updateHash]);
-
   const lbNext = useCallback(() => {
-    setLightbox(i => {
-      const next = i >= activePhotos.length - 1 ? 0 : i + 1;
-      updateHash(next);
-      return next;
-    });
-  }, [activePhotos, updateHash]);
+    setLightbox(i => (i >= activePhotos.length - 1 ? 0 : i + 1));
+  }, [activePhotos]);
 
   /* 撮影日順 / 新着 表示: 年月ごとにグルーピング (新しい順)。同じ見た目を使い回す */
   const dateGroups = useMemo(() => {
@@ -765,21 +645,30 @@ export default function PageClient({ initialLang = "ja" }) {
   const [rowCounts, setRowCounts] = useState({});
   const rowMaxFor = (pf) => Math.min(rowCounts[pf.pref] ?? 16, pf.photos.length);
 
-  const [scrollY, setScrollY] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [hlPhoto, setHlPhoto] = useState(null);
-  const [pastMap, setPastMap] = useState(false);
+  /* 表紙に出す写真。季節は閲覧時の日付で決まるので、描画後に決める
+     (ビルド時の季節で初期HTMLを作ると、公開後に季節が変わっても古いままになる) */
+  const [heroIds, setHeroIds] = useState(null);
+  useEffect(() => { setHeroIds(HERO_BY_SEASON[seasonNowJst()]); }, []);
+  /* アクセント色を「いま表紙に出ている写真」に合わせる。
+     state に入れるとトップ全体 (930枚ぶんの行) を再描画するので、CSS 変数を直接書く。
+     色の移り変わりは CSS 側 (@property + transition) がなめらかにする。 */
+  const rootRef = useRef(null);
+  const onHeroShow = useCallback((id) => {
+    const el = rootRef.current;
+    if (!el) return;
+    const a = accentStyle(id);
+    el.style.setProperty("--accent-h", a["--accent-h"]);
+    el.style.setProperty("--accent-c", a["--accent-c"]);
+  }, []);
   const [mapView, setMapView] = useState("map"); // "map" | "list"
-  const cRef = useRef(null);
   const mapRef = useRef(null);
-  const contactRef = useRef(null);
-  const exploreRef = useRef(null);
   /* ⑤ 色検索の対象はサイト全体の掲載写真 (言語別URLで重複させない) */
   const allSitePhotos = useMemo(
     () => PREFECTURES.flatMap((pf) => pf.photos.map((p) => ({ ...p, pref: pf.pref }))),
     []
   );
-  const photoRefs = useRef({});
   const navigatingRef = useRef(false);
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -925,41 +814,16 @@ export default function PageClient({ initialLang = "ja" }) {
     // galleryMode: トグル後の再マウントでも行の段階展開が効くように張り直す。
   }, [lang, galleryMode]);
 
-  /* Scroll-linked fade-in for sections (IntersectionObserver) */
-  useEffect(() => {
-    if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      }
-    }, { root: null, threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    const targets = document.querySelectorAll(".reveal");
-    targets.forEach(el => io.observe(el));
-    return () => io.disconnect();
-    // galleryMode を含める: 撮影日順↔地域別 の切替で .cin-pref-group.reveal が
-    // 再マウントされるため、オブザーバーを張り直さないと opacity:0 のまま残る。
-  }, [lang, galleryMode]);
+  /* セクションの現れ方は CSS のスクロール連動アニメーション (globals.css の .reveal) に任せる。
+     以前は IntersectionObserver でクラスを付けていたため、JS が動くまで中身が
+     透明のままで、並び替えのたびに張り直しも必要だった。いまは対応ブラウザ
+     (Chrome 系 / Safari 26 以降) でだけ動き、それ以外では最初から見えている。 */
 
   /* Keyboard / preload / scroll-lock now live inside shared <Lightbox/> */
 
-  /* Lock body scroll while lightbox is open (iOS-safe via position:fixed) */
-  useEffect(() => {
-    const fn = () => {
-      setScrollY(window.scrollY);
-      if (mapRef.current) setPastMap(mapRef.current.getBoundingClientRect().bottom < 0);
-    };
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
-  const scrollToMap = useCallback(() => { mapRef.current && mapRef.current.scrollIntoView({ behavior: "smooth", block: "center" }); }, []);
-  const scrollToExplore = useCallback(() => {
-    exploreRef.current && exploreRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-  const scrollToContact = useCallback(() => { contactRef.current && contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" }); }, []);
+  /* 以前ここにあった scroll リスナーは scrollY / pastMap を state に入れていたが、
+     どちらも描画に使っておらず、スクロールのたびにトップページ全体 (930枚ぶんの行) を
+     再描画していた。リスナーごと削除した。 */
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -975,14 +839,6 @@ export default function PageClient({ initialLang = "ja" }) {
     const m = String(id).match(/^p(\d+)$/);
     const el = m ? document.getElementById("pref-" + m[1]) : null;
     if (!el) return;
-    document.querySelectorAll('.cin-pref-group.reveal, .cin-map-wrap.reveal').forEach(r => {
-      if (!r.classList.contains('is-visible')) {
-        r.style.transition = 'none';
-        r.classList.add('is-visible');
-        void r.offsetHeight;
-        r.style.transition = '';
-      }
-    });
     navigatingRef.current = true;
     setTimeout(() => { navigatingRef.current = false; }, 1200);
     const computeTarget = () => {
@@ -1010,7 +866,7 @@ export default function PageClient({ initialLang = "ja" }) {
   }, []);
 
   return (
-    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif", position: "relative" }}>
+    <div ref={rootRef} data-accent="" className="page-root" style={{ position: "relative" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify((() => {
         const meta = SEO_META[lang] || SEO_META.en;
         const pageUrl = `${SITE_URL}/${lang}`;
@@ -1103,20 +959,22 @@ export default function PageClient({ initialLang = "ja" }) {
         };
       })()) }} />
 
-      <div ref={cRef}>
-        <SiteHeader lang={lang} langHrefFor={(c) => `/${c}`} onExplore={scrollToExplore} />
+      <div>
+        <SiteHeader lang={lang} langHrefFor={(c) => `/${c}`} />
 
         {/* ② ヒーロー: 斜体をやめ、左下に置く。文字の背後だけ局所的に落とす */}
         <div className="cin-hero">
           <div className={"cin-hero-bg" + (loaded ? " loaded" : "")} />
-          <HeroRotation ids={HERO_ROTATION} />
+          {heroIds && <HeroRotation ids={heroIds} onShow={onHeroShow} />}
           <div className="hero-scrim" />
           <div className="cin-hero-content hero-left" style={{ zIndex: 2 }}>
             <h1 className="hero-title-plain">{t.hero.t}</h1>
             <p className="hero-sub-plain">{t.hero.d}</p>
             {/* ① 主なボタンは2つに整理。カテゴリ類は探索エリアへ移設した */}
             <div className="hero-cta">
-              <a className="primary" href="#explore" onClick={(e) => { e.preventDefault(); scrollToExplore(); }}>
+              {/* 絞り込み画面 (地域×テーマ×季節×色×地図) への入口。以前はページ内の
+                  #explore へスクロールするだけで、/explore へ行く道がどこにも無かった */}
+              <a className="primary" href={`/${lang}/explore`}>
                 {ui("findPhotos", lang)}
               </a>
               <button className="secondary" type="button" onClick={() => { setTheaterOpen(true); track("theater_open", { from: "home" }, "home"); }}>
@@ -1127,7 +985,7 @@ export default function PageClient({ initialLang = "ja" }) {
         </div>
 
         {/* ⑤ ヒーロー直下の探索エリア: 地域から / 色から */}
-        <div ref={exploreRef}>
+        <div>
           <ExploreSection
             lang={lang}
             photos={allSitePhotos}
@@ -1148,7 +1006,7 @@ export default function PageClient({ initialLang = "ja" }) {
           <div className="cin-map-wrap reveal" id="map" ref={mapRef}>
             <div className="cin-map-box">
               {/* マップ/一覧 切替トグル */}
-              <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 18, padding: "4px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 999, width: "fit-content", marginLeft: "auto", marginRight: "auto" }}>
+              <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 18, padding: "4px", background: "color-mix(in srgb,var(--accent) 6%,transparent)", border: "1px solid color-mix(in srgb,var(--accent) 18%,transparent)", borderRadius: 999, width: "fit-content", marginLeft: "auto", marginRight: "auto" }}>
                 {[
                   { id: "map", labelJa: "マップ", labelEn: "Map" },
                   { id: "list", labelJa: "一覧", labelEn: "List" },
@@ -1159,9 +1017,9 @@ export default function PageClient({ initialLang = "ja" }) {
                       key={opt.id}
                       onClick={() => setMapView(opt.id)}
                       style={{
-                        background: active ? "rgba(220,190,100,.22)" : "transparent",
+                        background: active ? "color-mix(in srgb,var(--accent) 22%,transparent)" : "transparent",
                         border: "none",
-                        color: active ? "rgba(245,225,170,1)" : "rgba(232,228,223,.6)",
+                        color: active ? "var(--accent-hi)" : "rgba(232,228,223,.6)",
                         fontFamily: "var(--font-zen-kaku),'Noto Sans JP',sans-serif",
                         fontSize: 12,
                         fontWeight: 500,
@@ -1189,14 +1047,14 @@ export default function PageClient({ initialLang = "ja" }) {
                     if (regionPrefs.length === 0) return null;
                     return (
                       <section key={region.id} style={{ marginBottom: 32 }}>
-                        <h3 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 14, paddingBottom: 8, borderBottom: "1px solid rgba(220,190,100,.15)" }}>
+                        <h3 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".08em", color: "color-mix(in srgb,var(--accent) 70%,transparent)", marginBottom: 14, paddingBottom: 8, borderBottom: "1px solid color-mix(in srgb,var(--accent) 15%,transparent)" }}>
                           {lang === "ja" ? region.nameJa : region.nameEn}
                         </h3>
                         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 8 }}>
                           {regionPrefs.map(({ prefJp, pf, slug }) => {
                             const heroId = pf.photos[0]?.id;
                             return (
-                              <a key={prefJp} href={`/${lang}/${slug}`} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 8, textDecoration: "none", color: "#e8e4df" }}>
+                              <a key={prefJp} href={`/${lang}/${slug}`} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "color-mix(in srgb,var(--accent) 6%,transparent)", border: "1px solid color-mix(in srgb,var(--accent) 20%,transparent)", borderRadius: 8, textDecoration: "none", color: "#e8e4df" }}>
                                 {heroId && (
                                   <img src={cldUrl(heroId, 100)} alt="" loading="lazy" style={{ width: 40, height: 40, objectFit: "cover", borderRadius: 4, flexShrink: 0 }} />
                                 )}
@@ -1204,7 +1062,7 @@ export default function PageClient({ initialLang = "ja" }) {
                                   <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "#f2ece2" }}>
                                     {getPrefName(prefJp, lang)}
                                   </div>
-                                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 11, color: "rgba(232,228,223,.5)" }}>
+                                  <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, color: "rgba(232,228,223,.5)" }}>
                                     {pf.photos.length} {lang === "ja" ? "枚" : "photos"}
                                   </div>
                                 </div>
@@ -1246,7 +1104,7 @@ export default function PageClient({ initialLang = "ja" }) {
                   </h3>
                   <div className="cin-dategrid">
                     {g.photos.map((p) => (
-                      <div key={p.id} className="cin-datecard" onClick={() => openLightbox(p.url, galleryMode === "added" ? "new" : "date")} onContextMenu={(e) => e.preventDefault()}>
+                      <div key={p.id} data-pid={p.id} className={"cin-datecard" + (isPortrait(p.id) ? " tall" : "")} onClick={(e) => openLightbox(p.url, galleryMode === "added" ? "new" : "date", e.currentTarget)} onContextMenu={(e) => e.preventDefault()}>
                         <img
                           src={cldUrl(p.id, thumbW)}
                           alt={richAlt({ locName: p.loc ? getLocName(p.loc, lang) : "", prefName: getPrefName(p.pref, lang), year: p.year, locJp: p.loc, lang })}
@@ -1260,7 +1118,6 @@ export default function PageClient({ initialLang = "ja" }) {
                             <span className="cin-datecard-pref">{getPrefName(p.pref, lang)}</span>
                           </div>
                         )}
-                        <div className="cin-watermark">Landscapes of Japan</div>
                       </div>
                     ))}
                   </div>
@@ -1273,18 +1130,24 @@ export default function PageClient({ initialLang = "ja" }) {
               const prefSlug = PREF_SLUGS[pf.pref];
               const viewAllLabel = VIEW_ALL[lang] || VIEW_ALL.en;
               return (
-              <div key={pf.pref} id={"pref-" + pi} className="cin-pref-group reveal">
+              <div key={pf.pref} id={"pref-" + pi} className="cin-pref-group reveal" data-accent="" style={accentStyle(pf.photos.slice(0, 24).map((p) => p.id))}>
+                {/* 地名を主役にする: 日本語の地名を明朝の縦組みで行の背に置き、
+                    各言語の地名は小さく添える。日本語ページでは英語名を添える。 */}
+                {/* 縦組みは飾り (同じリンクが下の見出しにある)。読み上げとタブ移動からは外す */}
+                <div className="cin-spine" lang="ja" aria-hidden="true">
+                  {prefSlug ? <a href={`/${lang}/${prefSlug}`} tabIndex={-1}>{jaShort(pf.pref)}</a> : jaShort(pf.pref)}
+                </div>
                 <div className="cin-pref">
-                  {prefSlug ? (
-                    <a href={`/${lang}/${prefSlug}`} className="cin-pref-link"><span>{getPrefName(pf.pref, lang)}</span></a>
-                  ) : (
-                    <span>{getPrefName(pf.pref, lang)}</span>
-                  )}
-                  {lang !== "en" && getPrefName(pf.pref, "en") !== getPrefName(pf.pref, lang) && (
-                    <span className="cin-pref-jp">{getPrefName(pf.pref, "en")}</span>
-                  )}
+                  <h2 className="cin-pref-name">
+                    {prefSlug ? (
+                      <a href={`/${lang}/${prefSlug}`} className="cin-pref-link" aria-label={lang === "ja" ? pf.pref : undefined}>{lang === "ja" ? getPrefName(pf.pref, "en") : getPrefName(pf.pref, lang)}</a>
+                    ) : (
+                      <span>{lang === "ja" ? getPrefName(pf.pref, "en") : getPrefName(pf.pref, lang)}</span>
+                    )}
+                  </h2>
+                  <span className="cin-pref-n">{pf.photos.length}</span>
                   {prefSlug && (
-                    <a href={`/${lang}/${prefSlug}`} className="cin-pref-viewall">{viewAllLabel} →</a>
+                    <a href={`/${lang}/${prefSlug}`} className="cin-pref-viewall" aria-label={`${getPrefName(pf.pref, lang)} — ${viewAllLabel}`}>{viewAllLabel} →</a>
                   )}
                 </div>
                 <div className="cin-hwrap">
@@ -1294,7 +1157,7 @@ export default function PageClient({ initialLang = "ja" }) {
                   {pf.photos.slice(0, rowMaxFor(pf)).map((photo, idx) => {
                     const locSlug = photo.loc ? LOC_SLUGS[photo.loc] : null;
                     return (
-                    <div key={pf.pref + idx} className="cin-hcard" onClick={() => { if (navigatingRef.current || suppressClickRef.current) return; openLightbox(getUrl(photo, lbW)); }} onContextMenu={e => e.preventDefault()}>
+                    <div key={pf.pref + idx} data-pid={photo.id} className={"cin-hcard" + (isPortrait(photo.id) ? " tall" : "")} onClick={(e) => { if (navigatingRef.current || suppressClickRef.current) return; openLightbox(getUrl(photo, lbW), "home", e.currentTarget); }} onContextMenu={e => e.preventDefault()}>
                       <div className="cin-hcard-img-wrap">
                         <img src={getUrl(photo, thumbW)} alt={richAlt({ locName: photo.loc ? getLocName(photo.loc, lang) : "", prefName: getPrefName(pf.pref, lang), year: photo.year, locJp: photo.loc, lang })} loading="lazy" decoding="async" draggable="false" />
                         {photo.loc && (
@@ -1312,7 +1175,6 @@ export default function PageClient({ initialLang = "ja" }) {
                           )
                         )}
                         {photo.year && <div className="cin-hcard-year">{photo.year}</div>}
-                        <div className="cin-watermark">Landscapes of Japan</div>
                       </div>
                     </div>
                     );
@@ -1324,7 +1186,6 @@ export default function PageClient({ initialLang = "ja" }) {
                   )}
                 </div>
                 </div>
-                {pf.photos.length > 1 && <div className="cin-scroll-indicator">{t.scroll}</div>}
               </div>
               );
             })}
@@ -1334,7 +1195,7 @@ export default function PageClient({ initialLang = "ja" }) {
 
         {/* Contact Form */}
         <div style={{ width: "100%", height: 1, background: "rgba(232,228,223,.08)", maxWidth: 200, margin: "0 auto 60px" }} />
-        <div className="contact-section reveal" id="contact" ref={contactRef}>
+        <div className="contact-section reveal" id="contact">
           <h2 className="contact-title">{t.contact.title}</h2>
           <div className="contact-form">
             {/* ⑦ どの写真についての問い合わせかを、送信前に確認・解除できるようにする */}
@@ -1380,6 +1241,7 @@ export default function PageClient({ initialLang = "ja" }) {
       )}
       {lightbox !== null && activePhotos[lightbox] && (
         <Lightbox
+          originRect={origin.peek()}
           photos={activePhotos}
           index={lightbox}
           closing={lbClosing}

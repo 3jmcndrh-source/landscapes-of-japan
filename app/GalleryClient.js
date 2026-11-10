@@ -13,6 +13,7 @@ import SiteHeader from "./SiteHeader.js";
 import { ui } from "./ui-strings.js";
 import { track } from "./analytics.js";
 import { useOriginRect, animateToRect } from "./useViewTransition.js";
+import { isPortrait } from "./photo-meta.js";
 
 export default function GalleryClient({
   lang, heading, count, items, prefHref, prefName, themeHref, themeName,
@@ -65,7 +66,7 @@ export default function GalleryClient({
           <span className="gal-n">{count}</span>
         </header>
 
-        <div className="ex-grid">
+        <div className="ex-grid jg">
           {items.map((p, i) => {
             const inner = (
               <>
@@ -79,11 +80,10 @@ export default function GalleryClient({
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 <span className="pc-loc">{p.locName}<span className="pc-pref">{p.prefName}</span></span>
-                <span className="cin-watermark">Landscapes of Japan</span>
               </>
             );
             const common = {
-              className: "pc",
+              className: "pc jg-item" + (isPortrait(p.id) ? " tall" : ""),
               "data-pid": p.id,
               ref: (el) => { if (el) cardRefs.current.set(p.id, el); else cardRefs.current.delete(p.id); },
               onContextMenu: (e) => e.preventDefault(),

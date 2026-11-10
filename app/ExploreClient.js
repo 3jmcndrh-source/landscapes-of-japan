@@ -11,7 +11,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { PREFECTURES, getLocName, getPrefName, cldUrl, lbWidth } from "./data.js";
-import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
+import { LOC_SLUGS } from "./slugs.js";
 import { COLLECTION_SLUGS, COLLECTION_META, getCollectionName } from "./collections-meta.js";
 import { COLLECTION_TAGS } from "./photo-tags.js";
 import { SEASONS, seasonLabel } from "./seasons.js";
@@ -35,6 +35,8 @@ import SiteHeader from "./SiteHeader.js";
 import { track } from "./analytics.js";
 import { useOriginRect, animateToRect } from "./useViewTransition.js";
 import { LOC_POINTS } from "./loc-points.js";
+import { isPortrait } from "./photo-meta.js";
+import { hasPhotoPages, photoPath } from "./photo-ref.js";
 
 /* ② 地図は開いた人だけが読み込む (地図の形と d3 を初期表示に載せない) */
 const PhotoMap = dynamic(() => import("./PhotoMap.js"), { ssr: false });
@@ -183,9 +185,19 @@ export default function ExploreClient({ lang }) {
     if (typeof window !== "undefined") window.location.reload();
   }, []);
 
-  /* 戻る・進むで条件を復元する */
+  /* 戻る・進むで条件を復元する。
+     拡大表示を閉じる「戻る」でもここが呼ばれるが、そのときは条件が変わっていない。
+     変わっていないのに読み直すと、「もっと見る」で広げた一覧が最初の枚数に畳まれ、
+     見ていた位置を失う。条件が実際に変わったときだけ反映する。 */
+  const queryRef = useRef(query);
+  queryRef.current = query;
   useEffect(() => {
-    const onPop = () => { setQuery(readQueryFromParams(window.location.search)); setShown(PAGE); };
+    const onPop = () => {
+      if (!window.location.pathname.endsWith("/explore")) return;   /* 写真のURLに居る間 (拡大表示中) は触らない */
+      const q = readQueryFromParams(window.location.search);
+      if (queryToString(q) === queryToString(queryRef.current)) return;
+      setQuery(q); setShown(PAGE);
+    };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
@@ -679,9 +691,9 @@ export default function ExploreClient({ lang }) {
             {/* pendingGrid のときは直前の一覧を inert のまま残す (旧一覧と分かる淡さ +
                 操作不能)。件数 (.ex-count) は変えていないので「確定した新しい結果」とは
                 見せない。inert はクリック・タブ移動・支援技術のどちらからも届かなくする */}
-            <div className={pendingGrid ? "ex-grid ex-grid-pending" : "ex-grid"} inert={pendingGrid || undefined}>
+            <div className={pendingGrid ? "ex-grid jg ex-grid-pending" : "ex-grid jg"} inert={pendingGrid || undefined}>
               {gridItems.map((p, i) => (
-                <div key={p.id} ref={pendingGrid ? undefined : (el) => { if (el) cardRefs.current.set(p.id, el); else cardRefs.current.delete(p.id); }}>
+                <div key={p.id} className={"jg-item" + (isPortrait(p.id) ? " tall" : "")} ref={pendingGrid ? undefined : (el) => { if (el) cardRefs.current.set(p.id, el); else cardRefs.current.delete(p.id); }}>
                   <PhotoCard
                     photo={p}
                     lang={lang}
@@ -721,7 +733,9 @@ export default function ExploreClient({ lang }) {
             locName: p.loc ? getLocName(p.loc, lang) : "",
             alt: `${p.loc ? getLocName(p.loc, lang) : ""} - ${getPrefName(p.pref, lang)}`,
           })}
-          photoHref={(p) => (PREF_SLUGS[p.pref] && p.loc && LOC_SLUGS[p.loc] ? `/${lang}/${PREF_SLUGS[p.pref]}/${LOC_SLUGS[p.loc]}/${p.id}` : null)}
+          /* 写真詳細ページは PHOTO_LANGS の言語にしかない。以前はここだけ言語を見ずに
+             リンクを作っていて、残り18言語では 404 へのリンクになっていた */
+          photoHref={(p) => (hasPhotoPages(lang) ? photoPath(p.id, lang) : null)}
         />
       )}
     </div>

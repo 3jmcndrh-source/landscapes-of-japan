@@ -21,13 +21,13 @@ export default function SunTimes({ lat, lng, lang = "en" }) {
   }, [lat, lng]);
   if (!t || !t.sunrise || !t.sunset) return null;
 
-  const labelStyle = { color: "rgba(220,190,100,.85)", fontSize: 11, fontWeight: 500, letterSpacing: ".05em", minWidth: 64 };
-  const rowStyle = { display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13, color: "rgba(232,228,223,.85)" };
+  const labelStyle = { color: "color-mix(in srgb,var(--accent) 85%,transparent)", fontSize: 12, fontWeight: 500, letterSpacing: ".05em", minWidth: 64 };
+  const rowStyle = { display: "flex", alignItems: "center", gap: 10, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.85)" };
   const emojiStyle = { fontSize: 16, fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" };
-  const ghStyle = { color: "rgba(232,212,148,.9)", fontSize: 11.5 };
+  const ghStyle = { color: "color-mix(in srgb,var(--accent-hi) 90%,transparent)", fontSize: 12 };
 
   return (
-    <div style={{ display: "inline-flex", flexDirection: "column", gap: 8, padding: "12px 16px", background: "rgba(220,190,100,.06)", border: "1px solid rgba(220,190,100,.2)", borderRadius: 12 }}>
+    <div style={{ display: "inline-flex", flexDirection: "column", gap: 8, padding: "12px 16px", background: "color-mix(in srgb,var(--accent) 6%,transparent)", border: "1px solid color-mix(in srgb,var(--accent) 20%,transparent)", borderRadius: 12 }}>
       <div style={rowStyle}>
         <span style={emojiStyle}>🌅</span>
         <span style={labelStyle}>{pick(L.sunrise, lang)}</span>

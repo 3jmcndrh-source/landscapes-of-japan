@@ -1,7 +1,7 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import PhotoImage from "./PhotoImage.js";
-import { TR, getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
+import { getPrefName, getLocName, cldUrl, lbWidth } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
 /* ④ 写真詳細ページの有無は photo-ref.js の1か所で判定する
    (PHOTO_LANGS の7言語だけに存在。無い言語では詳細URLを作らない) */
@@ -12,9 +12,11 @@ import SiteHeader from "./SiteHeader.js";
 import Lightbox from "./Lightbox.js";
 import Theater from "./Theater.js";
 import { ui } from "./ui-strings.js";
-import { photoLang } from "./i18n-meta.js";
 import { SEASONS, seasonLabel } from "./seasons.js";
 import { track } from "./analytics.js";
+import { useOriginRect, animateToRect } from "./useViewTransition.js";
+import { thumbRectOf } from "./usePhotoViewer.js";
+import { isPortrait, accentStyle } from "./photo-meta.js";
 
 /* T5: 月→季節 (photo-months.js の seasonOf と同義。月は server から photo.month で渡る) */
 const seasonOf = (m) => (!m ? null : m <= 2 || m === 12 ? "winter" : m <= 5 ? "spring" : m <= 8 ? "summer" : "autumn");
@@ -22,7 +24,6 @@ const PREF_SLUGS_REV = Object.fromEntries(Object.entries(PREF_SLUGS).map(([jp, s
 const ALL_LABEL = { ja: "すべて", en: "All", zh: "全部", "zh-tw": "全部", ko: "전체", de: "Alle", es: "Todas", ar: "الكل" };
 
 export default function CollectionClient({ lang, theme, photos, dims = {} }) {
-  const t = TR[lang] || TR.en;
   const name = getCollectionName(theme, lang);
 
   const [imgSizes, setImgSizes] = useState({ thumbW: 1200, lbW: 2400 });
@@ -53,8 +54,12 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
   }, [photos]);
   useEffect(() => {
     readUrl();
-    window.addEventListener("popstate", readUrl);
-    return () => window.removeEventListener("popstate", readUrl);
+    /* 拡大表示を開いている間の戻る/進むは Lightbox が扱う (URL が写真のものに
+       なっているので、ここで読むと条件が外れてしまう)。このページ自身のURLに
+       戻ってきたときだけ条件を読み直す。 */
+    const onPop = () => { if (!/\/collections\/[^/]+$/.test(window.location.pathname)) return; readUrl(); };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, [readUrl]);
 
   /* 条件を変えたら履歴に積む → 戻るで前の条件に戻れる */
@@ -108,17 +113,26 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
   const [lightbox, setLightbox] = useState(null);
   const [lbClosing, setLbClosing] = useState(false);
   const [theater, setTheater] = useState(false);
+  const origin = useOriginRect();
+  const lightboxRef = useRef(null);
+  useEffect(() => { lightboxRef.current = lightbox; }, [lightbox]);
 
-  const openLightbox = useCallback((idx) => {
+  const openLightbox = useCallback((idx, el) => {
+    origin.capture(el ? el.querySelector("img") : null);
     setLightbox(idx);
     const p = visible[idx];
     /* ⑨ 明示的に開いたときだけ。流入元はこの操作が始まった場所 */
     if (p) track("photo_open", { photo_id: p.id, entry: "collection" }, p.id + "|collection");
-  }, [visible]);
+  }, [visible, origin]);
   const closeLightbox = useCallback(() => {
+    const i = lightboxRef.current;
+    const id = i !== null && visible[i] ? visible[i].id : null;
     setLbClosing(true);
-    setTimeout(() => { setLightbox(null); setLbClosing(false); }, 340);
-  }, []);
+    animateToRect(document.querySelector(".cin-lb-inner img"), thumbRectOf(id), () => {
+      setLightbox(null);
+      setLbClosing(false);
+    });
+  }, [visible]);
   const lbPrev = useCallback(
     () => setLightbox((i) => (i <= 0 ? allPhotos.length - 1 : i - 1)),
     [allPhotos]
@@ -141,32 +155,30 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
   }, [photos]);
 
   return (
-    <div style={{ background: "#0a0a0a", color: "#e8e4df", minHeight: "100vh", fontFamily: "'Cormorant Garamond',Georgia,serif" }}>
+    /* アクセント色はこのテーマの写真から作る (紅葉なら朱、海岸なら青に寄る) */
+    <div className="page-root" data-accent="" style={accentStyle(photos.slice(0, 80).map((p) => p.id))}>
       <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/collections/${theme}`} />
 
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "100px 24px 80px" }}>
-        <nav aria-label={ui("breadcrumb", lang)} style={{ fontSize: 13, color: "rgba(232,228,223,.55)", marginBottom: 24, letterSpacing: ".05em" }}>
-          <a href={`/${lang}`} style={{ color: "inherit", textDecoration: "none" }}>Landscapes of Japan</a>
-          <span style={{ margin: "0 10px" }}>›</span>
-          <span>{lang === "ja" ? "コレクション" : "Collections"}</span>
-          <span style={{ margin: "0 10px" }}>›</span>
+      <main className="pg">
+        <nav aria-label={ui("breadcrumb", lang)} className="bc">
+          <a href={`/${lang}`}>Landscapes of Japan</a>
+          <span className="bc-sep">›</span>
+          <a href={`/${lang}/collections`}>{ui("collections", lang)}</a>
+          <span className="bc-sep">›</span>
           <span>{name}</span>
         </nav>
 
-        <header style={{ marginBottom: 40 }}>
-          <h1 style={{ fontFamily: "var(--font-playfair),serif", fontStyle: "italic", fontSize: "clamp(40px,6vw,68px)", margin: 0, color: "#f2ece2", lineHeight: 1 }}>
-            {name}
-          </h1>
-          <div style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "rgba(232,228,223,.55)", marginTop: 10, letterSpacing: ".05em" }}>
-            {photos.length} {lang === "ja" ? "枚" : "photos"} · {byPref.length} {lang === "ja" ? "都道府県" : "prefectures"}
+        <header className="pg-head">
+          <h1 className="pg-title">{name}</h1>
+          <div className="ph-meta">
+            <span>{photos.length} {lang === "ja" ? "枚" : "photos"}</span>
+            <span>{byPref.length} {lang === "ja" ? "都道府県" : "prefectures"}</span>
           </div>
           {photos.length > 1 && (
-            <div style={{ marginTop: 18 }}>
-              <button className="th-launch" onClick={() => { setTheater(true); track("theater_open", { from: "collection" }, "collection"); }} aria-label={ui("theater", lang)}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
-                {ui("theater", lang)}
-              </button>
-            </div>
+            <button className="th-launch" onClick={() => { setTheater(true); track("theater_open", { from: "collection" }, "collection"); }} aria-label={ui("theater", lang)}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21" /></svg>
+              {ui("theater", lang)}
+            </button>
           )}
         </header>
 
@@ -205,7 +217,6 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
                     aria-pressed={active}
                     onClick={() => applyFilter(prefFilter, active ? null : se.key)}
                   >
-                    <span aria-hidden="true" style={{ fontFamily: "Apple Color Emoji,Segoe UI Emoji,sans-serif" }}>{se.icon}</span>
                     {seasonLabel(se.key, lang)} ({seasonCounts[se.key] || 0})
                   </button>
                 );
@@ -232,34 +243,30 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
               </button>
             </div>
           )}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
+          <div className="jg">
             {visible.map((photo, i) => (
               <div
                 key={photo.id + i}
-                className="cin-hcard"
-                onClick={() => openLightbox(i)}
+                data-pid={photo.id}
+                className={"jg-item" + (isPortrait(photo.id) ? " tall" : "")}
+                role="button"
+                tabIndex={0}
+                onClick={(e) => openLightbox(i, e.currentTarget)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(i, e.currentTarget); } }}
                 onContextMenu={(e) => e.preventDefault()}
-                style={{ cursor: "pointer", position: "relative", aspectRatio: "3/2", overflow: "hidden", borderRadius: 4, background: "#111" }}
               >
                 <PhotoImage
                   id={photo.id}
                   alt={`${getLocName(photo.loc, lang)} - ${getPrefName(photo.pref, lang)} | ${name}`}
                   dims={dims[photo.id] || null}
-                  sizes="(max-width: 600px) 92vw, (max-width: 1024px) 45vw, 300px"
+                  sizes="(max-width: 600px) 48vw, (max-width: 1024px) 32vw, 300px"
                   widths="grid"
                   priority={i < 2}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 12px 8px", background: "linear-gradient(to top, rgba(0,0,0,.8), transparent)", color: "#f2ece2", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 12, letterSpacing: ".03em", pointerEvents: "none" }}>
+                <span className="jg-cap">
                   {getLocName(photo.loc, lang)}
-                  <span style={{ opacity: .7, marginLeft: 8 }}>{getPrefName(photo.pref, lang)}</span>
-                </div>
-                {photo.year && (
-                  <div style={{ position: "absolute", top: 8, right: 8, fontSize: 11, color: "#f2ece2", background: "rgba(0,0,0,.6)", padding: "3px 8px", borderRadius: 3, fontFamily: "var(--font-playfair),serif", fontStyle: "italic", zIndex: 3 }}>
-                    {photo.year}
-                  </div>
-                )}
-                <div className="cin-watermark">Landscapes of Japan</div>
+                  <span className="jg-cap-sub">{getPrefName(photo.pref, lang)}</span>
+                </span>
               </div>
             ))}
           </div>
@@ -270,19 +277,17 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
           const photoLocs = [...new Set(photos.map((p) => p.loc).filter((l) => l && LOC_SLUGS[l]))];
           if (photoLocs.length === 0) return null;
           return (
-            <section style={{ marginTop: 56 }}>
-              <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-                {lang === "ja" ? "注目の撮影地" : "Featured Locations"}
-              </h2>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10 }}>
+            <section className="sec">
+              <h2 className="sec-h">{lang === "ja" ? "注目の撮影地" : "Featured Locations"}</h2>
+              <div className="chips scroll">
                 {photoLocs.slice(0, 12).map((l) => {
                   const photo = photos.find((p) => p.loc === l);
                   const prefSlug = photo ? PREF_SLUGS[photo.pref] : null;
                   if (!prefSlug || !LOC_SLUGS[l]) return null;
                   return (
-                    <a key={l} href={`/${lang}/${prefSlug}/${LOC_SLUGS[l]}`} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(220,190,100,.18)", borderRadius: 8, padding: "12px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 13 }}>
-                      <div style={{ fontWeight: 500 }}>{getLocName(l, lang)}</div>
-                      {photo && <div style={{ fontSize: 11, color: "rgba(232,228,223,.55)", marginTop: 2 }}>{getPrefName(photo.pref, lang)}</div>}
+                    <a key={l} className="chip" href={`/${lang}/${prefSlug}/${LOC_SLUGS[l]}`}>
+                      {getLocName(l, lang)}
+                      {photo && <span className="chip-n">{getPrefName(photo.pref, lang)}</span>}
                     </a>
                   );
                 })}
@@ -291,15 +296,11 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
           );
         })()}
 
-        <section style={{ marginTop: 72 }}>
-          <h2 style={{ fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(220,190,100,.7)", marginBottom: 20 }}>
-            {lang === "ja" ? "他のコレクション" : "Other Collections"}
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 10 }}>
+        <section className="sec">
+          <h2 className="sec-h">{lang === "ja" ? "他のコレクション" : "Other Collections"}</h2>
+          <div className="chips">
             {COLLECTION_SLUGS.filter((s) => s !== theme).map((s) => (
-              <a key={s} href={`/${lang}/collections/${s}`} style={{ background: "rgba(255,255,255,.03)", border: "1px solid rgba(220,190,100,.15)", borderRadius: 8, padding: "14px 16px", color: "#e8e4df", textDecoration: "none", fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14 }}>
-                {getCollectionName(s, lang)}
-              </a>
+              <a key={s} className="chip" href={`/${lang}/collections/${s}`}>{getCollectionName(s, lang)}</a>
             ))}
           </div>
         </section>
@@ -307,6 +308,7 @@ export default function CollectionClient({ lang, theme, photos, dims = {} }) {
 
       {lightbox !== null && cur && (
         <Lightbox
+          originRect={origin.peek()}
           photos={allPhotos}
           index={lightbox}
           closing={lbClosing}

@@ -290,6 +290,48 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
   (しないと雪が blue、夜景が brown に流れる)。検索の最低占有率は 8%、並びは占有率降順。
   **色データ (82KB) は動的 import**。「色から」を開くまで初期JSに載せない (1024→945KB)。
 
+## v3 改修 — 操作の一本化 +「画面を写真から作る」(実装 2026-11-10 / 公開 2026-11-11)
+
+**公開: 2026-11-11 00:25 JST ごろ、デプロイ `929a0a28`。** Search Console / GA4 で前後を比べるときはこの時刻が境。
+ビューアが写真のURLを履歴に積むようになったので、写真詳細の page_view はこの日を境に数え方が変わりうる (下の「GA4 注意」)。
+
+**上の「Design Language」「Recent Redesign Summary」の 金色・Playfair 斜体・ホバーの浮き上がり・発光 は、この改修で廃止した。** 以降の CSS は globals.css 末尾の「v3」ブロックの方針に従う。
+
+### 操作
+- **入口**: 上部バーの「探す」とヒーローの「写真を探す」は `/{lang}/explore` へ。上部バーに「俯瞰」(`/overview`)、モバイルメニューに「アルバム」(`/album`)。お気に入りタブから `/album` へのリンク (`SavedPhotos.js`)。
+- **検索は1本**: `QuickSearch.js` が 地名索引 + 概念語 (`concept-search.js`) を引く。概念語は `/explore?concept=…` (2語なら `conceptAll=`) へ送る。入力文そのものは URL に載せない。
+- **写真ビューアは `Lightbox.js` 1つ**。開く入口は2通りあるが中身は同じ:
+  - 既存の画面 (トップ・撮影地・都道府県・コレクション・探索・アルバム・ギャラリー) は自前の state で `<Lightbox>` を出す
+  - それ以外 (色検索・お気に入り・最近見た写真・今日の一枚・写真詳細ページ・俯瞰) は `usePhotoViewer(lang, {entry})` → `viewer.open(ids, id, el)` + `{viewer.element}`
+  - **履歴は Lightbox が持つ**: 開くと `pushState` で写真のURL (`photoPath(id, lang)`) になり、写真を送ると `replaceState`、「戻る」で閉じて元のURLに戻る。親コンポーネントで URL を書き換えないこと。
+  - 親が `popstate` を聞いている場合 (ExploreClient / CollectionClient) は、**自分のURLに居るときだけ・条件が変わったときだけ** 反映する (拡大表示を閉じる「戻る」でも popstate が来るため)。
+  - `history.state` は必ず既存の内容に足す (`{...history.state, lojLb}`)。`__NA` を落とすと Next.js が popstate で再読み込みする。
+  - 1回タップ = 操作表示の切替 (閉じない)。スワイプは指に追従 (前・今・次の3枚を `.cin-lb-track` に並べている)。閉じるのは 下スワイプ / 戻る / × / Esc。
+  - ボタン上で始まったタッチは Lightbox の touch ハンドラが無視する (`onUi`)。これが無いとボタンを押すたびに「タップ」と数えられる (旧: 0.3秒後に閉じていた)。
+  - 閉じるときの戻り先は `thumbRectOf(id)` = `[data-pid="ID"]`。**一覧のカードには `data-pid` を付けること**。
+- **GA4 注意**: 拡張計測の「ブラウザの履歴イベントに基づくページの変更」がオンだと、ビューアで写真を開く/送るたびに page_view が増える。写真詳細の PV を 2026-11 以前と比べるときは、この改修日を境にすること (管理画面でオフにするかは未決)。
+
+### 見た目
+- **写真は加工しない**: 一覧の減光・減彩フィルターなし、一覧に透かし文字なし (透かしはビューアと写真詳細のヒーローだけ)、縦位置も切らない。
+- **一覧は `.jg` + `.jg-item` (+ `.tall`)**: 行の高さをそろえる並べ方。比率は 3:2 と 2:3 の2種類だけなので CSS だけで成立する。行の高さは `--jg-h`。
+- **`app/photo-lite.js`** (自動生成、3KB): 写真ごとの 縦横 + アクセント色。**写真IDをキーにせず data.js の並び順に詰めてある**。取り出しは `app/photo-meta.js` (`isPortrait` / `accentStyle`)。生成は `scripts/generate-photo-lite.mjs` (dims と palette から。upload.mjs が自動実行)。並びが食い違うと `check-data.mjs` がビルド前に止める。
+- **アクセント色**: `--accent` / `--accent-hi` (OKLCH、明るさ固定)。`data-accent` 属性 + `style={accentStyle(ids)}` を付けた要素の中だけ色が変わる。既定は無彩色。**色を直書きしない。`rgba(220,190,100,…)` は使わない**。
+- **文字**: 明朝 `var(--font-serif)` (Shippori Mincho — 地名・見出し) と ゴシック `var(--font-sans)` の2書体。大きさは `--fs-xs/s/m/l` (12/14/16/20) + `--fs-d1/d2`。斜体・大文字化・広い字間は使わない。地名は日本語を縦組み (`.ph-tate` / `.cin-spine`) で主役にし、各言語の地名を小さく添える (日本語ページ以外では縦組みは `aria-hidden` の飾りで、h1 はその言語の地名)。
+- **入力欄は 16px 以上** (iPhone がフォーカス時に画面を拡大するため)。
+- **動き**: サムネイル→拡大 (FLIP) と、スクロール連動の CSS (`.reveal` = `animation-timeline: view()`、非対応ブラウザでは最初から表示)。IntersectionObserver での `.is-visible` 付与は廃止。
+- **ヒーロー**: `PageClient.js` の `HERO_BY_SEASON` (季節 × 目で選んだ写真)。季節は閲覧時の日本時間の月。候補出しは `node scripts/suggest-hero.mjs <出力先>` (一覧画像を見て選ぶ)。
+- **俯瞰ビュー** `/[lang]/overview` (`OverviewClient.js`, noindex): 全写真をキャンバスに置き 地図/季節/色/見た目 で並べ替える。データは `public/overview/{atlas.webp,data.json}` (`scripts/generate-overview.mjs`、upload.mjs が自動実行、コミット対象)。
+
+### 色域
+- `scripts/lib/wide-gamut.mjs`: 原本が sRGB より広い色域 (Display P3 など) のときだけ `keepIccProfile()` で配信画像まで残す。sRGB の原本の出力は変わらない。確認は `node scripts/check-wide-gamut.mjs`。
+- **既存の写真は変わっていない**。効かせるには Capture One の書き出しを Display P3 にして追加する。既存分をやり直すなら、原本庫を P3 で書き出し直し → `images-dist` の該当ファイルを消す → `generate-variants.mjs`。
+
+### 見た目検索のデータ (2026-11-11 に欠けを修正)
+- `public/search-vectors.bin` / `app/vector-meta.js` が 843枚ぶんのまま残っていた (2026-10-12 追加の87枚が「見た目から」検索に出なかった)。**原因は再実行漏れではなく、この2ファイルを書き出す処理がリポジトリに無かったこと** (`generate-photo-vectors.mjs` は `photo-similar.js` までしか書かない)。
+- `scripts/export-search-vectors.mjs` を追加し、upload.mjs が `generate-photo-vectors.mjs` の直後に実行する。`--check` で掲載写真との一致だけ確認できる。`check-data.mjs` も未反映の枚数を知らせる。
+- **下限 (`PHRASE_THRESHOLD`) は引き継ぐのが既定**。当時の計算は再現できず (概念文351件のうち今の concepts.js から作り直して一致するのは31件)、求め直すと既存の検索結果まで変わる (実測: 温泉 56→40枚、桜 62→72枚)。求め直すなら `--rethreshold` — 写真の追加とは別の判断として行うこと。
+- `search-phrases.bin` (概念文351件) を作り直す処理も無い。概念語を増やす・文を変えるときは、その生成から書く必要がある。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.

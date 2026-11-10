@@ -12,6 +12,7 @@ import { getLocName, getPrefName } from "./data.js";
 import { photoPath, hasPhotoPages } from "./photo-model.js";
 import PhotoImage from "./PhotoImage.js";
 import { richAlt } from "./title-keywords.js";
+import { isPortrait } from "./photo-meta.js";
 
 export default function PhotoCard({
   photo, lang, dims = null, sizes, widths = "grid", priority = false, eager = false,
@@ -40,7 +41,6 @@ export default function PhotoCard({
           <span className="pc-pref">{prefName}</span>
         </span>
       )}
-      <span className="cin-watermark">Landscapes of Japan</span>
     </>
   );
 
@@ -54,7 +54,8 @@ export default function PhotoCard({
 
   const common = {
     "data-pid": photo.id,
-    className: `pc ${className}`,
+    /* 縦位置の写真は縦長の枠にする (横長の枠に入れて上下を切らない) */
+    className: `pc${isPortrait(photo.id) ? " tall" : ""} ${className}`,
     onContextMenu: (e) => e.preventDefault(),
   };
 

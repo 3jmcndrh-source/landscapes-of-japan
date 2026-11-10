@@ -187,6 +187,56 @@ if (existsSync("app/loc-points.js")) {
   }
 }
 
+/* ---- photo-lite.js (縦横・アクセント色) が data.js の並びと一致しているか ----
+   photo-lite.js は写真IDをキーにせず、data.js の並び順に詰めてある。
+   写真の追加・削除・並べ替えのあとに作り直していないと、
+   別の写真の縦横と色が当たる (ビルドは通る)。ここで必ず止める。 */
+{
+  const lite = await loadGen("app/photo-lite.js", "app/photo-lite.js");
+  if (!lite) {
+    fatal.push("app/photo-lite.js が無い (node scripts/generate-photo-lite.mjs を実行)");
+  } else {
+    const { sigOf } = await import("./generate-photo-lite.mjs");
+    if (lite.LITE_SIG !== sigOf(ids) || lite.LITE.length !== ids.length * 3) {
+      fatal.push("app/photo-lite.js が data.js の並びと食い違っている (node scripts/generate-photo-lite.mjs で作り直す)");
+    }
+  }
+}
+
+/* ---- 「見た目から探す」の検索データが掲載写真と合っているか ----
+   合っていなくてもビルドは通り、画面も壊れない。追加した写真が見た目の検索
+   (霧・夕焼け など) に出ないだけなので気付きにくい。2026-10-12 に追加した87枚が
+   約1か月この状態だった。目次に、もう掲載していない写真が残っている場合は止める。 */
+{
+  const vm = await loadGen("app/vector-meta.js", "app/vector-meta.js");
+  if (vm && Array.isArray(vm.VECTOR_IDS)) {
+    const have = new Set(vm.VECTOR_IDS);
+    const lack = ids.filter((id) => !have.has(id)).length;
+    const dead = vm.VECTOR_IDS.filter((id) => !idSet.has(id)).length;
+    if (dead) fatal.push(`見た目検索のデータに、もう掲載していない写真が ${dead}枚 残っている (node scripts/export-search-vectors.mjs)`);
+    if (lack) notes.push(`見た目検索に未反映の写真: ${lack}枚 (node scripts/generate-photo-vectors.mjs → node scripts/export-search-vectors.mjs)`);
+  }
+}
+
+/* ---- 俯瞰ビュー (/overview) のデータが古くないか ----
+   こちらは写真IDを自分で持っているので、古くても別の写真が出ることはない。
+   追加した写真が俯瞰ビューに出ないだけなので、知らせるだけにする。 */
+{
+  const ovPath = "public/overview/data.json";
+  if (!existsSync(ovPath)) {
+    notes.push("俯瞰ビューのデータが無い (node scripts/generate-overview.mjs。無いと /overview は一覧への案内だけになる)");
+  } else {
+    try {
+      const ov = JSON.parse(readFileSync(ovPath, "utf-8"));
+      const have = new Set(ov.ids || []);
+      const lack = ids.filter((id) => !have.has(id)).length;
+      const dead = (ov.ids || []).filter((id) => !idSet.has(id)).length;
+      if (dead) fatal.push(`俯瞰ビューに、もう掲載していない写真が ${dead}枚 残っている (node scripts/generate-overview.mjs で作り直す)`);
+      else if (lack) notes.push(`俯瞰ビューに未反映の写真: ${lack}枚 (node scripts/generate-overview.mjs)`);
+    } catch { notes.push("俯瞰ビューのデータが読めない (node scripts/generate-overview.mjs で作り直す)"); }
+  }
+}
+
 /* ---- 出力 ---- */
 console.log(`[check-data] 写真 ${ids.length}枚 / 撮影地 ${locs.length} / 都道府県 ${[...new Set(photos.map((p) => p.pref))].length} / 言語 ${LANGS.length}`);
 if (notes.length) {

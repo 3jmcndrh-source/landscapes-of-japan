@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import { PREFECTURES, cldUrl, getPrefName, getLocName } from "./data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "./slugs.js";
-import { photoLang } from "./i18n-meta.js";
 import { ambient } from "./photo-colors.js";
+import { photoPath } from "./photo-ref.js";
+import { usePhotoViewer, isPlainClick } from "./usePhotoViewer.js";
 
 /**
  * T9 今日の一枚: JST の日付文字列を djb2 ハッシュ → 全写真から決定的に1枚選出。
@@ -17,6 +18,9 @@ const LABEL = {
 
 export default function PhotoOfTheDay({ lang }) {
   const [pick, setPick] = useState(null);
+  /* 押すと他の一覧と同じビューアがその場で開く。以前は写真詳細ページへ移動していて、
+     詳細ページが無い18言語では英語のページへ切り替わっていた */
+  const viewer = usePhotoViewer(lang, { entry: "potd" });
   useEffect(() => {
     const all = [];
     PREFECTURES.forEach((pf) =>
@@ -32,7 +36,7 @@ export default function PhotoOfTheDay({ lang }) {
   }, []);
 
   if (!pick) return null;
-  const href = `/${photoLang(lang)}/${PREF_SLUGS[pick.pref]}/${LOC_SLUGS[pick.loc]}/${pick.id}`;
+  const href = photoPath(pick.id, lang);
   const amb = ambient(pick.id, 0.12);
 
   return (
@@ -41,7 +45,12 @@ export default function PhotoOfTheDay({ lang }) {
         href={href}
         className="potd-card"
         style={amb ? { background: `radial-gradient(120% 150% at 0% 50%, ${amb}, transparent 70%) rgba(255,255,255,.025)` } : undefined}
+        data-pid={pick.id}
         onContextMenu={(e) => e.preventDefault()}
+        onClick={(e) => {
+          if (!isPlainClick(e)) return;
+          if (viewer.open([pick.id], pick.id, e.currentTarget)) e.preventDefault();
+        }}
       >
         <img src={cldUrl(pick.id, 600)} alt={`${getLocName(pick.loc, lang)} - ${getPrefName(pick.pref, lang)}`} loading="lazy" decoding="async" draggable="false" />
         <span className="potd-text">
@@ -54,6 +63,7 @@ export default function PhotoOfTheDay({ lang }) {
         </span>
         <span className="potd-arrow" aria-hidden="true">→</span>
       </a>
+      {viewer.element}
     </div>
   );
 }
