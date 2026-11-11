@@ -10,6 +10,7 @@ import { PHOTO_MONTHS, seasonOf } from "../../../../photo-months.js";
 import { PHOTO_DATES } from "../../../../photo-dates.js";
 import { COLLECTION_TAGS } from "../../../../photo-tags.js";
 import { getCollectionName } from "../../../../collections.js";
+import { shareImages } from "../../../../og.js";
 
 /* 写真詳細タイトル用のヘルパー。
    被写体語は「コレクション名」の既存翻訳をそのまま再利用する (新しい訳語を書き足さないため)。
@@ -102,7 +103,10 @@ export async function generateMetadata({ params }) {
     ["x-default", `${SITE_URL}/en/${prefSlug}/${locSlug}/${photoId}`],
   ]);
 
-  const ogImage = cldUrl(photoId, 1200);
+  /* 共有したときに出る画像。以前は _w1200.webp を「1200×800」として指していた
+     (縦位置の写真でも横の寸法を名乗り、WebP を出せないサービスでは画像が出なかった)。
+     共有用に作った 1200×630 の JPEG に替える。 */
+  const img = shareImages(photoId, `${locLocal} - ${prefLocal}`);
 
   return {
     title,
@@ -117,13 +121,13 @@ export async function generateMetadata({ params }) {
       type: "article",
       url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}/${photoId}`,
       siteName: "Landscapes of Japan",
-      images: [{ url: ogImage, width: 1200, height: 800, alt: `${locLocal} - ${prefLocal}` }],
+      images: img.og,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage],
+      images: img.tw,
     },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };

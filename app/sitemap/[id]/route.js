@@ -1,8 +1,10 @@
 import { LANGS, HREFLANG, SITE_URL, PHOTO_LANGS } from "../../i18n-meta.js";
 import { PREFECTURES } from "../../data.js";
 import { PREF_SLUGS, LOC_SLUGS } from "../../slugs.js";
-import { COLLECTION_SLUGS, COLLECTIONS } from "../../collections.js";
+import { COLLECTION_SLUGS, getCollectionPhotos } from "../../collections.js";
 import { GALLERIES } from "../../galleries.js";
+import { PHOTO_ADDED } from "../../photo-added.js";
+import { PHOTO_DATES } from "../../photo-dates.js";
 
 // Cloudflare Pages 静的エクスポート対応 — id=0 + id=1..N (per-pref) を build 時 SSG
 export const dynamic = "force-static";
@@ -15,26 +17,30 @@ export function generateStaticParams() {
   return params;
 }
 
-// 写真の最新 year を年-12-31 形式の lastmod に
-const yearLastmod = (year) => year ? `${year}-12-31` : null;
-const todayLastmod = () => new Date().toISOString().slice(0, 10);
+/* lastmod (最終更新日) は「そのページの中身が最後に変わった日」を実際の記録から出す。
+   以前は撮影年の年末 (例: 2026年の写真 → 2026-12-31) を入れていたため、
+   1,800件が未来の日付になっていた。検索エンジンは、当てにならない lastmod を
+   サイト全体で無視するようになる (どのページが新しいかを伝える手段を自分で潰していた)。
 
-// pref / loc の最新年を求める
-function maxYearForPref(pf) {
-  let m = 0;
-  for (const p of pf.photos) if ((p.year || 0) > m) m = p.year;
+   写真1枚の日付 = サイトに追加した日 (photo-added.js)。記録が無い写真は撮影日 (photo-dates.js)。
+   一覧ページ (都道府県・撮影地・コレクション・ギャラリー) = 含まれる写真のうち最も新しい日付。
+   トップと47都道府県 = 全写真のうち最も新しい日付 (= 最後に写真を足した日)。
+   どれも今日より先にはしない。ビルドした日そのものは使わない
+   (中身が変わっていないのに毎回日付だけ動くと、これも当てにならない日付になる)。 */
+const todayLastmod = () => new Date().toISOString().slice(0, 10);
+const photoStamp = (p) => {
+  const d = (PHOTO_ADDED[p.id] || "").slice(0, 10) || PHOTO_DATES[p.id] || (p.year ? `${p.year}-01-01` : "");
+  if (!d) return null;
+  const today = todayLastmod();
+  return d > today ? today : d;
+};
+const latestStamp = (photos) => {
+  let m = "";
+  for (const p of photos || []) { const d = photoStamp(p); if (d && d > m) m = d; }
   return m || null;
-}
-function maxYearForLoc(pf, locJp) {
-  let m = 0;
-  for (const p of pf.photos) if (p.loc === locJp && (p.year || 0) > m) m = p.year;
-  return m || null;
-}
-function maxYearForLocs(locs) {
-  let m = 0;
-  // PREFECTURES は外で渡されるので関数内で参照不可。route で呼ぶ際に PREFECTURES 引数で渡す
-  return m || null;
-}
+};
+const ALL_PHOTOS = PREFECTURES.flatMap((pf) => pf.photos.map((p) => ({ ...p, pref: pf.pref })));
+const SITE_LATEST = latestStamp(ALL_PHOTOS);
 
 /**
  * 個別sitemap生成
@@ -64,20 +70,8 @@ export async function GET(_req, { params }) {
     return new Response("Not Found", { status: 404 });
   }
 
-  const today = todayLastmod();
+  const today = SITE_LATEST || todayLastmod();   /* 「写真に結び付かないページ」の日付 = 最後に写真を足した日 */
   const entries = [];
-
-  // collection/tag locs から最新年を計算するヘルパー (PREFECTURES クロージャー使用)
-  const maxYearForLocList = (locList) => {
-    let m = 0;
-    const set = new Set(locList);
-    for (const pf of PREFECTURES) {
-      for (const photo of pf.photos) {
-        if (photo.loc && set.has(photo.loc) && (photo.year || 0) > m) m = photo.year;
-      }
-    }
-    return m || null;
-  };
 
   if (id === 0) {
     // base: root + pref + loc
@@ -99,8 +93,7 @@ export async function GET(_req, { params }) {
       const cLangs = {};
       for (const l of LANGS) cLangs[HREFLANG[l]] = `${SITE_URL}/${l}/collections/${slug}`;
       cLangs["x-default"] = `${SITE_URL}/en/collections/${slug}`;
-      const cMaxYear = maxYearForLocList(COLLECTIONS[slug]?.locs || []);
-      const cLastmod = yearLastmod(cMaxYear) || today;
+      const cLastmod = latestStamp(getCollectionPhotos(slug, PREFECTURES)) || today;
       for (const lang of LANGS) {
         entries.push(buildUrlEntry({
           url: `${SITE_URL}/${lang}/collections/${slug}`,
@@ -118,7 +111,7 @@ export async function GET(_req, { params }) {
       const gLangs = {};
       for (const l of LANGS) gLangs[HREFLANG[l]] = `${SITE_URL}/${l}/gallery/${g.slug}`;
       gLangs["x-default"] = `${SITE_URL}/en/gallery/${g.slug}`;
-      const gLastmod = yearLastmod(maxYearForLocList(COLLECTIONS[g.theme]?.locs || [])) || today;
+      const gLastmod = latestStamp(getCollectionPhotos(g.theme, PREFECTURES).filter((p) => p.pref === g.pref)) || today;
       for (const lang of LANGS) {
         entries.push(buildUrlEntry({
           url: `${SITE_URL}/${lang}/gallery/${g.slug}`,
@@ -148,8 +141,7 @@ export async function GET(_req, { params }) {
       for (const l of LANGS) prefLangs[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}`;
       prefLangs["x-default"] = `${SITE_URL}/en/${prefSlug}`;
 
-      const prefMaxYear = maxYearForPref(pf);
-      const prefLastmod = yearLastmod(prefMaxYear) || today;
+      const prefLastmod = latestStamp(pf.photos) || today;
       for (const lang of LANGS) {
         entries.push(buildUrlEntry({
           url: `${SITE_URL}/${lang}/${prefSlug}`,
@@ -167,8 +159,7 @@ export async function GET(_req, { params }) {
         for (const l of LANGS) locLangs[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}`;
         locLangs["x-default"] = `${SITE_URL}/en/${prefSlug}/${locSlug}`;
 
-        const locMaxYear = maxYearForLoc(pf, locJp);
-        const locLastmod = yearLastmod(locMaxYear) || today;
+        const locLastmod = latestStamp(pf.photos.filter((p) => p.loc === locJp)) || today;
         for (const lang of LANGS) {
           entries.push(buildUrlEntry({
             url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}`,
@@ -196,8 +187,8 @@ export async function GET(_req, { params }) {
       for (const l of PHOTO_LANGS) photoLangs[HREFLANG[l]] = `${SITE_URL}/${l}/${prefSlug}/${locSlug}/${photo.id}`;
       photoLangs["x-default"] = `${SITE_URL}/en/${prefSlug}/${locSlug}/${photo.id}`;
 
-      // 写真個別: lastmod は year-12-31 (撮影年末)
-      const photoLastmod = yearLastmod(photo.year) || today;
+      // 写真個別: サイトに追加した日 (記録が無ければ撮影日)
+      const photoLastmod = photoStamp(photo) || today;
       for (const lang of PHOTO_LANGS) {
         entries.push(buildUrlEntry({
           url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}/${photo.id}`,

@@ -1,31 +1,20 @@
 import { SITE_URL } from "../i18n-meta.js";
-import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../data.js";
-import { PREF_SLUGS, LOC_SLUGS } from "../slugs.js";
+import { getPrefName, getLocName, cldUrl } from "../data.js";
+import { latestPhotos } from "../feed-items.js";
 
 // Cloudflare Pages 静的エクスポート対応
 export const dynamic = "force-static";
 
 export async function GET() {
-  // flatten + year desc, top 50 (mirrors feed.xml)
-  const all = [];
-  for (const pf of PREFECTURES) {
-    for (const photo of pf.photos) {
-      if (!photo.loc) continue;
-      const prefSlug = PREF_SLUGS[pf.pref];
-      const locSlug = LOC_SLUGS[photo.loc];
-      if (!prefSlug || !locSlug) continue;
-      all.push({ ...photo, pref: pf.pref, prefSlug, locSlug });
-    }
-  }
-  all.sort((a, b) => (b.year || 0) - (a.year || 0));
-  const recent = all.slice(0, 50);
+  // 最近追加した50枚 (feed.xml と同じ並び・同じ日付。feed-items.js)
+  const recent = latestPhotos(50);
 
   const items = recent.map((p) => {
     const url = `${SITE_URL}/en/${p.prefSlug}/${p.locSlug}/${p.id}`;
     const title = `${getLocName(p.loc, "en")} - ${getPrefName(p.pref, "en")}`;
     const summary = `Landscape photograph of ${getLocName(p.loc, "en")} in ${getPrefName(p.pref, "en")}, Japan${p.year ? ` (${p.year})` : ""}.`;
     const imgUrl = cldUrl(p.id, 1200);
-    const datePublished = p.year ? `${p.year}-12-31T00:00:00Z` : new Date().toISOString();
+    const datePublished = p.when.toISOString();
     return {
       id: url,
       url,

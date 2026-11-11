@@ -1,6 +1,6 @@
 import { SITE_URL } from "../i18n-meta.js";
-import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../data.js";
-import { PREF_SLUGS, LOC_SLUGS } from "../slugs.js";
+import { getPrefName, getLocName, cldUrl } from "../data.js";
+import { latestPhotos } from "../feed-items.js";
 
 // Cloudflare Pages 静的エクスポート対応
 export const dynamic = "force-static";
@@ -8,26 +8,12 @@ export const dynamic = "force-static";
 const escape = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
 
 export async function GET() {
-  // 全写真をflatten、year desc + PREFECTURES内の出現順でsort
-  const all = [];
-  for (const pf of PREFECTURES) {
-    for (const photo of pf.photos) {
-      if (!photo.loc) continue;
-      const prefSlug = PREF_SLUGS[pf.pref];
-      const locSlug = LOC_SLUGS[photo.loc];
-      if (!prefSlug || !locSlug) continue;
-      all.push({ ...photo, pref: pf.pref, prefSlug, locSlug });
-    }
-  }
-  all.sort((a, b) => (b.year || 0) - (a.year || 0));
-  const recent = all.slice(0, 50);
+  // 最近追加した50枚 (並びと日付は feed-items.js。実際の追加日・撮影日を使う)
+  const recent = latestPhotos(50);
 
-  const lastBuild = new Date().toUTCString();
-  const items = recent.map((p, idx) => {
-    // year + 順位から fake pubDate (year-12-31 から1日ずつ遡る)
-    const pubDate = p.year
-      ? new Date(`${p.year}-12-31T00:00:00Z`).toUTCString()
-      : new Date().toUTCString();
+  const lastBuild = (recent[0]?.when || new Date()).toUTCString();
+  const items = recent.map((p) => {
+    const pubDate = p.when.toUTCString();
     const url = `${SITE_URL}/en/${p.prefSlug}/${p.locSlug}/${p.id}`;
     const title = `${getLocName(p.loc, "en")} - ${getPrefName(p.pref, "en")}`;
     const desc = `Landscape photograph of ${getLocName(p.loc, "en")} in ${getPrefName(p.pref, "en")}, Japan${p.year ? ` (${p.year})` : ""}.`;

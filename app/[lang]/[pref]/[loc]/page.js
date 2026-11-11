@@ -9,6 +9,7 @@ import { getEvents } from "../../../events.js";
 import { getLocSameAs, getPrefSameAs } from "../../../wikidata.js";
 import { getLocTitleKw, getLocTitleKwEnFallback } from "../../../title-keywords.js";
 import { COLLECTION_SLUGS, getCollectionPhotos } from "../../../collections.js";
+import { coverId, shareImages } from "../../../og.js";
 
 export const dynamicParams = false;
 
@@ -54,6 +55,9 @@ export async function generateMetadata({ params }) {
   const description = desc || `${locLocal} landscape photography — photos taken in ${locLocal}, ${prefLocal}, Japan.`;
 
   const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}/${locSlug}`);
+  /* 共有したときに出る画像。この撮影地の写真から横位置の1枚 */
+  const locPhotos = (PREFECTURES.find((p) => p.pref === prefJp)?.photos || []).filter((p) => p.loc === locJp);
+  const img = shareImages(coverId(locPhotos), `${locLocal} - ${prefLocal}`);
 
   return {
     title,
@@ -68,8 +72,9 @@ export async function generateMetadata({ params }) {
       type: "website",
       url: `${SITE_URL}/${lang}/${prefSlug}/${locSlug}`,
       siteName: "Landscapes of Japan",
+      images: img.og,
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: img.tw },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };
 }

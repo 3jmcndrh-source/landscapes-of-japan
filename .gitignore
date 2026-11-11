@@ -66,3 +66,6 @@ scripts/.vector-cache.json
 # 141MB あるので git には入れず、デプロイ時に生成して out/ へ載せる
 public/models/
 public/ort/
+
+# Bing へ送信済みのURLの控え (scripts/bing-register.mjs submit が続きから送るために使う)
+.bing-submitted.json

@@ -7,6 +7,7 @@ import { PREF_SLUGS, prefFromSlug } from "../../slugs.js";
 import { getPrefDesc, getPrefFaqs } from "../../content/descriptions.js";
 import { getPrefSameAs } from "../../wikidata.js";
 import { getPrefTitleKw, getPrefTitleKwEnFallback } from "../../title-keywords.js";
+import { coverId, shareImages } from "../../og.js";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -41,6 +42,8 @@ export async function generateMetadata({ params }) {
   const description = desc || `${prefLocal} landscape photography — photos taken across ${prefLocal}, Japan.`;
 
   const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/${prefSlug}`);
+  /* 共有したときに出る画像。この都道府県の写真から横位置の1枚 */
+  const img = shareImages(coverId(PREFECTURES.find((p) => p.pref === prefJp)?.photos), prefLocal);
 
   return {
     title,
@@ -55,8 +58,9 @@ export async function generateMetadata({ params }) {
       type: "website",
       url: `${SITE_URL}/${lang}/${prefSlug}`,
       siteName: "Landscapes of Japan",
+      images: img.og,
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: img.tw },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };
 }

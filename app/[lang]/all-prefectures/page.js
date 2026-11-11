@@ -4,6 +4,7 @@ import { PREFECTURES, PREF_I18N, getPrefName, getLocName, cldUrl } from "../../d
 import { PREF_SLUGS } from "../../slugs.js";
 import { TR } from "../../data.js";
 import SiteHeader from "../../SiteHeader.js";
+import { shareImages } from "../../og.js";
 
 // 47都道府県のISO標準順 (写真有無問わず)
 const ALL_PREFS_ORDERED = [
@@ -50,8 +51,8 @@ export async function generateMetadata({ params }) {
   return {
     title: fullTitle, description,
     alternates: { canonical: `${SITE_URL}/${lang}/all-prefectures`, languages },
-    openGraph: { title: fullTitle, description, type: "website", url: `${SITE_URL}/${lang}/all-prefectures`, siteName: "Landscapes of Japan" },
-    twitter: { card: "summary_large_image", title: fullTitle, description },
+    openGraph: { title: fullTitle, description, type: "website", url: `${SITE_URL}/${lang}/all-prefectures`, siteName: "Landscapes of Japan", images: shareImages(null).og },
+    twitter: { card: "summary_large_image", title: fullTitle, description, images: shareImages(null).tw },
     robots: { index: true, follow: true },
   };
 }

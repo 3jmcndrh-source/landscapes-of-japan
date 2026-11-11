@@ -50,6 +50,19 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+# Baidu (中国) と Petal Search (Huawei) は検索エンジン。
+# Cloudflare の「管理 robots.txt」がこのファイルの前に足す一覧で、AI 学習用クローラーと一緒に
+# 名指しで Disallow されている (2026-11 に確認)。実際に来ている訪問者は中国からが多いので、
+# 検索エンジンとしては通す。同じ User-agent に Allow と Disallow の両方があるとき、
+# 規格 (RFC 9309) では Allow が優先される。確実に直すには Cloudflare 側の設定変更が要る。
+User-agent: Baiduspider
+Allow: /
+Disallow: /search
+
+User-agent: PetalBot
+Allow: /
+Disallow: /search
+
 # Sitemaps
 Sitemap: https://landscapes-of-japan.com/sitemap.xml
 Sitemap: https://landscapes-of-japan.com/sitemap-images.xml

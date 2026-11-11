@@ -3,6 +3,7 @@ import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../i18n-meta.js"
 import { PREFECTURES, TR, cldUrl, getPrefName, getLocName } from "../../data.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionPhotos } from "../../collections.js";
 import SiteHeader from "../../SiteHeader.js";
+import { shareImages } from "../../og.js";
 
 export const dynamicParams = false;
 
@@ -25,8 +26,8 @@ export async function generateMetadata({ params }) {
   return {
     title, description,
     alternates: { canonical: `${SITE_URL}/${lang}/collections`, languages },
-    openGraph: { title, description, type: "website", url: `${SITE_URL}/${lang}/collections`, siteName: "Landscapes of Japan" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, type: "website", url: `${SITE_URL}/${lang}/collections`, siteName: "Landscapes of Japan", images: shareImages(null).og },
+    twitter: { card: "summary_large_image", title, description, images: shareImages(null).tw },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };
 }

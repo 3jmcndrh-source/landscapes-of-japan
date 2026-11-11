@@ -19,6 +19,7 @@
  */
 import sharp from "sharp";
 import { wideGamutOf, keepColor } from "./scripts/lib/wide-gamut.mjs";
+import { writeOg } from "./scripts/generate-og-images.mjs";
 import exifr from "exifr";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { execSync } from "child_process";
@@ -78,6 +79,9 @@ for (const [i, f] of files.entries()) {
     await keepColor(sharp(f, { failOn: "none" }).rotate().resize({ width: w, withoutEnlargement: true }), wide).webp({ quality: 80 }).toFile(path.join(DIST, `${id}_w${w}.webp`));
   }
   await sharp(f, { failOn: "none" }).rotate().resize({ width: 40 }).blur(8).webp({ quality: 50 }).toFile(path.join(DIST, `${id}_w40b.webp`));
+  /* 共有用の画像 (リンクを LINE / X などに貼ったときに出る 1200×630 の JPEG)。
+     各ページの og:image がこのファイル名を指すので、作り忘れると共有時に画像が出ない。 */
+  await writeOg(f, path.join(DIST, `${id}_og.jpg`));
 
   const meta = await sharp(f, { failOn: "none" }).metadata();
   added.push({ id, year, dt: when.getTime(), format: ext.slice(1), bytes: readFileSync(f).length, w: meta.width || 0, h: meta.height || 0 });

@@ -12,6 +12,7 @@ import { LANGS, SITE_URL, HREFLANG, buildHreflangMap, PHOTO_LANGS } from "../../
 import { GALLERIES, galleryBySlug, MIN_PHOTOS } from "../../../galleries.js";
 import { selectPhotos, setFacets } from "../../../photo-model.js";
 import GalleryClient from "../../../GalleryClient.js";
+import { coverId, shareImages } from "../../../og.js";
 
 export const dynamicParams = false;
 
@@ -50,7 +51,12 @@ export async function generateMetadata({ params }) {
       canonical: `${SITE_URL}/${lang}/gallery/${slug}`,
       languages: buildHreflangMap((l) => `${SITE_URL}/${l}/gallery/${slug}`),
     },
-    openGraph: { title, description, locale: HREFLANG[lang]?.replace("-", "_") },
+    openGraph: {
+      title, description, type: "website", locale: HREFLANG[lang]?.replace("-", "_"),
+      url: `${SITE_URL}/${lang}/gallery/${slug}`, siteName: "Landscapes of Japan",
+      images: shareImages(coverId(photos), `${prefName} × ${themeName}`).og,
+    },
+    twitter: { card: "summary_large_image", title, description, images: shareImages(coverId(photos), `${prefName} × ${themeName}`).tw },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };
 }

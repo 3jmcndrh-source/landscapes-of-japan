@@ -5,6 +5,7 @@ import { PREFECTURES, getPrefName, getLocName, cldUrl } from "../../../data.js";
 import { LANGS, HREFLANG, SITE_URL, buildHreflangMap } from "../../../i18n-meta.js";
 import { COLLECTIONS, COLLECTION_SLUGS, getCollectionName, getCollectionDesc, getCollectionPhotos } from "../../../collections.js";
 import { PHOTO_MONTHS } from "../../../photo-months.js";
+import { coverId, shareImages } from "../../../og.js";
 
 export const dynamicParams = false;
 
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }) {
   const languages = buildHreflangMap((l) => `${SITE_URL}/${l}/collections/${theme}`);
 
   const photos = getCollectionPhotos(theme, PREFECTURES);
-  const ogImage = photos.length > 0 ? cldUrl(photos[0].id, 1200) : `${SITE_URL}/og-image.jpg`;
+  /* 共有したときに出る画像。以前の予備の指定 (/og-image.jpg) は存在しないファイルだった */
+  const img = shareImages(coverId(photos), name);
 
   return {
     title,
@@ -42,9 +44,9 @@ export async function generateMetadata({ params }) {
       title, description: desc, type: "website",
       url: `${SITE_URL}/${lang}/collections/${theme}`,
       siteName: "Landscapes of Japan",
-      images: [{ url: ogImage, width: 1200, height: 800, alt: name }],
+      images: img.og,
     },
-    twitter: { card: "summary_large_image", title, description: desc, images: [ogImage] },
+    twitter: { card: "summary_large_image", title, description: desc, images: img.tw },
     robots: { index: true, follow: true, "max-image-preview": "large" },
   };
 }

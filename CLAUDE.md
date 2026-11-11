@@ -81,7 +81,7 @@ Cloudinary は無料枠超過 (帯域48GB/月=220%) のため 2026-06 に完全�
 - 生成元: `scripts/generate-variants.mjs` (sharp, webp q80, 拡大なし)。任意の幅は `cldUrl(id,w)` が生成済み幅へ切り上げ解決。Lightbox 幅は `lbWidth()` (data.js: mobile 800 / 通常 2400 / 4K級 3840)
 - **派生生成ファイル (コミット対象):** `app/photo-colors.js` (主要色 ←`scripts/generate-photo-colors.mjs`) / `app/photo-months.js` (EXIF撮影月 ←`scripts/generate-photo-months.mjs`)。どちらも manifest.json 起点・原本庫が必要なのでビルドチェーン外 (手動 or upload.mjs が自動実行)
 - **原本マスター庫:** `C:/Users/3jmcn/Pictures/cloudinary-originals/` (7.4GB+, manifest.json が台帳。サイトには3840px版までしか載らないので必ずバックアップ対象に)
-- 容量: 20k ファイル/デプロイ ÷ 6変換 ≈ **写真3,300枚** まで。1枚のサイズ制限なし (旧10MB制限消滅)。現在 4,009/20k
+- 容量: 20k ファイル/デプロイ ÷ 7ファイル (5幅 + LQIP + 共有用 `_og.jpg`) ≈ **写真2,850枚** まで。1枚のサイズ制限なし (旧10MB制限消滅)。2026-11-11 時点 6,997/20k
 - 旧 Cloudinary アカウント (dr53c12fo) は 2026-06-19 停止予定のまま放置で OK
 
 ## Photo Management Workflow
@@ -355,6 +355,53 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - **下限 (`PHRASE_THRESHOLD`) は引き継ぐのが既定**。当時の計算は再現できず (概念文351件のうち今の concepts.js から作り直して一致するのは31件)、求め直すと既存の検索結果まで変わる (実測: 温泉 56→40枚、桜 62→72枚)。求め直すなら `--rethreshold` — 写真の追加とは別の判断として行うこと。
 - `search-phrases.bin` (概念文351件) を作り直す処理も無い。概念語を増やす・文を変えるときは、その生成から書く必要がある。
 
+## 訪問者を増やすための土台直し (公開 2026-11-11 夜、デプロイ `29c989f3` / 画像 `1a7915bd`)
+
+**Search Console / Bing で前後を比べるときの境 = 2026-11-11 夜。** 同じ日の未明に v3 改修 (`929a0a28`) も出ているので、
+見た目の変更と集客の変更が同じ日に重なっている点に注意。
+
+### 実測 (2026-11-11 時点の直近28日) — 施策を考える前にまずこれを見る
+- `node scripts/analytics/traffic-sources.mjs` (Search Console を検索の種類別に + GA4 の流入元)、
+  `node scripts/analytics/index-coverage.mjs` (URL 検査 API で、登録されているページの割合を標本調査)。どちらも読むだけ。
+- Google: ウェブ検索の表示 56回・クリック 0、画像検索は表示 0。標本で登録済みは約45% (`/ja` と `/ja/hokkaido` も「クロール済み - 未登録」)。
+- **実際に人が来ているのは Bing**: 自然検索 45 セッションのうち 42 が Bing、その約半分が cn.bing.com → `/zh`。
+- GA4 の「Direct」397 セッションはほぼ bot (エンゲージ 0)。訪問者数として数えない。
+
+### Bing ウェブマスター — `scripts/bing-register.mjs`
+- **2026-05 のドメイン移転後、Bing には旧 `vercel.app` しか登録されていなかった** (API は NotAuthorized を返し続けていた)。
+  2026-11-11 に `landscapes-of-japan.com` を追加・認証し、sitemap.xml / sitemap-images.xml を送信した。
+- 認証は `public/BingSiteAuth.xml` (公開してよい値)。**消すと認証が外れる。**
+- `add` / `verify` / `status` / `submit`。`submit` は URL の直接送信で、**枠は 1日100件・月2,000件**
+  (`bing-submit-urls.mjs` のコメントにある 10,000件/日 は旧ドメイン時代の値)。人が来ている順 (中国語・英語・日本語のトップ →
+  都道府県 → コレクション → 撮影地、計394件) に送り、済んだ分は `.bing-submitted.json` (gitignore) に控える。1日1回実行すれば続きから送る。
+- 写真を足した・ページを変えたときの通知は従来どおり `node notify-indexnow.mjs --sitemap` (枠なし)。
+
+### 共有用の画像 (og:image) — `app/og.js` + `scripts/generate-og-images.mjs`
+- 以前は写真詳細とコレクションだけが og:image を持ち (しかも WebP)、都道府県・撮影地・ギャラリー・一覧系は画像なしだった。
+- 全掲載写真に `{id}_og.jpg` (1200×630 JPEG) を作り、`landscapes-images` から配信。**upload.mjs が追加のたびに作る。**
+  横位置は切り抜き (attention)、縦位置は切らずに同じ写真のぼかしを背景に敷く (切ると主題が外れた)。
+- ページ側は `shareImages(id, alt)` を `openGraph.images` / `twitter.images` に渡すだけ。代表写真は `coverId(photos)` (最初の横位置)。
+- これで画像プロジェクトは **写真1枚あたり7ファイル**。20,000ファイル上限だと約2,850枚まで (現在 6,997 ファイル)。
+
+### sitemap と フィードの日付
+- sitemap の lastmod は「その年の12月31日」(= 未来の日付) だった。写真ごとに 追加日 → 撮影日 → 年初 の実日付にし、
+  一覧ページはそのページの写真のうち最も新しい日付、写真に結び付かないページは最後に写真を足した日。**今日より先の日付は出さない。**
+- `feed.xml` / `feed.json` も同じ不具合 (全件 12/31、並びは北海道の先頭50枚) だった → `app/feed-items.js` の `latestPhotos()` で追加日の新しい順に。
+
+### 同じ内容が2つのドメインで見える問題
+- Cloudflare Pages は `landscapes-of-japan.pages.dev` でも同じサイトを配信する。`public/_headers` で pages.dev 側だけ
+  `X-Robots-Tag: noindex` を返す。**画像の `landscapes-images.pages.dev` は別プロジェクトで、noindex にしてはいけない** (画像検索に出なくなる)。
+- 旧 `landscapes-of-japan.vercel.app` は全ページ 301 で新ドメインへ転送されている (確認済み)。
+
+### Cloudflare 側のクローラー設定 (ダッシュボードでしか変えられない)
+- Cloudflare の「管理 robots.txt」が `public/robots.txt` の**前に**自動で足され、AI 学習用クローラーを名指しで Disallow している
+  (`Content-Signal: search=yes,ai-train=no` 付き)。**その一覧に検索エンジンの Baiduspider と PetalBot が入っている。**
+- さらに GPTBot / ClaudeBot / Bytespider / CCBot は robots.txt 以前にエッジで 403 になる。
+  AI **検索**用 (OAI-SearchBot, PerplexityBot) と Bingbot は 200 で通る → **AI 学習の遮断は訪問者数を減らしていない。**
+- つまり `public/robots.txt` の「AI クローラーを Allow」は実際には効いていない。学習に使わせるかどうかは写真の権利の判断なので、勝手に変えないこと。
+- Baidu / Petal だけは訪問者に関わるので、`public/robots.txt` に `Allow: /` のグループを足した (同じ長さなら Allow が優先 = RFC 9309)。
+  ただしクローラーがそう解釈する保証はなく、確実に直すにはダッシュボードで管理 robots.txt を切る必要がある。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
@@ -376,7 +423,7 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - `public/googlefa73401209ca14ac.html` → Google Search Console ownership verification
 - JSON-LD (inline in page.js) → WebSite + ImageGallery + Photograph schemas
 - All `<img>` have meaningful `alt="<loc> - <pref> | Landscapes of Japan"`
-- Registered with: Google Search Console (sitemap submitted, URL indexed), Bing Webmaster Tools (imported from GSC), Yandex (ping), IndexNow (Bing + Yandex + Naver + Seznam)
+- Registered with: Google Search Console (sitemap submitted, URL indexed), Bing Webmaster Tools (現ドメインは 2026-11-11 に登録し直した — 上の「訪問者を増やすための土台直し」), Yandex (ping), IndexNow (Bing + Yandex + Naver + Seznam)
 
 ## Deployment
 
