@@ -16,11 +16,13 @@ import { ui } from "./ui-strings.js";
  * 同じ言葉が /explore の「見た目から」では写真を返していたので、検索が2本に
  * 分かれている状態だった。
  *
- * 判定は検索ページと同じ search-score.js、概念語は /explore と同じ concept-search.js。
- * 同じ語で画面ごとに違う結果にならない。
+ * 判定は検索ページと同じ search-score.js、概念語は concept-search.js の conceptLinks
+ * (検索ページと共通)。同じ語で画面ごとに違う結果にならない。
  * 入力した言葉そのものは URL に載せない。載るのは選ばれた概念キーだけ
  * (/explore の方針と同じ)。
  * 概念語の表 (約12KB) は検索を開いたときに読み込む。初期バンドルは増えない。
+ *
+ * キーボード: ↑↓ で候補を選び、Enter で開く。Esc で閉じる。
  */
 
 const PLACEHOLDER = { ja: "地名・テーマ・見た目 (霧、夕焼け…)", zh: "搜索拍摄地…", "zh-tw": "搜尋拍攝地…", ko: "촬영지 검색…" };
@@ -28,7 +30,8 @@ const PLACEHOLDER = { ja: "地名・テーマ・見た目 (霧、夕焼け…)",
 export default function QuickSearch({ lang, open, onClose }) {
   const [q, setQ] = useState("");
   const [idx, setIdx] = useState(null);
-  const [cs, setCs] = useState(null);   // { matchConcepts, conceptLabel }
+  const [cs, setCs] = useState(null);   // { conceptLinks }
+  const [active, setActive] = useState(0);
   /* IME変換中は「まだ入力の途中」。検索の確定とみなさない */
   const [composing, setComposing] = useState(false);
   const inputRef = useRef(null);
@@ -36,13 +39,14 @@ export default function QuickSearch({ lang, open, onClose }) {
   useEffect(() => {
     if (!open) return;
     setQ("");
+    setActive(0);
     const t = setTimeout(() => inputRef.current?.focus(), 30);
     if (!idx) {
       fetch("/search-index.json").then((r) => r.json()).then(setIdx).catch(() => {});
     }
     if (!cs) {
-      Promise.all([import("./concept-search.js"), import("./concepts.js")])
-        .then(([a, b]) => setCs({ matchConcepts: a.matchConcepts, conceptLabel: b.conceptLabel }))
+      import("./concept-search.js")
+        .then((m) => setCs({ conceptLinks: m.conceptLinks }))
         .catch(() => {});   /* 読めなければ地名検索だけで動く */
     }
     return () => clearTimeout(t);
@@ -62,28 +66,7 @@ export default function QuickSearch({ lang, open, onClose }) {
   const places = open && idx && needle.length >= 1
     ? searchEntries(idx.entries, needle, lang, { limit: 8, langs: idx.langs })
     : [];
-
-  /* 見た目の言葉。2語とも当たれば「両方に合う写真」(conceptAll)、1語ならその概念。
-     /explore の入力欄と同じ決め方にしてある */
-  const hits = open && cs && needle.length >= 1 ? cs.matchConcepts(needle, lang) : [];
-  const looks = [];
-  if (hits.length >= 2 && hits[0].how !== "part" && hits[1].how !== "part") {
-    const keys = hits.slice(0, 2).map((h) => h.key);
-    looks.push({
-      key: keys.join("+"),
-      name: keys.map((k) => cs.conceptLabel(k, lang)).join(" × "),
-      href: `/${lang}/explore?conceptAll=${keys.join(",")}`,
-      exact: false,
-    });
-  }
-  for (const h of hits) {
-    looks.push({
-      key: h.key,
-      name: cs.conceptLabel(h.key, lang),
-      href: `/${lang}/explore?concept=${h.key}`,
-      exact: h.how === "exact",
-    });
-  }
+  const looks = open && cs && needle.length >= 1 ? cs.conceptLinks(needle, lang) : [];
 
   /* 並び: 言葉そのものが概念名と一致したら見た目を先に、そうでなければ地名を先に */
   const lookFirst = looks.some((l) => l.exact) || places.length === 0;
@@ -92,6 +75,7 @@ export default function QuickSearch({ lang, open, onClose }) {
     ...places.map((e) => ({ type: "place", key: `${e.t}-${e.p || ""}-${e.l || e.s || ""}`, name: e.name, href: entryHref(e, lang), badge: e.t, count: e.c })),
     ...(lookFirst ? [] : looks).map((l) => ({ type: "look", ...l })),
   ];
+  const at = Math.min(active, Math.max(0, rows.length - 1));
 
   /* ⑨ 索引が読めていて、入力が落ち着いてから 1回だけ。検索語は送らない */
   useTrackSearch({ query: idx && open ? needle : "", count: rows.length, composing, source: "quick" });
@@ -107,23 +91,31 @@ export default function QuickSearch({ lang, open, onClose }) {
         <input
           ref={inputRef}
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => { setQ(e.target.value); setActive(0); }}
           onCompositionStart={() => setComposing(true)}
           onCompositionEnd={() => setComposing(false)}
           placeholder={PLACEHOLDER[lang] || "Places, themes, looks (mist, sunset…)"}
           aria-label={ui("search", lang)}
+          role="combobox"
+          aria-expanded={rows.length > 0}
+          aria-controls="qsearch-list"
+          aria-activedescendant={rows.length ? `qs-opt-${at}` : undefined}
           enterKeyHint="search"
           autoComplete="off"
-          /* IME変換中の Enter は確定操作なので拾わない (isComposing) */
+          /* IME変換中の Enter / ↑↓ は変換の操作なので拾わない (isComposing) */
           onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.nativeEvent?.isComposing && rows[0]) window.location.href = rows[0].href;
+            if (e.nativeEvent?.isComposing) return;
+            if (e.key === "Enter" && rows[at]) window.location.href = rows[at].href;
+            else if (e.key === "ArrowDown" && rows.length) { e.preventDefault(); setActive((at + 1) % rows.length); }
+            else if (e.key === "ArrowUp" && rows.length) { e.preventDefault(); setActive((at - 1 + rows.length) % rows.length); }
           }}
         />
         {rows.length > 0 && (
-          <ul className="qsearch-results">
+          <ul className="qsearch-results" id="qsearch-list" role="listbox">
             {rows.map((r, i) => (
-              <li key={r.type + r.key}>
-                <a href={r.href} className={i === 0 ? "first" : undefined}>
+              <li key={r.type + r.key} role="presentation">
+                <a href={r.href} id={`qs-opt-${i}`} role="option" aria-selected={i === at} className={i === at ? "first" : undefined}
+                  onMouseEnter={() => setActive(i)}>
                   <span className="qs-badge" aria-hidden="true">{r.type === "look" ? "◐" : badge[r.badge]}</span>
                   <span className="qs-name">{r.name}</span>
                   {r.type === "look" ? <small>{ui("byLook", lang)}</small> : r.count ? <small>{r.count}</small> : null}

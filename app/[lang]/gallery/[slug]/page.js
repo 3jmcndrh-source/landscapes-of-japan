@@ -92,6 +92,7 @@ export default async function GalleryPage({ params }) {
   return (
     <GalleryClient
       lang={lang}
+      slug={g.slug}
       heading={`${prefName} × ${themeName}`}
       count={photos.length}
       items={items}

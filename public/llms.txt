@@ -26,7 +26,6 @@ Strengths:
 - `/{lang}/{pref}/{loc}` — Location page (e.g. /en/yamanashi/arakurayama-sengen-park)
 - `/{lang}/{pref}/{loc}/{photoId}` — Individual photo with full metadata + Photograph schema
 - `/{lang}/collections/{theme}` — Themed collections (cherry-blossoms, snow, castles, temples-shrines, hot-springs, coastal, night-views, waterfalls, lakes, autumn-foliage)
-- `/{lang}/tags/{slug}` — 30 photographic facets (sunrise, blue-hour, reflection, long-exposure, mt-fuji, sakura, etc.)
 - `/{lang}/search` — Site search
 - `/{lang}/random` — Random photo redirect
 - `/feed.xml` — RSS feed of latest 50 photos
@@ -45,7 +44,7 @@ Strengths:
 ## Sample Resources
 
 - [Mt. Fuji + Chureito Pagoda + Cherry Blossoms](https://landscapes-of-japan.com/en/yamanashi/arakurayama-sengen-park)
-- [Byodo-in Phoenix Hall (featured on Japan's 10-yen coin)](https://landscapes-of-japan.com/en/kyoto/byodo-in)
+- [Byodo-in Phoenix Hall (featured on Japan's 10-yen coin)](https://landscapes-of-japan.com/en/kyoto/byodoin-phoenix-hall)
 - [Furano lavender fields (Hokkaido summer)](https://landscapes-of-japan.com/en/hokkaido/furano)
 - [Cherry Blossoms collection](https://landscapes-of-japan.com/en/collections/cherry-blossoms)
 - [Snow collection](https://landscapes-of-japan.com/en/collections/snow)

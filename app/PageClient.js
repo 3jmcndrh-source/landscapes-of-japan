@@ -34,13 +34,13 @@ const HERO_CHIP_SLUGS = ["cherry-blossoms", "snow", "castles", "temples-shrines"
    候補は scripts/suggest-hero.mjs が撮影月 (photo-months.js)・縦横・タグから出し、
    その一覧画像を目で見て選んだもの。差し替えはこの表を編集するだけ。順序 = 表示順。
    選ぶ基準: 横位置 / 全画面で主題が分かる / 左下の題字と重なる位置に主題が無い。
+   (縦長の画面用は、下の HERO_BY_SEASON_TALL)
    冬は掲載写真そのものが少ない (12〜2月撮影は6枚)。白川郷は11月の初雪だが
    雪景色なので冬に入れている。 */
 const HERO_BY_SEASON = {
   spring: [
-    "wcrs6gq9eutte8fwrzpp", // 新倉山浅間公園 — 桜×五重塔×富士
+    "ubnattnp6rlf4wtv61mi", // 新倉山浅間公園 — 桜×五重塔×富士
     "ygqe7593bqgt1ehxfxqa", // 河口湖 — 桜越しの富士
-    "ubnattnp6rlf4wtv61mi", // 新倉山浅間公園 — 横位置 (1枚目は縦位置で、横長の画面には出ない)
     "m2gdhydxlmqu3itlta9v", // 松本城 — 桜と天守
     "rnlyiorswvgfwgyvu6uj", // 北竜町 — 菜の花畑
     "xcgllidnf2ywtsmqresk", // 安養寺 — しだれ桜の水鏡
@@ -54,7 +54,6 @@ const HERO_BY_SEASON = {
     "dsc04910-7adbbc",      // 竹富島 — 白い浜
     "dsc08239-97d4e0",      // 富良野 — 花畑
     "dsc05907-4235f3",      // 清里町 — 神の子池
-    "wt6ow9shewohl0dm0lnj", // 宮古島 — エメラルドの海
     "dsc05986_2-1741dc",    // 大空町 — 丘の並木
     "dsc04851-4bd0fe",      // 竹富島 — 天の川
   ],
@@ -76,6 +75,43 @@ const HERO_BY_SEASON = {
     "vnvzv0ztfpwvvrvl5lfn", // 白川郷
     "rj0whx4syklikykwjq6z", // さっぽろ雪まつり
   ],
+};
+/* 縦長の画面 (スマホ) 用の縦位置の写真。横位置の写真を縦長の画面いっぱいに広げると
+   中央の3割ほどしか残らないので、スマホでは縦位置で撮った写真を表紙にする。
+   選び方は上と同じ (node scripts/suggest-hero.mjs <出力先> --portrait の一覧を見て選ぶ)。
+   冬は縦位置の写真が1枚も無いので、冬だけは上の横位置の表を使う。 */
+const HERO_BY_SEASON_TALL = {
+  spring: [
+    "wcrs6gq9eutte8fwrzpp", // 新倉山浅間公園 — 桜の上の富士
+    "lzabjelxserdjz9wmzig", // 新倉山浅間公園 — 五重塔×富士×桜
+    "c0d1bsl50csyyr2xtugg", // 松本城 — 水鏡
+    "ccwsm7nphfmfas43dep3", // 河口湖 — 湖越しの富士
+    "pslwa9g3czm5f2gj64s2", // 弘法山古墳 — 丘の桜
+    "gedh17rb7jnkhoggpyvo", // 高島城 — 桜と天守
+    "mbubw3dtejisp0ng7ttz", // 新倉山浅間公園 — 五重塔と桜
+    "clam0hkd2te1a5psxwev", // 高遠城址公園 — 和傘と桜
+  ],
+  summer: [
+    "wt6ow9shewohl0dm0lnj", // 宮古島 — エメラルドの海
+    "dsc08225-9abc5b",      // 美瑛町 — 花の帯
+    "cofy806dc83kq5kr9voy", // 知床 — まっすぐな道
+    "dsc04936-ca2e77",      // 竹富島 — 桟橋と海
+    "fy9x8yjintsr8qsoujzb", // 札幌 — ラベンダーと一本の木
+    "vnduczpwqmgjkhll1l0z", // 宮古島 — 白い浜
+    "dsc04871-727734",      // 竹富島 — 天の川
+    "plljckjsj5zcuefw9pr8", // 三段滝公園 — 滝
+  ],
+  autumn: [
+    "DSC07592_anjr5r",      // 清水寺 — 夕景の三重塔と紅葉
+    "DSC07425_zsvfno",      // 東福寺 — 紅葉
+    "dsc09052-86b4ff",      // 東川町 — 旭岳の紅葉
+    "DSC07386_vrsz1g",      // 清水寺 — 夜の三重塔
+    "DSC07408_qarh4p",      // 東福寺 — 紅葉の天蓋
+    "DSC07139_h55edw",      // 姫路城 — 堀の水鏡
+    "dsc05470-b79227",      // 札幌 — 紅葉の渓谷
+    "njkhpu1dsjnaqdpuibsl", // 金沢 — 散り紅葉の庭
+  ],
+  winter: [],
 };
 /* 日本時間の月 → 季節 (3-5 春 / 6-8 夏 / 9-11 秋 / 12-2 冬) */
 const seasonNowJst = () => {
@@ -650,7 +686,12 @@ export default function PageClient({ initialLang = "ja" }) {
   /* 表紙に出す写真。季節は閲覧時の日付で決まるので、描画後に決める
      (ビルド時の季節で初期HTMLを作ると、公開後に季節が変わっても古いままになる) */
   const [heroIds, setHeroIds] = useState(null);
-  useEffect(() => { setHeroIds(HERO_BY_SEASON[seasonNowJst()]); }, []);
+  useEffect(() => {
+    const season = seasonNowJst();
+    const tall = HERO_BY_SEASON_TALL[season] || [];
+    /* 縦長の画面では縦位置の表を使う (3枚以上あるときだけ)。向きは開いた時点で決める */
+    setHeroIds(window.innerHeight > window.innerWidth && tall.length >= 3 ? tall : HERO_BY_SEASON[season]);
+  }, []);
   /* アクセント色を「いま表紙に出ている写真」に合わせる。
      state に入れるとトップ全体 (930枚ぶんの行) を再描画するので、CSS 変数を直接書く。
      色の移り変わりは CSS 側 (@property + transition) がなめらかにする。 */
@@ -730,7 +771,11 @@ export default function PageClient({ initialLang = "ja" }) {
     if (!sc) return;
     // 写真の切れ目に合わせる: 約1ページ先で最も近いカード左端へスナップ
     const cards = Array.from(sc.querySelectorAll(".cin-hcard, .cin-endcard"));
-    if (!cards.length) { sc.scrollBy({ left: dir * Math.round(sc.clientWidth * 0.85), behavior: "smooth" }); return; }
+    /* 右から左へ読む言語 (ar/fa/he) では、行が右端から始まり scrollLeft が 0 以下の値になる。
+       下の「カードの左端へ合わせる」計算は左始まりが前提なので、その場合は
+       押した向きへ約1画面ぶん送るだけにする (以前は ›‹ を押しても動かなかった)。 */
+    const rtl = getComputedStyle(sc).direction === "rtl";
+    if (!cards.length || rtl) { sc.scrollBy({ left: dir * Math.round(sc.clientWidth * 0.85), behavior: "smooth" }); return; }
     const base = cards[0].offsetLeft; // 先頭カードの位置 = scrollLeft 0 相当
     const target = sc.scrollLeft + dir * sc.clientWidth * 0.85;
     let bestIdx = 0, bestD = Infinity;
@@ -752,8 +797,13 @@ export default function PageClient({ initialLang = "ja" }) {
       const sc = wrap.querySelector(".cin-hscroll");
       if (!sc) return () => {};
       const update = () => {
-        wrap.classList.toggle("can-left", sc.scrollLeft > 4);
-        wrap.classList.toggle("can-right", sc.scrollLeft < sc.scrollWidth - sc.clientWidth - 4);
+        /* 右から左へ読む言語では scrollLeft が 0 → 負の向きに進む。
+           「左へまだ送れる」「右へまだ送れる」を、実際に送れる向きで判定する */
+        const max = sc.scrollWidth - sc.clientWidth;
+        const x = sc.scrollLeft;
+        const rtl = getComputedStyle(sc).direction === "rtl";
+        wrap.classList.toggle("can-left", rtl ? -x < max - 4 : x > 4);
+        wrap.classList.toggle("can-right", rtl ? -x > 4 : x < max - 4);
       };
       update();
       // 画像ロードで scrollWidth が伸びても scroll イベントは発火しない —
@@ -800,7 +850,8 @@ export default function PageClient({ initialLang = "ja" }) {
       const pref = sc.dataset.pref;
       if (!pref) return () => {};
       const onScroll = () => {
-        if (sc.scrollWidth - sc.scrollLeft - sc.clientWidth < 1600) {
+        /* Math.abs: 右から左へ読む言語では scrollLeft が負の値で進む (そのままだと残りが減らず、17枚目以降が出ない) */
+        if (sc.scrollWidth - Math.abs(sc.scrollLeft) - sc.clientWidth < 1600) {
           setRowCounts((c) => {
             const cur = c[pref] ?? 16;
             return { ...c, [pref]: cur + 24 };

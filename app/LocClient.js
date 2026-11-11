@@ -95,8 +95,17 @@ export default function LocClient({ lang, prefJp, locJp, collections = [], dims 
     animateToRect(document.querySelector(".cin-lb-inner img"), thumbRectOf(curId), () => {
       setLightbox(null);
       setLbClosing(false);
+      /* ?photo=ID で届いたリンクから開いた場合、閉じたあとも URL に ?photo= が残る。
+         そのままだと再読み込みのたびに同じ写真が開き直すので、閉じた時点で外す。 */
+      try {
+        const u = new URL(window.location.href);
+        if (u.searchParams.has("photo") && u.pathname.endsWith(`/${locSlug}`)) {
+          u.searchParams.delete("photo");
+          window.history.replaceState(window.history.state, "", u.pathname + u.search + u.hash);
+        }
+      } catch {}
     });
-  }, [allPhotos]);
+  }, [allPhotos, locSlug]);
   const lbPrev = useCallback(
     () => setLightbox((i) => (i <= 0 ? allPhotos.length - 1 : i - 1)),
     [allPhotos]

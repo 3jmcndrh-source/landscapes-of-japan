@@ -155,7 +155,12 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
 
   /* 画面上の操作で閉じる。履歴を1つ戻し、その popstate で実際に閉じる
      (URL も元に戻る)。戻れない環境では直接閉じる */
+  const closeAsked = useRef(false);
   const requestClose = useCallback(() => {
+    /* 閉じる操作は1回だけ受け付ける。× の連打や Esc の押しっぱなしで history.back() が
+       2回走ると、ビューアを閉じたうえに前のページまで戻ってしまう */
+    if (closeAsked.current) return;
+    closeAsked.current = true;
     if (ownsEntry.current && ownEntry()) {
       clearTimeout(backFallback.current);
       backFallback.current = setTimeout(() => {

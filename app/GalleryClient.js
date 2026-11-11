@@ -16,7 +16,7 @@ import { useOriginRect, animateToRect } from "./useViewTransition.js";
 import { isPortrait } from "./photo-meta.js";
 
 export default function GalleryClient({
-  lang, heading, count, items, prefHref, prefName, themeHref, themeName,
+  lang, slug, heading, count, items, prefHref, prefName, themeHref, themeName,
   locLinks = [], others = [], exploreHref,
 }) {
   const [lightbox, setLightbox] = useState(null);
@@ -53,7 +53,10 @@ export default function GalleryClient({
 
   return (
     <div className="ex-page">
-      <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/gallery/${typeof window !== "undefined" ? window.location.pathname.split("/").pop() : ""}`} />
+      {/* 言語切替の行き先。以前は window.location から slug を取っていたため、
+          書き出された HTML では slug が空になり、25言語ぶんのリンクが /{lang}/gallery/ (404) を
+          指していた (ハイドレーション後も属性は直らない)。slug はサーバーから受け取る。 */}
+      <SiteHeader lang={lang} langHrefFor={(c) => `/${c}/gallery/${slug}`} />
       <main className="ex-main">
         <nav aria-label={ui("breadcrumb", lang)} className="gal-bc">
           <a href={`/${lang}`}>Landscapes of Japan</a>

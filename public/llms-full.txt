@@ -39,7 +39,6 @@ Hreflang variants supported: en-US, en-GB, en-CA, en-AU, zh-HK, zh-MO, es-MX, es
 | `/{lang}/{pref}/{loc}` | `/en/hokkaido/sapporo-snow-festival` | Location landing |
 | `/{lang}/{pref}/{loc}/{photoId}` | `/en/yamanashi/arakurayama-sengen-park/abc123` | Individual photo |
 | `/{lang}/collections/{theme}` | `/en/collections/cherry-blossoms` | Themed collection |
-| `/{lang}/tags/{slug}` | `/en/tags/blue-hour` | Photographic facet |
 
 Prefecture slugs (English): hokkaido, chiba, tokyo, kanagawa, ishikawa, yamanashi, nagano, gifu, aichi, mie, kyoto, hyogo, nara, tokushima, kagawa, ehime, kochi, fukuoka, oita, okinawa
 

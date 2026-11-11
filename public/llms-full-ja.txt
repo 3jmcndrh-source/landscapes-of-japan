@@ -37,7 +37,6 @@ RTL: アラビア語(ar)、ペルシア語(fa)、ヘブライ語(he)
 | `/{lang}/{pref}/{loc}` | `/ja/hokkaido/sapporo-snow-festival` | 撮影地ランディングページ |
 | `/{lang}/{pref}/{loc}/{photoId}` | `/ja/yamanashi/arakurayama-sengen-park/abc` | 個別写真ページ + Photograph schema |
 | `/{lang}/collections/{theme}` | `/ja/collections/cherry-blossoms` | テーマ別コレクション |
-| `/{lang}/tags/{slug}` | `/ja/tags/blue-hour` | 撮影テーマ別 |
 
 都道府県スラッグ (英語): hokkaido, chiba, tokyo, kanagawa, ishikawa, yamanashi, nagano, gifu, aichi, mie, kyoto, hyogo, nara, tokushima, kagawa, ehime, kochi, fukuoka, oita, okinawa
 

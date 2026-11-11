@@ -74,3 +74,37 @@ export function matchConcepts(text, lang, limit = 3) {
   hits.sort((a, b) => b.rank - a.rank || b.len - a.len);
   return hits.slice(0, limit).map(({ key, how }) => ({ key, how }));
 }
+
+/**
+ * 入力文 → 「見た目から」の行き先の候補 (絞り込み画面へのリンク)。
+ * ヘッダーの検索 (QuickSearch) と検索ページ (SearchClient) が同じものを使う。
+ * 片方だけ直して、同じ言葉で画面ごとに結果が違う状態を作らないため
+ * (実際に、ヘッダーの検索だけ対応して検索ページが「該当なし」のまま残った)。
+ *
+ * 2語とも語として当たれば「両方に合う写真」(conceptAll) を先頭に出す。
+ * /explore の入力欄と同じ決め方。URL に載るのは概念キーだけで、入力文は載せない。
+ *
+ * @returns {Array<{ key: string, name: string, href: string, exact: boolean }>}
+ */
+export function conceptLinks(text, lang) {
+  const hits = matchConcepts(text, lang);
+  const out = [];
+  if (hits.length >= 2 && hits[0].how !== "part" && hits[1].how !== "part") {
+    const keys = hits.slice(0, 2).map((h) => h.key);
+    out.push({
+      key: keys.join("+"),
+      name: keys.map((k) => conceptLabel(k, lang)).join(" × "),
+      href: `/${lang}/explore?conceptAll=${keys.join(",")}`,
+      exact: false,
+    });
+  }
+  for (const h of hits) {
+    out.push({
+      key: h.key,
+      name: conceptLabel(h.key, lang),
+      href: `/${lang}/explore?concept=${h.key}`,
+      exact: h.how === "exact",
+    });
+  }
+  return out;
+}

@@ -2,7 +2,9 @@
 /**
  * ヒーロー (トップの表紙) 候補を季節ごとに出す。選ぶのは人の目。
  *
- *   node scripts/suggest-hero.mjs [出力先ディレクトリ]
+ *   node scripts/suggest-hero.mjs [出力先ディレクトリ] [--portrait]
+ *
+ * --portrait: 縦位置の候補を出す (スマホの縦長の画面用。HERO_BY_SEASON_TALL に書く)。
  *
  * 撮影月 (photo-months.js) で季節に振り分け、横位置で、風景のタグが付いていて、
  * 動物・鳥・街並み・祭りではない写真を候補にする。同じ撮影地からは3枚まで。
@@ -20,19 +22,20 @@ import { PHOTO_MONTHS } from "../app/photo-months.js";
 import { PHOTO_DIMS } from "../app/photo-dims.js";
 import { PHOTO_TAGS } from "../app/photo-tags.js";
 
-const OUT = process.argv[2] || "hero-candidates";
+const tall = process.argv.includes("--portrait");
+const OUT = process.argv.slice(2).find((a) => !a.startsWith("--")) || "hero-candidates";
 const DIST = "images-dist";
 mkdirSync(OUT, { recursive: true });
 
 const SEASON = (m) => (m >= 3 && m <= 5 ? "spring" : m >= 6 && m <= 8 ? "summer" : m >= 9 && m <= 11 ? "autumn" : "winter");
 const AVOID = new Set(["animal", "bird", "street", "festival"]);
-const PER_LOC = 3, MAX = 48, COLS = 8, TW = 300, TH = 200;
+const PER_LOC = 3, MAX = 48, COLS = tall ? 12 : 8, TW = tall ? 200 : 300, TH = tall ? 300 : 200;
 
 const pools = { spring: [], summer: [], autumn: [], winter: [] };
 for (const pf of PREFECTURES) {
   for (const p of pf.photos) {
     const m = PHOTO_MONTHS[p.id], d = PHOTO_DIMS[p.id], tags = PHOTO_TAGS[p.id] || [];
-    if (!m || !d || d[1] > d[0] || !tags.length || tags.some((t) => AVOID.has(t))) continue;
+    if (!m || !d || (tall ? d[1] <= d[0] : d[1] > d[0]) || !tags.length || tags.some((t) => AVOID.has(t))) continue;
     pools[SEASON(m)].push({ id: p.id, loc: p.loc || "", pref: pf.pref, tags, m });
   }
 }
@@ -50,6 +53,7 @@ for (const [season, pool] of Object.entries(pools)) {
       if (p && !picked.includes(p) && picked.length < MAX) picked.push(p);
     }
   }
+  if (!picked.length) { console.log(`\n== ${season}: 候補なし`); continue; }   /* 冬の縦位置など、1枚も無い季節がある */
   const rows = Math.ceil(picked.length / COLS);
   const tiles = [];
   for (let i = 0; i < picked.length; i++) {
@@ -60,7 +64,7 @@ for (const [season, pool] of Object.entries(pools)) {
     tiles.push({ input: buf, left: (i % COLS) * TW, top: Math.floor(i / COLS) * TH });
   }
   await sharp({ create: { width: COLS * TW, height: rows * TH, channels: 3, background: "#111" } })
-    .composite(tiles).jpeg({ quality: 80 }).toFile(path.join(OUT, `season-${season}.jpg`));
+    .composite(tiles).jpeg({ quality: 80 }).toFile(path.join(OUT, `season-${season}${tall ? "-tall" : ""}.jpg`));
   console.log(`\n== ${season}: 候補 ${pool.length}枚 から ${picked.length}枚`);
   picked.forEach((p, i) => console.log(`${String(i + 1).padStart(2)} ${p.id}  ${p.pref} ${p.loc} (${p.m}月) [${p.tags.join(",")}]`));
 }

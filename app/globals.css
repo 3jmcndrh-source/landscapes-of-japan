@@ -233,7 +233,7 @@ html[lang="ja"] :where(p,li){line-height:var(--lh-ja)}
   .top-nav-link{font-size:var(--fs-xs);padding:7px 8px;min-width:0;letter-spacing:.04em;flex-shrink:0}
   .top-nav-link:first-child{background:color-mix(in srgb,var(--accent) 12%,transparent);border-color:color-mix(in srgb,var(--accent) 35%,transparent);color:color-mix(in srgb,var(--accent-hi) 95%,transparent);font-size:var(--fs-xs);padding:7px 8px;letter-spacing:.04em}
   .top-langs{padding-right:16px}
-  .cin-gallery{gap:40px;padding:0 0 0 16px}
+  .cin-gallery{gap:40px;padding:0;padding-inline-start:16px}
   .cin-section{padding:clamp(50px,12vw,80px) 0}
   .cin-map-wrap{padding:0 16px}.cin-map-box{padding:22px 14px}
   .cin-map-responsive{max-width:100%;padding:10px 0}
@@ -915,6 +915,10 @@ body{
 .ex-grid.jg{display:flex;--jg-h:150px;--jg-gap:var(--ex-gap)}
 .cs-grid.jg{--jg-h:160px}
 .al-list{align-items:start}
+@media(max-width:768px){
+  /* アルバムもスマホで2列に (以前は1列で、1画面に2〜3枚しか見えなかった) */
+  .al-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+}
 .sv-grid{align-items:start}
 .sv-grid li.tall .sv-card{aspect-ratio:2/3}
 .sv-album{margin-inline-start:auto;font-size:var(--fs-xs);color:var(--accent-hi);text-decoration:none;white-space:nowrap}

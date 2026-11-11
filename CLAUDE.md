@@ -326,6 +326,29 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - `scripts/lib/wide-gamut.mjs`: 原本が sRGB より広い色域 (Display P3 など) のときだけ `keepIccProfile()` で配信画像まで残す。sRGB の原本の出力は変わらない。確認は `node scripts/check-wide-gamut.mjs`。
 - **既存の写真は変わっていない**。効かせるには Capture One の書き出しを Display P3 にして追加する。既存分をやり直すなら、原本庫を P3 で書き出し直し → `images-dist` の該当ファイルを消す → `generate-variants.mjs`。
 
+### リンク検査 (2026-11-11 追加) — `npm run check:links`
+`scripts/check-links.mjs` が、ビルド後の `out/` の全 HTML (約9,900ページ・参照 約170万件) の href / src / srcset、
+画面の中で組み立てるリンク (検索の候補・写真ビューアのURL・ランダム・上部バー)、sitemap / feed / llms.txt の行き先を総当たりで確かめる。
+約20秒。配信画像は `images-dist/` に同名ファイルがあるかで見る。ビルドのたびには回さない (公開前に手で回す)。
+
+初回の実行で見つけて直したもの:
+- **ギャラリーページの言語切替 25本が `/{lang}/gallery/` (404) を指していた。** `GalleryClient` が slug を `window.location` から
+  取っていたため、書き出された HTML では空になっていた (ハイドレーション後も属性は直らない)。slug は props で渡す。
+  **教訓: 書き出す HTML に載るリンクを `typeof window` で分岐して作らない。**
+- `llms.txt` の平等院のリンク切れ (`/en/kyoto/byodo-in` → `byodoin-phoenix-hall`)、廃止済みの `/tags/` の記載。
+
+同じ日の本番巡回 (ブラウザ) で見つけて直したもの:
+- `/search` ページだけ概念語 (霧・夕焼け) が「該当なし」のままだった → `concept-search.js` の `conceptLinks` を
+  ヘッダーの検索と共用にした (片方だけ直す、を繰り返さないため)。
+- ビューアの × 連打・Esc 押しっぱなしで `history.back()` が2回走り、前のページまで戻りえた → 閉じる要求は1回だけ受け付ける。
+- 右から左へ読む言語 (ar/fa/he): スマホのトップで余白が左右逆、PC の行送りボタン ›‹ が動かない、行の17枚目以降が出ない
+  (どれも `scrollLeft` が負になることと、`padding` の左右決め打ちが原因)。
+- `?photo=ID` のリンクから開いたビューアを閉じても URL に `?photo=` が残り、再読み込みで開き直していた。
+- 本番の全 sitemap URL 9,945件が 200、全写真の配信画像 (930枚 × 3幅 ほか) が存在することも確認した。
+
+あわせて入れた改善: スマホ用の縦位置ヒーロー (`HERO_BY_SEASON_TALL`、冬は縦位置が無いので横位置の表を使う)、
+検索の ↑↓ キー操作、アルバムのスマホ2列、俯瞰ビューのサムネイル一覧の長期キャッシュ。
+
 ### 見た目検索のデータ (2026-11-11 に欠けを修正)
 - `public/search-vectors.bin` / `app/vector-meta.js` が 843枚ぶんのまま残っていた (2026-10-12 追加の87枚が「見た目から」検索に出なかった)。**原因は再実行漏れではなく、この2ファイルを書き出す処理がリポジトリに無かったこと** (`generate-photo-vectors.mjs` は `photo-similar.js` までしか書かない)。
 - `scripts/export-search-vectors.mjs` を追加し、upload.mjs が `generate-photo-vectors.mjs` の直後に実行する。`--check` で掲載写真との一致だけ確認できる。`check-data.mjs` も未反映の枚数を知らせる。

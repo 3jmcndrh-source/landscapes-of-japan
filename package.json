@@ -10,6 +10,7 @@
     "check:data": "node scripts/check-data.mjs",
     "check": "npm run lint && npm run check:data && npm run check:free && npm run check:explore",
     "check:pages": "node scripts/check-pages.mjs",
+    "check:links": "node scripts/check-links.mjs",
     "check:galleries": "node scripts/check-galleries.mjs",
     "gen:vectors": "node scripts/generate-photo-vectors.mjs",
     "check:free": "node scripts/check-free-state.mjs",

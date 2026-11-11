@@ -5,6 +5,7 @@ import { buildEntries, searchEntries, entryHref } from "./search-core.js";
 import { ui } from "./ui-strings.js";
 import { LANGS } from "./i18n-meta.js";
 import { useTrackSearch } from "./analytics.js";
+import { conceptLinks } from "./concept-search.js";
 import SiteHeader from "./SiteHeader.js";
 
 /**
@@ -83,8 +84,29 @@ function SearchInner({ lang }) {
   );
 
 
+  /* 見た目の言葉 (霧・夕焼け など)。ヘッダーの検索と同じ conceptLinks を使う。
+     以前はこのページだけ地名しか引けず、「霧」が「該当する写真がありません」になっていた */
+  const looks = useMemo(() => (q.trim() ? conceptLinks(q, lang) : []), [q, lang]);
+  const total = results.length + looks.length;
+  const lookFirst = looks.some((l) => l.exact) || results.length === 0;
+  const lookRows = looks.length > 0 && (
+    <ul style={{ listStyle: "none", padding: 0, margin: lookFirst ? "32px 0 0" : "0" }}>
+      {looks.map((l) => (
+        <li key={`look-${l.key}`} style={{ borderBottom: "1px solid color-mix(in srgb,var(--accent) 8%,transparent)" }}>
+          <a href={l.href} style={{ display: "flex", alignItems: "center", gap: 16, padding: "14px 0", color: "#e8e4df", textDecoration: "none" }}>
+            <span aria-hidden="true" style={{ opacity: .8, fontSize: 14 }}>◐</span>
+            <span style={{ flex: 1, minWidth: 0, fontFamily: "var(--font-zen-kaku),sans-serif", fontSize: 14, color: "#f2ece2", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {l.name}
+            </span>
+            <small style={{ color: "color-mix(in srgb,var(--accent-hi) 70%,transparent)", fontSize: 12 }}>{ui("byLook", lang)}</small>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+
   /* ⑨ 入力が落ち着いてから 1回だけ。検索語そのものは送らない */
-  useTrackSearch({ query: q, count: results.length, composing, source: "page" });
+  useTrackSearch({ query: q, count: total, composing, source: "page" });
 
   return (
     <main style={{ maxWidth: 900, margin: "0 auto", padding: "100px 24px 80px" }}>
@@ -107,16 +129,22 @@ function SearchInner({ lang }) {
 
       {q.trim() && (
         <div style={{ marginTop: 16, fontSize: 14, color: "rgba(232,228,223,.55)" }} aria-live="polite">
-          {results.length}
+          {total}
         </div>
       )}
 
-      {q.trim() && results.length === 0 && (
-        <p style={{ marginTop: 32, fontSize: 14, color: "rgba(232,228,223,.6)" }}>{ui("noResults", lang)}</p>
+      {/* 何も当たらないときも行き止まりにしない。条件を組み合わせて探せる画面へ送る */}
+      {q.trim() && total === 0 && (
+        <p style={{ marginTop: 32, fontSize: 14, color: "rgba(232,228,223,.6)" }}>
+          {ui("noResults", lang)}{" "}
+          <a className="more-link" href={`/${lang}/explore`}>{ui("explorePhotos", lang)} →</a>
+        </p>
       )}
 
+      {lookFirst && lookRows}
+
       {results.length > 0 && (
-        <ul style={{ listStyle: "none", padding: 0, margin: "32px 0 0" }}>
+        <ul style={{ listStyle: "none", padding: 0, margin: lookFirst && looks.length ? "0" : "32px 0 0" }}>
           {results.map((r) => (
             <li key={`${r.t}-${r.p || ""}-${r.l || r.s || ""}`} style={{ borderBottom: "1px solid color-mix(in srgb,var(--accent) 8%,transparent)" }}>
               <a href={entryHref(r, lang)} style={{ display: "flex", alignItems: "center", gap: 16, padding: "14px 0", color: "#e8e4df", textDecoration: "none" }}>
@@ -132,6 +160,8 @@ function SearchInner({ lang }) {
           ))}
         </ul>
       )}
+
+      {!lookFirst && lookRows}
     </main>
   );
 }

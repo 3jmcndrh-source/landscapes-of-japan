@@ -28,6 +28,11 @@
 /ort/ort-wasm.wasm
   Cache-Control: public, max-age=2592000
 
+# 俯瞰ビューのサムネイル一覧 (約580KB)。?v=… を付けて読むので、中身が変われば別のURLになる。
+# 長く持たせて、開き直すたびに取り直さないようにする。
+/overview/atlas.webp
+  Cache-Control: public, max-age=31536000, immutable
+
 # Sitemap/Feed は中程度キャッシュ
 /sitemap*.xml
   Cache-Control: public, max-age=3600
