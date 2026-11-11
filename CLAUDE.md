@@ -393,14 +393,23 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
   `X-Robots-Tag: noindex` を返す。**画像の `landscapes-images.pages.dev` は別プロジェクトで、noindex にしてはいけない** (画像検索に出なくなる)。
 - 旧 `landscapes-of-japan.vercel.app` は全ページ 301 で新ドメインへ転送されている (確認済み)。
 
-### Cloudflare 側のクローラー設定 (ダッシュボードでしか変えられない)
-- Cloudflare の「管理 robots.txt」が `public/robots.txt` の**前に**自動で足され、AI 学習用クローラーを名指しで Disallow している
-  (`Content-Signal: search=yes,ai-train=no` 付き)。**その一覧に検索エンジンの Baiduspider と PetalBot が入っている。**
-- さらに GPTBot / ClaudeBot / Bytespider / CCBot は robots.txt 以前にエッジで 403 になる。
-  AI **検索**用 (OAI-SearchBot, PerplexityBot) と Bingbot は 200 で通る → **AI 学習の遮断は訪問者数を減らしていない。**
-- つまり `public/robots.txt` の「AI クローラーを Allow」は実際には効いていない。学習に使わせるかどうかは写真の権利の判断なので、勝手に変えないこと。
-- Baidu / Petal だけは訪問者に関わるので、`public/robots.txt` に `Allow: /` のグループを足した (同じ長さなら Allow が優先 = RFC 9309)。
-  ただしクローラーがそう解釈する保証はなく、確実に直すにはダッシュボードで管理 robots.txt を切る必要がある。
+### クローラーの扱い — 検索は許可、AI の学習は拒否 (2026-11-11 に所有者が決定)
+**方針は所有者の判断。「学習も許可」に変える提案や変更を勝手にしないこと。**
+
+- Cloudflare ダッシュボード: ドメイン → セキュリティ → 設定 → 「AI クローラーとエージェントのアクセス ポリシー」。
+  **検索 = 許可 / トレーニング = 許可しない / エージェント = 許可**。この「許可しない」で、学習用クローラー
+  (GPTBot, ClaudeBot, CCBot, Bytespider, Amazonbot, PetalBot など) は**通信ごと 403**。個別の切り替え
+  (AI Crawl Control → セキュリティ) は、ポリシーで遮断中のものは動かせない (PetalBot だけ通す、はできない)。
+- AI **検索**用 (OAI-SearchBot, PerplexityBot)・Bingbot・Googlebot・Baidu は通る → **学習の遮断は訪問者数を減らしていない。**
+- **Bot Preference Sync はオフにした** (デプロイ `17292de4` のあと)。オンのあいだは Cloudflare が `public/robots.txt` の前に
+  学習用クローラーの拒否リストを自動で書き足し、その一覧に**検索エンジンの Baiduspider が入っていた**
+  (Baidu は通信では通るのに robots.txt で断られていた)。
+- いまの `public/robots.txt` は、その自動部分を **Baiduspider だけ抜いて**そのまま持っている
+  (Content Signals の前文、`Content-Signal: search=yes,ai-train=no,use=reference`、拒否 31 クローラー)。
+  以前あった「GPTBot / ClaudeBot / Google-Extended を Allow」の記述は、実際の設定と食い違うので消した。
+- Cloudflare が学習用クローラーの一覧を増やしても robots.txt には自動で反映されない (通信の遮断には反映される)。
+  Google-Extended / Applebot-Extended は robots.txt でしか断れないので、この2つの行は消さないこと。
+- 確認の仕方: `curl -A "…GPTBot/1.2…" https://landscapes-of-japan.com/en` が 403、Baiduspider / bingbot の UA で 200。
 
 ## Known Gotchas & Historical Bugs
 
