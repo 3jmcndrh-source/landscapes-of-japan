@@ -1,8 +1,8 @@
 {
   "name": "Landscapes of Japan — Japanese Landscape Photography",
   "short_name": "Landscapes of Japan",
-  "description": "A cinematic photography portfolio showcasing landscapes across Japan — 500+ photos from 20 prefectures, 20-language support.",
-  "start_url": "/",
+  "description": "A photography portfolio showcasing landscapes across Japan.",
+  "start_url": "/en",
   "scope": "/",
   "id": "/",
   "display": "standalone",
@@ -65,18 +65,6 @@
       "short_name": "Random",
       "description": "View a random photograph",
       "url": "/en/random",
-      "icons": [
-        {
-          "src": "https://landscapes-images.pages.dev/icon_192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Photography Blog",
-      "short_name": "Blog",
-      "description": "Long-form photography guides",
-      "url": "/en/blog",
       "icons": [
         {
           "src": "https://landscapes-images.pages.dev/icon_192.png",

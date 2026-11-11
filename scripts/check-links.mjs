@@ -211,6 +211,15 @@ for (const f of ["robots.txt", "llms.txt", "llms-full.txt", "llms-full-ja.txt", 
     for (const u of [mf.start_url, ...(mf.shortcuts || []).map((s) => s.url)].filter(Boolean)) if (u.startsWith("/") && !resolvePath(u)) add(metaBroken, u, f);
   }
 }
+/* 言語ごとのマニフェスト (/ja/manifest.json など)。「ホーム画面に追加」の起動先とショートカットが実在するか、
+   起動先がその言語のトップになっているか (共通の "/" に戻すと、必ず英語版で起動するようになる)。 */
+for (const f of files) {
+  const m = /^([a-z-]+)\/manifest\.json$/.exec(f);
+  if (!m) continue;
+  const mf = JSON.parse(readFileSync(path.join(OUT, f), "utf-8"));
+  if (mf.start_url !== `/${m[1]}`) add(metaBroken, `start_url=${mf.start_url}`, f);
+  for (const u of [mf.start_url, ...(mf.shortcuts || []).map((s) => s.url)].filter(Boolean)) if (u.startsWith("/") && !resolvePath(u)) add(metaBroken, u, f);
+}
 /* sitemap に載っているのに noindex のページ (検索エンジンに矛盾した指示を出す) */
 const noindexInSitemap = [];
 for (const p of sitemapUrls) {

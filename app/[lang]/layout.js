@@ -58,7 +58,9 @@ export default async function LangLayout({ children, params }) {
       <head>
         <link rel="preconnect" href="https://landscapes-images.pages.dev" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://landscapes-images.pages.dev" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* 言語ごとのマニフェスト。ホーム画面に追加したアイコンが、その言語のトップから起動する
+            (共通の /manifest.json は start_url が "/" で、必ず英語版へ転送されていた) */}
+        <link rel="manifest" href={`/${lang}/manifest.json`} />
         <link rel="alternate" type="application/rss+xml" title="Landscapes of Japan — Latest Photos" href="/feed.xml" />
         <meta name="theme-color" content="#0a0a0a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

@@ -411,6 +411,17 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
   Google-Extended / Applebot-Extended は robots.txt でしか断れないので、この2つの行は消さないこと。
 - 確認の仕方: `curl -A "…GPTBot/1.2…" https://landscapes-of-japan.com/en` が 403、Baiduspider / bingbot の UA で 200。
 
+## 「ホーム画面に追加」の起動言語 (公開 2026-11-11、デプロイ `b6cb1696`)
+
+- iPhone などで「ホーム画面に追加」したアイコンは、開いていたページではなく**マニフェストの `start_url`** から起動する。
+  以前は全言語が共通の `/manifest.json` (`start_url: "/"`) を指し、`/` は `_redirects` で必ず `/en` へ転送されるので、
+  日本語ページから追加しても英語で起動していた。
+- いまは `app/[lang]/manifest.json/route.js` が言語ごとに `/{lang}/manifest.json` (`start_url: "/{lang}"`) を書き出し、
+  `app/[lang]/layout.js` がそれを指す。`scope` は `/` のまま (アプリ内で言語を切り替えられる)。
+- **追加済みのアイコンは変わらない** (iOS は追加した時点の設定を持ち続ける)。いったん削除して、使いたい言語のページから追加し直す。
+- 共通の `public/manifest.json` は、以前に追加した端末のために残してある (どのページからも参照していない)。
+- `npm run check:links` が、各言語のマニフェストの起動先・ショートカットの実在と `start_url` を確かめる。
+
 ## Known Gotchas & Historical Bugs
 
 1. **Infinite recursion in closeLightbox (FIXED):** A `replace_all` of `setLightbox(null)` → `closeLightbox()` accidentally replaced the inner state setter inside `closeLightbox` itself. Symptom: `.closing` class appears but lightbox never unmounts. Check `app/page.js` line ~1212 — `setTimeout` callback should call `setLightbox(null)`, NOT `closeLightbox()`.
