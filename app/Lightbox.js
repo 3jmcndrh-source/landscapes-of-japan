@@ -384,7 +384,10 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
     if (e.touches.length === 2) {
       setGesturing(true);
       setTrack(0, 0, false);
-      T.pinch = { d0: dist(e.touches), s0: zoomRef.current.s, tx0: zoomRef.current.tx, ty0: zoomRef.current.ty };
+      T.pinch = { d0: dist(e.touches) || 1, s0: zoomRef.current.s, tx0: zoomRef.current.tx, ty0: zoomRef.current.ty };
+      /* 1本目の指の記録は捨てる。ピンチのあと指を1本だけ残したとき、ピンチ前の位置を
+         基準に写真が飛ばないようにする (残った指は、いったん離すまで何もしない)。 */
+      T.start = null;
     } else if (e.touches.length === 1) {
       const t0 = e.touches[0];
       T.start = { x: t0.clientX, y: t0.clientY, tx0: zoomRef.current.tx, ty0: zoomRef.current.ty, t: Date.now() };
@@ -403,7 +406,11 @@ export default function Lightbox({ photos, index, closing, lang, onClose, onPrev
       const dx = t0.clientX - T.start.x, dy = t0.clientY - T.start.y;
       T.moved = Math.max(T.moved || 0, Math.abs(dx), Math.abs(dy));
       if (zoomRef.current.s > 1.05) {
-        setZoom((z) => clampPan(z.s, T.start.tx0 + dx, T.start.ty0 + dy));
+        /* 移動先はここで数値にしておく。setZoom に渡した関数は描画のときに実行されるので、
+           その中で T.start を読むと、指を離した後 (T.start = null) に実行されて落ちる。
+           iPhone で拡大した直後に「Application error」になっていた原因 (2026-11-11)。 */
+        const tx = T.start.tx0 + dx, ty = T.start.ty0 + dy;
+        setZoom((z) => clampPan(z.s, tx, ty));
         return;
       }
       if (slidingRef.current) return;
