@@ -15,7 +15,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { ui } from "./ui-strings.js";
 import { photoUrl, photoById } from "./photo-ref.js";
-import { isFavorite, toggleFavorite } from "./local-store.js";
+import { isFavorite, subscribeFavorites, toggleFavorite } from "./local-store.js";
 import { track } from "./analytics.js";
 
 export default function PhotoActions({ photoId, lang, entry = "", className = "" }) {
@@ -24,18 +24,23 @@ export default function PhotoActions({ photoId, lang, entry = "", className = ""
 
   /* 保存状態はブラウザにしか無いので、描画後に読む。
      初期HTMLと食い違わないよう、最初は必ず「未登録」で描く (ハイドレーション対策)。 */
-  useEffect(() => { setFav(isFavorite(photoId)); setNote(""); }, [photoId]);
+  useEffect(() => {
+    const sync = () => setFav(isFavorite(photoId));
+    const unsubscribe = subscribeFavorites(sync);
+    sync();
+    setNote("");
+    return unsubscribe;
+  }, [photoId]);
 
   const onFav = useCallback((e) => {
     e.preventDefault(); e.stopPropagation();
     const { ok, on } = toggleFavorite(photoId);
     if (!ok) return;                         // 保存できない環境では状態を偽らない
-    setFav(on);
     /* 状態は aria-pressed の変化として支援技術に伝わる。
        ここで操作名を読み上げると「追加」「削除」が逆に聞こえるので、
        お気に入りでは別途の読み上げを足さない。 */
     track(on ? "favorite_add" : "favorite_remove", { photo_id: photoId }, photoId);
-  }, [photoId, lang]);
+  }, [photoId]);
 
   const onShare = useCallback(async (e) => {
     e.preventDefault(); e.stopPropagation();

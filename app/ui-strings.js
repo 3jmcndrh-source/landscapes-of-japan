@@ -4,6 +4,22 @@
  */
 
 export const UI_STRINGS = {
+  emailFormat: {
+    ja: "メールアドレスは name@example.com の形式で入力してください。",
+    en: "Enter an email address in the format name@example.com.",
+    zh: "请输入电子邮件地址，例如 name@example.com。", "zh-tw": "請輸入電子郵件地址，例如 name@example.com。",
+    ko: "name@example.com 형식으로 이메일 주소를 입력해 주세요.", es: "Introduce una dirección de correo como name@example.com.",
+    fr: "Saisissez une adresse e-mail au format name@example.com.", de: "Gib eine E-Mail-Adresse im Format name@example.com ein.",
+    pt: "Insira um endereço de e-mail no formato name@example.com.", it: "Inserisci un indirizzo email nel formato name@example.com.",
+    ru: "Введите адрес электронной почты в формате name@example.com.", ar: "أدخل عنوان بريد إلكتروني مثل name@example.com.",
+    hi: "ईमेल पता name@example.com के प्रारूप में दर्ज करें।", th: "กรอกอีเมลในรูปแบบ name@example.com",
+    vi: "Nhập địa chỉ email theo dạng name@example.com.", id: "Masukkan alamat email dengan format name@example.com.",
+    tr: "E-posta adresinizi name@example.com biçiminde girin.", nl: "Vul een e-mailadres in zoals name@example.com.",
+    pl: "Wpisz adres e-mail w formacie name@example.com.", sv: "Ange en e-postadress i formatet name@example.com.",
+    fa: "نشانی ایمیل را به شکل name@example.com وارد کنید.", he: "יש להזין כתובת דוא״ל במבנה name@example.com.",
+    bn: "name@example.com-এর মতো একটি ইমেল ঠিকানা লিখুন।", tl: "Maglagay ng email address na gaya ng name@example.com.",
+    uk: "Введіть адресу електронної пошти у форматі name@example.com.",
+  },
   relatedGuides: {
     ja: "撮影ガイド", en: "Photography Guides", zh: "摄影指南", "zh-tw": "攝影指南", ko: "촬영 가이드",
     es: "Guías de fotografía", fr: "Guides de photographie", de: "Fotografie-Guides", pt: "Guias de fotografia",

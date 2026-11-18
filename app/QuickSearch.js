@@ -37,20 +37,32 @@ export default function QuickSearch({ lang, open, onClose }) {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    if (!open) return;
-    setQ("");
-    setActive(0);
+    if (!open) {
+      setQ("");
+      setActive(0);
+      setComposing(false);
+      return;
+    }
     const t = setTimeout(() => inputRef.current?.focus(), 30);
-    if (!idx) {
-      fetch("/search-index.json").then((r) => r.json()).then(setIdx).catch(() => {});
-    }
-    if (!cs) {
-      import("./concept-search.js")
-        .then((m) => setCs({ conceptLinks: m.conceptLinks }))
-        .catch(() => {});   /* 読めなければ地名検索だけで動く */
-    }
     return () => clearTimeout(t);
-  }, [open, idx, cs]);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open || idx) return;
+    const controller = new AbortController();
+    fetch("/search-index.json", { signal: controller.signal })
+      .then((r) => r.json())
+      .then(setIdx)
+      .catch(() => {});
+    return () => controller.abort();
+  }, [open, idx]);
+
+  useEffect(() => {
+    if (!open || cs) return;
+    import("./concept-search.js")
+      .then((m) => setCs({ conceptLinks: m.conceptLinks }))
+      .catch(() => {});   /* 読めなければ地名検索だけで動く */
+  }, [open, cs]);
 
   useEffect(() => {
     if (!open) return;

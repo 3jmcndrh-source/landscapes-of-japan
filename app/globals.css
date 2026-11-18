@@ -202,6 +202,8 @@ html[lang="ja"] :where(p,li){line-height:var(--lh-ja)}
 .contact-msg{font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:var(--fs-s);text-align:center;padding:12px;border-radius:6px}
 .contact-msg.ok{color:rgba(160,200,160,.85);background:rgba(160,200,160,.06)}
 .contact-msg.ng{color:rgba(200,140,140,.85);background:rgba(200,140,140,.06)}
+.contact-field-error{font-size:var(--fs-s);color:#e9b1a7}
+.contact-input[aria-invalid="true"]{border-color:#cb9085}
 
 /* ===== Lightbox ===== */
 
@@ -734,7 +736,9 @@ body{--sh-offset:var(--header-h)}
 }
 
 /* ③ 2枚比較。それぞれの全体が見えることを優先する (重ねない) */
-.cmp{position:fixed;inset:0;z-index:210;background:rgba(8,7,6,.97);display:flex;flex-direction:column}
+.cmp{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;color:inherit;background:rgba(8,7,6,.97)}
+.cmp[open]{display:flex;flex-direction:column}
+.cmp::backdrop{background:#080706}
 .cmp-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid color-mix(in srgb,var(--accent) 16%,transparent)}
 .cmp-body{flex:1;display:flex;gap:8px;padding:10px;min-height:0}
 .cmp-body.stack{flex-direction:column}
@@ -757,6 +761,11 @@ body{--sh-offset:var(--header-h)}
 .al-ops button:focus-visible{outline:2px solid color-mix(in srgb,var(--accent) 90%,transparent);outline-offset:2px}
 .al-add{margin-top:28px}
 .al-add ul{list-style:none;margin:0;padding:0}
+.al-choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,168px),1fr));gap:8px}
+.al-choice{display:flex;align-items:center;gap:8px;width:100%;height:100%;padding:5px;border-radius:8px;text-align:start}
+.al-choice img{flex:none;object-fit:contain;background:#111;border-radius:4px}
+.al-choice span{overflow-wrap:anywhere}
+.al-choice:disabled{opacity:.45;cursor:default}
 
 /* ⑤ 地域×テーマ ギャラリー。短い見出しと写真が中心 */
 .gal-bc{font-family:var(--font-zen-kaku),sans-serif;font-size:var(--fs-xs);color:rgba(232,228,223,.55);margin-bottom:14px}

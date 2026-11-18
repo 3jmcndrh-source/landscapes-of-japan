@@ -10,6 +10,7 @@
  * - 端末間同期はしない。この端末のこのブラウザだけ。
  */
 import { photoById } from "./photo-ref.js";
+import { ALBUM_MAX } from "./album-code.js";
 
 const FAV_KEY = "loj.fav.v1";
 const HIST_KEY = "loj.hist.v1";
@@ -46,15 +47,36 @@ function write(key, list) {
 /* ---- お気に入り ---- */
 export const getFavorites = () => read(FAV_KEY);
 export const isFavorite = (id) => read(FAV_KEY).includes(id);
+
+const FAVORITES_CHANGED = "loj:favorites-changed";
+export function subscribeFavorites(listener) {
+  const onStorage = (event) => {
+    if (event.key === FAV_KEY || event.key === null) listener();
+  };
+  window.addEventListener(FAVORITES_CHANGED, listener);
+  window.addEventListener("storage", onStorage);
+  return () => {
+    window.removeEventListener(FAVORITES_CHANGED, listener);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+function writeFavorites(ids) {
+  if (!write(FAV_KEY, ids)) return false;
+  // storage イベントが届かない同じタブの詳細画面とビューアにも知らせる。
+  window.dispatchEvent(new Event(FAVORITES_CHANGED));
+  return true;
+}
+
 export function toggleFavorite(id) {
   if (!photoById(id)) return { ok: false, on: false };
   const list = read(FAV_KEY);
   const i = list.indexOf(id);
   const next = i >= 0 ? list.filter((x) => x !== id) : [id, ...list];
-  const ok = write(FAV_KEY, next);
+  const ok = writeFavorites(next);
   return { ok, on: i < 0 };
 }
-export const clearFavorites = () => write(FAV_KEY, []);
+export const clearFavorites = () => writeFavorites([]);
 
 /* ---- 最近見た写真 ---- */
 export const getHistory = () => read(HIST_KEY);
@@ -71,3 +93,8 @@ export function pushHistory(id) {
 export const clearHistory = () => write(HIST_KEY, []);
 
 export const storageAvailable = canStore;
+
+/* アルバムの下書き。写真の順番も含めて端末に保存する。 */
+const ALBUM_DRAFT_KEY = "loj.album.draft.v1";
+export const getAlbumDraft = () => [...new Set(read(ALBUM_DRAFT_KEY))].slice(0, ALBUM_MAX);
+export const saveAlbumDraft = (ids) => write(ALBUM_DRAFT_KEY, ids);

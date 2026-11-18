@@ -713,9 +713,12 @@ export default function PageClient({ initialLang = "ja" }) {
   const navigatingRef = useRef(false);
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
+  const [emailInvalid, setEmailInvalid] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
   const [formMsg, setFormMsg] = useState("");
   const [formStatus, setFormStatus] = useState(null);
   const [formSending, setFormSending] = useState(false);
+  const showEmailError = emailInvalid && (emailTouched || Boolean(formName.trim() && formMsg.trim()));
 
   /* ⑦ 写真を指定した問い合わせ。/{lang}?photo_ref=ID#contact で入ってくる。
      URLから受け取るのは写真IDだけで、写真の情報は data.js から引き直す
@@ -730,8 +733,10 @@ export default function PageClient({ initialLang = "ja" }) {
   }, []);
   const t = TR[lang];
 
-  const handleSubmit = useCallback(() => {
-    if (!formName.trim() || !formEmail.trim() || !formMsg.trim()) return;
+  const handleSubmit = useCallback((event) => {
+    event.preventDefault();
+    if (formSending || !formName.trim() || !formMsg.trim() || !event.currentTarget.reportValidity()) return;
+    setFormStatus(null);
     setFormSending(true);
     fetch("https://formspree.io/f/xzdjzyeo", {
       method: "POST",
@@ -747,13 +752,14 @@ export default function PageClient({ initialLang = "ja" }) {
       .then(r => {
         if (r.ok) {
           setFormStatus("ok"); setFormName(""); setFormEmail(""); setFormMsg("");
+          setEmailTouched(false); setEmailInvalid(false);
           /* ⑨ 送信できたときだけ。本文・氏名・メールは送らない */
           track("contact_submit", { with_photo: !!contactPhoto }, "contact");
         } else { setFormStatus("ng"); }
       })
       .catch(() => setFormStatus("ng"))
       .finally(() => setFormSending(false));
-  }, [formName, formEmail, formMsg, contactPhoto, lang]);
+  }, [formSending, formName, formEmail, formMsg, contactPhoto, lang]);
 
   useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
 
@@ -1248,7 +1254,7 @@ export default function PageClient({ initialLang = "ja" }) {
         <div style={{ width: "100%", height: 1, background: "rgba(232,228,223,.08)", maxWidth: 200, margin: "0 auto 60px" }} />
         <div className="contact-section reveal" id="contact">
           <h2 className="contact-title">{t.contact.title}</h2>
-          <div className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             {/* ⑦ どの写真についての問い合わせかを、送信前に確認・解除できるようにする */}
             {contactPhoto && (
               <div className="contact-photo">
@@ -1262,22 +1268,32 @@ export default function PageClient({ initialLang = "ja" }) {
             )}
             <div className="contact-field">
               <label className="contact-label" htmlFor="contact-name">{t.contact.name}</label>
-              <input id="contact-name" className="contact-input" type="text" value={formName} onChange={e => setFormName(e.target.value)} />
+              <input id="contact-name" className="contact-input" type="text" autoComplete="name" required value={formName} onChange={e => setFormName(e.target.value)} />
             </div>
             <div className="contact-field">
               <label className="contact-label" htmlFor="contact-email">{t.contact.email}</label>
-              <input id="contact-email" className="contact-input" type="email" value={formEmail} onChange={e => setFormEmail(e.target.value)} />
+              <input id="contact-email" className="contact-input" type="email" autoComplete="email" required value={formEmail}
+                aria-invalid={showEmailError || undefined}
+                aria-describedby={showEmailError ? "contact-email-error" : undefined}
+                onChange={(event) => {
+                  setFormEmail(event.target.value);
+                  setEmailInvalid(event.target.validity.typeMismatch);
+                }}
+                onBlur={() => setEmailTouched(true)} onInvalid={() => setEmailTouched(true)} />
+              {showEmailError && (
+                <span className="contact-field-error" id="contact-email-error" role="alert">{ui("emailFormat", lang)}</span>
+              )}
             </div>
             <div className="contact-field">
               <label className="contact-label" htmlFor="contact-msg">{t.contact.msg}</label>
-              <textarea id="contact-msg" className="contact-textarea" value={formMsg} onChange={e => setFormMsg(e.target.value)} />
+              <textarea id="contact-msg" className="contact-textarea" required value={formMsg} onChange={e => setFormMsg(e.target.value)} />
             </div>
-            <button className="contact-send" disabled={formSending || !formName.trim() || !formEmail.trim() || !formMsg.trim()} onClick={handleSubmit}>
+            <button className="contact-send" type="submit" disabled={formSending || emailInvalid || !formName.trim() || !formEmail.trim() || !formMsg.trim()}>
               {formSending ? "..." : t.contact.send}
             </button>
             {formStatus === "ok" && <div className="contact-msg ok">{t.contact.sent}</div>}
             {formStatus === "ng" && <div className="contact-msg ng">{t.contact.err}</div>}
-          </div>
+          </form>
         </div>
 
         <footer className="cin-footer">© 2026 Landscapes of Japan<br/>{t.footer2}</footer>

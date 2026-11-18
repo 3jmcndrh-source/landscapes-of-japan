@@ -7,7 +7,7 @@
  * ビフォーアフターとして重ねて見せることはしない (誤解を生むため)。
  * 横に並べる / 縦に並べる の切り替えだけを用意する。
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { getLocName, getPrefName } from "./data.js";
 import { photoPath, photoLabel } from "./photo-model.js";
 import { PHOTO_DIMS } from "./photo-dims.js";
@@ -20,23 +20,38 @@ export default function CompareView({ ids, lang, onClose, onRemove }) {
     typeof window !== "undefined" && window.innerWidth < 820 ? "stack" : "row"
   );
   const [order, setOrder] = useState(ids);
+  const dialogRef = useRef(null);
 
   useEffect(() => { setOrder(ids); }, [ids]);
 
-  /* 開いたら閉じるボタンへ移し、閉じたら元へ戻す (呼び出し側が復帰させる) */
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
     const prev = document.activeElement;
-    const onKey = (e) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", onKey);
+    dialog.showModal();
     const body = document.body;
     const overflow = body.style.overflow;
     body.style.overflow = "hidden";
     return () => {
-      window.removeEventListener("keydown", onKey);
+      dialog.close();
       body.style.overflow = overflow;
-      try { if (prev && prev.focus && document.contains(prev)) prev.focus(); } catch { /* 復帰できなくても閉じる */ }
+      if (prev instanceof HTMLElement && prev.isConnected) prev.focus({ preventScroll: true });
     };
-  }, [onClose]);
+  }, []);
+
+  const onDialogKey = (event) => {
+    event.stopPropagation();
+    if (event.key !== "Tab") return;
+    const controls = event.currentTarget.querySelectorAll("button:not([disabled]), a[href]");
+    const first = controls[0], last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
 
   const swap = useCallback(() => {
     setOrder((o) => [...o].reverse());
@@ -46,7 +61,8 @@ export default function CompareView({ ids, lang, onClose, onRemove }) {
   if (!order.length) return null;
 
   return (
-    <div className="cmp" role="dialog" aria-modal="true" aria-label={ui("compare", lang)}>
+    <dialog ref={dialogRef} className="cmp" aria-label={ui("compare", lang)}
+      onKeyDown={onDialogKey} onCancel={(event) => { event.preventDefault(); onClose(); }}>
       <div className="cmp-bar">
         <button type="button" className="pa-btn" onClick={onClose} aria-label={ui("close", lang)}>×</button>
         <button type="button" className="ex-chip" onClick={() => setSide((s) => (s === "row" ? "stack" : "row"))}>
@@ -84,7 +100,7 @@ export default function CompareView({ ids, lang, onClose, onRemove }) {
           );
         })}
       </div>
-    </div>
+    </dialog>
   );
 }
 
