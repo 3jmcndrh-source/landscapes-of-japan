@@ -448,7 +448,7 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - 1日1件の作業 issue `[ops] YYYY-MM-DD` (ラベル `ops:daily`) のチェックリストと、本文末尾の `<!-- ops-state:{…} -->` に記録する。
   読み書きは必ず `node scripts/ops/state.mjs` を通す (同じ操作を2回しても重複しない作り)。
 - 異常は1件ずつ `ops:finding` + `auto-fix` / `investigate` の issue。本文の `<!-- ops-fp:… -->` (指紋) で同じ不具合を見分ける。
-- 見た目の差分は、所有者が `ops:accept-visual` を付けるまで基準画像を書き換えない。基準画像は GitHub Release `ops-baseline` (git には入れない)。
+- 見た目の差分は、所有者が `ops:accept-visual` を付けるまで基準画像を書き換えない。基準画像は git の独自の参照 `refs/ops/baseline` (通常の clone には入らない。クラウドの GitHub プロキシは JSON しか送れず Release へのアップロードが 415 になるため、git のデータ API を使う)。
 
 ## Known Gotchas & Historical Bugs
 

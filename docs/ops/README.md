@@ -14,7 +14,7 @@ flowchart LR
     D["D PRレビュー (Opus)<br/>PR の作成・更新時"]
     E["E 週次 (Sonnet)<br/>月曜 09:10 / 14:10"]
   end
-  GH[("GitHub<br/>作業 issue / 監査 issue / ブランチ / PR<br/>Release ops-baseline (基準画像)")]
+  GH[("GitHub<br/>作業 issue / 監査 issue / ブランチ / PR<br/>refs/ops/baseline (基準画像)")]
   M[["Gmail (所有者自身宛て)"]]
   O(("所有者"))
   A -- "作業 issue・監査 issue (auto-fix / investigate)" --> GH
@@ -58,7 +58,8 @@ flowchart LR
 - **作業 issue** `[ops] YYYY-MM-DD` (ラベル `ops:daily`): A・B・C のチェックリスト。本文の末尾の `<!-- ops-state:{…} -->` に、開始回数・再開の目印・各タスクのデータ (解析の数字、監査の件数、B のブランチ、作った PR) を持つ。C が終わると閉じる。
 - **ラベル**: `ops:in-progress` (作業中)、`ops:A-done` / `ops:B-done` / `ops:C-done` (順番の受け渡し)、`ops:halted` (止める条件に当たった)、`ops:stalled-twice` (同じ日に2回止まった)。
 - **監査 issue**: `ops:finding` + `auto-fix` / `investigate` / `needs-decision`。本文の `<!-- ops-fp:… -->` (指紋) で同じ不具合を見分ける。翌日も出れば追記、出なければ「解消した可能性」と書く (自動では閉じない。PR の `Closes #番号` がマージで閉じる)。
-- **基準画像**: GitHub Release `ops-baseline` の `baseline.tar.gz` (約26MB)。差分は `diffs-YYYY-MM-DD.tar.gz` として7日間置く。git の履歴にもクローンにも入らない。
+- **基準画像**: git の独自の参照 `refs/ops/baseline` が指すコミットに、`baseline.tar.gz` (約26MB) を4MBずつに分けて置く。差分の画像は `refs/ops/diffs/YYYY-MM-DD` に7日間置き、issue からブラウザで見られる。`refs/ops/*` は通常の clone では取得されないので、リポジトリは重くならない。
+  (最初は GitHub Release に置く設計だったが、クラウドの GitHub プロキシが JSON 以外の送信を受け付けず、初回の実行でアップロードが HTTP 415 になったため、2026-11-25 に変更した)
 - **週の作業 issue** `[ops-weekly] YYYY-Www` (ラベル `ops:weekly`): E の進捗とレポート。
 
 ### 利用上限で止まったときの自動再開
@@ -75,7 +76,7 @@ flowchart LR
 | 見た目の差分を正として受け入れる | その監査 issue に `ops:accept-visual` を付ける → 次の A で基準画像が更新され、issue が閉じる |
 | 全タスクを一時停止 | 何でもよいので issue を1件作り `ops:pause` を付ける (open のあいだ、全タスクが何もせず終わる)。閉じれば再開 |
 | 1つのタスクを止める | claude.ai/code/routines でそのタスクを無効にする |
-| 完全にやめる | 全タスクを削除 → Release `ops-baseline` を削除 → ラベル `ops:*` を削除 (任意) |
+| 完全にやめる | 全タスクを削除 → `gh api -X DELETE repos/3jmcndrh-source/landscapes-of-japan/git/refs/ops/baseline` (差分の `refs/ops/diffs/*` も同様) → ラベル `ops:*` を削除 (任意) |
 | 誤検知を黙らせる | `ops/audit-ignore.json` に正規表現と理由を足す (C が PR で提案することもある) |
 | 代表ページを増やす | `ops/shots.json` の pages に足す (基準画像は次の A で自動追加) |
 
@@ -99,7 +100,7 @@ flowchart LR
 5. 確かめること:
    - [ ] 作業 issue `[ops] 今日の日付` ができ、A1〜A7 にチェック、`ops:A-done` が付いている
    - [ ] A-report のコメントに、http・browser・shots の結果と、解析データ (訪問者数など) が載っている
-   - [ ] 初回なので、スクリーンショットは「新規 364・差分 0」、Release `ops-baseline` に `baseline.tar.gz` がある
+   - [ ] 初回なので、スクリーンショットは「新規 364・差分 0」、`gh api repos/3jmcndrh-source/landscapes-of-japan/git/ref/ops/baseline` が見つかる
    - [ ] 異常があった場合、監査 issue が重複なくできている。メールが届いた (または下書きができた)
    - [ ] ビルドの所要時間と監査の時間 (A-report に出る) が想定内 (合計 60分以内)
    - [ ] **もう一度 Run now** → 数分で「done」で終わる (追いかけ実行が軽いことの確認)。この分の消費も控える

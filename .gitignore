@@ -70,5 +70,5 @@ public/ort/
 # Bing へ送信済みのURLの控え (scripts/bing-register.mjs submit が続きから送るために使う)
 .bing-submitted.json
 
-# 運用の監査結果 (scripts/ops/ の出力。基準画像は GitHub Release ops-baseline に置く)
+# 運用の監査結果 (scripts/ops/ の出力。基準画像は git の参照 refs/ops/baseline に置く)
 /ops-out/
