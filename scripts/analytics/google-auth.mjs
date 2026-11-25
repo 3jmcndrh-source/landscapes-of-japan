@@ -3,12 +3,19 @@
  * gsc-verify-and-add.mjs と同じ自前実装 (依存ライブラリを増やさないため)。
  */
 import crypto from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const key = JSON.parse(readFileSync(path.join(ROOT, "gsc-service-account.json"), "utf-8"));
+// 手元: gsc-service-account.json (gitignore 済み)。クラウド: 環境変数 GA4_SA_JSON_B64 (同じ JSON を base64 にしたもの)
+const KEY_FILE = path.join(ROOT, "gsc-service-account.json");
+function loadKey() {
+  if (existsSync(KEY_FILE)) return JSON.parse(readFileSync(KEY_FILE, "utf-8"));
+  if (process.env.GA4_SA_JSON_B64) return JSON.parse(Buffer.from(process.env.GA4_SA_JSON_B64, "base64").toString("utf-8"));
+  throw new Error("Google の鍵がありません (gsc-service-account.json も GA4_SA_JSON_B64 も無い)");
+}
+const key = loadKey();
 const b64u = (s) => Buffer.from(s).toString("base64url");
 
 export const PROJECT_ID = key.project_id;

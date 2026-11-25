@@ -2,7 +2,7 @@
  * 毎朝の訪問者レポート: GA4 (実際の閲覧者) + Microsoft Clarity (行動の質) を
  * 1つの日本語サマリーにまとめて標準出力へ出す。
  *
- *   node scripts/analytics/daily-report.mjs [--json]
+ *   node scripts/analytics/daily-report.mjs [--json] [--no-clarity]
  *
  * 前提:
  *   .env に CLARITY_API_TOKEN / CLARITY_PROJECT_ID / GA4_PROPERTY_ID
@@ -10,18 +10,25 @@
  *
  * 注意: Clarity API は 1プロジェクト1日10回まで。毎朝1回の実行を前提にしている。
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getToken } from "./google-auth.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const env = Object.fromEntries(
-  readFileSync(path.join(ROOT, ".env"), "utf-8")
-    .split(/\r?\n/)
-    .filter((l) => l && !l.startsWith("#"))
-    .map((l) => { const i = l.indexOf("="); return [l.slice(0, i), l.slice(i + 1)]; })
-);
+// 手元は .env、クラウドは同名の環境変数 (環境変数が優先)。
+// CLARITY_API_TOKEN が無いときは Authorization を付けずに送る (クラウドではネットワークシークレットが付ける)。
+const ENV_FILE = path.join(ROOT, ".env");
+const env = {
+  ...(existsSync(ENV_FILE) ? Object.fromEntries(
+    readFileSync(ENV_FILE, "utf-8")
+      .split(/\r?\n/)
+      .filter((l) => l && !l.startsWith("#"))
+      .map((l) => { const i = l.indexOf("="); return [l.slice(0, i), l.slice(i + 1)]; })
+  ) : {}),
+  ...Object.fromEntries(["GA4_PROPERTY_ID", "CLARITY_API_TOKEN", "CLARITY_PROJECT_ID"]
+    .filter((k) => process.env[k]).map((k) => [k, process.env[k]])),
+};
 
 const PROPERTY = env.GA4_PROPERTY_ID;
 const GA_SCOPE = "https://www.googleapis.com/auth/analytics.readonly";
@@ -59,7 +66,7 @@ function jstDates() {
   return { yesterday: d(1), dayBefore: d(2) };
 }
 
-async function collectGA4() {
+export async function collectGA4() {
   const { yesterday, dayBefore } = jstDates();
   const range = [{ startDate: yesterday, endDate: yesterday }];
   const prevRange = [{ startDate: dayBefore, endDate: dayBefore }];
@@ -68,8 +75,9 @@ async function collectGA4() {
     ga({ dateRanges: range, metrics: [
       { name: "activeUsers" }, { name: "newUsers" }, { name: "sessions" },
       { name: "screenPageViews" }, { name: "averageSessionDuration" }, { name: "bounceRate" },
-    ]}),
-    ga({ dateRanges: prevRange, metrics: [{ name: "activeUsers" }, { name: "screenPageViews" }] }),
+      { name: "engagedSessions" },
+    ], metricAggregations: ["TOTAL"] }),
+    ga({ dateRanges: prevRange, metrics: [{ name: "activeUsers" }, { name: "screenPageViews" }], metricAggregations: ["TOTAL"] }),
     ga({ dateRanges: range, dimensions: [{ name: "pagePath" }], metrics: [{ name: "screenPageViews" }],
       orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }], limit: 8 }),
     ga({ dateRanges: range, dimensions: [{ name: "country" }], metrics: [{ name: "activeUsers" }],
@@ -86,6 +94,7 @@ async function collectGA4() {
     date: yesterday,
     users: total(summary, 0), newUsers: total(summary, 1), sessions: total(summary, 2),
     views: total(summary, 3), avgDuration: total(summary, 4), bounceRate: total(summary, 5),
+    engagedSessions: total(summary, 6),
     prevUsers: total(prev, 0), prevViews: total(prev, 1),
     pages: rows(pages), countries: rows(countries), sources: rows(sources),
     devices: rows(devices), langs: rows(langs),
@@ -93,9 +102,9 @@ async function collectGA4() {
 }
 
 /* ── Clarity ── */
-async function collectClarity() {
+export async function collectClarity() {
   const r = await fetch("https://www.clarity.ms/export-data/api/v1/project-live-insights?numOfDays=1", {
-    headers: { Authorization: `Bearer ${env.CLARITY_API_TOKEN}` },
+    headers: env.CLARITY_API_TOKEN ? { Authorization: `Bearer ${env.CLARITY_API_TOKEN}` } : {},
   });
   if (!r.ok) throw new Error(`Clarity ${r.status}: ${(await r.text()).slice(0, 200)}`);
   const raw = await r.json();
@@ -125,7 +134,7 @@ export function render(g, c, cErr) {
     L.push("この日の訪問者は 0 人でした。");
   } else {
     L.push(`訪問者 ${g.users}人 (前日比 ${pct(g.users, g.prevUsers)}) / うち新規 ${g.newUsers}人`);
-    L.push(`セッション ${g.sessions} / ページビュー ${g.views} (前日比 ${pct(g.views, g.prevViews)})`);
+    L.push(`セッション ${g.sessions} (エンゲージ ${g.engagedSessions}) / ページビュー ${g.views} (前日比 ${pct(g.views, g.prevViews)})`);
     L.push(`平均滞在 ${mmss(g.avgDuration)} / 直帰率 ${Math.round(g.bounceRate * 100)}%`);
   }
   L.push("");
@@ -166,6 +175,15 @@ export function render(g, c, cErr) {
   if (g.users > 0 && g.prevUsers > 0 && g.users <= g.prevUsers * 0.5) notes.push("訪問者が前日の半分以下に減っています。");
   if (g.users > 0 && g.bounceRate > 0.8) notes.push(`直帰率が ${Math.round(g.bounceRate * 100)}% と高めです。`);
   if (g.users > 0 && g.avgDuration > 120) notes.push(`平均滞在 ${mmss(g.avgDuration)} とよく読まれています。`);
+  {
+    const directShare = g.sessions > 0
+      ? (g.sources.find((r) => r.keys[0] === "Direct")?.vals[0] ?? 0) / g.sessions
+      : 0;
+    const engagedShare = g.sessions > 0 ? g.engagedSessions / g.sessions : 1;
+    if (g.sessions >= 10 && directShare > 0.85 && engagedShare < 0.3 && g.avgDuration < 15) {
+      notes.push(`Direct集中(${Math.round(directShare * 100)}%)・エンゲージ率${Math.round(engagedShare * 100)}%・平均滞在${mmss(g.avgDuration)}という組み合わせはボット/自動アクセスの疑いが強いです。GA4は既知ボットを自動除外しますが、それをすり抜ける可能性があります。実訪問者数はこの数値より少ないとみて良さそうです。`);
+    }
+  }
   if (!cErr && c.ScriptErrorCount?.pct > 5) notes.push(`JSエラーが ${c.ScriptErrorCount.pct}% のセッションで出ています。`);
   if (!cErr && c.RageClickCount?.pct > 10) notes.push(`イライラクリックが ${c.RageClickCount.pct}% と多め。押せそうで押せない要素があるかもしれません。`);
   if (notes.length) { L.push(""); L.push("気づいた点:"); notes.forEach((n) => L.push(`  - ${n}`)); }
@@ -180,7 +198,8 @@ const isMain = process.argv[1] && fileURLToPath(import.meta.url) === path.resolv
 if (isMain) {
   const g = await collectGA4();
   let c = null, cErr = null;
-  try { c = await collectClarity(); } catch (e) { cErr = e.message.slice(0, 80); }
+  if (process.argv.includes("--no-clarity")) cErr = "skipped";
+  else try { c = await collectClarity(); } catch (e) { cErr = e.message.slice(0, 80); }
 
   if (process.argv.includes("--json")) {
     console.log(JSON.stringify({ ga4: g, clarity: c, clarityError: cErr }, null, 2));

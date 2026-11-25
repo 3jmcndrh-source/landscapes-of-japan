@@ -1,0 +1,20 @@
+{
+  "_comment": "スクリーンショット差分を取る代表ページ。{lang} は25言語に展開する。photoOnly は写真詳細がある7言語だけ。ページの型を増やすときはここに足す (基準画像は次の A の実行で自動的に追加される)。",
+  "pages": [
+    { "name": "home", "path": "/{lang}" },
+    { "name": "pref", "path": "/{lang}/hokkaido" },
+    { "name": "loc", "path": "/{lang}/hokkaido/biei" },
+    { "name": "photo", "path": "/{lang}/hokkaido/biei/dsc07998-bdf46f", "photoOnly": true },
+    { "name": "collections", "path": "/{lang}/collections" },
+    { "name": "collection", "path": "/{lang}/collections/cherry-blossoms" },
+    { "name": "explore", "path": "/{lang}/explore" },
+    { "name": "search", "path": "/{lang}/search" }
+  ],
+  "viewports": {
+    "mobile": { "width": 390, "height": 844, "isMobile": true, "hasTouch": true },
+    "desktop": { "width": 1440, "height": 900 }
+  },
+  "fixedTime": "2026-01-15T12:00:00+09:00",
+  "maxHeight": 4000,
+  "diffThreshold": 0.002
+}

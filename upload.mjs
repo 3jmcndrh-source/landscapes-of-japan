@@ -21,7 +21,7 @@ import sharp from "sharp";
 import { wideGamutOf, keepColor } from "./scripts/lib/wide-gamut.mjs";
 import { writeOg } from "./scripts/generate-og-images.mjs";
 import exifr from "exifr";
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { execSync } from "child_process";
 import { createHash } from "crypto";
 import path from "path";
@@ -181,6 +181,10 @@ if (!skipRegen) {
     console.warn("! ギャラリーの点検で問題が見つかりました。app/galleries.js を確認してください");
   }
 }
+
+// ---- 公開済み画像の一覧 (クラウドの監査が「画像の読み込み失敗」を判定するのに使う。コミット対象) ----
+writeFileSync("ops/published-images.txt", readdirSync(DIST).sort().join("\n") + "\n");
+console.log("ops/published-images.txt を更新しました (app/data.js と一緒にコミットしてください)");
 
 // ---- deploy images project ----
 if (!skipDeploy) {

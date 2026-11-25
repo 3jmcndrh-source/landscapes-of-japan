@@ -1,0 +1,7 @@
+{
+  "_comment": "監査で異常として数えない console のメッセージ (正規表現)。監査が外部への通信を止めていることが原因で出るものだけを入れる。本当の不具合を隠さないよう、足すときは理由を書くこと。",
+  "console": [
+    { "pattern": "^Failed to load resource: net::ERR_FAILED$", "why": "監査は localhost 以外への通信を止めている (GA4・Clarity・天気など)" },
+    { "pattern": "^Failed to load resource: net::ERR_BLOCKED_BY_CLIENT", "why": "同上" }
+  ]
+}

@@ -45,7 +45,11 @@ const files = new Set();
   }
 })(OUT);
 const htmlFiles = [...files].filter((f) => f.endsWith(".html"));
-const distFiles = existsSync(DIST) ? new Set(readdirSync(DIST)) : null;
+// 画像の実物 (images-dist/) が無い環境 (クラウドの監査) では、公開済みファイル名の一覧で代わりに確かめる
+const PUBLISHED_LIST = "ops/published-images.txt";
+const distFiles = existsSync(DIST) ? new Set(readdirSync(DIST))
+  : existsSync(PUBLISHED_LIST) ? new Set(readFileSync(PUBLISHED_LIST, "utf-8").split(/\r?\n/).filter(Boolean))
+  : null;
 
 /* ---------- public/_redirects (Cloudflare Pages) ---------- */
 const redirects = [];
@@ -260,7 +264,7 @@ console.log(`[check-links] HTML ${htmlFiles.length}ページ / 参照 ${nLinks}�
 console.log(`  画面内で組み立てるリンク: 検索の候補 ${nSearch}件 + 写真 ${photos.length}枚 × ${LANGS.length}言語 ほか`);
 console.log(`  sitemap に載っているURL: ${sitemapUrls.size}件`);
 console.log(`  外部の行き先: ${[...external.entries()].sort((a, b) => b[1] - a[1]).map(([h, n]) => `${h} ×${n}`).join(" / ") || "なし"}`);
-if (!distFiles) console.log("  ! images-dist/ が無いので、画像の存在は確かめていません");
+if (!distFiles) console.log("  ! images-dist/ も ops/published-images.txt も無いので、画像の存在は確かめていません");
 
 show("サイト内リンク切れ (HTML)", broken);
 show("#見出し の行き先が無い", brokenHash);

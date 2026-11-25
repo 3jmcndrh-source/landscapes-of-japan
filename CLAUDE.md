@@ -224,8 +224,9 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 ### 毎朝の訪問者レポート (2026-08-29 設定)
 `node scripts/analytics/daily-report.mjs` で GA4 + Clarity を1本の日本語サマリーにする。
 毎朝8時に**ローカルの定期タスク** `landscapes-daily-analytics` が実行 (`~/.claude/scheduled-tasks/`)。
-- **クラウド実行は不可**: 認証情報 (`.env` / `gsc-service-account.json`) が gitignore 済みのローカルファイルなので、
-  クラウドагент では読めない。スケジュールをクラウドへ移すなら鍵の受け渡しから設計し直すこと。
+- **2026-11-25 からクラウドでも動く**: 鍵が無ければ環境変数を読む (`GA4_SA_JSON_B64` / `GA4_PROPERTY_ID` /
+  Clarity はネットワークシークレット)。クラウドの運用タスク A (下の「運用」) が毎日取得する。
+  **A の解析を有効にしたら、このローカルの定期タスクは止める** (Clarity の1日10回を2か所で使わないため)。
 - アプリが閉じていた時刻の分は**次回起動時に実行**される (PCが落ちていると当日分は飛ぶ)。
 - GA4 Data API は サービスアカウント `gsc-sitemap-bot@` に**プロパティ「閲覧者」権限**を付与済み +
   GCP プロジェクト `landscapes-gsc` で Analytics Data API を有効化済み。
@@ -421,6 +422,33 @@ loc ページは「地名 + 天気/日の出/シーズンバー + 写真グリ�
 - **追加済みのアイコンは変わらない** (iOS は追加した時点の設定を持ち続ける)。いったん削除して、使いたい言語のページから追加し直す。
 - 共通の `public/manifest.json` は、以前に追加した端末のために残してある (どのページからも参照していない)。
 - `npm run check:links` が、各言語のマニフェストの起動先・ショートカットの実在と `start_url` を確かめる。
+
+## 運用 — クラウドの定期タスク A〜E (2026-11-25 設計)
+
+全体図・各タスクの役割・止め方は `docs/ops/README.md`、登録用シートは `docs/ops/tasks/A〜E.md`。
+スクリプトは `scripts/ops/` (監査 `audit.mjs`・状態 `state.mjs`・基準画像 `visual.mjs`・集計 `report.mjs`・解析 `analytics.mjs`・週次 `weekly.mjs`)。
+
+### 守ること (人もエージェントも)
+- **本番へのクロール禁止。** 見え方の確認は、ビルドした `out/` を `scripts/ops/serve.mjs` で配信して、それに対してだけ行う
+  (このサイトは静的書き出しなので `next start` は使えない)。監査中のブラウザは localhost 以外への通信を遮断し、
+  `landscapes-images.pages.dev` の画像は取りに行かず代替画像を返す。画像の有無は `ops/published-images.txt` で判定する。
+- **本番ブランチは `cloudflare-migration`** (GitHub の既定ブランチ。`master` は 2026-05 から止まっている)。PR の向き先もここ。
+  自動の作業は `claude/fix-*` ブランチで行い、`cloudflare-migration` への直接 push・マージ・承認・auto-merge は**しない**。マージは所有者がする。
+  保護ルール `protect-production` (削除と force push の禁止) を設定済み。
+- **デプロイは今までどおり所有者が手で行う** (`wrangler pages deploy`)。運用タスクはデプロイしない。
+- **Link の prefetch を有効にする変更は禁止。**
+- **翻訳文の書き換え・デザインや構成の変更は自分で直さない。** issue に `needs-decision` を付けて提案だけにする。
+  方針として決まっていること (下の「コンテンツ削減」「クローラーの扱い」など) を覆す提案もしない。AI が書いた説明文を足す提案もしない。
+- **依存パッケージのメジャーバージョンを上げない。** `npm install` は `--legacy-peer-deps` を付ける (eslint 9 と @eslint/js 10 の既存の食い違いのため)。
+- **変更は25言語すべてに反映し、漏れを数えて確かめる** (写真詳細は `PHOTO_LANGS` の7言語だけが正常)。
+- **シークレットをリポジトリに書かない。** クラウドでは環境変数・ネットワークシークレットで渡す。
+- 1回の実行の上限: **PR は1日3件まで** (`state.mjs pr` が4件目を断る)、**修正する issue は1回10件まで**。
+
+### 状態の受け渡し
+- 1日1件の作業 issue `[ops] YYYY-MM-DD` (ラベル `ops:daily`) のチェックリストと、本文末尾の `<!-- ops-state:{…} -->` に記録する。
+  読み書きは必ず `node scripts/ops/state.mjs` を通す (同じ操作を2回しても重複しない作り)。
+- 異常は1件ずつ `ops:finding` + `auto-fix` / `investigate` の issue。本文の `<!-- ops-fp:… -->` (指紋) で同じ不具合を見分ける。
+- 見た目の差分は、所有者が `ops:accept-visual` を付けるまで基準画像を書き換えない。基準画像は GitHub Release `ops-baseline` (git には入れない)。
 
 ## Known Gotchas & Historical Bugs
 
