@@ -150,6 +150,12 @@ html[lang="ja"] :where(p,li){line-height:var(--lh-ja)}
 .cin-gmode-btn{background:transparent;border:none;color:rgba(232,228,223,.6);cursor:pointer;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:var(--fs-s);letter-spacing:.08em;padding:7px 20px;border-radius:999px;transition:background .35s,color .35s;white-space:nowrap}
 .cin-gmode-btn:hover{color:rgba(232,228,223,.9)}
 .cin-gmode-btn.active{background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--accent-hi)}
+/* 狭い画面: ラベルの長い言語 (de/tr など) で切替が画面幅を超え、ページ全体が横に広がっていた (#15)。
+   余白と字間を詰め、それでも収まらないときは画面幅で止めてラベルを折り返す */
+@media(max-width:480px){
+  .cin-gallery-modes{max-width:calc(100% - 32px)}
+  .cin-gmode-btn{padding:7px 12px;letter-spacing:.02em;white-space:normal;min-width:0}
+}
 .cin-dategrid-wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 .cin-datemonth{margin-bottom:44px}
 .cin-datemonth-h{display:flex;align-items:baseline;gap:14px;font-family:var(--font-serif);font-weight:400;font-size:clamp(20px,2.6vw,30px);color:rgba(232,228,223,.85);letter-spacing:.04em;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid color-mix(in srgb,var(--accent) 14%,transparent)}
