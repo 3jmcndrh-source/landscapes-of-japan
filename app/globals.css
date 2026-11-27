@@ -146,8 +146,8 @@ html[lang="ja"] :where(p,li){line-height:var(--lh-ja)}
 .cin-scroll-indicator{font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:var(--fs-xs);font-weight:300;color:color-mix(in srgb,var(--accent) 45%,transparent);text-align:center;margin-top:14px;letter-spacing:.08em}
 
 /* 撮影日順: 表示モード切替 + 日付グリッド */
-.cin-gallery-modes{display:flex;justify-content:center;gap:4px;margin:0 auto 34px;padding:4px;width:fit-content;background:color-mix(in srgb,var(--accent) 6%,transparent);border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:999px}
-.cin-gmode-btn{background:transparent;border:none;color:rgba(232,228,223,.6);cursor:pointer;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:var(--fs-s);letter-spacing:.08em;padding:7px 20px;border-radius:999px;transition:background .35s,color .35s;white-space:nowrap}
+.cin-gallery-modes{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:0 auto 34px;padding:4px;width:fit-content;max-width:calc(100% - 32px);box-sizing:border-box;background:color-mix(in srgb,var(--accent) 6%,transparent);border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:999px}
+.cin-gmode-btn{background:transparent;border:none;color:rgba(232,228,223,.6);cursor:pointer;font-family:var(--font-zen-kaku),'Noto Sans JP',sans-serif;font-size:var(--fs-s);letter-spacing:.08em;padding:7px clamp(10px,4vw,20px);border-radius:999px;transition:background .35s,color .35s;white-space:nowrap}
 .cin-gmode-btn:hover{color:rgba(232,228,223,.9)}
 .cin-gmode-btn.active{background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--accent-hi)}
 .cin-dategrid-wrap{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
